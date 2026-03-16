@@ -26,7 +26,7 @@ header{
   box-shadow:0 3px 16px rgba(15,23,42,0.10);
 }
 .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;}
-.brand img{height:50px;display:block;}
+.brand img{height:68px;display:block;}
 .nav-links{
   display:flex;gap:24px;align-items:center;
   font-family:Arial,sans-serif;font-size:.95rem;color:#16202a;
@@ -47,7 +47,13 @@ header{
   padding:100px 0 90px;
   position:relative;overflow:hidden;
 }
-.hero-grid{display:grid;grid-template-columns:1fr;gap:60px;align-items:center;max-width:720px;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-image{display:flex;justify-content:center;align-items:center;}
+.hero-image img{
+  width:100%;max-width:480px;height:420px;
+  object-fit:cover;border-radius:16px;
+  box-shadow:0 24px 60px rgba(0,0,0,0.35);
+}
 .hero-text h1{font-size:2.8rem;line-height:1.2;margin:0 0 18px;font-weight:700;}
 .hero-text p{
   font-family:Arial,sans-serif;font-size:1.05rem;
@@ -135,6 +141,7 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero-grid,.about-grid,.service-grid,.contact-grid{grid-template-columns:1fr;}
+  .hero-image{display:none;}
   .why-grid{grid-template-columns:1fr 1fr;}
   .hero-text h1{font-size:2.3rem;}
   .nav{flex-direction:column;gap:14px;}
@@ -178,6 +185,9 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
         <a class="primary-btn" href="https://wa.me/2347087589603">Start a Conversation</a>
         <a class="secondary-btn" href="#services">View Services</a>
       </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=80" alt="Students studying in library">
     </div>
   </div>
 </section>
