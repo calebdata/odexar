@@ -1,889 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Odexar | Academic Research Support for University Students</title>
-  <meta
-    name="description"
-    content="Odexar provides academic research support for university students, including topic refinement, proposal guidance, data interpretation support, editing, and research structure assistance."
-  />
-  <meta name="theme-color" content="#153a66" />
-  <style>
-    :root{
-      --bg:#f4f6f9;
-      --surface:#ffffff;
-      --surface-soft:#eef3f8;
-      --text:#16202a;
-      --muted:#4b5c6c;
-      --line:#dbe3ec;
-      --primary:#1d72d8;
-      --primary-dark:#155bb5;
-      --dark:#0a182a;
-      --shadow:0 12px 30px rgba(15,23,42,0.07);
-      --radius:14px;
-      --container:1120px;
-    }
 
-    *{box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
-    body{
-      margin:0;
-      font-family:Georgia,"Times New Roman",serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    img{max-width:100%;display:block;}
-    a{text-decoration:none;color:inherit;}
-    .container{width:min(90%, var(--container));margin:0 auto;}
-    .section-title{
-      margin:0 0 14px;
-      font-size:2rem;
-      line-height:1.2;
-      color:#0d1b2a;
-    }
-    .section-intro{
-      max-width:760px;
-      margin:0 0 36px;
-      font-family:Arial,sans-serif;
-      color:#445566;
-      font-size:1rem;
-    }
+<title>Odexar | Academic Research Support</title>
 
-    .btn{
-      display:inline-block;
-      padding:13px 22px;
-      border-radius:10px;
-      font-family:Arial,sans-serif;
-      font-weight:700;
-      font-size:.95rem;
-      transition:background .2s, border-color .2s, color .2s, transform .2s;
-    }
-    .btn:hover{transform:translateY(-1px);}
-    .btn-primary{
-      background:var(--primary);
-      color:#ffffff;
-    }
-    .btn-primary:hover{background:var(--primary-dark);}
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.45);
-      color:#ffffff;
-      background:transparent;
-    }
-    .btn-secondary:hover{
-      border-color:#9dc8ff;
-      color:#9dc8ff;
-    }
-    .btn-outline{
-      border:1px solid var(--line);
-      color:var(--text);
-      background:#ffffff;
-    }
-    .btn-outline:hover{
-      border-color:var(--primary);
-      color:var(--primary);
-    }
+<meta name="description" content="Odexar supports university students with research topics, proposal structure, data interpretation, and academic editing.">
 
-    a:focus-visible,
-    button:focus-visible{
-      outline:3px solid rgba(29,114,216,.25);
-      outline-offset:3px;
-    }
+<style>
 
-    /* HEADER */
-    header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(244,246,249,.96);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--line);
-      box-shadow:0 3px 16px rgba(15,23,42,.08);
-    }
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      padding:12px 0;
-    }
-    .brand img{
-      height:68px;
-      width:auto;
-    }
-    .nav-links{
-      display:flex;
-      gap:22px;
-      align-items:center;
-      flex-wrap:wrap;
-      font-family:Arial,sans-serif;
-      font-size:.95rem;
-      color:var(--text);
-    }
-    .nav-links a:hover{color:var(--primary);}
-    .nav-cta{
-      background:var(--primary);
-      color:#ffffff !important;
-      padding:11px 18px;
-      border-radius:10px;
-      font-weight:700;
-    }
-    .nav-cta:hover{background:var(--primary-dark);}
+*{box-sizing:border-box}
 
-    /* HERO */
-    .hero{
-      position:relative;
-      min-height:620px;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-      color:#ffffff;
-    }
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(rgba(7,18,33,.72), rgba(7,18,33,.72)),
-        url('images/odexar-hero.png') center center/cover no-repeat;
-    }
-    .hero-content{
-      position:relative;
-      z-index:1;
-      width:100%;
-      padding:88px 0 84px;
-    }
-    .hero-copy{
-      max-width:700px;
-    }
-    .eyebrow{
-      display:inline-block;
-      margin-bottom:16px;
-      padding:6px 12px;
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:999px;
-      background:rgba(255,255,255,.07);
-      font-family:Arial,sans-serif;
-      font-size:.82rem;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-    }
-    .hero h1{
-      margin:0 0 16px;
-      font-size:3rem;
-      line-height:1.12;
-      letter-spacing:-.02em;
-    }
-    .hero p{
-      margin:0 0 28px;
-      max-width:640px;
-      font-family:Arial,sans-serif;
-      font-size:1.06rem;
-      color:#dde8f5;
-    }
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom:28px;
-    }
-    .hero-points{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:14px;
-      max-width:760px;
-    }
-    .hero-point{
-      padding:14px 16px;
-      border-radius:12px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.1);
-      backdrop-filter:blur(2px);
-      font-family:Arial,sans-serif;
-      font-size:.94rem;
-      color:#e6eef8;
-    }
+html{scroll-behavior:smooth}
 
-    /* GENERAL SECTIONS */
-    section{padding:80px 0;}
+body{
+margin:0;
+font-family:Georgia,"Times New Roman",serif;
+background:#f4f6f9;
+color:#16202a;
+line-height:1.7;
+}
 
-    /* ABOUT */
-    .about-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:28px;
-    }
-    .card{
-      background:var(--surface);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:30px;
-    }
-    .card h3{
-      margin:0 0 12px;
-      font-size:1.22rem;
-      color:#0f1e2f;
-    }
-    .card p{
-      margin:0;
-      font-family:Arial,sans-serif;
-      color:#465566;
-    }
-    .list{
-      margin:0;
-      padding-left:18px;
-      font-family:Arial,sans-serif;
-      color:#465566;
-    }
-    .list li{margin-bottom:10px;}
+a{text-decoration:none;color:inherit}
 
-    /* AUDIENCE */
-    .audience{
-      background:var(--surface-soft);
-    }
-    .audience-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-    }
-    .audience-card{
-      background:#ffffff;
-      padding:26px;
-      border-radius:var(--radius);
-      box-shadow:0 10px 25px rgba(15,23,42,.05);
-      border-top:4px solid var(--primary);
-    }
-    .audience-card h3{
-      margin:0 0 10px;
-      font-size:1.08rem;
-    }
-    .audience-card p{
-      margin:0;
-      font-family:Arial,sans-serif;
-      color:var(--muted);
-      font-size:.96rem;
-    }
+.container{
+width:92%;
+max-width:1200px;
+margin:0 auto;
+}
 
-    /* SERVICES */
-    .service-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:24px;
-    }
-    .service-card{
-      background:#ffffff;
-      padding:28px;
-      border-radius:var(--radius);
-      box-shadow:0 10px 25px rgba(15,23,42,.05);
-      border-top:4px solid var(--primary);
-      transition:transform .2s, box-shadow .2s;
-    }
-    .service-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 18px 35px rgba(15,23,42,.1);
-    }
-    .service-card h3{
-      margin:0 0 10px;
-      font-size:1.08rem;
-    }
-    .service-card p{
-      margin:0;
-      font-family:Arial,sans-serif;
-      color:var(--muted);
-      font-size:.96rem;
-    }
-    .integrity-note{
-      margin-top:34px;
-      background:#ffffff;
-      border-left:4px solid var(--primary);
-      padding:20px 24px;
-      border-radius:0 10px 10px 0;
-      box-shadow:0 6px 20px rgba(15,23,42,.05);
-      font-family:Arial,sans-serif;
-      color:#445566;
-    }
-    .integrity-note p{margin:0;}
+/* NAV */
 
-    /* HOW IT WORKS */
-    .steps{
-      background:var(--surface-soft);
-    }
-    .steps-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-    }
-    .step-card{
-      background:#ffffff;
-      padding:28px;
-      border-radius:var(--radius);
-      box-shadow:0 10px 25px rgba(15,23,42,.05);
-    }
-    .step-number{
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:rgba(29,114,216,.1);
-      color:var(--primary);
-      font-family:Arial,sans-serif;
-      font-weight:700;
-      margin-bottom:16px;
-    }
-    .step-card h3{
-      margin:0 0 10px;
-      font-size:1.08rem;
-    }
-    .step-card p{
-      margin:0;
-      font-family:Arial,sans-serif;
-      color:var(--muted);
-    }
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:#f4f6f9;
+border-bottom:1px solid #e4e9f0;
+}
 
-    /* WHY */
-    .why-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:20px;
-    }
-    .why-card{
-      background:#ffffff;
-      padding:24px;
-      border-radius:var(--radius);
-      box-shadow:0 10px 25px rgba(15,23,42,.05);
-    }
-    .why-card h3{
-      margin:0 0 10px;
-      font-size:1.05rem;
-    }
-    .why-card p{
-      margin:0;
-      font-family:Arial,sans-serif;
-      color:var(--muted);
-      font-size:.95rem;
-    }
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 0;
+}
 
-    /* REASSURANCE */
-    .reassurance{
-      background:var(--surface-soft);
-    }
-    .reassurance-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:24px;
-    }
+.brand img{
+height:70px;
+display:block;
+}
 
-    /* CTA */
-    .cta{
-      background:var(--dark);
-      color:#ffffff;
-      text-align:center;
-      padding:74px 0;
-    }
-    .cta h2{
-      margin:0 0 14px;
-      font-size:2rem;
-      line-height:1.2;
-    }
-    .cta p{
-      margin:0 auto 26px;
-      max-width:650px;
-      font-family:Arial,sans-serif;
-      color:#d8e2ee;
-    }
+.nav-links{
+display:flex;
+gap:22px;
+align-items:center;
+font-family:Arial,sans-serif;
+font-size:.95rem;
+}
 
-    /* CONTACT */
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-    }
-    .contact-card{
-      background:#ffffff;
-      padding:28px;
-      border-radius:var(--radius);
-      box-shadow:0 10px 25px rgba(15,23,42,.05);
-    }
-    .contact-card h3{
-      margin:0 0 12px;
-      font-size:1.15rem;
-    }
-    .contact-card p{
-      margin:0 0 12px;
-      font-family:Arial,sans-serif;
-      color:var(--muted);
-    }
-    .contact-link{
-      color:var(--primary);
-      font-family:Arial,sans-serif;
-      font-weight:700;
-    }
+.nav-links a:hover{
+color:#1d72d8;
+}
 
-    /* FOOTER */
-    footer{
-      background:#08121f;
-      color:#cbd6e2;
-      padding:30px 0;
-      font-family:Arial,sans-serif;
-      font-size:.95rem;
-    }
-    .footer-flex{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-    .footer-brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .footer-brand img{
-      height:30px;
-      width:auto;
-      filter:brightness(0) invert(1);
-      opacity:.86;
-    }
-    .footer-note{
-      color:#aebdcd;
-      text-align:right;
-    }
+.nav-button{
+background:#1d72d8;
+color:#fff!important;
+padding:10px 16px;
+border-radius:8px;
+font-weight:600;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 980px){
-      .about-grid,
-      .service-grid,
-      .contact-grid,
-      .reassurance-grid{
-        grid-template-columns:1fr;
-      }
+.nav-button:hover{
+background:#155bb5;
+}
 
-      .audience-grid,
-      .steps-grid{
-        grid-template-columns:1fr 1fr;
-      }
+/* HERO */
 
-      .why-grid{
-        grid-template-columns:1fr 1fr;
-      }
+.hero{
+position:relative;
+min-height:520px;
+display:flex;
+align-items:center;
+}
 
-      .hero h1{
-        font-size:2.5rem;
-      }
+.hero-bg{
+position:absolute;
+inset:0;
+background:url("images/odexar-hero.png") center/cover no-repeat;
+}
 
-      .hero-points{
-        grid-template-columns:1fr;
-      }
+.hero-bg:after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(7,18,33,.72);
+}
 
-      .nav{
-        flex-direction:column;
-        align-items:flex-start;
-      }
+.hero-content{
+position:relative;
+z-index:1;
+padding:80px 0;
+max-width:640px;
+}
 
-      .nav-links{
-        width:100%;
-      }
-    }
+.hero h1{
+font-size:2.6rem;
+line-height:1.25;
+color:#fff;
+margin:0 0 18px;
+}
 
-    @media (max-width: 640px){
-      section{padding:68px 0;}
+.hero p{
+font-family:Arial,sans-serif;
+color:#dde8f5;
+font-size:1.05rem;
+margin:0 0 26px;
+}
 
-      .hero{
-        min-height:auto;
-      }
+.hero-actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
 
-      .hero-content{
-        padding:74px 0 66px;
-      }
+.primary-btn{
+padding:13px 22px;
+border-radius:8px;
+font-family:Arial,sans-serif;
+font-weight:700;
+font-size:.95rem;
+background:#1d72d8;
+color:#fff;
+}
 
-      .hero h1{
-        font-size:2.05rem;
-      }
+.primary-btn:hover{
+background:#155bb5;
+}
 
-      .section-title{
-        font-size:1.68rem;
-      }
+.secondary-btn{
+padding:13px 22px;
+border-radius:8px;
+font-family:Arial,sans-serif;
+font-weight:700;
+font-size:.95rem;
+border:1px solid rgba(255,255,255,.4);
+color:#fff;
+}
 
-      .audience-grid,
-      .steps-grid,
-      .why-grid{
-        grid-template-columns:1fr;
-      }
+.secondary-btn:hover{
+border-color:#8ec5ff;
+color:#8ec5ff;
+}
 
-      .hero-actions{
-        flex-direction:column;
-      }
+/* SECTIONS */
 
-      .btn,
-      .nav-cta{
-        width:100%;
-        text-align:center;
-      }
+section{
+padding:80px 0;
+}
 
-      .nav-links{
-        flex-direction:column;
-        align-items:stretch;
-        gap:12px;
-      }
+.section-title{
+font-size:2rem;
+margin-bottom:12px;
+color:#0d1b2a;
+}
 
-      .brand img{
-        height:58px;
-      }
+.section-intro{
+max-width:720px;
+font-family:Arial,sans-serif;
+color:#4b5c6c;
+margin-bottom:36px;
+}
 
-      .footer-note{
-        text-align:left;
-      }
-    }
-  </style>
+/* ABOUT */
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:28px;
+}
+
+.about-box{
+background:#fff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 24px rgba(15,23,42,.05);
+}
+
+.about-box h3{
+margin-top:0;
+margin-bottom:10px;
+font-size:1.2rem;
+}
+
+.about-box p{
+margin:0;
+font-family:Arial,sans-serif;
+color:#475766;
+}
+
+/* SERVICES */
+
+.services-section{
+background:#eef3f8;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+}
+
+.service-card{
+background:#fff;
+padding:26px;
+border-radius:12px;
+border-top:4px solid #1d72d8;
+box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+
+.service-card h3{
+margin:0 0 8px;
+font-size:1.05rem;
+}
+
+.service-card p{
+margin:0;
+font-family:Arial,sans-serif;
+color:#4b5c6c;
+font-size:.95rem;
+}
+
+/* PROCESS */
+
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.step{
+background:#fff;
+padding:26px;
+border-radius:12px;
+box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+
+.step h3{
+margin:0 0 8px;
+font-size:1.05rem;
+}
+
+.step p{
+margin:0;
+font-family:Arial,sans-serif;
+color:#4b5c6c;
+font-size:.95rem;
+}
+
+/* WHY */
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.why-card{
+background:#fff;
+padding:24px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(15,23,42,.05);
+}
+
+.why-card h3{
+margin:0 0 10px;
+font-size:1.05rem;
+}
+
+.why-card p{
+margin:0;
+font-family:Arial,sans-serif;
+color:#4b5a68;
+font-size:.95rem;
+}
+
+/* CTA */
+
+.cta{
+background:#0a182a;
+color:#fff;
+text-align:center;
+padding:70px 0;
+}
+
+.cta h2{
+margin:0 0 12px;
+}
+
+.cta p{
+font-family:Arial,sans-serif;
+color:#d8e2ee;
+max-width:600px;
+margin:0 auto 26px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px;
+}
+
+.contact-card{
+background:#fff;
+padding:26px;
+border-radius:12px;
+box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+
+.contact-link{
+color:#1d72d8;
+font-family:Arial,sans-serif;
+font-weight:700;
+}
+
+/* FOOTER */
+
+footer{
+background:#08121f;
+color:#cbd6e2;
+padding:28px 0;
+font-family:Arial,sans-serif;
+font-size:.95rem;
+}
+
+.footer-flex{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.footer-brand{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.footer-brand img{
+height:28px;
+filter:brightness(0) invert(1);
+opacity:.85;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.about-grid,
+.service-grid,
+.steps,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.why-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.nav{
+flex-direction:column;
+gap:12px;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+min-height:auto;
+padding:60px 0;
+}
+
+.hero h1{
+font-size:2rem;
+}
+
+.section-title{
+font-size:1.6rem;
+}
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
+.hero-actions{
+flex-direction:column;
+}
+
+.primary-btn,
+.secondary-btn,
+.nav-button{
+width:100%;
+text-align:center;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <a href="#top" aria-label="Odexar home">
-          <img src="odexar-logo.png" alt="Odexar logo" />
-        </a>
-      </div>
+<header>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#who-we-help">Who We Help</a>
-        <a href="#services">Services</a>
-        <a href="#process">How It Works</a>
-        <a href="#contact">Contact</a>
-        <a
-          class="nav-cta"
-          href="https://wa.me/2347087589603?text=Hello%20Odexar,%20I%20need%20support%20with%20my%20research%20project."
-          target="_blank"
-          rel="noopener"
-        >
-          Book Consultation
-        </a>
-      </nav>
-    </div>
-  </header>
+<div class="container nav">
 
-  <main id="top">
-    <section class="hero" aria-label="Homepage introduction">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <div class="hero-copy">
-          <span class="eyebrow">Academic Research Support</span>
-          <h1>Clear academic guidance for students working on serious research projects</h1>
-          <p>
-            Odexar helps university students refine research topics, strengthen proposals,
-            understand data, improve structure, and present academic work with greater clarity,
-            confidence, and professionalism.
-          </p>
+<div class="brand">
+<a href="#"><img src="odexar-logo.png" alt="Odexar"></a>
+</div>
 
-          <div class="hero-actions">
-            <a
-              class="btn btn-primary"
-              href="https://wa.me/2347087589603?text=Hello%20Odexar,%20I%20need%20support%20with%20my%20research%20project."
-              target="_blank"
-              rel="noopener"
-            >
-              Start on WhatsApp
-            </a>
-            <a class="btn btn-secondary" href="#services">View Services</a>
-          </div>
+<nav class="nav-links">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#process">How it Works</a>
+<a href="#contact">Contact</a>
+<a class="nav-button" href="https://wa.me/2347087589603">Book Consultation</a>
+</nav>
 
-          <div class="hero-points">
-            <div class="hero-point">Topic refinement and proposal direction</div>
-            <div class="hero-point">Data interpretation and research structure support</div>
-            <div class="hero-point">Editing for clarity, academic tone, and presentation</div>
-          </div>
-        </div>
-      </div>
-    </section>
+</div>
 
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">What Odexar Does</h2>
-        <p class="section-intro">
-          Odexar exists for students who have valuable research ideas but need sharper structure,
-          better academic direction, and practical help in turning rough work into stronger submissions.
-        </p>
+</header>
 
-        <div class="about-grid">
-          <div class="card">
-            <h3>Support built around real academic challenges</h3>
-            <p>
-              Many students do not struggle because they lack ideas. They struggle because their
-              topics are too broad, their proposals are weakly structured, their findings are unclear,
-              or their final work does not read with enough academic precision. Odexar addresses those
-              exact problems with focused research support.
-            </p>
-          </div>
 
-          <div class="card">
-            <h3>What you can expect</h3>
-            <ul class="list">
-              <li>Clearer topic direction and research scope</li>
-              <li>Better structure for proposals and project chapters</li>
-              <li>Guidance in understanding and presenting findings</li>
-              <li>Editing that improves grammar, flow, tone, and clarity</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="hero">
 
-    <section class="audience" id="who-we-help">
-      <div class="container">
-        <h2 class="section-title">Who We Help</h2>
-        <p class="section-intro">
-          Odexar is designed for students and researchers who need serious academic support, not vague advice.
-        </p>
+<div class="hero-bg"></div>
 
-        <div class="audience-grid">
-          <div class="audience-card">
-            <h3>Final-year students</h3>
-            <p>
-              For students handling project work, dissertations, or research reports and needing
-              help with topic strength, structure, and presentation.
-            </p>
-          </div>
+<div class="container">
 
-          <div class="audience-card">
-            <h3>Students with weak proposals</h3>
-            <p>
-              For those whose problem statement, objectives, questions, or methodology need clearer
-              academic direction.
-            </p>
-          </div>
+<div class="hero-content">
 
-          <div class="audience-card">
-            <h3>Researchers needing clarity</h3>
-            <p>
-              For those who already have draft material but need better logic, stronger organisation,
-              clearer findings, and more polished writing.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+<h1>Research Support for University Students</h1>
 
-    <section id="services">
-      <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-intro">
-          Each service addresses a specific part of the academic research process.
-        </p>
+<p>
+Clear help with research topics, proposal structure, data interpretation, and academic editing.
+</p>
 
-        <div class="service-grid">
-          <div class="service-card">
-            <h3>Research Topic Refinement</h3>
-            <p>
-              Turning broad, weak, or confusing ideas into clearer and more researchable academic topics.
-            </p>
-          </div>
+<div class="hero-actions">
 
-          <div class="service-card">
-            <h3>Project Proposal Guidance</h3>
-            <p>
-              Improving the structure of your topic background, problem statement, objectives,
-              research questions, and methodology direction.
-            </p>
-          </div>
+<a class="primary-btn" href="https://wa.me/2347087589603">
+Start on WhatsApp
+</a>
 
-          <div class="service-card">
-            <h3>Data Interpretation Support</h3>
-            <p>
-              Helping you understand results, explain findings more clearly, and present them in a way
-              that fits academic reporting.
-            </p>
-          </div>
+<a class="secondary-btn" href="#services">
+View Services
+</a>
 
-          <div class="service-card">
-            <h3>Academic Editing and Proofreading</h3>
-            <p>
-              Improving grammar, structure, clarity, and academic tone so the final work reads with more precision.
-            </p>
-          </div>
-        </div>
+</div>
 
-        <div class="integrity-note">
-          <p>
-            <strong>Academic Integrity Note:</strong> Odexar provides research guidance, data interpretation support,
-            and academic editing. These services are intended to help students develop and present their own original work
-            in line with university academic standards.
-          </p>
-        </div>
-      </div>
-    </section>
+</div>
 
-    <section class="steps" id="process">
-      <div class="container">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-intro">
-          The process is simple, direct, and designed to move your work forward efficiently.
-        </p>
+</div>
 
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <h3>Share your project challenge</h3>
-            <p>
-              Send your topic, draft, proposal issue, or data concern through WhatsApp or email for review.
-            </p>
-          </div>
+</section>
 
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <h3>Receive structured guidance</h3>
-            <p>
-              Get focused academic support based on the exact stage and weakness of your research work.
-            </p>
-          </div>
 
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <h3>Refine and present better work</h3>
-            <p>
-              Apply the guidance to improve clarity, organisation, and overall academic presentation.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="about">
 
-    <section id="why">
-      <div class="container">
-        <h2 class="section-title">Why Students Choose Odexar</h2>
-        <p class="section-intro">
-          The focus is not on empty promises. It is on useful academic support that solves real problems.
-        </p>
+<div class="container">
 
-        <div class="why-grid">
-          <div class="why-card">
-            <h3>Clear Guidance</h3>
-            <p>
-              Complex research issues are broken into manageable steps that students can understand and apply.
-            </p>
-          </div>
+<h2 class="section-title">What Odexar Does</h2>
 
-          <div class="why-card">
-            <h3>Serious Academic Tone</h3>
-            <p>
-              Every project is handled with the level of seriousness proper academic work requires.
-            </p>
-          </div>
+<p class="section-intro">
+Odexar supports students who need clear direction in academic research. From topic development to final editing, the focus is practical research support.
+</p>
 
-          <div class="why-card">
-            <h3>Practical Help</h3>
-            <p>
-              Support is built around actual student needs such as topic strength, structure, findings, and editing.
-            </p>
-          </div>
+<div class="about-grid">
 
-          <div class="why-card">
-            <h3>Accessible Communication</h3>
-            <p>
-              Direct WhatsApp and email contact make it easier for students to get timely support when needed.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="about-box">
+<h3>Research Direction</h3>
+<p>Helping students shape research topics, questions, and project structure.</p>
+</div>
 
-    <section class="reassurance">
-      <div class="container">
-        <h2 class="section-title">Professional Reassurance</h2>
-        <p class="section-intro">
-          Students need more than service descriptions. They need clarity about how the support will be handled.
-        </p>
+<div class="about-box">
+<h3>Clear Academic Writing</h3>
+<p>Improving structure, clarity, and academic tone in research work.</p>
+</div>
 
-        <div class="reassurance-grid">
-          <div class="card">
-            <h3>Clear scope and honest support</h3>
-            <p>
-              Odexar focuses on guidance, structure, interpretation, and editing support. The aim is to help students
-              produce stronger academic work, not to replace their responsibility for original scholarship.
-            </p>
-          </div>
+</div>
 
-          <div class="card">
-            <h3>Confidential and respectful handling</h3>
-            <p>
-              Project discussions, drafts, and academic concerns are treated with discretion and professional seriousness.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+</div>
 
-    <section class="cta">
-      <div class="container">
-        <h2>Need support with your research project?</h2>
-        <p>
-          Whether you need help refining a topic, strengthening a proposal, understanding your findings,
-          or improving the final draft, Odexar provides practical academic support you can act on.
-        </p>
-        <a
-          class="btn btn-primary"
-          href="https://wa.me/2347087589603?text=Hello%20Odexar,%20I%20need%20support%20with%20my%20research%20project."
-          target="_blank"
-          rel="noopener"
-        >
-          Contact on WhatsApp
-        </a>
-      </div>
-    </section>
+</section>
 
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact Odexar</h2>
-        <p class="section-intro">
-          Use the options below to discuss your project and receive academic support.
-        </p>
 
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>WhatsApp</h3>
-            <p>
-              Best for quick enquiries, project discussions, and direct communication about your research needs.
-            </p>
-            <p>
-              <a
-                class="contact-link"
-                href="https://wa.me/2347087589603?text=Hello%20Odexar,%20I%20need%20support%20with%20my%20research%20project."
-                target="_blank"
-                rel="noopener"
-              >
-                +234 708 758 9603
-              </a>
-            </p>
-          </div>
+<section class="services-section" id="services">
 
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p>
-              Best for formal enquiries, longer explanations, and sending documents for review.
-            </p>
-            <p>
-              <a class="contact-link" href="mailto:hello@odexar.com">hello@odexar.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<div class="container">
 
-  <footer>
-    <div class="container footer-flex">
-      <div class="footer-brand">
-        <img src="odexar-icon.png" alt="Odexar icon" />
-        <span>Odexar</span>
-      </div>
-      <div class="footer-note">
-        Academic research support for university students.
-      </div>
-    </div>
-  </footer>
+<h2 class="section-title">Services</h2>
+
+<p class="section-intro">
+Focused support for common research challenges.
+</p>
+
+<div class="service-grid">
+
+<div class="service-card">
+<h3>Topic Refinement</h3>
+<p>Turning early ideas into clear researchable topics.</p>
+</div>
+
+<div class="service-card">
+<h3>Proposal Structure</h3>
+<p>Improving research questions, objectives, and methodology direction.</p>
+</div>
+
+<div class="service-card">
+<h3>Data Interpretation</h3>
+<p>Helping students understand and present research findings clearly.</p>
+</div>
+
+<div class="service-card">
+<h3>Editing and Proofreading</h3>
+<p>Improving grammar, clarity, and academic presentation.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="process">
+
+<div class="container">
+
+<h2 class="section-title">How It Works</h2>
+
+<p class="section-intro">
+A simple process for getting research support.
+</p>
+
+<div class="steps">
+
+<div class="step">
+<h3>1. Describe Your Project</h3>
+<p>Share your research topic or the challenge you are facing.</p>
+</div>
+
+<div class="step">
+<h3>2. Get Guidance</h3>
+<p>Receive structured feedback and academic direction.</p>
+</div>
+
+<div class="step">
+<h3>3. Improve Your Work</h3>
+<p>Apply the guidance and refine your research project.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="why">
+
+<div class="container">
+
+<h2 class="section-title">Why Students Use Odexar</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+<h3>Clear Guidance</h3>
+<p>Research explained in simple steps.</p>
+</div>
+
+<div class="why-card">
+<h3>Academic Focus</h3>
+<p>Support based on real research standards.</p>
+</div>
+
+<div class="why-card">
+<h3>Direct Communication</h3>
+<p>Students can discuss projects easily.</p>
+</div>
+
+<div class="why-card">
+<h3>Professional Editing</h3>
+<p>Improving clarity and academic presentation.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Need help with your research project?</h2>
+
+<p>
+Send a message and discuss your project.
+</p>
+
+<a class="primary-btn" href="https://wa.me/2347087589603">
+Contact on WhatsApp
+</a>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>WhatsApp</h3>
+
+<p>
+Discuss your research needs directly.
+</p>
+
+<p>
+<a class="contact-link" href="https://wa.me/2347087589603">
++234 708 758 9603
+</a>
+</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Email</h3>
+
+<p>
+For detailed enquiries and documents.
+</p>
+
+<p>
+<a class="contact-link" href="mailto:hello@odexar.com">
+hello@odexar.com
+</a>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="container footer-flex">
+
+<div class="footer-brand">
+<img src="odexar-icon.png" alt="Odexar">
+<span>Odexar</span>
+</div>
+
+<div>
+© 2026 Odexar
+</div>
+
+</div>
+
+</footer>
+
 </body>
 </html>
