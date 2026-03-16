@@ -41,23 +41,33 @@ header{
 
 /* HERO */
 .hero{
-  background:linear-gradient(rgba(7,18,33,0.84),rgba(7,18,33,0.84)),
-             radial-gradient(circle at top right,rgba(29,114,216,0.25),transparent 30%);
-  color:#ffffff;
-  padding:100px 0 90px;
-  position:relative;overflow:hidden;
+  position:relative;
+  width:100%;
+  min-height:480px;
+  display:flex;
+  align-items:flex-start;
+  overflow:hidden;
 }
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-.hero-image{display:flex;justify-content:center;align-items:center;}
-.hero-image img{
-  width:100%;max-width:480px;height:420px;
-  object-fit:cover;border-radius:16px;
-  box-shadow:0 24px 60px rgba(0,0,0,0.35);
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1400&q=80') center center/cover no-repeat;
+  z-index:0;
 }
-.hero-text h1{font-size:2.8rem;line-height:1.2;margin:0 0 18px;font-weight:700;}
-.hero-text p{
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(7,18,33,0.62);
+}
+.hero-content{
+  position:relative;z-index:1;
+  width:100%;padding:60px 0 70px;
+}
+.hero-content h1{
+  font-size:2.6rem;line-height:1.2;
+  margin:0 0 16px;font-weight:700;color:#ffffff;
+}
+.hero-content p{
   font-family:Arial,sans-serif;font-size:1.05rem;
-  color:#d9e4f5;max-width:440px;margin:0 0 28px;
+  color:#dde8f5;max-width:620px;margin:0 0 28px;
 }
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
 .primary-btn{
@@ -69,7 +79,7 @@ header{
 .secondary-btn{
   display:inline-block;padding:13px 22px;border-radius:8px;
   font-family:Arial,sans-serif;font-weight:700;font-size:.95rem;
-  border:1px solid rgba(255,255,255,0.28);color:#ffffff;
+  border:1px solid rgba(255,255,255,0.4);color:#ffffff;
   transition:border-color 0.2s;
 }
 .secondary-btn:hover{border-color:#8ec5ff;color:#8ec5ff;}
@@ -140,8 +150,7 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .hero-grid,.about-grid,.service-grid,.contact-grid{grid-template-columns:1fr;}
-  .hero-image{display:none;}
+  .about-grid,.service-grid,.contact-grid{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr 1fr;}
   .hero-text h1{font-size:2.3rem;}
   .nav{flex-direction:column;gap:14px;}
@@ -177,17 +186,13 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>Academic Research Support for University Students</h1>
-      <p>Odexar helps students refine research topics, structure project proposals, understand and interpret data, and present their academic work clearly and professionally.</p>
-      <div class="hero-actions">
-        <a class="primary-btn" href="https://wa.me/2347087589603">Start a Conversation</a>
-        <a class="secondary-btn" href="#services">View Services</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=900&q=80" alt="Students studying in university library">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <h1>Academic Research Support for University Students</h1>
+    <p>Odexar helps students refine research topics, structure project proposals, understand and interpret data, and present their academic work clearly and professionally.</p>
+    <div class="hero-actions">
+      <a class="primary-btn" href="https://wa.me/2347087589603">Start a Conversation</a>
+      <a class="secondary-btn" href="#services">View Services</a>
     </div>
   </div>
 </section>
