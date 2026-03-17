@@ -264,6 +264,12 @@ section{padding:50px 0;}
   background:#f4f6f9;
   padding:22px;
   border-radius:12px;
+  border: 1px solid transparent; /* Prepare for hover */
+  transition: border-color 0.3s ease;
+}
+
+.step-card:hover {
+  border-color: #1d72d8;
 }
 
 .step-num{
