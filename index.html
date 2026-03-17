@@ -26,7 +26,7 @@ header{
   box-shadow:0 3px 16px rgba(15,23,42,0.10);
 }
 .nav{display:flex;justify-content:space-between;align-items:center;padding:4px 0;min-height:0;overflow:hidden;}
-.brand img{height:100px;width:auto;min-width:180px;display:block;max-height:100px;}
+.brand img{height:56px;width:auto;display:block;}
 .nav-links{
   display:flex;gap:24px;align-items:center;
   font-family:Arial,sans-serif;font-size:.95rem;color:#16202a;
@@ -55,22 +55,23 @@ header{
 }
 .hero-bg::after{
   content:'';position:absolute;inset:0;
-  background:rgba(7,18,33,0.65);
+  background:rgba(7,18,33,0.45);
 }
 .hero-content{
   position:relative;z-index:1;
   width:100%;padding:70px 0 80px;
 }
 .hero-content h1{
-  font-size:3.2rem;line-height:1.2;
-  margin:0 0 16px;font-weight:700;
+  font-size:3.6rem;line-height:1.2;
+  margin:0 0 24px;font-weight:700;
   color:#ffffff;
   text-shadow:0 2px 12px rgba(0,0,0,0.4);
-  max-width:900px;
+  max-width:560px;
 }
-.hero-content p{
-  font-family:Arial,sans-serif;font-size:1.05rem;
-  color:#dde8f5;max-width:600px;margin:0 0 28px;
+.hero-content p.hero-sub{
+  font-family:Arial,sans-serif;font-size:1.15rem;
+  color:#e8f0fb;max-width:520px;margin:0 0 28px;
+  text-shadow:0 1px 6px rgba(0,0,0,0.3);
 }
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
 .primary-btn{
@@ -226,9 +227,10 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="container hero-content">
-    <h1>Academic Research Support for University Students</h1>
+    <h1>Research Support for University Students</h1>
+    <p class="hero-sub">Structured guidance on research topics, project development, and academic writing.</p>
     <div class="hero-actions">
-      <a class="primary-btn" href="https://wa.me/2347087589603">Talk to Us</a>
+      <a class="primary-btn" href="https://wa.me/2347087589603">Get Help Now</a>
     </div>
   </div>
 </section>
