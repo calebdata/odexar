@@ -20,21 +20,43 @@ a{text-decoration:none;color:inherit;}
 
 /* NAV */
 header{
-  position:sticky;top:0;z-index:1000;
+  position:sticky;
+  top:0;
+  z-index:1000;
   background:#f4f6f9;
   border-bottom:1px solid #dde3ea;
   box-shadow:0 3px 16px rgba(15,23,42,0.10);
 }
-.nav{display:flex;justify-content:space-between;align-items:center;padding:6px 0;min-height:0;overflow:hidden;}
-.brand img{height:38px;width:auto;display:block;}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+}
+.brand img{
+  height:30px;
+  width:auto;
+  display:block;
+}
 .nav-links{
-  display:flex;gap:24px;align-items:center;
-  font-family:Arial,sans-serif;font-size:.95rem;color:#16202a;
+  display:flex;
+  gap:22px;
+  align-items:center;
+  font-family:Arial,sans-serif;
+  font-size:.93rem;
+  color:#16202a;
 }
 .nav-links a:hover{color:#1d72d8;}
 .nav-button{
-  background:#1d72d8;color:#ffffff !important;
-  padding:11px 18px;border-radius:8px;font-weight:600;
+  background:#1d72d8;
+  color:#ffffff !important;
+  padding:10px 16px;
+  border-radius:8px;
+  font-weight:600;
   transition:background 0.2s;
 }
 .nav-button:hover{background:#155bb5;}
@@ -43,178 +65,396 @@ header{
 .hero{
   position:relative;
   width:100%;
-  min-height:40vh;
+  min-height:52vh;
   display:flex;
   align-items:flex-start;
   overflow:hidden;
 }
 .hero-bg{
-  position:absolute;inset:0;
+  position:absolute;
+  inset:0;
   background:url('images_odexar-hero.png') center center/cover no-repeat;
   z-index:0;
 }
 .hero-bg::after{
-  content:'';position:absolute;inset:0;
-  background:rgba(7,18,33,0.45);
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(7,18,33,0.46);
 }
 .hero-content{
-  position:relative;z-index:1;
-  width:100%;padding:36px 0 40px;
-  max-width:100%;
+  position:relative;
+  z-index:1;
+  width:100%;
+  padding:42px 0 26px;
   text-align:left;
   display:flex;
   flex-direction:column;
   align-items:flex-start;
 }
 .hero-content h1{
-  font-size:3.4rem;line-height:1.2;
-  margin:0 0 16px;font-weight:700;
+  font-size:3rem;
+  line-height:1.14;
+  margin:0 0 12px;
+  font-weight:700;
   color:#ffffff;
   text-shadow:0 2px 12px rgba(0,0,0,0.4);
-  max-width:700px;
-  text-align:left;
+  max-width:660px;
 }
 .hero-content p.hero-sub{
-  font-family:Arial,sans-serif;font-size:1.1rem;
-  color:#e8f0fb;max-width:520px;margin:0 0 24px;
+  font-family:Arial,sans-serif;
+  font-size:1.04rem;
+  color:#e8f0fb;
+  max-width:510px;
+  margin:0 0 20px;
   text-shadow:0 1px 6px rgba(0,0,0,0.3);
-  text-align:left;
 }
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
 .primary-btn{
-  display:inline-block;padding:13px 22px;border-radius:8px;
-  font-family:Arial,sans-serif;font-weight:700;font-size:.95rem;
-  background:#1d72d8;color:#ffffff;transition:background 0.2s;
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:8px;
+  font-family:Arial,sans-serif;
+  font-weight:700;
+  font-size:.95rem;
+  background:#1d72d8;
+  color:#ffffff;
+  transition:background 0.2s;
 }
 .primary-btn:hover{background:#155bb5;}
 .secondary-btn{
-  display:inline-block;padding:13px 22px;border-radius:8px;
-  font-family:Arial,sans-serif;font-weight:700;font-size:.95rem;
-  border:1px solid rgba(255,255,255,0.4);color:#ffffff;
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:8px;
+  font-family:Arial,sans-serif;
+  font-weight:700;
+  font-size:.95rem;
+  border:1px solid rgba(255,255,255,0.4);
+  color:#ffffff;
   transition:border-color 0.2s;
 }
-.secondary-btn:hover{border-color:#8ec5ff;color:#8ec5ff;}
+.secondary-btn:hover{
+  border-color:#8ec5ff;
+  color:#8ec5ff;
+}
 
 /* SECTIONS */
-section{padding:78px 0;}
-.section-title{font-size:2rem;margin:0 0 14px;color:#0d1b2a;}
-.section-intro{max-width:760px;margin:0 0 36px;font-family:Arial,sans-serif;color:#445566;}
+section{padding:72px 0;}
+.section-title{
+  font-size:2rem;
+  margin:0 0 14px;
+  color:#0d1b2a;
+}
+.section-intro{
+  max-width:760px;
+  margin:0 0 36px;
+  font-family:Arial,sans-serif;
+  color:#445566;
+}
 
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+#about{
+  padding-top:44px;
+  padding-bottom:64px;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+}
 .about-box{
-  background:#ffffff;padding:30px;border-radius:14px;
+  background:#ffffff;
+  padding:30px;
+  border-radius:14px;
   box-shadow:0 10px 30px rgba(15,23,42,0.06);
 }
-.about-box h3{margin-top:0;margin-bottom:12px;font-size:1.25rem;}
-.about-box p{margin:0;font-family:Arial,sans-serif;color:#465566;}
+.about-box h3{
+  margin-top:0;
+  margin-bottom:12px;
+  font-size:1.25rem;
+}
+.about-box p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#465566;
+}
 
 /* SERVICES */
 .services-section{background:#eef3f8;}
-.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
 .service-card{
-  background:#ffffff;padding:28px;border-radius:14px;
+  background:#ffffff;
+  padding:28px;
+  border-radius:14px;
   box-shadow:0 10px 25px rgba(15,23,42,0.05);
   border-top:4px solid #1d72d8;
   transition:transform 0.2s,box-shadow 0.2s;
 }
-.service-card:hover{transform:translateY(-4px);box-shadow:0 18px 35px rgba(15,23,42,0.10);}
-.service-card h3{margin:0 0 8px;font-size:1.05rem;}
-.service-card p{margin:0;font-family:Arial,sans-serif;color:#4c5c6c;font-size:.95rem;}
+.service-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 35px rgba(15,23,42,0.10);
+}
+.service-card h3{
+  margin:0 0 8px;
+  font-size:1.05rem;
+}
+.service-card p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#4c5c6c;
+  font-size:.95rem;
+}
 .service-card ul{
-  margin:10px 0 0;padding-left:18px;
-  font-family:Arial,sans-serif;color:#4c5c6c;font-size:.92rem;line-height:1.9;
+  margin:10px 0 0;
+  padding-left:18px;
+  font-family:Arial,sans-serif;
+  color:#4c5c6c;
+  font-size:.92rem;
+  line-height:1.9;
 }
 .integrity-note{
-  margin-top:36px;background:#ffffff;
+  margin-top:36px;
+  background:#ffffff;
   border-left:4px solid #1d72d8;
-  padding:20px 24px;border-radius:0 10px 10px 0;
+  padding:20px 24px;
+  border-radius:0 10px 10px 0;
   box-shadow:0 6px 20px rgba(15,23,42,0.05);
 }
-.integrity-note p{margin:0;font-family:Arial,sans-serif;color:#445566;font-size:.97rem;line-height:1.7;}
+.integrity-note p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#445566;
+  font-size:.97rem;
+  line-height:1.7;
+}
 
 /* HOW IT WORKS */
 .how-section{background:#ffffff;}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
 .step-card{
-  background:#f4f6f9;padding:32px 28px;border-radius:14px;
+  background:#f4f6f9;
+  padding:32px 28px;
+  border-radius:14px;
   position:relative;
 }
 .step-num{
-  font-size:2.8rem;font-weight:700;color:#1d72d8;
-  opacity:0.15;line-height:1;margin-bottom:12px;
+  font-size:2.8rem;
+  font-weight:700;
+  color:#1d72d8;
+  opacity:0.15;
+  line-height:1;
+  margin-bottom:12px;
   font-family:Arial,sans-serif;
 }
-.step-card h3{margin:0 0 10px;font-size:1.1rem;color:#0d1b2a;}
-.step-card p{margin:0;font-family:Arial,sans-serif;color:#445566;font-size:.95rem;}
+.step-card h3{
+  margin:0 0 10px;
+  font-size:1.1rem;
+  color:#0d1b2a;
+}
+.step-card p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#445566;
+  font-size:.95rem;
+}
 
 /* TRUST */
-.trust-section{background:#0a182a;color:#ffffff;padding:70px 0;}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.trust-section{
+  background:#0a182a;
+  color:#ffffff;
+  padding:70px 0;
+}
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
 .trust-card{
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.08);
-  padding:28px 24px;border-radius:14px;
+  padding:28px 24px;
+  border-radius:14px;
   text-align:left;
 }
-.trust-icon{font-size:1.8rem;margin-bottom:14px;}
-.trust-card h3{margin:0 0 10px;font-size:1.05rem;color:#ffffff;}
-.trust-card p{margin:0;font-family:Arial,sans-serif;color:#9eb3cc;font-size:.92rem;line-height:1.7;}
+.trust-icon{
+  font-size:1.8rem;
+  margin-bottom:14px;
+}
+.trust-card h3{
+  margin:0 0 10px;
+  font-size:1.05rem;
+  color:#ffffff;
+}
+.trust-card p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#9eb3cc;
+  font-size:.92rem;
+  line-height:1.7;
+}
 
 /* WHY */
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-.why-card{
-  background:#ffffff;padding:24px;border-radius:14px;
-  text-align:left;box-shadow:0 10px 25px rgba(15,23,42,0.05);
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
 }
-.why-card h3{margin:0 0 10px;font-size:1.08rem;}
-.why-card p{margin:0;font-family:Arial,sans-serif;color:#4b5a68;font-size:.95rem;}
+.why-card{
+  background:#ffffff;
+  padding:24px;
+  border-radius:14px;
+  text-align:left;
+  box-shadow:0 10px 25px rgba(15,23,42,0.05);
+}
+.why-card h3{
+  margin:0 0 10px;
+  font-size:1.08rem;
+}
+.why-card p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#4b5a68;
+  font-size:.95rem;
+}
 
 /* CTA */
-.cta{background:#1d72d8;color:#ffffff;padding:70px 0;text-align:center;}
-.cta h2{margin:0 0 14px;font-size:2rem;}
-.cta p{
-  font-family:Arial,sans-serif;color:rgba(255,255,255,0.88);
-  max-width:600px;margin:0 auto 26px;
+.cta{
+  background:#1d72d8;
+  color:#ffffff;
+  padding:70px 0;
+  text-align:center;
 }
-.cta .primary-btn{background:#ffffff;color:#1d72d8;}
+.cta h2{
+  margin:0 0 14px;
+  font-size:2rem;
+}
+.cta p{
+  font-family:Arial,sans-serif;
+  color:rgba(255,255,255,0.88);
+  max-width:600px;
+  margin:0 auto 26px;
+}
+.cta .primary-btn{
+  background:#ffffff;
+  color:#1d72d8;
+}
 .cta .primary-btn:hover{background:#e8f0fb;}
 
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-.contact-card{background:#ffffff;padding:28px;border-radius:14px;box-shadow:0 10px 25px rgba(15,23,42,0.05);}
-.contact-card h3{margin-top:0;margin-bottom:12px;}
-.contact-card p{margin:0 0 12px;font-family:Arial,sans-serif;color:#4b5c6c;}
-.contact-link{color:#1d72d8;font-family:Arial,sans-serif;font-weight:700;}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.contact-card{
+  background:#ffffff;
+  padding:28px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(15,23,42,0.05);
+}
+.contact-card h3{
+  margin-top:0;
+  margin-bottom:12px;
+}
+.contact-card p{
+  margin:0 0 12px;
+  font-family:Arial,sans-serif;
+  color:#4b5c6c;
+}
+.contact-link{
+  color:#1d72d8;
+  font-family:Arial,sans-serif;
+  font-weight:700;
+}
 
 /* FOOTER */
-footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-serif;font-size:.95rem;}
-.footer-flex{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
-.footer-brand{display:flex;align-items:center;gap:10px;}
-.footer-brand img{height:30px;filter:brightness(0) invert(1);opacity:0.8;}
+footer{
+  background:#08121f;
+  color:#cbd6e2;
+  padding:28px 0;
+  font-family:Arial,sans-serif;
+  font-size:.95rem;
+}
+.footer-flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.footer-brand img{
+  height:28px;
+  filter:brightness(0) invert(1);
+  opacity:0.8;
+}
 
 /* RESPONSIVE */
 @media(max-width:900px){
   .about-grid,.service-grid,.contact-grid,.steps-grid,.trust-grid{grid-template-columns:1fr 1fr;}
   .why-grid{grid-template-columns:1fr 1fr;}
-  .nav{flex-direction:column;gap:10px;}
-  .nav-links{flex-wrap:wrap;justify-content:center;}
-  .hero-content h1{font-size:2.1rem;}
+  .nav{
+    flex-direction:column;
+    gap:10px;
+  }
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .hero{
+    min-height:46vh;
+  }
+  .hero-content h1{
+    font-size:2.2rem;
+  }
 }
 @media(max-width:600px){
-  .hero{min-height:auto;}
-  .hero-content{padding:50px 0 60px;}
-  .hero-content h1{font-size:1.8rem;}
-  .section-title{font-size:1.65rem;}
-  .about-grid,.service-grid,.contact-grid,.steps-grid,.trust-grid,.why-grid{grid-template-columns:1fr;}
-  .primary-btn,.secondary-btn,.nav-button{width:100%;text-align:center;}
-  .hero-actions{flex-direction:column;}
+  .hero{
+    min-height:auto;
+  }
+  .hero-content{
+    padding:40px 0 42px;
+  }
+  .hero-content h1{
+    font-size:1.8rem;
+  }
+  .section-title{
+    font-size:1.65rem;
+  }
+  #about{
+    padding-top:36px;
+  }
+  .about-grid,.service-grid,.contact-grid,.steps-grid,.trust-grid,.why-grid{
+    grid-template-columns:1fr;
+  }
+  .primary-btn,.secondary-btn,.nav-button{
+    width:100%;
+    text-align:center;
+  }
+  .hero-actions{
+    flex-direction:column;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <header>
   <div class="container nav">
     <div class="brand">
@@ -230,37 +470,36 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="container hero-content">
-    <h1>Research Support for University Students</h1>
-    <p class="hero-sub">Structured guidance on research topics, project development, and academic writing.</p>
-    <div class="hero-actions">
-      <a class="primary-btn" href="https://wa.me/2347087589603">Get Help Now</a>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Research Support for University Students</h1>
+      <p class="hero-sub">Structured guidance on research topics, project development, and academic writing.</p>
+      <div class="hero-actions">
+        <a class="primary-btn" href="https://wa.me/2347087589603">Get Help Now</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <h2 class="section-title">What We Do</h2>
-    <p class="section-intro">Odexar exists to help students who have solid ideas but need clarity, structure, and academic direction — from topic selection through to final presentation.</p>
+    <p class="section-intro">Odexar exists to help students who have solid ideas but need clarity, structure, and academic direction from topic selection through to final presentation.</p>
     <div class="about-grid">
       <div class="about-box">
         <h3>Who We Support</h3>
-        <p>Undergraduate and postgraduate students working on research projects, dissertations, or academic reports across disciplines — including social sciences, business, education, health sciences, and more.</p>
+        <p>Undergraduate and postgraduate students working on research projects, dissertations, or academic reports across disciplines, including social sciences, business, education, health sciences, and more.</p>
       </div>
       <div class="about-box">
         <h3>What You Can Expect</h3>
-        <p>Clear direction on your research structure, honest feedback on your writing, and practical guidance that moves your project forward — delivered professionally and confidentially.</p>
+        <p>Clear direction on your research structure, honest feedback on your writing, and practical guidance that moves your project forward, delivered professionally and confidentially.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services-section" id="services">
   <div class="container">
     <h2 class="section-title">Our Services</h2>
@@ -309,7 +548,6 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="how-section" id="how">
   <div class="container">
     <h2 class="section-title">How Odexar Works</h2>
@@ -318,23 +556,22 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
       <div class="step-card">
         <div class="step-num">01</div>
         <h3>Share Your Challenge</h3>
-        <p>Tell us where you are stuck — topic selection, proposal structure, data results, or final editing. Send a message on WhatsApp or email to get started.</p>
+        <p>Tell us where you are stuck, topic selection, proposal structure, data results, or final editing. Send a message on WhatsApp or email to get started.</p>
       </div>
       <div class="step-card">
         <div class="step-num">02</div>
         <h3>Get Structured Guidance</h3>
-        <p>We review your work, ask the right questions, and give you clear, practical direction — specific to your project, your field, and your academic level.</p>
+        <p>We review your work, ask the right questions, and give you clear, practical direction specific to your project, your field, and your academic level.</p>
       </div>
       <div class="step-card">
         <div class="step-num">03</div>
         <h3>Refine and Present Confidently</h3>
-        <p>Apply the feedback, improve your work, and submit with confidence. Your project remains entirely your own — we only help you sharpen it.</p>
+        <p>Apply the feedback, improve your work, and submit with confidence. Your project remains entirely your own. We only help you sharpen it.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRUST -->
 <section class="trust-section">
   <div class="container">
     <h2 class="section-title" style="color:#ffffff;margin-bottom:36px;">Why You Can Trust Odexar</h2>
@@ -363,7 +600,6 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
   </div>
 </section>
 
-<!-- WHY -->
 <section id="why">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -371,7 +607,7 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
     <div class="why-grid">
       <div class="why-card">
         <h3>Specific, Not Generic</h3>
-        <p>We give feedback on your actual project — not vague advice that could apply to anyone.</p>
+        <p>We give feedback on your actual project, not vague advice that could apply to anyone.</p>
       </div>
       <div class="why-card">
         <h3>Serious Academic Tone</h3>
@@ -379,7 +615,7 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
       </div>
       <div class="why-card">
         <h3>Practical Direction</h3>
-        <p>Every session ends with clear next steps you can act on — not motivational filler.</p>
+        <p>Every session ends with clear next steps you can act on, not motivational filler.</p>
       </div>
       <div class="why-card">
         <h3>Easy to Reach</h3>
@@ -389,7 +625,6 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <div class="container">
     <h2>Ready to move your research forward?</h2>
@@ -398,7 +633,6 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <h2 class="section-title">Contact Odexar</h2>
@@ -418,10 +652,15 @@ footer{background:#08121f;color:#cbd6e2;padding:28px 0;font-family:Arial,sans-se
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container footer-flex">
     <div class="footer-brand">
       <img src="odexar-icon.png" alt="Odexar">
       <span>Odexar</span>
     </div>
+    <div>© 2026 Odexar. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
