@@ -65,6 +65,7 @@ header{
 .hero-bg{
   position:absolute;
   inset:0;
+  background:url('images_odexar-hero.png.png') center center/cover no-repeat;
   z-index:0;
 }
 .hero-bg::after{
@@ -134,6 +135,15 @@ header{
 .secondary-btn:hover{
   background:rgba(255,255,255,0.18);
   border-color:rgba(255,255,255,0.4);
+}
+.form-secondary{
+  color:#16202a;
+  border-color:#d5dde7;
+  background:#f4f6f9;
+}
+.form-secondary:hover{
+  background:#e8edf3;
+  border-color:#c6d1dd;
 }
 
 /* SECTIONS */
@@ -322,6 +332,10 @@ section{padding:72px 0;}
   background:#0a182a;
   color:#ffffff;
   padding:70px 0;
+}
+.trust-title{
+  color:#ffffff;
+  margin-bottom:36px;
 }
 .trust-grid{
   display:grid;
