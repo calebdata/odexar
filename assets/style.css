@@ -77,11 +77,11 @@ header{
 .primary-btn:hover{background:#00b32e;}
 
 .hero-btn{
-  background:#080c3a;
-  color:#ffffff;
+  background:#f0ebe1;
+  color:#080c3a;
 }
 
-.hero-btn:hover{background:#0d1666;}
+.hero-btn:hover{background:#e0d8cc;}
 
 .secondary-btn{
   display:inline-block;
@@ -228,26 +228,36 @@ section{padding:60px 0;}
 
 .service-card{
   background:#ffffff;
-  padding:26px 22px;
-  border-radius:12px;
-  border:1.5px solid #080c3a;
+  padding:34px 28px;
+  border-radius:14px;
+  border:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
   display:flex;
   flex-direction:column;
   transition:transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .service-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 16px 32px rgba(8,12,58,0.12);
-  border-color:#2f6f73;
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(8,12,58,0.12);
 }
 
 .service-card h3{
-  margin:0 0 14px;
+  margin:0 0 12px;
   font-size:1.08rem;
   color:#1c2e4a;
   font-family:Georgia,"Times New Roman",serif;
   font-weight:700;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(28,46,74,0.1);
+}
+
+
+.service-card-icon{
+  font-size:2rem;
+  margin-bottom:14px;
+  display:block;
+  line-height:1;
 }
 
 .service-list{
