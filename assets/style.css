@@ -29,9 +29,10 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#e8e0d0;
+  background:#f0ebe1;
   border-bottom:1px solid #ddd8cf;
   box-shadow:0 3px 16px rgba(8,12,58,0.10);
+  background-image:linear-gradient(90deg, rgba(8,12,58,0.04) 0%, transparent 30%);
 }
 
 .nav{
@@ -77,11 +78,11 @@ header{
 .primary-btn:hover{background:#00b32e;}
 
 .hero-btn{
-  background:#ffffff;
-  color:#080c3a;
+  background:#080c3a;
+  color:#ffffff;
 }
 
-.hero-btn:hover{background:#e8f0fb;}
+.hero-btn:hover{background:#0d1666;}
 
 .secondary-btn{
   display:inline-block;
@@ -158,7 +159,7 @@ section{padding:60px 0;}
 .hero-content{
   position:relative;
   z-index:1;
-  padding:80px 0 40px;
+  padding:80px 0 20px;
 }
 
 .hero-content h1{
@@ -188,8 +189,8 @@ section{padding:60px 0;}
 
 /* ---- SERVICES ---- */
 .services-section{
-  background:#e8e0d0;
-  padding:60px 0;
+  background:#f0ebe1;
+  padding:36px 0 60px;
   border-top:1px solid rgba(28,46,74,0.08);
   box-shadow:inset 0 8px 20px rgba(0,0,0,0.03);
 }
@@ -206,7 +207,7 @@ section{padding:60px 0;}
   display:block;
   width:50px;
   height:3px;
-  background:#2f6f73;
+  background:#00cc35;
   margin:10px auto 0;
   border-radius:999px;
 }
@@ -214,7 +215,7 @@ section{padding:60px 0;}
 .services-intro{
   text-align:center;
   max-width:600px;
-  margin:16px auto 36px;
+  margin:12px auto 20px;
   color:#4a5568;
   font-family:Arial,sans-serif;
   font-size:1rem;
