@@ -10,7 +10,7 @@ html{scroll-behavior:smooth;overflow-x:hidden;}
 body{
   margin:0;
   font-family:Georgia,"Times New Roman",serif;
-  background:#f3efe8;
+  background:#f5f1ea;
   color:#4a5568;
   line-height:1.7;
   overflow-x:hidden;
@@ -29,7 +29,7 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#f3efe8;
+  background:#f5f1ea;
   border-bottom:1px solid #ddd8cf;
   box-shadow:0 3px 16px rgba(8,12,58,0.10);
 }
@@ -105,7 +105,7 @@ header{
 .form-secondary{
   color:#080c3a;
   border-color:#c8d4e0;
-  background:#f3efe8;
+  background:#f5f1ea;
 }
 
 .form-secondary:hover{
@@ -188,21 +188,33 @@ section{padding:60px 0;}
 
 /* ---- SERVICES ---- */
 .services-section{
-  background:#f3efe8;
+  background:#f5f1ea;
   padding:60px 0;
+  border-top:1px solid rgba(28,46,74,0.08);
+  box-shadow:inset 0 8px 20px rgba(0,0,0,0.03);
 }
 
 .services-title{
   text-align:center;
   color:#1c2e4a;
   font-size:2rem;
-  margin:0 0 12px;
+  margin:0 0 0;
+}
+
+.services-title::after{
+  content:"";
+  display:block;
+  width:50px;
+  height:3px;
+  background:#2f6f73;
+  margin:10px auto 0;
+  border-radius:999px;
 }
 
 .services-intro{
   text-align:center;
   max-width:600px;
-  margin:0 auto 36px;
+  margin:16px auto 36px;
   color:#4a5568;
   font-family:Arial,sans-serif;
   font-size:1rem;
@@ -227,6 +239,7 @@ section{padding:60px 0;}
 .service-card:hover{
   transform:translateY(-5px);
   box-shadow:0 16px 32px rgba(8,12,58,0.12);
+  border-color:#2f6f73;
 }
 
 .service-card h3{
@@ -321,7 +334,7 @@ section{padding:60px 0;}
 }
 
 .step-card{
-  background:#f3efe8;
+  background:#f5f1ea;
   padding:22px;
   border-radius:12px;
 }
@@ -351,7 +364,7 @@ section{padding:60px 0;}
 }
 
 /* ---- TRUST ---- */
-.trust-section{background:#f3efe8;}
+.trust-section{background:#f5f1ea;}
 
 .trust-title{
   color:#1c2e4a;
@@ -401,7 +414,7 @@ section{padding:60px 0;}
 }
 
 .faq-item{
-  background:#f3efe8;
+  background:#f5f1ea;
   padding:18px;
   border-radius:12px;
 }
@@ -421,7 +434,7 @@ section{padding:60px 0;}
 }
 
 /* ---- CONTACT ---- */
-.contact-section{background:#f3efe8;}
+.contact-section{background:#f5f1ea;}
 
 .contact-layout{
   display:grid;
@@ -582,7 +595,7 @@ footer{
 }
 
 .split-box{
-  background:#f3efe8;
+  background:#f5f1ea;
   border-radius:14px;
   padding:24px;
 }
