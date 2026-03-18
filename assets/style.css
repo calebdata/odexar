@@ -36,7 +36,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:4px 0;
+  padding:14px 0;
 }
 
 .brand-link{
@@ -59,9 +59,12 @@ header{
   align-items:center;
   font-family:Arial,sans-serif;
   font-size:.92rem;
+  font-weight:700;
 }
 
-.nav-links a:hover{color:#080c3a;}
+.nav-links a{color:#080c3a;}
+
+.nav-links a:hover{color:#00cc35;}
 
 .nav-button{
   background:#00cc35;
@@ -211,7 +214,8 @@ section{padding:50px 0;}
 }
 
 .blog-box{
-  background:#f4f6f9;
+  background:transparent;
+  border:none;
 }
 
 .split-box .section-title{
@@ -501,6 +505,7 @@ section{padding:50px 0;}
   font-family:Arial,sans-serif;
   color:#465566;
   font-size:.92rem;
+  font-weight:700;
   line-height:1.6;
 }
 
@@ -571,6 +576,7 @@ section{padding:50px 0;}
 label{
   font-family:Arial,sans-serif;
   font-size:.92rem;
+  font-weight:700;
   color:#080c3a;
   font-weight:700;
 }
