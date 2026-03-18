@@ -106,13 +106,13 @@ header{
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(8,12,58,0.55);
+  background:rgba(8,12,58,0.38);
 }
 
 .hero-content{
   position:relative;
   z-index:1;
-  padding:40px 0 24px;
+  padding:80px 0 24px;
 }
 
 .hero-content h1{
@@ -126,10 +126,13 @@ header{
 
 .hero-sub{
   font-family:Arial,sans-serif;
-  color:#e8f0fb;
+  color:#ffffff;
   max-width:600px;
   margin:0 0 22px;
-  font-size:.98rem;
+  font-size:1rem;
+  font-weight:600;
+  text-shadow:0 1px 4px rgba(0,0,0,0.6);
+  line-height:1.6;
 }
 
 .hero-actions{
@@ -198,11 +201,11 @@ section{padding:50px 0;}
 }
 
 .hero-btn{
-  background:#080c3a;
-  color:#ffffff;
+  background:#ffffff;
+  color:#080c3a;
 }
 
-.hero-btn:hover{background:#0d1260;}
+.hero-btn:hover{background:#e8f0fb;}
 .whatwedo-section{
   background:#ffffff;
   padding:44px 0;
