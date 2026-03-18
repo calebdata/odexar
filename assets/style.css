@@ -29,8 +29,9 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#ffffff;
-  border-bottom:1px solid #e0d8cc;
+  background:rgba(8,12,58,0.03);
+  backdrop-filter:blur(0px);
+  border-bottom:1px solid rgba(8,12,58,0.10);
   box-shadow:0 2px 12px rgba(8,12,58,0.08);
 }
 
