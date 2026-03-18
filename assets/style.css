@@ -39,14 +39,11 @@ header{
   padding:10px 0;
 }
 
-.brand-text{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:1.7rem;
-  font-weight:700;
-  color:#080c3a;
-  letter-spacing:-0.5px;
+.brand img{
+  height:72px;
+  width:auto;
   display:block;
-  line-height:1;
+  margin:-8px 0;
 }
 
 .nav-links{
