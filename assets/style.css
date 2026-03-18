@@ -48,7 +48,7 @@ header{
 
 /* Logo */
 .brand-logo{
-  height:80px;
+  height:22px;
   width:auto;
   display:block;
 }
@@ -64,15 +64,15 @@ header{
 .nav-links a:hover{color:#080c3a;}
 
 .nav-button{
-  background:#080c3a;
-  color:#fff !important;
+  background:#00ff41;
+  color:#080c3a !important;
   padding:9px 18px;
   border-radius:8px;
   font-weight:600;
   transition:background 0.2s;
 }
 
-.nav-button:hover{background:#0d1260;}
+.nav-button:hover{background:#00e63a;}
 
 /* ---- HERO ---- */
 .hero{
