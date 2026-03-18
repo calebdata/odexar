@@ -348,8 +348,8 @@ section{padding:50px 0;}
 
 .service-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .service-card{
