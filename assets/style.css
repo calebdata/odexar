@@ -36,7 +36,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:7px 0;
+  padding:4px 0;
 }
 
 .brand-link{
@@ -48,8 +48,8 @@ header{
 
 /* Logo */
 .brand-logo{
-  height:60px;
-  width:200px;
+  height:38px;
+  width:160px;
   object-fit:contain;
   object-position:left center;
   display:block;
