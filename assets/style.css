@@ -29,7 +29,7 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#f0ebe1;
+  background:#F4EFE8;
   border-bottom:1px solid #ddd8cf;
   box-shadow:0 2px 12px rgba(8,12,58,0.08);
 }
@@ -42,7 +42,7 @@ header{
 }
 
 .brand-logo{
-  height:28px;
+  height:22px;
   width:auto;
   display:block;
 }
@@ -171,7 +171,7 @@ section{padding:60px 0;}
 
 .hero-sub{
   font-family:Arial,sans-serif;
-  color:#ffffff;
+  color:#2c4a6b;
   max-width:600px;
   margin:0 0 24px;
   font-size:1rem;
