@@ -39,10 +39,14 @@ header{
   padding:10px 0;
 }
 
-.brand img{
-  height:75px;
-  width:auto;
+.brand-text{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.7rem;
+  font-weight:700;
+  color:#080c3a;
+  letter-spacing:-0.5px;
   display:block;
+  line-height:1;
 }
 
 .nav-links{
@@ -179,18 +183,17 @@ section{padding:50px 0;}
 
 /* ---- WHAT WE DO ---- */
 .whatwedo-section{
-  background:#080c3a;
-  color:#fff;
+  background:#ffffff;
   padding:44px 0;
 }
 
 .whatwedo-section .section-title{
-  color:#fff;
+  color:#080c3a;
   margin-bottom:10px;
 }
 
 .whatwedo-section .section-intro{
-  color:#b0bfcc;
+  color:#445566;
   max-width:700px;
 }
 
@@ -202,8 +205,8 @@ section{padding:50px 0;}
 }
 
 .whatwedo-card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
+  background:#f4f6f9;
+  border:1px solid #dde3ea;
   border-left:4px solid #00ff41;
   padding:20px;
   border-radius:10px;
@@ -212,13 +215,13 @@ section{padding:50px 0;}
 .whatwedo-card h3{
   margin:0 0 8px;
   font-size:1rem;
-  color:#fff;
+  color:#080c3a;
 }
 
 .whatwedo-card p{
   margin:0;
   font-family:Arial,sans-serif;
-  color:#9eb3cc;
+  color:#445566;
   font-size:.9rem;
   line-height:1.65;
 }
