@@ -48,10 +48,9 @@ header{
 
 /* Logo */
 .brand-logo{
-  height:55px;
-  width:220px;
-  object-fit:contain;
-  object-position:left center;
+  height:42px;
+  width:180px;
+  object-fit:fill;
   display:block;
 }
 
