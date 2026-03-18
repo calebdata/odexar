@@ -29,9 +29,9 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#F4EFE8;
+  background:#f0ebe1;
   border-bottom:1px solid #ddd8cf;
-  box-shadow:0 2px 12px rgba(8,12,58,0.08);
+  box-shadow:0 4px 18px rgba(8,12,58,0.10);
 }
 
 .nav{
@@ -42,7 +42,7 @@ header{
 }
 
 .brand-logo{
-  height:22px;
+  height:28px;
   width:auto;
   display:block;
 }
@@ -79,9 +79,15 @@ header{
 .hero-btn{
   background:#f0ebe1;
   color:#080c3a;
+  border:2px solid rgba(28,46,74,0.25);
+  font-weight:700;
+  letter-spacing:0.02em;
 }
 
-.hero-btn:hover{background:#e0d8cc;}
+.hero-btn:hover{
+  background:#ffffff;
+  border-color:rgba(28,46,74,0.4);
+}
 
 .secondary-btn{
   display:inline-block;
@@ -158,20 +164,20 @@ section{padding:60px 0;}
 .hero-content{
   position:relative;
   z-index:1;
-  padding:80px 0 20px;
+  padding:60px 0 10px;
 }
 
 .hero-content h1{
   font-size:2.2rem;
   line-height:1.1;
-  margin:0 0 14px;
+  margin:0 0 8px;
   color:#fff;
   white-space:nowrap;
 }
 
 .hero-sub{
   font-family:Arial,sans-serif;
-  color:#2c4a6b;
+  color:#ffffff;
   max-width:600px;
   margin:0 0 24px;
   font-size:1rem;
@@ -189,7 +195,7 @@ section{padding:60px 0;}
 /* ---- SERVICES ---- */
 .services-section{
   background:#eaecf0;
-  padding:36px 0 60px;
+  padding:24px 0 60px;
   border-top:1px solid rgba(28,46,74,0.08);
   box-shadow:inset 0 8px 20px rgba(0,0,0,0.03);
 }
