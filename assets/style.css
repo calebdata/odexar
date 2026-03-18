@@ -105,11 +105,12 @@ header{
 }
 
 .hero-content h1{
-  font-size:2.7rem;
+  font-size:2.2rem;
   line-height:1.1;
   margin:0 0 12px;
   color:#fff;
   max-width:620px;
+  white-space:nowrap;
 }
 
 .hero-sub{
@@ -185,7 +186,12 @@ section{padding:50px 0;}
   margin:0 0 24px;
 }
 
-/* ---- WHAT WE DO + BLOG SPLIT ---- */
+.hero-btn{
+  background:#080c3a;
+  color:#ffffff;
+}
+
+.hero-btn:hover{background:#0d1260;}
 .whatwedo-section{
   background:#ffffff;
   padding:44px 0;
@@ -710,6 +716,7 @@ footer{
 
   .hero-content h1{
     font-size:1.75rem;
+    white-space:normal;
   }
 
   .section-title,
