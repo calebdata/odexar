@@ -348,7 +348,7 @@ section{padding:50px 0;}
 
 .service-grid{
   display:grid;
-  grid-template-columns:1fr;
+  grid-template-columns:1fr 1fr;
   gap:16px;
 }
 
@@ -866,16 +866,20 @@ footer{
 }
 
 .how-stack{
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:16px;
   margin-bottom:24px;
 }
 
 .how-card{
   display:flex;
-  gap:14px;
-  align-items:flex-start;
+  flex-direction:column;
+  gap:8px;
+  background:#f4f6f9;
+  border:1px solid #dde3ea;
+  border-radius:10px;
+  padding:16px;
 }
 
 .how-num{
