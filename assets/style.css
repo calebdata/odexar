@@ -915,11 +915,6 @@ footer{
 }
 
 /* ---- SERVICES + HOW TWO COLUMN ---- */
-.services-section{
-  background:#f8faf9;
-  padding:60px 0;
-}
-
 .services-how-wrapper{
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
