@@ -1,431 +1,207 @@
-:root {
-  --primary: #020a63;
-  --accent: #11f20e;
-  --text: #101828;
-  --muted: #475467;
-  --bg: #ffffff;
-  --surface: #f8fafc;
-  --border: #e4e7ec;
-  --shadow: 0 10px 30px rgba(2, 10, 99, 0.08);
-  --radius: 18px;
-  --container: 1120px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(100% - 2rem, var(--container));
-  margin-inline: auto;
-}
-
-.narrow {
-  max-width: 800px;
-}
-
-.section {
-  padding: 5rem 0;
-}
-
-.section-heading {
-  max-width: 680px;
-  margin-bottom: 2.5rem;
-}
-
-.section-heading.center {
-  margin-inline: auto;
-  text-align: center;
-}
-
-.eyebrow {
-  margin: 0 0 0.75rem;
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-h1,
-h2,
-h3 {
-  margin-top: 0;
-  line-height: 1.15;
-  color: var(--primary);
-}
-
-h1 {
-  margin-bottom: 1rem;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-}
-
-h2 {
-  margin-bottom: 0.9rem;
-  font-size: clamp(1.8rem, 4vw, 2.7rem);
-}
-
-h3 {
-  margin-bottom: 0.6rem;
-  font-size: 1.2rem;
-}
-
-p {
-  margin-top: 0;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(228, 231, 236, 0.8);
-}
-
-.nav {
-  min-height: 78px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.brand img {
-  width: 150px;
-  height: auto;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.nav-links a {
-  font-size: 0.96rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.nav-links a:hover {
-  color: var(--primary);
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0.85rem 1.25rem;
-  border-radius: 999px;
-  font-weight: 700;
-  transition: 0.2s ease;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: #ffffff;
-  box-shadow: var(--shadow);
-}
-
-.btn-primary:hover {
-  opacity: 0.92;
-}
-
-.btn-secondary {
-  border: 1px solid var(--border);
-  background: #ffffff;
-  color: var(--primary);
-}
-
-.btn-secondary:hover {
-  border-color: var(--primary);
-}
-
-.btn-nav {
-  min-height: 42px;
-  padding: 0.7rem 1rem;
-  background: var(--primary);
-  color: #ffffff;
-}
-
-.hero {
-  padding: 4rem 0 4.5rem;
-  background:
-    radial-gradient(circle at top left, rgba(17, 242, 14, 0.08), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: 2.5rem;
-  min-height: 70vh;
-}
-
-.hero-copy {
-  max-width: 620px;
-}
-
-.hero-text {
-  color: var(--muted);
-  font-size: 1.05rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero-points {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.point {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  color: var(--text);
-  font-weight: 600;
-}
-
-.point img {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-}
-
-.hero-media {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-media img {
-  width: 100%;
-  max-width: 620px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-}
-
-.services {
-  background: #ffffff;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-}
-
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-}
-
-.card-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 1rem;
-  border-radius: 50%;
-  background: rgba(2, 10, 99, 0.06);
-}
-
-.card-icon img {
-  width: 24px;
-  height: 24px;
-}
-
-.card p,
-.feature-box p,
-.contact-copy p,
-.footer-brand p,
-.section-heading p {
-  color: var(--muted);
-}
-
-.why {
-  background: #f8fbff;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-}
-
-.feature-box {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.6rem;
-}
-
-.about {
-  background: #ffffff;
-}
-
-.contact-box {
-  background: linear-gradient(135deg, rgba(2, 10, 99, 0.98), rgba(4, 18, 104, 0.92));
-  color: #ffffff;
-  border-radius: 24px;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-}
-
-.contact-box h2,
-.contact-box .eyebrow,
-.contact-box p {
-  color: #ffffff;
-}
-
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.contact-actions .btn-secondary {
-  background: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.site-footer {
-  padding: 2.5rem 0;
-  border-top: 1px solid var(--border);
-  background: #ffffff;
-}
-
-.footer-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.footer-brand img {
-  margin-bottom: 1rem;
-  width: 140px;
-  height: auto;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.25rem;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.footer-links a:hover {
-  color: var(--primary);
-}
-
-@media (max-width: 980px) {
-  .hero-grid,
-  .card-grid,
-  .feature-grid,
-  .contact-box,
-  .footer-wrap {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-grid {
-    display: grid;
-    min-height: auto;
-  }
-
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-box,
-  .footer-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 760px) {
-  .nav {
-    min-height: auto;
-    padding: 1rem 0;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 0.8rem 1rem;
-  }
-
-  .brand img {
-    width: 135px;
-  }
-
-  .hero {
-    padding: 3rem 0 3.5rem;
-  }
-
-  .hero-grid {
-    gap: 2rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: 4rem 0;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Odexar provides trusted academic writing, research, editing, and data analysis support for students and researchers." />
+  <meta name="theme-color" content="#020a63" />
+  <title>Odexar</title>
+
+  <link rel="icon" type="image/png" href="./assets/odexar-icon.png" />
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Odexar home">
+        <img src="./assets/odexar-logo.png" alt="Odexar logo" width="160" height="48" />
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#why-odexar">Why Odexar</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn-nav">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Academic excellence with structure and clarity</p>
+          <h1>Research and academic support that helps serious work stand out.</h1>
+          <p class="hero-text">
+            Odexar supports students, researchers, and professionals with academic writing,
+            research guidance, editing, proofreading, and data analysis services built for quality.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Request a Service</a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="point">
+              <img src="./assets/odexar-icon.png" alt="" width="18" height="18" />
+              <span>Clear academic standards</span>
+            </div>
+            <div class="point">
+              <img src="./assets/odexar-icon.png" alt="" width="18" height="18" />
+              <span>Reliable support process</span>
+            </div>
+            <div class="point">
+              <img src="./assets/odexar-icon.png" alt="" width="18" height="18" />
+              <span>Fast and focused delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img
+            src="./assets/image_odexar-hero.webp"
+            alt="Research workspace with books, documents, laptop, and charts"
+            width="768"
+            height="512"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What we do</p>
+          <h2>Core Services</h2>
+          <p>
+            Practical support for academic and professional research work.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon">
+              <img src="./assets/odexar-icon.png" alt="" width="24" height="24" />
+            </div>
+            <h3>Academic Writing</h3>
+            <p>
+              Structured assistance for essays, reports, dissertations, and scholarly documents.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <img src="./assets/odexar-icon.png" alt="" width="24" height="24" />
+            </div>
+            <h3>Editing and Proofreading</h3>
+            <p>
+              Detailed review for grammar, clarity, coherence, formatting, and tone.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <img src="./assets/odexar-icon.png" alt="" width="24" height="24" />
+            </div>
+            <h3>Research Support</h3>
+            <p>
+              Guidance for topic development, sourcing, literature review, and research structure.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <img src="./assets/odexar-icon.png" alt="" width="24" height="24" />
+            </div>
+            <h3>Data Analysis</h3>
+            <p>
+              Support with interpretation, presentation, and analytical reporting for research data.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why section" id="why-odexar">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Why Odexar</p>
+          <h2>Built for serious academic work</h2>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-box">
+            <h3>Professional Presentation</h3>
+            <p>
+              Your work should read clearly, look polished, and reflect sound academic discipline.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <h3>Trusted Process</h3>
+            <p>
+              Every project benefits from a methodical approach that values structure, precision, and readability.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <h3>Efficient Delivery</h3>
+            <p>
+              Strong support should not come with a slow and cluttered experience, whether on the page or in the work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container narrow">
+        <div class="section-heading center">
+          <p class="eyebrow">About</p>
+          <h2>Support that respects the discipline of research</h2>
+          <p>
+            Odexar exists to help students and researchers present stronger academic work through
+            clear writing, careful editing, structured research support, and thoughtful analysis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container contact-box">
+        <div class="contact-copy">
+          <p class="eyebrow">Get started</p>
+          <h2>Need support for your next academic project?</h2>
+          <p>
+            Contact Odexar for writing, editing, research, or data analysis support tailored to your work.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a href="mailto:hello@odexar.com" class="btn btn-primary">Email Odexar</a>
+          <a href="#" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-brand">
+        <img src="./assets/odexar-logo.png" alt="Odexar logo" width="140" height="42" />
+        <p>Academic writing, research, editing, and analysis support.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#why-odexar">Why Odexar</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
