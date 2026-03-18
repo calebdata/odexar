@@ -327,13 +327,13 @@ section{padding:50px 0;}
 
 /* ---- SERVICES ---- */
 .services-section{
-  background:#0d1117;
+  background:#e8edf5;
   padding:60px 0;
 }
 
 .services-title{
   text-align:center !important;
-  color:#ffffff;
+  color:#080c3a;
 }
 
 .services-intro{
@@ -342,7 +342,7 @@ section{padding:50px 0;}
   margin-left:auto;
   margin-right:auto;
   margin-bottom:40px;
-  color:#9eb3cc;
+  color:#445566;
   font-size:1rem;
 }
 
@@ -353,7 +353,7 @@ section{padding:50px 0;}
 }
 
 .service-card{
-  background:#161c26;
+  background:#1a2235;
   padding:32px 28px;
   border-radius:16px;
   border:1px solid rgba(255,255,255,0.07);
@@ -378,7 +378,7 @@ section{padding:50px 0;}
 
 .service-card:hover{
   transform:translateY(-8px);
-  box-shadow:0 24px 48px rgba(0,0,0,0.4);
+  box-shadow:0 24px 48px rgba(8,12,58,0.2);
   border-color:rgba(0,204,53,0.2);
 }
 
@@ -410,7 +410,7 @@ section{padding:50px 0;}
 .service-card > p{
   margin:0 0 20px;
   font-family:Arial,sans-serif;
-  color:#7a95b0;
+  color:#9eb3cc;
   font-size:.9rem;
   line-height:1.65;
 }
@@ -473,28 +473,29 @@ section{padding:50px 0;}
 
 .integrity-note{
   margin-top:32px;
-  background:rgba(255,255,255,0.04);
+  background:#ffffff;
   border-left:4px solid #00cc35;
   padding:18px 20px;
   border-radius:0 10px 10px 0;
+  box-shadow:0 6px 20px rgba(8,12,58,0.05);
 }
 
 .integrity-note p{
   margin:0;
   font-family:Arial,sans-serif;
-  color:#7a95b0;
+  color:#445566;
   font-size:.9rem;
   line-height:1.7;
 }
 
 .integrity-note strong{
-  color:#c8d8e8;
+  color:#080c3a;
 }
 
 .inline-cta{
   margin-top:24px;
-  background:rgba(0,204,53,0.08);
-  border:1px solid rgba(0,204,53,0.2);
+  background:#080c3a;
+  border:none;
   color:#ffffff;
   padding:24px 28px;
   border-radius:14px;
@@ -514,7 +515,7 @@ section{padding:50px 0;}
 .inline-cta-text p{
   margin:0;
   font-family:Arial,sans-serif;
-  color:#9eb3cc;
+  color:#c9d8e7;
   font-size:.93rem;
 }
 
