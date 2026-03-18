@@ -10,7 +10,7 @@ html{scroll-behavior:smooth;overflow-x:hidden;}
 body{
   margin:0;
   font-family:Georgia,"Times New Roman",serif;
-  background:#f5f1ea;
+  background:#e8e0d0;
   color:#4a5568;
   line-height:1.7;
   overflow-x:hidden;
@@ -29,7 +29,7 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#f5f1ea;
+  background:#e8e0d0;
   border-bottom:1px solid #ddd8cf;
   box-shadow:0 3px 16px rgba(8,12,58,0.10);
 }
@@ -105,7 +105,7 @@ header{
 .form-secondary{
   color:#080c3a;
   border-color:#c8d4e0;
-  background:#f5f1ea;
+  background:#e8e0d0;
 }
 
 .form-secondary:hover{
@@ -188,7 +188,7 @@ section{padding:60px 0;}
 
 /* ---- SERVICES ---- */
 .services-section{
-  background:#f5f1ea;
+  background:#e8e0d0;
   padding:60px 0;
   border-top:1px solid rgba(28,46,74,0.08);
   box-shadow:inset 0 8px 20px rgba(0,0,0,0.03);
@@ -334,7 +334,7 @@ section{padding:60px 0;}
 }
 
 .step-card{
-  background:#f5f1ea;
+  background:#e8e0d0;
   padding:22px;
   border-radius:12px;
 }
@@ -364,7 +364,7 @@ section{padding:60px 0;}
 }
 
 /* ---- TRUST ---- */
-.trust-section{background:#f5f1ea;}
+.trust-section{background:#e8e0d0;}
 
 .trust-title{
   color:#1c2e4a;
@@ -414,7 +414,7 @@ section{padding:60px 0;}
 }
 
 .faq-item{
-  background:#f5f1ea;
+  background:#e8e0d0;
   padding:18px;
   border-radius:12px;
 }
@@ -434,7 +434,7 @@ section{padding:60px 0;}
 }
 
 /* ---- CONTACT ---- */
-.contact-section{background:#f5f1ea;}
+.contact-section{background:#e8e0d0;}
 
 .contact-layout{
   display:grid;
@@ -595,7 +595,7 @@ footer{
 }
 
 .split-box{
-  background:#f5f1ea;
+  background:#e8e0d0;
   border-radius:14px;
   padding:24px;
 }
