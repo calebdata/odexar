@@ -327,7 +327,7 @@ section{padding:50px 0;}
 
 /* ---- SERVICES ---- */
 .services-section{
-  background:#d0d9e8;
+  background:#b8c5d9;
   padding:60px 0;
 }
 
@@ -348,42 +348,33 @@ section{padding:50px 0;}
 
 .service-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  grid-template-columns:1fr;
+  gap:16px;
 }
 
 .service-card{
   background:#ffffff;
-  padding:32px 28px;
-  border-radius:16px;
-  border:1px solid #dde3ea;
+  padding:24px 22px;
+  border-radius:12px;
+  border:1.5px solid #080c3a;
   position:relative;
   overflow:hidden;
-  transition:all 0.3s ease;
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
   display:flex;
   flex-direction:column;
 }
 
 .service-card::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:3px;
-  background:linear-gradient(90deg,#00cc35,#080c3a);
-  opacity:0;
-  transition:opacity 0.3s ease;
+  display:none;
 }
 
 .service-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 24px 48px rgba(8,12,58,0.12);
-  border-color:rgba(0,204,53,0.3);
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(8,12,58,0.12);
 }
 
 .service-card:hover::before{
-  opacity:1;
+  display:none;
 }
 
 .service-card h3{
@@ -396,13 +387,7 @@ section{padding:50px 0;}
   letter-spacing:0.01em;
 }
 
-.service-card > p{
-  margin:0 0 20px;
-  font-family:Arial,sans-serif;
-  color:#4a5568;
-  font-size:.9rem;
-  line-height:1.65;
-}
+.service-card > p{display:none;}
 
 .service-list{
   list-style:none;
@@ -844,5 +829,82 @@ footer{
   .hero-actions,
   .form-actions{
     flex-direction:column;
+  }
+}
+
+/* ---- SERVICES + HOW LAYOUT ---- */
+.services-how-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+
+.services-col{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.how-col{
+  background:#ffffff;
+  border-radius:14px;
+  padding:28px 24px;
+  border:1.5px solid #080c3a;
+}
+
+.how-col .section-title{
+  color:#080c3a;
+  font-size:1.5rem;
+  margin-bottom:8px;
+}
+
+.how-col .section-intro{
+  color:#445566;
+  margin-bottom:20px;
+  font-size:.93rem;
+}
+
+.how-stack{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-bottom:24px;
+}
+
+.how-card{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.how-num{
+  font-family:Arial,sans-serif;
+  font-size:1.4rem;
+  font-weight:700;
+  color:#080c3a;
+  opacity:0.2;
+  line-height:1;
+  flex-shrink:0;
+  width:32px;
+}
+
+.how-card h3{
+  margin:0 0 4px;
+  font-size:.98rem;
+  color:#1c2e4a;
+}
+
+.how-card p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.88rem;
+  line-height:1.6;
+}
+
+@media(max-width:900px){
+  .services-how-grid{
+    grid-template-columns:1fr;
   }
 }
