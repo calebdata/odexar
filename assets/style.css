@@ -84,7 +84,7 @@ header{
   display:inline-block;
   padding:12px 22px;
   border-radius:8px;
-  background:#2ea84e;
+  background:#3a7d52;
   color:#ffffff;
   font-weight:700;
   font-family:Arial,sans-serif;
@@ -94,7 +94,7 @@ header{
   text-decoration:none;
 }
 
-.primary-btn:hover{background:#27913f;}
+.primary-btn:hover{background:#2d6b43;}
 
 .hero-btn{
   background:#080c3a;
@@ -185,7 +185,7 @@ section{padding:48px 0;}
 .hero-content{
   position:relative;
   z-index:1;
-  padding:60px 0 10px;
+  padding:50px 0 6px;
 }
 
 .hero-content h1{
@@ -216,7 +216,7 @@ section{padding:48px 0;}
 /* ---- SERVICES ---- */
 .services-section{
   background:#eaecf0;
-  padding:20px 0 28px;
+  padding:10px 0 28px;
   border-top:none;
   box-shadow:inset 0 10px 24px rgba(0,0,0,0.04);
 }
@@ -637,11 +637,11 @@ textarea{resize:vertical;min-height:130px;}
 }
 
 .cta .primary-btn{
-  background:#2ea84e;
+  background:#3a7d52;
   color:#ffffff;
 }
 
-.cta .primary-btn:hover{background:#27913f;}
+.cta .primary-btn:hover{background:#2d6b43;}
 
 /* ---- FOOTER ---- */
 footer{
