@@ -141,7 +141,7 @@ header{
 }
 
 /* ---- SHARED SECTION STYLES ---- */
-section{padding:44px 0;}
+section{padding:32px 0;}
 
 .section-title{
   font-size:2rem;
@@ -216,7 +216,7 @@ section{padding:44px 0;}
 /* ---- SERVICES ---- */
 .services-section{
   background:#eaecf0;
-  padding:20px 0 50px;
+  padding:20px 0 28px;
   border-top:none;
   box-shadow:inset 0 10px 24px rgba(0,0,0,0.04);
 }
@@ -378,7 +378,7 @@ section{padding:44px 0;}
 /* ---- HOW IT WORKS ---- */
 .how-section{
   background:transparent;
-  padding-top:20px;
+  padding-top:8px;
 }
 
 .steps-grid{
