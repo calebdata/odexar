@@ -378,41 +378,125 @@ section{padding:60px 0;}
 /* ---- HOW IT WORKS ---- */
 .how-section{background:transparent;}
 
-.steps-grid{
+.how-blog-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  grid-template-columns:2fr 3fr;
+  gap:36px;
+  align-items:start;
+}
+
+.how-col,.blog-col{
+  display:flex;
+  flex-direction:column;
+}
+
+.steps-stack{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-bottom:20px;
 }
 
 .step-card{
-  background:#e8e0d0;
-  padding:22px;
-  border-radius:12px;
+  background:#ffffff;
+  padding:16px 18px;
+  border-radius:10px;
+  border:1px solid #e8e4dc;
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  gap:14px;
 }
 
 .step-num{
-  font-size:2.4rem;
+  font-size:1.4rem;
   font-weight:700;
-  color:#1c2e4a;
-  opacity:0.15;
+  color:#080c3a;
+  opacity:0.25;
   line-height:1;
-  margin-bottom:10px;
+  flex-shrink:0;
+  width:36px;
+  padding-top:2px;
   font-family:Arial,sans-serif;
 }
 
+.step-body{flex:1;}
+
 .step-card h3{
-  margin:0 0 8px;
-  font-size:1.05rem;
+  margin:0 0 4px;
+  font-size:.95rem;
   color:#1c2e4a;
+  line-height:1.3;
 }
 
 .step-card p{
   margin:0;
   font-family:Arial,sans-serif;
   color:#4a5568;
-  font-size:.93rem;
-  line-height:1.7;
+  font-size:.88rem;
+  line-height:1.6;
 }
+
+.blog-col .section-title{
+  font-size:1.6rem;
+  margin-bottom:6px;
+}
+
+.blog-col .section-intro{
+  margin-bottom:16px;
+  font-size:.93rem;
+}
+
+.blog-stack{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.blog-card{
+  background:#ffffff;
+  border:1px solid #e8e4dc;
+  border-left:3px solid #00cc35;
+  padding:16px;
+  border-radius:10px;
+}
+
+.blog-tag{
+  display:inline-block;
+  font-family:Arial,sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+  color:#4caf72;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  margin-bottom:5px;
+}
+
+.blog-card h3{
+  margin:0 0 6px;
+  font-size:.92rem;
+  color:#1c2e4a;
+  line-height:1.35;
+}
+
+.blog-card p{
+  margin:0 0 8px;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.85rem;
+  line-height:1.55;
+}
+
+.blog-link{
+  font-family:Arial,sans-serif;
+  font-size:.83rem;
+  font-weight:600;
+  color:#1c2e4a;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.blog-link:hover{color:#00cc35;}
 
 /* ---- TRUST ---- */
 .trust-section{background:#e8e0d0;}
@@ -742,10 +826,10 @@ footer{
 /* ---- RESPONSIVE ---- */
 @media(max-width:900px){
   .service-grid,
-  .steps-grid,
   .trust-grid,
   .faq-grid,
-  .split-grid{
+  .how-blog-grid,
+  .blog-stack{
     grid-template-columns:1fr 1fr;
   }
 
@@ -769,10 +853,10 @@ footer{
 
 @media(max-width:600px){
   .service-grid,
-  .steps-grid,
   .trust-grid,
   .faq-grid,
-  .split-grid,
+  .how-blog-grid,
+  .blog-stack,
   .form-grid{
     grid-template-columns:1fr;
   }
