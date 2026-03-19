@@ -84,7 +84,7 @@ header{
   display:inline-block;
   padding:12px 22px;
   border-radius:8px;
-  background:#3a7d52;
+  background:#2ea84e;
   color:#ffffff;
   font-weight:700;
   font-family:Arial,sans-serif;
@@ -94,7 +94,7 @@ header{
   text-decoration:none;
 }
 
-.primary-btn:hover{background:#2d6b43;}
+.primary-btn:hover{background:#27913f;}
 
 .hero-btn{
   background:#080c3a;
@@ -324,6 +324,8 @@ section{padding:48px 0;}
   color:#1c2e4a;
   text-decoration:none;
   margin-top:auto;
+  text-align:right;
+  display:block;
 }
 
 .service-cta:hover{
@@ -637,11 +639,11 @@ textarea{resize:vertical;min-height:130px;}
 }
 
 .cta .primary-btn{
-  background:#3a7d52;
+  background:#2ea84e;
   color:#ffffff;
 }
 
-.cta .primary-btn:hover{background:#2d6b43;}
+.cta .primary-btn:hover{background:#27913f;}
 
 /* ---- FOOTER ---- */
 footer{
@@ -899,9 +901,9 @@ footer{
 .blog-card{
   background:#ffffff;
   border:1px solid #e8e4dc;
-  border-left:3px solid #2ea84e;
-  padding:16px 18px;
-  border-radius:0 10px 10px 0;
+  border-top:3px solid #2ea84e;
+  padding:18px;
+  border-radius:0 0 10px 10px;
 }
 
 .blog-tag{
@@ -943,8 +945,166 @@ footer{
 
 /* Inline CTA button - lightened navy matching how we work cards */
 .how-cta-btn{
-  background:#243d5c;
+  background:#2ea84e;
   color:#ffffff;
 }
 
-.how-cta-btn:hover{background:#1a2d4a;}
+.how-cta-btn:hover{background:#27913f;}
+
+/* ---- BLOG STANDALONE ---- */
+.blog-section{background:#f0ebe1;}
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+/* ---- FAQ TIGHTENED ---- */
+.faq-list{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+.faq-item{
+  background:transparent;
+  border:none;
+  border-bottom:1px solid rgba(28,46,74,0.08);
+  padding:12px 0;
+  border-radius:0;
+}
+
+.faq-item:last-child{border-bottom:none;}
+
+.faq-item h3{
+  margin:0 0 4px;
+  font-size:.93rem;
+  color:#1c2e4a;
+  font-weight:700;
+}
+
+.faq-item p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.88rem;
+  line-height:1.55;
+}
+
+/* ---- CONTACT + FAQ SPLIT ---- */
+.contact-faq-section{background:#eaecf0;}
+
+.contact-faq-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:36px;
+  align-items:start;
+}
+
+.contact-col,.faq-col{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.faq-col .section-title{
+  font-size:1.5rem;
+  margin-bottom:4px;
+}
+
+.faq-col .section-intro{
+  margin-bottom:12px;
+  font-size:.93rem;
+}
+
+@media(max-width:900px){
+  .blog-grid{grid-template-columns:1fr 1fr;}
+  .contact-faq-grid{grid-template-columns:1fr;}
+  .trust-blog-grid{grid-template-columns:1fr;}
+}
+
+@media(max-width:600px){
+  .blog-grid{grid-template-columns:1fr;}
+}
+
+/* ---- BLOG STANDALONE ---- */
+.blog-section{background:#eaecf0;}
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.blog-section .blog-card{
+  background:#ffffff;
+  border:1px solid #e8e4dc;
+  border-top:3px solid #2ea84e;
+  padding:18px;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+}
+
+.blog-section .blog-card h3{
+  margin:6px 0 8px;
+  font-size:.92rem;
+  color:#1c2e4a;
+  line-height:1.35;
+  flex:1;
+}
+
+.blog-section .blog-card p{
+  margin:0 0 10px;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.85rem;
+  line-height:1.55;
+}
+
+/* ---- CONTACT + FAQ SPLIT ---- */
+.contact-faq-section{background:#f0ebe1;}
+
+.contact-faq-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:36px;
+  align-items:start;
+}
+
+.contact-col,.faq-col{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.faq-list{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+.faq-item{
+  padding:12px 0;
+  border-bottom:1px solid rgba(28,46,74,0.08);
+}
+
+.faq-item:last-child{border-bottom:none;}
+
+.faq-item h3{
+  margin:0 0 4px;
+  font-size:.93rem;
+  color:#1c2e4a;
+  font-family:Georgia,serif;
+  font-weight:700;
+  line-height:1.3;
+}
+
+.faq-item p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.88rem;
+  line-height:1.6;
+}
