@@ -84,8 +84,8 @@ header{
   display:inline-block;
   padding:12px 22px;
   border-radius:8px;
-  background:#00cc35;
-  color:#080c3a;
+  background:#2ea84e;
+  color:#ffffff;
   font-weight:700;
   font-family:Arial,sans-serif;
   border:none;
@@ -94,7 +94,7 @@ header{
   text-decoration:none;
 }
 
-.primary-btn:hover{background:#00b32e;}
+.primary-btn:hover{background:#27913f;}
 
 .hero-btn{
   background:#080c3a;
@@ -392,6 +392,7 @@ section{padding:48px 0;}
   max-width:600px;
   margin-left:auto;
   margin-right:auto;
+  margin-bottom:32px;
 }
 
 .steps-grid{
@@ -421,8 +422,8 @@ section{padding:48px 0;}
 .step-num{
   font-size:1.6rem;
   font-weight:700;
-  color:#7a9cc4;
-  opacity:1;
+  color:#f0ebe1;
+  opacity:0.7;
   line-height:1;
   flex-shrink:0;
   width:36px;
@@ -635,11 +636,11 @@ textarea{resize:vertical;min-height:130px;}
 }
 
 .cta .primary-btn{
-  background:#00cc35;
-  color:#080c3a;
+  background:#2ea84e;
+  color:#ffffff;
 }
 
-.cta .primary-btn:hover{background:#00b32e;}
+.cta .primary-btn:hover{background:#27913f;}
 
 /* ---- FOOTER ---- */
 footer{
