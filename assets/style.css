@@ -141,7 +141,7 @@ header{
 }
 
 /* ---- SHARED SECTION STYLES ---- */
-section{padding:32px 0;}
+section{padding:48px 0;}
 
 .section-title{
   font-size:2rem;
@@ -378,7 +378,7 @@ section{padding:32px 0;}
 /* ---- HOW IT WORKS ---- */
 .how-section{
   background:transparent;
-  padding-top:32px;
+  padding-top:44px;
 }
 
 .how-section .section-title{
@@ -399,10 +399,10 @@ section{padding:32px 0;}
 }
 
 .step-card{
-  background:#080c3a;
+  background:#1a2d4a;
   padding:22px;
   border-radius:14px;
-  border:1px solid rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
   display:flex;
   flex-direction:row;
   align-items:flex-start;
@@ -419,8 +419,8 @@ section{padding:32px 0;}
 .step-num{
   font-size:1.6rem;
   font-weight:700;
-  color:#ffffff;
-  opacity:0.2;
+  color:#7a9cc4;
+  opacity:1;
   line-height:1;
   flex-shrink:0;
   width:36px;
@@ -428,7 +428,10 @@ section{padding:32px 0;}
   padding-top:2px;
 }
 
-.step-body{flex:1;}
+.step-body{
+  flex:1;
+  text-align:left;
+}
 
 .step-card h3{
   margin:0 0 4px;
