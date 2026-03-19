@@ -826,3 +826,125 @@ footer{
 
   .hero-actions,.form-actions{flex-direction:column;}
 }
+
+/* ---- TRUST + BLOG SIDE BY SIDE ---- */
+.trust-blog-section{
+  background:#f0ebe1;
+  padding:48px 0;
+}
+
+.trust-blog-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:36px;
+  align-items:start;
+}
+
+.trust-col,.blog-col{
+  display:flex;
+  flex-direction:column;
+}
+
+.trust-col .section-title,
+.blog-col .section-title{
+  font-size:1.5rem;
+  margin-bottom:6px;
+}
+
+.trust-col .section-intro,
+.blog-col .section-intro{
+  margin-bottom:20px;
+  font-size:.93rem;
+}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.trust-card{
+  background:#ffffff;
+  padding:16px;
+  border-radius:12px;
+  border:1px solid #e8e4dc;
+  border-top:3px solid #2ea84e;
+}
+
+.trust-icon{
+  font-size:1.4rem;
+  margin-bottom:8px;
+}
+
+.trust-card h3{
+  margin:0 0 6px;
+  font-size:.93rem;
+  color:#1c2e4a;
+}
+
+.trust-card p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.85rem;
+  line-height:1.6;
+}
+
+.blog-stack{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.blog-card{
+  background:#ffffff;
+  border:1px solid #e8e4dc;
+  border-left:3px solid #2ea84e;
+  padding:16px 18px;
+  border-radius:0 10px 10px 0;
+}
+
+.blog-tag{
+  display:inline-block;
+  font-family:Arial,sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+  color:#3a7d52;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  margin-bottom:5px;
+}
+
+.blog-card h3{
+  margin:0 0 5px;
+  font-size:.93rem;
+  color:#1c2e4a;
+  line-height:1.35;
+}
+
+.blog-card p{
+  margin:0 0 8px;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.85rem;
+  line-height:1.55;
+}
+
+.blog-link{
+  font-family:Arial,sans-serif;
+  font-size:.83rem;
+  font-weight:600;
+  color:#243d5c;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.blog-link:hover{color:#3a7d52;}
+
+/* Inline CTA button - lightened navy matching how we work cards */
+.how-cta-btn{
+  background:#243d5c;
+  color:#ffffff;
+}
+
+.how-cta-btn:hover{background:#1a2d4a;}
