@@ -29,8 +29,8 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#f0ebe1;
-  border-bottom:1px solid #ddd8cf;
+  background:#e8e0d0;
+  border-bottom:1px solid #d4cab8;
   box-shadow:0 4px 18px rgba(8,12,58,0.10);
 }
 
@@ -321,21 +321,21 @@ section{padding:48px 0;}
   font-family:Arial,sans-serif;
   font-size:.82rem;
   font-weight:600;
-  color:#4caf72;
+  color:#1c2e4a;
   text-decoration:none;
   margin-top:auto;
 }
 
 .service-cta:hover{
-  color:#00cc35;
+  color:#2ea84e;
   text-decoration:underline;
   text-underline-offset:3px;
 }
 
 .integrity-note{
   margin-top:16px;
-  background:#ffffff;
-  border-left:4px solid #00cc35;
+  background:#f0ebe1;
+  border-left:4px solid #2ea84e;
   padding:18px 24px;
   border-radius:0 10px 10px 0;
   box-shadow:0 6px 20px rgba(8,12,58,0.05);
@@ -399,13 +399,14 @@ section{padding:48px 0;}
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:16px;
+  margin-top:24px;
 }
 
 .step-card{
-  background:#1a2d4a;
+  background:#243d5c;
   padding:22px;
   border-radius:14px;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.10);
   display:flex;
   flex-direction:row;
   align-items:flex-start;
@@ -452,7 +453,7 @@ section{padding:48px 0;}
 }
 
 /* ---- TRUST ---- */
-.trust-section{background:#e8e0d0;}
+.trust-section{background:#f0ebe1;}
 
 .trust-title{
   color:#1c2e4a;
