@@ -160,7 +160,7 @@ section{padding:40px 0;}
 .hero{
   position:relative;
   width:100vw;
-  min-height:78vh;
+  min-height:65vh;
   display:flex;
   align-items:flex-start;
   left:50%;
@@ -179,7 +179,7 @@ section{padding:40px 0;}
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(8,12,58,0.38);
+  background:rgba(240,235,225,0.25);
 }
 
 .hero-content{
