@@ -156,6 +156,14 @@ section{padding:40px 0;}
   font-size:1rem;
 }
 
+
+/* Hero container flush left */
+.hero .container{
+  display:flex;
+  align-items:flex-start;
+  padding-left:4%;
+}
+
 /* ---- HERO ---- */
 .hero{
   position:relative;
@@ -179,7 +187,7 @@ section{padding:40px 0;}
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(240,235,225,0.25);
+  background:rgba(8,12,58,0.42);
 }
 
 .hero-content{
