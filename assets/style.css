@@ -170,7 +170,7 @@ section{padding:40px 0;}
 .hero-bg{
   position:absolute;
   inset:0;
-  background:url('../assets/image_odexar-hero.jpg') right top/cover no-repeat;
+  background:url('../assets/image_odexar-hero.png') center center/cover no-repeat;
   z-index:0;
   overflow:hidden;
 }
