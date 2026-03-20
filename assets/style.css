@@ -160,7 +160,7 @@ section{padding:40px 0;}
 .hero{
   position:relative;
   width:100vw;
-  min-height:63vh;
+  min-height:78vh;
   display:flex;
   align-items:flex-start;
   left:50%;
@@ -1187,4 +1187,28 @@ footer{
 @media(max-width:768px){
   .featured-post{grid-template-columns:1fr;}
   .featured-post-image{min-height:220px;}
+}
+
+/* ---- HERO RESPONSE NOTE ---- */
+.hero-response{
+  font-family:Arial,sans-serif;
+  font-size:.82rem;
+  color:rgba(255,255,255,0.65);
+  margin:8px 0 0;
+  letter-spacing:0.02em;
+}
+
+/* ---- INTEGRITY BAR ---- */
+.integrity-bar{
+  background:#1c2e4a;
+  padding:14px 0;
+  border-left:4px solid #2ea84e;
+}
+
+.integrity-bar p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:rgba(255,255,255,0.85);
+  font-size:.92rem;
+  line-height:1.6;
 }
