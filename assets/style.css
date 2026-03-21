@@ -41,11 +41,11 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:14px 0;
+  padding:22px 0 0;
 }
 
 .brand-logo{
-  height:42px;
+  height:34px;
   width:auto;
   display:block;
 }
