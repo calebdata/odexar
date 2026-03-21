@@ -49,6 +49,7 @@ header{
   display:flex;
   align-items:center;
   gap:32px;
+  line-height:1;
 }
 
 .nav-right{
@@ -62,7 +63,7 @@ header{
   font-size:13px;
   font-weight:600;
   color:#ffffff;
-  border:1.5px solid rgba(255,255,255,0.7);
+  border:1.5px solid rgba(255,255,255,0.9);
   border-radius:6px;
   padding:8px 18px;
   text-decoration:none;
@@ -156,7 +157,7 @@ header{
   font-weight:600;
   letter-spacing:0.04em;
   border-radius:8px;
-  padding:14px 32px;
+  padding:12px 24px;
   font-size:.95rem;
   box-shadow:none;
   transition:all 0.25s ease;
@@ -236,7 +237,7 @@ section{padding:40px 0;}
 .hero-bg{
   position:absolute;
   inset:0;
-  background:url('../assets/image_odexar-hero.png') 70% center/cover no-repeat;
+  background:url('../assets/image_odexar-hero.png') 55% center/cover no-repeat;
   z-index:0;
   overflow:hidden;
 }
@@ -262,7 +263,7 @@ section{padding:40px 0;}
 .hero-content{
   position:relative;
   z-index:1;
-  padding:100px 0 60px;
+  padding:80px 0 60px;
 }
 
 .hero-content h1{
