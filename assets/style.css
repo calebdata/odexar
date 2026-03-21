@@ -50,15 +50,44 @@ header{
 .nav-left{
   display:flex;
   align-items:center;
-  gap:32px;
   height:72px;
 }
 
-.nav-right{
+.nav-links{
   display:flex;
+  gap:28px;
   align-items:center;
-  gap:14px;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:0.03em;
   height:72px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.hero-signup-btn{
+  font-family:Arial,sans-serif;
+  font-size:.95rem;
+  font-weight:600;
+  color:#ffffff;
+  background:rgba(255,255,255,0.15);
+  border:1.5px solid rgba(255,255,255,0.6);
+  border-radius:8px;
+  padding:12px 24px;
+  text-decoration:none;
+  letter-spacing:0.04em;
+  transition:all 0.25s ease;
+}
+
+.hero-signup-btn:hover{
+  background:rgba(255,255,255,0.25);
+  border-color:#ffffff;
 }
 
 .brand-logo{
