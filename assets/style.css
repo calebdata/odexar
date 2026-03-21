@@ -241,7 +241,18 @@ section{padding:44px 0;}
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(8,12,58,0.55);
+  background:linear-gradient(95deg, rgba(8,12,58,0.62) 0%, rgba(8,12,58,0.40) 45%, rgba(8,12,58,0.12) 100%);
+}
+
+.hero-bg::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:140px;
+  background:linear-gradient(180deg, rgba(8,12,58,0.88) 0%, rgba(8,12,58,0.60) 50%, transparent 100%);
+  z-index:1;
 }
 
 .hero-content{
