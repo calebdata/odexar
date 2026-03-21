@@ -24,17 +24,36 @@ a{text-decoration:none;color:inherit;}
 
 /* ---- HEADER ---- */
 header{
-  position:absolute;
+  position:fixed;
   top:0;
   left:0;
   width:100%;
-  z-index:100;
+  z-index:1000;
   background:transparent;
   border:none;
   box-shadow:none;
   height:72px;
   display:flex;
   align-items:center;
+  transition:background 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled{
+  background:#ffffff;
+  box-shadow:0 2px 16px rgba(8,12,58,0.10);
+}
+
+header.scrolled .nav-links a{
+  color:#080c3a !important;
+}
+
+header.scrolled .nav-links a:hover{
+  color:#080c3a !important;
+  opacity:0.65;
+}
+
+header.scrolled .nav-signup{
+  color:#080c3a !important;
 }
 
 .nav{
@@ -824,3 +843,29 @@ footer{
 }
 
 .footer-links a:hover{color:#ffffff;}
+
+/* ---- NAV SIGNUP LINK ---- */
+.nav-signup{
+  color:#ffffff !important;
+  font-weight:700 !important;
+  border:1.5px solid rgba(255,255,255,0.7);
+  border-radius:6px;
+  padding:6px 16px !important;
+  height:auto !important;
+  transition:all 0.2s !important;
+}
+
+.nav-signup:hover{
+  background:rgba(255,255,255,0.12);
+  border-color:#ffffff;
+  opacity:1 !important;
+}
+
+header.scrolled .nav-signup{
+  border-color:rgba(8,12,58,0.4);
+  color:#080c3a !important;
+}
+
+header.scrolled .nav-signup:hover{
+  background:rgba(8,12,58,0.06);
+}
