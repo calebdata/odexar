@@ -55,12 +55,12 @@ header{
 
 .nav-links{
   display:flex;
-  gap:28px;
+  gap:36px;
   align-items:center;
   font-family:Arial,sans-serif;
   font-size:14px;
-  font-weight:500;
-  letter-spacing:0.03em;
+  font-weight:600;
+  letter-spacing:0.05em;
   height:72px;
 }
 
@@ -76,7 +76,7 @@ header{
   font-size:.95rem;
   font-weight:600;
   color:#ffffff;
-  background:rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.22);
   border:1.5px solid rgba(255,255,255,0.6);
   border-radius:8px;
   padding:12px 24px;
@@ -98,7 +98,7 @@ header{
 
 .nav-links{
   display:flex;
-  gap:28px;
+  gap:36px;
   align-items:center;
   font-family:Arial,sans-serif;
   font-size:14px;
@@ -246,7 +246,7 @@ section{padding:44px 0;}
 .hero{
   position:relative;
   width:100vw;
-  min-height:72vh;
+  min-height:78vh;
   display:flex;
   align-items:flex-start;
   justify-content:center;
@@ -295,6 +295,7 @@ section{padding:44px 0;}
   z-index:1;
   padding:110px 0 80px;
   max-width:800px;
+  padding-left:2%;
 }
 
 .hero-content h1{
@@ -791,3 +792,35 @@ footer{
   .nav-links{display:none;}
   .nav-btn-solid{display:none;}
 }
+
+/* ---- FOOTER INTEGRITY ---- */
+.footer-integrity{
+  border-top:1px solid rgba(255,255,255,0.08);
+  margin-top:16px;
+  padding-top:14px;
+}
+
+.footer-integrity p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  font-size:.75rem;
+  color:rgba(255,255,255,0.35);
+  line-height:1.6;
+  text-align:center;
+}
+
+.footer-links{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.footer-links a{
+  font-family:Arial,sans-serif;
+  font-size:.85rem;
+  color:rgba(255,255,255,0.55);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.footer-links a:hover{color:#ffffff;}
