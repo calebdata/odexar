@@ -9,7 +9,7 @@ html{scroll-behavior:smooth;}
 body{
   margin:0;
   font-family:Georgia,"Times New Roman",serif;
-  background:#f0ebe1;
+  background:#eaecf0;
   color:#4a5568;
   line-height:1.7;
 }
@@ -39,8 +39,9 @@ header{
 }
 
 header.scrolled{
-  background:#f0ebe1;
-  box-shadow:0 2px 16px rgba(8,12,58,0.10);
+  background:#ffffff;
+  box-shadow:0 2px 20px rgba(8,12,58,0.12);
+  border-bottom:1px solid rgba(232,224,208,0.8);
 }
 
 header.scrolled .nav-links a{
@@ -331,7 +332,7 @@ section{padding:44px 0;}
 
 /* ---- SERVICES ---- */
 .services-section{
-  background:#f0ebe1;
+  background:#eaecf0;
   padding:44px 0;
 }
 
@@ -462,7 +463,7 @@ section{padding:44px 0;}
 
 /* ---- HOW WE WORK ---- */
 .how-section{
-  background:transparent;
+  background:#eaecf0;
   padding-top:32px;
   padding-bottom:44px;
 }
@@ -559,7 +560,7 @@ section{padding:44px 0;}
 }
 
 /* ---- BLOG ---- */
-.blog-section{background:#f0ebe1;}
+.blog-section{background:#eaecf0;}
 
 .featured-post{
   display:grid;
@@ -629,7 +630,7 @@ section{padding:44px 0;}
 .blog-read-more:hover{color:#2ea84e;}
 
 /* ---- CONTACT + FAQ ---- */
-.contact-faq-section{background:#f0ebe1;}
+.contact-faq-section{background:#eaecf0;}
 
 .contact-faq-grid{
   display:grid;
