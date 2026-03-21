@@ -1355,3 +1355,19 @@ footer{
   color:#00cc35;
   font-weight:700;
 }
+
+/* ---- SERVICES INTEGRITY NOTE ---- */
+.services-integrity{
+  margin:28px 0 0;
+  font-family:Arial,sans-serif;
+  font-size:.85rem;
+  color:#4a5568;
+  line-height:1.6;
+  border-left:3px solid #2ea84e;
+  padding-left:14px;
+}
+
+.services-integrity strong{
+  color:#1c2e4a;
+  font-weight:700;
+}
