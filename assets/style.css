@@ -41,7 +41,7 @@ header{
 header.scrolled{
   background:#ffffff;
   box-shadow:0 2px 20px rgba(8,12,58,0.12);
-  border-bottom:1px solid rgba(232,224,208,0.8);
+  border-bottom:1px solid #e2e5ea;
 }
 
 header.scrolled .nav-links a{
@@ -369,16 +369,15 @@ section{padding:44px 0;}
 }
 
 .service-card{
-  background:rgba(255,255,255,0.65);
-  backdrop-filter:blur(2px);
-  padding:44px 24px 28px;
-  border-radius:30px 4px 30px 4px;
+  background:#ffffff;
+  padding:28px 24px 24px;
+  border-radius:14px;
   border:none;
   box-shadow:0 8px 32px rgba(8,12,58,0.07);
   display:flex;
   flex-direction:column;
   position:relative;
-  margin-top:28px;
+  margin-top:0;
   transition:transform 0.28s ease, box-shadow 0.28s ease;
 }
 
@@ -387,20 +386,7 @@ section{padding:44px 0;}
   box-shadow:0 28px 60px rgba(8,12,58,0.15);
 }
 
-.service-card-icon{
-  font-size:2.2rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:54px;
-  height:54px;
-  background:#ffffff;
-  border-radius:14px;
-  box-shadow:0 8px 20px rgba(8,12,58,0.12);
-  position:absolute;
-  top:-28px;
-  left:28px;
-}
+
 
 .service-card h3{
   margin:0 0 8px;
