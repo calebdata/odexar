@@ -45,7 +45,7 @@ header{
 }
 
 .brand-logo{
-  height:28px;
+  height:55px;
   width:auto;
   display:block;
 }
@@ -65,6 +65,7 @@ header{
   position:relative;
   padding-bottom:3px;
   text-decoration:none;
+  transition:opacity 0.2s;
 }
 
 .nav-links a::after{
