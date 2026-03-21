@@ -1223,3 +1223,22 @@ footer{
   font-size:.92rem;
   line-height:1.6;
 }
+
+/* ---- POSITIONING STRIP ---- */
+.positioning-strip{
+  background:#e8e0d0;
+  padding:20px 0;
+  border-top:1px solid rgba(28,46,74,0.08);
+  border-bottom:1px solid rgba(28,46,74,0.08);
+}
+
+.positioning-strip p{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  color:#1c2e4a;
+  font-size:1rem;
+  line-height:1.7;
+  text-align:center;
+  max-width:780px;
+  margin:0 auto;
+}
