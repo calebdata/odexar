@@ -48,7 +48,7 @@ header{
 .nav-left{
   display:flex;
   align-items:center;
-  gap:36px;
+  gap:32px;
 }
 
 .nav-right{
@@ -93,9 +93,10 @@ header{
 }
 
 .brand-logo{
-  height:33px;
-  width:165px;
+  height:28px;
+  width:140px;
   display:block;
+  vertical-align:middle;
 }
 
 .nav-links{
