@@ -20,8 +20,8 @@ body{
 a{text-decoration:none;color:inherit;}
 
 .container{
-  width:96%;
-  max-width:1400px;
+  width:92%;
+  max-width:1280px;
   margin:0 auto;
 }
 
@@ -237,7 +237,7 @@ section{padding:40px 0;}
 .hero-bg{
   position:absolute;
   inset:0;
-  background:url('../assets/image_odexar-hero.png') 55% center/cover no-repeat;
+  background:url('../assets/image_odexar-hero.png') 40% center/cover no-repeat;
   z-index:0;
   overflow:hidden;
 }
