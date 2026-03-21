@@ -10,7 +10,7 @@ html{scroll-behavior:smooth;overflow-x:hidden;}
 body{
   margin:0;
   font-family:Georgia,"Times New Roman",serif;
-  background:#eaecf0;
+  background:#f0ebe1;
   color:#4a5568;
   line-height:1.7;
   /* overflow-x removed - breaks sticky header */
@@ -97,7 +97,7 @@ header{
 .primary-btn:hover{background:#27913f;}
 
 .hero-btn{
-  background:#e8e0d0 !important;
+  background:#ffffff !important;
   color:#080c3a !important;
   border:none;
   font-weight:700;
@@ -109,7 +109,7 @@ header{
 }
 
 .hero-btn:hover{
-  background:#ffffff !important;
+  background:#f0ebe1 !important;
   box-shadow:0 8px 28px rgba(0,0,0,0.25);
 }
 
@@ -190,7 +190,7 @@ section{padding:40px 0;}
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg, rgba(8,12,58,0.62) 0%, rgba(8,12,58,0.45) 45%, rgba(8,12,58,0.18) 100%);
+  background:rgba(8,12,58,0.25);
 }
 
 .hero-content{
@@ -200,7 +200,7 @@ section{padding:40px 0;}
 }
 
 .hero-content h1{
-  font-size:2.2rem;
+  font-size:2.6rem;
   line-height:1.1;
   margin:0 0 18px;
   color:#fff;
@@ -225,7 +225,7 @@ section{padding:40px 0;}
 
 /* ---- SERVICES ---- */
 .services-section{
-  background:#eaecf0;
+  background:#f0ebe1;
   padding:10px 0 28px;
   border-top:none;
   box-shadow:inset 0 10px 24px rgba(0,0,0,0.04);
@@ -296,7 +296,7 @@ section{padding:40px 0;}
 
 
 .service-card-icon{
-  font-size:2.2rem;
+  font-size:2.6rem;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -1007,7 +1007,7 @@ footer{
 }
 
 /* ---- CONTACT + FAQ SPLIT ---- */
-.contact-faq-section{background:#eaecf0;}
+.contact-faq-section{background:#f0ebe1;}
 
 .contact-faq-grid{
   display:grid;
@@ -1043,7 +1043,7 @@ footer{
 }
 
 /* ---- BLOG STANDALONE ---- */
-.blog-section{background:#eaecf0;}
+.blog-section{background:#f0ebe1;}
 
 .blog-grid{
   display:grid;
