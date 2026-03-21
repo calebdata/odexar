@@ -34,7 +34,7 @@ header{
   z-index:100;
   background:transparent;
   border:none;
-  border-bottom:1px solid #39FF14;
+  border-bottom:none;
   box-shadow:none;
   height:72px;
   display:flex;
@@ -157,7 +157,7 @@ header{
   font-weight:600;
   letter-spacing:0.04em;
   border-radius:8px;
-  padding:12px 24px;
+  padding:14px 34px;
   font-size:.95rem;
   box-shadow:none;
   transition:all 0.25s ease;
@@ -225,7 +225,7 @@ section{padding:40px 0;}
 .hero{
   position:relative;
   width:100vw;
-  min-height:72vh;
+  min-height:78vh;
   display:flex;
   align-items:flex-start;
   left:50%;
@@ -1301,8 +1301,9 @@ footer{
 
 /* ---- MARQUEE BAR ---- */
 .marquee-bar{
-  background:#080c3a;
+  background:#1c3050;
   height:40px;
+  border-top:1px solid #39FF14;
   overflow:hidden;
   display:flex;
   align-items:center;
@@ -1311,7 +1312,7 @@ footer{
 
 .marquee-track{
   display:inline-flex;
-  animation:marquee 28s linear infinite;
+  animation:marquee 55s linear infinite;
   white-space:nowrap;
 }
 
