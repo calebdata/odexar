@@ -1,302 +1,904 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odexar | Academic Research Support</title>
-  <meta name="description" content="Odexar provides academic research support for university students, including topic development, proposal writing, data analysis guidance, and editing.">
-  <link rel="stylesheet" href="assets/style.css?v=143">
-</head>
-<body>
+/* ============================================
+   ODEXAR — style.css clean rewrite v2
+   Navy: #080c3a | Green: #2ea84e | Ivory: #f0ebe1
+   ============================================ */
 
-<header>
-  <div class="container nav">
-    <div class="nav-left">
-      <a href="index.html">
-        <img src="assets/odexar-logo-reverse.svg" alt="Odexar" class="brand-logo" id="site-logo">
-      </a>
-    </div>
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#how">Process</a>
-      <a href="blog/">Blog</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="nav-signup">Sign Up</a>
-    </nav>
-  </div>
-</header>
+/* ---- RESET ---- */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  background:#eaecf0;
+  color:#4a5568;
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit;}
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="container">
-    <div class="hero-content">
-      <h1>Turning Research Problems into Clear,<br>Defensible Academic Work.</h1>
-      <div class="hero-actions" style="margin-top:40px;">
-        <a class="primary-btn hero-btn" href="https://wa.me/2347087589603">Discuss Your Project</a>
-      </div>
-    </div>
-  </div>
-</section>
+/* ---- CONTAINER ---- */
+.container{
+  width:92%;
+  max-width:1280px;
+  margin:0 auto;
+}
 
-<script>
-  const header = document.querySelector('header');
-  const logo = document.getElementById('site-logo');
-  const heroHeight = document.querySelector('.hero').offsetHeight;
+/* ---- HEADER ---- */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  height:72px;
+  display:flex;
+  align-items:center;
+  transition:background 0.3s ease, box-shadow 0.3s ease;
+}
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > heroHeight - 72) {
-      header.classList.add('scrolled');
-      logo.src = 'assets/odexar-logo.svg?v=2';
-    } else {
-      header.classList.remove('scrolled');
-      logo.src = 'assets/odexar-logo-reverse.svg';
-    }
-  });
-</script>
+header.scrolled{
+  background:#ffffff;
+  box-shadow:0 2px 20px rgba(8,12,58,0.12);
+  border-bottom:1px solid #e2e5ea;
+}
 
-<section class="services-section" id="services">
-  <div class="container">
-    <p class="section-intro services-intro">Structured support for research, data analysis, and academic writing.</p>
+header.scrolled .nav-links a{
+  color:#080c3a !important;
+}
 
-    <div class="services-list">
-      <div class="services-list-item">
-        <h3>Academic Research Support</h3>
-        <p>From research question to final chapter — structured guidance at every stage.</p>
-      </div>
-      <div class="services-list-item">
-        <h3>Data Analysis Support</h3>
-        <p>SPSS, Excel or Stata — we help you interpret and present your findings clearly.</p>
-      </div>
-      <div class="services-list-item">
-        <h3>Application and Writing Support</h3>
-        <p>CVs, Statements of Purpose, and personal statements written with precision.</p>
-      </div>
-    </div>
+header.scrolled .nav-links a:hover{
+  color:#080c3a !important;
+  opacity:0.65;
+}
 
-    <div class="services-list-cta">
-      <a href="https://wa.me/2347087589603" class="primary-btn">Discuss Your Project →</a>
-    </div>
+header.scrolled .nav-signup{
+  color:#080c3a !important;
+}
 
-    <p class="services-integrity">Odexar does not produce academic work on behalf of clients. We provide structured guidance that enables you to develop <strong>original</strong>, defensible research in line with academic integrity.</p>
-  </div>
-</section>
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  height:72px;
+  padding:0;
+  flex-wrap:nowrap;
+}
 
-<section class="how-section" id="how">
-  <div class="container">
-    <h2 class="section-title">How We Work</h2>
-    <p class="section-intro">Three clear steps from first contact to excellent delivery.</p>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">01</div>
-        <div class="step-body">
-          <h3>Share Your Challenge</h3>
-          <p>Tell us what you need help with and your timeline.</p>
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">02</div>
-        <div class="step-body">
-          <h3>Receive Structured Support</h3>
-          <p>We review your needs and provide clear, practical guidance.</p>
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">03</div>
-        <div class="step-body">
-          <h3>Move Forward with Clarity</h3>
-          <p>Apply the feedback and submit with stronger, cleaner work.</p>
-        </div>
-      </div>
-    </div>
+.nav-left{
+  display:flex;
+  align-items:center;
+  height:72px;
+}
 
-    <div class="inline-cta">
-      <div class="inline-cta-text">
-        <h3>Not sure which service you need?</h3>
-        <p>Tell us where you are and we will point you in the right direction.</p>
-      </div>
-      <a class="primary-btn how-cta-btn" href="https://wa.me/2347087589603">Start a Conversation</a>
-    </div>
-  </div>
-</section>
+.nav-links{
+  display:flex;
+  gap:36px;
+  align-items:center;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:0.05em;
+  height:72px;
+}
 
-<!-- BLOG -->
-<section class="blog-section">
-  <div class="container">
-    <h2 class="section-title">From the Blog</h2>
-    <p class="section-intro">One article every week. Practical guidance for students navigating research, writing, and academic work.</p>
+.hero-actions{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+}
 
-    <div class="featured-post">
-      <div class="featured-post-image">
-        <img src="assets/blog-cover.webp" alt="How to Choose a Strong Research Topic">
-      </div>
-      <div class="featured-post-body">
-        <span class="blog-tag">Research</span>
-        <h3>How to Choose a Strong Research Topic</h3>
-        <div class="featured-post-summary">
-          <p>Choosing a research topic is one of the earliest and most consequential decisions in any academic project. Many students rush through it, picking something that sounds interesting without testing whether it is actually researchable or narrow enough for their word count and timeline.</p>
-          <p>A strong topic is specific, researchable, and aligned with your academic context. It is not just a subject area — it is a focused question you can investigate within your scope. If you cannot find at least ten credible sources on your topic within an hour, that is a signal to refine it further.</p>
-        </div>
-        <a href="blog/" class="blog-read-more">Read the full article →</a>
-      </div>
-    </div>
+.hero-signup-btn{
+  font-family:Arial,sans-serif;
+  font-size:.95rem;
+  font-weight:600;
+  color:#ffffff;
+  background:rgba(255,255,255,0.22);
+  border:1.5px solid rgba(255,255,255,0.6);
+  border-radius:8px;
+  padding:12px 24px;
+  text-decoration:none;
+  letter-spacing:0.04em;
+  transition:all 0.25s ease;
+}
 
-  </div>
-</section>
+.hero-signup-btn:hover{
+  background:rgba(255,255,255,0.25);
+  border-color:#ffffff;
+}
 
-<!-- CONTACT + FAQ SPLIT -->
-<section class="contact-faq-section" id="contact">
-  <div class="container">
-    <div class="contact-faq-grid">
+.brand-logo{
+  height:18px;
+  width:112px;
+  display:block;
+}
 
-      <!-- LEFT: CONTACT -->
-      <div class="contact-col">
-        <h2 class="section-title">Contact Odexar</h2>
-        <p class="section-intro">Use the form or reach us directly on WhatsApp or email.</p>
+.nav-links{
+  display:flex;
+  gap:36px;
+  align-items:center;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:0.03em;
+}
 
-        <div class="form-card">
-          <h3>Project Intake Form</h3>
-          <p>Provide the key details of your academic work so the response can be more specific and useful.</p>
+.nav-links a{
+  color:#ffffff !important;
+  text-decoration:none !important;
+  border:none !important;
+  outline:none !important;
+  display:inline-flex;
+  align-items:center;
+  height:72px;
+  transition:opacity 0.2s;
+}
 
-          <form action="https://formspree.io/f/mreyolek" method="POST">
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full_name" placeholder="Your full name" required>
-              </div>
-              <div class="form-field">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your email address" required>
-              </div>
-              <div class="form-field">
-                <label for="phone">Phone / WhatsApp Number</label>
-                <input type="text" id="phone" name="phone" placeholder="Your phone or WhatsApp number">
-              </div>
-              <div class="form-field">
-                <label for="level">Level of Study</label>
-                <select id="level" name="level_of_study" required>
-                  <option value="">Select your level</option>
-                  <option>Undergraduate</option>
-                  <option>Postgraduate</option>
-                  <option>Master's</option>
-                  <option>PhD</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="form-field">
-                <label for="field">Field / Department</label>
-                <input type="text" id="field" name="field_department" placeholder="Education, Business, Public Health" required>
-              </div>
-              <div class="form-field">
-                <label for="service">Type of Support Needed</label>
-                <select id="service" name="support_type" required>
-                  <option value="">Select a service</option>
-                  <option>Research Topic Selection</option>
-                  <option>Proposal and Methodology</option>
-                  <option>Data Analysis Support</option>
-                  <option>Academic Editing</option>
-                  <option>CV Writing / Builder</option>
-                  <option>Statement of Purpose</option>
-                  <option>Multiple Areas</option>
-                </select>
-              </div>
-              <div class="form-field full">
-                <label for="topic">Project Topic or Title</label>
-                <input type="text" id="topic" name="project_topic" placeholder="Write your current topic or working title">
-              </div>
-              <div class="form-field full">
-                <label for="details">Brief Description of Your Challenge</label>
-                <textarea id="details" name="project_details" placeholder="Explain what you need help with and your deadline" required></textarea>
-              </div>
-            </div>
+.nav-links a:hover{
+  color:#ffffff !important;
+  opacity:0.75;
+  text-decoration:none !important;
+}
 
-            <input type="hidden" name="_subject" value="New Odexar Project Intake Submission">
-            <input type="hidden" name="_next" value="https://odexar.com/">
-            <input type="text" name="_gotcha" style="display:none">
+.nav-links a::after,.nav-links a::before{display:none !important;}
 
-            <p class="form-note">This form is for academic support enquiries only.</p>
+.nav-btn-ghost{
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:600;
+  color:#080c3a;
+  background:#ffffff;
+  border:none;
+  border-radius:6px;
+  padding:9px 20px;
+  text-decoration:none;
+  transition:all 0.2s;
+  letter-spacing:0.02em;
+}
 
-            <div class="form-actions">
-              <button type="submit" class="primary-btn">Submit Enquiry</button>
-              <a class="secondary-btn form-secondary" href="https://wa.me/2347087589603">Use WhatsApp Instead</a>
-            </div>
-          </form>
-        </div>
+.nav-btn-ghost:hover{background:#f0ebe1;}
 
-        <div class="contact-stack">
-          <div class="contact-card">
-            <h3>WhatsApp</h3>
-            <p>For faster enquiries and direct discussion.</p>
-            <p><a class="contact-link" href="https://wa.me/2347087589603">+234 708 758 9603</a></p>
-          </div>
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p>For formal enquiries and detailed project descriptions.</p>
-            <p><a class="contact-link" href="/cdn-cgi/l/email-protection#8ce4e9e0e0e3cce3e8e9f4edfea2efe3e1"><span class="__cf_email__" data-cfemail="d9b1bcb5b5b699b6bdbca1b8abf7bab6b4">[email&#160;protected]</span></a></p>
-          </div>
-        </div>
-      </div>
+.nav-btn-solid{
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:500;
+  color:rgba(255,255,255,0.85);
+  background:transparent;
+  padding:8px 4px;
+  text-decoration:none;
+  transition:opacity 0.2s;
+}
 
-      <!-- RIGHT: FAQ -->
-      <div class="faq-col" id="faq">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-intro">Clear answers to the questions students ask most.</p>
-        <div class="faq-list">
-          <div class="faq-item">
-            <h3>Do you write projects for students?</h3>
-            <p>No. Odexar provides guidance, editing, and structured academic support for students developing their own original work.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How do I get started?</h3>
-            <p>Send a WhatsApp message or complete the intake form with your topic, level of study, and the exact area where you need support.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What fields do you support?</h3>
-            <p>Odexar supports students across social sciences, business, education, health sciences, and related fields.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Is my work confidential?</h3>
-            <p>Yes. Discussions, drafts, and project materials are handled confidentially.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How fast do you respond?</h3>
-            <p>Response time depends on workload and urgency, but enquiries are reviewed promptly.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Do you guarantee academic results?</h3>
-            <p>No ethical academic service can guarantee grades. Odexar focuses on improving the quality and clarity of your work.</p>
-          </div>
-        </div>
-      </div>
+.nav-btn-solid:hover{color:#ffffff;opacity:0.75;}
 
-    </div>
-  </div>
-</section>
+/* ---- BUTTONS ---- */
+.primary-btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:8px;
+  background:#2ea84e;
+  color:#ffffff;
+  font-weight:700;
+  font-family:Arial,sans-serif;
+  border:none;
+  cursor:pointer;
+  transition:background 0.2s;
+  text-decoration:none;
+}
 
-<!-- FINAL CTA -->
-<section class="cta">
-  <div class="container">
-    <h2>Ready to move your research forward?</h2>
-    <p>Whether you are just starting or preparing to submit, Odexar provides clear academic support to help you move with structure and confidence.</p>
-    <a class="primary-btn" href="#contact">Fill the Intake Form</a>
-  </div>
-</section>
+.primary-btn:hover{background:#27913f;}
 
-<footer>
-  <div class="container footer-flex">
-    <div class="footer-brand">
-      <img src="assets/odexar-logo-reverse.svg" alt="Odexar" style="height:18px;width:auto;opacity:0.8;">
-      <span>© 2025 Odexar. All rights reserved.</span>
-    </div>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#how">Process</a>
-      <a href="blog/">Blog</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-  <div class="footer-integrity">
-    <div class="container">
-      <p>Odexar does not produce academic work on behalf of clients. All services are structured guidance intended to support students in developing their own original, defensible research in line with academic integrity standards.</p>
-    </div>
-  </div>
-</footer>
+.hero-btn{
+  background:transparent !important;
+  color:#ffffff !important;
+  border:2px solid rgba(255,255,255,0.8) !important;
+  font-weight:600;
+  letter-spacing:0.04em;
+  border-radius:8px;
+  padding:12px 24px;
+  font-size:.95rem;
+  box-shadow:none;
+  transition:all 0.25s ease;
+}
+
+.hero-btn:hover{
+  background:rgba(255,255,255,0.12) !important;
+  border-color:#ffffff !important;
+}
+
+.secondary-btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:8px;
+  font-family:Arial,sans-serif;
+  font-weight:700;
+  font-size:.93rem;
+  background:rgba(255,255,255,0.12);
+  color:#ffffff;
+  border:1px solid rgba(255,255,255,0.28);
+  transition:all 0.2s;
+  text-decoration:none;
+}
+
+.secondary-btn:hover{
+  background:rgba(255,255,255,0.20);
+  border-color:rgba(255,255,255,0.45);
+}
+
+.form-secondary{
+  color:#080c3a;
+  border-color:#c8d4e0;
+  background:#e8e0d0;
+}
+
+.form-secondary:hover{
+  background:#e8edf3;
+  border-color:#b0bfcc;
+}
+
+.how-cta-btn{
+  background:#243d5c;
+  color:#ffffff;
+}
+
+.how-cta-btn:hover{background:#1a2d4a;}
+
+/* ---- SHARED ---- */
+section{padding:44px 0;}
+
+.section-title{
+  font-size:2rem;
+  margin:0 0 12px;
+  color:#1c2e4a;
+}
+
+.section-intro{
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  margin:0 0 28px;
+  font-size:1rem;
+}
+
+/* ---- HERO ---- */
+.hero{
+  position:relative;
+  width:100vw;
+  min-height:78vh;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  left:50%;
+  margin-left:-50vw;
+}
+
+.hero .container{
+  display:flex;
+  align-items:flex-start;
+  width:92%;
+  max-width:1280px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:url('../assets/image_odexar-hero.png') 40% center/cover no-repeat;
+  z-index:0;
+  overflow:hidden;
+}
+
+.hero-bg::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(95deg, rgba(8,12,58,0.62) 0%, rgba(8,12,58,0.40) 45%, rgba(8,12,58,0.12) 100%);
+}
+
+.hero-bg::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:100%;
+  background:linear-gradient(180deg, rgba(8,12,58,0.65) 0%, rgba(8,12,58,0.35) 30%, rgba(8,12,58,0.10) 100%);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+  padding:110px 0 80px;
+  max-width:800px;
+  padding-left:2%;
+}
+
+.hero-content h1{
+  font-size:2rem;
+  line-height:1.45;
+  margin:0;
+  color:#fff;
+  white-space:nowrap;
+  letter-spacing:0.04em;
+  word-spacing:0.08em;
+}
+
+.hero-actions{margin-top:40px;}
+
+/* ---- SERVICES ---- */
+.services-section{
+  background:#eaecf0;
+  padding:44px 0;
+}
+
+.services-title{
+  text-align:center;
+  color:#1c2e4a;
+  font-size:2rem;
+  margin:0;
+}
+
+.services-title::after{
+  content:"";
+  display:block;
+  width:50px;
+  height:3px;
+  background:#2ea84e;
+  margin:10px auto 0;
+  border-radius:999px;
+}
+
+.services-intro{
+  text-align:center;
+  max-width:600px;
+  margin:12px auto 20px;
+  color:#4a5568;
+  font-family:Arial,sans-serif;
+  font-size:1rem;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.service-card{
+  background:#ffffff;
+  padding:28px 24px 24px;
+  border-radius:14px;
+  border:none;
+  box-shadow:0 8px 32px rgba(8,12,58,0.07);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  margin-top:0;
+  transition:transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 28px 60px rgba(8,12,58,0.15);
+}
+
+
+
+.service-card h3{
+  margin:0 0 8px;
+  font-size:1.05rem;
+  color:#1c2e4a;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:700;
+  padding-bottom:8px;
+  border-bottom:2px solid #2ea84e;
+}
+
+.service-list{
+  list-style:none;
+  padding:0;
+  margin:6px 0 14px;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  flex:1;
+}
+
+.service-list li{
+  font-family:Arial,sans-serif;
+  font-size:.88rem;
+  color:#2d3748;
+  line-height:1.5;
+}
+
+.service-cta{
+  font-family:Arial,sans-serif;
+  font-size:.82rem;
+  font-weight:600;
+  color:#1c2e4a;
+  text-decoration:none;
+  margin-top:auto;
+  text-align:right;
+  display:block;
+}
+
+.service-cta:hover{
+  color:#2ea84e;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.services-integrity{
+  margin:28px 0 0;
+  font-family:Arial,sans-serif;
+  font-size:.85rem;
+  color:#4a5568;
+  line-height:1.6;
+  border-left:3px solid #2ea84e;
+  padding-left:14px;
+}
+
+.services-integrity strong{
+  color:#1c2e4a;
+  font-weight:700;
+}
+
+/* ---- HOW WE WORK ---- */
+.how-section{
+  background:#eaecf0;
+  padding-top:32px;
+  padding-bottom:44px;
+}
+
+.how-section .section-title{text-align:center;}
+
+.how-section .section-intro{
+  text-align:center;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:32px;
+}
+
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.step-card{
+  background:#1a2d4a;
+  padding:22px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  gap:14px;
+  transition:all 0.3s ease;
+  box-shadow:0 8px 24px rgba(8,12,58,0.15);
+}
+
+.step-card:hover{
+  box-shadow:0 16px 40px rgba(8,12,58,0.25), 0 0 0 1.5px rgba(255,255,255,0.18);
+  transform:translateY(-4px);
+}
+
+.step-num{
+  font-size:1.6rem;
+  font-weight:700;
+  color:#f0ebe1;
+  opacity:0.7;
+  line-height:1;
+  flex-shrink:0;
+  width:36px;
+  font-family:Arial,sans-serif;
+  padding-top:2px;
+}
+
+.step-body{flex:1;}
+
+.step-card h3{
+  margin:0 0 4px;
+  font-size:.95rem;
+  color:#ffffff;
+  line-height:1.3;
+  font-weight:700;
+}
+
+.step-card p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:rgba(255,255,255,0.88);
+  font-size:.88rem;
+  line-height:1.6;
+}
+
+.inline-cta{
+  margin-top:20px;
+  background:#ffffff;
+  border-left:4px solid #2ea84e;
+  padding:20px 24px;
+  border-radius:0 10px 10px 0;
+  box-shadow:0 6px 20px rgba(8,12,58,0.05);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.inline-cta-text h3{
+  margin:0 0 4px;
+  font-size:1.05rem;
+  color:#1c2e4a;
+}
+
+.inline-cta-text p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.9rem;
+}
+
+/* ---- BLOG ---- */
+.blog-section{background:#eaecf0;}
+
+.featured-post{
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 16px 48px rgba(8,12,58,0.10);
+  background:#ffffff;
+}
+
+.featured-post-image{min-height:420px;overflow:hidden;}
+
+.featured-post-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.featured-post-body{
+  padding:36px 36px 32px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.blog-tag{
+  display:inline-block;
+  font-family:Arial,sans-serif;
+  font-size:.75rem;
+  font-weight:700;
+  color:#2ea84e;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.featured-post-body h3{
+  margin:0;
+  font-size:1.3rem;
+  color:#1c2e4a;
+  line-height:1.3;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:700;
+}
+
+.featured-post-summary{display:flex;flex-direction:column;gap:10px;flex:1;}
+
+.featured-post-summary p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.92rem;
+  line-height:1.75;
+}
+
+.blog-read-more{
+  font-family:Arial,sans-serif;
+  font-size:.9rem;
+  font-weight:700;
+  color:#1c2e4a;
+  text-decoration:none;
+  text-align:right;
+  display:block;
+  margin-top:8px;
+}
+
+.blog-read-more:hover{color:#2ea84e;}
+
+/* ---- CONTACT + FAQ ---- */
+.contact-faq-section{background:#eaecf0;}
+
+.contact-faq-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:36px;
+  align-items:start;
+}
+
+.contact-col,.faq-col{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.form-card,.contact-card{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(8,12,58,0.06);
+}
+
+.form-card h3,.contact-card h3{
+  margin-top:0;
+  margin-bottom:10px;
+  color:#1c2e4a;
+}
+
+.form-card p,.contact-card p{
+  margin:0 0 10px;
+  font-family:Arial,sans-serif;
+  color:#4b5c6c;
+}
+
+.contact-stack{display:grid;gap:14px;}
+
+.contact-link{
+  color:#080c3a;
+  font-family:Arial,sans-serif;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:16px;
+}
+
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-field.full{grid-column:1/-1;}
+
+label{
+  font-family:Arial,sans-serif;
+  font-size:.92rem;
+  color:#1c2e4a;
+  font-weight:700;
+}
+
+input,select,textarea{
+  padding:12px;
+  border:1px solid #d5dde7;
+  border-radius:8px;
+  width:100%;
+  font-family:Arial,sans-serif;
+  font-size:.95rem;
+  background:#ffffff;
+  color:#16202a;
+}
+
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:#080c3a;
+  box-shadow:0 0 0 3px rgba(8,12,58,0.10);
+}
+
+textarea{resize:vertical;min-height:130px;}
+
+.form-note{
+  margin-top:12px;
+  font-family:Arial,sans-serif;
+  color:#5b6a79;
+  font-size:.88rem;
+}
+
+.form-actions{
+  margin-top:16px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.faq-col .section-title{font-size:1.5rem;margin-bottom:4px;}
+.faq-col .section-intro{margin-bottom:12px;font-size:.93rem;}
+
+.faq-list{display:flex;flex-direction:column;}
+
+.faq-item{
+  border-bottom:1px solid rgba(28,46,74,0.08);
+  padding:12px 0;
+}
+
+.faq-item:last-child{border-bottom:none;}
+
+.faq-item h3{
+  margin:0 0 4px;
+  font-size:.93rem;
+  color:#1c2e4a;
+  font-weight:700;
+}
+
+.faq-item p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#4a5568;
+  font-size:.88rem;
+  line-height:1.55;
+}
+
+/* ---- CTA BANNER ---- */
+.cta{
+  background:#080c3a;
+  color:#fff;
+  text-align:center;
+}
+
+.cta h2{margin:0 0 12px;font-size:2rem;color:#fff;}
+
+.cta p{
+  font-family:Arial,sans-serif;
+  color:rgba(255,255,255,0.85);
+  max-width:700px;
+  margin:0 auto 22px;
+}
+
+.cta .primary-btn{background:#2ea84e;color:#ffffff;}
+.cta .primary-btn:hover{background:#27913f;}
+
+/* ---- FOOTER ---- */
+footer{
+  background:#04061e;
+  color:#cbd6e2;
+  padding:20px 0;
+}
+
+.footer-flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.footer-brand{display:flex;align-items:center;gap:10px;}
+
+.footer-brand img{
+  height:34px;
+  filter:brightness(0) invert(1);
+  opacity:0.8;
+}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:900px){
+  .service-grid,.steps-grid,.contact-faq-grid{grid-template-columns:1fr 1fr;}
+  .nav-left{gap:20px;}
+  .nav-links{gap:16px;}
+  .hero-content h1{font-size:1.7rem;white-space:normal;}
+}
+
+@media(max-width:600px){
+  .service-grid,.steps-grid,.contact-faq-grid,.form-grid,.featured-post{grid-template-columns:1fr;}
+  .hero-content{padding:100px 0 50px;}
+  .hero-content h1{font-size:1.5rem;white-space:normal;}
+  .section-title,.cta h2{font-size:1.65rem;}
+  .primary-btn,.secondary-btn{width:100%;text-align:center;}
+  .form-actions{flex-direction:column;}
+  .featured-post-image{min-height:220px;}
+  .nav-links{display:none;}
+  .nav-btn-solid{display:none;}
+}
+
+/* ---- FOOTER INTEGRITY ---- */
+.footer-integrity{
+  border-top:1px solid rgba(255,255,255,0.08);
+  margin-top:16px;
+  padding-top:14px;
+}
+
+.footer-integrity p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  font-size:.75rem;
+  color:rgba(255,255,255,0.35);
+  line-height:1.6;
+  text-align:center;
+}
+
+.footer-links{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.footer-links a{
+  font-family:Arial,sans-serif;
+  font-size:.85rem;
+  color:rgba(255,255,255,0.55);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.footer-links a:hover{color:#ffffff;}
+
+/* ---- NAV SIGNUP LINK ---- */
+.nav-signup{
+  color:#ffffff !important;
+  font-weight:700 !important;
+  border:1.5px solid rgba(255,255,255,0.7);
+  border-radius:6px;
+  padding:6px 16px !important;
+  height:auto !important;
+  transition:all 0.2s !important;
+}
+
+.nav-signup:hover{
+  background:rgba(255,255,255,0.12);
+  border-color:#ffffff;
+  opacity:1 !important;
+}
+
+header.scrolled .nav-signup{
+  border-color:rgba(8,12,58,0.4);
+  color:#080c3a !important;
+}
+
+header.scrolled .nav-signup:hover{
+  background:rgba(8,12,58,0.06);
+}
+
+/* ---- SERVICES TEXT LIST ---- */
+.services-intro{
+  font-size:1.15rem;
+  font-weight:600;
+  color:#1c2e4a;
+  font-family:Georgia,"Times New Roman",serif;
+  margin:0 0 36px;
+  text-align:center;
+}
+
+.services-list{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  max-width:720px;
+  margin:0 auto;
+}
+
+.services-list-item{
+  padding:22px 0;
+  border-bottom:1px solid rgba(28,46,74,0.10);
+}
+
+.services-list-item:last-child{border-bottom:none;}
+
+.services-list-item h3{
+  margin:0 0 6px;
+  font-size:1.05rem;
+  color:#1c2e4a;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:700;
+}
+
+.services-list-item p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  font-size:.92rem;
+  color:#4a5568;
+  line-height:1.6;
+}
+
+.services-list-cta{
+  text-align:center;
+  margin-top:36px;
+}
