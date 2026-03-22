@@ -179,7 +179,7 @@ header.scrolled .nav-signup{
   display:inline-block;
   padding:12px 22px;
   border-radius:8px;
-  background:#2ea84e;
+  background:#3a7d52;
   color:#ffffff;
   font-weight:700;
   font-family:Arial,sans-serif;
@@ -189,7 +189,7 @@ header.scrolled .nav-signup{
   text-decoration:none;
 }
 
-.primary-btn:hover{background:#27913f;}
+.primary-btn:hover{background:#2e6642;}
 
 .hero-btn{
   background:transparent !important;
@@ -433,18 +433,18 @@ section{padding:44px 0;}
 }
 
 .services-integrity{
-  margin:28px 0 0;
+  margin:36px 0 0;
   font-family:Arial,sans-serif;
-  font-size:.85rem;
-  color:#4a5568;
+  font-size:.78rem;
+  color:#8a9ab0;
   line-height:1.6;
-  border-left:3px solid #2ea84e;
-  padding-left:14px;
+  border-left:2px solid rgba(46,168,78,0.4);
+  padding-left:12px;
 }
 
 .services-integrity strong{
-  color:#1c2e4a;
-  font-weight:700;
+  color:#6a7e94;
+  font-weight:600;
 }
 
 /* ---- HOW WE WORK ---- */
@@ -754,7 +754,7 @@ textarea{resize:vertical;min-height:130px;}
 }
 
 .cta .primary-btn{background:#2ea84e;color:#ffffff;}
-.cta .primary-btn:hover{background:#27913f;}
+.cta .primary-btn:hover{background:#2e6642;}
 
 /* ---- FOOTER ---- */
 footer{
@@ -881,12 +881,11 @@ header.scrolled .nav-signup:hover{
 
 .services-list-item{
   flex:1;
-  padding:0 32px;
-  border-right:1px solid rgba(28,46,74,0.10);
+  padding:0 40px;
   text-align:center;
 }
 
-.services-list-item:last-child{border-right:none;}
+
 
 .services-list-item h3{
   margin:0 0 8px;
@@ -906,5 +905,6 @@ header.scrolled .nav-signup:hover{
 
 .services-list-cta{
   text-align:center;
-  margin-top:32px;
+  margin-top:48px;
+  margin-bottom:8px;
 }
