@@ -619,8 +619,8 @@ footer{background:#04061e;color:#cbd6e2;padding:24px 0 16px;}
 /* ---- METHODOLOGY CTA ---- */
 .methodology-cta{
   margin-top:36px;
-  padding-top:24px;
-  border-top:1px solid rgba(28,46,74,0.10);
+  padding-bottom:24px;
+  border-bottom:1px solid rgba(28,46,74,0.10);
 }
 
 .methodology-cta p{
