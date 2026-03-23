@@ -180,13 +180,10 @@ section{padding:44px 0;}
 /* ---- HERO ---- */
 .hero{
   position:relative;
-  width:100vw;
+  width:100%;
   min-height:78vh;
   display:flex;
   align-items:flex-start;
-  justify-content:center;
-  left:50%;
-  margin-left:-50vw;
 }
 
 .hero .container{
