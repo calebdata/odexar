@@ -1,305 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odexar | Academic Research Support</title>
-  <meta name="description" content="Odexar provides academic research support for university students, including topic development, proposal writing, data analysis guidance, and editing.">
-  <link rel="stylesheet" href="assets/style.css?v=185">
-</head>
-<body>
-
-<header>
-  <div class="container nav">
-    <div class="nav-left">
-      <a href="index.html">
-        <img src="assets/odexar-logo-reverse.svg" alt="Odexar" class="brand-logo" id="site-logo">
-      </a>
-    </div>
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#how">Process</a>
-      <a href="blog/">Blog</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="nav-signup">Sign Up</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="container">
-    <div class="hero-content">
-      <h1>Turning Research Problems into Clear,<br>Defensible Academic Work.</h1>
-      <div class="hero-actions" style="margin-top:40px;">
-        <a class="primary-btn hero-btn" href="https://wa.me/2347087589603">Get Guidance</a>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <img src="assets/odexar-logo.svg?v=2" alt="Odexar" class="footer-logo">
+      <p class="footer-brand-desc">Structured academic support for research, data, and professional writing.</p>
+      <div class="footer-contact-info">
+        <a href="https://wa.me/2347087589603">WhatsApp: +234 708 758 9603</a>
+        <a href="mailto:info@odexar.com">Email: info@odexar.com</a>
       </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Navigation</h4>
+      <ul class="footer-nav-list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how">Methodology</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col integrity-col">
+      <h4 class="footer-heading">Academic Integrity</h4>
+      <p>Odexar does not produce academic work on behalf of clients. We provide structured guidance that enables you to develop original, defensible research. All services support students in developing their own original work.</p>
     </div>
   </div>
-</section>
 
-<script>
-  const header = document.querySelector('header');
-  const logo = document.getElementById('site-logo');
-  const heroHeight = document.querySelector('.hero').offsetHeight;
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > heroHeight - 72) {
-      header.classList.add('scrolled');
-      logo.src = 'assets/odexar-logo.svg?v=2';
-    } else {
-      header.classList.remove('scrolled');
-      logo.src = 'assets/odexar-logo-reverse.svg';
-    }
-  });
-</script>
-
-<section class="services-section" id="services">
-  <div class="container">
-    <div class="services-inner">
-      <p class="section-intro services-intro">Structured Support Across Research, Data, and Writing</p>
-      <div class="services-list">
-        <div class="services-list-item">
-          <h3>Research Development</h3>
-          <p>From research question to final chapter,<br>structured guidance at every stage.</p>
-        </div>
-        <div class="services-list-item">
-          <h3>Data &amp; Analysis</h3>
-          <p>Interpret and present your data with<br>clarity and credibility.</p>
-        </div>
-        <div class="services-list-item">
-          <h3>Professional Writing</h3>
-          <p>Support statements, reports, and academic documents with clarity and precision.</p>
-        </div>
-      </div>
-
-      <div class="services-guidance">
-        <p>Not sure which service you need? Tell us where you are and we will point you in the right direction. <a href="https://wa.me/2347087589603" class="services-guidance-link">Discuss Your Project →</a></p>
-      </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="how-section" id="how">
-  <div class="container">
-    <h2 class="section-title">Methodology</h2>
-    <p class="section-intro">A structured approach from first contact to defensible academic work.</p>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-divider"></div>
-        <div class="step-body">
-          <h3>Problem Definition</h3>
-          <p>We assess your research objective, scope, and constraints to establish a precise direction. Ambiguities are resolved at the outset.</p>
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-divider"></div>
-        <div class="step-body">
-          <h3>Framework Design</h3>
-          <p>A structured approach is outlined, covering argument flow, methodology, and analytical direction where required.</p>
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-divider"></div>
-        <div class="step-body">
-          <h3>Supervised Development</h3>
-          <p>You work through your research or writing with targeted guidance. Feedback focuses on strengthening logic, structure, and clarity.</p>
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-divider"></div>
-        <div class="step-body">
-          <h3>Scholarly Review</h3>
-          <p>Work is evaluated against academic standards. Revisions address coherence, validity, and defensibility.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="methodology-cta">
-      <p>For serious academic work requiring structure and clarity. <a href="https://wa.me/2347087589603" class="methodology-link">Request a consultation →</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- BLOG -->
-<section class="blog-section">
-  <div class="container">
-    <h2 class="section-title">From the Blog</h2>
-    <p class="section-intro">One article every week. Practical guidance for students navigating research, writing, and academic work.</p>
-
-    <div class="featured-post">
-      <div class="featured-post-image">
-        <img src="assets/blog-cover.webp" alt="How to Choose a Strong Research Topic">
-      </div>
-      <div class="featured-post-body">
-        <span class="blog-tag">Research</span>
-        <h3>How to Choose a Strong Research Topic</h3>
-        <div class="featured-post-summary">
-          <p>Choosing a research topic is one of the earliest and most consequential decisions in any academic project. Many students rush through it, picking something that sounds interesting without testing whether it is actually researchable or narrow enough for their word count and timeline.</p>
-          <p>A strong topic is specific, researchable, and aligned with your academic context. It is not just a subject area — it is a focused question you can investigate within your scope. If you cannot find at least ten credible sources on your topic within an hour, that is a signal to refine it further.</p>
-        </div>
-        <a href="blog/" class="blog-read-more">Read the full article →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT + FAQ SPLIT -->
-<section class="contact-faq-section" id="contact">
-  <div class="container">
-    <div class="contact-faq-grid">
-
-      <!-- LEFT: CONTACT -->
-      <div class="contact-col">
-        <h2 class="section-title">Contact Odexar</h2>
-        <p class="section-intro">Use the form or reach us directly on WhatsApp or email.</p>
-
-        <div class="form-card">
-          <h3>Project Intake Form</h3>
-          <p>Provide the key details of your academic work so the response can be more specific and useful.</p>
-
-          <form action="https://formspree.io/f/mreyolek" method="POST">
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full_name" placeholder="Your full name" required>
-              </div>
-              <div class="form-field">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your email address" required>
-              </div>
-              <div class="form-field">
-                <label for="phone">Phone / WhatsApp Number</label>
-                <input type="text" id="phone" name="phone" placeholder="Your phone or WhatsApp number">
-              </div>
-              <div class="form-field">
-                <label for="level">Level of Study</label>
-                <select id="level" name="level_of_study" required>
-                  <option value="">Select your level</option>
-                  <option>Undergraduate</option>
-                  <option>Postgraduate</option>
-                  <option>Master's</option>
-                  <option>PhD</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="form-field">
-                <label for="field">Field / Department</label>
-                <input type="text" id="field" name="field_department" placeholder="Education, Business, Public Health" required>
-              </div>
-              <div class="form-field">
-                <label for="service">Type of Support Needed</label>
-                <select id="service" name="support_type" required>
-                  <option value="">Select a service</option>
-                  <option>Research Topic Selection</option>
-                  <option>Proposal and Methodology</option>
-                  <option>Data Analysis Support</option>
-                  <option>Academic Editing</option>
-                  <option>CV Writing / Builder</option>
-                  <option>Statement of Purpose</option>
-                  <option>Multiple Areas</option>
-                </select>
-              </div>
-              <div class="form-field full">
-                <label for="topic">Project Topic or Title</label>
-                <input type="text" id="topic" name="project_topic" placeholder="Write your current topic or working title">
-              </div>
-              <div class="form-field full">
-                <label for="details">Brief Description of Your Challenge</label>
-                <textarea id="details" name="project_details" placeholder="Explain what you need help with and your deadline" required></textarea>
-              </div>
-            </div>
-
-            <input type="hidden" name="_subject" value="New Odexar Project Intake Submission">
-            <input type="hidden" name="_next" value="https://odexar.com/">
-            <input type="text" name="_gotcha" style="display:none">
-
-            <p class="form-note">This form is for academic support enquiries only.</p>
-
-            <div class="form-actions">
-              <button type="submit" class="primary-btn">Submit Enquiry</button>
-              <a class="secondary-btn form-secondary" href="https://wa.me/2347087589603">Use WhatsApp Instead</a>
-            </div>
-          </form>
-        </div>
-
-        <div class="contact-stack">
-          <div class="contact-card">
-            <h3>WhatsApp</h3>
-            <p>For faster enquiries and direct discussion.</p>
-            <p><a class="contact-link" href="https://wa.me/2347087589603">+234 708 758 9603</a></p>
-          </div>
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p>For formal enquiries and detailed project descriptions.</p>
-            <p><a class="contact-link" href="/cdn-cgi/l/email-protection#8ce4e9e0e0e3cce3e8e9f4edfea2efe3e1"><span class="__cf_email__" data-cfemail="d9b1bcb5b5b699b6bdbca1b8abf7bab6b4">[email&#160;protected]</span></a></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: FAQ -->
-      <div class="faq-col" id="faq">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-intro">Clear answers to the questions students ask most.</p>
-        <div class="faq-list">
-          <div class="faq-item">
-            <h3>Do you write projects for students?</h3>
-            <p>No. Odexar provides guidance, editing, and structured academic support for students developing their own original work.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How do I get started?</h3>
-            <p>Send a WhatsApp message or complete the intake form with your topic, level of study, and the exact area where you need support.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What fields do you support?</h3>
-            <p>Odexar supports students across social sciences, business, education, health sciences, and related fields.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Is my work confidential?</h3>
-            <p>Yes. Discussions, drafts, and project materials are handled confidentially.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How fast do you respond?</h3>
-            <p>Response time depends on workload and urgency, but enquiries are reviewed promptly.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Do you guarantee academic results?</h3>
-            <p>No ethical academic service can guarantee grades. Odexar focuses on improving the quality and clarity of your work.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta">
-  <div class="container">
-    <h2>Ready to move your research forward?</h2>
-    <p>Whether you are just starting or preparing to submit, Odexar provides clear academic support to help you move with structure and confidence.</p>
-    <a class="primary-btn" href="#contact">Fill the Intake Form</a>
-  </div>
-</section>
-
-<footer>
-  <div class="container footer-flex">
-    <div class="footer-brand">
-      <img src="assets/odexar-logo-reverse.svg" alt="Odexar" style="height:18px;width:auto;opacity:0.8;">
-      <span>© 2025 Odexar. All rights reserved.</span>
-    </div>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#how">Process</a>
-      <a href="blog/">Blog</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-  <div class="footer-integrity">
+  <div class="footer-bottom">
     <div class="container">
-      <p>Odexar does not produce academic work on behalf of clients. We provide structured guidance that enables you to develop original, defensible research in line with academic integrity. All services are intended to support students in developing their own original work.</p>
+      <span>© 2026 Odexar. All rights reserved.</span>
     </div>
   </div>
 </footer>
