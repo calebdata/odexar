@@ -316,24 +316,20 @@ section{padding:44px 0;}
 
 .services-guidance-link{
   font-family:Arial,sans-serif;
-  font-size:.88rem;
+  font-size:.92rem;
   font-weight:600;
-  color:#1c2e4a;
+  color:#3a7d52;
   background:transparent;
-  border:1.5px solid #1c2e4a;
+  border:none;
   text-decoration:none;
   letter-spacing:0.02em;
   white-space:nowrap;
-  padding:8px 18px;
-  border-radius:6px;
-  transition:all 0.2s;
   flex-shrink:0;
-  display:inline-block;
+  transition:color 0.2s;
 }
 
 .services-guidance-link:hover{
-  background:#1c2e4a;
-  color:#ffffff;
+  color:#1c2e4a;
 }
 
 .services-guidance-link:hover{background:#2d4a62;}
@@ -631,7 +627,7 @@ footer{background:#04061e;color:#cbd6e2;padding:24px 0 16px;}
   border-top:1px solid rgba(28,46,74,0.10);
   display:flex;
   align-items:center;
-  gap:24px;
+  gap:16px;
 }
 
 .methodology-cta p{
