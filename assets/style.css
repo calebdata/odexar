@@ -272,7 +272,7 @@ section{padding:44px 0;}
 
 .services-list-item{
   flex:1;
-  padding:0 40px 0 0;
+  padding:0 32px 0 0;
   text-align:left;
 }
 
@@ -295,18 +295,24 @@ section{padding:44px 0;}
 }
 
 .services-guidance{
-  margin-top:44px;
-  padding:24px 0 0;
+  max-width:1100px;
+  margin:24px auto 0;
+  padding:20px 0 0;
   border-top:1px solid rgba(28,46,74,0.10);
   background:transparent;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
 }
 
 .services-guidance p{
-  margin:0 0 12px;
+  margin:0;
   font-family:Georgia,"Times New Roman",serif;
   font-size:1rem;
   color:#1c2e4a;
   line-height:1.6;
+  flex:1;
 }
 
 .services-guidance-link{
