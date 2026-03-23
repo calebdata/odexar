@@ -181,7 +181,7 @@ section{padding:44px 0;}
 .hero{
   position:relative;
   width:100%;
-  min-height:78vh;
+  min-height:70vh;
   display:flex;
   align-items:flex-start;
 }
@@ -626,7 +626,7 @@ footer{background:#04061e;color:#cbd6e2;padding:24px 0 16px;}
   display:block;
   width:40px;
   height:2px;
-  background:#00ff41;
+  background:#2ea84e;
   margin:10px auto 28px;
   width:60px;
   border-radius:999px;
