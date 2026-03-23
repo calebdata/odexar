@@ -247,7 +247,7 @@ section{padding:44px 0;}
 /* ---- SERVICES ---- */
 .services-section{
   background:#eaecf0;
-  padding:44px 0;
+  padding:60px 0 44px;
 }
 
 .services-intro{
@@ -255,8 +255,8 @@ section{padding:44px 0;}
   font-weight:700 !important;
   color:#1c2e4a !important;
   font-family:Georgia,"Times New Roman",serif !important;
-  margin:0 0 32px !important;
-  text-align:center !important;
+  margin:0 0 24px !important;
+  text-align:left !important;
   display:block !important;
 }
 
@@ -275,11 +275,12 @@ section{padding:44px 0;}
 }
 
 .services-list-item h3{
-  margin:0 0 8px;
-  font-size:1rem;
+  margin:0 0 10px;
+  font-size:1.05rem;
   color:#1c2e4a;
   font-family:Georgia,"Times New Roman",serif;
   font-weight:700;
+  letter-spacing:0.01em;
 }
 
 .services-list-item p{
@@ -292,22 +293,17 @@ section{padding:44px 0;}
 
 .services-guidance{
   margin-top:44px;
-  padding:22px 28px;
-  background:rgba(28,46,74,0.04);
-  border-radius:10px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:24px;
+  padding:24px 0 0;
+  border-top:1px solid rgba(28,46,74,0.10);
+  background:transparent;
 }
 
 .services-guidance p{
-  margin:0;
+  margin:0 0 12px;
   font-family:Georgia,"Times New Roman",serif;
   font-size:1rem;
   color:#1c2e4a;
   line-height:1.6;
-  flex:1;
 }
 
 .services-guidance-link{
