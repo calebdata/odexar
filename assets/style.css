@@ -314,7 +314,7 @@ section{padding:44px 0;}
   font-family:Arial,sans-serif;
   font-size:.92rem;
   font-weight:600;
-  color:#00cc35;
+  color:#2ea84e;
   background:transparent;
   border:none;
   text-decoration:none;
@@ -324,7 +324,7 @@ section{padding:44px 0;}
 }
 
 .services-guidance-link:hover{
-  color:#00cc35;
+  color:#2ea84e;
   opacity:0.8;
 }
 
@@ -375,15 +375,12 @@ section{padding:44px 0;}
   gap:20px;
 }
 
-.step-num{
-  font-size:1.1rem;
-  font-weight:400;
-  color:#aab4c0;
-  line-height:1.4;
+.step-divider{
+  width:1px;
+  align-self:stretch;
+  background:rgba(28,46,74,0.15);
   flex-shrink:0;
-  width:28px;
-  font-family:Arial,sans-serif;
-  padding-top:3px;
+  margin-right:4px;
 }
 
 .step-body{flex:1;}
@@ -609,7 +606,7 @@ footer{background:#04061e;color:#cbd6e2;padding:24px 0 16px;}
   display:block;
   width:40px;
   height:2px;
-  background:#00cc35;
+  background:#2ea84e;
   margin:10px auto 28px;
   width:60px;
   border-radius:999px;
@@ -619,6 +616,7 @@ footer{background:#04061e;color:#cbd6e2;padding:24px 0 16px;}
 .methodology-cta{
   margin-top:36px;
   padding-bottom:24px;
+  padding-left:0;
   border-bottom:1px solid rgba(28,46,74,0.10);
 }
 
@@ -634,7 +632,7 @@ footer{background:#04061e;color:#cbd6e2;padding:24px 0 16px;}
   font-family:Arial,sans-serif;
   font-size:.9rem;
   font-weight:600;
-  color:#00cc35;
+  color:#2ea84e;
   text-decoration:none;
   letter-spacing:0.02em;
   white-space:nowrap;
@@ -643,6 +641,6 @@ footer{background:#04061e;color:#cbd6e2;padding:24px 0 16px;}
 }
 
 .methodology-link:hover{
-  color:#00cc35;
+  color:#2ea84e;
   opacity:0.8;
 }
