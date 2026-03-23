@@ -623,3 +623,34 @@ footer{background:#04061e;color:#cbd6e2;padding:24px 0 16px;}
   width:60px;
   border-radius:999px;
 }
+
+/* ---- METHODOLOGY CTA ---- */
+.methodology-cta{
+  margin-top:36px;
+  padding-top:24px;
+  border-top:1px solid rgba(28,46,74,0.10);
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+.methodology-cta p{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1rem;
+  color:#1c2e4a;
+  flex:1;
+}
+
+.methodology-link{
+  font-family:Arial,sans-serif;
+  font-size:.9rem;
+  font-weight:600;
+  color:#3a7d52;
+  text-decoration:none;
+  letter-spacing:0.02em;
+  white-space:nowrap;
+  transition:color 0.2s;
+}
+
+.methodology-link:hover{color:#1c2e4a;}
