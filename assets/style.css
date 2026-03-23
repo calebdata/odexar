@@ -250,13 +250,6 @@ section{padding:44px 0;}
   padding:44px 0;
 }
 
-.services-section .container{
-  background:#ffffff;
-  border-radius:12px;
-  padding:36px 40px;
-  box-shadow:0 1px 0 #e2e5ea, 0 -1px 0 #e2e5ea;
-}
-
 .services-intro{
   font-size:1.2rem !important;
   font-weight:700 !important;
