@@ -283,6 +283,7 @@ section{padding:44px 0;}
   font-family:Georgia,"Times New Roman",serif;
   font-weight:700;
   letter-spacing:0.01em;
+  white-space:nowrap;
 }
 
 .services-list-item p{
