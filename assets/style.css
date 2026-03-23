@@ -369,46 +369,38 @@ section{padding:44px 0;}
 
 .steps-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+  grid-template-columns:repeat(4,1fr);
+  gap:0 32px;
 }
 
 .step-card{
-  background:#1a2d4a;
-  padding:22px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,0.08);
+  background:transparent;
+  padding:24px 0;
+  border:none;
+  border-top:1px solid rgba(28,46,74,0.10);
   display:flex;
   flex-direction:row;
   align-items:flex-start;
-  gap:14px;
-  transition:all 0.3s ease;
-  box-shadow:0 8px 24px rgba(8,12,58,0.15);
-}
-
-.step-card:hover{
-  box-shadow:0 16px 40px rgba(8,12,58,0.25), 0 0 0 1.5px rgba(255,255,255,0.18);
-  transform:translateY(-4px);
+  gap:20px;
 }
 
 .step-num{
-  font-size:1.6rem;
-  font-weight:700;
-  color:#f0ebe1;
-  opacity:0.7;
-  line-height:1;
+  font-size:1.1rem;
+  font-weight:400;
+  color:#aab4c0;
+  line-height:1.4;
   flex-shrink:0;
-  width:36px;
+  width:28px;
   font-family:Arial,sans-serif;
-  padding-top:2px;
+  padding-top:3px;
 }
 
 .step-body{flex:1;}
 
 .step-card h3{
-  margin:0 0 4px;
-  font-size:.95rem;
-  color:#ffffff;
+  margin:0 0 6px;
+  font-size:1rem;
+  color:#1c2e4a;
   line-height:1.3;
   font-weight:700;
 }
@@ -416,7 +408,7 @@ section{padding:44px 0;}
 .step-card p{
   margin:0;
   font-family:Arial,sans-serif;
-  color:rgba(255,255,255,0.88);
+  color:#2d3748;
   font-size:.88rem;
   line-height:1.6;
 }
