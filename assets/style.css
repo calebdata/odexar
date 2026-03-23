@@ -17,8 +17,8 @@ a{text-decoration:none;color:inherit;}
 
 /* ---- CONTAINER ---- */
 .container{
-  width:92%;
-  max-width:1280px;
+  width:88%;
+  max-width:1200px;
   margin:0 auto;
 }
 
@@ -189,8 +189,8 @@ section{padding:44px 0;}
 .hero .container{
   display:flex;
   align-items:flex-start;
-  width:92%;
-  max-width:1280px;
+  width:88%;
+  max-width:1200px;
   margin:0 auto;
   position:relative;
   z-index:2;
