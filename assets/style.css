@@ -228,6 +228,22 @@ section{padding:44px 0;}
 
 .hero-actions{margin-top:40px;}
 
+/* ---- POSITIONING ---- */
+.positioning-section{
+  background:#eaecf0;
+  padding:52px 0 40px;
+}
+
+.positioning-text{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.05rem;
+  color:#1c2e4a;
+  line-height:1.85;
+  margin:0 auto;
+  max-width:780px;
+  text-align:left;
+}
+
 /* ---- SERVICES ---- */
 .services-section{
   background:#eaecf0;
