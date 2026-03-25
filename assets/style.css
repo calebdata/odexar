@@ -29,17 +29,12 @@ header{
   left:0;
   width:100%;
   z-index:1000;
-  background:transparent;
+  background:#eaecf0;
   height:72px;
   display:flex;
   align-items:center;
-  transition:background 0.3s ease, box-shadow 0.3s ease;
-}
-
-header.scrolled{
-  background:#eaecf0;
-  box-shadow:0 2px 20px rgba(8,12,58,0.12);
   border-bottom:1px solid #e2e5ea;
+  box-shadow:0 2px 20px rgba(8,12,58,0.08);
 }
 
 .nav{
@@ -75,7 +70,7 @@ header.scrolled{
 }
 
 .nav-links a{
-  color:#ffffff !important;
+  color:#080c3a !important;
   text-decoration:none !important;
   border:none !important;
   outline:none !important;
@@ -85,18 +80,13 @@ header.scrolled{
   transition:opacity 0.2s;
 }
 
-.nav-links a:hover{opacity:0.75;}
+.nav-links a:hover{opacity:0.65;}
 .nav-links a::after,.nav-links a::before{display:none !important;}
 
-header.scrolled .nav-links a{color:#080c3a !important;}
-header.scrolled .nav-links a:hover{color:#080c3a !important;opacity:0.65;}
-header.scrolled .nav-signup{border-color:rgba(8,12,58,0.4);color:#080c3a !important;}
-header.scrolled .nav-signup:hover{background:rgba(8,12,58,0.06);}
-
 .nav-signup{
-  color:#ffffff !important;
+  color:#080c3a !important;
   font-weight:700 !important;
-  border:1.5px solid rgba(255,255,255,0.7);
+  border:1.5px solid rgba(8,12,58,0.4) !important;
   border-radius:6px;
   padding:6px 16px !important;
   height:auto !important;
@@ -104,8 +94,8 @@ header.scrolled .nav-signup:hover{background:rgba(8,12,58,0.06);}
 }
 
 .nav-signup:hover{
-  background:rgba(255,255,255,0.12);
-  border-color:#ffffff;
+  background:rgba(8,12,58,0.06);
+  border-color:#080c3a !important;
   opacity:1 !important;
 }
 
