@@ -10,7 +10,8 @@
     /* ---- RESOURCE CENTRE PAGE ---- */
     .rc-hero{
       background:#080c3a;
-      padding:120px 0 60px;
+      padding:100px 0 60px;
+      margin-top:72px;
     }
     .rc-hero h1{
       font-size:2.2rem;
@@ -254,7 +255,7 @@
   <div class="container nav">
     <div class="nav-left">
       <a href="../index.html">
-        <img src="../assets/odexar-logo-reverse.svg" alt="Odexar" class="brand-logo" id="site-logo">
+        <img src="../assets/odexar-logo.svg?v=2" alt="Odexar" class="brand-logo" id="site-logo">
       </a>
     </div>
     <nav class="nav-links">
@@ -268,20 +269,7 @@
   </div>
 </header>
 
-<script>
-  const header = document.querySelector('header');
-  const logo = document.getElementById('site-logo');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-      header.classList.add('scrolled');
-      logo.src = '../assets/odexar-logo.svg?v=2';
-    } else {
-      header.classList.remove('scrolled');
-      logo.src = '../assets/odexar-logo-reverse.svg';
-    }
-  });
-</script>
 
 <div class="rc-hero">
   <div class="container">
