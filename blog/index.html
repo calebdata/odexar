@@ -3,143 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Choose a Strong Research Topic | Odexar</title>
-  <meta name="description" content="A systematic guide to selecting a strong and researchable academic topic.">
-  <link rel="stylesheet" href="../assets/style.css?v=200">
+  <title>Odexar Blog</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
 <header>
   <div class="container nav">
-    <div class="nav-left">
-      <a href="../index.html">
-        <img src="../assets/odexar-logo.svg?v=2" alt="Odexar" class="brand-logo">
-      </a>
+    <div class="brand">
+      <a href="../index.html"><img src="../assets/odexar-logo.png" alt="Odexar"></a>
     </div>
     <nav class="nav-links">
+      <a href="../index.html">Home</a>
       <a href="../index.html#services">Services</a>
-      <a href="../index.html#how">Methodology</a>
-      <a href="../blog/">Blog</a>
-      <a href="../resources/">Resources</a>
+      <a href="index.html">Blog</a>
       <a href="../index.html#contact">Contact</a>
+      <a class="nav-button" href="https://wa.me/2347087589603">Book Consultation</a>
     </nav>
   </div>
 </header>
 
-<!-- BLOG POST -->
-<section style="padding-top:120px;">
-  <div class="container" style="max-width:800px; background:#fff; padding:40px;">
+<main class="blog-section">
+  <div class="container">
+    <h1 class="section-title">Odexar Blog</h1>
+    <p class="section-intro">Practical articles on research topics, proposal writing, data interpretation, and academic writing.</p>
 
-    <p style="font-family:Arial,sans-serif; font-size:.85rem; color:#6b7280;">
-      March 2026 • Research Design
-    </p>
-
-    <h1 style="font-size:2rem; color:#1c2e4a; margin-top:10px;">
-      How to Choose a Strong Research Topic
-    </h1>
-
-    <img src="../assets/images/blog-topic-selection.png" alt="Research Topic" style="width:100%; margin:24px 0; border-radius:8px;">
-
-    <h2>1. Introduction</h2>
-    <p>The selection of a research topic is a foundational stage in the academic research process. It determines the direction, scope, and overall quality of the study. A poorly defined topic often results in vague objectives, weak analysis, and structural inconsistencies. In contrast, a well-formulated topic provides clarity, supports methodological rigor, and facilitates meaningful conclusions.</p>
-
-    <p>This article presents a systematic approach to developing a strong and researchable topic, particularly for students and early-stage researchers.</p>
-
-    <h2>2. Identification of a Broad Area of Study</h2>
-    <p>Research typically begins with the identification of a general field of interest.</p>
-
-    <ul>
-      <li>Education</li>
-      <li>Business Management</li>
-      <li>Public Health</li>
-      <li>Economics</li>
-    </ul>
-
-    <h2>3. Formulation of a Research Problem</h2>
-    <p>A research topic must extend beyond a general area to address a clearly defined problem.</p>
-
-    <ul>
-      <li>Broad: Social media in education</li>
-      <li>Problem: Impact of social media on student academic performance</li>
-      <li>Refined: Impact of social media usage on undergraduate students in Nigerian universities</li>
-    </ul>
-
-    <h2>4. Assessment of Data Availability</h2>
-    <p>The feasibility of a research topic depends on access to relevant data, population, and literature.</p>
-
-    <h2>5. Establishing Academic Relevance</h2>
-    <p>A research topic must contribute to existing knowledge and engage with established theories.</p>
-
-    <h2>6. Identification of Key Variables</h2>
-    <p>Variables define the relationships that the study seeks to examine.</p>
-
-    <ul>
-      <li>Independent variable: Social media usage</li>
-      <li>Dependent variable: Academic performance</li>
-    </ul>
-
-    <h2>7. Delimitation of Scope and Context</h2>
-    <p>Define population, location, and context clearly.</p>
-
-    <ul>
-      <li>General: Effect of unemployment on youth</li>
-      <li>Refined: Effect of unemployment on youth productivity in Ibadan, Nigeria</li>
-    </ul>
-
-    <h2>8. Preliminary Evaluation of the Topic</h2>
-    <ul>
-      <li>Can it form clear research questions?</li>
-      <li>Are variables measurable?</li>
-      <li>Is it feasible?</li>
-    </ul>
-
-    <h2>9. Comparative Examples</h2>
-    <ul>
-      <li>Weak: Education in Nigeria</li>
-      <li>Strong: Teacher-student ratio and academic performance in Oyo State</li>
-    </ul>
-
-    <h2>10. Conclusion</h2>
-    <p>A clearly defined topic enhances coherence, methodological consistency, and research quality.</p>
-
-    <h2>11. Professional Support</h2>
-    <p>Odexar provides assistance in topic refinement, proposal development, and data analysis.</p>
-
-    <a href="https://wa.me/2347087589603" class="primary-btn" style="margin-top:20px; display:inline-block;">
-      Book a Consultation
-    </a>
-
+    <div id="blog-feed"></div>
   </div>
-</section>
+</main>
 
 <footer>
-  <div class="footer-main">
-    <div class="container footer-grid">
-
-      <div class="footer-col">
-        <img src="../assets/odexar-logo.svg?v=2" alt="Odexar" class="footer-logo">
-        <p class="footer-tagline">Structured academic support for university students.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-heading">Navigation</h4>
-        <nav class="footer-nav">
-          <a href="../index.html#how">Methodology</a>
-          <a href="../blog/">Blog</a>
-          <a href="../resources/">Resources</a>
-          <a href="../index.html#contact">Contact</a>
-        </nav>
-      </div>
-
+  <div class="container footer-flex">
+    <div class="footer-brand">
+      <img src="../assets/odexar-icon.png" alt="Odexar">
+      <span>Odexar</span>
     </div>
-  </div>
-
-  <div class="footer-base">
-    <div class="container footer-base-inner">
-      <span>© 2026 Odexar. All rights reserved.</span>
-    </div>
+    <div>© 2026 Odexar. All rights reserved.</div>
   </div>
 </footer>
+
+<script>
+fetch('../assets/blog-posts.json')
+  .then(res => res.json())
+  .then(posts => {
+    const feed = document.getElementById('blog-feed');
+
+    // Featured post (first in array)
+    const featured = posts[0];
+    feed.innerHTML += `
+      <div class="featured-post">
+        <div class="featured-post-image">
+          <img src="../assets/images/${featured.image}" alt="${featured.title}">
+        </div>
+        <div class="featured-post-body">
+          <span class="blog-tag">${featured.category}</span>
+          <h3>${featured.title}</h3>
+          <p>${featured.summary}</p>
+          <a href="posts/${featured.slug}.html" class="blog-read-more">Read More →</a>
+        </div>
+      </div>
+    `;
+
+    // Other posts grid
+    let gridHTML = '<div class="resources-grid" style="margin-top:40px;">';
+    posts.slice(1).forEach((post, index) => {
+      gridHTML += `
+        <div class="resource-card">
+          <span class="resource-tag">${post.category}</span>
+          <h3>${post.title}</h3>
+          <p>${post.summary}</p>
+          <a href="posts/${post.slug}.html" class="resource-action">Read More →</a>
+        </div>
+      `;
+    });
+    gridHTML += '</div>';
+    feed.innerHTML += gridHTML;
+  })
+  .catch(err => console.error(err));
+</script>
 
 </body>
 </html>
