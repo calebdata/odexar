@@ -1,52 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odexar Blog</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <a href="../index.html"><img src="../assets/odexar-logo.png" alt="Odexar"></a>
+    </div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#services">Services</a>
+      <a href="index.html">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="nav-button" href="https://wa.me/2347087589603">Book Consultation</a>
+    </nav>
+  </div>
+</header>
+
 <main class="blog-section">
   <div class="container">
     <h1 class="section-title">Odexar Blog</h1>
     <p class="section-intro">Practical articles on research topics, proposal writing, data interpretation, and academic writing.</p>
 
-    <!-- Dynamic Blog Feed -->
     <div id="blog-feed"></div>
   </div>
 </main>
 
-<script>
-  fetch('../assets/blog-posts.json')
-    .then(response => response.json())
-    .then(posts => {
-      const feed = document.getElementById('blog-feed');
+<footer>
+  <div class="container footer-flex">
+    <div class="footer-brand">
+      <img src="../assets/odexar-icon.png" alt="Odexar">
+      <span>Odexar</span>
+    </div>
+    <div>© 2026 Odexar. All rights reserved.</div>
+  </div>
+</footer>
 
-      // Render featured post (first in array)
-      const featured = posts[0];
-      const featuredHTML = `
-        <div class="featured-post">
-          <div class="featured-post-image">
-            <img src="${featured.image}" alt="${featured.title}">
-          </div>
-          <div class="featured-post-body">
-            <span class="blog-tag">${featured.category}</span>
-            <h3>${featured.title}</h3>
-            <div class="featured-post-summary">
-              <p>${featured.summary}</p>
-              <a href="posts/${featured.slug}.html" class="blog-read-more">Read More →</a>
-            </div>
-          </div>
+<script>
+fetch('../assets/blog-posts.json')
+  .then(res => res.json())
+  .then(posts => {
+    const feed = document.getElementById('blog-feed');
+
+    // Featured post (first in array)
+    const featured = posts[0];
+    feed.innerHTML += `
+      <div class="featured-post">
+        <div class="featured-post-image">
+          <img src="../assets/images/${featured.image}" alt="${featured.title}">
+        </div>
+        <div class="featured-post-body">
+          <span class="blog-tag">${featured.category}</span>
+          <h3>${featured.title}</h3>
+          <p>${featured.summary}</p>
+          <a href="posts/${featured.slug}.html" class="blog-read-more">Read More →</a>
+        </div>
+      </div>
+    `;
+
+    // Other posts grid
+    let gridHTML = '<div class="resources-grid" style="margin-top:40px;">';
+    posts.slice(1).forEach((post, index) => {
+      gridHTML += `
+        <div class="resource-card">
+          <span class="resource-tag">${post.category}</span>
+          <h3>${post.title}</h3>
+          <p>${post.summary}</p>
+          <a href="posts/${post.slug}.html" class="resource-action">Read More →</a>
         </div>
       `;
-      feed.innerHTML += featuredHTML;
-
-      // Render other posts
-      let otherHTML = '<div class="resources-grid" style="margin-top:40px;">';
-      posts.slice(1).forEach(post => {
-        otherHTML += `
-          <div class="resource-card">
-            <span class="resource-tag">${post.category}</span>
-            <h3>${post.title}</h3>
-            <p>${post.summary}</p>
-            <a href="posts/${post.slug}.html" class="resource-action">Read More →</a>
-          </div>
-        `;
-      });
-      otherHTML += '</div>';
-      feed.innerHTML += otherHTML;
-    })
-    .catch(err => console.error('Failed to load blog posts:', err));
+    });
+    gridHTML += '</div>';
+    feed.innerHTML += gridHTML;
+  })
+  .catch(err => console.error(err));
 </script>
+
+</body>
+</html>
