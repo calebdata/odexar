@@ -3,84 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odexar Blog</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>How to Choose a Strong Research Topic | Odexar</title>
+  <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
 
 <header>
   <div class="container nav">
     <div class="brand">
-      <a href="../index.html"><img src="../assets/odexar-logo.png" alt="Odexar"></a>
+      <a href="../../index.html"><img src="../../assets/odexar-logo.png" alt="Odexar"></a>
     </div>
     <nav class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../index.html#services">Services</a>
-      <a href="index.html">Blog</a>
-      <a href="../index.html#contact">Contact</a>
-      <a class="nav-button" href="https://wa.me/2347087589603">Book Consultation</a>
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#services">Services</a>
+      <a href="../index.html">Blog</a>
+      <a href="../../index.html#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<main class="blog-section">
+<main class="positioning-section">
   <div class="container">
-    <h1 class="section-title">Odexar Blog</h1>
-    <p class="section-intro">Practical articles on research topics, proposal writing, data interpretation, and academic writing.</p>
 
-    <div id="blog-feed"></div>
+    <h1>How to Choose a Strong Research Topic</h1>
+
+    <img src="../../assets/images/blog-topic-selection.png" alt="Research Topic" style="width:100%; border-radius:12px; margin:20px 0;">
+
+    <p class="positioning-text">
+      A strong research topic determines the clarity, depth, and overall success of an academic project. Many students begin with broad ideas but struggle to refine them into workable research problems.
+    </p>
+
+    <p class="positioning-text">
+      The process of selecting a research topic can be approached systematically:
+    </p>
+
+    <p class="positioning-text">
+      1. Identify a broad area of interest within your field.<br>
+      2. Review existing literature to understand current discussions.<br>
+      3. Narrow the focus to a specific issue or gap.<br>
+      4. Ensure the topic is feasible within your time and resources.<br>
+      5. Align the topic with academic and practical relevance.
+    </p>
+
+    <p class="positioning-text">
+      A well-defined topic not only improves the quality of research but also simplifies the processes of data collection, analysis, and interpretation.
+    </p>
+
   </div>
 </main>
 
 <footer>
   <div class="container footer-flex">
     <div class="footer-brand">
-      <img src="../assets/odexar-icon.png" alt="Odexar">
+      <img src="../../assets/odexar-icon.png" alt="Odexar">
       <span>Odexar</span>
     </div>
     <div>© 2026 Odexar. All rights reserved.</div>
   </div>
 </footer>
-
-<script>
-fetch('../assets/blog-posts.json')
-  .then(res => res.json())
-  .then(posts => {
-    const feed = document.getElementById('blog-feed');
-
-    // Featured post (first in array)
-    const featured = posts[0];
-    feed.innerHTML += `
-      <div class="featured-post">
-        <div class="featured-post-image">
-          <img src="../assets/images/${featured.image}" alt="${featured.title}">
-        </div>
-        <div class="featured-post-body">
-          <span class="blog-tag">${featured.category}</span>
-          <h3>${featured.title}</h3>
-          <p>${featured.summary}</p>
-          <a href="posts/${featured.slug}.html" class="blog-read-more">Read More →</a>
-        </div>
-      </div>
-    `;
-
-    // Other posts grid
-    let gridHTML = '<div class="resources-grid" style="margin-top:40px;">';
-    posts.slice(1).forEach((post, index) => {
-      gridHTML += `
-        <div class="resource-card">
-          <span class="resource-tag">${post.category}</span>
-          <h3>${post.title}</h3>
-          <p>${post.summary}</p>
-          <a href="posts/${post.slug}.html" class="resource-action">Read More →</a>
-        </div>
-      `;
-    });
-    gridHTML += '</div>';
-    feed.innerHTML += gridHTML;
-  })
-  .catch(err => console.error(err));
-</script>
 
 </body>
 </html>
