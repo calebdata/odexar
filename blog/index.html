@@ -3,84 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odexar Blog</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>Odexar | Blog Post</title>
+  <meta name="description" content="Odexar blog post on academic research guidance.">
+  <link rel="stylesheet" href="../assets/style.css?v=200">
+  <style>
+    /* ---- BLOG POST CARD STYLING ---- */
+    .blog-post-card {
+      display: flex;
+      flex-direction: column;
+      max-width: 900px;
+      margin: 50px auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 32px rgba(8,12,58,0.08);
+      overflow: hidden;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .blog-post-image img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .blog-post-content {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .blog-post-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #2ea84e;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .blog-post-title {
+      font-size: 1.6rem;
+      color: #1c2e4a;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .blog-post-text {
+      font-size: 1rem;
+      color: #2d3748;
+      line-height: 1.7;
+    }
+
+    .blog-post-read-more {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1c2e4a;
+      text-decoration: none;
+      align-self: flex-end;
+      transition: color 0.2s;
+    }
+
+    .blog-post-read-more:hover {
+      color: #2ea84e;
+    }
+
+    @media(max-width:600px){
+      .blog-post-card {margin: 30px 16px;}
+      .blog-post-title {font-size: 1.3rem;}
+      .blog-post-text {font-size: 0.95rem;}
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <div class="container nav">
-    <div class="brand">
-      <a href="../index.html"><img src="../assets/odexar-logo.png" alt="Odexar"></a>
+    <div class="nav-left">
+      <a href="../index.html">
+        <img src="../assets/odexar-logo.svg?v=2" alt="Odexar" class="brand-logo">
+      </a>
     </div>
     <nav class="nav-links">
-      <a href="../index.html">Home</a>
       <a href="../index.html#services">Services</a>
-      <a href="index.html">Blog</a>
+      <a href="../index.html#how">Methodology</a>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#resources">Resources</a>
       <a href="../index.html#contact">Contact</a>
-      <a class="nav-button" href="https://wa.me/2347087589603">Book Consultation</a>
     </nav>
   </div>
 </header>
 
-<main class="blog-section">
-  <div class="container">
-    <h1 class="section-title">Odexar Blog</h1>
-    <p class="section-intro">Practical articles on research topics, proposal writing, data interpretation, and academic writing.</p>
-
-    <div id="blog-feed"></div>
+<main>
+  <div class="blog-post-card">
+    <div class="blog-post-image">
+      <img src="../assets/blog-topic-selection.png" alt="How to Choose a Strong Research Topic">
+    </div>
+    <div class="blog-post-content">
+      <span class="blog-post-tag">Research</span>
+      <h1 class="blog-post-title">How to Choose a Strong Research Topic</h1>
+      <p class="blog-post-text">Choosing a research topic is one of the earliest and most consequential decisions in any academic project. Many students rush through it, picking something that sounds interesting without testing whether it is actually researchable or narrow enough for their word count and timeline.</p>
+      <p class="blog-post-text">A strong topic is specific, researchable, and aligned with your academic context. It is not just a subject area — it is a focused question you can investigate within your scope. If you cannot find at least ten credible sources on your topic within an hour, that is a signal to refine it further.</p>
+      <a href="../blog/" class="blog-post-read-more">Read the full article →</a>
+    </div>
   </div>
 </main>
-
-<footer>
-  <div class="container footer-flex">
-    <div class="footer-brand">
-      <img src="../assets/odexar-icon.png" alt="Odexar">
-      <span>Odexar</span>
-    </div>
-    <div>© 2026 Odexar. All rights reserved.</div>
-  </div>
-</footer>
-
-<script>
-fetch('../assets/blog-posts.json')
-  .then(res => res.json())
-  .then(posts => {
-    const feed = document.getElementById('blog-feed');
-
-    // Featured post (first in array)
-    const featured = posts[0];
-    feed.innerHTML += `
-      <div class="featured-post">
-        <div class="featured-post-image">
-          <img src="../assets/images/${featured.image}" alt="${featured.title}">
-        </div>
-        <div class="featured-post-body">
-          <span class="blog-tag">${featured.category}</span>
-          <h3>${featured.title}</h3>
-          <p>${featured.summary}</p>
-          <a href="posts/${featured.slug}.html" class="blog-read-more">Read More →</a>
-        </div>
-      </div>
-    `;
-
-    // Other posts grid
-    let gridHTML = '<div class="resources-grid" style="margin-top:40px;">';
-    posts.slice(1).forEach((post, index) => {
-      gridHTML += `
-        <div class="resource-card">
-          <span class="resource-tag">${post.category}</span>
-          <h3>${post.title}</h3>
-          <p>${post.summary}</p>
-          <a href="posts/${post.slug}.html" class="resource-action">Read More →</a>
-        </div>
-      `;
-    });
-    gridHTML += '</div>';
-    feed.innerHTML += gridHTML;
-  })
-  .catch(err => console.error(err));
-</script>
 
 </body>
 </html>
