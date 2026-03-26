@@ -266,48 +266,49 @@ section{padding:80px 0;}
 
 /* ---- METHODOLOGY BAR ---- */
 .methodology-bar{
-  background:#ffffff;
-  padding:72px 0;
-  border-top:1px solid rgba(28,46,74,0.08);
-  border-bottom:1px solid rgba(28,46,74,0.08);
+  background:#0d1117;
+  padding:80px 0;
 }
 
 .methodology-bar-inner{
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
-  gap:28px;
+  align-items:center;
+  text-align:center;
+  gap:32px;
 }
 
 .methodology-bar-statement{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:1.65rem;
-  color:#1c2e4a;
-  line-height:1.5;
+  font-size:1.55rem;
+  color:#ffffff;
+  line-height:1.55;
   margin:0;
-  max-width:640px;
+  max-width:600px;
 }
 
 .methodology-bar-actions{
   display:flex;
   flex-direction:row;
   align-items:center;
-  gap:32px;
+  gap:36px;
   flex-wrap:wrap;
+  justify-content:center;
 }
 
 .methodology-bar-btn{
   background:transparent;
-  color:#1c2e4a;
+  color:#ffffff;
   font-family:Arial,sans-serif;
-  font-size:.9rem;
+  font-size:.88rem;
   font-weight:700;
   padding:0;
   border:none;
-  border-bottom:1.5px solid #1c2e4a;
+  border-bottom:1.5px solid rgba(255,255,255,0.5);
   border-radius:0;
   padding-bottom:2px;
-  letter-spacing:0.02em;
+  letter-spacing:0.03em;
+  cursor:pointer;
   transition:opacity 0.2s;
 }
 
@@ -315,15 +316,15 @@ section{padding:80px 0;}
 
 .methodology-bar-wa{
   font-family:Arial,sans-serif;
-  font-size:.9rem;
+  font-size:.88rem;
   font-weight:700;
-  color:#2ea84e;
+  color:rgba(255,255,255,0.5);
   text-decoration:none;
-  letter-spacing:0.02em;
+  letter-spacing:0.03em;
   transition:opacity 0.2s;
 }
 
-.methodology-bar-wa:hover{opacity:0.65;}
+.methodology-bar-wa:hover{opacity:1;}
 
 /* ---- METHODOLOGY ---- */
 .how-section{
