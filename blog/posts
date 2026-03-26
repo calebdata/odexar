@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Choose a Strong Research Topic | Odexar</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <a href="../../index.html"><img src="../../assets/odexar-logo.png" alt="Odexar"></a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#services">Services</a>
+      <a href="../index.html">Blog</a>
+      <a href="../../index.html#contact">Contact</a>
+      <a class="nav-button" href="https://wa.me/2347087589603">Book Consultation</a>
+    </nav>
+  </div>
+</header>
 
+<main class="positioning-section">
+  <div class="container">
+    <h1>How to Choose a Strong Research Topic</h1>
+
+    <p class="positioning-text">
+      1. Start with a broad area of interest and list possible ideas.<br>
+      2. Check what research already exists to avoid repetition.<br>
+      3. Narrow your topic to something practical and researchable.<br>
+      4. Ensure your topic has clear academic and real-world value.<br>
+      5. Confirm your topic can be completed within your timeframe and resources.
+    </p>
+
+    <p class="positioning-text">
+      Use this structured approach to move from vague ideas to a focused research question that is academically meaningful.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-flex">
+    <div class="footer-brand">
+      <img src="../../assets/odexar-icon.png" alt="Odexar">
+      <span>Odexar</span>
+    </div>
+    <div>© 2026 Odexar. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
