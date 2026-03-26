@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Odexar</title>
+  <meta name="description" content="Practical guidance for students navigating research, writing, and academic work.">
+  <link rel="stylesheet" href="../assets/style.css?v=209">
+  <style>
+    .blog-page-header{
+      background:#eaecf0;
+      padding:120px 0 48px;
+      border-bottom:1px solid rgba(28,46,74,0.08);
+    }
+
+    .blog-page-header h1{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.4rem;
+      color:#1c2e4a;
+      margin:0 0 8px;
+      font-weight:700;
+    }
+
+    .blog-page-header p{
+      font-family:Arial,sans-serif;
+      font-size:.92rem;
+      color:#4b5c6c;
+      margin:0;
+    }
+
+    .blog-listing-body{
+      background:#eaecf0;
+      padding:56px 0 80px;
+    }
+
+    /* Featured post */
+    .blog-featured{
+      display:grid;
+      grid-template-columns:1fr 1.3fr;
+      background:#ffffff;
+      border-radius:4px;
+      overflow:hidden;
+      margin-bottom:56px;
+      box-shadow:0 4px 24px rgba(8,12,58,0.07);
+    }
+
+    .blog-featured-image{
+      min-height:380px;
+      overflow:hidden;
+      background:#d8dce6;
+    }
+
+    .blog-featured-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .blog-featured-body{
+      padding:40px 40px 36px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:14px;
+    }
+
+    .blog-featured-label{
+      font-family:Arial,sans-serif;
+      font-size:.72rem;
+      font-weight:700;
+      color:#2ea84e;
+      text-transform:uppercase;
+      letter-spacing:.07em;
+    }
+
+    .blog-featured-body h2{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.35rem;
+      color:#1c2e4a;
+      margin:0;
+      line-height:1.4;
+      font-weight:700;
+    }
+
+    .blog-featured-body p{
+      font-family:Arial,sans-serif;
+      font-size:.9rem;
+      color:#4b5c6c;
+      line-height:1.7;
+      margin:0;
+    }
+
+    .blog-featured-link{
+      font-family:Arial,sans-serif;
+      font-size:.88rem;
+      font-weight:700;
+      color:#1c2e4a;
+      text-decoration:none;
+      margin-top:4px;
+      transition:opacity 0.2s;
+      align-self:flex-start;
+    }
+
+    .blog-featured-link:hover{opacity:0.6;}
+
+    /* Card grid */
+    .blog-grid-heading{
+      font-family:Arial,sans-serif;
+      font-size:.75rem;
+      font-weight:700;
+      color:#4b5c6c;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin:0 0 20px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(28,46,74,0.10);
+    }
+
+    .blog-card-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .blog-card{
+      background:#ffffff;
+      border-radius:4px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      box-shadow:0 2px 12px rgba(8,12,58,0.05);
+      transition:box-shadow 0.2s;
+    }
+
+    .blog-card:hover{box-shadow:0 6px 24px rgba(8,12,58,0.10);}
+
+    .blog-card-image{
+      height:180px;
+      overflow:hidden;
+      background:#d8dce6;
+    }
+
+    .blog-card-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .blog-card-body{
+      padding:20px 20px 18px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      flex:1;
+    }
+
+    .blog-card-tag{
+      font-family:Arial,sans-serif;
+      font-size:.7rem;
+      font-weight:700;
+      color:#2ea84e;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+
+    .blog-card-body h3{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:.97rem;
+      color:#1c2e4a;
+      margin:0;
+      line-height:1.4;
+      font-weight:700;
+    }
+
+    .blog-card-body p{
+      font-family:Arial,sans-serif;
+      font-size:.83rem;
+      color:#4b5c6c;
+      line-height:1.65;
+      margin:0;
+      flex:1;
+    }
+
+    .blog-card-link{
+      font-family:Arial,sans-serif;
+      font-size:.82rem;
+      font-weight:700;
+      color:#1c2e4a;
+      text-decoration:none;
+      margin-top:8px;
+      transition:opacity 0.2s;
+      align-self:flex-start;
+    }
+
+    .blog-card-link:hover{opacity:0.6;}
+
+    /* Empty card placeholder */
+    .blog-card-placeholder{
+      background:#eaecf0;
+      border:1.5px dashed rgba(28,46,74,0.15);
+      border-radius:4px;
+      min-height:280px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .blog-card-placeholder span{
+      font-family:Arial,sans-serif;
+      font-size:.8rem;
+      color:rgba(28,46,74,0.3);
+      letter-spacing:.05em;
+    }
+
+    @media(max-width:900px){
+      .blog-featured{grid-template-columns:1fr;}
+      .blog-featured-image{min-height:260px;}
+      .blog-card-grid{grid-template-columns:1fr 1fr;}
+    }
+
+    @media(max-width:600px){
+      .blog-page-header{padding:100px 0 36px;}
+      .blog-card-grid{grid-template-columns:1fr;}
+      .blog-featured-body{padding:28px 24px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="../index.html">
+        <img src="../assets/odexar-logo.svg?v=2" alt="Odexar" class="brand-logo">
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#how">Methodology</a>
+      <a href="../blog/">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="blog-page-header">
+  <div class="container">
+    <h1>Blog</h1>
+    <p>Practical guidance for students navigating research, writing, and academic work.</p>
+  </div>
+</div>
+
+<div class="blog-listing-body">
+  <div class="container">
+
+    <!-- FEATURED POST -->
+    <div class="blog-featured">
+      <div class="blog-featured-image">
+        <img src="../assets/blog-topic-selection.png" alt="Why Most Final-Year Students Start Their Research in the Wrong Place">
+      </div>
+      <div class="blog-featured-body">
+        <span class="blog-featured-label">Research</span>
+        <h2>Why Most Final-Year Students Start Their Research in the Wrong Place</h2>
+        <p>A significant proportion of final-year students have their research topics rejected at the first or second submission. The underlying problem is not a lack of effort. It is a lack of thinking structure.</p>
+        <a href="posts/why-final-year-students-start-research-wrong.html" class="blog-featured-link">Read the article →</a>
+      </div>
+    </div>
+
+    <!-- MORE ARTICLES -->
+    <p class="blog-grid-heading">More articles</p>
+    <div class="blog-card-grid">
+      <div class="blog-card-placeholder"><span>Coming soon</span></div>
+      <div class="blog-card-placeholder"><span>Coming soon</span></div>
+      <div class="blog-card-placeholder"><span>Coming soon</span></div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">
+    <div class="container footer-grid">
+
+      <div class="footer-col">
+        <img src="../assets/odexar-logo.svg?v=2" alt="Odexar" class="footer-logo">
+        <p class="footer-tagline">Structured academic support for university students.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-icon" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="footer-social-icon" aria-label="X / Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading">Services</h4>
+        <nav class="footer-nav">
+          <a href="../index.html#services">Research Development</a>
+          <a href="../index.html#services">Data &amp; Analysis</a>
+          <a href="../index.html#services">Academic &amp; Professional Writing</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading">Navigation</h4>
+        <nav class="footer-nav">
+          <a href="../index.html#how">Methodology</a>
+          <a href="../blog/">Blog</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading">Contact</h4>
+        <div class="footer-contact-block">
+          <p><span class="footer-contact-label">Email</span><a href="mailto:contact@odexar.com" class="footer-contact-value">contact@odexar.com</a></p>
+          <p><span class="footer-contact-label">WhatsApp</span><a href="https://wa.me/2347087589603" class="footer-contact-value">+234 708 758 9603</a></p>
+        </div>
+        <a href="https://wa.me/2347087589603" class="footer-cta-link">Request an initial review →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-base">
+    <div class="container footer-base-inner">
+      <span>© 2026 Odexar. All rights reserved.</span>
+      <div class="footer-base-links">
+        <a href="#">Academic integrity policy</a>
+        <a href="#">Privacy policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
