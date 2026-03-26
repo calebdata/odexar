@@ -266,7 +266,7 @@ section{padding:80px 0;}
 
 /* ---- METHODOLOGY BAR ---- */
 .methodology-bar{
-  background:#0d1117;
+  background:#a0abc8;
   padding:80px 0;
 }
 
@@ -281,50 +281,54 @@ section{padding:80px 0;}
 .methodology-bar-statement{
   font-family:Georgia,"Times New Roman",serif;
   font-size:1.55rem;
-  color:#ffffff;
-  line-height:1.55;
+  color:#080c3a;
+  line-height:1.2;
   margin:0;
-  max-width:600px;
+  white-space:nowrap;
 }
 
 .methodology-bar-actions{
   display:flex;
   flex-direction:row;
   align-items:center;
-  gap:36px;
+  gap:16px;
   flex-wrap:wrap;
   justify-content:center;
 }
 
 .methodology-bar-btn{
-  background:transparent;
-  color:#ffffff;
+  display:inline-block;
+  background:#f5f0e8;
+  color:#080c3a;
   font-family:Arial,sans-serif;
   font-size:.88rem;
   font-weight:700;
-  padding:0;
+  padding:11px 24px;
   border:none;
-  border-bottom:1.5px solid rgba(255,255,255,0.5);
-  border-radius:0;
-  padding-bottom:2px;
+  border-radius:6px;
   letter-spacing:0.03em;
   cursor:pointer;
+  text-decoration:none;
   transition:opacity 0.2s;
 }
 
-.methodology-bar-btn:hover{background:transparent;opacity:0.55;}
+.methodology-bar-btn:hover{opacity:0.8;background:#f5f0e8;}
 
 .methodology-bar-wa{
+  display:inline-block;
+  background:#f5f0e8;
+  color:#080c3a;
   font-family:Arial,sans-serif;
   font-size:.88rem;
   font-weight:700;
-  color:rgba(255,255,255,0.5);
+  padding:11px 24px;
+  border-radius:6px;
   text-decoration:none;
   letter-spacing:0.03em;
   transition:opacity 0.2s;
 }
 
-.methodology-bar-wa:hover{opacity:1;}
+.methodology-bar-wa:hover{opacity:0.8;}
 
 /* ---- METHODOLOGY ---- */
 .how-section{
