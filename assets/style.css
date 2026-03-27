@@ -230,7 +230,7 @@ section{padding:80px 0;}
 
 /* ---- SERVICES ---- */
 .services-section{
-  background:#eaecf0;
+  background:linear-gradient(to bottom, #eaecf0 70%, #f7f8fa 100%);
   padding:100px 0 80px;
 }
 
@@ -299,8 +299,8 @@ section{padding:80px 0;}
 
 .methodology-bar-btn{
   display:inline-block;
-  background:#f5f0e8;
-  color:#080c3a;
+  background:#2a3a6b;
+  color:#ffffff;
   font-family:Arial,sans-serif;
   font-size:.85rem;
   font-weight:700;
@@ -313,11 +313,11 @@ section{padding:80px 0;}
   transition:opacity 0.2s;
 }
 
-.methodology-bar-btn:hover{opacity:0.7;background:#f5f0e8;}
+.methodology-bar-btn:hover{opacity:0.8;background:#2a3a6b;}
 
 .methodology-bar-wa{
   display:inline-block;
-  background:#f5f0e8;
+  background:#e8dfc8;
   color:#080c3a;
   font-family:Arial,sans-serif;
   font-size:.85rem;
@@ -330,7 +330,7 @@ section{padding:80px 0;}
   transition:opacity 0.2s;
 }
 
-.methodology-bar-wa:hover{opacity:0.7;}
+.methodology-bar-wa:hover{opacity:0.8;}
 
 /* ---- METHODOLOGY ---- */
 .how-section{
