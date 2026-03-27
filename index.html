@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Odexar | Academic Research Support</title>
   <meta name="description" content="Odexar provides academic research support for university students, including topic development, proposal writing, data analysis guidance, and editing.">
-  <link rel="stylesheet" href="assets/style.css?v=214">
+  <link rel="stylesheet" href="assets/style.css?v=215">
 </head>
 <body>
 
@@ -119,24 +119,24 @@
 <section class="blog-section">
   <div class="container">
     <h2 class="section-title">From the Blog</h2>
+    <p class="blog-section-sub">Structured thinking on research, academic writing, and the problems students face at every stage of a project.</p>
 
     <div class="editorial-post">
-      <div class="editorial-post-image">
-        <img src="assets/blog-topic-selection.png" alt="Why Most Final-Year Students Start Their Research in the Wrong Place">
-      </div>
       <div class="editorial-post-body">
-        <span class="editorial-tag">Research</span>
         <h3 class="editorial-title">Why Most Final-Year Students Start Their Research in the Wrong Place</h3>
-        <p class="editorial-standfirst">Most final-year students are rejected not for lack of effort, but for lack of structure in how they frame a research problem.</p>
         <p class="editorial-excerpt">A significant proportion of final-year students have their research topics rejected at the first or second submission. In many cases, supervisors end up rewriting the topic entirely. While this may allow the student to proceed, it often produces work that lacks ownership and depth.</p>
+        <p class="editorial-excerpt">The underlying problem is not a lack of effort. It is a lack of thinking structure. Students are trained to think in terms of topics, not problems.</p>
         <div class="editorial-meta">
-          <span>Caleb Odebunmi</span>
+          <span>@Odexar</span>
           <span class="editorial-meta-dot">·</span>
           <span>March 2026</span>
           <span class="editorial-meta-dot">·</span>
           <span>5 min read</span>
         </div>
         <a href="blog/posts/why-final-year-students-start-research-wrong.html" class="editorial-read-more">Read the article →</a>
+      </div>
+      <div class="editorial-post-image">
+        <img src="assets/blog-topic-selection.png" alt="Why Most Final-Year Students Start Their Research in the Wrong Place">
       </div>
     </div>
 
@@ -146,17 +146,16 @@
 
 <section class="contact-section" id="contact">
   <div class="container">
-    <h2 class="section-title">Contact Odexar</h2>
-    <p class="section-intro">Ready to move your research forward? Whether you are just starting or preparing to submit, Odexar provides clear academic support to help you move with structure and confidence.</p>
 
-    <div class="contact-full-grid">
+    <div class="contact-grid">
 
-      <div class="form-card">
-        <h3>Project Intake Form</h3>
-        <p>Provide the key details of your academic work so the response can be more specific and useful.</p>
+      <!-- LEFT: FORM -->
+      <div class="contact-form-col">
+        <h2 class="section-title">Get in touch</h2>
+        <p class="contact-lead">Tell us where you are in your research. We will take it from there.</p>
 
-        <form action="https://formspree.io/f/mreyolek" method="POST">
-          <div class="form-grid">
+        <form action="https://formspree.io/f/mreyolek" method="POST" class="contact-form">
+          <div class="contact-form-row">
             <div class="form-field">
               <label for="full-name">Full Name</label>
               <input type="text" id="full-name" name="full_name" placeholder="Your full name" required>
@@ -165,71 +164,48 @@
               <label for="email">Email Address</label>
               <input type="email" id="email" name="email" placeholder="Your email address" required>
             </div>
-            <div class="form-field">
-              <label for="phone">Phone / WhatsApp Number</label>
-              <input type="text" id="phone" name="phone" placeholder="Your phone or WhatsApp number">
-            </div>
-            <div class="form-field">
-              <label for="level">Level of Study</label>
-              <select id="level" name="level_of_study" required>
-                <option value="">Select your level</option>
-                <option>Undergraduate</option>
-                <option>Postgraduate</option>
-                <option>Master's</option>
-                <option>PhD</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="field">Field / Department</label>
-              <input type="text" id="field" name="field_department" placeholder="Education, Business, Public Health" required>
-            </div>
-            <div class="form-field">
-              <label for="service">Type of Support Needed</label>
-              <select id="service" name="support_type" required>
-                <option value="">Select a service</option>
-                <option>Research Topic Selection</option>
-                <option>Proposal and Methodology</option>
-                <option>Data Analysis Support</option>
-                <option>Academic Editing</option>
-                <option>CV Writing / Builder</option>
-                <option>Statement of Purpose</option>
-                <option>Multiple Areas</option>
-              </select>
-            </div>
-            <div class="form-field full">
-              <label for="topic">Project Topic or Title</label>
-              <input type="text" id="topic" name="project_topic" placeholder="Write your current topic or working title">
-            </div>
-            <div class="form-field full">
-              <label for="details">Brief Description of Your Challenge</label>
-              <textarea id="details" name="project_details" placeholder="Explain what you need help with and your deadline" required></textarea>
-            </div>
+          </div>
+          <div class="form-field">
+            <label for="service">Area of Support</label>
+            <select id="service" name="support_type" required>
+              <option value="">Select an area</option>
+              <option>Research Topic Selection</option>
+              <option>Proposal and Methodology</option>
+              <option>Data Analysis Support</option>
+              <option>Academic Editing</option>
+              <option>Statement of Purpose</option>
+              <option>Multiple Areas</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="details">Brief Description</label>
+            <textarea id="details" name="project_details" placeholder="Describe your project and where you need support" required></textarea>
           </div>
 
-          <input type="hidden" name="_subject" value="New Odexar Project Intake Submission">
+          <input type="hidden" name="_subject" value="New Odexar Enquiry">
           <input type="hidden" name="_next" value="https://odexar.com/">
           <input type="text" name="_gotcha" style="display:none">
 
-          <p class="form-note">This form is for academic support enquiries only.</p>
-
-          <div class="form-actions">
-            <button type="submit" class="primary-btn">Submit Enquiry</button>
-            <a class="secondary-btn form-secondary" href="https://wa.me/2347087589603">Use WhatsApp Instead</a>
-          </div>
+          <button type="submit" class="primary-btn contact-submit">Send Enquiry</button>
         </form>
       </div>
 
-      <div class="contact-aside">
-        <div class="contact-card">
-          <h3>WhatsApp</h3>
-          <p>For faster enquiries and direct discussion.</p>
-          <p><a class="contact-link" href="https://wa.me/2347087589603">+234 708 758 9603</a></p>
-        </div>
-        <div class="contact-card">
-          <h3>Email</h3>
-          <p>For formal enquiries and detailed project descriptions.</p>
-          <p><a class="contact-link" href="mailto:contact@odexar.com">contact@odexar.com</a></p>
+      <!-- RIGHT: CONTACT INFO -->
+      <div class="contact-info-col">
+        <div class="contact-info-inner">
+          <p class="contact-info-statement">Odexar responds to every enquiry. If your work is time-sensitive, WhatsApp is the fastest route.</p>
+
+          <div class="contact-info-block">
+            <span class="contact-info-label">WhatsApp</span>
+            <a href="https://wa.me/2347087589603" class="contact-info-value">+234 708 758 9603</a>
+          </div>
+
+          <div class="contact-info-block">
+            <span class="contact-info-label">Email</span>
+            <a href="mailto:contact@odexar.com" class="contact-info-value">contact@odexar.com</a>
+          </div>
+
+          <p class="contact-info-note">All enquiries are handled confidentially. Odexar does not produce academic work on behalf of clients.</p>
         </div>
       </div>
 
