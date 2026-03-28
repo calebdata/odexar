@@ -9,7 +9,7 @@ html{scroll-behavior:smooth;}
 body{
   margin:0;
   font-family:Georgia,"Times New Roman",serif;
-  background:#eaecf0;
+  background:#dde0e8;
   color:#1c2e4a;
   line-height:1.7;
 }
@@ -29,11 +29,11 @@ header{
   left:0;
   width:100%;
   z-index:1000;
-  background:#eaecf0;
+  background:#dde0e8;
   height:60px;
   display:flex;
   align-items:center;
-  border-bottom:1px solid #e2e5ea;
+  border-bottom:1px solid #c8ccd6;
   box-shadow:0 2px 20px rgba(8,12,58,0.08);
 }
 
@@ -214,7 +214,7 @@ section{padding:80px 0;}
 
 /* ---- POSITIONING ---- */
 .positioning-section{
-  background:#eaecf0;
+  background:#dde0e8;
   padding:60px 0 80px;
 }
 
@@ -230,7 +230,7 @@ section{padding:80px 0;}
 
 /* ---- SERVICES ---- */
 .services-section{
-  background:linear-gradient(to bottom, #eaecf0 60%, #f0f1f4 100%);
+  background:linear-gradient(to bottom, #dde0e8 60%, #e8eaf0 100%);
   padding:100px 0 80px;
 }
 
@@ -334,7 +334,7 @@ section{padding:80px 0;}
 
 /* ---- METHODOLOGY ---- */
 .how-section{
-  background:linear-gradient(to bottom, #f0f1f4 0%, #f7f8fa 18%, #f7f8fa 100%);
+  background:linear-gradient(to bottom, #e8eaf0 0%, #ffffff 18%, #ffffff 100%);
   padding:80px 0 40px;
 }
 
@@ -387,7 +387,7 @@ section{padding:80px 0;}
 }
 
 /* ---- BLOG ---- */
-.blog-section{background:#eaecf0;padding:48px 0;}
+.blog-section{background:#dde0e8;padding:48px 0;}
 
 .blog-section-sub{
   font-family:Arial,sans-serif;
@@ -477,7 +477,7 @@ section{padding:80px 0;}
 }
 
 .resource-card{
-  background:#eaecf0;
+  background:#dde0e8;
   border-radius:12px;
   padding:24px 22px 20px;
   display:flex;
@@ -547,7 +547,7 @@ section{padding:80px 0;}
 
 /* ---- CONTACT ---- */
 .contact-section{
-  background:#f7f8fa;
+  background:#ffffff;
   padding:72px 0 80px;
 }
 
@@ -674,8 +674,8 @@ textarea{resize:vertical;min-height:120px;}
 footer{}
 
 .footer-main{
-  background:#f7f8fa;
-  border-top:1px solid #e2e5ea;
+  background:#080c3a;
+  border-top:none;
   padding:56px 0 48px;
 }
 
@@ -698,7 +698,7 @@ footer{}
 .footer-tagline{
   font-family:Arial,sans-serif;
   font-size:.85rem;
-  color:#4b5c6c;
+  color:rgba(255,255,255,0.6);
   line-height:1.65;
   margin:0;
   max-width:220px;
@@ -723,12 +723,12 @@ footer{}
 .footer-nav a{
   font-family:Arial,sans-serif;
   font-size:.88rem;
-  color:#1c2e4a;
+  color:rgba(255,255,255,0.7);
   text-decoration:none;
   transition:opacity 0.2s;
 }
 
-.footer-nav a:hover{opacity:0.6;}
+.footer-nav a:hover{opacity:0.5;}
 
 .footer-contact-block{
   display:flex;
@@ -756,20 +756,20 @@ footer{}
 .footer-contact-value{
   font-family:Arial,sans-serif;
   font-size:.88rem;
-  color:#1c2e4a;
+  color:rgba(255,255,255,0.7);
   text-decoration:none;
   transition:opacity 0.2s;
 }
 
-.footer-contact-value:hover{opacity:0.6;}
+.footer-contact-value:hover{opacity:0.5;}
 
 .footer-cta-link{
   font-family:Arial,sans-serif;
   font-size:.88rem;
   font-weight:700;
-  color:#080c3a;
+  color:#ffffff;
   text-decoration:none;
-  border-bottom:1px solid rgba(8,12,58,0.25);
+  border-bottom:1px solid rgba(255,255,255,0.3);
   padding-bottom:1px;
   transition:opacity 0.2s;
 }
@@ -777,16 +777,16 @@ footer{}
 .footer-cta-link:hover{opacity:0.6;}
 
 .footer-social-icon{
-  color:#9baab8;
+  color:rgba(255,255,255,0.4);
   display:flex;
   align-items:center;
   transition:color 0.2s;
 }
 
-.footer-social-icon:hover{color:#1c2e4a;}
+.footer-social-icon:hover{color:#ffffff;}
 
 .footer-base{
-  background:#eaecf0;
+  background:#04061e;
   padding:14px 0;
 }
 
@@ -801,7 +801,7 @@ footer{}
 .footer-base-inner>span{
   font-family:Arial,sans-serif;
   font-size:.78rem;
-  color:#6b7a8d;
+  color:rgba(255,255,255,0.35);
 }
 
 .footer-base-links{
@@ -813,12 +813,12 @@ footer{}
 .footer-base-links a{
   font-family:Arial,sans-serif;
   font-size:.78rem;
-  color:#6b7a8d;
+  color:rgba(255,255,255,0.4);
   text-decoration:none;
   transition:color 0.2s;
 }
 
-.footer-base-links a:hover{color:#1c2e4a;}
+.footer-base-links a:hover{color:rgba(255,255,255,0.75);}
   color:rgba(255,255,255,0.4);
   text-decoration:none;
   transition:color 0.2s;
