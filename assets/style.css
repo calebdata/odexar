@@ -1,7 +1,8 @@
 /* ============================================
-   ODEXAR — style.css v5
+   ODEXAR — style.css v6
    Deep Navy:#0A0F2E | Accent Gold:#C4A747
    Background:#F5F7FC | Text:#1A2C3E
+   Layout: unified spacing, aligned grids, responsive polish
    ============================================ */
 
 /* ---- RESET ---- */
@@ -24,6 +25,14 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* ---- VARIABLES (consistent spacing) ---- */
+:root {
+  --space-unit: 1rem;
+  --space-sm: calc(var(--space-unit) * 1.5);
+  --space-md: calc(var(--space-unit) * 2.5);
+  --space-lg: calc(var(--space-unit) * 4);
 }
 
 /* ---- CONTAINER ---- */
@@ -95,11 +104,6 @@ header {
   opacity: 0.65;
 }
 
-.nav-links a::after,
-.nav-links a::before {
-  display: none !important;
-}
-
 /* ---- BUTTONS ---- */
 .primary-btn {
   display: inline-block;
@@ -147,25 +151,14 @@ header {
   transition: all 0.2s;
 }
 
-.form-secondary {
-  color: #0A0F2E;
-  border: 1px solid #c8d4e0;
-  background: #e8e0d0;
-}
-
-.form-secondary:hover {
-  background: #e8edf3;
-  border-color: #b0bfcc;
-}
-
-/* ---- SHARED ---- */
+/* ---- SHARED SECTION STYLES ---- */
 section {
-  padding: 60px 0;
+  padding: var(--space-lg) 0;
 }
 
 .section-title {
   font-size: 1.4rem;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   color: #0A0F2E;
 }
 
@@ -183,6 +176,7 @@ section {
   min-height: 70vh;
   display: flex;
   align-items: flex-start;
+  padding: 0;
 }
 
 .hero .container {
@@ -198,7 +192,7 @@ section {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/image_odexar-hero.png') 40% center/cover no-repeat;
+  background: url('../assets/image_odexar-hero.png') center center/cover no-repeat;
   z-index: 0;
 }
 
@@ -229,18 +223,18 @@ section {
   line-height: 1.45;
   margin: 0;
   color: #fff;
-  letter-spacing: 0.04em;
-  word-spacing: 0.08em;
+  word-spacing: normal;
+  letter-spacing: normal;
+  max-width: 800px;
 }
 
 .hero-actions {
   margin-top: 40px;
 }
 
-/* ---- POSITIONING ---- */
+/* ---- POSITIONING SECTION ---- */
 .positioning-section {
-  background: #F5F7FC;
-  padding: 60px 0 80px;
+  padding: var(--space-md) 0 var(--space-lg);
 }
 
 .positioning-text {
@@ -249,14 +243,11 @@ section {
   color: #1A2C3E;
   line-height: 1.85;
   margin: 0;
-  max-width: none;
-  text-align: left;
 }
 
 /* ---- SERVICES ---- */
 .services-section {
   background: #F5F7FC;
-  padding: 60px 0;
 }
 
 .services-list {
@@ -270,6 +261,10 @@ section {
   flex: 1;
   padding: 0 32px 0 0;
   text-align: left;
+}
+
+.services-list-item:last-child {
+  padding-right: 0;
 }
 
 .services-list-item h3 {
@@ -289,7 +284,7 @@ section {
   line-height: 1.6;
 }
 
-/* ---- METHODOLOGY BAR ---- */
+/* ---- METHODOLOGY BAR (call to action) ---- */
 .methodology-bar {
   background: #FFFFFF;
   padding: 48px 0;
@@ -361,19 +356,13 @@ section {
   opacity: 0.8;
 }
 
-/* ---- METHODOLOGY ---- */
+/* ---- METHODOLOGY STEPS ---- */
 .how-section {
   background: linear-gradient(to bottom, #F5F7FC 0%, #FFFFFF 18%, #FFFFFF 100%);
-  padding: 60px 0 40px;
 }
 
 .how-section .section-title {
-  text-align: left;
   margin-bottom: 24px;
-}
-
-.how-section .section-intro {
-  display: none;
 }
 
 .steps-grid {
@@ -385,22 +374,13 @@ section {
 
 .step-card {
   background: transparent;
-  padding: 12px 0 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
-}
-
-.step-divider {
-  display: none;
-}
-
-.step-body {
-  flex: 1;
 }
 
 .step-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-size: 1rem;
   color: #0A0F2E;
   line-height: 1.3;
@@ -418,7 +398,6 @@ section {
 /* ---- BLOG ---- */
 .blog-section {
   background: #F5F7FC;
-  padding: 48px 0 60px;
 }
 
 .blog-section-sub {
@@ -434,17 +413,19 @@ section {
   grid-template-columns: 1.2fr 1fr;
   gap: 56px;
   align-items: start;
+  margin-top: 20px;
   padding-top: 32px;
   border-top: 1px solid rgba(28, 46, 74, 0.12);
 }
 
 .editorial-post-image {
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
 .editorial-post-image img {
   width: 100%;
-  height: 380px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -505,7 +486,6 @@ section {
 /* ---- CONTACT ---- */
 .contact-section {
   background: #FFFFFF;
-  padding: 72px 0 80px;
 }
 
 .contact-section .section-title {
@@ -515,7 +495,7 @@ section {
 .contact-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
-  gap: 72px;
+  gap: 48px;
   align-items: start;
 }
 
@@ -656,7 +636,7 @@ textarea {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.65;
-  margin: 0;
+  margin: 8px 0 0;
   max-width: 220px;
 }
 
@@ -793,10 +773,11 @@ textarea {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* ---- RESPONSIVE ---- */
+/* ---- RESPONSIVE ADJUSTMENTS ---- */
 @media (max-width: 900px) {
   .steps-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
   .hero-content h1 {
     font-size: 1.7rem;
@@ -809,9 +790,6 @@ textarea {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .contact-info-col {
-    padding-top: 0;
-  }
   .methodology-bar-statement {
     font-size: 1.3rem;
   }
@@ -822,10 +800,9 @@ textarea {
 }
 
 @media (max-width: 600px) {
-  .steps-grid,
-  .form-grid,
-  .featured-post {
+  .steps-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
   .services-list {
     flex-direction: column;
@@ -834,6 +811,9 @@ textarea {
     border-bottom: 1px solid rgba(28, 46, 74, 0.10);
     padding: 18px 0;
     padding-right: 0;
+  }
+  .services-list-item:last-child {
+    border-bottom: none;
   }
   .hero-content {
     padding: 100px 0 50px;
@@ -848,14 +828,16 @@ textarea {
     width: 100%;
     text-align: center;
   }
-  .form-actions {
-    flex-direction: column;
+  .contact-submit {
+    width: 100%;
   }
-  .nav-links {
-    display: none; /* placeholder – we will add a hamburger later */
+  .contact-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
   .footer-main {
     padding: 40px 0 36px;
@@ -867,5 +849,8 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+  .nav-links {
+    display: none; /* mobile menu to be added later */
   }
 }
