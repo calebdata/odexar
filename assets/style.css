@@ -1,7 +1,7 @@
 /* ============================================
-   ODEXAR — style.css v7
+   ODEXAR — style.css v8
    Deep Navy:#0A0F2E | Accent Gold:#C4A747
-   Layout: cohesive spacing, centered titles, smooth background transitions
+   Services: compact 4‑col cards | stacked methodology
    ============================================ */
 
 /* ---- RESET ---- */
@@ -148,7 +148,7 @@ section {
   font-size: 1.4rem;
   margin: 0 0 24px;
   color: #0A0F2E;
-  text-align: center; /* centered for authority */
+  text-align: center;
 }
 
 .section-intro {
@@ -223,7 +223,7 @@ section {
 
 /* ---- POSITIONING SECTION ---- */
 .positioning-section {
-  padding: var(--space-md) 0 var(--space-md); /* reduced bottom padding */
+  padding: var(--space-md) 0 var(--space-md);
 }
 
 .positioning-text {
@@ -234,33 +234,36 @@ section {
   margin: 0;
 }
 
-/* ---- SERVICES ---- */
+/* ---- SERVICES SECTION (compact cards) ---- */
 .services-section {
   background: #F5F7FC;
-  padding-top: var(--space-md);  /* tighter transition from positioning */
-  padding-bottom: var(--space-md);
+  padding: var(--space-md) 0;
 }
 
 .services-list {
-  display: flex;
-  flex-direction: row;
-  gap: 0;
-  padding: 12px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 0;
 }
 
 .services-list-item {
-  flex: 1;
-  padding: 0 32px 0 0;
-  text-align: left;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(10, 15, 46, 0.05);
 }
 
-.services-list-item:last-child {
-  padding-right: 0;
+.services-list-item:hover {
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .services-list-item h3 {
-  margin: 0 0 10px;
-  font-size: 1.05rem;
+  margin: 0 0 12px;
+  font-size: 1rem;
   color: #0A0F2E;
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
@@ -270,7 +273,7 @@ section {
 .services-list-item p {
   margin: 0;
   font-family: Arial, sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: #2d3748;
   line-height: 1.6;
 }
@@ -278,7 +281,7 @@ section {
 /* ---- METHODOLOGY STEPS ---- */
 .how-section {
   background: linear-gradient(to bottom, #F5F7FC 0%, #FFFFFF 18%, #FFFFFF 100%);
-  padding-top: var(--space-md); /* reduced from var(--space-lg) */
+  padding-top: var(--space-md);
   padding-bottom: var(--space-md);
 }
 
@@ -400,7 +403,7 @@ section {
   color: #2d3748;
   margin: 0 0 36px;
   line-height: 1.6;
-  text-align: center; /* match centered titles */
+  text-align: center;
 }
 
 .editorial-post {
@@ -770,6 +773,10 @@ textarea {
 
 /* ---- RESPONSIVE ADJUSTMENTS ---- */
 @media (max-width: 900px) {
+  .services-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
   .steps-grid {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -795,20 +802,16 @@ textarea {
 }
 
 @media (max-width: 600px) {
+  .services-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .services-list-item {
+    padding: 20px;
+  }
   .steps-grid {
     grid-template-columns: 1fr;
     gap: 32px;
-  }
-  .services-list {
-    flex-direction: column;
-  }
-  .services-list-item {
-    border-bottom: 1px solid rgba(28, 46, 74, 0.10);
-    padding: 18px 0;
-    padding-right: 0;
-  }
-  .services-list-item:last-child {
-    border-bottom: none;
   }
   .hero-content {
     padding: 100px 0 50px;
@@ -817,7 +820,7 @@ textarea {
     font-size: 1.5rem;
   }
   .section-title {
-    text-align: left; /* left-align on mobile for readability */
+    text-align: left;
     font-size: 1.65rem;
   }
   .blog-section-sub {
@@ -850,6 +853,6 @@ textarea {
     gap: 10px;
   }
   .nav-links {
-    display: none; /* mobile menu to be added later */
+    display: none; /* mobile menu can be added later */
   }
 }
