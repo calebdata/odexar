@@ -1,7 +1,7 @@
 /* ============================================
-   ODEXAR — style.css v8
+   ODEXAR — style.css v9
    Deep Navy:#0A0F2E | Accent Gold:#C4A747
-   Services: compact 4‑col cards | stacked methodology
+   Services: flat, compact grid | no cards
    ============================================ */
 
 /* ---- RESET ---- */
@@ -234,7 +234,7 @@ section {
   margin: 0;
 }
 
-/* ---- SERVICES SECTION (compact cards) ---- */
+/* ---- SERVICES SECTION (flat, compact grid) ---- */
 .services-section {
   background: #F5F7FC;
   padding: var(--space-md) 0;
@@ -243,22 +243,16 @@ section {
 .services-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 32px;
   padding: 0;
 }
 
 .services-list-item {
-  background: #FFFFFF;
-  border-radius: 12px;
-  padding: 28px 24px;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(10, 15, 46, 0.05);
-}
-
-.services-list-item:hover {
-  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  transition: none;
 }
 
 .services-list-item h3 {
@@ -775,7 +769,7 @@ textarea {
 @media (max-width: 900px) {
   .services-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 32px;
   }
   .steps-grid {
     grid-template-columns: 1fr 1fr;
@@ -804,10 +798,7 @@ textarea {
 @media (max-width: 600px) {
   .services-list {
     grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .services-list-item {
-    padding: 20px;
+    gap: 32px;
   }
   .steps-grid {
     grid-template-columns: 1fr;
@@ -853,6 +844,6 @@ textarea {
     gap: 10px;
   }
   .nav-links {
-    display: none; /* mobile menu can be added later */
+    display: none; /* mobile menu to be added later */
   }
 }
