@@ -1,8 +1,7 @@
 /* ============================================
-   ODEXAR — style.css v6
+   ODEXAR — style.css v7
    Deep Navy:#0A0F2E | Accent Gold:#C4A747
-   Background:#F5F7FC | Text:#1A2C3E
-   Layout: unified spacing, aligned grids, responsive polish
+   Layout: cohesive spacing, centered titles, smooth background transitions
    ============================================ */
 
 /* ---- RESET ---- */
@@ -140,17 +139,6 @@ header {
   border-color: #ffffff !important;
 }
 
-.secondary-btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 8px;
-  font-family: Arial, sans-serif;
-  font-weight: 700;
-  font-size: 0.93rem;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
 /* ---- SHARED SECTION STYLES ---- */
 section {
   padding: var(--space-lg) 0;
@@ -160,6 +148,7 @@ section {
   font-size: 1.4rem;
   margin: 0 0 24px;
   color: #0A0F2E;
+  text-align: center; /* centered for authority */
 }
 
 .section-intro {
@@ -234,7 +223,7 @@ section {
 
 /* ---- POSITIONING SECTION ---- */
 .positioning-section {
-  padding: var(--space-md) 0 var(--space-lg);
+  padding: var(--space-md) 0 var(--space-md); /* reduced bottom padding */
 }
 
 .positioning-text {
@@ -248,6 +237,8 @@ section {
 /* ---- SERVICES ---- */
 .services-section {
   background: #F5F7FC;
+  padding-top: var(--space-md);  /* tighter transition from positioning */
+  padding-bottom: var(--space-md);
 }
 
 .services-list {
@@ -284,10 +275,51 @@ section {
   line-height: 1.6;
 }
 
+/* ---- METHODOLOGY STEPS ---- */
+.how-section {
+  background: linear-gradient(to bottom, #F5F7FC 0%, #FFFFFF 18%, #FFFFFF 100%);
+  padding-top: var(--space-md); /* reduced from var(--space-lg) */
+  padding-bottom: var(--space-md);
+}
+
+.how-section .section-title {
+  margin-bottom: 24px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 32px;
+  padding: 0;
+}
+
+.step-card {
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-card h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  color: #0A0F2E;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.step-card p {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #2d3748;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
 /* ---- METHODOLOGY BAR (call to action) ---- */
 .methodology-bar {
-  background: #FFFFFF;
-  padding: 48px 0;
+  background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 80%, #F5F7FC 100%);
+  padding: 36px 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
@@ -356,48 +388,10 @@ section {
   opacity: 0.8;
 }
 
-/* ---- METHODOLOGY STEPS ---- */
-.how-section {
-  background: linear-gradient(to bottom, #F5F7FC 0%, #FFFFFF 18%, #FFFFFF 100%);
-}
-
-.how-section .section-title {
-  margin-bottom: 24px;
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0 32px;
-  padding: 0;
-}
-
-.step-card {
-  background: transparent;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.step-card h3 {
-  margin: 0 0 12px;
-  font-size: 1rem;
-  color: #0A0F2E;
-  line-height: 1.3;
-  font-weight: 700;
-}
-
-.step-card p {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #2d3748;
-  font-size: 0.88rem;
-  line-height: 1.7;
-}
-
 /* ---- BLOG ---- */
 .blog-section {
   background: #F5F7FC;
+  padding-top: var(--space-md);
 }
 
 .blog-section-sub {
@@ -406,6 +400,7 @@ section {
   color: #2d3748;
   margin: 0 0 36px;
   line-height: 1.6;
+  text-align: center; /* match centered titles */
 }
 
 .editorial-post {
@@ -822,7 +817,11 @@ textarea {
     font-size: 1.5rem;
   }
   .section-title {
+    text-align: left; /* left-align on mobile for readability */
     font-size: 1.65rem;
+  }
+  .blog-section-sub {
+    text-align: left;
   }
   .primary-btn {
     width: 100%;
