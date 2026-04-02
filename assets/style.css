@@ -1,6 +1,7 @@
 /* ============================================
-   ODEXAR — style.css v10
-   Services: 3‑col flat grid | Methodology: 2x2 left‑aligned
+   ODEXAR — style.css v11
+   Services: 3‑col grid, wider gaps → 3‑line descriptions
+   Methodology: 2x2, max-width 45ch for compact reading
    ============================================ */
 
 /* ---- RESET ---- */
@@ -25,7 +26,7 @@ a {
   color: inherit;
 }
 
-/* ---- VARIABLES (consistent spacing) ---- */
+/* ---- VARIABLES ---- */
 :root {
   --space-unit: 1rem;
   --space-sm: calc(var(--space-unit) * 1.5);
@@ -40,7 +41,7 @@ a {
   margin: 0 auto;
 }
 
-/* ---- HEADER ---- */
+/* ---- HEADER (unchanged) ---- */
 header {
   position: fixed;
   top: 0;
@@ -226,7 +227,7 @@ section {
   margin: 0;
 }
 
-/* ---- SERVICES (3‑column flat grid) ---- */
+/* ---- SERVICES (compact, 3‑line descriptions) ---- */
 .services-section {
   background: #F5F7FC;
   padding: var(--space-md) 0;
@@ -235,13 +236,13 @@ section {
 .services-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 48px;          /* wider gap → narrower columns → more text wrapping */
   padding: 0;
 }
 
 .services-list-item {
   background: transparent;
-  padding: 0;
+  padding: 0 4px;     /* slight internal padding to avoid text touching gap */
 }
 
 .services-list-item h3 {
@@ -257,11 +258,11 @@ section {
   margin: 0;
   font-family: Arial, sans-serif;
   font-size: 0.85rem;
+  line-height: 1.65;   /* slightly increased to encourage three lines */
   color: #2d3748;
-  line-height: 1.6;
 }
 
-/* ---- METHODOLOGY (2x2 grid, left‑aligned text) ---- */
+/* ---- METHODOLOGY (compact text, max-width) ---- */
 .how-section {
   background: linear-gradient(to bottom, #F5F7FC 0%, #FFFFFF 18%, #FFFFFF 100%);
   padding-top: var(--space-md);
@@ -271,7 +272,7 @@ section {
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px 32px;
+  gap: 48px 32px;    /* wider horizontal gap shortens line length */
   padding: 0;
 }
 
@@ -296,9 +297,10 @@ section {
   font-size: 0.88rem;
   line-height: 1.7;
   text-align: left;
+  max-width: 45ch;    /* limits line length for comfortable reading */
 }
 
-/* ---- METHODOLOGY BAR ---- */
+/* ---- METHODOLOGY BAR (unchanged) ---- */
 .methodology-bar {
   background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 80%, #F5F7FC 100%);
   padding: 36px 0;
@@ -370,7 +372,7 @@ section {
   opacity: 0.8;
 }
 
-/* ---- BLOG ---- */
+/* ---- BLOG (unchanged) ---- */
 .blog-section {
   background: #F5F7FC;
   padding-top: var(--space-md);
@@ -460,7 +462,7 @@ section {
   opacity: 0.6;
 }
 
-/* ---- CONTACT ---- */
+/* ---- CONTACT (unchanged) ---- */
 .contact-section {
   background: #FFFFFF;
 }
@@ -584,7 +586,7 @@ textarea {
   min-height: 120px;
 }
 
-/* ---- FOOTER ---- */
+/* ---- FOOTER (unchanged) ---- */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
@@ -825,6 +827,6 @@ textarea {
     gap: 10px;
   }
   .nav-links {
-    display: none; /* mobile menu can be added later */
+    display: none;
   }
 }
