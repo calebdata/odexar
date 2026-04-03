@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v7)
-   Final: methodology left-aligned, text width limited to 45ch
+   ODEXAR — style.css (v8)
+   Consistent vertical rhythm: same spacing for all sections
    ============================================ */
 
 /* ---- RESET ---- */
@@ -206,7 +206,7 @@ section {
 .services-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 56px;
+  gap: 48px;          /* unified gap */
   padding: 0;
 }
 .services-list-item {
@@ -246,21 +246,20 @@ section {
   opacity: 0.7;
 }
 
-/* ---- METHODOLOGY (left-aligned, limited line length) ---- */
+/* ---- METHODOLOGY (identical spacing rhythm) ---- */
 .how-section {
   background: #F9FAFB;
-  padding-top: calc(var(--space-md) * 1.8);
-  padding-bottom: var(--space-md);
-  margin-top: 20px;
+  padding: var(--space-md) 0;        /* same as services */
+  margin-top: 0;                     /* no extra top margin */
 }
 .how-section .section-title {
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 48px;               /* same as services title */
 }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 64px;
+  gap: 48px;                         /* unified gap with services */
 }
 .step-card h3 {
   margin: 0 0 12px;
@@ -274,7 +273,7 @@ section {
   font-size: 0.85rem;
   line-height: 1.75;
   color: #2d3748;
-  max-width: 45ch;   /* limits line length for readability */
+  max-width: 45ch;                   /* keeps lines readable */
 }
 
 /* ---- METHODOLOGY BAR (CTA) ---- */
@@ -627,7 +626,7 @@ textarea {
     gap: 32px;
   }
   .steps-grid {
-    gap: 40px;
+    gap: 32px;
   }
   .hero-content h1 {
     font-size: 1.7rem;
