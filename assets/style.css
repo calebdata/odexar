@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (final)
-   Clean, production-ready
+   ODEXAR — style.css (final2)
+   Methodology title left-aligned within centered wrapper
    ============================================ */
 
 /* ---- RESET ---- */
@@ -246,7 +246,7 @@ section {
   opacity: 0.7;
 }
 
-/* ---- METHODOLOGY (centered, clean) ---- */
+/* ---- METHODOLOGY (centered wrapper, left‑aligned title) ---- */
 .how-section {
   background: #F9FAFB;
   padding-top: calc(var(--space-md) * 1.8);
@@ -259,7 +259,7 @@ section {
   padding: 0 20px;
 }
 .methodology-wrapper .section-title {
-  text-align: center;
+  text-align: left;          /* changed from center to left */
   margin-bottom: 40px;
 }
 .steps-grid {
