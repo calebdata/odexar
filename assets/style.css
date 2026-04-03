@@ -1,7 +1,7 @@
 /* ============================================
-   ODEXAR — style.css v14
-   Services: left title + extra space, wider gaps
-   CTA: hover movement, WhatsApp green accent
+   ODEXAR — style.css v15
+   Enhanced methodology: renamed headings, larger gaps,
+   immediate directional cue, improved readability
    ============================================ */
 
 /* ---- RESET ---- */
@@ -41,7 +41,7 @@ a {
   margin: 0 auto;
 }
 
-/* ---- HEADER ---- */
+/* ---- HEADER (unchanged) ---- */
 header {
   position: fixed;
   top: 0;
@@ -227,7 +227,7 @@ section {
   margin: 0;
 }
 
-/* ---- SERVICES (left title, wider gap, no max-width) ---- */
+/* ---- SERVICES (left title, wider gap) ---- */
 .services-section {
   background: #F5F7FC;
   padding: var(--space-md) 0;
@@ -235,7 +235,7 @@ section {
 
 .services-section .section-title {
   text-align: left;
-  margin-bottom: 48px;   /* extra space after title */
+  margin-bottom: 48px;
 }
 
 .services-list {
@@ -267,24 +267,25 @@ section {
   color: #2d3748;
 }
 
-/* ---- METHODOLOGY (centered title, 2x2 grid) ---- */
+/* ---- METHODOLOGY (enhanced) ---- */
 .how-section {
   background: linear-gradient(to bottom, #F5F7FC 0%, #FFFFFF 18%, #FFFFFF 100%);
-  padding-top: var(--space-md);
+  padding-top: calc(var(--space-md) * 1.5);   /* extra spacing before */
   padding-bottom: var(--space-md);
+  border-top: 1px solid rgba(10, 15, 46, 0.08); /* clear visual separation */
 }
 
 .how-section .section-title {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 48px 32px;
-  max-width: 800px;      /* limits width, making the block narrower and centered */
-  margin: 0 auto;        /* centers the grid horizontally */
+  gap: 56px 40px;          /* more breathing room */
+  max-width: 900px;        /* centered block, wider than before */
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -306,10 +307,31 @@ section {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #2d3748;
-  font-size: 0.88rem;
-  line-height: 1.7;
+  font-size: 0.85rem;      /* slightly smaller for crispness */
+  line-height: 1.75;       /* better readability */
   text-align: left;
-  max-width: 45ch;
+}
+
+/* Directional cue after methodology grid */
+.methodology-next-step {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.next-step-link {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #C4A747;
+  text-decoration: none;
+  border-bottom: 1.5px solid #C4A747;
+  padding-bottom: 4px;
+  transition: opacity 0.2s;
+}
+
+.next-step-link:hover {
+  opacity: 0.7;
 }
 
 /* ---- METHODOLOGY BAR (CTA with hover movement & green accent) ---- */
@@ -376,7 +398,7 @@ section {
 
 .methodology-bar-wa {
   display: inline-block;
-  background: #2ea84e;        /* accent green from logo */
+  background: #2ea84e;
   color: #ffffff;
   font-family: Arial, sans-serif;
   font-size: 0.85rem;
@@ -777,7 +799,8 @@ textarea {
   }
   .steps-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 40px 32px;
+    max-width: 100%;
   }
   .hero-content h1 {
     font-size: 1.7rem;
