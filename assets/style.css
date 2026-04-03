@@ -1,7 +1,7 @@
 /* ============================================
-   ODEXAR — style.css v16
-   Methodology: centered title, left-aligned grid & cue
-   All previous enhancements retained
+   ODEXAR — style.css v17
+   Methodology: compact, left-aligned grid (max-width 800px)
+   All other enhancements retained
    ============================================ */
 
 /* ---- RESET ---- */
@@ -267,7 +267,7 @@ section {
   color: #2d3748;
 }
 
-/* ---- METHODOLOGY (centered title, left-aligned grid & cue) ---- */
+/* ---- METHODOLOGY (compact, left-aligned grid) ---- */
 .how-section {
   background: linear-gradient(to bottom, #F5F7FC 0%, #FFFFFF 18%, #FFFFFF 100%);
   padding-top: calc(var(--space-md) * 1.5);
@@ -284,9 +284,8 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 56px 40px;
-  /* left-aligned, no max-width or auto margins */
-  max-width: none;
-  margin: 0;
+  max-width: 800px;   /* compact width, not stretched */
+  margin: 0;          /* left-aligned */
   padding: 0;
 }
 
@@ -313,10 +312,11 @@ section {
   text-align: left;
 }
 
-/* Directional cue - left aligned */
+/* Directional cue - left-aligned, compact */
 .methodology-next-step {
   text-align: left;
   margin-top: 48px;
+  max-width: 800px;   /* match grid width */
 }
 
 .next-step-link {
@@ -801,6 +801,10 @@ textarea {
   .steps-grid {
     grid-template-columns: 1fr 1fr;
     gap: 40px 32px;
+    max-width: 100%;   /* allow full width on tablet */
+  }
+  .methodology-next-step {
+    max-width: 100%;
   }
   .hero-content h1 {
     font-size: 1.7rem;
@@ -834,6 +838,10 @@ textarea {
   .steps-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+    max-width: 100%;
+  }
+  .methodology-next-step {
+    max-width: 100%;
   }
   .hero-content {
     padding: 100px 0 50px;
