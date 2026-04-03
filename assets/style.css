@@ -1,7 +1,7 @@
 /* ============================================
-   ODEXAR — style.css v15
-   Enhanced methodology: renamed headings, larger gaps,
-   immediate directional cue, improved readability
+   ODEXAR — style.css v16
+   Methodology: centered title, left-aligned grid & cue
+   All previous enhancements retained
    ============================================ */
 
 /* ---- RESET ---- */
@@ -41,7 +41,7 @@ a {
   margin: 0 auto;
 }
 
-/* ---- HEADER (unchanged) ---- */
+/* ---- HEADER ---- */
 header {
   position: fixed;
   top: 0;
@@ -267,12 +267,12 @@ section {
   color: #2d3748;
 }
 
-/* ---- METHODOLOGY (enhanced) ---- */
+/* ---- METHODOLOGY (centered title, left-aligned grid & cue) ---- */
 .how-section {
   background: linear-gradient(to bottom, #F5F7FC 0%, #FFFFFF 18%, #FFFFFF 100%);
-  padding-top: calc(var(--space-md) * 1.5);   /* extra spacing before */
+  padding-top: calc(var(--space-md) * 1.5);
   padding-bottom: var(--space-md);
-  border-top: 1px solid rgba(10, 15, 46, 0.08); /* clear visual separation */
+  border-top: 1px solid rgba(10, 15, 46, 0.08);
 }
 
 .how-section .section-title {
@@ -283,9 +283,10 @@ section {
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 56px 40px;          /* more breathing room */
-  max-width: 900px;        /* centered block, wider than before */
-  margin: 0 auto;
+  gap: 56px 40px;
+  /* left-aligned, no max-width or auto margins */
+  max-width: none;
+  margin: 0;
   padding: 0;
 }
 
@@ -307,14 +308,14 @@ section {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #2d3748;
-  font-size: 0.85rem;      /* slightly smaller for crispness */
-  line-height: 1.75;       /* better readability */
+  font-size: 0.85rem;
+  line-height: 1.75;
   text-align: left;
 }
 
-/* Directional cue after methodology grid */
+/* Directional cue - left aligned */
 .methodology-next-step {
-  text-align: center;
+  text-align: left;
   margin-top: 48px;
 }
 
@@ -334,7 +335,7 @@ section {
   opacity: 0.7;
 }
 
-/* ---- METHODOLOGY BAR (CTA with hover movement & green accent) ---- */
+/* ---- METHODOLOGY BAR (CTA) ---- */
 .methodology-bar {
   background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 80%, #F5F7FC 100%);
   padding: 36px 0;
@@ -415,7 +416,7 @@ section {
   background: #238c41;
 }
 
-/* ---- BLOG (unchanged) ---- */
+/* ---- BLOG ---- */
 .blog-section {
   background: #F5F7FC;
   padding-top: var(--space-md);
@@ -505,7 +506,7 @@ section {
   opacity: 0.6;
 }
 
-/* ---- CONTACT (unchanged) ---- */
+/* ---- CONTACT ---- */
 .contact-section {
   background: #FFFFFF;
 }
@@ -629,7 +630,7 @@ textarea {
   min-height: 120px;
 }
 
-/* ---- FOOTER (unchanged) ---- */
+/* ---- FOOTER ---- */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
@@ -800,7 +801,6 @@ textarea {
   .steps-grid {
     grid-template-columns: 1fr 1fr;
     gap: 40px 32px;
-    max-width: 100%;
   }
   .hero-content h1 {
     font-size: 1.7rem;
