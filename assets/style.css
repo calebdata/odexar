@@ -227,7 +227,7 @@ section {
   margin: 0;
 }
 
-/* ---- SERVICES (compact, 3‑line descriptions) ---- */
+/* ---- SERVICES (compact, natural 3‑line width) ---- */
 .services-section {
   background: #F5F7FC;
   padding: var(--space-md) 0;
@@ -236,7 +236,7 @@ section {
 .services-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 48px;           /* wider gap → wider columns → better line breaks */
   padding: 0;
 }
 
@@ -260,7 +260,7 @@ section {
   font-size: 0.85rem;
   line-height: 1.65;
   color: #2d3748;
-  max-width: 32ch;        /* forces three lines on desktop */
+  /* no max-width – allow natural wrapping */
 }
 
 /* ---- METHODOLOGY (compact text, max-width) ---- */
