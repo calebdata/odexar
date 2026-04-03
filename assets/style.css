@@ -283,6 +283,8 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 48px 32px;
+  max-width: 800px;      /* limits width, making the block narrower and centered */
+  margin: 0 auto;        /* centers the grid horizontally */
   padding: 0;
 }
 
