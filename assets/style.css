@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v9)
-   Single navy CTA button, consistent vertical rhythm
+   ODEXAR — style.css (v10)
+   CTA button: white text, subtle hover accent
    ============================================ */
 
 /* ---- RESET ---- */
@@ -276,7 +276,7 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (single navy button) ---- */
+/* ---- CTA BAR (single navy button, white text) ---- */
 .methodology-bar {
   background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 80%, #F5F7FC 100%);
   padding: 36px 0;
@@ -304,7 +304,7 @@ section {
 .submit-topic-btn {
   display: inline-block;
   background: #0A0F2E;
-  color: #C4A747;
+  color: #ffffff;               /* white text */
   font-weight: 700;
   font-family: Arial, sans-serif;
   font-size: 0.95rem;
@@ -316,8 +316,8 @@ section {
   text-decoration: none;
 }
 .submit-topic-btn:hover {
-  background: #1A1F3E;
-  color: #ffffff;
+  background: #1A1F3E;          /* slightly lighter navy */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transform: translateY(-2px);
 }
 
