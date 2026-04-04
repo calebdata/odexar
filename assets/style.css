@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v8)
-   Consistent vertical rhythm: same spacing for all sections
+   ODEXAR — style.css (v9)
+   Single navy CTA button, consistent vertical rhythm
    ============================================ */
 
 /* ---- RESET ---- */
@@ -85,7 +85,7 @@ header {
   opacity: 0.65;
 }
 
-/* ---- BUTTONS ---- */
+/* ---- BUTTONS (global) ---- */
 .primary-btn {
   display: inline-block;
   padding: 12px 22px;
@@ -206,7 +206,7 @@ section {
 .services-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 48px;          /* unified gap */
+  gap: 48px;
   padding: 0;
 }
 .services-list-item {
@@ -246,20 +246,20 @@ section {
   opacity: 0.7;
 }
 
-/* ---- METHODOLOGY (identical spacing rhythm) ---- */
+/* ---- METHODOLOGY (consistent spacing) ---- */
 .how-section {
   background: #F9FAFB;
-  padding: var(--space-md) 0;        /* same as services */
-  margin-top: 0;                     /* no extra top margin */
+  padding: var(--space-md) 0;
+  margin-top: 0;
 }
 .how-section .section-title {
   text-align: left;
-  margin-bottom: 48px;               /* same as services title */
+  margin-bottom: 48px;
 }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 48px;                         /* unified gap with services */
+  gap: 48px;
 }
 .step-card h3 {
   margin: 0 0 12px;
@@ -273,10 +273,10 @@ section {
   font-size: 0.85rem;
   line-height: 1.75;
   color: #2d3748;
-  max-width: 45ch;                   /* keeps lines readable */
+  max-width: 45ch;
 }
 
-/* ---- METHODOLOGY BAR (CTA) ---- */
+/* ---- CTA BAR (single navy button) ---- */
 .methodology-bar {
   background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 80%, #F5F7FC 100%);
   padding: 36px 0;
@@ -301,27 +301,24 @@ section {
   flex-wrap: wrap;
   justify-content: center;
 }
-.methodology-bar-btn,
-.methodology-bar-wa {
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-.methodology-bar-btn:hover,
-.methodology-bar-wa:hover {
-  transform: translateY(-2px);
-}
-.methodology-bar-btn {
+.submit-topic-btn {
+  display: inline-block;
   background: #0A0F2E;
-  color: #F5F7FC;
+  color: #C4A747;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
-.methodology-bar-btn:hover {
+.submit-topic-btn:hover {
   background: #1A1F3E;
-}
-.methodology-bar-wa {
-  background: #2ea84e;
   color: #ffffff;
-}
-.methodology-bar-wa:hover {
-  background: #238c41;
+  transform: translateY(-2px);
 }
 
 /* ---- BLOG ---- */
@@ -669,7 +666,7 @@ textarea {
   .blog-section-sub {
     text-align: left;
   }
-  .primary-btn, .contact-submit {
+  .primary-btn, .contact-submit, .submit-topic-btn {
     width: 100%;
     text-align: center;
   }
