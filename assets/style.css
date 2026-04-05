@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v12)
-   Tighter spacing between section titles and content
+   ODEXAR — style.css (v13)
+   Even tighter vertical spacing between headings and content
    ============================================ */
 
 /* ---- RESET ---- */
@@ -201,7 +201,7 @@ section {
 }
 .services-section .section-title {
   text-align: left;
-  margin-bottom: 32px;   /* reduced from 48px */
+  margin-bottom: 20px;   /* reduced from 32px */
 }
 .services-list {
   display: grid;
@@ -254,7 +254,7 @@ section {
 }
 .how-section .section-title {
   text-align: left;
-  margin-bottom: 32px;   /* reduced from 48px */
+  margin-bottom: 20px;   /* reduced from 32px */
 }
 .steps-grid {
   display: grid;
@@ -327,13 +327,13 @@ section {
   padding-top: var(--space-md);
 }
 .blog-section .section-title {
-  margin-bottom: 16px;   /* reduced from 24px */
+  margin-bottom: 12px;   /* reduced from 16px */
 }
 .blog-section-sub {
   font-family: Arial, sans-serif;
   font-size: 0.9rem;
   color: #2d3748;
-  margin: 0 0 24px;      /* reduced from 36px */
+  margin: 0 0 16px;      /* reduced from 24px */
   line-height: 1.6;
 }
 .editorial-post {
@@ -400,7 +400,7 @@ section {
 }
 .blog-archive-link {
   text-align: left;
-  margin-top: 40px;      /* reduced from 48px */
+  margin-top: 32px;      /* reduced from 40px */
 }
 .view-all-link {
   display: inline-block;
