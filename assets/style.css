@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v13)
-   Even tighter vertical spacing between headings and content
+   ODEXAR — style.css (v14)
+   Same as v13 – supports cleaned HTML
    ============================================ */
 
 /* ---- RESET ---- */
@@ -194,14 +194,14 @@ section {
   margin: 0;
 }
 
-/* ---- SERVICES (tighter title margin) ---- */
+/* ---- SERVICES ---- */
 .services-section {
   background: #F5F7FC;
   padding: var(--space-md) 0;
 }
 .services-section .section-title {
   text-align: left;
-  margin-bottom: 20px;   /* reduced from 32px */
+  margin-bottom: 20px;
 }
 .services-list {
   display: grid;
@@ -246,7 +246,7 @@ section {
   opacity: 0.7;
 }
 
-/* ---- METHODOLOGY (tighter title margin) ---- */
+/* ---- METHODOLOGY ---- */
 .how-section {
   background: #F9FAFB;
   padding: var(--space-md) 0;
@@ -254,7 +254,7 @@ section {
 }
 .how-section .section-title {
   text-align: left;
-  margin-bottom: 20px;   /* reduced from 32px */
+  margin-bottom: 20px;
 }
 .steps-grid {
   display: grid;
@@ -276,7 +276,7 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (single navy button) ---- */
+/* ---- CTA BAR (only button) ---- */
 .methodology-bar {
   background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 80%, #F5F7FC 100%);
   padding: 36px 0;
@@ -286,14 +286,7 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 24px;
-}
-.methodology-bar-statement {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.35rem;
-  color: #0A0F2E;
-  font-weight: 700;
-  margin: 0;
+  gap: 0; /* no tagline, so no gap needed */
 }
 .methodology-bar-actions {
   display: flex;
@@ -321,20 +314,13 @@ section {
   transform: translateY(-2px);
 }
 
-/* ---- BLOG (tighter spacing) ---- */
+/* ---- BLOG (no subtext) ---- */
 .blog-section {
   background: #F5F7FC;
   padding-top: var(--space-md);
 }
 .blog-section .section-title {
-  margin-bottom: 12px;   /* reduced from 16px */
-}
-.blog-section-sub {
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
-  color: #2d3748;
-  margin: 0 0 16px;      /* reduced from 24px */
-  line-height: 1.6;
+  margin-bottom: 12px;
 }
 .editorial-post {
   display: grid;
@@ -400,7 +386,7 @@ section {
 }
 .blog-archive-link {
   text-align: left;
-  margin-top: 32px;      /* reduced from 40px */
+  margin-top: 32px;
 }
 .view-all-link {
   display: inline-block;
@@ -417,7 +403,7 @@ section {
   opacity: 0.7;
 }
 
-/* ---- CONTACT ---- */
+/* ---- CONTACT (unchanged) ---- */
 .contact-section {
   background: #FFFFFF;
 }
@@ -515,7 +501,7 @@ textarea {
   min-height: 120px;
 }
 
-/* ---- FOOTER ---- */
+/* ---- FOOTER (unchanged) ---- */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
@@ -665,9 +651,6 @@ textarea {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .methodology-bar-statement {
-    font-size: 1.3rem;
-  }
   .editorial-post {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -691,9 +674,6 @@ textarea {
   .section-title {
     text-align: left;
     font-size: 1.65rem;
-  }
-  .blog-section-sub {
-    text-align: left;
   }
   .primary-btn, .contact-submit, .submit-topic-btn {
     width: 100%;
