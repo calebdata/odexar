@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v14)
-   Same as v13 – supports cleaned HTML
+   ODEXAR — style.css (v15)
+   CTA bar background changed to gray (#F9FAFB)
    ============================================ */
 
 /* ---- RESET ---- */
@@ -276,9 +276,9 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (only button) ---- */
+/* ---- CTA BAR (gray background, no tagline) ---- */
 .methodology-bar {
-  background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 80%, #F5F7FC 100%);
+  background: #F9FAFB;  /* changed from white gradient to solid gray */
   padding: 36px 0;
 }
 .methodology-bar-inner {
@@ -286,7 +286,7 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0; /* no tagline, so no gap needed */
+  gap: 0;
 }
 .methodology-bar-actions {
   display: flex;
@@ -501,7 +501,7 @@ textarea {
   min-height: 120px;
 }
 
-/* ---- FOOTER (unchanged) ---- */
+/* ---- FOOTER (unchanged, dark navy) ---- */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
