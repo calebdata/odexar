@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v11)
-   Blog: left-aligned title/subtext, view-all link
+   ODEXAR — style.css (v12)
+   Tighter spacing between section titles and content
    ============================================ */
 
 /* ---- RESET ---- */
@@ -194,14 +194,14 @@ section {
   margin: 0;
 }
 
-/* ---- SERVICES ---- */
+/* ---- SERVICES (tighter title margin) ---- */
 .services-section {
   background: #F5F7FC;
   padding: var(--space-md) 0;
 }
 .services-section .section-title {
   text-align: left;
-  margin-bottom: 48px;
+  margin-bottom: 32px;   /* reduced from 48px */
 }
 .services-list {
   display: grid;
@@ -246,7 +246,7 @@ section {
   opacity: 0.7;
 }
 
-/* ---- METHODOLOGY (consistent spacing) ---- */
+/* ---- METHODOLOGY (tighter title margin) ---- */
 .how-section {
   background: #F9FAFB;
   padding: var(--space-md) 0;
@@ -254,7 +254,7 @@ section {
 }
 .how-section .section-title {
   text-align: left;
-  margin-bottom: 48px;
+  margin-bottom: 32px;   /* reduced from 48px */
 }
 .steps-grid {
   display: grid;
@@ -321,18 +321,20 @@ section {
   transform: translateY(-2px);
 }
 
-/* ---- BLOG (updated) ---- */
+/* ---- BLOG (tighter spacing) ---- */
 .blog-section {
   background: #F5F7FC;
   padding-top: var(--space-md);
+}
+.blog-section .section-title {
+  margin-bottom: 16px;   /* reduced from 24px */
 }
 .blog-section-sub {
   font-family: Arial, sans-serif;
   font-size: 0.9rem;
   color: #2d3748;
-  margin: 0 0 36px;
+  margin: 0 0 24px;      /* reduced from 36px */
   line-height: 1.6;
-  /* text-align left is set inline in HTML, but we keep generic style */
 }
 .editorial-post {
   display: grid;
@@ -396,10 +398,9 @@ section {
 .editorial-read-more:hover {
   opacity: 0.6;
 }
-/* NEW: blog archive link */
 .blog-archive-link {
   text-align: left;
-  margin-top: 48px;
+  margin-top: 40px;      /* reduced from 48px */
 }
 .view-all-link {
   display: inline-block;
