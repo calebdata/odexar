@@ -1,10 +1,10 @@
 /* ============================================
-   ODEXAR — style.css (v17)
-   Hero button changed to solid navy (consistent with primary CTA)
-   Methodology border-top retained
+   ODEXAR — style.css (v18)
+   Hero button: outlined white (visible on dark)
+   Other primary CTAs: solid navy
    ============================================ */
 
-/* ---- RESET ---- */
+/* ---- RESET & VARIABLES (same as before) ---- */
 * {
   box-sizing: border-box;
 }
@@ -22,23 +22,19 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
-/* ---- VARIABLES ---- */
 :root {
   --space-unit: 1rem;
   --space-sm: calc(var(--space-unit) * 1.5);
   --space-md: calc(var(--space-unit) * 2.5);
   --space-lg: calc(var(--space-unit) * 4);
 }
-
-/* ---- CONTAINER (global) ---- */
 .container {
   width: 88%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ---- HEADER ---- */
+/* ---- HEADER (unchanged) ---- */
 header {
   position: fixed;
   top: 0;
@@ -86,24 +82,8 @@ header {
   opacity: 0.65;
 }
 
-/* ---- BUTTONS (global) ---- */
-.primary-btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 8px;
-  background: #C4A747;
-  color: #0A0F2E;
-  font-weight: 700;
-  font-family: Arial, sans-serif;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.primary-btn:hover {
-  background: #B3963C;
-}
-
-/* Solid navy button (used for hero and submit) */
+/* ---- BUTTONS ---- */
+/* Solid navy button (for light backgrounds) */
 .submit-topic-btn {
   display: inline-block;
   background: #0A0F2E;
@@ -124,12 +104,46 @@ header {
   transform: translateY(-2px);
 }
 
-/* Old hero-btn class no longer used, but we keep the class for safety */
-.hero-btn {
-  /* not used anymore, but keep empty to avoid breakage */
+/* Hero button: outlined white (visible on dark background) */
+.hero-cta-btn {
+  display: inline-block;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.hero-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  transform: translateY(-2px);
 }
 
-/* ---- GENERAL SECTION STYLES ---- */
+/* General primary button (gold) for other uses */
+.primary-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #C4A747;
+  color: #0A0F2E;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.primary-btn:hover {
+  background: #B3963C;
+}
+
+/* ---- GENERAL SECTION STYLES (unchanged) ---- */
 section {
   padding: var(--space-lg) 0;
 }
@@ -140,7 +154,7 @@ section {
   text-align: center;
 }
 
-/* ---- HERO (unchanged layout, only button style changed) ---- */
+/* ---- HERO (layout unchanged) ---- */
 .hero {
   position: relative;
   width: 100%;
@@ -194,7 +208,7 @@ section {
   margin-top: 40px;
 }
 
-/* ---- POSITIONING SECTION ---- */
+/* ---- POSITIONING SECTION (unchanged) ---- */
 .positioning-section {
   padding: var(--space-md) 0 var(--space-md);
 }
@@ -206,7 +220,7 @@ section {
   margin: 0;
 }
 
-/* ---- SERVICES ---- */
+/* ---- SERVICES (unchanged) ---- */
 .services-section {
   background: #F5F7FC;
   padding: var(--space-md) 0;
@@ -297,7 +311,7 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (gray background, only button) ---- */
+/* ---- CTA BAR (gray background, solid navy button) ---- */
 .methodology-bar {
   background: #F9FAFB;
   padding: 36px 0;
@@ -316,7 +330,7 @@ section {
   justify-content: center;
 }
 
-/* ---- BLOG (no subtext) ---- */
+/* ---- BLOG (unchanged) ---- */
 .blog-section {
   background: #F5F7FC;
   padding-top: var(--space-md);
@@ -633,7 +647,7 @@ textarea {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* ---- RESPONSIVE ---- */
+/* ---- RESPONSIVE (unchanged) ---- */
 @media (max-width: 900px) {
   .services-list {
     grid-template-columns: repeat(2, 1fr);
@@ -693,7 +707,7 @@ textarea {
     text-align: left;
     font-size: 1.65rem;
   }
-  .primary-btn, .contact-submit, .submit-topic-btn {
+  .primary-btn, .contact-submit, .submit-topic-btn, .hero-cta-btn {
     width: 100%;
     text-align: center;
   }
