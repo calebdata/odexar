@@ -1,6 +1,7 @@
 /* ============================================
-   ODEXAR — style.css (v16)
-   Methodology: added subtle border-top to step cards for structure
+   ODEXAR — style.css (v17)
+   Hero button changed to solid navy (consistent with primary CTA)
+   Methodology border-top retained
    ============================================ */
 
 /* ---- RESET ---- */
@@ -101,20 +102,31 @@ header {
 .primary-btn:hover {
   background: #B3963C;
 }
-.hero-btn {
-  background: transparent !important;
-  color: #ffffff !important;
-  border: 2px solid rgba(255, 255, 255, 0.8) !important;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  border-radius: 8px;
-  padding: 12px 24px;
+
+/* Solid navy button (used for hero and submit) */
+.submit-topic-btn {
+  display: inline-block;
+  background: #0A0F2E;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
   font-size: 0.95rem;
-  transition: all 0.25s ease;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
-.hero-btn:hover {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: #ffffff !important;
+.submit-topic-btn:hover {
+  background: #1A1F3E;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+/* Old hero-btn class no longer used, but we keep the class for safety */
+.hero-btn {
+  /* not used anymore, but keep empty to avoid breakage */
 }
 
 /* ---- GENERAL SECTION STYLES ---- */
@@ -128,7 +140,7 @@ section {
   text-align: center;
 }
 
-/* ---- HERO (untouched) ---- */
+/* ---- HERO (unchanged layout, only button style changed) ---- */
 .hero {
   position: relative;
   width: 100%;
@@ -246,7 +258,7 @@ section {
   opacity: 0.7;
 }
 
-/* ---- METHODOLOGY (added subtle border-top for structure) ---- */
+/* ---- METHODOLOGY (border-top on step cards) ---- */
 .how-section {
   background: #F9FAFB;
   padding: var(--space-md) 0;
@@ -262,12 +274,12 @@ section {
   gap: 48px;
 }
 .step-card {
-  padding-top: 20px;          /* space for the border */
-  border-top: 1px solid rgba(10, 15, 46, 0.08);  /* subtle separator */
+  padding-top: 20px;
+  border-top: 1px solid rgba(10, 15, 46, 0.08);
 }
 .step-card:first-child,
 .step-card:nth-child(2) {
-  border-top: none;           /* remove border from first row */
+  border-top: none;
   padding-top: 0;
 }
 .step-card h3 {
@@ -285,7 +297,7 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (gray background) ---- */
+/* ---- CTA BAR (gray background, only button) ---- */
 .methodology-bar {
   background: #F9FAFB;
   padding: 36px 0;
@@ -303,27 +315,8 @@ section {
   flex-wrap: wrap;
   justify-content: center;
 }
-.submit-topic-btn {
-  display: inline-block;
-  background: #0A0F2E;
-  color: #ffffff;
-  font-weight: 700;
-  font-family: Arial, sans-serif;
-  font-size: 0.95rem;
-  padding: 12px 28px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-}
-.submit-topic-btn:hover {
-  background: #1A1F3E;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
-}
 
-/* ---- BLOG (unchanged) ---- */
+/* ---- BLOG (no subtext) ---- */
 .blog-section {
   background: #F5F7FC;
   padding-top: var(--space-md);
