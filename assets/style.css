@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v24)
-   Body text increased slightly to 0.9rem (14.4px)
+   ODEXAR — style.css (v26)
+   Services CTA changed to a subtle dark navy button
    ============================================ */
 
 /* ---- RESET ---- */
@@ -214,7 +214,7 @@ section {
   padding: var(--space-md) 0;
 }
 .services-section .section-title {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .services-list {
   display: grid;
@@ -236,27 +236,32 @@ section {
 .services-list-item p {
   margin: 0;
   font-family: Arial, sans-serif;
-  font-size: 0.9rem;     /* increased from 0.85rem, not too big */
+  font-size: 0.9rem;
   line-height: 1.65;
   color: #2d3748;
 }
+/* New services CTA button (subtle dark navy) */
 .services-cta {
   text-align: left;
   margin-top: 32px;
 }
-.services-cta-link {
+.services-cta-button {
   display: inline-block;
-  font-family: Arial, sans-serif;
-  font-size: 0.85rem;
+  background: #0A0F2E;
+  color: #ffffff;
   font-weight: 600;
-  color: #0A0F2E;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
   text-decoration: none;
-  border-bottom: 1px solid #C4A747;
-  padding-bottom: 2px;
-  transition: opacity 0.2s;
 }
-.services-cta-link:hover {
-  opacity: 0.7;
+.services-cta-button:hover {
+  background: #1A1F3E;
+  transform: translateY(-2px);
 }
 
 /* ---- METHODOLOGY ---- */
@@ -266,12 +271,12 @@ section {
   margin-top: 0;
 }
 .how-section .section-title {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 48px;
+  gap: 28px 48px;
 }
 .step-card {
   padding-top: 20px;
@@ -291,7 +296,7 @@ section {
 .step-card p {
   margin: 0;
   font-family: Arial, sans-serif;
-  font-size: 0.9rem;     /* increased from 0.85rem */
+  font-size: 0.9rem;
   line-height: 1.7;
   color: #2d3748;
   max-width: 45ch;
@@ -643,7 +648,7 @@ textarea {
     gap: 32px;
   }
   .steps-grid {
-    gap: 32px;
+    gap: 28px 32px;
   }
   .step-card {
     padding-top: 16px;
@@ -678,8 +683,7 @@ textarea {
     gap: 32px;
   }
   .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
   .step-card {
     padding-top: 20px;
@@ -699,7 +703,7 @@ textarea {
     text-align: left;
     font-size: 1.65rem;
   }
-  .primary-btn, .contact-submit, .submit-topic-btn, .hero-cta-btn {
+  .primary-btn, .contact-submit, .submit-topic-btn, .hero-cta-btn, .services-cta-button {
     width: 100%;
     text-align: center;
   }
