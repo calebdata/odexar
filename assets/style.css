@@ -1,6 +1,7 @@
 /* ============================================
-   ODEXAR — style.css (v26)
-   Services CTA changed to a subtle dark navy button
+   ODEXAR — style.css (v27)
+   Services button colour matches methodology button;
+   Reduced vertical space above methodology bar
    ============================================ */
 
 /* ---- RESET ---- */
@@ -240,14 +241,14 @@ section {
   line-height: 1.65;
   color: #2d3748;
 }
-/* New services CTA button (subtle dark navy) */
+/* Services CTA button - now matches methodology button colour */
 .services-cta {
   text-align: left;
   margin-top: 32px;
 }
 .services-cta-button {
   display: inline-block;
-  background: #0A0F2E;
+  background: #1E2A5E;      /* same as methodology button */
   color: #ffffff;
   font-weight: 600;
   font-family: Arial, sans-serif;
@@ -260,7 +261,7 @@ section {
   text-decoration: none;
 }
 .services-cta-button:hover {
-  background: #1A1F3E;
+  background: #2C3E6B;      /* same hover as methodology button */
   transform: translateY(-2px);
 }
 
@@ -302,10 +303,10 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (button left-aligned) ---- */
+/* ---- CTA BAR (button left-aligned, reduced top padding) ---- */
 .methodology-bar {
   background: #F9FAFB;
-  padding: 36px 0;
+  padding: 16px 0 36px 0;    /* reduced top padding from 36px to 16px */
 }
 .methodology-bar-inner {
   display: flex;
