@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v20)
-   Positioning paragraph: centered block & centered text
+   ODEXAR — style.css (v22)
+   Section titles left-aligned, positioning paragraph removed
    ============================================ */
 
 /* ---- RESET ---- */
@@ -151,7 +151,7 @@ section {
   font-size: 1.4rem;
   margin: 0 0 24px;
   color: #0A0F2E;
-  text-align: center;
+  text-align: left;   /* all section titles left-aligned */
 }
 
 /* ---- HERO ---- */
@@ -208,19 +208,7 @@ section {
   margin-top: 40px;
 }
 
-/* ---- POSITIONING SECTION (centered block & centered text) ---- */
-.positioning-section {
-  padding: var(--space-md) 0 var(--space-md);
-}
-.positioning-text {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.05rem;
-  color: #1A2C3E;
-  line-height: 1.85;
-  margin: 0 auto;
-  max-width: 800px;
-  text-align: center;
-}
+/* ---- POSITIONING SECTION REMOVED ---- */
 
 /* ---- SERVICES ---- */
 .services-section {
@@ -228,7 +216,6 @@ section {
   padding: var(--space-md) 0;
 }
 .services-section .section-title {
-  text-align: left;
   margin-bottom: 20px;
 }
 .services-list {
@@ -281,7 +268,6 @@ section {
   margin-top: 0;
 }
 .how-section .section-title {
-  text-align: left;
   margin-bottom: 20px;
 }
 .steps-grid {
@@ -424,6 +410,9 @@ section {
 /* ---- CONTACT ---- */
 .contact-section {
   background: #FFFFFF;
+}
+.contact-section .section-title {
+  margin-bottom: 24px;
 }
 .contact-grid {
   display: grid;
