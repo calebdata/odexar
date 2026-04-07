@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v22)
-   Section titles left-aligned, positioning paragraph removed
+   ODEXAR — style.css (v23)
+   Body text increased to 1rem, methodology button left-aligned
    ============================================ */
 
 /* ---- RESET ---- */
@@ -151,7 +151,7 @@ section {
   font-size: 1.4rem;
   margin: 0 0 24px;
   color: #0A0F2E;
-  text-align: left;   /* all section titles left-aligned */
+  text-align: left;
 }
 
 /* ---- HERO ---- */
@@ -208,8 +208,6 @@ section {
   margin-top: 40px;
 }
 
-/* ---- POSITIONING SECTION REMOVED ---- */
-
 /* ---- SERVICES ---- */
 .services-section {
   background: #F5F7FC;
@@ -238,7 +236,7 @@ section {
 .services-list-item p {
   margin: 0;
   font-family: Arial, sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;     /* increased from 0.85rem */
   line-height: 1.65;
   color: #2d3748;
 }
@@ -293,13 +291,13 @@ section {
 .step-card p {
   margin: 0;
   font-family: Arial, sans-serif;
-  font-size: 0.85rem;
-  line-height: 1.75;
+  font-size: 1rem;     /* increased from 0.85rem */
+  line-height: 1.7;
   color: #2d3748;
   max-width: 45ch;
 }
 
-/* ---- CTA BAR ---- */
+/* ---- CTA BAR (button left-aligned) ---- */
 .methodology-bar {
   background: #F9FAFB;
   padding: 36px 0;
@@ -307,15 +305,15 @@ section {
 .methodology-bar-inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;   /* changed from center */
+  text-align: left;
   gap: 0;
 }
 .methodology-bar-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;  /* changed from center */
 }
 
 /* ---- BLOG ---- */
