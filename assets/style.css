@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v34)
-   Methodology bar: button after text (inline), not space-between
+   ODEXAR — style.css (v35)
+   Includes all previous styles + Insights page (page-header, featured-post)
    ============================================ */
 
 /* ---- RESET ---- */
@@ -302,7 +302,7 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (button after text, not space-between) ---- */
+/* ---- CTA BAR (inline layout) ---- */
 .methodology-bar {
   background: #F9FAFB;
   padding: 32px 0;
@@ -330,7 +330,7 @@ section {
   flex-shrink: 0;
 }
 
-/* ---- BLOG: 2-COLUMN TEXT-ONLY GRID ---- */
+/* ---- BLOG / INSIGHTS HOMEPAGE SECTION (text‑only grid) ---- */
 .blog-section {
   background: #F5F7FC;
   padding-top: var(--space-md);
@@ -407,7 +407,48 @@ section {
   opacity: 0.7;
 }
 
-/* ---- CONTACT ---- */
+/* ---- INSIGHTS PAGE SPECIFIC STYLES ---- */
+.page-header {
+  background: #F5F7FC;
+  padding: 80px 0 40px;
+  text-align: center;
+}
+.page-title {
+  font-size: 2.2rem;
+  margin: 0 0 12px;
+  color: #0A0F2E;
+  font-weight: 700;
+}
+.page-subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #4b5c6c;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.featured-post {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 48px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  border: 1px solid rgba(10, 15, 46, 0.05);
+}
+.featured-post-title {
+  font-size: 1.6rem;
+  margin: 0 0 16px;
+  color: #0A0F2E;
+  font-weight: 700;
+}
+.featured-post-excerpt {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #2d3748;
+  margin-bottom: 16px;
+}
+
+/* ---- CONTACT (unchanged) ---- */
 .contact-section {
   background: #FFFFFF;
 }
@@ -665,6 +706,18 @@ textarea {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .page-header {
+    padding: 60px 0 30px;
+  }
+  .page-title {
+    font-size: 1.8rem;
+  }
+  .featured-post {
+    padding: 20px;
+  }
+  .featured-post-title {
+    font-size: 1.3rem;
+  }
 }
 @media (max-width: 600px) {
   .services-list {
@@ -722,7 +775,6 @@ textarea {
   .nav-links {
     display: none;
   }
-  /* Methodology bar stack on mobile */
   .methodology-bar-content {
     flex-direction: column;
     align-items: flex-start;
