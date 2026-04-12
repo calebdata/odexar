@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v32)
-   Methodology bar: inline text + button, responsive wrap
+   ODEXAR — style.css (v33)
+   Methodology bar: longer text, button pushed to right with space-between
    ============================================ */
 
 /* ---- RESET ---- */
@@ -99,6 +99,7 @@ header {
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
+  white-space: nowrap;
 }
 .submit-topic-btn:hover {
   background: #2C3E6B;
@@ -301,7 +302,7 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (inline text + button, left-aligned) ---- */
+/* ---- CTA BAR (space-between layout) ---- */
 .methodology-bar {
   background: #F9FAFB;
   padding: 32px 0;
@@ -312,18 +313,23 @@ section {
 }
 .methodology-bar-content {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }
 .methodology-bar-text {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #0A0F2E;
   font-weight: 500;
+  line-height: 1.4;
+  flex: 1;  /* allows text to take available space */
 }
 .submit-topic-btn {
-  /* already defined above */
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ---- BLOG: 2-COLUMN TEXT-ONLY GRID (unchanged) ---- */
@@ -634,7 +640,7 @@ textarea {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* ---- RESPONSIVE (updated for inline CTA) ---- */
+/* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
   .services-list {
     grid-template-columns: repeat(2, 1fr);
@@ -718,10 +724,14 @@ textarea {
   .nav-links {
     display: none;
   }
-  /* methodology bar inline stack on mobile */
+  /* Methodology bar stack on mobile */
   .methodology-bar-content {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+  }
+  .submit-topic-btn {
+    white-space: normal;
+    width: auto;
   }
 }
