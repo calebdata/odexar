@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v33)
-   Methodology bar: longer text, button pushed to right with space-between
+   ODEXAR — style.css (v34)
+   Methodology bar: button after text (inline), not space-between
    ============================================ */
 
 /* ---- RESET ---- */
@@ -37,7 +37,7 @@ a {
   margin: 0 auto;
 }
 
-/* ---- HEADER (unchanged) ---- */
+/* ---- HEADER ---- */
 header {
   position: fixed;
   top: 0;
@@ -155,7 +155,7 @@ section {
   text-align: left;
 }
 
-/* ---- HERO (unchanged) ---- */
+/* ---- HERO ---- */
 .hero {
   position: relative;
   width: 100%;
@@ -209,7 +209,7 @@ section {
   margin-top: 40px;
 }
 
-/* ---- SERVICES (unchanged) ---- */
+/* ---- SERVICES ---- */
 .services-section {
   background: #F5F7FC;
   padding: var(--space-md) 0;
@@ -264,7 +264,7 @@ section {
   transform: translateY(-2px);
 }
 
-/* ---- METHODOLOGY (unchanged) ---- */
+/* ---- METHODOLOGY ---- */
 .how-section {
   background: #F9FAFB;
   padding: var(--space-md) 0;
@@ -302,7 +302,7 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (space-between layout) ---- */
+/* ---- CTA BAR (button after text, not space-between) ---- */
 .methodology-bar {
   background: #F9FAFB;
   padding: 32px 0;
@@ -313,9 +313,8 @@ section {
 }
 .methodology-bar-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
   width: 100%;
 }
@@ -325,14 +324,13 @@ section {
   color: #0A0F2E;
   font-weight: 500;
   line-height: 1.4;
-  flex: 1;  /* allows text to take available space */
 }
 .submit-topic-btn {
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-/* ---- BLOG: 2-COLUMN TEXT-ONLY GRID (unchanged) ---- */
+/* ---- BLOG: 2-COLUMN TEXT-ONLY GRID ---- */
 .blog-section {
   background: #F5F7FC;
   padding-top: var(--space-md);
@@ -409,7 +407,7 @@ section {
   opacity: 0.7;
 }
 
-/* ---- CONTACT (unchanged) ---- */
+/* ---- CONTACT ---- */
 .contact-section {
   background: #FFFFFF;
 }
@@ -510,7 +508,7 @@ textarea {
   min-height: 120px;
 }
 
-/* ---- FOOTER (unchanged) ---- */
+/* ---- FOOTER ---- */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
