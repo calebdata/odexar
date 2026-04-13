@@ -1,9 +1,9 @@
 /* ============================================
-   ODEXAR — style.css (v37)
-   Homepage Insights: 2 cards with image left, text right
+   ODEXAR — style.css (v38)
+   Unified vertical spacing: 48px for all main sections
    ============================================ */
 
-/* ---- RESET & GLOBAL (same as v36) ---- */
+/* ---- RESET ---- */
 * {
   box-sizing: border-box;
 }
@@ -21,19 +21,23 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* ---- VARIABLES ---- */
 :root {
   --space-unit: 1rem;
   --space-sm: calc(var(--space-unit) * 1.5);
   --space-md: calc(var(--space-unit) * 2.5);
   --space-lg: calc(var(--space-unit) * 4);
 }
+
+/* ---- CONTAINER (global) ---- */
 .container {
   width: 88%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ---- HEADER (unchanged) ---- */
+/* ---- HEADER ---- */
 header {
   position: fixed;
   top: 0;
@@ -139,8 +143,12 @@ header {
 }
 
 /* ---- GENERAL SECTION STYLES ---- */
-section {
-  padding: var(--space-lg) 0;
+/* All major sections now use consistent 48px vertical padding */
+.services-section,
+.how-section,
+.insights-panel,
+.contact-section {
+  padding: 48px 0;
 }
 .section-title {
   font-size: 1.4rem;
@@ -206,7 +214,6 @@ section {
 /* ---- SERVICES ---- */
 .services-section {
   background: #F5F7FC;
-  padding: var(--space-md) 0;
 }
 .services-section .section-title {
   margin-bottom: 40px;
@@ -261,7 +268,6 @@ section {
 /* ---- METHODOLOGY ---- */
 .how-section {
   background: #F9FAFB;
-  padding: var(--space-md) 0;
   margin-top: 0;
 }
 .how-section .section-title {
@@ -296,10 +302,10 @@ section {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR ---- */
+/* ---- CTA BAR (now also 48px padding) ---- */
 .methodology-bar {
   background: #F9FAFB;
-  padding: 32px 0;
+  padding: 48px 0;
 }
 .methodology-bar-inner {
   display: flex;
@@ -324,10 +330,9 @@ section {
   flex-shrink: 0;
 }
 
-/* ---- INSIGHTS PANEL: 2 CARDS WITH IMAGES (HORIZONTAL) ---- */
+/* ---- INSIGHTS PANEL (HOMEPAGE) ---- */
 .insights-panel {
   background: #F5F7FC;
-  padding: var(--space-md) 0 48px;
 }
 .insights-heading {
   font-size: 1.6rem;
@@ -419,7 +424,7 @@ section {
   transform: translateY(-2px);
 }
 
-/* ---- INSIGHTS PAGE SPECIFIC STYLES (unchanged) ---- */
+/* ---- INSIGHTS PAGE SPECIFIC STYLES ---- */
 .page-header {
   background: #F5F7FC;
   padding: 80px 0 40px;
@@ -460,7 +465,7 @@ section {
   margin-bottom: 16px;
 }
 
-/* ---- CONTACT (unchanged) ---- */
+/* ---- CONTACT ---- */
 .contact-section {
   background: #FFFFFF;
 }
