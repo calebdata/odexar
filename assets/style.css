@@ -1,9 +1,10 @@
 /* ============================================
-   ODEXAR — style.css (v40)
-   Methodology title left-aligned, grid centered
+   ODEXAR — style.css (v42)
+   Methodology: title left-aligned, grid centered,
+   increased column gap (64px)
    ============================================ */
 
-/* ---- RESET & GLOBAL (same as v39) ---- */
+/* ---- RESET & GLOBAL (same as v41) ---- */
 * {
   box-sizing: border-box;
 }
@@ -206,7 +207,7 @@ header {
   margin-top: 40px;
 }
 
-/* ---- SERVICES ---- */
+/* ---- SERVICES (unchanged) ---- */
 .services-section {
   background: #F5F7FC;
 }
@@ -260,21 +261,21 @@ header {
   transform: translateY(-2px);
 }
 
-/* ---- METHODOLOGY (title left-aligned, grid centered) ---- */
+/* ---- METHODOLOGY (title left-aligned, grid centered, increased column gap) ---- */
 .how-section {
   background: #F9FAFB;
   margin-top: 0;
 }
 .how-section .section-title {
-  text-align: left;          /* changed from center to left */
+  text-align: left;          /* title left-aligned */
   margin-bottom: 40px;
 }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px 48px;
-  max-width: 1000px;
-  margin: 0 auto;            /* centers the grid */
+  gap: 28px 64px;              /* row gap 28px, column gap 64px (increased) */
+  max-width: 1000px;           /* limits width, keeps grid from being too wide */
+  margin: 0 auto;              /* centers the grid */
 }
 .step-card {
   padding-top: 20px;
@@ -302,7 +303,7 @@ header {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR ---- */
+/* ---- CTA BAR (unchanged) ---- */
 .methodology-bar {
   background: #F9FAFB;
   padding: 48px 0;
@@ -703,7 +704,7 @@ textarea {
     gap: 32px;
   }
   .steps-grid {
-    gap: 28px 32px;
+    gap: 28px 32px;        /* smaller column gap on tablet */
   }
   .insights-grid {
     grid-template-columns: 1fr;
@@ -742,7 +743,7 @@ textarea {
     gap: 32px;
   }
   .steps-grid {
-    gap: 28px;
+    gap: 28px;            /* single column, so no column gap */
   }
   .insights-grid {
     grid-template-columns: 1fr;
