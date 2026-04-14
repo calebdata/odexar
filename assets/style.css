@@ -1,9 +1,9 @@
 /* ============================================
-   ODEXAR — style.css (v39)
-   Methodology section centered (title + grid), text left-aligned inside cards
+   ODEXAR — style.css (v40)
+   Methodology title left-aligned, grid centered
    ============================================ */
 
-/* ---- RESET ---- */
+/* ---- RESET & GLOBAL (same as v39) ---- */
 * {
   box-sizing: border-box;
 }
@@ -21,23 +21,19 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
-/* ---- VARIABLES ---- */
 :root {
   --space-unit: 1rem;
   --space-sm: calc(var(--space-unit) * 1.5);
   --space-md: calc(var(--space-unit) * 2.5);
   --space-lg: calc(var(--space-unit) * 4);
 }
-
-/* ---- CONTAINER (global) ---- */
 .container {
   width: 88%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ---- HEADER ---- */
+/* ---- HEADER (unchanged) ---- */
 header {
   position: fixed;
   top: 0;
@@ -264,13 +260,13 @@ header {
   transform: translateY(-2px);
 }
 
-/* ---- METHODOLOGY (centered block, text left-aligned) ---- */
+/* ---- METHODOLOGY (title left-aligned, grid centered) ---- */
 .how-section {
   background: #F9FAFB;
   margin-top: 0;
 }
 .how-section .section-title {
-  text-align: center;
+  text-align: left;          /* changed from center to left */
   margin-bottom: 40px;
 }
 .steps-grid {
@@ -278,7 +274,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
   gap: 28px 48px;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto;            /* centers the grid */
 }
 .step-card {
   padding-top: 20px;
@@ -334,7 +330,7 @@ header {
   flex-shrink: 0;
 }
 
-/* ---- INSIGHTS PANEL (HOMEPAGE) ---- */
+/* ---- INSIGHTS PANEL (unchanged) ---- */
 .insights-panel {
   background: #F5F7FC;
 }
@@ -469,7 +465,7 @@ header {
   margin-bottom: 16px;
 }
 
-/* ---- CONTACT ---- */
+/* ---- CONTACT (unchanged) ---- */
 .contact-section {
   background: #FFFFFF;
 }
