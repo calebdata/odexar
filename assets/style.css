@@ -1,10 +1,10 @@
 /* ============================================
-   ODEXAR — style.css (v42)
-   Methodology: title left-aligned, grid centered,
+   ODEXAR — style.css (v43)
+   Methodology: centered block, title left-aligned over left column,
    increased column gap (64px)
    ============================================ */
 
-/* ---- RESET & GLOBAL (same as v41) ---- */
+/* ---- RESET ---- */
 * {
   box-sizing: border-box;
 }
@@ -22,19 +22,23 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* ---- VARIABLES ---- */
 :root {
   --space-unit: 1rem;
   --space-sm: calc(var(--space-unit) * 1.5);
   --space-md: calc(var(--space-unit) * 2.5);
   --space-lg: calc(var(--space-unit) * 4);
 }
+
+/* ---- CONTAINER (global) ---- */
 .container {
   width: 88%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ---- HEADER (unchanged) ---- */
+/* ---- HEADER ---- */
 header {
   position: fixed;
   top: 0;
@@ -153,7 +157,7 @@ header {
   text-align: left;
 }
 
-/* ---- HERO (unchanged) ---- */
+/* ---- HERO ---- */
 .hero {
   position: relative;
   width: 100%;
@@ -207,7 +211,7 @@ header {
   margin-top: 40px;
 }
 
-/* ---- SERVICES (unchanged) ---- */
+/* ---- SERVICES ---- */
 .services-section {
   background: #F5F7FC;
 }
@@ -261,21 +265,23 @@ header {
   transform: translateY(-2px);
 }
 
-/* ---- METHODOLOGY (title left-aligned, grid centered, increased column gap) ---- */
+/* ---- METHODOLOGY (centered block, title left-aligned over left column) ---- */
 .how-section {
   background: #F9FAFB;
   margin-top: 0;
 }
+.methodology-centered {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .how-section .section-title {
-  text-align: left;          /* title left-aligned */
+  text-align: left;
   margin-bottom: 40px;
 }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px 64px;              /* row gap 28px, column gap 64px (increased) */
-  max-width: 1000px;           /* limits width, keeps grid from being too wide */
-  margin: 0 auto;              /* centers the grid */
+  gap: 28px 64px;      /* increased horizontal gap */
 }
 .step-card {
   padding-top: 20px;
@@ -303,7 +309,7 @@ header {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (unchanged) ---- */
+/* ---- CTA BAR ---- */
 .methodology-bar {
   background: #F9FAFB;
   padding: 48px 0;
@@ -331,7 +337,7 @@ header {
   flex-shrink: 0;
 }
 
-/* ---- INSIGHTS PANEL (unchanged) ---- */
+/* ---- INSIGHTS PANEL (HOMEPAGE) ---- */
 .insights-panel {
   background: #F5F7FC;
 }
@@ -425,7 +431,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* ---- INSIGHTS PAGE SPECIFIC STYLES ---- */
+/* ---- INSIGHTS PAGE SPECIFIC STYLES (optional, for /insights/ page) ---- */
 .page-header {
   background: #F5F7FC;
   padding: 80px 0 40px;
@@ -466,7 +472,7 @@ header {
   margin-bottom: 16px;
 }
 
-/* ---- CONTACT (unchanged) ---- */
+/* ---- CONTACT ---- */
 .contact-section {
   background: #FFFFFF;
 }
@@ -704,7 +710,7 @@ textarea {
     gap: 32px;
   }
   .steps-grid {
-    gap: 28px 32px;        /* smaller column gap on tablet */
+    gap: 28px 32px;
   }
   .insights-grid {
     grid-template-columns: 1fr;
@@ -743,7 +749,7 @@ textarea {
     gap: 32px;
   }
   .steps-grid {
-    gap: 28px;            /* single column, so no column gap */
+    gap: 28px;
   }
   .insights-grid {
     grid-template-columns: 1fr;
