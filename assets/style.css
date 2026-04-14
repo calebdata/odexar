@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v38)
-   Unified vertical spacing: 48px for all main sections
+   ODEXAR — style.css (v39)
+   Methodology section centered (title + grid), text left-aligned inside cards
    ============================================ */
 
 /* ---- RESET ---- */
@@ -143,7 +143,6 @@ header {
 }
 
 /* ---- GENERAL SECTION STYLES ---- */
-/* All major sections now use consistent 48px vertical padding */
 .services-section,
 .how-section,
 .insights-panel,
@@ -265,18 +264,21 @@ header {
   transform: translateY(-2px);
 }
 
-/* ---- METHODOLOGY ---- */
+/* ---- METHODOLOGY (centered block, text left-aligned) ---- */
 .how-section {
   background: #F9FAFB;
   margin-top: 0;
 }
 .how-section .section-title {
+  text-align: center;
   margin-bottom: 40px;
 }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px 48px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .step-card {
   padding-top: 20px;
@@ -292,6 +294,7 @@ header {
   font-size: 1rem;
   color: #0A0F2E;
   font-weight: 700;
+  text-align: left;
 }
 .step-card p {
   margin: 0;
@@ -299,10 +302,11 @@ header {
   font-size: 0.9rem;
   line-height: 1.7;
   color: #2d3748;
+  text-align: left;
   max-width: 45ch;
 }
 
-/* ---- CTA BAR (now also 48px padding) ---- */
+/* ---- CTA BAR ---- */
 .methodology-bar {
   background: #F9FAFB;
   padding: 48px 0;
