@@ -1,7 +1,7 @@
 /* ============================================
-   ODEXAR — style.css (v44)
-   Enhanced header: stronger border, deeper shadow,
-   larger logo, tighter nav, bolder links
+   ODEXAR — style.css (v46)
+   Hero: stronger overlay, supporting line, solid white button,
+   increased height and spacing
    ============================================ */
 
 /* ---- RESET ---- */
@@ -38,7 +38,7 @@ a {
   margin: 0 auto;
 }
 
-/* ---- HEADER (enhanced) ---- */
+/* ---- HEADER (as in v44) ---- */
 header {
   position: fixed;
   top: 0;
@@ -108,6 +108,29 @@ header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transform: translateY(-2px);
 }
+/* New solid white hero button */
+.hero-cta-btn-solid {
+  display: inline-block;
+  background: #ffffff;
+  color: #0A0F2E;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.hero-cta-btn-solid:hover {
+  background: #F5F7FC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+/* Old hero button (if needed) */
 .hero-cta-btn {
   display: inline-block;
   background: transparent;
@@ -158,11 +181,11 @@ header {
   text-align: left;
 }
 
-/* ---- HERO ---- */
+/* ---- HERO (updated: stronger overlay, supporting line, solid button, increased height) ---- */
 .hero {
   position: relative;
   width: 100%;
-  min-height: 70vh;
+  min-height: 80vh;           /* increased from 70vh */
   display: flex;
   align-items: flex-start;
   padding: 0;
@@ -186,33 +209,41 @@ header {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(95deg, rgba(10, 15, 46, 0.75) 0%, rgba(10, 15, 46, 0.5) 45%, rgba(10, 15, 46, 0.2) 100%);
+  background: linear-gradient(95deg, rgba(10, 15, 46, 0.85) 0%, rgba(10, 15, 46, 0.6) 45%, rgba(10, 15, 46, 0.3) 100%);
 }
 .hero-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 15, 46, 0.65) 0%, rgba(10, 15, 46, 0.35) 30%, rgba(10, 15, 46, 0.1) 100%);
+  background: linear-gradient(180deg, rgba(10, 15, 46, 0.7) 0%, rgba(10, 15, 46, 0.4) 30%, rgba(10, 15, 46, 0.1) 100%);
   z-index: 1;
 }
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 160px 0 60px;
+  padding: 180px 0 80px;      /* increased top/bottom padding */
   max-width: 800px;
 }
 .hero-content h1 {
   font-size: 2rem;
   line-height: 1.45;
-  margin: 0;
+  margin: 0 0 16px;           /* added margin below heading */
   color: #fff;
   max-width: 800px;
 }
+.hero-subline {
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 32px;
+  max-width: 600px;
+}
 .hero-actions {
-  margin-top: 40px;
+  margin-top: 56px;           /* increased spacing from 40px */
 }
 
-/* ---- SERVICES ---- */
+/* ---- SERVICES (unchanged) ---- */
 .services-section {
   background: #F5F7FC;
 }
@@ -266,7 +297,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* ---- METHODOLOGY (centered block, title left-aligned over left column) ---- */
+/* ---- METHODOLOGY (centered block, title left-aligned) ---- */
 .how-section {
   background: #F9FAFB;
   margin-top: 0;
@@ -338,7 +369,7 @@ header {
   flex-shrink: 0;
 }
 
-/* ---- INSIGHTS PANEL (HOMEPAGE) ---- */
+/* ---- INSIGHTS PANEL (unchanged) ---- */
 .insights-panel {
   background: #F5F7FC;
 }
@@ -432,7 +463,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* ---- INSIGHTS PAGE SPECIFIC STYLES (optional, for /insights/ page) ---- */
+/* ---- INSIGHTS PAGE SPECIFIC STYLES (optional) ---- */
 .page-header {
   background: #F5F7FC;
   padding: 80px 0 40px;
@@ -704,7 +735,7 @@ textarea {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* ---- RESPONSIVE ---- */
+/* ---- RESPONSIVE (updated for hero) ---- */
 @media (max-width: 900px) {
   .services-list {
     grid-template-columns: repeat(2, 1fr);
@@ -718,10 +749,16 @@ textarea {
     gap: 32px;
   }
   .hero-content {
-    padding-top: 120px;
+    padding: 140px 0 60px;
   }
   .hero-content h1 {
     font-size: 1.7rem;
+  }
+  .hero-subline {
+    font-size: 1rem;
+  }
+  .hero-actions {
+    margin-top: 40px;
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -774,16 +811,22 @@ textarea {
     padding-top: 0;
   }
   .hero-content {
-    padding-top: 100px;
+    padding: 120px 0 50px;
   }
   .hero-content h1 {
     font-size: 1.5rem;
+  }
+  .hero-subline {
+    font-size: 0.9rem;
+  }
+  .hero-actions {
+    margin-top: 32px;
   }
   .section-title {
     text-align: left;
     font-size: 1.65rem;
   }
-  .primary-btn, .contact-submit, .submit-topic-btn, .hero-cta-btn, .services-cta-button, .insights-view-all {
+  .primary-btn, .contact-submit, .submit-topic-btn, .hero-cta-btn-solid, .services-cta-button, .insights-view-all {
     width: 100%;
     text-align: center;
   }
