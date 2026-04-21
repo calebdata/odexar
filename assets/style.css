@@ -1,10 +1,8 @@
 /* ============================================
-   ODEXAR — style.css (v49)
-   Methodology title aligned to second service card (3‑col grid)
-   Steps grid remains centered
+   ODEXAR — style.css (v50)
+   CTA bar centered, shorter text, all previous styles intact
    ============================================ */
 
-/* ---- RESET ---- */
 * {
   box-sizing: border-box;
 }
@@ -23,7 +21,6 @@ a {
   color: inherit;
 }
 
-/* ---- VARIABLES ---- */
 :root {
   --space-unit: 1rem;
   --space-sm: calc(var(--space-unit) * 1.5);
@@ -31,14 +28,13 @@ a {
   --space-lg: calc(var(--space-unit) * 4);
 }
 
-/* ---- CONTAINER (global) ---- */
 .container {
   width: 88%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ---- HEADER (v44) ---- */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -87,7 +83,7 @@ header {
   opacity: 0.65;
 }
 
-/* ---- BUTTONS ---- */
+/* BUTTONS */
 .submit-topic-btn {
   display: inline-block;
   background: #1E2A5E;
@@ -144,7 +140,7 @@ header {
   background: #B3963C;
 }
 
-/* ---- GENERAL SECTION STYLES ---- */
+/* GENERAL SECTION STYLES */
 .services-section,
 .how-section,
 .insights-panel,
@@ -158,7 +154,7 @@ header {
   text-align: left;
 }
 
-/* ---- HERO (original) ---- */
+/* HERO */
 .hero {
   position: relative;
   width: 100%;
@@ -212,7 +208,7 @@ header {
   margin-top: 40px;
 }
 
-/* ---- SERVICES (unchanged) ---- */
+/* SERVICES */
 .services-section {
   background: #F5F7FC;
 }
@@ -266,30 +262,23 @@ header {
   transform: translateY(-2px);
 }
 
-/* ---- METHODOLOGY (title aligned to second card, steps grid centered) ---- */
+/* METHODOLOGY (centered) */
 .how-section {
   background: #F9FAFB;
   margin-top: 0;
 }
-/* Title wrapper uses same 3‑col grid as services */
-.methodology-title-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+.methodology-centered {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.how-section .section-title {
+  text-align: left;
   margin-bottom: 40px;
 }
-.methodology-title-wrapper .section-title {
-  margin: 0;
-  grid-column: 2 / 3;  /* place title in second column */
-  text-align: left;
-}
-/* Steps grid remains centered */
-.steps-grid-centered {
+.steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px 64px;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 .step-card {
   padding-top: 20px;
@@ -317,21 +306,22 @@ header {
   max-width: 45ch;
 }
 
-/* ---- CTA BAR ---- */
+/* CTA BAR (centered) */
 .methodology-bar {
   background: #F9FAFB;
   padding: 48px 0;
 }
 .methodology-bar-inner {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .methodology-bar-content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 20px;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
 }
 .methodology-bar-text {
   font-family: Georgia, "Times New Roman", serif;
@@ -345,7 +335,7 @@ header {
   flex-shrink: 0;
 }
 
-/* ---- INSIGHTS PANEL (unchanged) ---- */
+/* INSIGHTS PANEL */
 .insights-panel {
   background: #F5F7FC;
 }
@@ -439,7 +429,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* ---- INSIGHTS PAGE SPECIFIC STYLES (optional) ---- */
+/* INSIGHTS PAGE SPECIFIC STYLES (optional) */
 .page-header {
   background: #F5F7FC;
   padding: 80px 0 40px;
@@ -480,7 +470,7 @@ header {
   margin-bottom: 16px;
 }
 
-/* ---- CONTACT ---- */
+/* CONTACT */
 .contact-section {
   background: #FFFFFF;
 }
@@ -581,7 +571,7 @@ textarea {
   min-height: 120px;
 }
 
-/* ---- FOOTER ---- */
+/* FOOTER */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
@@ -711,16 +701,13 @@ textarea {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* ---- RESPONSIVE ---- */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .services-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
-  .methodology-title-wrapper {
-    gap: 32px;
-  }
-  .steps-grid-centered {
+  .steps-grid {
     gap: 28px 32px;
   }
   .insights-grid {
@@ -759,15 +746,7 @@ textarea {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  .methodology-title-wrapper {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .methodology-title-wrapper .section-title {
-    grid-column: auto;
-    margin-bottom: 20px;
-  }
-  .steps-grid-centered {
+  .steps-grid {
     gap: 28px;
     grid-template-columns: 1fr;
   }
@@ -830,7 +809,7 @@ textarea {
   }
   .methodology-bar-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
   }
   .submit-topic-btn {
