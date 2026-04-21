@@ -1,7 +1,6 @@
 /* ============================================
    ODEXAR — style.css (v0)
-   Final stable version – methodology two columns on desktop,
-   CTA bar centered, all other sections as v44.
+   CTA bar: centered block, text left-aligned
    ============================================ */
 
 * {
@@ -263,7 +262,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* METHODOLOGY – force 2 columns on desktop */
+/* METHODOLOGY (two columns) */
 .how-section {
   background: #F9FAFB;
   margin-top: 0;
@@ -307,7 +306,7 @@ header {
   max-width: 45ch;
 }
 
-/* CTA BAR – centered, horizontal on desktop */
+/* CTA BAR – centered block, text left-aligned */
 .methodology-bar {
   background: #F9FAFB;
   padding: 48px 0;
@@ -318,7 +317,7 @@ header {
 }
 .methodology-bar-content {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   gap: 20px;
   width: auto;
@@ -330,6 +329,7 @@ header {
   color: #0A0F2E;
   font-weight: 500;
   line-height: 1.4;
+  text-align: left;       /* text left-aligned inside centered block */
 }
 .submit-topic-btn {
   white-space: nowrap;
