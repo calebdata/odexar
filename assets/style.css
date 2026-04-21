@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v5)
-   Complete: header white, hero single line, all sections styled
+   ODEXAR — style.css (v6)
+   Hero headline single line (font size reduced)
    ============================================ */
 
 * {
@@ -178,11 +178,24 @@ header {
   padding-top: 40px;
 }
 .hero-content h1 {
-  font-size: 2.85rem;
+  font-size: 2.2rem;   /* reduced from 2.85rem to keep on one line */
   line-height: 1.28;
   margin-bottom: 32px;
   color: #ffffff;
   font-weight: 700;
+  white-space: nowrap;  /* force single line on desktop */
+}
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 1.9rem;
+    white-space: normal; /* allow wrap on tablet */
+  }
+}
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+    white-space: normal;
+  }
 }
 .highlight {
   color: #C4A747;
@@ -661,8 +674,6 @@ textarea {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero-content h1 { font-size: 2.3rem; }
-  .hero-subtitle { font-size: 1.1rem; }
   .hero-actions { flex-direction: column; }
   .services-list { grid-template-columns: repeat(2, 1fr); gap: 32px; }
   .steps-grid { gap: 28px 32px; }
@@ -671,8 +682,6 @@ textarea {
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 @media (max-width: 600px) {
-  .hero-content h1 { font-size: 1.95rem; }
-  .hero-subtitle { font-size: 1.02rem; }
   .nav-links { display: none; }
   .scroll-indicator { bottom: 40px; }
   .services-list { grid-template-columns: 1fr; gap: 32px; }
