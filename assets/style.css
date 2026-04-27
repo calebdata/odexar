@@ -1,6 +1,7 @@
 /* ============================================
-   ODEXAR — style.css (v9)
-   Hero content centred, all other sections left-aligned
+   ODEXAR — style.css (v10)
+   Navy top border, larger headline, wider hero content,
+   reduced side margins
    ============================================ */
 
 * {
@@ -26,7 +27,7 @@ a {
   margin: 0 auto;
 }
 
-/* HEADER – solid white */
+/* HEADER – solid white with navy top border */
 header {
   position: fixed;
   top: 0;
@@ -38,6 +39,7 @@ header {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #E2E8F0;
+  border-top: 3px solid #0A0F2E;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 .nav {
@@ -153,13 +155,13 @@ header {
   margin-top: 4px;
 }
 
-/* HERO – centred */
+/* HERO – centred, wider, larger headline, bigger gap */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  text-align: center;   /* centre all text inside hero */
+  text-align: center;
 }
 .hero-bg {
   position: absolute;
@@ -181,45 +183,57 @@ header {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;       /* centre block */
-  padding-top: 20px;
+  max-width: 100%;
+  padding: 20px 5%;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .hero-content {
+    padding: 20px 8%;
+  }
 }
 .hero-content h1 {
-  font-size: 2.2rem;
-  line-height: 1.28;
-  margin-bottom: 48px;
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 80px;
   color: #ffffff;
   font-weight: 700;
-  white-space: nowrap;
+  white-space: normal;
 }
 @media (max-width: 900px) {
   .hero-content h1 {
-    font-size: 1.9rem;
-    white-space: normal;
+    font-size: 3rem;
+    margin-bottom: 60px;
   }
 }
 @media (max-width: 600px) {
   .hero-content h1 {
-    font-size: 1.6rem;
-    white-space: normal;
+    font-size: 2.2rem;
+    margin-bottom: 48px;
   }
 }
 .hero-subtitle {
   font-family: Arial, sans-serif;
-  font-size: 1.22rem;
+  font-size: 1.3rem;
   line-height: 1.58;
   color: rgba(255, 255, 255, 0.94);
   margin-bottom: 52px;
-  max-width: 800px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px;
+}
+@media (max-width: 600px) {
+  .hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
 }
 .hero-actions {
   display: flex;
   gap: 22px;
   flex-wrap: wrap;
-  justify-content: center;   /* centre buttons */
+  justify-content: center;
   margin-bottom: 40px;
 }
 .hero-trust {
@@ -228,7 +242,7 @@ header {
   font-weight: 500;
 }
 
-/* SERVICES SECTION (left‑aligned) */
+/* SERVICES SECTION */
 .services-section {
   background: #F5F7FC;
   padding: 80px 0;
@@ -268,7 +282,7 @@ header {
   margin-top: 32px;
 }
 
-/* METHODOLOGY (left‑aligned, grid centred) */
+/* METHODOLOGY SECTION (two columns) */
 .how-section {
   background: #F9FAFB;
   padding: 80px 0;
@@ -342,7 +356,7 @@ header {
   flex-shrink: 0;
 }
 
-/* INSIGHTS PANEL (left‑aligned) */
+/* INSIGHTS PANEL */
 .insights-panel {
   background: #F5F7FC;
   padding: 80px 0;
@@ -437,7 +451,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* CONTACT SECTION (left‑aligned) */
+/* CONTACT SECTION */
 .contact-section {
   background: #FFFFFF;
   padding: 80px 0;
@@ -535,7 +549,7 @@ textarea {
   min-height: 120px;
 }
 
-/* FOOTER (unchanged) */
+/* FOOTER */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
@@ -667,30 +681,88 @@ textarea {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero-actions { flex-direction: column; align-items: center; }
-  .services-list { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-  .steps-grid { gap: 28px 32px; }
-  .insights-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .services-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .steps-grid {
+    gap: 28px 32px;
+  }
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 @media (max-width: 600px) {
-  .nav-links { display: none; }
-  .services-list { grid-template-columns: 1fr; gap: 32px; }
-  .steps-grid { grid-template-columns: 1fr; gap: 28px; }
-  .insights-grid { grid-template-columns: 1fr; gap: 32px; }
-  .insight-card-horizontal { flex-direction: column; gap: 16px; }
-  .insight-card-image { width: 100%; height: auto; aspect-ratio: 16/9; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .methodology-bar-content { flex-wrap: wrap; justify-content: center; }
-  .submit-topic-btn { white-space: normal; width: auto; }
-  .section-title { text-align: left; font-size: 1.65rem; }
+  .nav-links {
+    display: none;
+  }
+  .services-list {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .insight-card-horizontal {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .insight-card-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .methodology-bar-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .submit-topic-btn {
+    white-space: normal;
+    width: auto;
+  }
+  .section-title {
+    text-align: left;
+    font-size: 1.65rem;
+  }
   .primary-btn, .contact-submit, .submit-topic-btn, .hero-cta-btn, .services-cta-button, .insights-view-all {
     width: 100%;
     text-align: center;
   }
-  .contact-form-row { grid-template-columns: 1fr; gap: 12px; }
-  .footer-main { padding: 40px 0 36px; }
-  .footer-tagline { max-width: 100%; }
-  .footer-base-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .contact-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .footer-main {
+    padding: 40px 0 36px;
+  }
+  .footer-tagline {
+    max-width: 100%;
+  }
+  .footer-base-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
