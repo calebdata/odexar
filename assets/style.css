@@ -1,7 +1,7 @@
 /* ============================================
-   ODEXAR — style.css (v11)
-   Wider container (94%), reduced headline size,
-   smaller side margins
+   ODEXAR — style.css (v13)
+   All content aligned to 94% container,
+   hero text uses container width, no extra padding.
    ============================================ */
 
 * {
@@ -22,7 +22,7 @@ a {
   color: inherit;
 }
 .container {
-  width: 94%;          /* changed from 88% – smaller side margins */
+  width: 94%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -50,7 +50,7 @@ header {
 }
 .brand-logo {
   width: 165px;
-  margin-left: -10px;
+  margin-left: 0;
 }
 .nav-links {
   display: flex;
@@ -155,7 +155,7 @@ header {
   margin-top: 4px;
 }
 
-/* HERO – centred, wider, headline reduced */
+/* HERO – content now uses container width (no extra padding) */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -183,17 +183,12 @@ header {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 100%;
-  padding: 20px 5%;
+  max-width: 100%;         /* fill container */
+  padding: 0;              /* no extra padding */
   margin: 0 auto;
 }
-@media (min-width: 1200px) {
-  .hero-content {
-    padding: 20px 8%;
-  }
-}
 .hero-content h1 {
-  font-size: 3.1rem;          /* reduced from 4.4rem by ~30% */
+  font-size: 3.1rem;
   line-height: 1.2;
   margin-bottom: 80px;
   color: #ffffff;
@@ -221,7 +216,6 @@ header {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
 }
 @media (max-width: 600px) {
   .hero-subtitle {
