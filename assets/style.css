@@ -1,7 +1,7 @@
 /* ============================================
-   ODEXAR — style.css (v10)
-   Navy top border, larger headline, wider hero content,
-   reduced side margins
+   ODEXAR — style.css (v11)
+   Wider container (94%), reduced headline size,
+   smaller side margins
    ============================================ */
 
 * {
@@ -22,7 +22,7 @@ a {
   color: inherit;
 }
 .container {
-  width: 88%;
+  width: 94%;          /* changed from 88% – smaller side margins */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -155,7 +155,7 @@ header {
   margin-top: 4px;
 }
 
-/* HERO – centred, wider, larger headline, bigger gap */
+/* HERO – centred, wider, headline reduced */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -193,7 +193,7 @@ header {
   }
 }
 .hero-content h1 {
-  font-size: 4.4rem;
+  font-size: 3.1rem;          /* reduced from 4.4rem by ~30% */
   line-height: 1.2;
   margin-bottom: 80px;
   color: #ffffff;
@@ -202,13 +202,13 @@ header {
 }
 @media (max-width: 900px) {
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
     margin-bottom: 60px;
   }
 }
 @media (max-width: 600px) {
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     margin-bottom: 48px;
   }
 }
