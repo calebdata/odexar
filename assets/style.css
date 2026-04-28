@@ -1,7 +1,7 @@
 /* ============================================
-   ODEXAR — style.css (v13)
-   All content aligned to 94% container,
-   hero text uses container width, no extra padding.
+   ODEXAR — style.css (v14)
+   Wider container (max-width 1400px), 94% width,
+   hero text limited to 1000px for readability.
    ============================================ */
 
 * {
@@ -23,7 +23,7 @@ a {
 }
 .container {
   width: 94%;
-  max-width: 1200px;
+  max-width: 1400px;        /* increased from 1200px */
   margin: 0 auto;
 }
 
@@ -155,7 +155,7 @@ header {
   margin-top: 4px;
 }
 
-/* HERO – content now uses container width (no extra padding) */
+/* HERO – content uses container, but text limited for readability */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -183,8 +183,8 @@ header {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 100%;         /* fill container */
-  padding: 0;              /* no extra padding */
+  max-width: 100%;
+  padding: 0;
   margin: 0 auto;
 }
 .hero-content h1 {
@@ -194,6 +194,9 @@ header {
   color: #ffffff;
   font-weight: 700;
   white-space: normal;
+  max-width: 1000px;         /* limit width for readability */
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (max-width: 900px) {
   .hero-content h1 {
