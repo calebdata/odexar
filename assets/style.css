@@ -1,7 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v14)
-   Wider container (max-width 1400px), 94% width,
-   hero text limited to 1000px for readability.
+   ODEXAR — style.css (v15)
+   Full file: header updated, logo reduced, green Contact Us button
    ============================================ */
 
 * {
@@ -23,11 +22,11 @@ a {
 }
 .container {
   width: 94%;
-  max-width: 1400px;        /* increased from 1200px */
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-/* HEADER – solid white with navy top border */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -48,8 +47,12 @@ header {
   align-items: center;
   height: 70px;
 }
+.nav-left {
+  display: flex;
+  align-items: center;
+}
 .brand-logo {
-  width: 165px;
+  width: 115px;
   margin-left: 0;
 }
 .nav-links {
@@ -59,6 +62,7 @@ header {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.04em;
+  align-items: center;
 }
 .nav-links a {
   color: #0A0F2E;
@@ -67,22 +71,21 @@ header {
 .nav-links a:hover {
   opacity: 0.7;
 }
-.header-whatsapp {
-  width: 42px;
-  height: 42px;
+.contact-btn {
   background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #ffffff !important;
+  padding: 8px 20px;
+  border-radius: 50px;
   transition: all 0.3s;
+  display: inline-block;
 }
-.header-whatsapp:hover {
-  transform: scale(1.05);
+.contact-btn:hover {
   background: #20ba5a;
+  opacity: 1;
+  transform: scale(1.02);
 }
 
-/* BUTTONS */
+/* BUTTONS (unchanged) */
 .primary-btn {
   padding: 16px 34px;
   background: #C4A747;
@@ -155,7 +158,7 @@ header {
   margin-top: 4px;
 }
 
-/* HERO – content uses container, but text limited for readability */
+/* HERO (unchanged) */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -194,7 +197,7 @@ header {
   color: #ffffff;
   font-weight: 700;
   white-space: normal;
-  max-width: 1000px;         /* limit width for readability */
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -279,7 +282,7 @@ header {
   margin-top: 32px;
 }
 
-/* METHODOLOGY SECTION (two columns) */
+/* METHODOLOGY */
 .how-section {
   background: #F9FAFB;
   padding: 80px 0;
@@ -323,7 +326,7 @@ header {
   max-width: 45ch;
 }
 
-/* CTA BAR (centered, text left) */
+/* CTA BAR */
 .methodology-bar {
   background: #F9FAFB;
   padding: 48px 0;
@@ -448,7 +451,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* CONTACT SECTION */
+/* CONTACT */
 .contact-section {
   background: #FFFFFF;
   padding: 80px 0;
@@ -704,7 +707,14 @@ textarea {
 }
 @media (max-width: 600px) {
   .nav-links {
-    display: none;
+    gap: 20px;
+  }
+  .brand-logo {
+    width: 90px;
+  }
+  .contact-btn {
+    padding: 6px 12px;
+    font-size: 12px;
   }
   .services-list {
     grid-template-columns: 1fr;
