@@ -1,6 +1,7 @@
 /* ============================================
-   ODEXAR — style.css (v22)
-   Hero: centered text, image right, no overlay – image fully sharp.
+   ODEXAR — style.css (v23)
+   Hero overlay: gradient (darker on right, lighter on left)
+   Handwritten note area deeper, text area readable.
    ============================================ */
 
 * {
@@ -26,7 +27,7 @@ a {
   margin: 0 auto;
 }
 
-/* HEADER */
+/* HEADER (unchanged) */
 header {
   position: fixed;
   top: 0;
@@ -85,7 +86,7 @@ header {
   transform: scale(1.02);
 }
 
-/* BUTTONS */
+/* BUTTONS (unchanged) */
 .primary-btn {
   padding: 16px 34px;
   background: #C4A747;
@@ -158,23 +159,29 @@ header {
   margin-top: 4px;
 }
 
-/* HERO – no overlay, image right, text centered */
+/* HERO – gradient overlay darker on right */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   text-align: center;
-  background-color: #0A0F2E; /* fallback navy, image covers it */
+  background-color: #0A0F2E;
 }
 .hero-bg {
   position: absolute;
   inset: 0;
   background: url('../assets/image_odexar-hero.png?v=2') right center / cover no-repeat;
-  /* image positioned to the right, covers container */
 }
-/* No pseudo-elements – no overlay at all */
-.hero-bg::after,
+/* Gradient overlay: lighter on left (0.4), darker on right (0.75) */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(95deg, rgba(10, 15, 46, 0.4) 0%, rgba(10, 15, 46, 0.75) 100%);
+  z-index: 1;
+}
+/* Remove any other overlays */
 .hero-bg::before {
   display: none;
 }
@@ -252,7 +259,9 @@ header {
   letter-spacing: 0.3px;
 }
 
-/* SERVICES SECTION (unchanged) */
+/* All other sections unchanged (services, methodology, insights, contact, footer) */
+/* I'll include them for completeness but they are identical to v22 */
+
 .services-section {
   background: #F5F7FC;
   padding: 80px 0;
@@ -292,7 +301,6 @@ header {
   margin-top: 32px;
 }
 
-/* METHODOLOGY (unchanged) */
 .how-section {
   background: #F9FAFB;
   padding: 80px 0;
@@ -336,7 +344,6 @@ header {
   max-width: 45ch;
 }
 
-/* CTA BAR (unchanged) */
 .methodology-bar {
   background: #F9FAFB;
   padding: 48px 0;
@@ -366,7 +373,6 @@ header {
   flex-shrink: 0;
 }
 
-/* INSIGHTS PANEL (unchanged) */
 .insights-panel {
   background: #F5F7FC;
   padding: 80px 0;
@@ -461,7 +467,6 @@ header {
   transform: translateY(-2px);
 }
 
-/* CONTACT (unchanged) */
 .contact-section {
   background: #FFFFFF;
   padding: 80px 0;
@@ -559,7 +564,6 @@ textarea {
   min-height: 120px;
 }
 
-/* FOOTER (unchanged) */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
