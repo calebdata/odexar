@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v18)
-   Hero image with ?v=2 cache buster
+   ODEXAR — style.css (v19)
+   Hero overlay reversed: darker on right, subtle on left.
    ============================================ */
 
 * {
@@ -158,7 +158,7 @@ header {
   margin-top: 4px;
 }
 
-/* HERO */
+/* HERO – overlay reversed (darker on right) */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -175,13 +175,14 @@ header {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(95deg, rgba(10, 15, 46, 0.75) 0%, rgba(10, 15, 46, 0.5) 45%, rgba(10, 15, 46, 0.2) 100%);
+  background: linear-gradient(95deg, rgba(10, 15, 46, 0.2) 0%, rgba(10, 15, 46, 0.5) 40%, rgba(10, 15, 46, 0.75) 100%);
+  /* reversed: left side subtle (0.2), right side darker (0.75) */
 }
 .hero-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 15, 46, 0.65) 0%, rgba(10, 15, 46, 0.35) 30%, rgba(10, 15, 46, 0.05) 100%);
+  background: linear-gradient(180deg, rgba(10, 15, 46, 0.6) 0%, rgba(10, 15, 46, 0.3) 30%, rgba(10, 15, 46, 0.05) 100%);
 }
 .hero-content {
   position: relative;
