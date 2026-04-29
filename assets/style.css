@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v19)
-   Hero overlay reversed: darker on right, subtle on left.
+   ODEXAR — style.css (v20)
+   Hero text left-aligned, overlay original (dark left, light right)
    ============================================ */
 
 * {
@@ -158,13 +158,13 @@ header {
   margin-top: 4px;
 }
 
-/* HERO – overlay reversed (darker on right) */
+/* HERO – left‑aligned text, original overlay (dark left) */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  text-align: center;
+  text-align: left;                     /* changed from center */
 }
 .hero-bg {
   position: absolute;
@@ -175,14 +175,14 @@ header {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(95deg, rgba(10, 15, 46, 0.2) 0%, rgba(10, 15, 46, 0.5) 40%, rgba(10, 15, 46, 0.75) 100%);
-  /* reversed: left side subtle (0.2), right side darker (0.75) */
+  background: linear-gradient(95deg, rgba(10, 15, 46, 0.75) 0%, rgba(10, 15, 46, 0.5) 45%, rgba(10, 15, 46, 0.2) 100%);
+  /* original: dark left, light right */
 }
 .hero-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 15, 46, 0.6) 0%, rgba(10, 15, 46, 0.3) 30%, rgba(10, 15, 46, 0.05) 100%);
+  background: linear-gradient(180deg, rgba(10, 15, 46, 0.65) 0%, rgba(10, 15, 46, 0.35) 30%, rgba(10, 15, 46, 0.05) 100%);
 }
 .hero-content {
   position: relative;
@@ -223,7 +223,8 @@ header {
   color: rgba(255, 255, 255, 0.94);
   margin-bottom: 48px;
   max-width: 800px;
-  margin-left: auto;
+  /* removed auto margins for left alignment */
+  margin-left: 0;
   margin-right: auto;
 }
 @media (max-width: 600px) {
@@ -237,17 +238,17 @@ header {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;   /* left‑aligned */
   margin-bottom: 48px;
 }
 @media (max-width: 600px) {
   .hero-actions {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
   }
   .primary-btn, .hero-cta-btn {
-    width: 100%;
+    width: auto;
     text-align: center;
     padding: 14px;
   }
@@ -259,7 +260,9 @@ header {
   letter-spacing: 0.3px;
 }
 
-/* SERVICES SECTION */
+/* All other sections unchanged (services, methodology, insights, contact, footer) */
+/* They remain exactly as in v19 – I'll keep them for completeness */
+
 .services-section {
   background: #F5F7FC;
   padding: 80px 0;
@@ -299,7 +302,6 @@ header {
   margin-top: 32px;
 }
 
-/* METHODOLOGY */
 .how-section {
   background: #F9FAFB;
   padding: 80px 0;
@@ -343,7 +345,6 @@ header {
   max-width: 45ch;
 }
 
-/* CTA BAR */
 .methodology-bar {
   background: #F9FAFB;
   padding: 48px 0;
@@ -373,7 +374,6 @@ header {
   flex-shrink: 0;
 }
 
-/* INSIGHTS PANEL */
 .insights-panel {
   background: #F5F7FC;
   padding: 80px 0;
@@ -468,7 +468,6 @@ header {
   transform: translateY(-2px);
 }
 
-/* CONTACT */
 .contact-section {
   background: #FFFFFF;
   padding: 80px 0;
@@ -566,7 +565,6 @@ textarea {
   min-height: 120px;
 }
 
-/* FOOTER */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
@@ -696,7 +694,7 @@ textarea {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 900px) {
   .services-list {
     grid-template-columns: repeat(2, 1fr);
