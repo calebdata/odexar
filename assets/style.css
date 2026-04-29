@@ -1,7 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v21)
-   Hero: centered text, image right, gradient left (dark) to transparent,
-   no overlay on image, sharp notebook visible.
+   ODEXAR — style.css (v22)
+   Hero: centered text, image right, no overlay – image fully sharp.
    ============================================ */
 
 * {
@@ -159,14 +158,14 @@ header {
   margin-top: 4px;
 }
 
-/* HERO – centered text, image right, gradient left (dark) to transparent */
+/* HERO – no overlay, image right, text centered */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  text-align: center;                     /* text centered */
-  background-color: #0A0F2E;              /* navy background for left side */
+  text-align: center;
+  background-color: #0A0F2E; /* fallback navy, image covers it */
 }
 .hero-bg {
   position: absolute;
@@ -174,16 +173,8 @@ header {
   background: url('../assets/image_odexar-hero.png?v=2') right center / cover no-repeat;
   /* image positioned to the right, covers container */
 }
-/* New overlay: solid navy on left, fades to transparent on right */
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(95deg, #0A0F2E 0%, #0A0F2E 40%, transparent 100%);
-  /* left 40% solid navy, then fade to transparent */
-  z-index: 1;
-}
-/* Remove any previous overlays (no other pseudo-elements needed) */
+/* No pseudo-elements – no overlay at all */
+.hero-bg::after,
 .hero-bg::before {
   display: none;
 }
