@@ -1,6 +1,7 @@
 /* ============================================
-   ODEXAR — style.css (v34)
-   Hero: radial gradient – strong enough to hide handwritten text
+   ODEXAR — style.css (v35)
+   Hero: radial gradient (0.96/0.4)
+   Services: redesigned (numbered, top border)
    ============================================ */
 
 * {
@@ -26,7 +27,7 @@ a {
   margin: 0 auto;
 }
 
-/* HEADER */
+/* HEADER (unchanged) */
 header {
   position: fixed;
   top: 0;
@@ -138,7 +139,7 @@ header {
 }
 .services-cta-button {
   display: inline-block;
-  background: #1E2A5E;
+  background: #0d1b4b;
   color: #ffffff;
   font-weight: 600;
   font-family: Arial, sans-serif;
@@ -151,14 +152,14 @@ header {
   text-decoration: none;
 }
 .services-cta-button:hover {
-  background: #2C3E6B;
+  background: #1a2f6e;
   transform: translateY(-2px);
 }
 .contact-submit {
   margin-top: 4px;
 }
 
-/* HERO – stronger radial gradient to hide handwritten text */
+/* HERO – radial gradient (strong) */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -259,47 +260,93 @@ header {
   text-shadow: 0 1px 6px rgba(0,0,0,0.3);
 }
 
-/* SERVICES SECTION */
+/* SERVICES SECTION (new design) */
 .services-section {
-  background: #F5F7FC;
-  padding: 80px 0;
+  padding: 80px 0 72px;
+  background: #fff;
 }
-.section-title {
-  font-size: 1.55rem;
-  margin-bottom: 40px;
-  color: #0A0F2E;
+.services-header {
+  max-width: 600px;
+  margin-bottom: 52px;
+}
+.services-header .section-title {
+  margin-bottom: 14px;
   text-align: left;
+  font-size: 1.55rem;
+  color: #0A0F2E;
+}
+.services-intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin: 0;
 }
 .services-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  gap: 0;
+  border-top: 2px solid #0d1b4b;
+  margin: 0;
   padding: 0;
 }
 .services-list-item {
-  background: transparent;
-  padding: 0;
+  padding: 36px 36px 36px 0;
+  border-right: 1px solid #e2e8f0;
+  position: relative;
+}
+.services-list-item:first-child {
+  padding-left: 0;
+}
+.services-list-item:nth-child(2) {
+  padding-left: 36px;
+}
+.services-list-item:last-child {
+  border-right: none;
+  padding-right: 0;
+  padding-left: 36px;
+}
+.service-number {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #c9a84c;
+  margin-bottom: 16px;
+  font-family: monospace;
 }
 .services-list-item h3 {
-  margin: 0 0 12px;
-  font-size: 1rem;
-  color: #0A0F2E;
-  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
   font-weight: 700;
+  color: #0d1b4b;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
 }
 .services-list-item p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #4a5568;
   margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: #2d3748;
 }
 .services-cta {
-  text-align: left;
-  margin-top: 32px;
+  margin-top: 48px;
+}
+.services-cta-button {
+  display: inline-block;
+  background: #0d1b4b;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease;
+  border-radius: 6px;
+}
+.services-cta-button:hover {
+  background: #1a2f6e;
 }
 
-/* METHODOLOGY */
+/* METHODOLOGY (unchanged) */
 .how-section {
   background: #F9FAFB;
   padding: 80px 0;
@@ -343,7 +390,7 @@ header {
   max-width: 45ch;
 }
 
-/* CTA BAR */
+/* CTA BAR (unchanged) */
 .methodology-bar {
   background: #F9FAFB;
   padding: 48px 0;
@@ -373,7 +420,7 @@ header {
   flex-shrink: 0;
 }
 
-/* INSIGHTS PANEL */
+/* INSIGHTS PANEL (unchanged) */
 .insights-panel {
   background: #F5F7FC;
   padding: 80px 0;
@@ -468,7 +515,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* CONTACT */
+/* CONTACT (unchanged) */
 .contact-section {
   background: #FFFFFF;
   padding: 80px 0;
@@ -566,7 +613,7 @@ textarea {
   min-height: 120px;
 }
 
-/* FOOTER */
+/* FOOTER (unchanged) */
 .footer-main {
   background: #0A0F2E;
   padding: 56px 0 48px;
@@ -699,8 +746,19 @@ textarea {
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .services-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    grid-template-columns: 1fr;
+  }
+  .services-list-item {
+    padding: 32px 0;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .services-list-item:last-child {
+    border-bottom: none;
+    padding-left: 0;
+  }
+  .services-list-item:nth-child(2) {
+    padding-left: 0;
   }
   .steps-grid {
     gap: 28px 32px;
@@ -731,7 +789,12 @@ textarea {
   }
   .services-list {
     grid-template-columns: 1fr;
-    gap: 32px;
+  }
+  .services-list-item {
+    padding: 24px 0;
+  }
+  .services-header {
+    margin-bottom: 36px;
   }
   .steps-grid {
     grid-template-columns: 1fr;
