@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v33)
-   Split hero: left navy panel, right image (no overlay)
+   ODEXAR — style.css (v30 restored)
+   Full‑width hero, centered text, left‑to‑right gradient (0.42/0.63)
    ============================================ */
 
 * {
@@ -26,7 +26,7 @@ a {
   margin: 0 auto;
 }
 
-/* HEADER (unchanged) */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -158,51 +158,79 @@ header {
   margin-top: 4px;
 }
 
-/* SPLIT HERO */
-.hero-split {
-  display: flex;
+/* HERO – full width, centered text, left-to-right gradient (0.42/0.63) */
+.hero {
+  position: relative;
   min-height: 100vh;
-}
-.hero-split-left {
-  flex: 1;
-  background: #0A0F2E;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 6rem 2rem;
-}
-.hero-split-content {
-  max-width: 600px;
-  width: 100%;
   text-align: center;
+  background-color: #0A0F2E;
 }
-.hero-split-content h1 {
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../assets/image_odexar-hero.png?v=4') right 5% center / cover no-repeat;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 15, 46, 0.42) 0%, rgba(10, 15, 46, 0.63) 100%);
+  z-index: 1;
+}
+.hero-bg::before {
+  display: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+.hero-content h1 {
   font-size: 2.4rem;
   line-height: 1.2;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   color: #ffffff;
   font-weight: 700;
+  white-space: nowrap;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 1000px) {
-  .hero-split-content h1 {
+  .hero-content h1 {
     font-size: 2rem;
+    white-space: normal;
   }
 }
 @media (max-width: 700px) {
-  .hero-split-content h1 {
+  .hero-content h1 {
     font-size: 1.6rem;
+    white-space: normal;
+  }
+}
+@media (max-width: 500px) {
+  .hero-content h1 {
+    font-size: 1.3rem;
   }
 }
 .hero-subtitle {
   font-family: Arial, sans-serif;
   font-size: 1.2rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.96);
+  margin-bottom: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 600px) {
   .hero-subtitle {
     font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 36px;
   }
 }
 .hero-actions {
@@ -225,31 +253,10 @@ header {
 }
 .hero-trust {
   font-size: 1rem;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.95);
   font-weight: 500;
-}
-.hero-split-right {
-  flex: 1;
-}
-.hero-split-image {
-  width: 100%;
-  height: 100%;
-  background: url('../assets/image_odexar-hero.png?v=4') right center / cover no-repeat;
-  min-height: 100vh;
-}
-/* On mobile, stack vertically */
-@media (max-width: 700px) {
-  .hero-split {
-    flex-direction: column;
-  }
-  .hero-split-left {
-    min-height: auto;
-    padding: 100px 2rem;
-  }
-  .hero-split-right,
-  .hero-split-image {
-    min-height: 50vh;
-  }
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.3);
 }
 
 /* SERVICES SECTION */
@@ -689,7 +696,7 @@ textarea {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* RESPONSIVE (only adjustments for new hero, rest unchanged) */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .services-list {
     grid-template-columns: repeat(2, 1fr);
