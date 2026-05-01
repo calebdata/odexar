@@ -1,6 +1,6 @@
 /* ============================================
-   ODEXAR — style.css (v31)
-   Hero: left-to-right overlay, reduced opacity (0.42 to 0.63)
+   ODEXAR — style.css (v32)
+   Hero overlay deepened: left 0.65, right 0.85
    ============================================ */
 
 * {
@@ -158,7 +158,7 @@ header {
   margin-top: 4px;
 }
 
-/* HERO – left-to-right gradient, reduced opacity (30% reduction) */
+/* HERO – left-to-right gradient, deepened for readability */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -176,7 +176,7 @@ header {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(10, 15, 46, 0.42) 0%, rgba(10, 15, 46, 0.63) 100%);
+  background: linear-gradient(90deg, rgba(10, 15, 46, 0.65) 0%, rgba(10, 15, 46, 0.85) 100%);
   z-index: 1;
 }
 .hero-bg::before {
