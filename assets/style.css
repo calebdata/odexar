@@ -12,7 +12,6 @@ body {
   background: #F5F7FC;
   color: #1A2C3E;
   line-height: 1.7;
-  /* 6px navy bar at the very top of the page */
   border-top: 6px solid #0A0F2E;
 }
 
@@ -171,7 +170,7 @@ header {
   margin-top: 4px;
 }
 
-/* === HERO – FULL PAGE, BRIGHT, REPOSITIONED TO SHOW BOTTOM (BOOKS + BIRO) === */
+/* === HERO – FULL PAGE, BRIGHT, REPOSITIONED RIGHT + DOWN === */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -185,14 +184,13 @@ header {
 .hero-bg {
   position: absolute;
   inset: 0;
-  /* NEW IMAGE FILENAME: image_odexar-hero1.jpg */
-  background: url('../assets/image_odexar-hero1.jpg') center 85% / cover no-repeat;
-  /* center 85% shifts the image upward so the bottom (books + pen) becomes visible */
-  /* Added brightness filter to make the image very bright */
+  background: url('../assets/image_odexar-hero1.jpg') 75% 92% / cover no-repeat;
+  /* 75% shifts image to the right (more left side hidden)
+     92% shifts image slightly down (fine-tune to keep books/pen visible) */
   filter: brightness(1.08) contrast(1.02);
 }
 
-/* GREATLY LIGHTENED OVERLAYS – almost transparent, only for slight text depth */
+/* Light overlays – kept minimal for brightness */
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -308,7 +306,7 @@ header {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== REMAINING STYLES (services, methodology, insights, contact, footer) ===== */
+/* ===== REMAINING STYLES (services, methodology, insights, contact, footer) – unchanged ===== */
 .services-section {
   padding: 80px 0 72px;
   background: #fff;
