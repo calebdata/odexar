@@ -12,6 +12,8 @@ body {
   background: #F5F7FC;
   color: #1A2C3E;
   line-height: 1.7;
+  /* 6px navy bar at the very top of the page */
+  border-top: 6px solid #0A0F2E;
 }
 
 a {
@@ -89,7 +91,7 @@ header {
   opacity: 1;
 }
 
-/* buttons (unchanged from original) */
+/* buttons */
 .primary-btn, .hero-primary-btn {
   padding: 16px 34px;
   background: #0A0F2E;
@@ -169,31 +171,33 @@ header {
   margin-top: 4px;
 }
 
-/* === HERO – FULL PAGE (COVER), NEW IMAGE === */
+/* === HERO – FULL PAGE, BRIGHT, REPOSITIONED TO SHOW BOTTOM (BOOKS + BIRO) === */
 .hero {
   position: relative;
-  min-height: 100vh;          /* fills at least full viewport height */
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: flex-start;
   text-align: center;
-  background: #0A0F2E;        /* fallback */
+  background: #0A0F2E;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
   /* NEW IMAGE FILENAME: image_odexar-hero1.jpg */
-  background: url('../assets/image_odexar-hero1.jpg') center center / cover no-repeat;
-  /* cover ensures the image fills the entire hero area edge-to-edge */
+  background: url('../assets/image_odexar-hero1.jpg') center 85% / cover no-repeat;
+  /* center 85% shifts the image upward so the bottom (books + pen) becomes visible */
+  /* Added brightness filter to make the image very bright */
+  filter: brightness(1.08) contrast(1.02);
 }
 
-/* Light overlay for text readability – kept subtle */
+/* GREATLY LIGHTENED OVERLAYS – almost transparent, only for slight text depth */
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 15, 46, 0.2) 0%, rgba(10, 15, 46, 0.45) 70%, rgba(10, 15, 46, 0.35) 100%);
+  background: linear-gradient(180deg, rgba(10, 15, 46, 0.1) 0%, rgba(10, 15, 46, 0.2) 70%, rgba(10, 15, 46, 0.15) 100%);
   z-index: 1;
 }
 
@@ -201,7 +205,7 @@ header {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 120px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 120px);
   z-index: 2;
   pointer-events: none;
 }
@@ -304,9 +308,7 @@ header {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== REMAINING STYLES (services, methodology, insights, contact, footer) ARE IDENTICAL TO YOUR ORIGINAL ===== */
-/* (All the following sections unchanged from your provided CSS – I've included them for completeness) */
-
+/* ===== REMAINING STYLES (services, methodology, insights, contact, footer) ===== */
 .services-section {
   padding: 80px 0 72px;
   background: #fff;
