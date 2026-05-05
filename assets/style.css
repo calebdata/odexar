@@ -26,16 +26,19 @@ a {
   margin: 0 auto;
 }
 
-/* HEADER - PURE WHITE BACKGROUND, DARK TEXT */
+/* HEADER - ABSOLUTE, TRANSPARENT, OVERLAYS HERO */
 header {
-  position: relative;
-  background: #ffffff;
-  width: 90%;
-  height: 70px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  background: transparent;
+  height: 80px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eaeef5;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  border-bottom: none;
+  box-shadow: none;
 }
 
 .nav {
@@ -52,8 +55,9 @@ header {
 }
 
 .brand-logo {
-  width: 100px;
+  width: 115px;
   margin-left: 0;
+  /* NO INVERSION – keep original colors */
 }
 
 .nav-links {
@@ -67,12 +71,13 @@ header {
 }
 
 .nav-links a {
-  color: #0A0F2E !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   transition: opacity 0.25s;
 }
 
 .nav-links a:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .contact-btn {
@@ -82,6 +87,7 @@ header {
   border-radius: 50px;
   transition: all 0.3s;
   display: inline-block;
+  text-shadow: none;
 }
 
 .contact-btn:hover {
@@ -170,7 +176,7 @@ header {
   margin-top: 4px;
 }
 
-/* === HERO – FULL PAGE, UNIFIED OVERLAY (SOLID DARKNESS EVERYWHERE) === */
+/* === HERO – FULL PAGE, UNIFIED OVERLAY === */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -185,19 +191,18 @@ header {
   position: absolute;
   inset: 0;
   background: url('../assets/image_odexar-hero2.png') 75% 92% / cover no-repeat;
-  filter: brightness(1.02) contrast(1.02); /* very mild, keeps image bright but not washed out */
+  filter: brightness(1.02) contrast(1.02);
 }
 
-/* UNIFIED OVERLAY – same uniform darkness across entire hero */
+/* UNIFIED OVERLAY – solid darkness across entire hero */
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* adjust opacity as needed (0.35 = lighter, 0.55 = darker) */
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
-/* Remove any gradient overlay that previously existed */
 .hero-bg::before {
   display: none;
 }
@@ -206,19 +211,20 @@ header {
   position: relative;
   z-index: 3;
   max-width: 100%;
-  padding: 120px 0 0;
+  padding-top: 140px;
+  padding-bottom: 60px;
   margin: 0 auto;
 }
 
 @media (max-width: 700px) {
   .hero-content {
-    padding-top: 80px;
+    padding-top: 110px;
   }
 }
 
 @media (max-width: 500px) {
   .hero-content {
-    padding-top: 60px;
+    padding-top: 90px;
   }
 }
 
@@ -841,7 +847,6 @@ textarea {
 @media (max-width: 600px) {
   .nav-links {
     gap: 20px;
-    margin-top: 0;
   }
   .brand-logo {
     width: 90px;
