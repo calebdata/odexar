@@ -26,19 +26,20 @@ a {
   margin: 0 auto;
 }
 
-/* HEADER - SOLID WHITE BACKGROUND, DARK TEXT (NO TRANSPARENCY) */
+/* HEADER - glassmorphism, hero visible behind */
 header {
   position: absolute;
   top: 6px;
   left: 0;
   width: 100%;
   z-index: 20;
-  background: #ffffff;  /* solid white */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
   height: 80px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eaeef5;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .nav {
@@ -57,7 +58,6 @@ header {
 .brand-logo {
   width: 115px;
   margin-left: 0;
-  /* original logo colors - no inversion */
 }
 
 .nav-links {
@@ -71,9 +71,8 @@ header {
 }
 
 .nav-links a {
-  color: #0A0F2E !important;  /* dark text for white background */
+  color: #0A0F2E !important;
   transition: opacity 0.25s;
-  text-shadow: none;
 }
 
 .nav-links a:hover {
@@ -87,7 +86,6 @@ header {
   border-radius: 50px;
   transition: all 0.3s;
   display: inline-block;
-  text-shadow: none;
 }
 
 .contact-btn:hover {
@@ -176,10 +174,10 @@ header {
   margin-top: 4px;
 }
 
-/* === HERO – increased to 90vh === */
+/* === HERO – 90vh, unified overlay === */
 .hero {
   position: relative;
-  min-height: 90vh;   /* increased from 80vh to 90vh */
+  min-height: 90vh;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -194,7 +192,7 @@ header {
   filter: brightness(1.02) contrast(1.02);
 }
 
-/* UNIFIED OVERLAY (solid darkness) */
+/* UNIFIED OVERLAY */
 .hero-bg::after {
   content: '';
   position: absolute;
