@@ -170,7 +170,7 @@ header {
   margin-top: 4px;
 }
 
-/* === HERO – USING NEW IMAGE: image_odexar-hero2.png === */
+/* === HERO – SUBTLE OVERLAY, SHARP & BRIGHT === */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -185,26 +185,21 @@ header {
   position: absolute;
   inset: 0;
   background: url('../assets/image_odexar-hero2.png') 75% 92% / cover no-repeat;
-  /* 75% shifts image to the right; 92% shifts down slightly – adjust as needed */
   filter: brightness(1.08) contrast(1.02);
 }
 
-/* Light overlays – kept minimal for brightness */
+/* Very subtle overlay – only at bottom to help white text, barely visible */
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 15, 46, 0.1) 0%, rgba(10, 15, 46, 0.2) 70%, rgba(10, 15, 46, 0.15) 100%);
+  background: linear-gradient(180deg, rgba(10, 15, 46, 0) 0%, rgba(10, 15, 46, 0.05) 60%, rgba(10, 15, 46, 0.08) 100%);
   z-index: 1;
 }
 
+/* No top overlay – removed entirely for maximum brightness */
 .hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 120px);
-  z-index: 2;
-  pointer-events: none;
+  display: none;
 }
 
 .hero-content {
@@ -235,7 +230,7 @@ header {
   font-weight: 800;
   letter-spacing: -0.01em;
   white-space: nowrap;
-  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 1000px) {
@@ -266,7 +261,7 @@ header {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 600px) {
@@ -302,10 +297,10 @@ header {
   color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
   letter-spacing: 0.3px;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== REMAINING STYLES (services, methodology, insights, contact, footer) – unchanged ===== */
+/* ===== REMAINING STYLES (unchanged) ===== */
 .services-section {
   padding: 80px 0 72px;
   background: #fff;
