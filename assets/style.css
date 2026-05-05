@@ -170,7 +170,7 @@ header {
   margin-top: 4px;
 }
 
-/* === HERO – FULL PAGE, BRIGHT, REPOSITIONED RIGHT + DOWN === */
+/* === HERO – USING NEW IMAGE: image_odexar-hero2.png === */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -184,9 +184,8 @@ header {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/image_odexar-hero1.jpg') 75% 92% / cover no-repeat;
-  /* 75% shifts image to the right (more left side hidden)
-     92% shifts image slightly down (fine-tune to keep books/pen visible) */
+  background: url('../assets/image_odexar-hero2.png') 75% 92% / cover no-repeat;
+  /* 75% shifts image to the right; 92% shifts down slightly – adjust as needed */
   filter: brightness(1.08) contrast(1.02);
 }
 
