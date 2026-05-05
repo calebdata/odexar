@@ -26,20 +26,19 @@ a {
   margin: 0 auto;
 }
 
-/* HEADER - absolute with glassmorphism (transparent container) */
+/* HEADER - SOLID WHITE BACKGROUND, DARK TEXT (NO TRANSPARENCY) */
 header {
   position: absolute;
   top: 6px;
   left: 0;
   width: 100%;
   z-index: 20;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(8px);
+  background: #ffffff;  /* solid white */
   height: 80px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: none;
+  border-bottom: 1px solid #eaeef5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .nav {
@@ -72,13 +71,13 @@ header {
 }
 
 .nav-links a {
-  color: #fff !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: #0A0F2E !important;  /* dark text for white background */
   transition: opacity 0.25s;
+  text-shadow: none;
 }
 
 .nav-links a:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .contact-btn {
@@ -177,10 +176,10 @@ header {
   margin-top: 4px;
 }
 
-/* === HERO – reduced height (80vh) === */
+/* === HERO – increased to 90vh === */
 .hero {
   position: relative;
-  min-height: 80vh;   /* change to 70vh, 90vh, or any value you prefer */
+  min-height: 90vh;   /* increased from 80vh to 90vh */
   width: 100%;
   display: flex;
   align-items: flex-start;
