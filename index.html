@@ -22,7 +22,7 @@
     }
     .container { width: 94%; max-width: 1280px; margin: 0 auto; }
 
-    /* HEADER (white, sticky) */
+    /* HEADER */
     header {
       background: #ffffff;
       position: sticky;
@@ -43,7 +43,7 @@
       font-weight: 600;
       font-size: 15px;
     }
-    .nav-links a { color: #0F172A; transition: all 0.3s; text-decoration: none; }
+    .nav-links a { color: #0F172A; text-decoration: none; transition: 0.3s; }
     .nav-links a:hover { color: var(--primary); }
     .contact-btn {
       background: #25D366;
@@ -54,23 +54,16 @@
       text-decoration: none;
     }
 
-    /* HERO - pure charcoal, left-aligned under logo, gold buttons */
+    /* HERO */
     .hero {
       background: var(--charcoal);
       min-height: 100vh;
       display: flex;
       align-items: center;
-      position: relative;
-    }
-    /* FIX: Hero container stays left (no auto margins) so content aligns with logo */
-    .hero .container {
-      margin-left: 0;
-      margin-right: auto;
-      width: 94%;
     }
     .hero-content {
       max-width: 720px;
-      text-align: left;
+      text-align: left;       /* text left-aligned inside container, same left edge as logo */
     }
     .hero h1 {
       font-size: 3.2rem;
@@ -128,10 +121,8 @@
       color: #CBD5E1;
     }
 
-    /* SECTIONS (original + new) */
-    .section {
-      padding: 100px 0;
-    }
+    /* utility */
+    .section { padding: 100px 0; }
     .section-title {
       font-size: 2.2rem;
       text-align: center;
@@ -146,37 +137,21 @@
       font-size: 1.1rem;
     }
 
-    /* Benefits grid (new) */
+    /* Benefits */
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 32px;
       margin-top: 40px;
     }
-    .benefit-card {
+    .benefit-card, .service-card, .testimonial {
       background: white;
       padding: 32px;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
-
-    /* Services grid (original 3 cards) */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-    .service-card {
-      background: white;
-      padding: 32px;
-      border-radius: 12px;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    }
+    .service-card { transition: 0.3s; }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
     .service-number {
       font-size: 2.5rem;
       font-weight: 700;
@@ -185,7 +160,7 @@
       margin-bottom: -10px;
     }
 
-    /* Methodology steps (original 2x2 grid) */
+    /* Methodology steps */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -197,36 +172,21 @@
       padding-top: 20px;
       border-top: 1px solid rgba(15, 23, 42, 0.08);
     }
-    .step-card h3 {
-      margin: 0 0 12px;
-      font-size: 1.25rem;
-      color: #0F172A;
-      font-weight: 700;
-    }
-    .step-card p {
-      margin: 0;
-      color: #475569;
-    }
+    .step-card h3 { margin: 0 0 12px; font-size: 1.25rem; }
+    .step-card p { color: #475569; }
 
-    /* Methodology bar (original) */
+    /* Methodology bar */
     .methodology-bar {
       background: #F8FAFC;
       padding: 48px 0;
-    }
-    .methodology-bar-inner {
-      display: flex;
-      justify-content: center;
+      text-align: center;
     }
     .methodology-bar-content {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
       gap: 20px;
-    }
-    .methodology-bar-text {
-      font-size: 1.05rem;
-      color: #0F172A;
-      font-weight: 500;
     }
     .submit-topic-btn {
       background: var(--primary);
@@ -235,28 +195,17 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s;
-    }
-    .submit-topic-btn:hover {
-      background: #1e40af;
-      transform: translateY(-2px);
     }
 
-    /* Testimonials (new) */
+    /* Testimonials grid */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 32px;
     }
-    .testimonial {
-      background: white;
-      padding: 32px;
-      border-radius: 12px;
-      font-style: italic;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
+    .testimonial { font-style: italic; }
 
-    /* Insights panel (original two cards, horizontal) */
+    /* Insights */
     .insights-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -268,81 +217,26 @@
       border-bottom: 1px solid rgba(15, 23, 42, 0.08);
       padding-bottom: 24px;
     }
-    .insight-card-image {
-      flex-shrink: 0;
-      width: 100px;
-      height: 100px;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-    .insight-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .insight-title {
-      font-size: 1.2rem;
-      margin: 0 0 8px;
-      font-weight: 700;
-    }
-    .insight-excerpt {
-      font-size: 0.85rem;
-      color: #475569;
-      margin: 0 0 12px;
-    }
-    .insight-meta {
-      font-size: 0.75rem;
-      color: #64748b;
-      margin-bottom: 8px;
-    }
-    .insight-link {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-    }
+    .insight-card-image { width: 100px; height: 100px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .insight-card-image img { width: 100%; height: 100%; object-fit: cover; }
+    .insight-title { font-size: 1.2rem; margin: 0 0 8px; font-weight: 700; }
+    .insight-excerpt { font-size: 0.85rem; color: #475569; margin-bottom: 12px; }
+    .insight-meta { font-size: 0.75rem; color: #64748b; margin-bottom: 8px; }
+    .insight-link { color: var(--primary); font-weight: 600; text-decoration: none; }
 
-    /* Contact section (original two-column) */
+    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
       gap: 48px;
-      align-items: start;
     }
-    .contact-info-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-    .contact-info-statement {
-      font-size: 1rem;
-      color: #0F172A;
-    }
-    .contact-info-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-    }
-    .contact-info-value {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #0F172A;
-      text-decoration: none;
-    }
-    .contact-info-note {
-      font-size: 0.78rem;
-      color: #94a3b8;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .contact-form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+    .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
+    .contact-info-statement { font-size: 1rem; }
+    .contact-info-label { font-size: 0.72rem; font-weight: 700; color: var(--primary); text-transform: uppercase; }
+    .contact-info-value { font-size: 0.95rem; font-weight: 700; color: #0F172A; text-decoration: none; }
+    .contact-info-note { font-size: 0.78rem; color: #94a3b8; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     input, select, textarea {
       padding: 11px 12px;
       border: 1px solid #cbd5e1;
@@ -360,7 +254,7 @@
       cursor: pointer;
     }
 
-    /* Footer (original multi-column) */
+    /* Footer */
     .footer-main {
       background: #0F172A;
       padding: 56px 0 48px;
@@ -369,69 +263,24 @@
       display: grid;
       grid-template-columns: 1.2fr 1fr 0.8fr 1.1fr;
       gap: 32px;
-      align-items: start;
     }
-    .footer-logo {
-      height: 18px;
-      width: auto;
-      margin-bottom: 14px;
-    }
-    .footer-tagline {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
-    }
-    .footer-col-heading {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .footer-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-    .footer-nav a {
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      font-size: 0.88rem;
-    }
-    .footer-contact-block p {
-      margin: 0 0 10px;
-    }
-    .footer-cta-link {
-      color: white;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-    }
-    .footer-social {
-      display: flex;
-      gap: 14px;
-      margin-top: 16px;
-    }
-    .footer-base {
-      background: #020617;
-      padding: 14px 0;
-      text-align: center;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.35);
-    }
+    .footer-logo { height: 18px; margin-bottom: 14px; }
+    .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+    .footer-col-heading { font-size: 0.72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-nav { display: flex; flex-direction: column; gap: 9px; }
+    .footer-nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; }
+    .footer-cta-link { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); }
+    .footer-social { display: flex; gap: 14px; margin-top: 16px; }
+    .footer-base { background: #020617; padding: 14px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
 
-    /* CTA Bar (new) */
+    /* CTA Bar */
     .cta-bar {
       background: var(--primary);
       color: white;
       padding: 60px 0;
       text-align: center;
     }
-    .cta-bar .btn-primary {
-      background: white;
-      color: var(--primary);
-    }
-    .cta-bar .btn-primary:hover {
-      background: #f0f0f0;
-    }
+    .cta-bar .btn-primary { background: white; color: var(--primary); }
 
     /* Responsive */
     @media (max-width: 900px) {
@@ -445,9 +294,9 @@
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; max-width: 100%; }
       .services-grid { grid-template-columns: 1fr; }
-      .nav-links { gap: 16px; }
+      .nav-links { gap: 12px; }
       .contact-form-row { grid-template-columns: 1fr; }
-      .insight-card-horizontal { flex-direction: column; align-items: flex-start; }
+      .insight-card-horizontal { flex-direction: column; }
       .insight-card-image { width: 100%; height: auto; }
     }
   </style>
@@ -466,7 +315,7 @@
   </div>
 </header>
 
-<!-- HERO: left-aligned under logo (container margin-left:0) -->
+<!-- HERO: same container as header, text left-aligned inside -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -481,86 +330,49 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION (original 3 cards) -->
+<!-- SERVICES -->
 <section class="section" id="services">
   <div class="container">
     <h2 class="section-title">What We Do</h2>
     <p class="section-subtitle">Most students know the topic. Few have a defensible path to the final submission. We work on the parts that determine whether your project stands up under review.</p>
     <div class="services-grid">
-      <div class="service-card">
-        <span class="service-number">01</span>
-        <h3>Research Development</h3>
-        <p>We define the research problem, refine the question, position your literature, and design a defendable methodology.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-number">02</span>
-        <h3>Data &amp; Analysis</h3>
-        <p>We structure your approach, guide interpretation, and ensure your results are presented clearly and correctly.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-number">03</span>
-        <h3>Editing &amp; Formatting</h3>
-        <p>We tighten arguments, improve clarity, and ensure full compliance with APA, MLA, or Chicago standards.</p>
-      </div>
+      <div class="service-card"><span class="service-number">01</span><h3>Research Development</h3><p>We define the research problem, refine the question, position your literature, and design a defendable methodology.</p></div>
+      <div class="service-card"><span class="service-number">02</span><h3>Data &amp; Analysis</h3><p>We structure your approach, guide interpretation, and ensure your results are presented clearly and correctly.</p></div>
+      <div class="service-card"><span class="service-number">03</span><h3>Editing &amp; Formatting</h3><p>We tighten arguments, improve clarity, and ensure full compliance with APA, MLA, or Chicago standards.</p></div>
     </div>
-    <div class="services-cta" style="text-align:center; margin-top:56px;">
-      <a href="#contact" class="btn-primary" style="background:var(--primary); color:white;">Discuss your research with us →</a>
-    </div>
+    <div style="text-align:center; margin-top:56px;"><a href="#contact" class="btn-primary" style="background:var(--primary); color:white;">Discuss your research with us →</a></div>
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION (original 4 steps in 2x2 grid) -->
+<!-- METHODOLOGY STEPS -->
 <section class="section" id="how" style="background:#F8FAFC;">
-  <div class="container" style="max-width:1000px; margin:0 auto;">
+  <div class="container">
     <h2 class="section-title">Methodology</h2>
     <div class="steps-grid">
-      <div class="step-card">
-        <h3>Research Alignment</h3>
-        <p>We assess your research objective, scope, and constraints to establish a precise direction.</p>
-      </div>
-      <div class="step-card">
-        <h3>Analytical Structuring</h3>
-        <p>A structured approach is outlined, covering argument flow, methodology, and analytical direction.</p>
-      </div>
-      <div class="step-card">
-        <h3>Guided Development</h3>
-        <p>You work through your research with targeted guidance to strengthen logic and clarity.</p>
-      </div>
-      <div class="step-card">
-        <h3>Scholarly Evaluation</h3>
-        <p>Work is evaluated against academic standards. Revisions address coherence, validity, and defensibility.</p>
-      </div>
+      <div class="step-card"><h3>Research Alignment</h3><p>We assess your research objective, scope, and constraints to establish a precise direction.</p></div>
+      <div class="step-card"><h3>Analytical Structuring</h3><p>A structured approach is outlined, covering argument flow, methodology, and analytical direction.</p></div>
+      <div class="step-card"><h3>Guided Development</h3><p>You work through your research with targeted guidance to strengthen logic and clarity.</p></div>
+      <div class="step-card"><h3>Scholarly Evaluation</h3><p>Work is evaluated against academic standards. Revisions address coherence, validity, and defensibility.</p></div>
     </div>
   </div>
 </section>
 
-<!-- METHODOLOGY BAR (original) -->
+<!-- METHODOLOGY BAR -->
 <div class="methodology-bar">
-  <div class="container methodology-bar-inner">
-    <div class="methodology-bar-content">
-      <span class="methodology-bar-text">Ready to apply this process? Submit your topic for a free initial review.</span>
-      <a href="#contact" class="submit-topic-btn">Submit Your Research Topic</a>
-    </div>
+  <div class="container methodology-bar-content">
+    <span>Ready to apply this process? Submit your topic for a free initial review.</span>
+    <a href="#contact" class="submit-topic-btn">Submit Your Research Topic</a>
   </div>
 </div>
 
 <!-- WHY STUDENTS CHOOSE ODEXAR -->
-<section class="section" style="background:#fff;">
+<section class="section">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
     <div class="benefits-grid">
-      <div class="benefit-card">
-        <h3>📐 Structured Thinking</h3>
-        <p>We don’t write your project — we teach you how to build one that stands up to scrutiny.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>🎓 Supervisor-Friendly</h3>
-        <p>Our methodology is designed to reduce rejections and speed up approvals.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>🔒 Flexible & Confidential</h3>
-        <p>Work at your pace. Everything stays between you and your guide.</p>
-      </div>
+      <div class="benefit-card"><h3>📐 Structured Thinking</h3><p>We don’t write your project — we teach you how to build one that stands up to scrutiny.</p></div>
+      <div class="benefit-card"><h3>🎓 Supervisor-Friendly</h3><p>Our methodology is designed to reduce rejections and speed up approvals.</p></div>
+      <div class="benefit-card"><h3>🔒 Flexible & Confidential</h3><p>Work at your pace. Everything stays between you and your guide.</p></div>
     </div>
   </div>
 </section>
@@ -570,14 +382,8 @@
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
     <div class="testimonials-grid">
-      <div class="testimonial">
-        <p>“My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything.”</p>
-        <strong>— Blessing A., University of Ibadan</strong>
-      </div>
-      <div class="testimonial">
-        <p>“The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted.”</p>
-        <strong>— Michael O., LAUTECH</strong>
-      </div>
+      <div class="testimonial"><p>“My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything.”</p><strong>— Blessing A., University of Ibadan</strong></div>
+      <div class="testimonial"><p>“The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted.”</p><strong>— Michael O., LAUTECH</strong></div>
     </div>
   </div>
 </section>
@@ -591,8 +397,8 @@
   </div>
 </section>
 
-<!-- INSIGHTS PANEL (original two article cards) -->
-<section class="section" id="insights" style="background:#fff;">
+<!-- INSIGHTS -->
+<section class="section" id="insights">
   <div class="container">
     <h2 class="section-title">Insights &amp; Guidance</h2>
     <div class="insights-grid">
@@ -615,13 +421,11 @@
         </div>
       </article>
     </div>
-    <div class="insights-footer" style="text-align:center; margin-top:48px;">
-      <a href="insights/" class="btn-primary" style="background:var(--primary); color:white;">View all insights →</a>
-    </div>
+    <div style="text-align:center; margin-top:48px;"><a href="insights/" class="btn-primary" style="background:var(--primary); color:white;">View all insights →</a></div>
   </div>
 </section>
 
-<!-- CONTACT SECTION (original two-column form) -->
+<!-- CONTACT -->
 <section class="section" id="contact" style="background:#F8FAFC;">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -661,7 +465,7 @@
   </div>
 </section>
 
-<!-- FOOTER (original multi-column) -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
@@ -669,13 +473,13 @@
         <img src="assets/odexar-logo-reverse.svg" alt="Odexar" class="footer-logo">
         <p class="footer-tagline">Structured academic support for university students.</p>
         <div class="footer-social">
-          <a href="#" class="footer-social-icon" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a href="#" class="footer-social-icon" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a href="#" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2"/></svg></a>
         </div>
       </div>
       <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="#services">Research Development</a><a href="#services">Data & Analysis</a><a href="#services">Editing & Formatting</a></nav></div>
       <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#how">Methodology</a><a href="insights/">Insights</a><a href="#contact">Contact</a></nav></div>
-      <div class="footer-col"><h4 class="footer-col-heading">Contact</h4><div class="footer-contact-block"><p><span class="footer-contact-label">Email</span><br><a href="mailto:contact@odexar.com" class="footer-contact-value">contact@odexar.com</a></p><p><span class="footer-contact-label">WhatsApp</span><br><a href="https://wa.me/2347087589603" class="footer-contact-value">+234 708 758 9603</a></p></div><a href="https://wa.me/2347087589603" class="footer-cta-link">Request an initial review →</a></div>
+      <div class="footer-col"><h4 class="footer-col-heading">Contact</h4><div><p><span class="footer-contact-label">Email</span><br><a href="mailto:contact@odexar.com" class="footer-contact-value">contact@odexar.com</a></p><p><span class="footer-contact-label">WhatsApp</span><br><a href="https://wa.me/2347087589603" class="footer-contact-value">+234 708 758 9603</a></p></div><a href="https://wa.me/2347087589603" class="footer-cta-link">Request an initial review →</a></div>
     </div>
   </div>
   <div class="footer-base">
