@@ -54,13 +54,19 @@
       text-decoration: none;
     }
 
-    /* HERO - pure charcoal, left-aligned, gold buttons, rounded, smaller */
+    /* HERO - pure charcoal, left-aligned under logo, gold buttons */
     .hero {
       background: var(--charcoal);
       min-height: 100vh;
       display: flex;
       align-items: center;
       position: relative;
+    }
+    /* FIX: Hero container stays left (no auto margins) so content aligns with logo */
+    .hero .container {
+      margin-left: 0;
+      margin-right: auto;
+      width: 94%;
     }
     .hero-content {
       max-width: 720px;
@@ -77,7 +83,7 @@
       font-size: 1.25rem;
       color: #CBD5E1;
       margin-bottom: 2rem;
-      max-width: 600px;          /* forces two roughly equal lines */
+      max-width: 600px;
     }
     .hero-actions {
       display: flex;
@@ -460,16 +466,18 @@
   </div>
 </header>
 
-<!-- HERO: pure charcoal, left-aligned, gold buttons rounded and smaller -->
+<!-- HERO: left-aligned under logo (container margin-left:0) -->
 <section class="hero">
-  <div class="container hero-content">
-    <h1>Build a Clear, Defensible Research Project</h1>
-    <p>We help final-year students structure their projects around their research problem, not a template.</p>
-    <div class="hero-actions">
-      <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review</a>
-      <a href="#how" class="btn-outline">Explore Our Methodology</a>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Build a Clear, Defensible Research Project</h1>
+      <p>We help final-year students structure their projects around their research problem, not a template.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review</a>
+        <a href="#how" class="btn-outline">Explore Our Methodology</a>
+      </div>
+      <div class="trust-badges">✅ Confidential • Plagiarism‑free • 100% Student-Owned Work</div>
     </div>
-    <div class="trust-badges">✅ Confidential • Plagiarism‑free • 100% Student-Owned Work</div>
   </div>
 </section>
 
@@ -536,7 +544,7 @@
   </div>
 </div>
 
-<!-- WHY STUDENTS CHOOSE ODEXAR (new, placed after methodology) -->
+<!-- WHY STUDENTS CHOOSE ODEXAR -->
 <section class="section" style="background:#fff;">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -557,7 +565,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS (new) -->
+<!-- TESTIMONIALS -->
 <section class="section" style="background:#F1F5F9;">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -574,7 +582,7 @@
   </div>
 </section>
 
-<!-- CTA BAR (new) -->
+<!-- CTA BAR -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
