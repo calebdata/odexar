@@ -8,7 +8,7 @@
   <style>
     :root {
       --primary: #1E3A8A;
-      --accent: #C9A84C;
+      --accent: #D4A843;      /* softer gold */
       --charcoal: #1A1E2B;
     }
     * { box-sizing: border-box; }
@@ -48,22 +48,23 @@
     .contact-btn {
       background: #25D366;
       color: white;
-      padding: 10px 22px;
+      padding: 8px 20px;
       border-radius: 50px;
       font-weight: 600;
       text-decoration: none;
     }
 
-    /* HERO */
+    /* HERO - reduced height, text moved up, trust line removed */
     .hero {
       background: var(--charcoal);
-      min-height: 100vh;
+      min-height: 90vh;           /* reduced from 100vh */
       display: flex;
-      align-items: center;
+      align-items: flex-start;    /* moved text up */
+      padding-top: 12vh;          /* fine-tune vertical position */
     }
     .hero-content {
       max-width: 720px;
-      text-align: left;       /* text left-aligned inside container, same left edge as logo */
+      text-align: left;
     }
     .hero h1 {
       font-size: 3.2rem;
@@ -86,39 +87,34 @@
     .btn-primary {
       background: var(--accent);
       color: #0F172A;
-      padding: 10px 22px;
+      padding: 8px 18px;          /* smaller buttons */
       border-radius: 40px;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.3s;
       display: inline-block;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     .btn-primary:hover {
-      background: #B8922E;
+      background: #C19A3F;
       transform: translateY(-2px);
     }
     .btn-outline {
       border: 2px solid var(--accent);
       color: var(--accent);
-      padding: 10px 22px;
+      padding: 8px 18px;
       border-radius: 40px;
       font-weight: 600;
       text-decoration: none;
       background: transparent;
       transition: all 0.3s;
       display: inline-block;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     .btn-outline:hover {
-      background: rgba(201, 168, 76, 0.1);
+      background: rgba(212, 168, 67, 0.1);
       border-color: #E2B84C;
       color: #E2B84C;
-    }
-    .trust-badges {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      color: #CBD5E1;
     }
 
     /* utility */
@@ -291,6 +287,7 @@
       .contact-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
+      .hero { padding-top: 8vh; }
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; max-width: 100%; }
       .services-grid { grid-template-columns: 1fr; }
@@ -315,7 +312,7 @@
   </div>
 </header>
 
-<!-- HERO: same container as header, text left-aligned inside -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -325,7 +322,7 @@
         <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review</a>
         <a href="#how" class="btn-outline">Explore Our Methodology</a>
       </div>
-      <div class="trust-badges">✅ Confidential • Plagiarism‑free • 100% Student-Owned Work</div>
+      <!-- trust line removed -->
     </div>
   </div>
 </section>
