@@ -6,7 +6,7 @@
   <title>Odexar | Academic Research Support</title>
   <meta name="description" content="Odexar provides academic research support for university students, including topic development, proposal writing, data analysis guidance, and editing.">
   <style>
-    /* ===== COMPLETE STYLES (original + adapted hero) ===== */
+    /* ===== GLOBAL RESET & TYPOGRAPHY ===== */
     * {
       box-sizing: border-box;
     }
@@ -17,10 +17,10 @@
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #F5F7FC;
-      color: #1A2C3E;
-      line-height: 1.7;
+      font-family: Arial, sans-serif;
+      background: #F8FAFC;
+      color: #0F172A;
+      line-height: 1.6;
     }
 
     a {
@@ -34,19 +34,16 @@
       margin: 0 auto;
     }
 
-    /* HEADER - DARK VERSION (for gradient hero) */
+    /* ===== HEADER (WHITE BACKGROUND) ===== */
     header {
-      position: absolute;
-      top: 0;
-      left: 0;
+      background: #ffffff;
       width: 100%;
-      z-index: 1000;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(8px);
       height: 80px;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid #e2e8f0;
+      position: relative;
+      z-index: 100;
     }
 
     .nav {
@@ -59,13 +56,11 @@
     .nav-left {
       display: flex;
       align-items: center;
-      margin-top: 0;
     }
 
     .brand-logo {
       width: 115px;
       margin-left: 0;
-      filter: brightness(0) invert(1); /* make logo white for dark header */
     }
 
     .nav-links {
@@ -75,16 +70,15 @@
       font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.04em;
-      margin-top: 0;
     }
 
     .nav-links a {
-      color: #fff !important;
+      color: #0F172A !important;
       transition: opacity 0.25s;
     }
 
     .nav-links a:hover {
-      opacity: 0.8;
+      opacity: 0.7;
     }
 
     .contact-btn {
@@ -101,131 +95,77 @@
       transform: scale(1.02);
     }
 
-    /* Buttons (global) */
-    .primary-btn, .hero-primary-btn {
-      padding: 16px 34px;
-      background: #3b82f6;  /* updated to match new hero */
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.06rem;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 5px 16px rgba(59, 130, 246, 0.35);
-      display: inline-block;
-    }
-
-    .primary-btn:hover, .hero-primary-btn:hover {
-      background: #2563eb;
-      transform: translateY(-3px);
-    }
-
-    .hero-cta-btn {
-      padding: 16px 34px;
-      background: transparent;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.03rem;
-      border: 2px solid #3b82f6;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: inline-block;
-    }
-
-    .hero-cta-btn:hover {
-      background: rgba(59, 130, 246, 0.15);
-      transform: translateY(-2px);
-    }
-
-    .submit-topic-btn {
-      display: inline-block;
-      background: #1E2A5E;
-      color: #fff;
-      font-weight: 700;
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      padding: 12px 28px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-
-    .submit-topic-btn:hover {
-      background: #2C3E6B;
-      transform: translateY(-2px);
-    }
-
-    .services-cta-button {
-      display: inline-block;
-      background: #0d1b4b;
-      color: #fff;
-      font-weight: 600;
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-      padding: 10px 24px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .services-cta-button:hover {
-      background: #1a2f6e;
-      transform: translateY(-2px);
-    }
-
-    .contact-submit {
-      margin-top: 4px;
-    }
-
-    /* === NEW GRADIENT HERO (no image) === */
+    /* ===== HERO (LIGHT BACKGROUND, DARK TEXT) ===== */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: radial-gradient(circle at top, #1e293b, #0f172a);
-      padding: 20px;
-      position: relative;
-      z-index: 1;
+      padding: 40px 20px;
+      background: #F8FAFC;
     }
 
     .hero-content {
       max-width: 800px;
-      margin: 0 auto;
-      padding-top: 60px; /* space for fixed header */
     }
 
     .hero h1 {
       font-size: 3rem;
-      margin-bottom: 20px;
-      color: #fff;
-      font-weight: 800;
-      letter-spacing: -0.01em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #0F172A;
     }
 
     .hero p {
       font-size: 1.2rem;
-      color: #cbd5e1;
-      margin-bottom: 30px;
+      color: #475569;
+      max-width: 700px;
+      margin: 0 auto 30px;
     }
 
     .hero-actions {
       display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
+      gap: 20px;
       justify-content: center;
-      margin-bottom: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .primary-btn, .hero-primary-btn {
+      background: #1E3A8A;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+
+    .primary-btn:hover, .hero-primary-btn:hover {
+      background: #1e3a8a;
+      opacity: 0.9;
+    }
+
+    .hero-cta-btn {
+      border: 1px solid #CBD5E1;
+      color: #0F172A;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      background: transparent;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .hero-cta-btn:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
     }
 
     .hero-trust {
       font-size: 0.9rem;
-      color: #94a3b8;
+      color: #475569;
       margin-top: 10px;
     }
 
@@ -239,18 +179,15 @@
       .hero-actions {
         flex-direction: column;
         align-items: stretch;
-        gap: 16px;
+        gap: 12px;
       }
       .primary-btn, .hero-cta-btn {
         text-align: center;
-        padding: 14px;
-      }
-      .hero-content {
-        padding-top: 80px;
+        padding: 10px;
       }
     }
 
-    /* ===== REMAINING SECTIONS (YOUR ORIGINAL STYLES, UNCHANGED) ===== */
+    /* ===== REMAINING SECTIONS (ORIGINAL STYLES, ADAPTED TO Arial) ===== */
     .services-section {
       padding: 80px 0 72px;
       background: #fff;
@@ -259,8 +196,8 @@
     .services-section .section-title {
       text-align: center;
       margin-bottom: 14px;
-      font-size: 1.55rem;
-      color: #0A0F2E;
+      font-size: 1.8rem;
+      color: #0F172A;
     }
 
     .services-intro {
@@ -269,7 +206,7 @@
       margin: 0 auto 52px;
       font-size: 1.05rem;
       line-height: 1.7;
-      color: #4a5568;
+      color: #475569;
     }
 
     .services-grid {
@@ -309,13 +246,12 @@
       font-weight: 700;
       color: #0d1b4b;
       margin: 0 0 14px;
-      letter-spacing: -0.01em;
     }
 
     .service-card p {
       font-size: 0.95rem;
       line-height: 1.75;
-      color: #4a5568;
+      color: #475569;
       margin: 0;
     }
 
@@ -324,8 +260,25 @@
       margin-top: 56px;
     }
 
+    .services-cta-button {
+      display: inline-block;
+      background: #1E3A8A;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 10px 24px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .services-cta-button:hover {
+      background: #1e3a8a;
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
     .how-section {
-      background: #F9FAFB;
+      background: #F8FAFC;
       padding: 80px 0;
     }
 
@@ -337,6 +290,8 @@
     .how-section .section-title {
       text-align: left;
       margin-bottom: 40px;
+      font-size: 1.8rem;
+      color: #0F172A;
     }
 
     .steps-grid {
@@ -347,7 +302,7 @@
 
     .step-card {
       padding-top: 20px;
-      border-top: 1px solid rgba(10, 15, 46, 0.08);
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
     }
 
     .step-card:first-child,
@@ -359,23 +314,22 @@
     .step-card h3 {
       margin: 0 0 12px;
       font-size: 1rem;
-      color: #0A0F2E;
+      color: #0F172A;
       font-weight: 700;
       text-align: left;
     }
 
     .step-card p {
       margin: 0;
-      font-family: Arial, sans-serif;
       font-size: 0.9rem;
       line-height: 1.7;
-      color: #2d3748;
+      color: #475569;
       text-align: left;
       max-width: 45ch;
     }
 
     .methodology-bar {
-      background: #F9FAFB;
+      background: #F8FAFC;
       padding: 48px 0;
     }
 
@@ -394,23 +348,42 @@
     }
 
     .methodology-bar-text {
-      font-family: Georgia, "Times New Roman", serif;
       font-size: 1.05rem;
-      color: #0A0F2E;
+      color: #0F172A;
       font-weight: 500;
       line-height: 1.4;
       text-align: left;
     }
 
+    .submit-topic-btn {
+      display: inline-block;
+      background: #1E3A8A;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 28px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .submit-topic-btn:hover {
+      background: #1e3a8a;
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
     .insights-panel {
-      background: #F5F7FC;
+      background: #fff;
       padding: 80px 0;
     }
 
     .insights-heading {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       margin: 0 0 40px;
-      color: #0A0F2E;
+      color: #0F172A;
       text-align: left;
       font-weight: 700;
     }
@@ -425,7 +398,7 @@
       display: flex;
       gap: 24px;
       background: transparent;
-      border-bottom: 1px solid rgba(10, 15, 46, 0.08);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
       padding-bottom: 24px;
     }
 
@@ -451,33 +424,30 @@
     .insight-title {
       font-size: 1.2rem;
       margin: 0 0 8px;
-      color: #0A0F2E;
+      color: #0F172A;
       font-weight: 700;
       line-height: 1.4;
     }
 
     .insight-excerpt {
-      font-family: Arial, sans-serif;
       font-size: 0.85rem;
       line-height: 1.65;
-      color: #2d3748;
+      color: #475569;
       margin: 0 0 12px;
     }
 
     .insight-meta {
-      font-family: Arial, sans-serif;
       font-size: 0.75rem;
-      color: #4b5c6c;
+      color: #64748b;
       margin-bottom: 12px;
     }
 
     .insight-link {
       display: inline-block;
-      font-family: Arial, sans-serif;
       font-size: 0.85rem;
       font-weight: 700;
-      color: #C4A747;
-      border-bottom: 1.5px solid #C4A747;
+      color: #1E3A8A;
+      border-bottom: 1.5px solid #1E3A8A;
       padding-bottom: 2px;
       transition: opacity 0.2s;
     }
@@ -493,10 +463,9 @@
 
     .insights-view-all {
       display: inline-block;
-      background: #1E2A5E;
+      background: #1E3A8A;
       color: #fff;
       font-weight: 600;
-      font-family: Arial, sans-serif;
       font-size: 0.9rem;
       padding: 10px 24px;
       border-radius: 6px;
@@ -504,17 +473,20 @@
     }
 
     .insights-view-all:hover {
-      background: #2C3E6B;
+      background: #1e3a8a;
+      opacity: 0.9;
       transform: translateY(-2px);
     }
 
     .contact-section {
-      background: #fff;
+      background: #F8FAFC;
       padding: 80px 0;
     }
 
     .contact-section .section-title {
       margin-bottom: 24px;
+      font-size: 1.8rem;
+      color: #0F172A;
     }
 
     .contact-grid {
@@ -531,33 +503,29 @@
     }
 
     .contact-lead {
-      font-family: Arial, sans-serif;
       font-size: 0.92rem;
-      color: #4b5c6c;
+      color: #475569;
       margin: 0 0 24px;
     }
 
     .contact-info-statement {
-      font-family: Georgia, "Times New Roman", serif;
       font-size: 1rem;
-      color: #1A2C3E;
+      color: #0F172A;
       margin: 0;
     }
 
     .contact-info-label {
-      font-family: Arial, sans-serif;
       font-size: 0.72rem;
       font-weight: 700;
-      color: #C4A747;
+      color: #1E3A8A;
       text-transform: uppercase;
       letter-spacing: 0.07em;
     }
 
     .contact-info-value {
-      font-family: Arial, sans-serif;
       font-size: 0.95rem;
       font-weight: 700;
-      color: #0A0F2E;
+      color: #0F172A;
       transition: opacity 0.2s;
     }
 
@@ -566,12 +534,11 @@
     }
 
     .contact-info-note {
-      font-family: Arial, sans-serif;
       font-size: 0.78rem;
-      color: #9baab8;
+      color: #94a3b8;
       margin: 0;
       padding-top: 16px;
-      border-top: 1px solid rgba(28, 46, 74, 0.08);
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
     }
 
     .contact-form {
@@ -588,19 +555,19 @@
 
     input, select, textarea {
       padding: 11px 12px;
-      border: 1px solid #d5dde7;
+      border: 1px solid #cbd5e1;
       border-radius: 6px;
       width: 100%;
       font-family: Arial, sans-serif;
       font-size: 0.92rem;
       background: #fff;
-      color: #16202a;
+      color: #0F172A;
     }
 
     input:focus, select:focus, textarea:focus {
       outline: none;
-      border-color: #0A0F2E;
-      box-shadow: 0 0 0 3px rgba(10, 15, 46, 0.08);
+      border-color: #1E3A8A;
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
     }
 
     textarea {
@@ -608,8 +575,24 @@
       min-height: 120px;
     }
 
+    .contact-submit {
+      background: #1E3A8A;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .contact-submit:hover {
+      background: #1e3a8a;
+      opacity: 0.9;
+    }
+
     .footer-main {
-      background: #0A0F2E;
+      background: #0F172A;
       padding: 56px 0 48px;
     }
 
@@ -625,11 +608,9 @@
       width: auto;
       display: block;
       margin-bottom: 14px;
-      filter: brightness(0) invert(1);
     }
 
     .footer-tagline {
-      font-family: Arial, sans-serif;
       font-size: 0.85rem;
       color: rgba(255, 255, 255, 0.6);
       margin: 8px 0 0;
@@ -637,10 +618,9 @@
     }
 
     .footer-col-heading {
-      font-family: Arial, sans-serif;
       font-size: 0.72rem;
       font-weight: 700;
-      color: #C4A747;
+      color: #c9a84c;
       text-transform: uppercase;
       letter-spacing: 0.07em;
       margin: 0 0 14px;
@@ -653,7 +633,6 @@
     }
 
     .footer-nav a {
-      font-family: Arial, sans-serif;
       font-size: 0.88rem;
       color: rgba(255, 255, 255, 0.7);
       transition: opacity 0.2s;
@@ -678,16 +657,14 @@
     }
 
     .footer-contact-label {
-      font-family: Arial, sans-serif;
       font-size: 0.72rem;
       font-weight: 700;
-      color: #C4A747;
+      color: #c9a84c;
       text-transform: uppercase;
       letter-spacing: 0.07em;
     }
 
     .footer-contact-value {
-      font-family: Arial, sans-serif;
       font-size: 0.88rem;
       color: rgba(255, 255, 255, 0.7);
       transition: opacity 0.2s;
@@ -698,7 +675,6 @@
     }
 
     .footer-cta-link {
-      font-family: Arial, sans-serif;
       font-size: 0.88rem;
       font-weight: 700;
       color: #fff;
@@ -727,7 +703,7 @@
     }
 
     .footer-base {
-      background: #05081F;
+      background: #020617;
       padding: 14px 0;
     }
 
@@ -740,7 +716,6 @@
     }
 
     .footer-base-inner > span {
-      font-family: Arial, sans-serif;
       font-size: 0.78rem;
       color: rgba(255, 255, 255, 0.35);
     }
@@ -751,7 +726,6 @@
     }
 
     .footer-base-links a {
-      font-family: Arial, sans-serif;
       font-size: 0.78rem;
       color: rgba(255, 255, 255, 0.4);
       transition: color 0.2s;
@@ -875,7 +849,7 @@
   </div>
 </header>
 
-<!-- NEW GRADIENT HERO (no image) -->
+<!-- NEW HERO (LIGHT BACKGROUND, DARK TEXT, NO IMAGE) -->
 <section class="hero">
   <div class="hero-content">
     <h1>Build a Clear, Defensible Research Project</h1>
@@ -888,7 +862,7 @@
   </div>
 </section>
 
-<!-- All original sections follow (exactly as you had them) -->
+<!-- SERVICES SECTION (original) -->
 <section class="services-section" id="services">
   <div class="container">
     <h2 class="section-title">What We Do</h2>
@@ -914,6 +888,7 @@
   </div>
 </section>
 
+<!-- METHODOLOGY SECTION (original) -->
 <section class="how-section" id="how">
   <div class="container"><div class="methodology-centered">
     <h2 class="section-title">Methodology</h2>
@@ -933,6 +908,7 @@
   </div>
 </div></div>
 
+<!-- INSIGHTS SECTION (original) -->
 <section class="insights-panel">
   <div class="container">
     <h2 class="insights-heading">Insights &amp; Guidance</h2>
@@ -960,6 +936,7 @@
   </div>
 </section>
 
+<!-- CONTACT SECTION (original) -->
 <section class="contact-section" id="contact">
   <div class="container"><div class="contact-grid">
     <div class="contact-info-col">
@@ -983,12 +960,13 @@
         <input type="hidden" name="_subject" value="New Odexar Enquiry">
         <input type="hidden" name="_next" value="https://odexar.com/">
         <input type="text" name="_gotcha" style="display:none">
-        <button type="submit" class="primary-btn contact-submit">Send Enquiry</button>
+        <button type="submit" class="contact-submit">Send Enquiry</button>
       </form>
     </div>
   </div></div>
 </section>
 
+<!-- FOOTER (original) -->
 <footer>
   <div class="footer-main"><div class="container footer-grid">
     <div class="footer-col">
