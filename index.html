@@ -54,7 +54,7 @@
       text-decoration: none;
     }
 
-    /* HERO - pure charcoal, left-aligned (Netlify style) */
+    /* HERO - pure charcoal, left-aligned, gold buttons, rounded, smaller */
     .hero {
       background: var(--charcoal);
       min-height: 100vh;
@@ -77,6 +77,7 @@
       font-size: 1.25rem;
       color: #CBD5E1;
       margin-bottom: 2rem;
+      max-width: 600px;          /* forces two roughly equal lines */
     }
     .hero-actions {
       display: flex;
@@ -84,32 +85,36 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: var(--primary);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
+      background: var(--accent);
+      color: #0F172A;
+      padding: 10px 22px;
+      border-radius: 40px;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.3s;
       display: inline-block;
+      font-size: 0.95rem;
     }
     .btn-primary:hover {
-      background: #1e40af;
-      transform: translateY(-3px);
+      background: #B8922E;
+      transform: translateY(-2px);
     }
     .btn-outline {
-      border: 2px solid #94A3B8;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 10px 22px;
+      border-radius: 40px;
       font-weight: 600;
       text-decoration: none;
       background: transparent;
       transition: all 0.3s;
+      display: inline-block;
+      font-size: 0.95rem;
     }
     .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: white;
+      background: rgba(201, 168, 76, 0.1);
+      border-color: #E2B84C;
+      color: #E2B84C;
     }
     .trust-badges {
       margin-top: 2rem;
@@ -218,12 +223,17 @@
       font-weight: 500;
     }
     .submit-topic-btn {
-      background: #1E3A8A;
+      background: var(--primary);
       color: white;
       padding: 12px 28px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      transition: all 0.3s;
+    }
+    .submit-topic-btn:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
     }
 
     /* Testimonials (new) */
@@ -409,6 +419,13 @@
       padding: 60px 0;
       text-align: center;
     }
+    .cta-bar .btn-primary {
+      background: white;
+      color: var(--primary);
+    }
+    .cta-bar .btn-primary:hover {
+      background: #f0f0f0;
+    }
 
     /* Responsive */
     @media (max-width: 900px) {
@@ -419,11 +436,13 @@
       .contact-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .hero h1 { font-size: 2.2rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; max-width: 100%; }
       .services-grid { grid-template-columns: 1fr; }
       .nav-links { gap: 16px; }
       .contact-form-row { grid-template-columns: 1fr; }
-      .insight-card-horizontal { flex-direction: column; }
+      .insight-card-horizontal { flex-direction: column; align-items: flex-start; }
+      .insight-card-image { width: 100%; height: auto; }
     }
   </style>
 </head>
@@ -441,7 +460,7 @@
   </div>
 </header>
 
-<!-- HERO: pure charcoal, left-aligned (Netlify style) -->
+<!-- HERO: pure charcoal, left-aligned, gold buttons rounded and smaller -->
 <section class="hero">
   <div class="container hero-content">
     <h1>Build a Clear, Defensible Research Project</h1>
@@ -477,14 +496,14 @@
       </div>
     </div>
     <div class="services-cta" style="text-align:center; margin-top:56px;">
-      <a href="#contact" class="btn-primary" style="background:var(--primary);">Discuss your research with us →</a>
+      <a href="#contact" class="btn-primary" style="background:var(--primary); color:white;">Discuss your research with us →</a>
     </div>
   </div>
 </section>
 
 <!-- METHODOLOGY SECTION (original 4 steps in 2x2 grid) -->
 <section class="section" id="how" style="background:#F8FAFC;">
-  <div class="container methodology-centered" style="max-width:1000px; margin:0 auto;">
+  <div class="container" style="max-width:1000px; margin:0 auto;">
     <h2 class="section-title">Methodology</h2>
     <div class="steps-grid">
       <div class="step-card">
@@ -517,7 +536,7 @@
   </div>
 </div>
 
-<!-- WHY STUDENTS CHOOSE ODEXAR (new, placed after Methodology) -->
+<!-- WHY STUDENTS CHOOSE ODEXAR (new, placed after methodology) -->
 <section class="section" style="background:#fff;">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -560,9 +579,7 @@
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
     <p style="color:#E0E7FF; font-size:1.1rem;">Get a free initial review of your topic today.</p>
-    <a href="https://wa.me/2347087589603" class="btn-primary" style="background:white; color:#1E3A8A; font-size:1.1rem; padding:16px 32px; margin-top:20px; display:inline-block;">
-      Start Free Review on WhatsApp →
-    </a>
+    <a href="https://wa.me/2347087589603" class="btn-primary">Start Free Review on WhatsApp →</a>
   </div>
 </section>
 
@@ -591,7 +608,7 @@
       </article>
     </div>
     <div class="insights-footer" style="text-align:center; margin-top:48px;">
-      <a href="insights/" class="btn-primary" style="background:var(--primary);">View all insights →</a>
+      <a href="insights/" class="btn-primary" style="background:var(--primary); color:white;">View all insights →</a>
     </div>
   </div>
 </section>
