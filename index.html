@@ -55,7 +55,7 @@
       text-decoration: none;
     }
 
-    /* HERO */
+    /* HERO (unchanged) */
     .hero {
       background: var(--charcoal);
       min-height: 90vh;
@@ -139,7 +139,6 @@
       background: rgba(255,255,255,0.1);
       transform: translateY(-2px);
     }
-
     @media (max-width: 850px) {
       .hero-side-image { display: none; }
       .hero { min-height: auto; padding: 80px 0; }
@@ -150,7 +149,7 @@
       .hero p { font-size: 1rem; margin-bottom: 1.75rem; }
     }
 
-    /* WHAT WE DO - left‑aligned heading, 4 cards, learn more links */
+    /* WHAT WE DO (unchanged) */
     .services-section {
       padding: 100px 0;
       background: #fff;
@@ -223,16 +222,20 @@
       .services-grid { grid-template-columns: 1fr; }
     }
 
-    /* METHODOLOGY (ModSquad 'What You Get' style) - two columns, benefit headlines */
+    /* METHODOLOGY - split container (left heading, right vertical list, no grid) */
     .methodology-section {
       padding: 100px 0;
       background: #F8FAFC;
     }
-    .methodology-heading {
-      text-align: left;
-      margin-bottom: 3rem;
+    .methodology-split {
+      display: flex;
+      gap: 4rem;
+      align-items: flex-start;
     }
-    .methodology-heading .pre-head {
+    .methodology-left {
+      flex: 1;
+    }
+    .methodology-left .pre-head {
       font-size: 0.85rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -240,44 +243,34 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    .methodology-heading h2 {
+    .methodology-left h2 {
       font-size: 2.5rem;
       font-weight: 700;
       margin: 0;
       color: #0F172A;
     }
-    .methodology-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+    .methodology-right {
+      flex: 2;
     }
-    .methodology-card {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 16px;
-      transition: all 0.3s;
-      border: 1px solid #eef2f6;
+    .methodology-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
     }
-    .methodology-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-      border-color: #e2e8f0;
-    }
-    .methodology-card h3 {
-      font-size: 1.35rem;
+    .methodology-item h3 {
+      font-size: 1.25rem;
       font-weight: 700;
-      margin: 0 0 0.75rem;
+      margin: 0 0 0.5rem;
       color: #0F172A;
-      letter-spacing: -0.01em;
     }
-    .methodology-card p {
+    .methodology-item p {
       font-size: 0.95rem;
       color: #475569;
       line-height: 1.5;
       margin: 0;
     }
-    @media (max-width: 700px) {
-      .methodology-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (max-width: 800px) {
+      .methodology-split { flex-direction: column; gap: 2rem; }
     }
 
     /* All other sections unchanged */
@@ -429,7 +422,7 @@
   </div>
 </header>
 
-<!-- HERO (unchanged) -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -447,7 +440,7 @@
   </div>
 </section>
 
-<!-- WHAT WE DO (unchanged) -->
+<!-- WHAT WE DO -->
 <section class="services-section" id="services">
   <div class="container">
     <div class="services-heading">
@@ -479,35 +472,39 @@
   </div>
 </section>
 
-<!-- METHODOLOGY (restyled as 'What You Get' format) -->
+<!-- METHODOLOGY - split container, right column vertical list (not grid) -->
 <section class="methodology-section" id="methodology">
   <div class="container">
-    <div class="methodology-heading">
-      <div class="pre-head">OUR PROCESS</div>
-      <h2>Methodology</h2>
-    </div>
-    <div class="methodology-grid">
-      <div class="methodology-card">
-        <h3>Clarity from the start</h3>
-        <p>We align your research objectives, scope, and constraints before writing a single word. No wasted effort, no false starts.</p>
+    <div class="methodology-split">
+      <div class="methodology-left">
+        <div class="pre-head">OUR PROCESS</div>
+        <h2>Methodology</h2>
       </div>
-      <div class="methodology-card">
-        <h3>Structure that holds up</h3>
-        <p>We build a logical framework for your argument, methodology, and analysis. Your supervisor will see a clear path – not confusion.</p>
-      </div>
-      <div class="methodology-card">
-        <h3>Guided momentum</h3>
-        <p>You work through each section with targeted feedback. We keep you moving forward without rewriting everything twice.</p>
-      </div>
-      <div class="methodology-card">
-        <h3>Defensible confidence</h3>
-        <p>Final evaluation against academic standards. You walk into your defense knowing your work can withstand scrutiny.</p>
+      <div class="methodology-right">
+        <div class="methodology-list">
+          <div class="methodology-item">
+            <h3>Research Alignment</h3>
+            <p>We assess your research objective, scope, and constraints to establish a precise direction.</p>
+          </div>
+          <div class="methodology-item">
+            <h3>Analytical Structuring</h3>
+            <p>A structured approach is outlined, covering argument flow, methodology, and analytical direction.</p>
+          </div>
+          <div class="methodology-item">
+            <h3>Guided Development</h3>
+            <p>You work through your research with targeted guidance to strengthen logic and clarity.</p>
+          </div>
+          <div class="methodology-item">
+            <h3>Scholarly Evaluation</h3>
+            <p>Work is evaluated against academic standards. Revisions address coherence, validity, and defensibility.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- METHODOLOGY BAR (unchanged) -->
+<!-- METHODOLOGY BAR -->
 <div class="methodology-bar">
   <div class="container methodology-bar-content">
     <span>Ready to apply this process? Submit your topic for a free initial review.</span>
@@ -515,7 +512,7 @@
   </div>
 </div>
 
-<!-- WHY STUDENTS CHOOSE ODEXAR (unchanged) -->
+<!-- WHY STUDENTS CHOOSE ODEXAR -->
 <section class="section">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -527,7 +524,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS (unchanged) -->
+<!-- TESTIMONIALS -->
 <section class="section" style="background:#F1F5F9;">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -538,7 +535,7 @@
   </div>
 </section>
 
-<!-- CTA BAR (unchanged) -->
+<!-- CTA BAR -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -547,7 +544,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS (unchanged) -->
+<!-- INSIGHTS -->
 <section class="section" id="insights">
   <div class="container">
     <h2 class="section-title">Insights &amp; Guidance</h2>
@@ -575,7 +572,7 @@
   </div>
 </section>
 
-<!-- CONTACT (unchanged) -->
+<!-- CONTACT -->
 <section class="section" id="contact" style="background:#F8FAFC;">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -615,7 +612,7 @@
   </div>
 </section>
 
-<!-- FOOTER (unchanged) -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
