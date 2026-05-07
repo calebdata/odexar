@@ -8,7 +8,7 @@
   <style>
     :root {
       --primary: #1E3A8A;
-      --accent: #D4A843;      /* softer gold */
+      --accent: #4A7A9C;       /* soft steel blue – fits cool palette */
       --charcoal: #1A1E2B;
     }
     * { box-sizing: border-box; }
@@ -54,20 +54,20 @@
       text-decoration: none;
     }
 
-    /* HERO - reduced height, text moved up, trust line removed */
+    /* HERO */
     .hero {
       background: var(--charcoal);
-      min-height: 90vh;           /* reduced from 100vh */
+      min-height: 90vh;
       display: flex;
-      align-items: flex-start;    /* moved text up */
-      padding-top: 12vh;          /* fine-tune vertical position */
+      align-items: flex-start;
+      padding-top: 12vh;
     }
     .hero-content {
       max-width: 720px;
       text-align: left;
     }
     .hero h1 {
-      font-size: 3.2rem;
+      font-size: 3rem;          /* reduced from 3.2rem (5% smaller) */
       line-height: 1.2;
       font-weight: 700;
       margin-bottom: 1.2rem;
@@ -83,11 +83,12 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      margin-bottom: 1.5rem;
     }
     .btn-primary {
       background: var(--accent);
-      color: #0F172A;
-      padding: 8px 18px;          /* smaller buttons */
+      color: white;
+      padding: 8px 18px;
       border-radius: 40px;
       font-weight: 600;
       text-decoration: none;
@@ -96,7 +97,7 @@
       font-size: 0.9rem;
     }
     .btn-primary:hover {
-      background: #C19A3F;
+      background: #3B6080;
       transform: translateY(-2px);
     }
     .btn-outline {
@@ -112,9 +113,13 @@
       font-size: 0.9rem;
     }
     .btn-outline:hover {
-      background: rgba(212, 168, 67, 0.1);
-      border-color: #E2B84C;
-      color: #E2B84C;
+      background: rgba(74, 122, 156, 0.1);
+      border-color: #5A8FAD;
+      color: #5A8FAD;
+    }
+    .trust-badges {
+      font-size: 0.9rem;
+      color: #CBD5E1;
     }
 
     /* utility */
@@ -322,7 +327,7 @@
         <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review</a>
         <a href="#how" class="btn-outline">Explore Our Methodology</a>
       </div>
-      <!-- trust line removed -->
+      <div class="trust-badges">✅ Confidential • Plagiarism‑free • 100% Student-Owned Work</div>
     </div>
   </div>
 </section>
