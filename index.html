@@ -54,7 +54,7 @@
       text-decoration: none;
     }
 
-    /* HERO - single column text, image absolutely positioned on right */
+    /* HERO */
     .hero {
       background: var(--charcoal);
       min-height: 90vh;
@@ -62,7 +62,7 @@
       align-items: flex-start;
       padding-top: 15vh;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
     }
     .hero-content {
       max-width: 760px;
@@ -70,7 +70,6 @@
       position: relative;
       z-index: 2;
     }
-    /* right side image - absolutely positioned, not affecting text layout */
     .hero-side-image {
       position: absolute;
       right: 0;
@@ -78,13 +77,12 @@
       width: 45%;
       max-width: 550px;
       z-index: 1;
-      pointer-events: none; /* so it doesn't block any clicks */
+      pointer-events: none;
     }
     .hero-side-image img {
       width: 100%;
       height: auto;
       display: block;
-      margin-left: auto;
     }
     .hero h1 {
       font-size: 3rem;
@@ -153,16 +151,9 @@
       margin-right: 1.5rem;
     }
 
-    /* responsive: on smaller screens, hide or shrink the side image */
-    @media (max-width: 1100px) {
-      .hero-side-image {
-        width: 35%;
-        opacity: 0.7; /* softer on tablet */
-      }
-    }
     @media (max-width: 850px) {
       .hero-side-image {
-        display: none; /* remove image on mobile to keep text clean */
+        display: none;
       }
       .hero {
         padding-top: 12vh;
@@ -176,7 +167,7 @@
       .trust-badges span { display: inline-block; margin: 0 0.5rem 0.5rem 0; }
     }
 
-    /* all other sections unchanged from your approved version */
+    /* all other sections (unchanged) */
     .section { padding: 100px 0; }
     .section-title {
       font-size: 2.2rem;
@@ -191,7 +182,6 @@
       color: #475569;
       font-size: 1.1rem;
     }
-
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -213,7 +203,6 @@
       opacity: 0.15;
       margin-bottom: -10px;
     }
-
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -227,7 +216,6 @@
     }
     .step-card h3 { margin: 0 0 12px; font-size: 1.25rem; }
     .step-card p { color: #475569; }
-
     .methodology-bar {
       background: #F8FAFC;
       padding: 48px 0;
@@ -248,14 +236,12 @@
       text-decoration: none;
       font-weight: 600;
     }
-
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 32px;
     }
     .testimonial { font-style: italic; }
-
     .insights-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -273,7 +259,6 @@
     .insight-excerpt { font-size: 0.85rem; color: #475569; margin-bottom: 12px; }
     .insight-meta { font-size: 0.75rem; color: #64748b; margin-bottom: 8px; }
     .insight-link { color: var(--primary); font-weight: 600; text-decoration: none; }
-
     .contact-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
@@ -302,7 +287,6 @@
       font-weight: 600;
       cursor: pointer;
     }
-
     .footer-main {
       background: #0F172A;
       padding: 56px 0 48px;
@@ -320,7 +304,6 @@
     .footer-cta-link { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); }
     .footer-social { display: flex; gap: 14px; margin-top: 16px; }
     .footer-base { background: #020617; padding: 14px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-
     .cta-bar {
       background: var(--primary);
       color: white;
@@ -328,7 +311,6 @@
       text-align: center;
     }
     .cta-bar .btn-primary { background: white; color: var(--primary); }
-
     @media (max-width: 900px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .steps-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -359,7 +341,6 @@
   </div>
 </header>
 
-<!-- HERO with absolutely positioned image on the right -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -376,13 +357,14 @@
       </div>
     </div>
   </div>
-  <!-- side image floating on the right, not affecting text layout -->
+  <!-- Image path corrected to assets/ -->
   <div class="hero-side-image">
-    <img src="hero.side.image.png" alt="Research illustration">
+    <img src="assets/hero.side.image.jpg" alt="Research illustration"
+         onerror="this.onerror=null; this.src='https://placehold.co/500x400/4A7A9C/white?text=Missing%3A+assets/hero.side.image.jpg'; this.style.border='2px solid red';">
   </div>
 </section>
 
-<!-- SERVICES SECTION (unchanged) -->
+<!-- All sections remain identical to your working version -->
 <section class="section" id="services">
   <div class="container">
     <h2 class="section-title">What We Do</h2>
@@ -396,7 +378,6 @@
   </div>
 </section>
 
-<!-- METHODOLOGY STEPS -->
 <section class="section" id="how" style="background:#F8FAFC;">
   <div class="container">
     <h2 class="section-title">Methodology</h2>
@@ -409,7 +390,6 @@
   </div>
 </section>
 
-<!-- METHODOLOGY BAR -->
 <div class="methodology-bar">
   <div class="container methodology-bar-content">
     <span>Ready to apply this process? Submit your topic for a free initial review.</span>
@@ -417,7 +397,6 @@
   </div>
 </div>
 
-<!-- WHY STUDENTS CHOOSE ODEXAR -->
 <section class="section">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -429,7 +408,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="section" style="background:#F1F5F9;">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -440,7 +418,6 @@
   </div>
 </section>
 
-<!-- CTA BAR -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -449,7 +426,6 @@
   </div>
 </section>
 
-<!-- INSIGHTS -->
 <section class="section" id="insights">
   <div class="container">
     <h2 class="section-title">Insights &amp; Guidance</h2>
@@ -477,7 +453,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section" id="contact" style="background:#F8FAFC;">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -517,7 +492,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
