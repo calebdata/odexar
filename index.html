@@ -10,7 +10,7 @@
       --primary: #1E3A8A;
       --accent: #4A7A9C;
       --charcoal: #1A1E2B;
-      --green: #25D366;   /* same green as contact button */
+      --green: #25D366;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -55,7 +55,7 @@
       text-decoration: none;
     }
 
-    /* HERO - image moved left, brightened, text brighter */
+    /* HERO - image moved up */
     .hero {
       background: var(--charcoal);
       min-height: 90vh;
@@ -73,8 +73,8 @@
     }
     .hero-side-image {
       position: absolute;
-      right: 8%;            /* moved left from 0 → 8% */
-      bottom: 0;
+      right: 8%;
+      top: 15%;               /* moved up from bottom:0 */
       width: 42%;
       max-width: 520px;
       z-index: 1;
@@ -84,7 +84,7 @@
       width: 100%;
       height: auto;
       display: block;
-      filter: brightness(1.08) contrast(1.05);  /* brighter, sharper */
+      filter: brightness(1.08) contrast(1.05);
     }
     .hero h1 {
       font-size: 3rem;
@@ -93,11 +93,11 @@
       letter-spacing: -0.01em;
       margin-bottom: 1.75rem;
       color: white;
-      text-shadow: 0 0 8px rgba(255,255,255,0.15); /* subtle glow for brightness */
+      text-shadow: 0 0 8px rgba(255,255,255,0.15);
     }
     .hero p {
       font-size: 1.25rem;
-      color: #E2E8F0;       /* slightly lighter grey */
+      color: #E2E8F0;
       margin-bottom: 2.5rem;
       max-width: 600px;
       line-height: 1.5;
@@ -108,7 +108,6 @@
       gap: 16px;
       flex-wrap: wrap;
     }
-    /* Primary CTA - green (same as nav contact) */
     .btn-primary {
       background: var(--green);
       color: white;
@@ -124,7 +123,6 @@
       background: #20ba5a;
       transform: translateY(-2px);
     }
-    /* Secondary CTA - white outline */
     .btn-outline {
       border: 2px solid white;
       color: white;
@@ -347,7 +345,7 @@
   </div>
 </section>
 
-<!-- All sections below unchanged from your working version -->
+<!-- All sections below unchanged -->
 <section class="section" id="services">
   <div class="container">
     <h2 class="section-title">What We Do</h2>
