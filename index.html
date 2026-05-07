@@ -22,7 +22,7 @@
     }
     .container { width: 94%; max-width: 1280px; margin: 0 auto; }
 
-    /* HEADER (unchanged) */
+    /* HEADER */
     header {
       background: #ffffff;
       position: sticky;
@@ -54,24 +54,43 @@
       text-decoration: none;
     }
 
-    /* HERO - improved spacing and typography for authority */
+    /* HERO - two-column layout with image on right */
     .hero {
       background: var(--charcoal);
       min-height: 90vh;
       display: flex;
-      align-items: flex-start;
-      padding-top: 15vh;        /* increased from 12vh for more breathing room */
+      align-items: center;
+      padding-top: 15vh;
+      padding-bottom: 5vh;
+    }
+    .hero .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
     }
     .hero-content {
-      max-width: 760px;         /* slightly wider */
+      flex: 1;
+      max-width: 760px;
       text-align: left;
+    }
+    .hero-image {
+      flex: 0.8;
+      text-align: right;
+    }
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
     }
     .hero h1 {
       font-size: 3rem;
       line-height: 1.2;
-      font-weight: 800;         /* bolder for authority */
-      letter-spacing: -0.01em;  /* tighter for impact */
-      margin-bottom: 1.5rem;    /* more space below headline */
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
       color: white;
     }
     .hero p {
@@ -85,7 +104,7 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 2rem;      /* increased spacing before trust badges */
+      margin-bottom: 2rem;
     }
     .btn-primary {
       background: var(--accent);
@@ -128,13 +147,44 @@
       align-items: center;
       padding-top: 0.25rem;
       border-top: 1px solid rgba(255,255,255,0.1);
-      display: inline-block;    /* keep inline but with spacing */
+      display: inline-block;
     }
     .trust-badges span {
       margin-right: 1.5rem;
     }
 
-    /* utility sections unchanged below */
+    /* responsive hero */
+    @media (max-width: 1000px) {
+      .hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      .hero-content {
+        text-align: left;
+        margin-right: auto;
+      }
+      .hero-image {
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+      }
+      .hero-image img {
+        margin: 0 auto;
+      }
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+      .trust-badges { display: block; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding-top: 10vh; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .hero-image { width: 100%; }
+    }
+
+    /* all other sections unchanged from previous version */
     .section { padding: 100px 0; }
     .section-title {
       font-size: 2.2rem;
@@ -295,15 +345,11 @@
       .contact-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .hero { padding-top: 10vh; }
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; max-width: 100%; }
       .services-grid { grid-template-columns: 1fr; }
       .nav-links { gap: 12px; }
       .contact-form-row { grid-template-columns: 1fr; }
       .insight-card-horizontal { flex-direction: column; }
       .insight-card-image { width: 100%; height: auto; }
-      .trust-badges { display: block; }
       .trust-badges span { display: inline-block; margin: 0 0.5rem 0.5rem 0; }
     }
   </style>
@@ -322,7 +368,7 @@
   </div>
 </header>
 
-<!-- HERO with refined spacing -->
+<!-- HERO with side image on the right -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -337,6 +383,9 @@
         <span>📚 Plagiarism‑free</span>
         <span>🎓 100% Student-Owned Work</span>
       </div>
+    </div>
+    <div class="hero-image">
+      <img src="hero.side.image.png" alt="Research illustration">
     </div>
   </div>
 </section>
