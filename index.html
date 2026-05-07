@@ -8,7 +8,7 @@
   <style>
     :root {
       --primary: #1E3A8A;
-      --accent: #4A7A9C;       /* soft steel blue – fits cool palette */
+      --accent: #4A7A9C;
       --charcoal: #1A1E2B;
     }
     * { box-sizing: border-box; }
@@ -22,7 +22,7 @@
     }
     .container { width: 94%; max-width: 1280px; margin: 0 auto; }
 
-    /* HEADER */
+    /* HEADER (unchanged) */
     header {
       background: #ffffff;
       position: sticky;
@@ -54,23 +54,24 @@
       text-decoration: none;
     }
 
-    /* HERO */
+    /* HERO - improved spacing and typography for authority */
     .hero {
       background: var(--charcoal);
       min-height: 90vh;
       display: flex;
       align-items: flex-start;
-      padding-top: 12vh;
+      padding-top: 15vh;        /* increased from 12vh for more breathing room */
     }
     .hero-content {
-      max-width: 720px;
+      max-width: 760px;         /* slightly wider */
       text-align: left;
     }
     .hero h1 {
-      font-size: 3rem;          /* reduced from 3.2rem (5% smaller) */
+      font-size: 3rem;
       line-height: 1.2;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
+      font-weight: 800;         /* bolder for authority */
+      letter-spacing: -0.01em;  /* tighter for impact */
+      margin-bottom: 1.5rem;    /* more space below headline */
       color: white;
     }
     .hero p {
@@ -78,12 +79,13 @@
       color: #CBD5E1;
       margin-bottom: 2rem;
       max-width: 600px;
+      line-height: 1.5;
     }
     .hero-actions {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;      /* increased spacing before trust badges */
     }
     .btn-primary {
       background: var(--accent);
@@ -120,9 +122,19 @@
     .trust-badges {
       font-size: 0.9rem;
       color: #CBD5E1;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+      padding-top: 0.25rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: inline-block;    /* keep inline but with spacing */
+    }
+    .trust-badges span {
+      margin-right: 1.5rem;
     }
 
-    /* utility */
+    /* utility sections unchanged below */
     .section { padding: 100px 0; }
     .section-title {
       font-size: 2.2rem;
@@ -138,7 +150,6 @@
       font-size: 1.1rem;
     }
 
-    /* Benefits */
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -161,7 +172,6 @@
       margin-bottom: -10px;
     }
 
-    /* Methodology steps */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -176,7 +186,6 @@
     .step-card h3 { margin: 0 0 12px; font-size: 1.25rem; }
     .step-card p { color: #475569; }
 
-    /* Methodology bar */
     .methodology-bar {
       background: #F8FAFC;
       padding: 48px 0;
@@ -198,7 +207,6 @@
       font-weight: 600;
     }
 
-    /* Testimonials grid */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -206,7 +214,6 @@
     }
     .testimonial { font-style: italic; }
 
-    /* Insights */
     .insights-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -225,7 +232,6 @@
     .insight-meta { font-size: 0.75rem; color: #64748b; margin-bottom: 8px; }
     .insight-link { color: var(--primary); font-weight: 600; text-decoration: none; }
 
-    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
@@ -255,7 +261,6 @@
       cursor: pointer;
     }
 
-    /* Footer */
     .footer-main {
       background: #0F172A;
       padding: 56px 0 48px;
@@ -274,7 +279,6 @@
     .footer-social { display: flex; gap: 14px; margin-top: 16px; }
     .footer-base { background: #020617; padding: 14px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
 
-    /* CTA Bar */
     .cta-bar {
       background: var(--primary);
       color: white;
@@ -283,7 +287,6 @@
     }
     .cta-bar .btn-primary { background: white; color: var(--primary); }
 
-    /* Responsive */
     @media (max-width: 900px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .steps-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -292,7 +295,7 @@
       .contact-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .hero { padding-top: 8vh; }
+      .hero { padding-top: 10vh; }
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; max-width: 100%; }
       .services-grid { grid-template-columns: 1fr; }
@@ -300,6 +303,8 @@
       .contact-form-row { grid-template-columns: 1fr; }
       .insight-card-horizontal { flex-direction: column; }
       .insight-card-image { width: 100%; height: auto; }
+      .trust-badges { display: block; }
+      .trust-badges span { display: inline-block; margin: 0 0.5rem 0.5rem 0; }
     }
   </style>
 </head>
@@ -317,7 +322,7 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO with refined spacing -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -327,12 +332,16 @@
         <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review</a>
         <a href="#how" class="btn-outline">Explore Our Methodology</a>
       </div>
-      <div class="trust-badges">✅ Confidential • Plagiarism‑free • 100% Student-Owned Work</div>
+      <div class="trust-badges">
+        <span>✅ Confidential</span>
+        <span>📚 Plagiarism‑free</span>
+        <span>🎓 100% Student-Owned Work</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES SECTION (unchanged) -->
 <section class="section" id="services">
   <div class="container">
     <h2 class="section-title">What We Do</h2>
