@@ -55,7 +55,7 @@
       text-decoration: none;
     }
 
-    /* HERO - vertically centred text and image */
+    /* HERO */
     .hero {
       background: var(--charcoal);
       min-height: 90vh;
@@ -150,13 +150,13 @@
       .hero p { font-size: 1rem; margin-bottom: 1.75rem; }
     }
 
-    /* WHAT WE DO - ModSquad style (two-line heading, 4 cards, no numbers, learn more links) */
+    /* WHAT WE DO - left‑aligned heading, 4 cards, learn more links */
     .services-section {
       padding: 100px 0;
       background: #fff;
     }
     .services-heading {
-      text-align: center;
+      text-align: left;
       margin-bottom: 3rem;
     }
     .services-heading .pre-head {
@@ -223,7 +223,64 @@
       .services-grid { grid-template-columns: 1fr; }
     }
 
-    /* All other sections unchanged (methodology, benefits, testimonials, cta bar, insights, contact, footer) */
+    /* METHODOLOGY (ModSquad 'What You Get' style) - two columns, benefit headlines */
+    .methodology-section {
+      padding: 100px 0;
+      background: #F8FAFC;
+    }
+    .methodology-heading {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    .methodology-heading .pre-head {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .methodology-heading h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      color: #0F172A;
+    }
+    .methodology-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .methodology-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      transition: all 0.3s;
+      border: 1px solid #eef2f6;
+    }
+    .methodology-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+      border-color: #e2e8f0;
+    }
+    .methodology-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      color: #0F172A;
+      letter-spacing: -0.01em;
+    }
+    .methodology-card p {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+    @media (max-width: 700px) {
+      .methodology-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* All other sections unchanged */
     .section { padding: 100px 0; }
     .section-title {
       font-size: 2.2rem;
@@ -250,19 +307,6 @@
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 48px 64px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .step-card {
-      padding-top: 20px;
-      border-top: 1px solid rgba(15, 23, 42, 0.08);
-    }
-    .step-card h3 { margin: 0 0 12px; font-size: 1.25rem; }
-    .step-card p { color: #475569; }
     .methodology-bar {
       background: #F8FAFC;
       padding: 48px 0;
@@ -359,7 +403,6 @@
     }
     .cta-bar .btn-primary { background: white; color: var(--primary); }
     @media (max-width: 900px) {
-      .steps-grid { grid-template-columns: 1fr; gap: 32px; }
       .insights-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -379,14 +422,14 @@
     <a href="#"><img src="assets/odexar-logo.svg" alt="Odexar" class="brand-logo"></a>
     <nav class="nav-links">
       <a href="#services">Services</a>
-      <a href="#how">Methodology</a>
+      <a href="#methodology">Methodology</a>
       <a href="#insights">Insights</a>
       <a href="#contact" class="contact-btn">Contact Us</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO (vertically centred, left text, right image) -->
+<!-- HERO (unchanged) -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -394,7 +437,7 @@
       <p>We help final-year students structure their projects around their research problem, not a template.</p>
       <div class="hero-actions">
         <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review</a>
-        <a href="#how" class="btn-outline">Explore Our Methodology</a>
+        <a href="#methodology" class="btn-outline">Explore Our Methodology</a>
       </div>
     </div>
   </div>
@@ -404,7 +447,7 @@
   </div>
 </section>
 
-<!-- WHAT WE DO - ModSquad style (two-line heading, four cards, learn more links) -->
+<!-- WHAT WE DO (unchanged) -->
 <section class="services-section" id="services">
   <div class="container">
     <div class="services-heading">
@@ -436,20 +479,35 @@
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION (original 4 steps) -->
-<section class="section" id="how" style="background:#F8FAFC;">
+<!-- METHODOLOGY (restyled as 'What You Get' format) -->
+<section class="methodology-section" id="methodology">
   <div class="container">
-    <h2 class="section-title">Methodology</h2>
-    <div class="steps-grid">
-      <div class="step-card"><h3>Research Alignment</h3><p>We assess your research objective, scope, and constraints to establish a precise direction.</p></div>
-      <div class="step-card"><h3>Analytical Structuring</h3><p>A structured approach is outlined, covering argument flow, methodology, and analytical direction.</p></div>
-      <div class="step-card"><h3>Guided Development</h3><p>You work through your research with targeted guidance to strengthen logic and clarity.</p></div>
-      <div class="step-card"><h3>Scholarly Evaluation</h3><p>Work is evaluated against academic standards. Revisions address coherence, validity, and defensibility.</p></div>
+    <div class="methodology-heading">
+      <div class="pre-head">OUR PROCESS</div>
+      <h2>Methodology</h2>
+    </div>
+    <div class="methodology-grid">
+      <div class="methodology-card">
+        <h3>Clarity from the start</h3>
+        <p>We align your research objectives, scope, and constraints before writing a single word. No wasted effort, no false starts.</p>
+      </div>
+      <div class="methodology-card">
+        <h3>Structure that holds up</h3>
+        <p>We build a logical framework for your argument, methodology, and analysis. Your supervisor will see a clear path – not confusion.</p>
+      </div>
+      <div class="methodology-card">
+        <h3>Guided momentum</h3>
+        <p>You work through each section with targeted feedback. We keep you moving forward without rewriting everything twice.</p>
+      </div>
+      <div class="methodology-card">
+        <h3>Defensible confidence</h3>
+        <p>Final evaluation against academic standards. You walk into your defense knowing your work can withstand scrutiny.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- METHODOLOGY BAR -->
+<!-- METHODOLOGY BAR (unchanged) -->
 <div class="methodology-bar">
   <div class="container methodology-bar-content">
     <span>Ready to apply this process? Submit your topic for a free initial review.</span>
@@ -457,7 +515,7 @@
   </div>
 </div>
 
-<!-- WHY STUDENTS CHOOSE ODEXAR -->
+<!-- WHY STUDENTS CHOOSE ODEXAR (unchanged) -->
 <section class="section">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -469,7 +527,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS (unchanged) -->
 <section class="section" style="background:#F1F5F9;">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -480,7 +538,7 @@
   </div>
 </section>
 
-<!-- CTA BAR -->
+<!-- CTA BAR (unchanged) -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -489,7 +547,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS -->
+<!-- INSIGHTS (unchanged) -->
 <section class="section" id="insights">
   <div class="container">
     <h2 class="section-title">Insights &amp; Guidance</h2>
@@ -517,7 +575,7 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT (unchanged) -->
 <section class="section" id="contact" style="background:#F8FAFC;">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -557,7 +615,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (unchanged) -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
@@ -570,7 +628,7 @@
         </div>
       </div>
       <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="#services">Research Development</a><a href="#services">Data & Analysis</a><a href="#services">Editing & Formatting</a><a href="#services">Literature Review</a></nav></div>
-      <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#how">Methodology</a><a href="insights/">Insights</a><a href="#contact">Contact</a></nav></div>
+      <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#methodology">Methodology</a><a href="insights/">Insights</a><a href="#contact">Contact</a></nav></div>
       <div class="footer-col"><h4 class="footer-col-heading">Contact</h4><div><p><span class="footer-contact-label">Email</span><br><a href="mailto:contact@odexar.com" class="footer-contact-value">contact@odexar.com</a></p><p><span class="footer-contact-label">WhatsApp</span><br><a href="https://wa.me/2347087589603" class="footer-contact-value">+234 708 758 9603</a></p></div><a href="https://wa.me/2347087589603" class="footer-cta-link">Request an initial review →</a></div>
     </div>
   </div>
