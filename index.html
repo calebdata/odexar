@@ -55,12 +55,12 @@
       text-decoration: none;
     }
 
-    /* HERO - vertically centered text and image */
+    /* HERO - vertically centred text and image */
     .hero {
       background: var(--charcoal);
       min-height: 90vh;
       display: flex;
-      align-items: center;        /* vertical center for the container */
+      align-items: center;
       position: relative;
       overflow: visible;
     }
@@ -73,7 +73,7 @@
     .hero-side-image {
       position: absolute;
       right: 8%;
-      top: 50%;                  /* center vertically */
+      top: 50%;
       transform: translateY(-50%);
       width: 42%;
       max-width: 520px;
@@ -141,13 +141,8 @@
     }
 
     @media (max-width: 850px) {
-      .hero-side-image {
-        display: none;
-      }
-      .hero {
-        min-height: auto;
-        padding: 80px 0;
-      }
+      .hero-side-image { display: none; }
+      .hero { min-height: auto; padding: 80px 0; }
       .hero h1 { font-size: 2.2rem; }
     }
     @media (max-width: 600px) {
@@ -155,7 +150,80 @@
       .hero p { font-size: 1rem; margin-bottom: 1.75rem; }
     }
 
-    /* all other sections unchanged */
+    /* WHAT WE DO - ModSquad style (two-line heading, 4 cards, no numbers, learn more links) */
+    .services-section {
+      padding: 100px 0;
+      background: #fff;
+    }
+    .services-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .services-heading .pre-head {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .services-heading h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      color: #0F172A;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .service-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: all 0.3s;
+      border: 1px solid #eef2f6;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+      border-color: #e2e8f0;
+    }
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      color: #0F172A;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0 0 1rem;
+    }
+    .service-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+    .service-link:hover {
+      gap: 8px;
+      text-decoration: underline;
+    }
+    @media (max-width: 1000px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    /* All other sections unchanged (methodology, benefits, testimonials, cta bar, insights, contact, footer) */
     .section { padding: 100px 0; }
     .section-title {
       font-size: 2.2rem;
@@ -176,20 +244,11 @@
       gap: 32px;
       margin-top: 40px;
     }
-    .benefit-card, .service-card, .testimonial {
+    .benefit-card, .testimonial {
       background: white;
       padding: 32px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    .service-card { transition: 0.3s; }
-    .service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-    .service-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--accent);
-      opacity: 0.15;
-      margin-bottom: -10px;
     }
     .steps-grid {
       display: grid;
@@ -300,14 +359,12 @@
     }
     .cta-bar .btn-primary { background: white; color: var(--primary); }
     @media (max-width: 900px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
       .steps-grid { grid-template-columns: 1fr; gap: 32px; }
       .insights-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .services-grid { grid-template-columns: 1fr; }
       .nav-links { gap: 12px; }
       .contact-form-row { grid-template-columns: 1fr; }
       .insight-card-horizontal { flex-direction: column; }
@@ -329,6 +386,7 @@
   </div>
 </header>
 
+<!-- HERO (vertically centred, left text, right image) -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -346,20 +404,39 @@
   </div>
 </section>
 
-<!-- All subsequent sections unchanged (same as before) -->
-<section class="section" id="services">
+<!-- WHAT WE DO - ModSquad style (two-line heading, four cards, learn more links) -->
+<section class="services-section" id="services">
   <div class="container">
-    <h2 class="section-title">What We Do</h2>
-    <p class="section-subtitle">Most students know the topic. Few have a defensible path to the final submission. We work on the parts that determine whether your project stands up under review.</p>
-    <div class="services-grid">
-      <div class="service-card"><span class="service-number">01</span><h3>Research Development</h3><p>We define the research problem, refine the question, position your literature, and design a defendable methodology.</p></div>
-      <div class="service-card"><span class="service-number">02</span><h3>Data &amp; Analysis</h3><p>We structure your approach, guide interpretation, and ensure your results are presented clearly and correctly.</p></div>
-      <div class="service-card"><span class="service-number">03</span><h3>Editing &amp; Formatting</h3><p>We tighten arguments, improve clarity, and ensure full compliance with APA, MLA, or Chicago standards.</p></div>
+    <div class="services-heading">
+      <div class="pre-head">WHAT WE DO</div>
+      <h2>Core Research Support</h2>
     </div>
-    <div style="text-align:center; margin-top:56px;"><a href="#contact" class="btn-primary" style="background:var(--primary); color:white;">Discuss your research with us →</a></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Research Development</h3>
+        <p>Define the research problem, refine questions, and position your literature for a defensible methodology.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <h3>Data & Analysis</h3>
+        <p>Structure your approach, guide interpretation, and present results clearly and correctly.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <h3>Editing & Formatting</h3>
+        <p>Tighten arguments, improve clarity, and ensure compliance with APA, MLA, or Chicago standards.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <h3>Literature Review & Synthesis</h3>
+        <p>Identify gaps, build a strong theoretical foundation, and position your work within existing research.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- METHODOLOGY SECTION (original 4 steps) -->
 <section class="section" id="how" style="background:#F8FAFC;">
   <div class="container">
     <h2 class="section-title">Methodology</h2>
@@ -372,6 +449,7 @@
   </div>
 </section>
 
+<!-- METHODOLOGY BAR -->
 <div class="methodology-bar">
   <div class="container methodology-bar-content">
     <span>Ready to apply this process? Submit your topic for a free initial review.</span>
@@ -379,6 +457,7 @@
   </div>
 </div>
 
+<!-- WHY STUDENTS CHOOSE ODEXAR -->
 <section class="section">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -390,6 +469,7 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
 <section class="section" style="background:#F1F5F9;">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -400,6 +480,7 @@
   </div>
 </section>
 
+<!-- CTA BAR -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -408,6 +489,7 @@
   </div>
 </section>
 
+<!-- INSIGHTS -->
 <section class="section" id="insights">
   <div class="container">
     <h2 class="section-title">Insights &amp; Guidance</h2>
@@ -435,6 +517,7 @@
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="section" id="contact" style="background:#F8FAFC;">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -474,6 +557,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
@@ -485,7 +569,7 @@
           <a href="#" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2"/></svg></a>
         </div>
       </div>
-      <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="#services">Research Development</a><a href="#services">Data & Analysis</a><a href="#services">Editing & Formatting</a></nav></div>
+      <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="#services">Research Development</a><a href="#services">Data & Analysis</a><a href="#services">Editing & Formatting</a><a href="#services">Literature Review</a></nav></div>
       <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#how">Methodology</a><a href="insights/">Insights</a><a href="#contact">Contact</a></nav></div>
       <div class="footer-col"><h4 class="footer-col-heading">Contact</h4><div><p><span class="footer-contact-label">Email</span><br><a href="mailto:contact@odexar.com" class="footer-contact-value">contact@odexar.com</a></p><p><span class="footer-contact-label">WhatsApp</span><br><a href="https://wa.me/2347087589603" class="footer-contact-value">+234 708 758 9603</a></p></div><a href="https://wa.me/2347087589603" class="footer-cta-link">Request an initial review →</a></div>
     </div>
