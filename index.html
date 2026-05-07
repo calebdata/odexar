@@ -17,7 +17,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #F8FAFC;
+      background: #F5F5F0;      /* warm, paper‑like background */
       color: #0F172A;
       line-height: 1.6;
     }
@@ -55,7 +55,7 @@
       text-decoration: none;
     }
 
-    /* HERO (unchanged) */
+    /* HERO (remains charcoal) */
     .hero {
       background: var(--charcoal);
       min-height: 90vh;
@@ -149,10 +149,10 @@
       .hero p { font-size: 1rem; margin-bottom: 1.75rem; }
     }
 
-    /* WHAT WE DO (unchanged) */
+    /* WHAT WE DO - inherits body background */
     .services-section {
       padding: 100px 0;
-      background: #fff;
+      background: transparent;
     }
     .services-heading {
       text-align: left;
@@ -222,10 +222,10 @@
       .services-grid { grid-template-columns: 1fr; }
     }
 
-    /* METHODOLOGY - split container (left heading, right vertical list, no grid) */
+    /* METHODOLOGY - split container, vertical list */
     .methodology-section {
       padding: 100px 0;
-      background: #F8FAFC;
+      background: transparent;
     }
     .methodology-split {
       display: flex;
@@ -273,8 +273,11 @@
       .methodology-split { flex-direction: column; gap: 2rem; }
     }
 
-    /* All other sections unchanged */
-    .section { padding: 100px 0; }
+    /* Other sections (benefits, testimonials, bar, insights, contact) all inherit the paper background */
+    .section {
+      padding: 100px 0;
+      background: transparent;
+    }
     .section-title {
       font-size: 2.2rem;
       text-align: center;
@@ -301,7 +304,7 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
     .methodology-bar {
-      background: #F8FAFC;
+      background: transparent;
       padding: 48px 0;
       text-align: center;
     }
@@ -472,7 +475,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY - split container, right column vertical list (not grid) -->
+<!-- METHODOLOGY -->
 <section class="methodology-section" id="methodology">
   <div class="container">
     <div class="methodology-split">
@@ -524,8 +527,8 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section" style="background:#F1F5F9;">
+<!-- TESTIMONIALS (now using same paper background) -->
+<section class="section">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
     <div class="testimonials-grid">
@@ -573,7 +576,7 @@
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact" style="background:#F8FAFC;">
+<section class="section" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
     <div class="contact-grid">
