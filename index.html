@@ -249,8 +249,16 @@
     .methodology-left h2 {
       font-size: 2.5rem;
       font-weight: 700;
-      margin: 0;
+      margin: 0 0 1rem;
       color: #0F172A;
+    }
+    .methodology-left .closing-line {
+      font-size: 0.95rem;
+      color: #475569;
+      font-style: italic;
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+      margin-top: 1rem;
     }
     .methodology-right {
       flex: 2;
@@ -277,14 +285,6 @@
     }
     .methodology-footer .service-link {
       font-size: 0.95rem;
-    }
-    .methodology-closing-line {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      color: #475569;
-      font-style: italic;
-      border-left: 3px solid var(--accent);
-      padding-left: 1rem;
     }
     @media (max-width: 800px) {
       .methodology-split { flex-direction: column; gap: 2rem; }
@@ -478,13 +478,14 @@
   </div>
 </section>
 
-<!-- METHODOLOGY -->
+<!-- METHODOLOGY (closing line moved to left column) -->
 <section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
       <div class="methodology-left">
         <div class="pre-head">OUR PROCESS</div>
         <h2>Methodology</h2>
+        <div class="closing-line">Research quality is not about volume. It is about alignment between your problem, your methodology, your analysis, and your argument. That is what we work on with you.</div>
       </div>
       <div class="methodology-right">
         <div class="methodology-list">
@@ -494,7 +495,6 @@
           <div class="methodology-item"><h3>Review and Strengthen</h3><p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p></div>
         </div>
         <div class="methodology-footer"><a href="#contact" class="service-link">Explore Our Methodology →</a></div>
-        <div class="methodology-closing-line">Research quality is not about volume. It is about alignment between your problem, your methodology, your analysis, and your argument. That is what we work on with you.</div>
       </div>
     </div>
   </div>
