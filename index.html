@@ -17,7 +17,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #F5F5F0;      /* warm, paper‑like background */
+      background: #F5F5F0;      /* warm paper background */
       color: #0F172A;
       line-height: 1.6;
     }
@@ -149,11 +149,17 @@
       .hero p { font-size: 1rem; margin-bottom: 1.75rem; }
     }
 
-    /* WHAT WE DO - inherits body background */
-    .services-section {
+    /* SECTIONS WITH ALTERNATING BACKGROUNDS */
+    .section-default {
       padding: 100px 0;
-      background: transparent;
+      background: #F5F5F0;      /* body colour */
     }
+    .section-alt {
+      padding: 100px 0;
+      background: #F0F1EC;      /* very subtle shift, creates rhythm */
+    }
+
+    /* WHAT WE DO (default background, cards have white background) */
     .services-heading {
       text-align: left;
       margin-bottom: 3rem;
@@ -177,17 +183,19 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
     }
+    /* Enhanced service cards */
     .service-card {
       background: #fff;
-      padding: 1.5rem;
+      padding: 1.75rem;               /* more internal spacing */
       border-radius: 12px;
-      transition: all 0.3s;
-      border: 1px solid #eef2f6;
+      transition: all 0.3s ease;
+      border: 1px solid #EDF2F7;      /* faint border */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* softer shadow */
     }
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-      border-color: #e2e8f0;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08); /* stronger hover elevation */
+      border-color: #E2E8F0;
     }
     .service-card h3 {
       font-size: 1.3rem;
@@ -222,11 +230,7 @@
       .services-grid { grid-template-columns: 1fr; }
     }
 
-    /* METHODOLOGY - split container, vertical list */
-    .methodology-section {
-      padding: 100px 0;
-      background: transparent;
-    }
+    /* METHODOLOGY (alternating background, no cards) */
     .methodology-split {
       display: flex;
       gap: 4rem;
@@ -273,11 +277,7 @@
       .methodology-split { flex-direction: column; gap: 2rem; }
     }
 
-    /* Other sections (benefits, testimonials, bar, insights, contact) all inherit the paper background */
-    .section {
-      padding: 100px 0;
-      background: transparent;
-    }
+    /* Benefits, testimonials, insights, contact (will alternate) */
     .section-title {
       font-size: 2.2rem;
       text-align: center;
@@ -301,7 +301,14 @@
       background: white;
       padding: 32px;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border: 1px solid #EDF2F7;
+      transition: all 0.3s ease;
+    }
+    .benefit-card:hover, .testimonial:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: #E2E8F0;
     }
     .methodology-bar {
       background: transparent;
@@ -443,8 +450,8 @@
   </div>
 </section>
 
-<!-- WHAT WE DO -->
-<section class="services-section" id="services">
+<!-- WHAT WE DO - default background -->
+<section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
       <div class="pre-head">WHAT WE DO</div>
@@ -475,8 +482,8 @@
   </div>
 </section>
 
-<!-- METHODOLOGY -->
-<section class="methodology-section" id="methodology">
+<!-- METHODOLOGY - alternating background -->
+<section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
       <div class="methodology-left">
@@ -507,16 +514,16 @@
   </div>
 </section>
 
-<!-- METHODOLOGY BAR -->
-<div class="methodology-bar">
+<!-- METHODOLOGY BAR (default background) -->
+<div class="section-default" style="padding: 48px 0;">
   <div class="container methodology-bar-content">
     <span>Ready to apply this process? Submit your topic for a free initial review.</span>
     <a href="#contact" class="submit-topic-btn">Submit Your Research Topic</a>
   </div>
 </div>
 
-<!-- WHY STUDENTS CHOOSE ODEXAR -->
-<section class="section">
+<!-- WHY STUDENTS CHOOSE ODEXAR - default background (keeping cards visible) -->
+<section class="section-default">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
     <div class="benefits-grid">
@@ -527,8 +534,8 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS (now using same paper background) -->
-<section class="section">
+<!-- TESTIMONIALS - alternating background -->
+<section class="section-alt">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
     <div class="testimonials-grid">
@@ -538,7 +545,7 @@
   </div>
 </section>
 
-<!-- CTA BAR -->
+<!-- CTA BAR (kept separate, not part of alternating pattern) -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -547,8 +554,8 @@
   </div>
 </section>
 
-<!-- INSIGHTS -->
-<section class="section" id="insights">
+<!-- INSIGHTS - default background -->
+<section class="section-default" id="insights">
   <div class="container">
     <h2 class="section-title">Insights &amp; Guidance</h2>
     <div class="insights-grid">
@@ -575,8 +582,8 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
+<!-- CONTACT - alternating background -->
+<section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
     <div class="contact-grid">
@@ -615,7 +622,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (unchanged) -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
