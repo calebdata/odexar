@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insights | Odexar Research Guidance</title>
-  <meta name="description" content="Research insights, academic guidance, and practical advice for final-year students from Odexar.">
+  <title>Odexar | Build a Defensible Research Project</title>
+  <meta name="description" content="Odexar helps final-year students structure clear, supervisor-approved research projects ethically and confidently.">
   <style>
     :root {
       --primary: #1E3A8A;
@@ -23,7 +23,7 @@
     }
     .container { width: 94%; max-width: 1280px; margin: 0 auto; }
 
-    /* HEADER (same as homepage) */
+    /* HEADER */
     header {
       background: #ffffff;
       position: sticky;
@@ -55,29 +55,258 @@
       text-decoration: none;
     }
 
-    /* Insights page specific */
-    .insights-hero {
-      padding: 60px 0 40px;
-      background: #F5F5F0;
+    /* HERO */
+    .hero {
+      background: var(--charcoal);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: visible;
     }
-    .insights-hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 0 0 0.5rem;
-      color: #0F172A;
+    .hero-content {
+      max-width: 760px;
+      text-align: left;
+      position: relative;
+      z-index: 2;
     }
-    .insights-hero p {
-      font-size: 1.1rem;
-      color: #475569;
-      max-width: 700px;
+    .hero-side-image {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42%;
+      max-width: 520px;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-side-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(1.08) contrast(1.05);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.75rem;
+      color: white;
+      text-shadow: 0 0 8px rgba(255,255,255,0.15);
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: #E2E8F0;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      line-height: 1.5;
+      text-shadow: 0 0 4px rgba(0,0,0,0.2);
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+    .btn-primary:hover {
+      background: #20ba5a;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      background: transparent;
+      transition: all 0.3s;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 850px) {
+      .hero-side-image { display: none; }
+      .hero { min-height: auto; padding: 80px 0; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; margin-bottom: 1.25rem; }
+      .hero p { font-size: 1rem; margin-bottom: 1.75rem; }
     }
 
-    /* Static principles block (same as the proposed section) */
+    /* SECTIONS WITH ALTERNATING BACKGROUNDS */
+    .section-default {
+      padding: 100px 0;
+      background: #F5F5F0;
+    }
+    .section-alt {
+      padding: 100px 0;
+      background: #F0F1EC;
+    }
+
+    /* WHAT WE DO */
+    .services-heading {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    .services-heading .pre-head {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .services-heading h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      color: #0F172A;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .service-card {
+      background: #fff;
+      padding: 1.75rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid #EDF2F7;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: #E2E8F0;
+    }
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      color: #0F172A;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0.5rem 0 1rem;
+    }
+    .service-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+    .service-link:hover {
+      gap: 8px;
+      text-decoration: underline;
+    }
+    @media (max-width: 1000px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    /* METHODOLOGY */
+    .methodology-split {
+      display: flex;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+    .methodology-left {
+      flex: 1;
+    }
+    .methodology-left .pre-head {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .methodology-left h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      color: #0F172A;
+    }
+    .methodology-right {
+      flex: 2;
+    }
+    .methodology-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .methodology-item h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      color: #0F172A;
+    }
+    .methodology-item p {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .methodology-footer {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .methodology-footer .service-link {
+      font-size: 0.95rem;
+    }
+    @media (max-width: 800px) {
+      .methodology-split { flex-direction: column; gap: 2rem; }
+    }
+
+    /* INSIGHTS SECTION (moved up, integrates static block + article cards) */
+    .insights-heading {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    .insights-heading .pre-head {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .insights-heading h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      color: #0F172A;
+    }
     .principles-split {
       display: flex;
       gap: 4rem;
       align-items: flex-start;
-      margin: 3rem 0 5rem;
+      margin-bottom: 4rem;
     }
     .principles-left {
       flex: 1;
@@ -114,16 +343,10 @@
       font-weight: bold;
       font-size: 1.2rem;
     }
-    @media (max-width: 800px) {
-      .principles-split { flex-direction: column; gap: 2rem; }
-    }
-
-    /* Blog articles grid (same as homepage insights) */
     .insights-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 48px;
-      margin-top: 40px;
     }
     .insight-card-horizontal {
       display: flex;
@@ -137,17 +360,78 @@
     .insight-excerpt { font-size: 0.85rem; color: #475569; margin-bottom: 12px; }
     .insight-meta { font-size: 0.75rem; color: #64748b; margin-bottom: 8px; }
     .insight-link { color: var(--primary); font-weight: 600; text-decoration: none; }
+    @media (max-width: 800px) {
+      .principles-split { flex-direction: column; gap: 2rem; }
+    }
     @media (max-width: 700px) {
       .insights-grid { grid-template-columns: 1fr; }
       .insight-card-horizontal { flex-direction: column; }
       .insight-card-image { width: 100%; height: auto; }
     }
 
-    /* Footer (same as homepage) */
+    /* Benefits, testimonials, contact (unchanged) */
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .benefit-card, .testimonial {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border: 1px solid #EDF2F7;
+      transition: all 0.3s ease;
+    }
+    .benefit-card:hover, .testimonial:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: #E2E8F0;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .testimonial { font-style: italic; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 48px;
+    }
+    .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
+    .contact-info-statement { font-size: 1rem; }
+    .contact-info-label { font-size: 0.72rem; font-weight: 700; color: var(--primary); text-transform: uppercase; }
+    .contact-info-value { font-size: 0.95rem; font-weight: 700; color: #0F172A; text-decoration: none; }
+    .contact-info-note { font-size: 0.78rem; color: #94a3b8; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    input, select, textarea {
+      padding: 11px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      width: 100%;
+      font-family: inherit;
+    }
+    .contact-submit {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
     .footer-main {
       background: #0F172A;
       padding: 56px 0 48px;
-      margin-top: 80px;
     }
     .footer-grid {
       display: grid;
@@ -162,12 +446,20 @@
     .footer-cta-link { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); }
     .footer-social { display: flex; gap: 14px; margin-top: 16px; }
     .footer-base { background: #020617; padding: 14px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+    .cta-bar {
+      background: var(--primary);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .cta-bar .btn-primary { background: white; color: var(--primary); }
     @media (max-width: 900px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .footer-grid { grid-template-columns: 1fr; }
       .nav-links { gap: 12px; }
+      .contact-form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -175,77 +467,236 @@
 
 <header>
   <div class="container nav">
-    <a href="../index.html"><img src="../assets/odexar-logo.svg" alt="Odexar" class="brand-logo"></a>
+    <a href="#"><img src="assets/odexar-logo.svg" alt="Odexar" class="brand-logo"></a>
     <nav class="nav-links">
-      <a href="../index.html#services">Services</a>
-      <a href="../index.html#methodology">Methodology</a>
-      <a href="../insights/">Insights</a>
-      <a href="../index.html#contact" class="contact-btn">Contact Us</a>
+      <a href="#services">Services</a>
+      <a href="#methodology">Methodology</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact" class="contact-btn">Contact Us</a>
     </nav>
   </div>
 </header>
 
-<main class="container">
-  <div class="insights-hero">
-    <h1>Insights & Guidance</h1>
-    <p>Research principles, practical advice, and academic strategies to strengthen your work.</p>
-  </div>
-
-  <!-- Static educational block: What Strong Research Requires -->
-  <div class="principles-split">
-    <div class="principles-left">
-      <p><strong>Research quality is built through alignment, not volume.</strong><br><br>
-      Strong academic work depends on the relationship between the research problem, theoretical framing, methodology, analysis, and interpretation. Weak projects often fail because these elements are disconnected.</p>
-    </div>
-    <div class="principles-right">
-      <ul class="principles-list">
-        <li>Clear and researchable problem definition</li>
-        <li>Alignment between objectives and methodology</li>
-        <li>Coherent chapter-to-chapter argument flow</li>
-        <li>Literature-grounded analytical reasoning</li>
-        <li>Defensible interpretation of findings</li>
-        <li>Academic clarity and institutional compliance</li>
-      </ul>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Build a Clear, Defensible Research Project</h1>
+      <p>We help final-year students structure their projects around their research problem, not a template.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review</a>
+        <a href="#methodology" class="btn-outline">Explore Our Methodology</a>
+      </div>
     </div>
   </div>
-
-  <!-- Blog article previews (same as homepage) -->
-  <div class="insights-grid">
-    <article class="insight-card-horizontal">
-      <div class="insight-card-image"><img src="../assets/blog-topic-selection.png" alt="Research topic"></div>
-      <div class="insight-card-content">
-        <h3 class="insight-title">Why Most Final-Year Students Start Research Wrong</h3>
-        <p class="insight-excerpt">A significant proportion have topics rejected because they lack thinking structure, not effort.</p>
-        <div class="insight-meta">Odexar • March 2026 • 5 min read</div>
-        <a href="posts/why-final-year-students-start-research-wrong.html" class="insight-link">Read the article →</a>
-      </div>
-    </article>
-    <article class="insight-card-horizontal">
-      <div class="insight-card-image"><img src="../assets/blog-proposal.jpg" alt="Research proposal"></div>
-      <div class="insight-card-content">
-        <h3 class="insight-title">How to Structure a Research Proposal That Gets Approved</h3>
-        <p class="insight-excerpt">Supervisors reject proposals because the structure is unclear. Here’s a framework to get approval.</p>
-        <div class="insight-meta">Odexar • April 2026 • 7 min read</div>
-        <a href="posts/structure-research-proposal.html" class="insight-link">Read the article →</a>
-      </div>
-    </article>
+  <div class="hero-side-image">
+    <img src="assets/hero.side.image.png" alt="Research illustration"
+         onerror="this.onerror=null; this.src='https://placehold.co/500x400/4A7A9C/white?text=Missing%3A+assets/hero.side.image.png'; this.style.border='2px solid red';">
   </div>
-</main>
+</section>
 
-<!-- FOOTER (same as homepage) -->
+<!-- WHAT WE DO -->
+<section class="section-default" id="services">
+  <div class="container">
+    <div class="services-heading">
+      <div class="pre-head">WHAT WE DO</div>
+      <h2>Core Research Functions</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Research Framing & Structuring</h3>
+        <p>Define the research problem, refine analytical direction, and establish a coherent methodological foundation.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <h3>Analytical Interpretation</h3>
+        <p>Structure analytical approaches, interpret findings critically, and present results with methodological clarity.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <h3>Scholarly Refinement</h3>
+        <p>Strengthen coherence, improve academic clarity, and align manuscripts with institutional standards and citation requirements.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <h3>Literature Synthesis</h3>
+        <p>Identify theoretical gaps, synthesize existing scholarship, and position research within established academic discourse.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section-alt" id="methodology">
+  <div class="container">
+    <div class="methodology-split">
+      <div class="methodology-left">
+        <div class="pre-head">OUR PROCESS</div>
+        <h2>Methodology</h2>
+      </div>
+      <div class="methodology-right">
+        <div class="methodology-list">
+          <div class="methodology-item">
+            <h3>Understand Your Situation</h3>
+            <p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p>
+          </div>
+          <div class="methodology-item">
+            <h3>Define the Research Problem</h3>
+            <p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p>
+          </div>
+          <div class="methodology-item">
+            <h3>Develop the Work</h3>
+            <p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p>
+          </div>
+          <div class="methodology-item">
+            <h3>Review and Strengthen</h3>
+            <p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p>
+          </div>
+        </div>
+        <div class="methodology-footer">
+          <a href="#contact" class="service-link">Explore Our Methodology →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS (moved up, integrated static + cards) -->
+<section class="section-default" id="insights">
+  <div class="container">
+    <div class="insights-heading">
+      <div class="pre-head">INSIGHTS & GUIDANCE</div>
+      <h2>What Strong Research Requires</h2>
+    </div>
+    <div class="principles-split">
+      <div class="principles-left">
+        <p><strong>Research quality is built through alignment, not volume.</strong><br><br>
+        Strong academic work depends on the relationship between the research problem, theoretical framing, methodology, analysis, and interpretation. Weak projects often fail because these elements are disconnected.</p>
+      </div>
+      <div class="principles-right">
+        <ul class="principles-list">
+          <li>Clear and researchable problem definition</li>
+          <li>Alignment between objectives and methodology</li>
+          <li>Coherent chapter-to-chapter argument flow</li>
+          <li>Literature-grounded analytical reasoning</li>
+          <li>Defensible interpretation of findings</li>
+          <li>Academic clarity and institutional compliance</li>
+        </ul>
+      </div>
+    </div>
+    <div class="insights-grid">
+      <article class="insight-card-horizontal">
+        <div class="insight-card-image"><img src="assets/blog-topic-selection.png" alt="Research topic"></div>
+        <div class="insight-card-content">
+          <h3 class="insight-title">Why Most Final-Year Students Start Research Wrong</h3>
+          <p class="insight-excerpt">A significant proportion have topics rejected because they lack thinking structure, not effort.</p>
+          <div class="insight-meta">Odexar • March 2026 • 5 min read</div>
+          <a href="insights/posts/why-final-year-students-start-research-wrong.html" class="insight-link">Read the article →</a>
+        </div>
+      </article>
+      <article class="insight-card-horizontal">
+        <div class="insight-card-image"><img src="assets/blog-proposal.jpg" alt="Research proposal"></div>
+        <div class="insight-card-content">
+          <h3 class="insight-title">How to Structure a Research Proposal That Gets Approved</h3>
+          <p class="insight-excerpt">Supervisors reject proposals because the structure is unclear. Here’s a framework to get approval.</p>
+          <div class="insight-meta">Odexar • April 2026 • 7 min read</div>
+          <a href="insights/posts/structure-research-proposal.html" class="insight-link">Read the article →</a>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="insights/" class="btn-primary" style="background:var(--primary); color:white;">View all insights →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY STUDENTS CHOOSE ODEXAR -->
+<section class="section-alt">
+  <div class="container">
+    <h2 class="section-title">Why Students Choose Odexar</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card"><h3>📐 Structured Thinking</h3><p>We don’t write your project — we teach you how to build one that stands up to scrutiny.</p></div>
+      <div class="benefit-card"><h3>🎓 Supervisor-Friendly</h3><p>Our methodology is designed to reduce rejections and speed up approvals.</p></div>
+      <div class="benefit-card"><h3>🔒 Flexible & Confidential</h3><p>Work at your pace. Everything stays between you and your guide.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-default">
+  <div class="container">
+    <h2 class="section-title">What Students Are Saying</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial"><p>“My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything.”</p><strong>— Blessing A., University of Ibadan</strong></div>
+      <div class="testimonial"><p>“The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted.”</p><strong>— Michael O., LAUTECH</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAR -->
+<section class="cta-bar">
+  <div class="container">
+    <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
+    <p style="color:#E0E7FF; font-size:1.1rem;">Get a free initial review of your topic today.</p>
+    <a href="https://wa.me/2347087589603" class="btn-primary">Start Free Review on WhatsApp →</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-alt" id="contact">
+  <div class="container">
+    <h2 class="section-title">Get in touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info-col">
+        <div class="contact-info-inner">
+          <p class="contact-info-statement">Odexar responds to every enquiry. WhatsApp is the fastest route.</p>
+          <div><span class="contact-info-label">WhatsApp</span><br><a href="https://wa.me/2347087589603" class="contact-info-value">+234 708 758 9603</a></div>
+          <div><span class="contact-info-label">Email</span><br><a href="mailto:contact@odexar.com" class="contact-info-value">contact@odexar.com</a></div>
+          <p class="contact-info-note">All enquiries confidential. Odexar does not produce academic work on behalf of clients.</p>
+        </div>
+      </div>
+      <div class="contact-form-col">
+        <p class="contact-lead">Tell us where you are in your research.</p>
+        <form action="https://formspree.io/f/mreyolek" method="POST" class="contact-form">
+          <div class="contact-form-row">
+            <input type="text" name="full_name" placeholder="Your full name" required>
+            <input type="email" name="email" placeholder="Your email address" required>
+          </div>
+          <select name="support_type" required>
+            <option value="">Area of Support</option>
+            <option>Research Topic Selection</option>
+            <option>Proposal and Methodology</option>
+            <option>Data Analysis Support</option>
+            <option>Academic Editing</option>
+            <option>Statement of Purpose</option>
+            <option>Multiple Areas</option>
+          </select>
+          <textarea name="project_details" placeholder="Describe your project and where you need support" required></textarea>
+          <input type="hidden" name="_subject" value="New Odexar Enquiry">
+          <input type="hidden" name="_next" value="https://odexar.com/">
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="contact-submit">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
       <div class="footer-col">
-        <img src="../assets/odexar-logo-reverse.svg" alt="Odexar" class="footer-logo">
+        <img src="assets/odexar-logo-reverse.svg" alt="Odexar" class="footer-logo">
         <p class="footer-tagline">Structured academic support for university students.</p>
         <div class="footer-social">
           <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
           <a href="#" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2"/></svg></a>
         </div>
       </div>
-      <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="../index.html#services">Research Framing & Structuring</a><a href="../index.html#services">Analytical Interpretation</a><a href="../index.html#services">Scholarly Refinement</a><a href="../index.html#services">Literature Synthesis</a></nav></div>
-      <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="../index.html#methodology">Methodology</a><a href="../insights/">Insights</a><a href="../index.html#contact">Contact</a></nav></div>
+      <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="#services">Research Framing & Structuring</a><a href="#services">Analytical Interpretation</a><a href="#services">Scholarly Refinement</a><a href="#services">Literature Synthesis</a></nav></div>
+      <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#methodology">Methodology</a><a href="insights/">Insights</a><a href="#contact">Contact</a></nav></div>
       <div class="footer-col"><h4 class="footer-col-heading">Contact</h4><div><p><span class="footer-contact-label">Email</span><br><a href="mailto:contact@odexar.com" class="footer-contact-value">contact@odexar.com</a></p><p><span class="footer-contact-label">WhatsApp</span><br><a href="https://wa.me/2347087589603" class="footer-contact-value">+234 708 758 9603</a></p></div><a href="https://wa.me/2347087589603" class="footer-cta-link">Request an initial review →</a></div>
     </div>
   </div>
