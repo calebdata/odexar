@@ -159,7 +159,7 @@
       background: #F0F1EC;
     }
 
-    /* WHAT WE DO (balanced cards) */
+    /* WHAT WE DO (balanced cards) – unchanged */
     .services-heading {
       text-align: left;
       margin-bottom: 3rem;
@@ -237,7 +237,7 @@
       .services-grid { grid-template-columns: 1fr; }
     }
 
-    /* METHODOLOGY */
+    /* METHODOLOGY (unchanged) */
     .methodology-split {
       display: flex;
       gap: 4rem;
@@ -290,7 +290,7 @@
       .methodology-split { flex-direction: column; gap: 2rem; }
     }
 
-    /* INSIGHTS - minimal text‑only list */
+    /* INSIGHTS – MAGAZINE STYLE (3 cards, different sizes) */
     .insights-heading {
       text-align: left;
       margin-bottom: 1rem;
@@ -317,48 +317,162 @@
       border-left: 3px solid var(--accent);
       padding-left: 1rem;
     }
-    .insights-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem;
+    /* Magazine grid */
+    .magazine-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1.2fr 0.8fr;
+      gap: 1.5rem;
+      align-items: stretch;
     }
-    .insights-list li {
-      margin-bottom: 2rem;
+    /* Large feature card */
+    .card-feature {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid #EDF2F7;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
     }
-    .insights-list .post-title {
-      font-size: 1.25rem;
+    .card-feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      border-color: #E2E8F0;
+    }
+    .card-feature-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+    .card-feature-content {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-feature-content h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.8rem;
       font-weight: 700;
+      margin: 0 0 0.75rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
       color: #0F172A;
-      margin: 0 0 0.25rem;
     }
-    .insights-list .post-excerpt {
-      font-size: 0.95rem;
+    .card-feature-content .excerpt {
+      font-size: 1rem;
       color: #475569;
-      margin: 0 0 0.5rem;
       line-height: 1.5;
+      margin-bottom: 1rem;
+      flex-grow: 1;
     }
-    .insights-list .post-meta {
+    .card-feature-content .meta {
       font-size: 0.8rem;
       color: #64748b;
-      display: inline-block;
-      margin-right: 1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
     }
-    .insights-list .post-link {
+    .editorial-line {
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+      margin: 1rem 0 0.5rem;
+    }
+    /* Medium card */
+    .card-medium {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid #EDF2F7;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+    }
+    .card-medium:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .card-medium-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card-medium-content {
+      padding: 1.25rem;
+    }
+    .card-medium-content h4 {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      color: #0F172A;
+    }
+    .card-medium-content .excerpt {
       font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--primary);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      color: #475569;
+      margin-bottom: 0.75rem;
     }
-    .insights-list .post-link:hover {
-      gap: 8px;
-      text-decoration: underline;
+    .card-medium-content .meta {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+    }
+    /* Compact card */
+    .card-compact {
+      background: #fff;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid #EDF2F7;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+    }
+    .card-compact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
+    .card-compact-content {
+      padding: 1rem;
+    }
+    .card-compact-content h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem;
+      color: #0F172A;
+      line-height: 1.3;
+    }
+    .card-compact-content .excerpt {
+      font-size: 0.8rem;
+      color: #475569;
+      margin-bottom: 0.5rem;
+    }
+    .card-compact-content .meta {
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-bottom: 0.5rem;
     }
     .insights-footer {
       text-align: left;
-      margin-top: 1rem;
+      margin-top: 3rem;
+    }
+    /* responsive */
+    @media (max-width: 1000px) {
+      .magazine-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .card-feature-img {
+        height: 200px;
+      }
+      .card-medium-img {
+        height: 180px;
+      }
+      .card-feature-content h3 {
+        font-size: 1.6rem;
+      }
     }
 
     /* OTHER SECTIONS (unchanged) */
@@ -524,7 +638,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – minimal text‑only list -->
+<!-- INSIGHTS – MAGAZINE STYLE -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -534,26 +648,38 @@
     <div class="insights-tagline">
       Research quality is not about volume. It is about alignment between your problem, your methodology, your analysis, and your argument. That is what we work on with you.
     </div>
-    <ul class="insights-list">
-      <li>
-        <div class="post-title">Why Most Final‑Year Students Start Research Wrong</div>
-        <div class="post-excerpt">A significant proportion have topics rejected because they lack thinking structure, not effort.</div>
-        <div class="post-meta">Odexar • March 2026 • 5 min read</div>
-        <a href="insights/posts/why-final-year-students-start-research-wrong.html" class="post-link">Read article →</a>
-      </li>
-      <li>
-        <div class="post-title">How to Structure a Research Proposal That Gets Approved</div>
-        <div class="post-excerpt">Supervisors reject proposals because the structure is unclear. Here’s a framework to get approval.</div>
-        <div class="post-meta">Odexar • April 2026 • 7 min read</div>
-        <a href="insights/posts/structure-research-proposal.html" class="post-link">Read article →</a>
-      </li>
-      <li>
-        <div class="post-title">What Strong Research Requires</div>
-        <div class="post-excerpt">Research quality is determined less by topic selection and more by methodological coherence. Many projects fail at the proposal stage because the relationship between the research problem, objectives, theoretical framing, methodology, and analysis is insufficient.</div>
-        <div class="post-meta">Odexar • May 2026 • 4 min read</div>
-        <a href="#contact" class="post-link">Read article →</a>
-      </li>
-    </ul>
+    <div class="magazine-grid">
+      <!-- Large feature card -->
+      <article class="card-feature">
+        <img src="assets/blog-topic-selection.png" alt="Research topic" class="card-feature-img">
+        <div class="card-feature-content">
+          <div class="editorial-line"></div>
+          <h3>Why Most Final‑Year Students Start Research Wrong</h3>
+          <p class="excerpt">A significant proportion have topics rejected because they lack thinking structure, not effort. This guide reveals the missing framework.</p>
+          <div class="meta">March 2026 • 5 min read</div>
+          <a href="insights/posts/why-final-year-students-start-research-wrong.html" class="service-link">Read full feature →</a>
+        </div>
+      </article>
+      <!-- Medium secondary card -->
+      <article class="card-medium">
+        <img src="assets/blog-proposal.jpg" alt="Research proposal" class="card-medium-img">
+        <div class="card-medium-content">
+          <h4>How to Structure a Research Proposal That Gets Approved</h4>
+          <p class="excerpt">Supervisors reject proposals because the structure is unclear. Here’s a framework to get approval.</p>
+          <div class="meta">April 2026 • 7 min read</div>
+          <a href="insights/posts/structure-research-proposal.html" class="service-link">Read article →</a>
+        </div>
+      </article>
+      <!-- Compact tertiary card -->
+      <article class="card-compact">
+        <div class="card-compact-content">
+          <h5>What Strong Research Requires</h5>
+          <p class="excerpt">Research quality is determined less by topic selection and more by methodological coherence.</p>
+          <div class="meta">May 2026 • 4 min read</div>
+          <a href="#contact" class="service-link">Read note →</a>
+        </div>
+      </article>
+    </div>
     <div class="insights-footer">
       <a href="insights/" class="btn-primary" style="background:var(--primary); color:white;">View all insights →</a>
     </div>
