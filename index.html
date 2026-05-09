@@ -159,7 +159,7 @@
       background: #F0F1EC;
     }
 
-    /* WHAT WE DO - balanced cards */
+    /* WHAT WE DO (balanced cards) */
     .services-heading {
       text-align: left;
       margin-bottom: 3rem;
@@ -200,12 +200,12 @@
       border-color: #E2E8F0;
     }
     .service-card h3 {
-      font-size: 1.2rem;          /* reduced from 1.3rem for balance */
+      font-size: 1.2rem;
       font-weight: 700;
       margin: 0 0 0.75rem;
       color: #0F172A;
       line-height: 1.3;
-      min-height: 2.6rem;          /* ensures all headings occupy same height */
+      min-height: 2.6rem;
     }
     .service-card p {
       font-size: 0.9rem;
@@ -290,10 +290,10 @@
       .methodology-split { flex-direction: column; gap: 2rem; }
     }
 
-    /* INSIGHTS */
+    /* INSIGHTS (left-aligned headings, 3 cards, image on top, tagline) */
     .insights-heading {
       text-align: left;
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
     }
     .insights-heading .pre-head {
       font-size: 0.85rem;
@@ -309,34 +309,93 @@
       margin: 0;
       color: #0F172A;
     }
+    .insights-tagline {
+      margin: 1rem 0 3rem;
+      font-size: 1rem;
+      font-style: italic;
+      color: #475569;
+      max-width: 800px;
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+    }
     .insights-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 48px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
-    .insight-card-horizontal {
+    .insight-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid #EDF2F7;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       display: flex;
-      gap: 24px;
-      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-      padding-bottom: 24px;
+      flex-direction: column;
+      height: 100%;
     }
-    .insight-card-image { width: 100px; height: 100px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
-    .insight-card-image img { width: 100%; height: 100%; object-fit: cover; }
-    .insight-title { font-size: 1.2rem; margin: 0 0 8px; font-weight: 700; }
-    .insight-excerpt { font-size: 0.85rem; color: #475569; margin-bottom: 12px; }
-    .insight-meta { font-size: 0.75rem; color: #64748b; margin-bottom: 8px; }
-    .insight-link { color: var(--primary); font-weight: 600; text-decoration: none; }
+    .insight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: #E2E8F0;
+    }
+    .insight-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .insight-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .insight-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      color: #0F172A;
+    }
+    .insight-excerpt {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0 0 1rem;
+      flex-grow: 1;
+    }
+    .insight-meta {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+    }
+    .insight-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+      margin-top: auto;
+    }
+    .insight-link:hover {
+      gap: 8px;
+      text-decoration: underline;
+    }
     .insights-footer {
       text-align: center;
-      margin-top: 48px;
+      margin-top: 3rem;
+    }
+    @media (max-width: 1000px) {
+      .insights-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 700px) {
       .insights-grid { grid-template-columns: 1fr; }
-      .insight-card-horizontal { flex-direction: column; }
-      .insight-card-image { width: 100%; height: auto; }
     }
 
-    /* Benefits, testimonials, contact, etc. */
+    /* OTHER SECTIONS (unchanged) */
     .section-title {
       font-size: 2.2rem;
       text-align: center;
@@ -462,7 +521,7 @@
   </div>
 </section>
 
-<!-- WHAT WE DO - balanced cards -->
+<!-- WHAT WE DO -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -494,7 +553,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY (tagline removed) -->
+<!-- METHODOLOGY -->
 <section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
@@ -504,22 +563,10 @@
       </div>
       <div class="methodology-right">
         <div class="methodology-list">
-          <div class="methodology-item">
-            <h3>Understand Your Situation</h3>
-            <p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p>
-          </div>
-          <div class="methodology-item">
-            <h3>Define the Research Problem</h3>
-            <p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p>
-          </div>
-          <div class="methodology-item">
-            <h3>Develop the Work</h3>
-            <p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p>
-          </div>
-          <div class="methodology-item">
-            <h3>Review and Strengthen</h3>
-            <p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p>
-          </div>
+          <div class="methodology-item"><h3>Understand Your Situation</h3><p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p></div>
+          <div class="methodology-item"><h3>Define the Research Problem</h3><p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p></div>
+          <div class="methodology-item"><h3>Develop the Work</h3><p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p></div>
+          <div class="methodology-item"><h3>Review and Strengthen</h3><p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p></div>
         </div>
         <div class="methodology-footer">
           <a href="#contact" class="service-link">Explore Our Methodology →</a>
@@ -529,30 +576,45 @@
   </div>
 </section>
 
-<!-- INSIGHTS -->
+<!-- INSIGHTS SECTION (redesigned: left headings, tagline, 3 cards, images on top) -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
-      <div class="pre-head">INSIGHTS & GUIDANCE</div>
-      <h2>From the blog</h2>
+      <div class="pre-head">FROM THE BLOG</div>
+      <h2>Research Insights</h2>
+    </div>
+    <div class="insights-tagline">
+      Research quality is not about volume. It is about alignment between your problem, your methodology, your analysis, and your argument. That is what we work on with you.
     </div>
     <div class="insights-grid">
-      <article class="insight-card-horizontal">
-        <div class="insight-card-image"><img src="assets/blog-topic-selection.png" alt="Research topic"></div>
-        <div class="insight-card-content">
+      <!-- Card 1 -->
+      <article class="insight-card">
+        <img src="assets/blog-topic-selection.png" alt="Research topic" class="insight-image">
+        <div class="insight-content">
           <h3 class="insight-title">Why Most Final-Year Students Start Research Wrong</h3>
           <p class="insight-excerpt">A significant proportion have topics rejected because they lack thinking structure, not effort.</p>
           <div class="insight-meta">Odexar • March 2026 • 5 min read</div>
-          <a href="insights/posts/why-final-year-students-start-research-wrong.html" class="insight-link">Read the article →</a>
+          <a href="insights/posts/why-final-year-students-start-research-wrong.html" class="insight-link">Read article →</a>
         </div>
       </article>
-      <article class="insight-card-horizontal">
-        <div class="insight-card-image"><img src="assets/blog-proposal.jpg" alt="Research proposal"></div>
-        <div class="insight-card-content">
+      <!-- Card 2 -->
+      <article class="insight-card">
+        <img src="assets/blog-proposal.jpg" alt="Research proposal" class="insight-image">
+        <div class="insight-content">
           <h3 class="insight-title">How to Structure a Research Proposal That Gets Approved</h3>
           <p class="insight-excerpt">Supervisors reject proposals because the structure is unclear. Here’s a framework to get approval.</p>
           <div class="insight-meta">Odexar • April 2026 • 7 min read</div>
-          <a href="insights/posts/structure-research-proposal.html" class="insight-link">Read the article →</a>
+          <a href="insights/posts/structure-research-proposal.html" class="insight-link">Read article →</a>
+        </div>
+      </article>
+      <!-- Card 3 (static educational) -->
+      <article class="insight-card">
+        <img src="https://placehold.co/600x400/1E3A8A/white?text=Research+Alignment" alt="Research coherence" class="insight-image">
+        <div class="insight-content">
+          <h3 class="insight-title">What Strong Research Requires</h3>
+          <p class="insight-excerpt">Research quality is determined less by topic selection and more by methodological coherence. Many projects fail at the proposal stage because the relationship between the research problem, objectives, theoretical framing, methodology, and analysis is insufficient.</p>
+          <div class="insight-meta">Odexar • May 2026 • 4 min read</div>
+          <a href="#contact" class="insight-link">Learn more →</a>
         </div>
       </article>
     </div>
