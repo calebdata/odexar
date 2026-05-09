@@ -159,7 +159,7 @@
       background: #F0F1EC;
     }
 
-    /* WHAT WE DO */
+    /* WHAT WE DO - balanced cards */
     .services-heading {
       text-align: left;
       margin-bottom: 3rem;
@@ -190,6 +190,9 @@
       transition: all 0.3s ease;
       border: 1px solid #EDF2F7;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     .service-card:hover {
       transform: translateY(-4px);
@@ -197,16 +200,19 @@
       border-color: #E2E8F0;
     }
     .service-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;          /* reduced from 1.3rem for balance */
       font-weight: 700;
       margin: 0 0 0.75rem;
       color: #0F172A;
+      line-height: 1.3;
+      min-height: 2.6rem;          /* ensures all headings occupy same height */
     }
     .service-card p {
       font-size: 0.9rem;
       color: #475569;
       line-height: 1.5;
-      margin: 0.5rem 0 1rem;
+      margin: 0 0 1rem;
+      flex-grow: 1;
     }
     .service-link {
       font-size: 0.85rem;
@@ -217,6 +223,7 @@
       align-items: center;
       gap: 4px;
       transition: gap 0.2s;
+      margin-top: auto;
     }
     .service-link:hover {
       gap: 8px;
@@ -224,12 +231,13 @@
     }
     @media (max-width: 1000px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .service-card h3 { min-height: auto; }
     }
     @media (max-width: 600px) {
       .services-grid { grid-template-columns: 1fr; }
     }
 
-    /* METHODOLOGY (tagline removed) */
+    /* METHODOLOGY */
     .methodology-split {
       display: flex;
       gap: 4rem;
@@ -454,7 +462,7 @@
   </div>
 </section>
 
-<!-- WHAT WE DO - card titles fixed -->
+<!-- WHAT WE DO - balanced cards -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
