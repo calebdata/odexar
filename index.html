@@ -274,28 +274,30 @@
     .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – adjusted note box (shorter, heading, new text, CTA alignment) */
+    /* INSIGHTS SECTION – "Research Insights" styled like old tagline, "Insight 001" black */
     .insights-heading {
       text-align: left;
-      margin-bottom: 0;
+      margin-bottom: 0.25rem;
     }
     .insights-heading h2 {
-      font-size: 2.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
       font-weight: 600;
-      margin: 0 0 0.25rem 0;
-      color: var(--text-dark);
+      margin: 0 0 0 0;
     }
     .heading-line {
       width: 60px;
       height: 2px;
       background: var(--accent);
-      margin: 0 0 0.25rem 0;
+      margin: 0.25rem 0 1rem 0;
     }
     .insight-tagline {
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: var(--accent);
+      color: var(--text-dark);   /* black instead of accent */
       font-weight: 500;
       margin-bottom: 1.25rem;
     }
@@ -332,7 +334,7 @@
       color: var(--text-dark);
     }
     .insights-cta {
-      margin-top: 0.5rem;  /* reduced space */
+      margin-top: 0.5rem;
       padding-top: 0;
     }
     .insights-cta a {
@@ -356,7 +358,6 @@
       border-radius: 8px;
       display: block;
     }
-    /* Note box – reduced height (tighter padding, heading on its own line) */
     .quick-note-box {
       width: 90%;
       border: 2px solid #CBD5E1;
@@ -613,7 +614,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – adjusted note box -->
+<!-- INSIGHTS SECTION – with restyled headings -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -638,7 +639,6 @@
         </div>
         <div class="insights-image-area">
           <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
-          <!-- Modified note box: shorter, heading, new text -->
           <div class="quick-note-box">
             <span class="quick-note-heading">Quick note</span>
             <p class="quick-note-text">Your topic can be conceptually clear, academically defensible, and approved without repeated restructuring.</p>
