@@ -21,7 +21,7 @@
       background: #F5F5F0;
       color: var(--text-dark);
       line-height: 1.6;
-      font-weight: 500; /* globally sharper text */
+      font-weight: 400; /* normal body weight */
     }
     .container { width: 94%; max-width: 1280px; margin: 0 auto; }
 
@@ -155,7 +155,7 @@
     .section-default { padding: 100px 0; background: #F5F5F0; }
     .section-alt { padding: 100px 0; background: #F0F1EC; }
 
-    /* WHAT WE DO – navy cards, white text */
+    /* WHAT WE DO – soft warm grey cards, normal text weight */
     .services-heading {
       text-align: left;
       margin-bottom: 3rem;
@@ -180,33 +180,32 @@
       gap: 2rem;
     }
     .service-card {
-      background: var(--primary);
-      color: white;
+      background: #F0EFEA; /* warm soft grey, matches palette */
       padding: 1.75rem;
       border-radius: 12px;
       transition: all 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid #E2E0D8;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
       display: flex;
       flex-direction: column;
       height: 100%;
     }
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-      background: #1e40af;
-      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+      border-color: #D1CFC6;
     }
     .service-card h3 {
       font-size: 1.3rem;
       font-weight: 700;
       margin: 0 0 0.75rem;
-      color: white;
+      color: var(--text-dark);
       line-height: 1.3;
     }
     .service-card p {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.85);
+      font-weight: 400;
+      color: var(--text-dark);
       line-height: 1.5;
       margin: 0 0 1rem;
       flex-grow: 1;
@@ -214,7 +213,7 @@
     .service-link {
       font-size: 0.85rem;
       font-weight: 600;
-      color: #CBD5E1;
+      color: var(--primary);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -224,7 +223,6 @@
     }
     .service-link:hover {
       gap: 8px;
-      color: white;
       text-decoration: underline;
     }
     @media (max-width: 1000px) {
@@ -232,7 +230,7 @@
     }
     @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-    /* METHODOLOGY – text colour darkened */
+    /* METHODOLOGY – text weight normal */
     .methodology-split {
       display: flex;
       gap: 4rem;
@@ -267,6 +265,7 @@
     }
     .methodology-item p {
       font-size: 0.95rem;
+      font-weight: 400;
       color: var(--text-dark);
       line-height: 1.5;
       margin: 0;
@@ -275,14 +274,14 @@
     .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – editorial title, larger note box, dark text */
+    /* INSIGHTS SECTION – editorial title, normal weight for section heading? User wants "unbold research insight" */
     .insights-heading {
       text-align: left;
       margin-bottom: 0;
     }
     .insights-heading h2 {
       font-size: 2.5rem;
-      font-weight: 700;
+      font-weight: 600;   /* reduced from 700 to be less bold */
       margin: 0 0 0.25rem 0;
       color: var(--text-dark);
     }
@@ -297,6 +296,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--accent);
+      font-weight: 500;
       margin-bottom: 1.25rem;
     }
     .featured-title {
@@ -326,6 +326,7 @@
     }
     .insights-text p {
       font-size: 0.85rem;
+      font-weight: 400;
       line-height: 1.5;
       margin-bottom: 0.75rem;
       color: var(--text-dark);
@@ -364,6 +365,7 @@
       align-items: center;
       gap: 0.75rem;
       font-size: 0.85rem;
+      font-weight: 400;
       color: var(--text-dark);
       background: transparent;
       margin-left: auto;
@@ -395,7 +397,7 @@
     .highlights-list li { margin-bottom: 1rem; }
     .highlights-list a {
       font-size: 0.9rem;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--text-dark);
       text-decoration: none;
       display: block;
@@ -411,7 +413,7 @@
       .insights-image-area img { height: 240px; }
     }
 
-    /* OTHER SECTIONS – unified dark text */
+    /* OTHER SECTIONS – normal text weight */
     .section-title {
       font-size: 2.2rem;
       text-align: center;
@@ -440,7 +442,11 @@
       border-color: #E2E8F0;
     }
     .benefit-card h3, .testimonial strong {
+      font-weight: 700;
       color: var(--text-dark);
+    }
+    .benefit-card p, .testimonial p {
+      font-weight: 400;
     }
     .testimonials-grid {
       display: grid;
@@ -454,9 +460,9 @@
       gap: 48px;
     }
     .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
-    .contact-info-statement { font-size: 1rem; color: var(--text-dark); }
+    .contact-info-statement { font-size: 1rem; font-weight: 400; color: var(--text-dark); }
     .contact-info-label { font-size: 0.72rem; font-weight: 700; color: var(--primary); text-transform: uppercase; }
-    .contact-info-value { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); text-decoration: none; }
+    .contact-info-value { font-size: 0.95rem; font-weight: 400; color: var(--text-dark); text-decoration: none; }
     .contact-info-note { font-size: 0.78rem; color: #94a3b8; }
     .contact-form { display: flex; flex-direction: column; gap: 16px; }
     .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -466,6 +472,7 @@
       border-radius: 6px;
       width: 100%;
       font-family: inherit;
+      font-weight: 400;
       color: var(--text-dark);
     }
     .contact-submit {
@@ -543,7 +550,7 @@
   </div>
 </section>
 
-<!-- WHAT WE DO – navy cards -->
+<!-- WHAT WE DO – soft warm grey cards -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -596,7 +603,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – with editorial title and larger note box -->
+<!-- INSIGHTS SECTION -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
