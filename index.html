@@ -269,30 +269,31 @@
     .methodology-footer .service-link { font-size: 0.95rem; }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – compact heading, magazine text, 70% note box */
+    /* INSIGHTS SECTION – editorial title on three lines, smaller left note box */
     .insights-heading {
       text-align: left;
-      margin-bottom: 0;               /* compact */
+      margin-bottom: 0;
     }
     .insights-heading h2 {
       font-size: 2.5rem;
       font-weight: 700;
-      margin: 0 0 0.25rem 0;         /* reduced bottom margin */
+      margin: 0 0 0.25rem 0;
       color: #0F172A;
     }
     .heading-line {
       width: 60px;
       height: 2px;
       background: var(--accent);
-      margin: 0 0 0.25rem 0;          /* tight below line */
+      margin: 0 0 0.25rem 0;
     }
     .insight-tagline {
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--accent);
-      margin-bottom: 1.25rem;         /* space between tagline and title */
+      margin-bottom: 1.25rem;
     }
+    /* editorial title: three lines */
     .featured-title {
       font-size: 2rem;
       font-weight: 800;
@@ -319,12 +320,11 @@
       flex-direction: column;
     }
     .insights-text p {
-      font-size: 0.85rem;             /* magazine‑style smaller text */
+      font-size: 0.85rem;
       line-height: 1.5;
       margin-bottom: 0.75rem;
       color: #0F172A;
     }
-    /* no decorative line under first paragraph */
     .insights-cta {
       margin-top: auto;
       padding-top: 1rem;
@@ -341,7 +341,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
-      align-items: flex-start;       /* to allow left alignment of note box */
+      align-items: flex-start;
     }
     .insights-image-area img {
       width: 100%;
@@ -350,21 +350,22 @@
       border-radius: 8px;
       display: block;
     }
+    /* smaller rectangular note box, left-aligned under image */
     .quick-note-box {
-      width: 70%;                    /* 70% of image width */
+      width: 60%;                   /* smaller than before */
       border: 2px solid #CBD5E1;
       border-radius: 8px;
-      padding: 0.75rem 1rem;
+      padding: 0.5rem 0.75rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      font-size: 0.8rem;
+      gap: 0.5rem;
+      font-size: 0.75rem;
       color: #475569;
       background: transparent;
       margin-left: 0;
-      margin-right: auto;            /* left‑aligned */
+      margin-right: auto;
     }
-    .quick-note-box .icon { font-size: 1rem; }
+    .quick-note-box .icon { font-size: 0.9rem; }
     .insights-right { flex: 1; }
     .highlights-box {
       background: repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 24px);
@@ -402,7 +403,7 @@
       .insights-image-area { max-width: 400px; }
       .featured-title { font-size: 1.8rem; }
       .insights-image-area img { height: 240px; }
-      .quick-note-box { width: 80%; }
+      .quick-note-box { width: 70%; }
     }
 
     /* OTHER SECTIONS (unchanged) */
@@ -559,7 +560,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – compact heading, magazine text, 70% note box -->
+<!-- INSIGHTS SECTION – editorial title on three lines, smaller left‑aligned note box -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -571,7 +572,12 @@
       <div class="insights-left">
         <div class="insights-text">
           <div class="insight-tagline">Insight 001</div>
-          <div class="featured-title">Why Research Topics Are Rejected Repeatedly</div>
+          <!-- Editorial title: three lines using <br> -->
+          <div class="featured-title">
+            Why Many Project Topics<br>
+            Are Initially Rejected<br>
+            by Supervisors
+          </div>
           <p>Most final‑year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted.</p>
           <p>This usually happens because the original topic lacks research structure rather than effort. Many proposed topics are too broad, descriptive, or difficult to investigate within the scope of an undergraduate study.</p>
           <div class="insights-cta">
@@ -580,9 +586,10 @@
         </div>
         <div class="insights-image-area">
           <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
+          <!-- smaller rectangular note box, left-aligned, shorter text -->
           <div class="quick-note-box">
             <span class="icon">📓</span>
-            <span><strong>Research Quick Note</strong> – Start with a sharp problem statement. Alignment comes before volume.</span>
+            <span><strong>Quick note</strong> Alignment over volume</span>
           </div>
         </div>
       </div>
