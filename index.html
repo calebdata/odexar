@@ -150,14 +150,8 @@
     }
 
     /* SECTIONS WITH ALTERNATING BACKGROUNDS */
-    .section-default {
-      padding: 100px 0;
-      background: #F5F5F0;
-    }
-    .section-alt {
-      padding: 100px 0;
-      background: #F0F1EC;
-    }
+    .section-default { padding: 100px 0; background: #F5F5F0; }
+    .section-alt { padding: 100px 0; background: #F0F1EC; }
 
     /* WHAT WE DO */
     .services-heading {
@@ -225,17 +219,12 @@
       transition: gap 0.2s;
       margin-top: auto;
     }
-    .service-link:hover {
-      gap: 8px;
-      text-decoration: underline;
-    }
+    .service-link:hover { gap: 8px; text-decoration: underline; }
     @media (max-width: 1000px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
       .service-card h3 { min-height: auto; }
     }
-    @media (max-width: 600px) {
-      .services-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
     /* METHODOLOGY */
     .methodology-split {
@@ -243,9 +232,7 @@
       gap: 4rem;
       align-items: flex-start;
     }
-    .methodology-left {
-      flex: 1;
-    }
+    .methodology-left { flex: 1; }
     .methodology-left .pre-head {
       font-size: 0.85rem;
       letter-spacing: 0.1em;
@@ -260,9 +247,7 @@
       margin: 0;
       color: #0F172A;
     }
-    .methodology-right {
-      flex: 2;
-    }
+    .methodology-right { flex: 2; }
     .methodology-list {
       display: flex;
       flex-direction: column;
@@ -280,26 +265,17 @@
       line-height: 1.5;
       margin: 0;
     }
-    .methodology-footer {
-      margin-top: 2rem;
-    }
-    .methodology-footer .service-link {
-      font-size: 0.95rem;
-    }
-    @media (max-width: 800px) {
-      .methodology-split { flex-direction: column; gap: 2rem; }
-    }
+    .methodology-footer { margin-top: 2rem; }
+    .methodology-footer .service-link { font-size: 0.95rem; }
+    @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – refined with matching heading size, tagline, title inside text column */
-    .insights-wrapper {
-      background: transparent;
-    }
+    /* INSIGHTS SECTION – with correct heading size, tagline, exact article */
     .insights-heading {
       text-align: left;
       margin-bottom: 0.5rem;
     }
     .insights-heading h2 {
-      font-size: 2.5rem;
+      font-size: 2.5rem;          /* same as "What We Do" */
       font-weight: 700;
       margin: 0;
       color: #0F172A;
@@ -317,6 +293,14 @@
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
+    .featured-title {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      color: #0F172A;
+      letter-spacing: -0.01em;
+    }
     .insights-two-column {
       display: flex;
       gap: 4rem;
@@ -333,14 +317,6 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-    }
-    .featured-title {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin: 0 0 1rem;
-      color: #0F172A;
-      letter-spacing: -0.01em;
     }
     .insights-text p {
       font-size: 0.95rem;
@@ -395,20 +371,10 @@
       color: #475569;
       background: transparent;
     }
-    .quick-note-box .icon {
-      font-size: 1rem;
-    }
-    .insights-right {
-      flex: 1;
-    }
+    .quick-note-box .icon { font-size: 1rem; }
+    .insights-right { flex: 1; }
     .highlights-box {
-      background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.03) 0px,
-        rgba(0, 0, 0, 0.03) 1px,
-        transparent 1px,
-        transparent 24px
-      );
+      background: repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 24px);
       border: 1px solid #E2E8F0;
       padding: 1.5rem;
       border-radius: 8px;
@@ -427,9 +393,7 @@
       padding: 0;
       margin: 0;
     }
-    .highlights-list li {
-      margin-bottom: 1rem;
-    }
+    .highlights-list li { margin-bottom: 1rem; }
     .highlights-list a {
       font-size: 0.9rem;
       font-weight: 500;
@@ -438,39 +402,17 @@
       display: block;
       line-height: 1.4;
     }
-    .highlights-list a:hover {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    /* Responsive */
+    .highlights-list a:hover { color: var(--primary); text-decoration: underline; }
     @media (max-width: 1000px) {
-      .insights-two-column {
-        flex-direction: column;
-        gap: 2rem;
-      }
-      .insights-left {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-      .insights-image-area {
-        max-width: 400px;
-      }
-      .featured-title {
-        font-size: 1.8rem;
-      }
-      .insights-image-area img {
-        height: 220px;
-      }
+      .insights-two-column { flex-direction: column; gap: 2rem; }
+      .insights-left { flex-direction: column; gap: 1.5rem; }
+      .insights-image-area { max-width: 400px; }
+      .featured-title { font-size: 1.8rem; }
+      .insights-image-area img { height: 220px; }
     }
 
     /* OTHER SECTIONS (unchanged) */
-    .section-title {
-      font-size: 2.2rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-    }
+    .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 1.5rem; font-weight: 700; }
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -485,11 +427,7 @@
       border: 1px solid #EDF2F7;
       transition: all 0.3s ease;
     }
-    .benefit-card:hover, .testimonial:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-      border-color: #E2E8F0;
-    }
+    .benefit-card:hover, .testimonial:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); border-color: #E2E8F0; }
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -627,8 +565,8 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – with matching heading size, tagline, title inside text column -->
-<section class="section-default insights-wrapper" id="insights">
+<!-- INSIGHTS SECTION – exact article text, heading same as "What We Do" -->
+<section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
       <h2>Research Insights</h2>
@@ -639,9 +577,9 @@
       <div class="insights-left">
         <div class="insights-text">
           <div class="insight-tagline">Insight 001</div>
-          <div class="featured-title">Why Most Final‑Year Students Start Research Wrong</div>
-          <p class="first-para">A significant proportion of research proposals are rejected not because of poor data, but because the problem is unclear and the structure is weak.</p>
-          <p>Students often begin with a topic, not a problem. They skip the critical step of defining a researchable question, leading to misalignment between objectives, methodology, and analysis.</p>
+          <div class="featured-title">Why Research Topics Are Rejected Repeatedly</div>
+          <p class="first-para">Most final‑year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted.</p>
+          <p>This usually happens because the original topic lacks research structure rather than effort. Many proposed topics are too broad, descriptive, or difficult to investigate within the scope of an undergraduate study.</p>
           <p>This article explains the common structural mistakes and provides a framework to build a defensible project from the first page.</p>
           <div class="insights-cta">
             <a href="insights/posts/why-final-year-students-start-research-wrong.html">Read the full insight →</a>
