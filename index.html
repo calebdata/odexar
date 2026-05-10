@@ -159,7 +159,7 @@
       background: #F0F1EC;
     }
 
-    /* WHAT WE DO (balanced cards) */
+    /* WHAT WE DO */
     .services-heading {
       text-align: left;
       margin-bottom: 3rem;
@@ -290,41 +290,39 @@
       .methodology-split { flex-direction: column; gap: 2rem; }
     }
 
-    /* INSIGHTS SECTION – balanced with taller image */
+    /* INSIGHTS SECTION – refined with matching heading size, tagline, title inside text column */
     .insights-wrapper {
       background: transparent;
     }
     .insights-heading {
       text-align: left;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
     .insights-heading h2 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      margin: 0 0 0.5rem;
+      margin: 0;
       color: #0F172A;
     }
     .heading-line {
       width: 60px;
       height: 2px;
       background: var(--accent);
-      margin-top: 0.25rem;
-      margin-bottom: 2rem;
+      margin: 0.5rem 0 1rem;
     }
-    .featured-title {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin: 0 0 1.5rem;
-      color: #0F172A;
-      letter-spacing: -0.01em;
+    .insight-tagline {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
     }
     .insights-two-column {
       display: flex;
       gap: 4rem;
       align-items: stretch;
+      margin-top: 0.5rem;
     }
-    /* Left column: text + image side by side, equal height */
     .insights-left {
       flex: 1.8;
       display: flex;
@@ -333,9 +331,16 @@
     }
     .insights-text {
       flex: 1;
-      font-size: 0.95rem;
       display: flex;
       flex-direction: column;
+    }
+    .featured-title {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      color: #0F172A;
+      letter-spacing: -0.01em;
     }
     .insights-text p {
       font-size: 0.95rem;
@@ -374,7 +379,7 @@
     }
     .insights-image-area img {
       width: 100%;
-      height: 280px;        /* taller image */
+      height: 280px;
       object-fit: cover;
       border-radius: 8px;
       display: block;
@@ -393,7 +398,6 @@
     .quick-note-box .icon {
       font-size: 1rem;
     }
-    /* Right column */
     .insights-right {
       flex: 1;
     }
@@ -623,7 +627,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – balanced with taller image -->
+<!-- INSIGHTS SECTION – with matching heading size, tagline, title inside text column -->
 <section class="section-default insights-wrapper" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -631,11 +635,11 @@
       <div class="heading-line"></div>
     </div>
 
-    <div class="featured-title">Why Most Final‑Year Students Start Research Wrong</div>
-
     <div class="insights-two-column">
       <div class="insights-left">
         <div class="insights-text">
+          <div class="insight-tagline">Insight 001</div>
+          <div class="featured-title">Why Most Final‑Year Students Start Research Wrong</div>
           <p class="first-para">A significant proportion of research proposals are rejected not because of poor data, but because the problem is unclear and the structure is weak.</p>
           <p>Students often begin with a topic, not a problem. They skip the critical step of defining a researchable question, leading to misalignment between objectives, methodology, and analysis.</p>
           <p>This article explains the common structural mistakes and provides a framework to build a defensible project from the first page.</p>
