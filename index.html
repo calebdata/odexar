@@ -269,29 +269,29 @@
     .methodology-footer .service-link { font-size: 0.95rem; }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – adjusted spacing and taller image */
+    /* INSIGHTS SECTION – compact heading, magazine text, 70% note box */
     .insights-heading {
       text-align: left;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;               /* compact */
     }
     .insights-heading h2 {
       font-size: 2.5rem;
       font-weight: 700;
-      margin: 0;
+      margin: 0 0 0.25rem 0;         /* reduced bottom margin */
       color: #0F172A;
     }
     .heading-line {
       width: 60px;
       height: 2px;
       background: var(--accent);
-      margin: 0.5rem 0 1.5rem;   /* increased space after line */
+      margin: 0 0 0.25rem 0;          /* tight below line */
     }
     .insight-tagline {
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--accent);
-      margin-bottom: 1rem;        /* space between tagline and title */
+      margin-bottom: 1.25rem;         /* space between tagline and title */
     }
     .featured-title {
       font-size: 2rem;
@@ -319,29 +319,18 @@
       flex-direction: column;
     }
     .insights-text p {
-      font-size: 0.95rem;
+      font-size: 0.85rem;             /* magazine‑style smaller text */
       line-height: 1.5;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       color: #0F172A;
     }
-    .insights-text .first-para {
-      position: relative;
-      margin-bottom: 1rem;
-    }
-    .insights-text .first-para::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 2px;
-      background: var(--accent);
-      margin-top: 0.5rem;
-    }
+    /* no decorative line under first paragraph */
     .insights-cta {
       margin-top: auto;
       padding-top: 1rem;
     }
     .insights-cta a {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--primary);
       text-decoration: underline;
@@ -352,24 +341,28 @@
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
+      align-items: flex-start;       /* to allow left alignment of note box */
     }
     .insights-image-area img {
       width: 100%;
-      height: 340px;              /* increased from 280px */
+      height: 340px;
       object-fit: cover;
       border-radius: 8px;
       display: block;
     }
     .quick-note-box {
+      width: 70%;                    /* 70% of image width */
       border: 2px solid #CBD5E1;
       border-radius: 8px;
       padding: 0.75rem 1rem;
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #475569;
       background: transparent;
+      margin-left: 0;
+      margin-right: auto;            /* left‑aligned */
     }
     .quick-note-box .icon { font-size: 1rem; }
     .insights-right { flex: 1; }
@@ -409,6 +402,7 @@
       .insights-image-area { max-width: 400px; }
       .featured-title { font-size: 1.8rem; }
       .insights-image-area img { height: 240px; }
+      .quick-note-box { width: 80%; }
     }
 
     /* OTHER SECTIONS (unchanged) */
@@ -565,7 +559,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – adjusted spacing, taller image, removed extra paragraph -->
+<!-- INSIGHTS SECTION – compact heading, magazine text, 70% note box -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -578,9 +572,8 @@
         <div class="insights-text">
           <div class="insight-tagline">Insight 001</div>
           <div class="featured-title">Why Research Topics Are Rejected Repeatedly</div>
-          <p class="first-para">Most final‑year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted.</p>
+          <p>Most final‑year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted.</p>
           <p>This usually happens because the original topic lacks research structure rather than effort. Many proposed topics are too broad, descriptive, or difficult to investigate within the scope of an undergraduate study.</p>
-          <!-- removed the third paragraph -->
           <div class="insights-cta">
             <a href="insights/posts/why-final-year-students-start-research-wrong.html">Read the full insight →</a>
           </div>
