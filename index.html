@@ -290,55 +290,63 @@
       .methodology-split { flex-direction: column; gap: 2rem; }
     }
 
-    /* INSIGHTS SECTION – refined, balanced, taller image area */
+    /* INSIGHTS SECTION – balanced with taller image */
     .insights-wrapper {
       background: transparent;
     }
     .insights-heading {
       text-align: left;
-      margin-bottom: 2rem;
-    }
-    .insights-heading .pre-head {
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-bottom: 1rem;
     }
     .insights-heading h2 {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       font-weight: 700;
-      margin: 0;
+      margin: 0 0 0.5rem;
       color: #0F172A;
+    }
+    .heading-line {
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+      margin-top: 0.25rem;
+      margin-bottom: 2rem;
+    }
+    .featured-title {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 1.5rem;
+      color: #0F172A;
+      letter-spacing: -0.01em;
     }
     .insights-two-column {
       display: flex;
       gap: 4rem;
       align-items: stretch;
     }
-    /* Left column: text (flex) and image area (flex) side by side, equal height */
+    /* Left column: text + image side by side, equal height */
     .insights-left {
       flex: 1.8;
       display: flex;
       gap: 2rem;
-      align-items: flex-start;
+      align-items: stretch;
     }
     .insights-text {
       flex: 1;
-      font-size: 0.9rem;  /* reduced font size for content */
+      font-size: 0.95rem;
+      display: flex;
+      flex-direction: column;
     }
     .insights-text p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       line-height: 1.5;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
       color: #0F172A;
     }
     .insights-text .first-para {
       position: relative;
       margin-bottom: 1rem;
     }
-    /* short line under first paragraph */
     .insights-text .first-para::after {
       content: '';
       display: block;
@@ -348,10 +356,11 @@
       margin-top: 0.5rem;
     }
     .insights-cta {
-      margin-top: 1rem;
+      margin-top: auto;
+      padding-top: 1rem;
     }
     .insights-cta a {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--primary);
       text-decoration: underline;
@@ -362,13 +371,11 @@
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
-      /* make image area taller to balance text height */
-      min-height: 100%;
-      justify-content: flex-start;
     }
     .insights-image-area img {
       width: 100%;
-      height: auto;
+      height: 280px;        /* taller image */
+      object-fit: cover;
       border-radius: 8px;
       display: block;
     }
@@ -379,14 +386,14 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #475569;
       background: transparent;
     }
     .quick-note-box .icon {
       font-size: 1rem;
     }
-    /* Right column – same as before */
+    /* Right column */
     .insights-right {
       flex: 1;
     }
@@ -401,6 +408,7 @@
       border: 1px solid #E2E8F0;
       padding: 1.5rem;
       border-radius: 8px;
+      height: 100%;
     }
     .highlights-box h3 {
       font-size: 1rem;
@@ -443,6 +451,12 @@
       }
       .insights-image-area {
         max-width: 400px;
+      }
+      .featured-title {
+        font-size: 1.8rem;
+      }
+      .insights-image-area img {
+        height: 220px;
       }
     }
 
@@ -609,21 +623,22 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – concise, balanced, taller image area -->
+<!-- INSIGHTS SECTION – balanced with taller image -->
 <section class="section-default insights-wrapper" id="insights">
   <div class="container">
     <div class="insights-heading">
-      <div class="pre-head">FROM THE BLOG</div>
       <h2>Research Insights</h2>
+      <div class="heading-line"></div>
     </div>
 
+    <div class="featured-title">Why Most Final‑Year Students Start Research Wrong</div>
+
     <div class="insights-two-column">
-      <!-- LEFT COLUMN: text + image side by side, equal height -->
       <div class="insights-left">
         <div class="insights-text">
-          <p class="first-para">Weak research rarely starts during data collection. It begins with unclear problems and disconnected thinking.</p>
-          <p>Many proposals fail because the research problem is too broad, objectives misaligned, or methodology disconnected from the question.</p>
-          <p>Strong research is built through clarity of purpose, alignment of components, and disciplined methodological thinking from the start.</p>
+          <p class="first-para">A significant proportion of research proposals are rejected not because of poor data, but because the problem is unclear and the structure is weak.</p>
+          <p>Students often begin with a topic, not a problem. They skip the critical step of defining a researchable question, leading to misalignment between objectives, methodology, and analysis.</p>
+          <p>This article explains the common structural mistakes and provides a framework to build a defensible project from the first page.</p>
           <div class="insights-cta">
             <a href="insights/posts/why-final-year-students-start-research-wrong.html">Read the full insight →</a>
           </div>
@@ -632,12 +647,11 @@
           <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
           <div class="quick-note-box">
             <span class="icon">📓</span>
-            <span><strong>Research Quick Note</strong> – Alignment over volume. Start with a sharp problem statement.</span>
+            <span><strong>Research Quick Note</strong> – Start with a sharp problem statement. Alignment comes before volume.</span>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: line‑fill box with compact highlights -->
       <div class="insights-right">
         <div class="highlights-box">
           <h3>More insights</h3>
