@@ -269,7 +269,7 @@
     .methodology-footer .service-link { font-size: 0.95rem; }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – title with word count hierarchy, note box right‑aligned */
+    /* INSIGHTS SECTION – exact three-line title, 75% note box right‑aligned */
     .insights-heading {
       text-align: left;
       margin-bottom: 0;
@@ -293,7 +293,6 @@
       color: var(--accent);
       margin-bottom: 1.25rem;
     }
-    /* editorial title – same font size for all lines, but different line lengths */
     .featured-title {
       font-size: 2rem;
       font-weight: 800;
@@ -341,7 +340,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
-      align-items: flex-end;   /* moves the note box to the right */
+      align-items: flex-end;
     }
     .insights-image-area img {
       width: 100%;
@@ -350,9 +349,8 @@
       border-radius: 8px;
       display: block;
     }
-    /* note box right‑aligned, smaller width */
     .quick-note-box {
-      width: 60%;
+      width: 75%;
       border: 2px solid #CBD5E1;
       border-radius: 8px;
       padding: 0.5rem 0.75rem;
@@ -363,7 +361,7 @@
       color: #475569;
       background: transparent;
       margin-left: auto;
-      margin-right: 0;           /* aligns to right of parent */
+      margin-right: 0;
     }
     .quick-note-box .icon { font-size: 0.9rem; }
     .insights-right { flex: 1; }
@@ -401,7 +399,7 @@
       .insights-two-column { flex-direction: column; gap: 2rem; }
       .insights-left { flex-direction: column; gap: 1.5rem; }
       .insights-image-area { max-width: 400px; align-items: flex-start; }
-      .quick-note-box { margin-left: 0; width: 70%; }
+      .quick-note-box { margin-left: 0; width: 80%; }
       .featured-title { font-size: 1.8rem; }
       .insights-image-area img { height: 240px; }
     }
@@ -560,7 +558,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – title with word count hierarchy (shortest to longest) and note box right‑aligned -->
+<!-- INSIGHTS SECTION – three‑line title exactly as specified -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -572,11 +570,11 @@
       <div class="insights-left">
         <div class="insights-text">
           <div class="insight-tagline">Insight 001</div>
-          <!-- Title lines: line1 shortest, line2 medium, line3 longest, same font size -->
+          <!-- Title lines: exactly "WHY MANY PROJECT", "TOPICS ARE INITIALLY", "REJECTED BY SUPERVISOR" -->
           <div class="featured-title">
-            Why<br>
-            Many Project Topics<br>
-            Are Initially Rejected by Supervisors
+            WHY MANY PROJECT<br>
+            TOPICS ARE INITIALLY<br>
+            REJECTED BY SUPERVISOR
           </div>
           <p>Most final‑year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted.</p>
           <p>This usually happens because the original topic lacks research structure rather than effort. Many proposed topics are too broad, descriptive, or difficult to investigate within the scope of an undergraduate study.</p>
@@ -586,7 +584,6 @@
         </div>
         <div class="insights-image-area">
           <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
-          <!-- note box right‑aligned -->
           <div class="quick-note-box">
             <span class="icon">📓</span>
             <span><strong>Quick note</strong> Alignment over volume</span>
