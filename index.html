@@ -11,6 +11,7 @@
       --accent: #4A7A9C;
       --charcoal: #1A1E2B;
       --green: #25D366;
+      --text-dark: #1A2C3E;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -18,8 +19,9 @@
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       background: #F5F5F0;
-      color: #0F172A;
+      color: var(--text-dark);
       line-height: 1.6;
+      font-weight: 500; /* globally sharper text */
     }
     .container { width: 94%; max-width: 1280px; margin: 0 auto; }
 
@@ -153,7 +155,7 @@
     .section-default { padding: 100px 0; background: #F5F5F0; }
     .section-alt { padding: 100px 0; background: #F0F1EC; }
 
-    /* WHAT WE DO */
+    /* WHAT WE DO – navy cards, white text */
     .services-heading {
       text-align: left;
       margin-bottom: 3rem;
@@ -170,7 +172,7 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin: 0;
-      color: #0F172A;
+      color: var(--text-dark);
     }
     .services-grid {
       display: grid;
@@ -178,32 +180,33 @@
       gap: 2rem;
     }
     .service-card {
-      background: #fff;
+      background: var(--primary);
+      color: white;
       padding: 1.75rem;
       border-radius: 12px;
       transition: all 0.3s ease;
-      border: 1px solid #EDF2F7;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
       height: 100%;
     }
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-      border-color: #E2E8F0;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      background: #1e40af;
+      border-color: rgba(255,255,255,0.2);
     }
     .service-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 700;
       margin: 0 0 0.75rem;
-      color: #0F172A;
+      color: white;
       line-height: 1.3;
-      min-height: 2.6rem;
     }
     .service-card p {
       font-size: 0.9rem;
-      color: #475569;
+      color: rgba(255,255,255,0.85);
       line-height: 1.5;
       margin: 0 0 1rem;
       flex-grow: 1;
@@ -211,7 +214,7 @@
     .service-link {
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--primary);
+      color: #CBD5E1;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -219,14 +222,17 @@
       transition: gap 0.2s;
       margin-top: auto;
     }
-    .service-link:hover { gap: 8px; text-decoration: underline; }
+    .service-link:hover {
+      gap: 8px;
+      color: white;
+      text-decoration: underline;
+    }
     @media (max-width: 1000px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-      .service-card h3 { min-height: auto; }
     }
     @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-    /* METHODOLOGY */
+    /* METHODOLOGY – text colour darkened */
     .methodology-split {
       display: flex;
       gap: 4rem;
@@ -245,7 +251,7 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin: 0;
-      color: #0F172A;
+      color: var(--text-dark);
     }
     .methodology-right { flex: 2; }
     .methodology-list {
@@ -257,19 +263,19 @@
       font-size: 1.25rem;
       font-weight: 700;
       margin: 0 0 0.35rem;
-      color: #0F172A;
+      color: var(--text-dark);
     }
     .methodology-item p {
       font-size: 0.95rem;
-      color: #475569;
+      color: var(--text-dark);
       line-height: 1.5;
       margin: 0;
     }
     .methodology-footer { margin-top: 2rem; }
-    .methodology-footer .service-link { font-size: 0.95rem; }
+    .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – editorial title as requested, larger note box */
+    /* INSIGHTS SECTION – editorial title, larger note box, dark text */
     .insights-heading {
       text-align: left;
       margin-bottom: 0;
@@ -278,7 +284,7 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin: 0 0 0.25rem 0;
-      color: #0F172A;
+      color: var(--text-dark);
     }
     .heading-line {
       width: 60px;
@@ -298,7 +304,7 @@
       font-weight: 800;
       line-height: 1.2;
       margin: 0 0 1rem;
-      color: #0F172A;
+      color: var(--text-dark);
       letter-spacing: -0.01em;
     }
     .insights-two-column {
@@ -322,7 +328,7 @@
       font-size: 0.85rem;
       line-height: 1.5;
       margin-bottom: 0.75rem;
-      color: #0F172A;
+      color: var(--text-dark);
     }
     .insights-cta {
       margin-top: auto;
@@ -349,17 +355,16 @@
       border-radius: 8px;
       display: block;
     }
-    /* Larger, more spacious note box */
     .quick-note-box {
       width: 90%;
       border: 2px solid #CBD5E1;
       border-radius: 8px;
-      padding: 1rem 1rem;
+      padding: 1rem;
       display: flex;
       align-items: center;
       gap: 0.75rem;
       font-size: 0.85rem;
-      color: #475569;
+      color: var(--text-dark);
       background: transparent;
       margin-left: auto;
       margin-right: 0;
@@ -391,7 +396,7 @@
     .highlights-list a {
       font-size: 0.9rem;
       font-weight: 500;
-      color: #0F172A;
+      color: var(--text-dark);
       text-decoration: none;
       display: block;
       line-height: 1.4;
@@ -406,8 +411,14 @@
       .insights-image-area img { height: 240px; }
     }
 
-    /* OTHER SECTIONS (unchanged) */
-    .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 1.5rem; font-weight: 700; }
+    /* OTHER SECTIONS – unified dark text */
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -421,8 +432,16 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       border: 1px solid #EDF2F7;
       transition: all 0.3s ease;
+      color: var(--text-dark);
     }
-    .benefit-card:hover, .testimonial:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); border-color: #E2E8F0; }
+    .benefit-card:hover, .testimonial:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: #E2E8F0;
+    }
+    .benefit-card h3, .testimonial strong {
+      color: var(--text-dark);
+    }
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -435,9 +454,9 @@
       gap: 48px;
     }
     .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
-    .contact-info-statement { font-size: 1rem; }
+    .contact-info-statement { font-size: 1rem; color: var(--text-dark); }
     .contact-info-label { font-size: 0.72rem; font-weight: 700; color: var(--primary); text-transform: uppercase; }
-    .contact-info-value { font-size: 0.95rem; font-weight: 700; color: #0F172A; text-decoration: none; }
+    .contact-info-value { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); text-decoration: none; }
     .contact-info-note { font-size: 0.78rem; color: #94a3b8; }
     .contact-form { display: flex; flex-direction: column; gap: 16px; }
     .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -447,6 +466,7 @@
       border-radius: 6px;
       width: 100%;
       font-family: inherit;
+      color: var(--text-dark);
     }
     .contact-submit {
       background: var(--primary);
@@ -523,7 +543,7 @@
   </div>
 </section>
 
-<!-- WHAT WE DO -->
+<!-- WHAT WE DO – navy cards -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -531,10 +551,26 @@
       <h2>Core Research Functions</h2>
     </div>
     <div class="services-grid">
-      <div class="service-card"><h3>Research Framing</h3><p>Define the research problem, refine analytical direction, and establish a coherent methodological foundation.</p><a href="#contact" class="service-link">Learn more →</a></div>
-      <div class="service-card"><h3>Analytical Interpretation</h3><p>Structure analytical approaches, interpret findings critically, and present results with methodological clarity.</p><a href="#contact" class="service-link">Learn more →</a></div>
-      <div class="service-card"><h3>Scholarly Refinement</h3><p>Strengthen coherence, improve academic clarity, and align manuscripts with institutional standards and citation requirements.</p><a href="#contact" class="service-link">Learn more →</a></div>
-      <div class="service-card"><h3>Literature Synthesis</h3><p>Identify theoretical gaps, synthesize existing scholarship, and position research within established academic discourse.</p><a href="#contact" class="service-link">Learn more →</a></div>
+      <div class="service-card">
+        <h3>Research Framing</h3>
+        <p>Define the research problem, refine analytical direction, and establish a coherent methodological foundation.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <h3>Analytical Interpretation</h3>
+        <p>Structure analytical approaches, interpret findings critically, and present results with methodological clarity.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <h3>Scholarly Refinement</h3>
+        <p>Strengthen coherence, improve academic clarity, and align manuscripts with institutional standards and citation requirements.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <h3>Literature Synthesis</h3>
+        <p>Identify theoretical gaps, synthesize existing scholarship, and position research within established academic discourse.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -554,13 +590,13 @@
           <div class="methodology-item"><h3>Develop the Work</h3><p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p></div>
           <div class="methodology-item"><h3>Review and Strengthen</h3><p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p></div>
         </div>
-        <div class="methodology-footer"><a href="#contact" class="service-link">Explore Our Methodology →</a></div>
+        <div class="methodology-footer"><a href="#contact" class="service-link" style="color:var(--primary);">Explore Our Methodology →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – title exactly as requested, larger note box with new text -->
+<!-- INSIGHTS SECTION – with editorial title and larger note box -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -572,7 +608,6 @@
       <div class="insights-left">
         <div class="insights-text">
           <div class="insight-tagline">Insight 001</div>
-          <!-- Title: line1 "why", line2 "Project Topics Are", line3 "rejected by supervisors" (case preserved) -->
           <div class="featured-title">
             why<br>
             Project Topics Are<br>
@@ -586,7 +621,6 @@
         </div>
         <div class="insights-image-area">
           <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
-          <!-- Larger, spacious note box with new text -->
           <div class="quick-note-box">
             <span class="icon">📓</span>
             <span><strong>Quick note</strong> Most final‑year students experience topic rejection at least once. They ended up with topics written by their supervisor.</span>
