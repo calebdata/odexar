@@ -269,13 +269,13 @@
     .methodology-footer .service-link { font-size: 0.95rem; }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – with correct heading size, tagline, exact article */
+    /* INSIGHTS SECTION – adjusted spacing and taller image */
     .insights-heading {
       text-align: left;
       margin-bottom: 0.5rem;
     }
     .insights-heading h2 {
-      font-size: 2.5rem;          /* same as "What We Do" */
+      font-size: 2.5rem;
       font-weight: 700;
       margin: 0;
       color: #0F172A;
@@ -284,14 +284,14 @@
       width: 60px;
       height: 2px;
       background: var(--accent);
-      margin: 0.5rem 0 1rem;
+      margin: 0.5rem 0 1.5rem;   /* increased space after line */
     }
     .insight-tagline {
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--accent);
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;        /* space between tagline and title */
     }
     .featured-title {
       font-size: 2rem;
@@ -355,7 +355,7 @@
     }
     .insights-image-area img {
       width: 100%;
-      height: 280px;
+      height: 340px;              /* increased from 280px */
       object-fit: cover;
       border-radius: 8px;
       display: block;
@@ -408,7 +408,7 @@
       .insights-left { flex-direction: column; gap: 1.5rem; }
       .insights-image-area { max-width: 400px; }
       .featured-title { font-size: 1.8rem; }
-      .insights-image-area img { height: 220px; }
+      .insights-image-area img { height: 240px; }
     }
 
     /* OTHER SECTIONS (unchanged) */
@@ -565,7 +565,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – exact article text, heading same as "What We Do" -->
+<!-- INSIGHTS SECTION – adjusted spacing, taller image, removed extra paragraph -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -580,7 +580,7 @@
           <div class="featured-title">Why Research Topics Are Rejected Repeatedly</div>
           <p class="first-para">Most final‑year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted.</p>
           <p>This usually happens because the original topic lacks research structure rather than effort. Many proposed topics are too broad, descriptive, or difficult to investigate within the scope of an undergraduate study.</p>
-          <p>This article explains the common structural mistakes and provides a framework to build a defensible project from the first page.</p>
+          <!-- removed the third paragraph -->
           <div class="insights-cta">
             <a href="insights/posts/why-final-year-students-start-research-wrong.html">Read the full insight →</a>
           </div>
