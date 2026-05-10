@@ -274,7 +274,7 @@
     .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION */
+    /* INSIGHTS SECTION – improved right panel, headline rhythm, narrower body text */
     .insights-heading {
       text-align: left;
       margin-bottom: 0.25rem;
@@ -325,6 +325,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      max-width: 90%;                 /* reduced width for better reading comfort */
     }
     .insights-text p {
       font-size: 0.85rem;
@@ -334,7 +335,7 @@
       color: var(--text-dark);
     }
     .insights-cta {
-      margin-top: auto;      /* pushes CTA to bottom */
+      margin-top: auto;
       padding-top: 0.5rem;
     }
     .insights-cta a {
@@ -358,7 +359,6 @@
       border-radius: 8px;
       display: block;
     }
-    /* Quick note box – with icon, smaller text, bottom aligns with CTA via flex strech */
     .quick-note-box {
       width: 90%;
       border: 2px solid #CBD5E1;
@@ -372,13 +372,8 @@
       margin-right: 0;
       line-height: 1.3;
     }
-    .quick-note-icon {
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .quick-note-content {
-      flex: 1;
-    }
+    .quick-note-icon { font-size: 1rem; flex-shrink: 0; }
+    .quick-note-content { flex: 1; }
     .quick-note-heading {
       font-weight: 700;
       font-size: 0.7rem;
@@ -389,11 +384,12 @@
       display: block;
     }
     .quick-note-text {
-      font-size: 0.7rem;      /* reduced font size */
+      font-size: 0.7rem;
       font-weight: 400;
       color: var(--text-dark);
       margin: 0;
     }
+    /* Right panel – editorial density */
     .insights-right { flex: 1; }
     .highlights-box {
       background: repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 24px);
@@ -415,7 +411,25 @@
       padding: 0;
       margin: 0;
     }
-    .highlights-list li { margin-bottom: 1rem; }
+    .highlights-list li {
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .highlights-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .highlights-category {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
     .highlights-list a {
       font-size: 0.9rem;
       font-weight: 400;
@@ -432,6 +446,7 @@
       .quick-note-box { margin-left: 0; width: 90%; }
       .featured-title { font-size: 1.8rem; }
       .insights-image-area img { height: 240px; }
+      .insights-text { max-width: 100%; }
     }
 
     /* OTHER SECTIONS */
@@ -579,26 +594,10 @@
       <h2>Core Research Functions</h2>
     </div>
     <div class="services-grid">
-      <div class="service-card">
-        <h3>Research Framing</h3>
-        <p>Define the research problem, refine analytical direction, and establish a coherent methodological foundation.</p>
-        <a href="#contact" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card">
-        <h3>Analytical Interpretation</h3>
-        <p>Structure analytical approaches, interpret findings critically, and present results with methodological clarity.</p>
-        <a href="#contact" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card">
-        <h3>Scholarly Refinement</h3>
-        <p>Strengthen coherence, improve academic clarity, and align manuscripts with institutional standards and citation requirements.</p>
-        <a href="#contact" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card">
-        <h3>Literature Synthesis</h3>
-        <p>Identify theoretical gaps, synthesize existing scholarship, and position research within established academic discourse.</p>
-        <a href="#contact" class="service-link">Learn more →</a>
-      </div>
+      <div class="service-card"><h3>Research Framing</h3><p>Define the research problem, refine analytical direction, and establish a coherent methodological foundation.</p><a href="#contact" class="service-link">Learn more →</a></div>
+      <div class="service-card"><h3>Analytical Interpretation</h3><p>Structure analytical approaches, interpret findings critically, and present results with methodological clarity.</p><a href="#contact" class="service-link">Learn more →</a></div>
+      <div class="service-card"><h3>Scholarly Refinement</h3><p>Strengthen coherence, improve academic clarity, and align manuscripts with institutional standards and citation requirements.</p><a href="#contact" class="service-link">Learn more →</a></div>
+      <div class="service-card"><h3>Literature Synthesis</h3><p>Identify theoretical gaps, synthesize existing scholarship, and position research within established academic discourse.</p><a href="#contact" class="service-link">Learn more →</a></div>
     </div>
   </div>
 </section>
@@ -624,7 +623,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – with icon restored, smaller text, bottom alignment -->
+<!-- INSIGHTS SECTION – refined -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -637,9 +636,9 @@
         <div class="insights-text">
           <div class="insight-tagline">Insight 001</div>
           <div class="featured-title">
-            why<br>
-            Project Topics Are<br>
-            rejected by supervisors
+            Why Many Project Topics<br>
+            Are Rejected<br>
+            by Supervisors
           </div>
           <p>Most final‑year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted.</p>
           <p>This usually happens because the original topic lacks research structure rather than effort. Many proposed topics are too broad, descriptive, or difficult to investigate within the scope of an undergraduate study.</p>
@@ -663,9 +662,18 @@
         <div class="highlights-box">
           <h3>More insights</h3>
           <ul class="highlights-list">
-            <li><a href="insights/posts/structure-research-proposal.html">How to structure a research proposal that gets approved</a></li>
-            <li><a href="#contact">What strong research requires (coming soon)</a></li>
-            <li><a href="#contact">Research alignment: problem, method, analysis</a></li>
+            <li>
+              <span class="highlights-category">RESEARCH PROPOSAL</span>
+              <a href="insights/posts/structure-research-proposal.html">How to structure a research proposal that gets approved</a>
+            </li>
+            <li>
+              <span class="highlights-category">METHODOLOGY</span>
+              <a href="#contact">What strong research requires (coming soon)</a>
+            </li>
+            <li>
+              <span class="highlights-category">RESEARCH DESIGN</span>
+              <a href="#contact">Research alignment: problem, method, analysis</a>
+            </li>
           </ul>
         </div>
       </div>
