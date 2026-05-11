@@ -274,7 +274,7 @@
     .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – improved right panel, headline rhythm, narrower body text */
+    /* INSIGHTS SECTION – right panel replaced with vertical image + title cards */
     .insights-heading {
       text-align: left;
       margin-bottom: 0.25rem;
@@ -325,7 +325,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      max-width: 90%;                 /* reduced width for better reading comfort */
+      max-width: 90%;
     }
     .insights-text p {
       font-size: 0.85rem;
@@ -389,56 +389,55 @@
       color: var(--text-dark);
       margin: 0;
     }
-    /* Right panel – editorial density */
-    .insights-right { flex: 1; }
-    .highlights-box {
-      background: repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 24px);
+    /* Right panel – vertical image cards */
+    .insights-right {
+      flex: 1;
+    }
+    .insight-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .insight-card {
+      background: #fff;
       border: 1px solid #E2E8F0;
-      padding: 1.5rem;
       border-radius: 8px;
-      height: 100%;
+      overflow: hidden;
+      transition: all 0.2s;
     }
-    .highlights-box h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-      margin: 0 0 1rem;
+    .insight-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
     }
-    .highlights-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .highlights-list li {
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid #E2E8F0;
-    }
-    .highlights-list li:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    .highlights-category {
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
+    .insight-card-img {
+      width: 100%;
+      height: auto;
       display: block;
-      margin-bottom: 0.25rem;
     }
-    .highlights-list a {
+    .insight-card-content {
+      padding: 0.75rem 1rem 1rem;
+    }
+    .insight-card-category {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    .insight-card-title {
       font-size: 0.9rem;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--text-dark);
       text-decoration: none;
       display: block;
       line-height: 1.4;
     }
-    .highlights-list a:hover { color: var(--primary); text-decoration: underline; }
+    .insight-card-title:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
     @media (max-width: 1000px) {
       .insights-two-column { flex-direction: column; gap: 2rem; }
       .insights-left { flex-direction: column; gap: 1.5rem; }
@@ -623,7 +622,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – refined -->
+<!-- INSIGHTS SECTION – new right panel with three vertical image cards (placeholders) -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -658,23 +657,30 @@
         </div>
       </div>
 
+      <!-- Right column: three vertical image cards -->
       <div class="insights-right">
-        <div class="highlights-box">
-          <h3>More insights</h3>
-          <ul class="highlights-list">
-            <li>
-              <span class="highlights-category">RESEARCH PROPOSAL</span>
-              <a href="insights/posts/structure-research-proposal.html">How to structure a research proposal that gets approved</a>
-            </li>
-            <li>
-              <span class="highlights-category">METHODOLOGY</span>
-              <a href="#contact">What strong research requires (coming soon)</a>
-            </li>
-            <li>
-              <span class="highlights-category">RESEARCH DESIGN</span>
-              <a href="#contact">Research alignment: problem, method, analysis</a>
-            </li>
-          </ul>
+        <div class="insight-cards">
+          <div class="insight-card">
+            <img src="https://placehold.co/600x300/4A7A9C/white?text=Research+Proposal" alt="Research proposal" class="insight-card-img">
+            <div class="insight-card-content">
+              <span class="insight-card-category">RESEARCH PROPOSAL</span>
+              <a href="insights/posts/structure-research-proposal.html" class="insight-card-title">How to structure a research proposal that gets approved</a>
+            </div>
+          </div>
+          <div class="insight-card">
+            <img src="https://placehold.co/600x300/4A7A9C/white?text=Strong+Research" alt="Strong research" class="insight-card-img">
+            <div class="insight-card-content">
+              <span class="insight-card-category">METHODOLOGY</span>
+              <a href="#contact" class="insight-card-title">What strong research requires (coming soon)</a>
+            </div>
+          </div>
+          <div class="insight-card">
+            <img src="https://placehold.co/600x300/4A7A9C/white?text=Research+Alignment" alt="Research alignment" class="insight-card-img">
+            <div class="insight-card-content">
+              <span class="insight-card-category">RESEARCH DESIGN</span>
+              <a href="#contact" class="insight-card-title">Research alignment: problem, method, analysis</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
