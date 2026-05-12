@@ -274,7 +274,7 @@
     .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – square quick note box */
+    /* INSIGHTS SECTION – original rectangular quick note box + tiny image stack */
     .insights-heading {
       text-align: left;
       margin-bottom: 0.25rem;
@@ -359,40 +359,36 @@
       border-radius: 8px;
       display: block;
     }
-    /* SQUARE NOTE BOX */
+    /* RECTANGULAR QUICK NOTE BOX (original style) */
     .quick-note-box {
-      width: 100px;
-      aspect-ratio: 1 / 1;
+      width: 90%;
       border: 2px solid #CBD5E1;
       border-radius: 8px;
-      padding: 0.5rem;
+      padding: 0.6rem 0.8rem;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      align-items: flex-start;
+      gap: 0.6rem;
       background: transparent;
       margin-left: auto;
       margin-right: 0;
-      gap: 0.25rem;
+      line-height: 1.3;
     }
-    .quick-note-icon {
-      font-size: 1.2rem;
-    }
+    .quick-note-icon { font-size: 1rem; flex-shrink: 0; }
+    .quick-note-content { flex: 1; }
     .quick-note-heading {
       font-weight: 700;
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.03em;
       color: var(--accent);
+      margin-bottom: 0.2rem;
       display: block;
     }
     .quick-note-text {
-      font-size: 0.6rem;
+      font-size: 0.7rem;
       font-weight: 400;
       color: var(--text-dark);
       margin: 0;
-      line-height: 1.2;
     }
     /* Right panel – three tiny vertical clickable images */
     .insights-right {
@@ -426,7 +422,7 @@
       .insights-two-column { flex-direction: column; gap: 2rem; }
       .insights-left { flex-direction: column; gap: 1.5rem; }
       .insights-image-area { max-width: 400px; align-items: flex-start; }
-      .quick-note-box { margin-left: 0; width: 80px; }
+      .quick-note-box { margin-left: 0; width: 90%; }
       .featured-title { font-size: 1.8rem; }
       .insights-image-area img { height: 240px; }
       .insights-text { max-width: 100%; }
@@ -607,7 +603,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – square quick note box -->
+<!-- INSIGHTS SECTION – rectangular quick note box + tiny images -->
 <section class="section-default" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -632,12 +628,12 @@
         </div>
         <div class="insights-image-area">
           <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
-          <!-- SQUARE NOTE BOX -->
+          <!-- ORIGINAL RECTANGULAR QUICK NOTE BOX (not square) -->
           <div class="quick-note-box">
-            <div class="quick-note-icon">📓</div>
-            <div>
+            <span class="quick-note-icon">📓</span>
+            <div class="quick-note-content">
               <span class="quick-note-heading">Quick note</span>
-              <p class="quick-note-text">Your topic can be clear, defensible, approved.</p>
+              <p class="quick-note-text">Your topic can be conceptually clear, academically defensible, and approved without repeated restructuring.</p>
             </div>
           </div>
         </div>
