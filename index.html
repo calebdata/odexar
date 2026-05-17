@@ -56,17 +56,14 @@
       text-decoration: none;
     }
 
-    /* HERO – image fully visible (contain), charcoal background for empty space */
+    /* HERO – image fills whole area (cover), no background color, only image */
     .hero {
       position: relative;
       min-height: 90vh;
       display: flex;
       align-items: center;
-      background-color: #1A1E2B; /* charcoal, matches previous hero */
-      background-image: url('assets/image_odexar-hero.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain; /* whole image visible, not cropped */
+      background: url('assets/image_odexar-hero.png') center center / cover no-repeat;
+      /* no fallback color – image fills entire area */
     }
     /* Semi-transparent overlay for text readability */
     .hero::before {
@@ -576,7 +573,7 @@
   </div>
 </header>
 
-<!-- HERO – image fully visible (contain), charcoal background for empty space -->
+<!-- HERO – image fills whole area (cover) -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
