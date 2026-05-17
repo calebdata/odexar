@@ -230,13 +230,15 @@
     }
     @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-    /* METHODOLOGY */
+    /* METHODOLOGY – now 2x2 grid on right side */
     .methodology-split {
       display: flex;
       gap: 4rem;
       align-items: flex-start;
     }
-    .methodology-left { flex: 1; }
+    .methodology-left {
+      flex: 1;
+    }
     .methodology-left .pre-head {
       font-size: 0.85rem;
       letter-spacing: 0.1em;
@@ -251,16 +253,23 @@
       margin: 0;
       color: var(--text-dark);
     }
-    .methodology-right { flex: 2; }
-    .methodology-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
+    .methodology-right {
+      flex: 2;
+    }
+    /* 2x2 grid layout for the four steps */
+    .methodology-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .methodology-item {
+      background: transparent;
+      padding: 0;
     }
     .methodology-item h3 {
       font-size: 1.25rem;
       font-weight: 700;
-      margin: 0 0 0.35rem;
+      margin: 0 0 0.5rem;
       color: var(--text-dark);
     }
     .methodology-item p {
@@ -270,11 +279,26 @@
       line-height: 1.5;
       margin: 0;
     }
-    .methodology-footer { margin-top: 2rem; }
-    .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
-    @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
+    .methodology-footer {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .methodology-footer .service-link {
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+    @media (max-width: 800px) {
+      .methodology-split {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .methodology-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
 
-    /* INSIGHTS SECTION – with separator lines, square boxes increased and moved left */
+    /* INSIGHTS SECTION – (unchanged from previous version) */
     .insights-section {
       position: relative;
       border-top: 1px solid rgba(0,0,0,0.05);
@@ -394,18 +418,17 @@
       color: var(--text-dark);
       margin: 0;
     }
-    /* Right column – square boxes larger (112px) and left-aligned (closer to image) */
     .insights-right {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start;   /* boxes stick to left, closer to image column */
+      align-items: flex-start;
       gap: 0.75rem;
     }
     .square-box {
       display: block;
-      width: 112px;              /* increased by 40% from 80px */
+      width: 112px;
       aspect-ratio: 1 / 1;
       border-radius: 8px;
       text-decoration: none;
@@ -414,7 +437,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 0.75rem;        /* slightly larger text */
+      font-size: 0.75rem;
       font-weight: 600;
       color: white;
       text-transform: uppercase;
@@ -593,7 +616,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY -->
+<!-- METHODOLOGY – now 2x2 grid -->
 <section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
@@ -602,19 +625,33 @@
         <h2>Methodology</h2>
       </div>
       <div class="methodology-right">
-        <div class="methodology-list">
-          <div class="methodology-item"><h3>Understand Your Situation</h3><p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p></div>
-          <div class="methodology-item"><h3>Define the Research Problem</h3><p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p></div>
-          <div class="methodology-item"><h3>Develop the Work</h3><p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p></div>
-          <div class="methodology-item"><h3>Review and Strengthen</h3><p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p></div>
+        <div class="methodology-grid">
+          <div class="methodology-item">
+            <h3>Understand Your Situation</h3>
+            <p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p>
+          </div>
+          <div class="methodology-item">
+            <h3>Define the Research Problem</h3>
+            <p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p>
+          </div>
+          <div class="methodology-item">
+            <h3>Develop the Work</h3>
+            <p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p>
+          </div>
+          <div class="methodology-item">
+            <h3>Review and Strengthen</h3>
+            <p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p>
+          </div>
         </div>
-        <div class="methodology-footer"><a href="#contact" class="service-link" style="color:var(--primary);">Explore Our Methodology →</a></div>
+        <div class="methodology-footer">
+          <a href="#contact" class="service-link" style="color:var(--primary);">Explore Our Methodology →</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – square boxes increased and left-aligned -->
+<!-- INSIGHTS SECTION (unchanged) -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -649,7 +686,6 @@
         </div>
       </div>
 
-      <!-- Right column: three larger square boxes, left-aligned (closer to image) -->
       <div class="insights-right">
         <a href="insights/posts/structure-research-proposal.html" class="square-box square-box-1">
           Research proposal
