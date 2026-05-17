@@ -274,7 +274,13 @@
     .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – original rectangular quick note box + tiny image stack */
+    /* INSIGHTS SECTION – with separator lines and square boxes */
+    .insights-section {
+      position: relative;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      /* keep existing background and padding */
+    }
     .insights-heading {
       text-align: left;
       margin-bottom: 0.25rem;
@@ -359,7 +365,6 @@
       border-radius: 8px;
       display: block;
     }
-    /* RECTANGULAR QUICK NOTE BOX (original style) */
     .quick-note-box {
       width: 90%;
       border: 2px solid #CBD5E1;
@@ -390,34 +395,41 @@
       color: var(--text-dark);
       margin: 0;
     }
-    /* Right panel – three tiny vertical clickable images */
+    /* Right column – three small square boxes stacked vertically */
     .insights-right {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      gap: 0.75rem;
     }
-    .tiny-image-stack {
+    .square-box {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.2s, opacity 0.2s;
       display: flex;
-      flex-direction: column;
-      gap: 6px;
-      width: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 0.5rem;
+      line-height: 1.2;
     }
-    .tiny-image-link {
-      display: block;
-      width: 100%;
-      transition: opacity 0.2s;
+    .square-box:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
     }
-    .tiny-image-link:hover {
-      opacity: 0.8;
-    }
-    .tiny-image {
-      width: 100%;
-      height: 36px;
-      object-fit: cover;
-      border-radius: 4px;
-      display: block;
-    }
+    /* placeholder colours for each box */
+    .square-box-1 { background-color: #4A7A9C; }  /* research proposal */
+    .square-box-2 { background-color: #2C3E50; }  /* strong research */
+    .square-box-3 { background-color: #1E3A8A; }  /* research alignment */
     @media (max-width: 1000px) {
       .insights-two-column { flex-direction: column; gap: 2rem; }
       .insights-left { flex-direction: column; gap: 1.5rem; }
@@ -426,7 +438,7 @@
       .featured-title { font-size: 1.8rem; }
       .insights-image-area img { height: 240px; }
       .insights-text { max-width: 100%; }
-      .tiny-image { height: 48px; }
+      .square-box { font-size: 0.7rem; }
     }
 
     /* OTHER SECTIONS */
@@ -603,8 +615,8 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – rectangular quick note box + tiny images -->
-<section class="section-default" id="insights">
+<!-- INSIGHTS SECTION – with separator lines and square boxes -->
+<section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
       <h2>Research Insights</h2>
@@ -628,7 +640,6 @@
         </div>
         <div class="insights-image-area">
           <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
-          <!-- ORIGINAL RECTANGULAR QUICK NOTE BOX (not square) -->
           <div class="quick-note-box">
             <span class="quick-note-icon">📓</span>
             <div class="quick-note-content">
@@ -639,19 +650,17 @@
         </div>
       </div>
 
-      <!-- Right column: three tiny vertical clickable images -->
+      <!-- Right column: three small square boxes stacked vertically -->
       <div class="insights-right">
-        <div class="tiny-image-stack">
-          <a href="insights/posts/structure-research-proposal.html" class="tiny-image-link">
-            <img src="https://placehold.co/400x36/4A7A9C/white?text=How+to+Structure+a+Research+Proposal" alt="Research proposal" class="tiny-image">
-          </a>
-          <a href="#contact" class="tiny-image-link">
-            <img src="https://placehold.co/400x36/4A7A9C/white?text=What+Strong+Research+Requires" alt="Strong research" class="tiny-image">
-          </a>
-          <a href="#contact" class="tiny-image-link">
-            <img src="https://placehold.co/400x36/4A7A9C/white?text=Research+Alignment+Problem+Method+Analysis" alt="Research alignment" class="tiny-image">
-          </a>
-        </div>
+        <a href="insights/posts/structure-research-proposal.html" class="square-box square-box-1">
+          Research proposal
+        </a>
+        <a href="#contact" class="square-box square-box-2">
+          Strong research
+        </a>
+        <a href="#contact" class="square-box square-box-3">
+          Research alignment
+        </a>
       </div>
     </div>
   </div>
