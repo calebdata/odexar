@@ -274,12 +274,11 @@
     .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – with separator lines and square boxes */
+    /* INSIGHTS SECTION – with separator lines, smaller square boxes */
     .insights-section {
       position: relative;
       border-top: 1px solid rgba(0,0,0,0.05);
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      /* keep existing background and padding */
     }
     .insights-heading {
       text-align: left;
@@ -395,17 +394,18 @@
       color: var(--text-dark);
       margin: 0;
     }
-    /* Right column – three small square boxes stacked vertically */
+    /* Right column – smaller square boxes, centered */
     .insights-right {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      align-items: center;   /* center the boxes */
       gap: 0.75rem;
     }
     .square-box {
       display: block;
-      width: 100%;
+      width: 80px;           /* smaller fixed width */
       aspect-ratio: 1 / 1;
       border-radius: 8px;
       text-decoration: none;
@@ -414,7 +414,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
       color: white;
       text-transform: uppercase;
@@ -426,10 +426,9 @@
       transform: translateY(-2px);
       opacity: 0.9;
     }
-    /* placeholder colours for each box */
-    .square-box-1 { background-color: #4A7A9C; }  /* research proposal */
-    .square-box-2 { background-color: #2C3E50; }  /* strong research */
-    .square-box-3 { background-color: #1E3A8A; }  /* research alignment */
+    .square-box-1 { background-color: #4A7A9C; }
+    .square-box-2 { background-color: #2C3E50; }
+    .square-box-3 { background-color: #1E3A8A; }
     @media (max-width: 1000px) {
       .insights-two-column { flex-direction: column; gap: 2rem; }
       .insights-left { flex-direction: column; gap: 1.5rem; }
@@ -438,7 +437,7 @@
       .featured-title { font-size: 1.8rem; }
       .insights-image-area img { height: 240px; }
       .insights-text { max-width: 100%; }
-      .square-box { font-size: 0.7rem; }
+      .square-box { width: 70px; font-size: 0.6rem; }
     }
 
     /* OTHER SECTIONS */
@@ -615,7 +614,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – with separator lines and square boxes -->
+<!-- INSIGHTS SECTION – with separator lines and smaller square boxes -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -650,7 +649,7 @@
         </div>
       </div>
 
-      <!-- Right column: three small square boxes stacked vertically -->
+      <!-- Right column: three smaller square boxes -->
       <div class="insights-right">
         <a href="insights/posts/structure-research-proposal.html" class="square-box square-box-1">
           Research proposal
