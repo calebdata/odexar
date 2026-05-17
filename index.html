@@ -274,7 +274,7 @@
     .methodology-footer .service-link { font-size: 0.95rem; color: var(--primary); }
     @media (max-width: 800px) { .methodology-split { flex-direction: column; gap: 2rem; } }
 
-    /* INSIGHTS SECTION – with separator lines, smaller square boxes */
+    /* INSIGHTS SECTION – with separator lines, square boxes increased and moved left */
     .insights-section {
       position: relative;
       border-top: 1px solid rgba(0,0,0,0.05);
@@ -394,18 +394,18 @@
       color: var(--text-dark);
       margin: 0;
     }
-    /* Right column – smaller square boxes, centered */
+    /* Right column – square boxes larger (112px) and left-aligned (closer to image) */
     .insights-right {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: center;   /* center the boxes */
+      align-items: flex-start;   /* boxes stick to left, closer to image column */
       gap: 0.75rem;
     }
     .square-box {
       display: block;
-      width: 80px;           /* smaller fixed width */
+      width: 112px;              /* increased by 40% from 80px */
       aspect-ratio: 1 / 1;
       border-radius: 8px;
       text-decoration: none;
@@ -414,7 +414,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 0.7rem;
+      font-size: 0.75rem;        /* slightly larger text */
       font-weight: 600;
       color: white;
       text-transform: uppercase;
@@ -437,7 +437,7 @@
       .featured-title { font-size: 1.8rem; }
       .insights-image-area img { height: 240px; }
       .insights-text { max-width: 100%; }
-      .square-box { width: 70px; font-size: 0.6rem; }
+      .square-box { width: 100px; font-size: 0.7rem; }
     }
 
     /* OTHER SECTIONS */
@@ -614,7 +614,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION – with separator lines and smaller square boxes -->
+<!-- INSIGHTS SECTION – square boxes increased and left-aligned -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -649,7 +649,7 @@
         </div>
       </div>
 
-      <!-- Right column: three smaller square boxes -->
+      <!-- Right column: three larger square boxes, left-aligned (closer to image) -->
       <div class="insights-right">
         <a href="insights/posts/structure-research-proposal.html" class="square-box square-box-1">
           Research proposal
