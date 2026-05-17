@@ -9,7 +9,6 @@
     :root {
       --primary: #1E3A8A;
       --accent: #4A7A9C;
-      --charcoal: #1A1E2B;
       --green: #25D366;
       --text-dark: #1A2C3E;
     }
@@ -57,36 +56,27 @@
       text-decoration: none;
     }
 
-    /* HERO – updated image */
+    /* HERO – full background image, text on top, left-aligned */
     .hero {
-      background: var(--charcoal);
+      position: relative;
       min-height: 90vh;
       display: flex;
       align-items: center;
-      position: relative;
-      overflow: visible;
+      background: url('assets/image_odexar-hero.png') center center / cover no-repeat;
+    }
+    /* Semi-transparent overlay for text readability */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
     }
     .hero-content {
-      max-width: 760px;
-      text-align: left;
       position: relative;
       z-index: 2;
-    }
-    .hero-side-image {
-      position: absolute;
-      right: 8%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 42%;
-      max-width: 520px;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .hero-side-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: brightness(1.08) contrast(1.05);
+      max-width: 760px;
+      text-align: left;
     }
     .hero h1 {
       font-size: 3rem;
@@ -95,15 +85,15 @@
       letter-spacing: -0.01em;
       margin-bottom: 1.75rem;
       color: white;
-      text-shadow: 0 0 8px rgba(255,255,255,0.15);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
     }
     .hero p {
       font-size: 1.25rem;
-      color: #E2E8F0;
+      color: rgba(255,255,255,0.95);
       margin-bottom: 2.5rem;
       max-width: 600px;
       line-height: 1.5;
-      text-shadow: 0 0 4px rgba(0,0,0,0.2);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
     }
     .hero-actions {
       display: flex;
@@ -141,8 +131,13 @@
       background: rgba(255,255,255,0.1);
       transform: translateY(-2px);
     }
+    .trust-badges {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.9);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
     @media (max-width: 850px) {
-      .hero-side-image { display: none; }
       .hero { min-height: auto; padding: 80px 0; }
       .hero h1 { font-size: 2.2rem; }
     }
@@ -458,7 +453,7 @@
       .square-box { width: 100px; font-size: 0.7rem; }
     }
 
-    /* OTHER SECTIONS */
+    /* OTHER SECTIONS (unchanged) */
     .section-title {
       font-size: 2.2rem;
       text-align: center;
@@ -577,7 +572,7 @@
   </div>
 </header>
 
-<!-- HERO – using new image -->
+<!-- HERO – full background image, no separate side image, text left-aligned -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -587,15 +582,12 @@
         <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review</a>
         <a href="#methodology" class="btn-outline">Explore Our Methodology</a>
       </div>
+      <div class="trust-badges">✅ Confidential • Plagiarism‑free • 100% Student-Owned Work</div>
     </div>
-  </div>
-  <div class="hero-side-image">
-    <img src="assets/image_odexar-hero.png" alt="Research illustration"
-         onerror="this.onerror=null; this.src='https://placehold.co/500x400/4A7A9C/white?text=Missing%3A+assets/image_odexar-hero.png'; this.style.border='2px solid red';">
   </div>
 </section>
 
-<!-- WHAT WE DO -->
+<!-- WHAT WE DO (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -611,7 +603,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY (2x2 grid) -->
+<!-- METHODOLOGY (2x2 grid) unchanged -->
 <section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
@@ -621,32 +613,18 @@
       </div>
       <div class="methodology-right">
         <div class="methodology-grid">
-          <div class="methodology-item">
-            <h3>Understand Your Situation</h3>
-            <p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p>
-          </div>
-          <div class="methodology-item">
-            <h3>Define the Research Problem</h3>
-            <p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p>
-          </div>
-          <div class="methodology-item">
-            <h3>Develop the Work</h3>
-            <p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p>
-          </div>
-          <div class="methodology-item">
-            <h3>Review and Strengthen</h3>
-            <p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p>
-          </div>
+          <div class="methodology-item"><h3>Understand Your Situation</h3><p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p></div>
+          <div class="methodology-item"><h3>Define the Research Problem</h3><p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p></div>
+          <div class="methodology-item"><h3>Develop the Work</h3><p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p></div>
+          <div class="methodology-item"><h3>Review and Strengthen</h3><p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p></div>
         </div>
-        <div class="methodology-footer">
-          <a href="#contact" class="service-link" style="color:var(--primary);">Explore Our Methodology →</a>
-        </div>
+        <div class="methodology-footer"><a href="#contact" class="service-link" style="color:var(--primary);">Explore Our Methodology →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INSIGHTS SECTION (unchanged) -->
+<!-- INSIGHTS SECTION unchanged -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -682,21 +660,15 @@
       </div>
 
       <div class="insights-right">
-        <a href="insights/posts/structure-research-proposal.html" class="square-box square-box-1">
-          Research proposal
-        </a>
-        <a href="#contact" class="square-box square-box-2">
-          Strong research
-        </a>
-        <a href="#contact" class="square-box square-box-3">
-          Research alignment
-        </a>
+        <a href="insights/posts/structure-research-proposal.html" class="square-box square-box-1">Research proposal</a>
+        <a href="#contact" class="square-box square-box-2">Strong research</a>
+        <a href="#contact" class="square-box square-box-3">Research alignment</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY STUDENTS CHOOSE ODEXAR -->
+<!-- WHY STUDENTS CHOOSE ODEXAR (unchanged) -->
 <section class="section-alt">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -708,7 +680,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS (unchanged) -->
 <section class="section-default">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -719,7 +691,7 @@
   </div>
 </section>
 
-<!-- CTA BAR -->
+<!-- CTA BAR (unchanged) -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -728,7 +700,7 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT (unchanged) -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -768,7 +740,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (unchanged) -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
