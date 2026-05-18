@@ -11,7 +11,6 @@
       --accent: #4A7A9C;
       --green: #25D366;
       --text-dark: #1A2C3E;
-      --charcoal: #1A1E2B;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -57,36 +56,42 @@
       text-decoration: none;
     }
 
-    /* HERO – original charcoal background + right image */
+    /* HERO – deep midnight navy gradient + analytical grid + radial glow */
     .hero {
-      background: var(--charcoal);
+      position: relative;
       min-height: 90vh;
       display: flex;
       align-items: center;
-      position: relative;
-      overflow: visible;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at 50% 30%, rgba(16,32,63,0.4) 0%, #071120 100%), 
+                  linear-gradient(135deg, #071120 0%, #0B1730 50%, #10203F 100%);
+      /* subtle grid overlay (analytical lines) */
+      background-image: 
+        repeating-linear-gradient(0deg, rgba(74,122,156,0.08) 0px, rgba(74,122,156,0.08) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(90deg, rgba(74,122,156,0.08) 0px, rgba(74,122,156,0.08) 1px, transparent 1px, transparent 60px),
+        radial-gradient(circle at 50% 30%, rgba(16,32,63,0.4) 0%, #071120 100%),
+        linear-gradient(135deg, #071120 0%, #0B1730 50%, #10203F 100%);
+      background-blend-mode: overlay;
+    }
+    /* soft radial glow behind headline (extra depth) */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 60%;
+      background: radial-gradient(ellipse at center, rgba(74,122,156,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
     }
     .hero-content {
-      max-width: 760px;
-      text-align: left;
       position: relative;
       z-index: 2;
-    }
-    .hero-side-image {
-      position: absolute;
-      right: 8%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 42%;
-      max-width: 520px;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .hero-side-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: brightness(1.08) contrast(1.05);
+      max-width: 760px;
+      margin: 0 auto;
     }
     .hero h1 {
       font-size: 3rem;
@@ -95,20 +100,23 @@
       letter-spacing: -0.01em;
       margin-bottom: 1.75rem;
       color: white;
-      text-shadow: 0 0 8px rgba(255,255,255,0.15);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.2);
     }
     .hero p {
       font-size: 1.25rem;
-      color: #E2E8F0;
+      color: rgba(255,255,255,0.9);
       margin-bottom: 2.5rem;
-      max-width: 600px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
       line-height: 1.5;
-      text-shadow: 0 0 4px rgba(0,0,0,0.2);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
     }
     .hero-actions {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .btn-primary {
       background: var(--green);
@@ -144,20 +152,20 @@
     .trust-badges {
       margin-top: 2rem;
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.95);
-      text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+      color: rgba(255,255,255,0.85);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
     }
     @media (max-width: 850px) {
-      .hero-side-image { display: none; }
       .hero { min-height: auto; padding: 80px 0; }
       .hero h1 { font-size: 2.2rem; }
+      .hero::before { width: 100%; height: 50%; }
     }
     @media (max-width: 600px) {
       .hero h1 { font-size: 2rem; margin-bottom: 1.25rem; }
       .hero p { font-size: 1rem; margin-bottom: 1.75rem; }
     }
 
-    /* SECTIONS WITH ALTERNATING BACKGROUNDS */
+    /* SECTIONS WITH ALTERNATING BACKGROUNDS (unchanged) */
     .section-default { padding: 100px 0; background: #F5F5F0; }
     .section-alt { padding: 100px 0; background: #F0F1EC; }
 
@@ -299,7 +307,7 @@
       }
     }
 
-    /* INSIGHTS SECTION – unchanged from final version with separator lines and square boxes */
+    /* INSIGHTS SECTION – unchanged */
     .insights-section {
       position: relative;
       border-top: 1px solid rgba(0,0,0,0.05);
@@ -583,7 +591,7 @@
   </div>
 </header>
 
-<!-- HERO – original charcoal background + right image -->
+<!-- HERO – deep midnight navy gradient + analytical grid + radial glow -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -595,10 +603,6 @@
       </div>
       <div class="trust-badges">✅ Confidential • Plagiarism‑free • 100% Student-Owned Work</div>
     </div>
-  </div>
-  <div class="hero-side-image">
-    <img src="assets/image_odexar-hero.png" alt="Research illustration"
-         onerror="this.onerror=null; this.src='https://placehold.co/500x400/4A7A9C/white?text=Missing%3A+assets/image_odexar-hero.png'; this.style.border='2px solid red';">
   </div>
 </section>
 
