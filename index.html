@@ -11,6 +11,7 @@
       --accent: #4A7A9C;
       --green: #25D366;
       --text-dark: #1A2C3E;
+      --charcoal: #1A1E2B;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -56,28 +57,36 @@
       text-decoration: none;
     }
 
-    /* HERO – image fills whole area (cover), no background color, only image */
+    /* HERO – original charcoal background + right image */
     .hero {
-      position: relative;
+      background: var(--charcoal);
       min-height: 90vh;
       display: flex;
       align-items: center;
-      background: url('assets/image_odexar-hero.png') center center / cover no-repeat;
-      /* no fallback color – image fills entire area */
-    }
-    /* Semi-transparent overlay for text readability */
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      z-index: 1;
+      position: relative;
+      overflow: visible;
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
       max-width: 760px;
       text-align: left;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-side-image {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42%;
+      max-width: 520px;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-side-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(1.08) contrast(1.05);
     }
     .hero h1 {
       font-size: 3rem;
@@ -86,15 +95,15 @@
       letter-spacing: -0.01em;
       margin-bottom: 1.75rem;
       color: white;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      text-shadow: 0 0 8px rgba(255,255,255,0.15);
     }
     .hero p {
       font-size: 1.25rem;
-      color: rgba(255,255,255,0.95);
+      color: #E2E8F0;
       margin-bottom: 2.5rem;
       max-width: 600px;
       line-height: 1.5;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      text-shadow: 0 0 4px rgba(0,0,0,0.2);
     }
     .hero-actions {
       display: flex;
@@ -135,10 +144,11 @@
     .trust-badges {
       margin-top: 2rem;
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.9);
-      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 1px 6px rgba(0,0,0,0.3);
     }
     @media (max-width: 850px) {
+      .hero-side-image { display: none; }
       .hero { min-height: auto; padding: 80px 0; }
       .hero h1 { font-size: 2.2rem; }
     }
@@ -289,7 +299,7 @@
       }
     }
 
-    /* INSIGHTS SECTION – unchanged */
+    /* INSIGHTS SECTION – unchanged from final version with separator lines and square boxes */
     .insights-section {
       position: relative;
       border-top: 1px solid rgba(0,0,0,0.05);
@@ -454,7 +464,7 @@
       .square-box { width: 100px; font-size: 0.7rem; }
     }
 
-    /* OTHER SECTIONS */
+    /* OTHER SECTIONS (unchanged) */
     .section-title {
       font-size: 2.2rem;
       text-align: center;
@@ -573,7 +583,7 @@
   </div>
 </header>
 
-<!-- HERO – image fills whole area (cover) -->
+<!-- HERO – original charcoal background + right image -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -585,6 +595,10 @@
       </div>
       <div class="trust-badges">✅ Confidential • Plagiarism‑free • 100% Student-Owned Work</div>
     </div>
+  </div>
+  <div class="hero-side-image">
+    <img src="assets/image_odexar-hero.png" alt="Research illustration"
+         onerror="this.onerror=null; this.src='https://placehold.co/500x400/4A7A9C/white?text=Missing%3A+assets/image_odexar-hero.png'; this.style.border='2px solid red';">
   </div>
 </section>
 
