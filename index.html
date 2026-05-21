@@ -5,36 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Odexar — Academic Research Support</title>
 <meta name="description" content="Odexar helps final-year students structure clear, supervisor-approved research projects ethically and confidently.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+  
   :root {
-    --bg:           #0C1824;
-    --bg-deep:      #080F18;
-    --green:        #00FF41;
-    --green-soft:   rgba(0, 255, 65, 0.80);
-    --white:        #F5F5F0;
-    --white-80:     rgba(245,245,240,0.80);
-    --white-55:     rgba(245,245,240,0.55);
-    --white-30:     rgba(245,245,240,0.30);
-    --white-15:     rgba(245,245,240,0.15);
-    --white-08:     rgba(245,245,240,0.08);
+    --bg: #0C1824;
+    --bg-deep: #080F18;
+    --green: #00FF41;
+    --green-soft: rgba(0, 255, 65, 0.80);
+    --white: #F5F5F0;
+    --white-80: rgba(245,245,240,0.80);
+    --white-55: rgba(245,245,240,0.55);
+    --white-30: rgba(245,245,240,0.30);
+    --white-15: rgba(245,245,240,0.15);
     --primary: #1E3A8A;
     --accent: #4A7A9C;
     --text-dark: #1A2C3E;
+    --green-cta: #25D366;
   }
 
   html, body {
-    height: 100%;
     font-family: 'DM Sans', sans-serif;
     background: #F5F5F0;
     color: var(--text-dark);
     line-height: 1.6;
-    font-weight: 400;
     scroll-behavior: smooth;
   }
 
@@ -44,30 +43,24 @@
     margin: 0 auto;
   }
 
-  /* ─────────────────────────────────────────
-     NAVBAR (transparent, logo inverted)
-  ───────────────────────────────────────── */
+  /* ─────────────────────────────────────────────
+     NAVBAR (fixed, no overlap)
+  ───────────────────────────────────────────── */
   nav {
-    position: absolute;
+    position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 100;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 52px;
     height: 70px;
-    background: transparent;
+    background: rgba(8, 15, 24, 0.95);
+    backdrop-filter: blur(10px);
   }
 
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
   .nav-logo img {
     height: 32px;
-    width: auto;
     filter: brightness(0) invert(1);
   }
 
@@ -76,51 +69,42 @@
     align-items: center;
     gap: 38px;
     list-style: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
   }
+
   .nav-links a {
     font-size: 14px;
     font-weight: 400;
     color: var(--white-55);
     text-decoration: none;
-    letter-spacing: 0.01em;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--white); }
 
   .nav-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
     padding: 9px 20px;
     background: transparent;
     border: 1px solid var(--white-30);
     border-radius: 6px;
     color: var(--white-80);
     font-size: 14px;
-    font-weight: 400;
     text-decoration: none;
-    transition: border-color 0.2s, color 0.2s;
-    white-space: nowrap;
-    flex-shrink: 0;
+    transition: all 0.2s;
   }
   .nav-cta:hover {
     border-color: var(--green);
     color: var(--green);
   }
 
-  /* ─────────────────────────────────────────
-     HERO (with avatar stack and confidence strip, no top badge)
-  ───────────────────────────────────────── */
+  /* ─────────────────────────────────────────────
+     HERO (fixed spacing, no overlap)
+  ───────────────────────────────────────────── */
   .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 700px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    padding-top: 70px;           /* prevents navbar overlap */
     overflow: hidden;
   }
 
@@ -130,26 +114,14 @@
     background-image: url('assets/image_odexar-hero3.jpg');
     background-size: cover;
     background-position: 70% center;
-    background-repeat: no-repeat;
-    animation: slowZoom 20s ease-out forwards;
-  }
-
-  @keyframes slowZoom {
-    from { transform: scale(1.05); }
-    to   { transform: scale(1.00); }
+    z-index: 1;
   }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      100deg,
-      #080F18 0%,
-      #0C1824 25%,
-      rgba(11,23,35,0.85) 45%,
-      rgba(10,20,32,0.4) 70%,
-      transparent 100%
-    );
+    background: linear-gradient(100deg, #080F18 0%, #0C1824 30%, rgba(11,23,35,0.85) 50%, rgba(10,20,32,0.6) 80%, transparent 100%);
+    z-index: 2;
   }
 
   .hero-content {
@@ -157,97 +129,71 @@
     z-index: 10;
     padding: 0 52px;
     max-width: 620px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.25s forwards;
-  }
-
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
   }
 
   h1 {
     font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-    font-size: clamp(40px, 5.2vw, 62px);
+    font-size: clamp(42px, 5.5vw, 64px);
     font-weight: 400;
-    line-height: 1.10;
+    line-height: 1.08;
     color: var(--white);
     margin-bottom: 22px;
-    letter-spacing: -0.015em;
-  }
-  h1 em {
-    font-style: italic;
-    color: var(--green-soft);
+    letter-spacing: -0.02em;
   }
 
+  h1 em { font-style: italic; color: var(--green-soft); }
+
   .hero-sub {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.72;
+    font-size: 16.5px;
+    line-height: 1.7;
     color: var(--white-55);
-    max-width: 460px;
+    max-width: 480px;
     margin-bottom: 38px;
-    letter-spacing: 0.005em;
   }
 
   .btn-row {
     display: flex;
-    align-items: center;
-    gap: 12px;
     flex-wrap: wrap;
+    gap: 12px;
     margin-bottom: 48px;
   }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 26px;
-    background: var(--white);
-    color: var(--bg-deep);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
+
+  .btn-primary, .btn-secondary {
+    padding: 13px 28px;
+    font-size: 14.5px;
     font-weight: 500;
     border-radius: 6px;
     text-decoration: none;
-    border: 1px solid var(--white);
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    transition: all 0.3s;
+  }
+
+  .btn-primary {
+    background: var(--white);
+    color: var(--bg-deep);
   }
   .btn-primary:hover {
     background: var(--green);
-    border-color: var(--green);
     color: var(--bg-deep);
   }
+
   .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
     background: transparent;
     color: var(--white-80);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    border-radius: 6px;
-    text-decoration: none;
     border: 1px solid var(--white-30);
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
   }
   .btn-secondary:hover {
-    border-color: var(--white-55);
+    border-color: var(--white);
     color: var(--white);
   }
 
-  /* Social proof row (avatar stack) */
+  /* Social Proof */
   .proof-row {
     display: flex;
     align-items: center;
     gap: 16px;
-    opacity: 0;
-    animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.65s forwards;
   }
-  .avatar-stack { display: flex; align-items: center; }
+
+  .avatar-stack { display: flex; }
   .avatar {
     width: 36px; height: 36px;
     border-radius: 50%;
@@ -257,74 +203,69 @@
     align-items: center;
     justify-content: center;
     font-size: 13px;
-    font-weight: 500;
-    color: var(--white);
-    flex-shrink: 0;
+    font-weight: 600;
+    color: white;
   }
   .avatar:first-child { margin-left: 0; }
   .av1 { background: linear-gradient(145deg, #1a4a8e, #0f2d5e); }
   .av2 { background: linear-gradient(145deg, #1a6e4e, #0f4232); }
   .av3 { background: linear-gradient(145deg, #8e4e1a, #5c3210); }
   .av4 { background: linear-gradient(145deg, #5e1a8e, #3a0f5c); }
-  .av5 {
-    background: var(--white-08);
-    border: 2px solid var(--white-15);
-    font-size: 11px;
-    color: var(--white-55);
-  }
+  .av5 { background: rgba(255,255,255,0.1); border-color: var(--white-15); }
+
   .proof-stars {
-    font-size: 14px;
-    letter-spacing: 2px;
     color: #FFB800;
+    font-size: 15px;
+    letter-spacing: 1px;
     margin-bottom: 3px;
   }
   .proof-label {
-    font-size: 12px;
     color: var(--white-55);
-    font-weight: 300;
+    font-size: 13px;
   }
 
-  /* Confidence strip (bottom pills) */
+  /* Confidence strip */
   .confidence-strip {
     position: absolute;
-    bottom: 32px;
+    bottom: 40px;
     left: 52px;
-    right: 52px;
-    z-index: 10;
     display: flex;
     align-items: center;
-    gap: 10px;
-    opacity: 0;
-    animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 1s forwards;
-  }
-  .conf-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 6px 14px;
-    background: var(--white-08);
-    border: 1px solid var(--white-08);
-    border-radius: 999px;
-    backdrop-filter: blur(10px);
-    font-size: 12px;
-    color: var(--white-55);
-    font-weight: 400;
-    white-space: nowrap;
-  }
-  .conf-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--green);
-  }
-  .conf-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, var(--white-15), transparent);
+    gap: 12px;
+    z-index: 10;
   }
 
-  /* ─────────────────────────────────────────
-     REMAINING SECTIONS (unchanged)
-  ───────────────────────────────────────── */
+  .conf-pill {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12.5px;
+    color: var(--white-80);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .conf-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* Pushes the first section down smoothly */
+  #services {
+    margin-top: -40px;
+    position: relative;
+    z-index: 5;
+    background: #F5F5F0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  /* ─────────────────────────────────────────────
+     ORIGINAL SECTIONS (services, methodology, insights, etc.)
+  ───────────────────────────────────────────── */
   .section-default { padding: 100px 0; background: #F5F5F0; }
   .section-alt { padding: 100px 0; background: #F0F1EC; }
 
@@ -719,7 +660,7 @@
 </head>
 <body>
 
-<!-- NAVBAR (transparent, logo inverted) -->
+<!-- NAVBAR (fixed, no overlap) -->
 <nav>
   <a href="/" class="nav-logo">
     <img src="assets/odexar-logo.svg" alt="Odexar">
@@ -730,12 +671,10 @@
     <li><a href="#insights">Insights</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="https://wa.me/2347087589603" class="nav-cta">
-    Start a Project &nbsp;→
-  </a>
+  <a href="https://wa.me/2347087589603" class="nav-cta">Start a Project →</a>
 </nav>
 
-<!-- HERO (no top trust badge, but avatar stack and confidence strip restored) -->
+<!-- HERO (fixed spacing, no stray elements) -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -743,14 +682,9 @@
     <h1>Build a Clear,<br><em>Defensible</em><br>Research Project</h1>
     <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
     <div class="btn-row">
-      <a href="https://wa.me/2347087589603" class="btn-primary">
-        Start Your Project &nbsp;→
-      </a>
-      <a href="#methodology" class="btn-secondary">
-        Explore Our Methodology &nbsp;→
-      </a>
+      <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review →</a>
+      <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
     </div>
-    <!-- Avatar stack (social proof) -->
     <div class="proof-row">
       <div class="avatar-stack">
         <div class="avatar av1">A</div>
@@ -759,22 +693,20 @@
         <div class="avatar av4">F</div>
         <div class="avatar av5">+</div>
       </div>
-      <div class="proof-text">
+      <div>
         <div class="proof-stars">★★★★★</div>
         <div class="proof-label">Trusted by students across Nigerian universities</div>
       </div>
     </div>
   </div>
-  <!-- Confidence strip (bottom) -->
   <div class="confidence-strip">
-    <div class="conf-pill"><span class="conf-dot"></span>Confidential</div>
-    <div class="conf-pill"><span class="conf-dot"></span>Plagiarism-free</div>
-    <div class="conf-pill"><span class="conf-dot"></span>100% Student-Owned Work</div>
-    <div class="conf-line"></div>
+    <div class="conf-pill"><span class="conf-dot"></span> Confidential</div>
+    <div class="conf-pill"><span class="conf-dot"></span> Plagiarism-free</div>
+    <div class="conf-pill"><span class="conf-dot"></span> 100% Student-Owned Work</div>
   </div>
 </section>
 
-<!-- ── REMAINING SECTIONS (unchanged) ── -->
+<!-- SERVICES SECTION -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -790,6 +722,7 @@
   </div>
 </section>
 
+<!-- METHODOLOGY SECTION -->
 <section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
@@ -810,6 +743,7 @@
   </div>
 </section>
 
+<!-- INSIGHTS SECTION -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -851,6 +785,7 @@
   </div>
 </section>
 
+<!-- WHY STUDENTS CHOOSE ODEXAR -->
 <section class="section-alt">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -862,6 +797,7 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
 <section class="section-default">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -872,6 +808,7 @@
   </div>
 </section>
 
+<!-- CTA BAR -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -880,6 +817,7 @@
   </div>
 </section>
 
+<!-- CONTACT SECTION -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -919,6 +857,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
