@@ -24,7 +24,7 @@
     }
     .container { width: 94%; max-width: 1280px; margin: 0 auto; }
 
-    /* HEADER */
+    /* HEADER (unchanged) */
     header {
       background: #ffffff;
       position: sticky;
@@ -56,7 +56,7 @@
       text-decoration: none;
     }
 
-    /* HERO – deep midnight navy gradient + analytical grid + radial glow */
+    /* HERO – full background image, calm academic/research theme */
     .hero {
       position: relative;
       min-height: 90vh;
@@ -64,28 +64,16 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: radial-gradient(circle at 50% 30%, rgba(16,32,63,0.4) 0%, #071120 100%), 
-                  linear-gradient(135deg, #071120 0%, #0B1730 50%, #10203F 100%);
-      /* subtle grid overlay (analytical lines) */
-      background-image: 
-        repeating-linear-gradient(0deg, rgba(74,122,156,0.08) 0px, rgba(74,122,156,0.08) 1px, transparent 1px, transparent 60px),
-        repeating-linear-gradient(90deg, rgba(74,122,156,0.08) 0px, rgba(74,122,156,0.08) 1px, transparent 1px, transparent 60px),
-        radial-gradient(circle at 50% 30%, rgba(16,32,63,0.4) 0%, #071120 100%),
-        linear-gradient(135deg, #071120 0%, #0B1730 50%, #10203F 100%);
-      background-blend-mode: overlay;
+      /* Placeholder image: calm desk with books, laptop, coffee – academic feel */
+      background: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format') center center / cover no-repeat;
     }
-    /* soft radial glow behind headline (extra depth) */
+    /* Dark overlay for text readability */
     .hero::before {
       content: '';
       position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      height: 60%;
-      background: radial-gradient(ellipse at center, rgba(74,122,156,0.12) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
     }
     .hero-content {
       position: relative;
@@ -100,17 +88,17 @@
       letter-spacing: -0.01em;
       margin-bottom: 1.75rem;
       color: white;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
     }
     .hero p {
       font-size: 1.25rem;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.95);
       margin-bottom: 2.5rem;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.5;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
     }
     .hero-actions {
       display: flex;
@@ -152,13 +140,12 @@
     .trust-badges {
       margin-top: 2rem;
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.85);
-      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      color: rgba(255,255,255,0.9);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
     }
     @media (max-width: 850px) {
       .hero { min-height: auto; padding: 80px 0; }
       .hero h1 { font-size: 2.2rem; }
-      .hero::before { width: 100%; height: 50%; }
     }
     @media (max-width: 600px) {
       .hero h1 { font-size: 2rem; margin-bottom: 1.25rem; }
@@ -307,7 +294,7 @@
       }
     }
 
-    /* INSIGHTS SECTION – unchanged */
+    /* INSIGHTS SECTION (unchanged) */
     .insights-section {
       position: relative;
       border-top: 1px solid rgba(0,0,0,0.05);
@@ -591,7 +578,7 @@
   </div>
 </header>
 
-<!-- HERO – deep midnight navy gradient + analytical grid + radial glow -->
+<!-- HERO – full background image, calm academic/research theme (placeholder) -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
