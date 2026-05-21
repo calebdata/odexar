@@ -13,9 +13,7 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    /* Scholar's Midnight — atmospheric dark for hero */
     --bg:           #0C1824;
-    --bg-nav:       rgba(11, 23, 35, 0.72);
     --bg-deep:      #080F18;
     --green:        #00FF41;
     --green-soft:   rgba(0, 255, 65, 0.80);
@@ -25,17 +23,15 @@
     --white-30:     rgba(245,245,240,0.30);
     --white-15:     rgba(245,245,240,0.15);
     --white-08:     rgba(245,245,240,0.08);
-    /* Existing colours for remaining sections */
     --primary: #1E3A8A;
     --accent: #4A7A9C;
-    --green-cta: #25D366;
     --text-dark: #1A2C3E;
   }
 
   html, body {
     height: 100%;
     font-family: 'DM Sans', sans-serif;
-    background: #F5F5F0;  /* body background for after hero */
+    background: #F5F5F0;
     color: var(--text-dark);
     line-height: 1.6;
     font-weight: 400;
@@ -49,7 +45,7 @@
   }
 
   /* ─────────────────────────────────────────
-     NAVBAR (from new hero, adjusted links)
+     NAVBAR (transparent, logo inverted)
   ───────────────────────────────────────── */
   nav {
     position: absolute;
@@ -60,9 +56,7 @@
     justify-content: space-between;
     padding: 0 52px;
     height: 70px;
-    background: var(--bg-nav);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--white-08);
+    background: transparent;
   }
 
   .nav-logo {
@@ -74,9 +68,9 @@
   .nav-logo img {
     height: 32px;
     width: auto;
-    mix-blend-mode: screen;
-    filter: brightness(1.1);
+    filter: brightness(0) invert(1);
   }
+
   .nav-links {
     display: flex;
     align-items: center;
@@ -95,6 +89,7 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--white); }
+
   .nav-cta {
     display: inline-flex;
     align-items: center;
@@ -117,7 +112,7 @@
   }
 
   /* ─────────────────────────────────────────
-     HERO (new design with image overlays)
+     HERO (with avatar stack and confidence strip, no top badge)
   ───────────────────────────────────────── */
   .hero {
     position: relative;
@@ -134,7 +129,7 @@
     inset: 0;
     background-image: url('assets/image_odexar-hero3.jpg');
     background-size: cover;
-    background-position: 60% center;
+    background-position: 70% center;
     background-repeat: no-repeat;
     animation: slowZoom 20s ease-out forwards;
   }
@@ -144,51 +139,15 @@
     to   { transform: scale(1.00); }
   }
 
-  .hero-overlay-main {
+  .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       100deg,
-      #080F18        0%,
-      #0C1824        18%,
-      rgba(11,23,35,0.96) 30%,
-      rgba(10,20,32,0.82) 42%,
-      rgba(9,18,28,0.55)  56%,
-      rgba(8,15,24,0.22)  70%,
-      rgba(8,14,22,0.06)  85%,
-      transparent    100%
-    );
-  }
-
-  .hero-overlay-top {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(5, 10, 18, 0.65) 0%,
-      rgba(5, 10, 18, 0.30) 30%,
-      transparent 55%
-    );
-  }
-
-  .hero-overlay-warmth {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-      ellipse 55% 70% at 72% 58%,
-      rgba(255, 185, 80, 0.07) 0%,
-      transparent 70%
-    );
-  }
-
-  .hero-overlay-bottom {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 160px;
-    background: linear-gradient(
-      to top,
-      rgba(8,15,24,0.75) 0%,
-      rgba(8,15,24,0.30) 50%,
+      #080F18 0%,
+      #0C1824 25%,
+      rgba(11,23,35,0.85) 45%,
+      rgba(10,20,32,0.4) 70%,
       transparent 100%
     );
   }
@@ -197,8 +156,7 @@
     position: relative;
     z-index: 10;
     padding: 0 52px;
-    max-width: 600px;
-    padding-top: 70px;
+    max-width: 620px;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.25s forwards;
@@ -206,34 +164,6 @@
 
   @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
-  }
-
-  .trust-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0;
-    border: 1px solid var(--white-15);
-    border-radius: 999px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    backdrop-filter: blur(8px);
-    background: var(--white-08);
-  }
-  .badge-tag {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    background: var(--white-15);
-    color: var(--white);
-    padding: 5px 12px;
-    border-right: 1px solid var(--white-15);
-  }
-  .badge-text {
-    font-size: 12px;
-    color: var(--white-55);
-    font-weight: 400;
-    padding: 5px 14px;
   }
 
   h1 {
@@ -281,7 +211,6 @@
     text-decoration: none;
     border: 1px solid var(--white);
     cursor: pointer;
-    letter-spacing: 0.01em;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
   }
   .btn-primary:hover {
@@ -310,6 +239,7 @@
     color: var(--white);
   }
 
+  /* Social proof row (avatar stack) */
   .proof-row {
     display: flex;
     align-items: center;
@@ -354,6 +284,7 @@
     font-weight: 300;
   }
 
+  /* Confidence strip (bottom pills) */
   .confidence-strip {
     position: absolute;
     bottom: 32px;
@@ -392,7 +323,7 @@
   }
 
   /* ─────────────────────────────────────────
-     ORIGINAL SECTIONS (services, methodology, insights, contact, footer)
+     REMAINING SECTIONS (unchanged)
   ───────────────────────────────────────── */
   .section-default { padding: 100px 0; background: #F5F5F0; }
   .section-alt { padding: 100px 0; background: #F0F1EC; }
@@ -788,7 +719,7 @@
 </head>
 <body>
 
-<!-- ── NAVBAR (links point to section IDs) ── -->
+<!-- NAVBAR (transparent, logo inverted) -->
 <nav>
   <a href="/" class="nav-logo">
     <img src="assets/odexar-logo.svg" alt="Odexar">
@@ -804,18 +735,11 @@
   </a>
 </nav>
 
-<!-- ── NEW HERO (with your image) ── -->
+<!-- HERO (no top trust badge, but avatar stack and confidence strip restored) -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-overlay-main"></div>
-  <div class="hero-overlay-top"></div>
-  <div class="hero-overlay-warmth"></div>
-  <div class="hero-overlay-bottom"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="trust-badge">
-      <span class="badge-tag">Research Support</span>
-      <span class="badge-text">For undergrad &amp; postgraduate students</span>
-    </div>
     <h1>Build a Clear,<br><em>Defensible</em><br>Research Project</h1>
     <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
     <div class="btn-row">
@@ -826,6 +750,7 @@
         Explore Our Methodology &nbsp;→
       </a>
     </div>
+    <!-- Avatar stack (social proof) -->
     <div class="proof-row">
       <div class="avatar-stack">
         <div class="avatar av1">A</div>
@@ -840,6 +765,7 @@
       </div>
     </div>
   </div>
+  <!-- Confidence strip (bottom) -->
   <div class="confidence-strip">
     <div class="conf-pill"><span class="conf-dot"></span>Confidential</div>
     <div class="conf-pill"><span class="conf-dot"></span>Plagiarism-free</div>
@@ -848,7 +774,7 @@
   </div>
 </section>
 
-<!-- ── REMAINING SECTIONS (original) ── -->
+<!-- ── REMAINING SECTIONS (unchanged) ── -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
