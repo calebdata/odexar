@@ -14,10 +14,9 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    /* Hero deep midnight blue */
+    /* Hero deep midnight blue (used only as fallback) */
     --hero-deep:    #0A1128;
     --hero-mid:     #0C1824;
-    --hero-surface: #111C2E;
     
     /* Accent colors */
     --green:        #00B85C;
@@ -27,10 +26,9 @@
     --gold-light:   rgba(190, 131, 14, 0.12);
     
     /* Backgrounds */
-    --bg-soft-white: #FAFAF7;   /* primary content background */
-    --bg-warm-cream: #F5EDDE;   /* strategic alternating sections */
-    --card-bg:       #FFFFFF;    /* cards on soft white */
-    --card-alt-bg:   #FDF9F0;    /* cards on warm cream */
+    --bg-soft-white: #FAFAF7;
+    --bg-warm-cream: #F5EDDE;
+    --card-bg:       #FFFFFF;
     
     /* Text */
     --text-dark:    #1F2A37;
@@ -62,7 +60,7 @@
     margin: 0 auto;
   }
 
-  /* HEADER — transparent at top, sticky with scroll effect */
+  /* HEADER — sticky, transparent at top, blurred on scroll */
   header {
     position: sticky;
     top: 0;
@@ -101,7 +99,6 @@
     transition: filter 0.2s;
   }
   
-  /* When scrolled, logo might need slight adjustment (optional) */
   header.scrolled .logo img {
     filter: brightness(0.95);
   }
@@ -166,7 +163,7 @@
     border-color: var(--gold);
   }
 
-  /* HERO — deep midnight blue with grain texture */
+  /* HERO — image only, no gradient, no noise */
   .hero {
     position: relative;
     width: 100%;
@@ -175,27 +172,22 @@
     align-items: center;
     overflow: hidden;
     isolation: isolate;
-    background: var(--hero-deep);
   }
 
-  /* Gradient background + subtle noise texture */
   .hero-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 20% 30%, var(--hero-mid), var(--hero-deep));
+    background-image: url('assets/image_odexar-hero4..jpg');
+    background-size: cover;
+    background-position: 88% center;
+    background-repeat: no-repeat;
     z-index: 1;
+    animation: slowZoom 20s ease-out forwards;
   }
-  
-  /* Noise texture overlay for analytical feel */
-  .hero-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: 1;
+
+  @keyframes slowZoom {
+    from { transform: scale(1.04); }
+    to   { transform: scale(1.00); }
   }
 
   .hero-overlay {
@@ -876,7 +868,6 @@
 </footer>
 
 <script>
-  // Sticky header scroll behavior
   const header = document.getElementById('mainHeader');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
