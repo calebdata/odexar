@@ -28,7 +28,7 @@
     --accent:       #4A7A9C;
     --text-dark:    #1A2C3E;
     --green-cta:    #25D366;
-    --header-bg:    #FFF8ED;  /* warm yellowish white (ANU style) */
+    --header-bg:    #FFF8ED;  /* warm yellowish white */
   }
 
   html, body {
@@ -45,18 +45,19 @@
     margin: 0 auto;
   }
 
-  /* HEADER — new warm background, restructured flex */
+  /* HEADER — sticky + new ordering */
   header {
     background: var(--header-bg);
     border-bottom: 1px solid rgba(0,0,0,0.05);
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   .header-inner {
     display: flex;
     align-items: center;
-    justify-content: flex-start;  /* changed from space-between */
+    justify-content: flex-start;
     gap: 2rem;
     padding: 1rem 0;
     max-width: 1280px;
@@ -69,7 +70,54 @@
     width: auto;
   }
 
-  /* New navy client portal button */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin-left: 0;
+  }
+
+  /* larger + bolder nav link text */
+  .nav-links a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  @media (min-width: 1024px) {
+    .nav-links a {
+      font-size: 1.05rem;
+    }
+  }
+  .nav-links a:hover { color: var(--primary); }
+
+  /* both CTAs placed together at the right */
+  .cta-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+  }
+
+  .nav-cta {
+    padding: 8px 20px;
+    background: var(--green-cta);
+    border-radius: 6px;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    opacity: 0.9;
+    white-space: nowrap;
+  }
+  .nav-cta:hover {
+    opacity: 1;
+    background: #1da15a;
+  }
+
   .client-portal-btn {
     display: inline-block;
     padding: 8px 18px;
@@ -88,53 +136,11 @@
     transform: translateY(-1px);
   }
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    list-style: none;
-    margin-left: 0;  /* keeps links close to previous items */
-  }
-
-  /* larger + bolder nav link text */
-  .nav-links a {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  @media (min-width: 1024px) {
-    .nav-links a {
-      font-size: 1.05rem;
-    }
-  }
-  .nav-links a:hover { color: var(--primary); }
-
-  /* existing green CTA — pushed to right with margin-left: auto */
-  .nav-cta {
-    margin-left: auto;
-    padding: 8px 20px;
-    background: var(--green-cta);
-    border-radius: 6px;
-    color: white;
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s;
-    opacity: 0.9;
-    white-space: nowrap;
-  }
-  .nav-cta:hover {
-    opacity: 1;
-    background: #1da15a;
-  }
-
-  /* HERO — height reduced by 15% (85vh) */
+  /* HERO — height 85vh */
   .hero {
     position: relative;
     width: 100%;
-    min-height: 85vh;          /* was 100vh → 85vh (15% reduction) */
+    min-height: 85vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -390,7 +396,7 @@
     border-top: 1px solid rgba(0,0,0,0.05);
   }
 
-  /* remaining sections unchanged */
+  /* all other sections unchanged */
   .section-default { padding: 100px 0; background: #F5F5F0; }
   .section-alt { padding: 100px 0; background: #F0F1EC; }
 
@@ -593,8 +599,7 @@
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
     .nav-links { order: 3; width: 100%; justify-content: center; margin-top: 0.5rem; }
-    .nav-cta { margin-left: 0; }
-    .client-portal-btn { margin-left: 0; }
+    .cta-group { margin-left: 0; width: 100%; justify-content: flex-end; }
     .confidence-strip { left: 0; transform: none; justify-content: center; flex-wrap: wrap; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
@@ -605,30 +610,32 @@
     .contact-form-row { grid-template-columns: 1fr; }
     .hero-text { max-width: 100%; }
     .header-inner { flex-direction: column; align-items: stretch; }
-    .client-portal-btn { align-self: flex-start; }
+    .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER with new layout and client portal -->
+<!-- HEADER with client portal last, sticky -->
 <header>
   <div class="header-inner">
     <div class="logo">
       <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
     </div>
-    <a href="#" class="client-portal-btn">CLIENT PORTAL</a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#methodology">Methodology</a></li>
       <li><a href="#insights">Insights</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="https://wa.me/2347087589603" class="nav-cta">Start a Project →</a>
+    <div class="cta-group">
+      <a href="https://wa.me/2347087589603" class="nav-cta">Start a Project →</a>
+      <a href="#" class="client-portal-btn">CLIENT PORTAL</a>
+    </div>
   </div>
 </header>
 
-<!-- HERO (height 85vh, new background image) -->
+<!-- HERO (height 85vh) -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -667,7 +674,7 @@
   </div>
 </section>
 
-<!-- SERVICES (unchanged) -->
+<!-- SERVICES -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -683,7 +690,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY (unchanged) -->
+<!-- METHODOLOGY -->
 <section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
@@ -704,7 +711,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS (unchanged) -->
+<!-- INSIGHTS -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -740,7 +747,7 @@
   </div>
 </section>
 
-<!-- WHY CHOOSE (unchanged) -->
+<!-- WHY CHOOSE -->
 <section class="section-alt">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -752,7 +759,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS (unchanged) -->
+<!-- TESTIMONIALS -->
 <section class="section-default">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -763,7 +770,7 @@
   </div>
 </section>
 
-<!-- CTA BAR (unchanged) -->
+<!-- CTA BAR -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -772,7 +779,7 @@
   </div>
 </section>
 
-<!-- CONTACT (unchanged) -->
+<!-- CONTACT -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -812,7 +819,7 @@
   </div>
 </section>
 
-<!-- FOOTER (unchanged) -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
