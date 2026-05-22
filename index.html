@@ -14,32 +14,21 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    /* Hero split colours */
     --hero-dark:    #0A1128;
     --hero-mid:     #0C1824;
-    
-    /* Accent colors */
     --green:        #00B85C;
     --green-soft:   rgba(0, 184, 92, 0.85);
     --gold:         #BE830E;
     --gold-soft:    rgba(190, 131, 14, 0.8);
     --gold-light:   rgba(190, 131, 14, 0.12);
-    
-    /* Backgrounds */
     --bg-soft-white: #FAFAF7;
     --bg-warm-cream: #F5EDDE;
     --card-bg:       #FFFFFF;
-    
-    /* Text */
     --text-dark:    #1F2A37;
     --text-muted:   #4A5568;
-    
-    /* Hero text */
     --white:        #F5F5F0;
     --white-80:     rgba(245,245,240,0.80);
     --white-55:     rgba(245,245,240,0.55);
-    
-    /* Footer */
     --footer-dark:  #111111;
   }
 
@@ -57,7 +46,7 @@
     margin: 0 auto;
   }
 
-  /* HEADER — sticky, transparent at top, blurred on scroll (unchanged) */
+  /* HEADER (unchanged) */
   header {
     position: sticky;
     top: 0;
@@ -160,7 +149,7 @@
     border-color: var(--gold);
   }
 
-  /* ================= NEW HERO: SPLIT LAYOUT ================= */
+  /* HERO SPLIT WITH ANGLED / TILTED IMAGE EDGE */
   .hero {
     position: relative;
     width: 100%;
@@ -169,15 +158,14 @@
     overflow: hidden;
   }
 
-  /* Two columns using CSS Grid */
   .hero-split {
     display: grid;
-    grid-template-columns: 1fr 1fr;  /* each takes half, but we will push image further right */
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     position: relative;
   }
 
-  /* LEFT COLUMN: solid dark background with subtle texture (like Healcure) */
+  /* LEFT COLUMN: solid dark with subtle texture */
   .hero-left {
     background: radial-gradient(circle at 20% 30%, var(--hero-mid), var(--hero-dark));
     position: relative;
@@ -188,7 +176,6 @@
     padding: 0 5% 0 8%;
   }
   
-  /* Optional subtle noise for depth (very light, like Healcure) */
   .hero-left::after {
     content: "";
     position: absolute;
@@ -200,36 +187,35 @@
     z-index: 0;
   }
 
-  /* RIGHT COLUMN: image fills the right side, but we want it to start around 55-60% of screen.
-     We'll use a negative margin on the container and clip the overflow, or better: set the image
-     to cover the right column but also shift it leftwards using object-position */
+  /* RIGHT COLUMN: image container with angled clip-path (tilted inward) */
   .hero-right {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+    /* The above creates a diagonal left edge: top-left starts at 12% from left, bottom-left starts at 0% — angled line */
   }
   
   .hero-right img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 30% center;  /* shift the image to show more of its left side, so it blends better */
+    object-position: 30% center;
     display: block;
   }
   
-  /* GRADIENT BLEND: a semi-transparent gradient that sits between the two columns.
-     We can place an overlay on the right side that fades from left column colour to transparent. */
+  /* GRADIENT BLEND OVERLAY: softens the diagonal edge further */
   .hero-blend {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     pointer-events: none;
     z-index: 3;
-    background: linear-gradient(to right, var(--hero-dark) 0%, transparent 30%, transparent 100%);
+    background: linear-gradient(112deg, var(--hero-dark) 0%, transparent 30%, transparent 100%);
     mix-blend-mode: normal;
-    opacity: 0.85;
+    opacity: 0.9;
   }
   
   /* Text container inside left column */
@@ -356,7 +342,7 @@
     font-weight: 300;
   }
   
-  /* Confidence strip (still positioned absolutely within hero, but now we place it across both columns) */
+  /* Confidence strip */
   .confidence-strip {
     position: absolute;
     bottom: 36px;
@@ -400,7 +386,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
   
-  /* Responsive: on smaller screens, stack columns or adjust */
+  /* Responsive: on smaller screens, stack and remove angled clip */
   @media (max-width: 900px) {
     .hero-split {
       grid-template-columns: 1fr;
@@ -410,6 +396,7 @@
       min-height: 60vh;
     }
     .hero-right {
+      clip-path: none;
       min-height: 40vh;
     }
     .hero-right img {
@@ -427,7 +414,7 @@
     }
   }
   
-  /* All remaining sections (unchanged) */
+  /* REMAINING SECTIONS (unchanged) */
   #services {
     position: relative;
     z-index: 5;
@@ -680,10 +667,9 @@
   </div>
 </header>
 
-<!-- HERO SPLIT SECTION (Healcure style) -->
+<!-- HERO SPLIT WITH ANGLED/TILTED IMAGE EDGE (Healcure style) -->
 <section class="hero">
   <div class="hero-split">
-    <!-- LEFT: Solid dark with subtle texture -->
     <div class="hero-left">
       <div class="hero-text-container">
         <h1>Build a Clear, <em>Defensible</em> Research Project</h1>
@@ -708,16 +694,13 @@
       </div>
     </div>
     
-    <!-- RIGHT: Image only, positioned to start at right side -->
     <div class="hero-right">
       <img src="assets/image_odexar-hero4..jpg" alt="Research library" />
     </div>
     
-    <!-- BLEND: Seamless gradient from dark colour to transparent, softening the edge -->
     <div class="hero-blend"></div>
   </div>
   
-  <!-- Confidence strip (same as before) -->
   <div class="confidence-strip">
     <div class="conf-pill"><span class="conf-dot"></span>Confidential</div>
     <div class="conf-pill"><span class="conf-dot"></span>Plagiarism-free</div>
@@ -725,7 +708,7 @@
   </div>
 </section>
 
-<!-- All remaining sections unchanged -->
+<!-- Rest of sections (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
