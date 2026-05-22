@@ -28,7 +28,7 @@
     --accent:       #4A7A9C;
     --text-dark:    #1A2C3E;
     --green-cta:    #25D366;
-    --header-bg:    #F5F5F0;
+    --header-bg:    #FFF8ED;  /* warm yellowish white (ANU style) */
   }
 
   html, body {
@@ -45,7 +45,7 @@
     margin: 0 auto;
   }
 
-  /* HEADER (separate, warm white background) */
+  /* HEADER — new warm background, restructured flex */
   header {
     background: var(--header-bg);
     border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -56,7 +56,8 @@
   .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;  /* changed from space-between */
+    gap: 2rem;
     padding: 1rem 0;
     max-width: 1280px;
     margin: 0 auto;
@@ -68,14 +69,34 @@
     width: auto;
   }
 
+  /* New navy client portal button */
+  .client-portal-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: var(--primary);    /* navy #1E3A8A */
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+  }
+  .client-portal-btn:hover {
+    background: #0f2a5c;
+    transform: translateY(-1px);
+  }
+
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 32px;
     list-style: none;
+    margin-left: 0;  /* keeps links close to previous items */
   }
 
-  /* larger + bolder nav link text (kept) */
+  /* larger + bolder nav link text */
   .nav-links a {
     font-size: 1rem;
     font-weight: 600;
@@ -86,12 +107,13 @@
   @media (min-width: 1024px) {
     .nav-links a {
       font-size: 1.05rem;
-      font-weight: 600;
     }
   }
   .nav-links a:hover { color: var(--primary); }
 
+  /* existing green CTA — pushed to right with margin-left: auto */
   .nav-cta {
+    margin-left: auto;
     padding: 8px 20px;
     background: var(--green-cta);
     border-radius: 6px;
@@ -101,24 +123,24 @@
     text-decoration: none;
     transition: all 0.2s;
     opacity: 0.9;
+    white-space: nowrap;
   }
   .nav-cta:hover {
     opacity: 1;
     background: #1da15a;
   }
 
-  /* HERO - full height restored (100vh) */
+  /* HERO — height reduced by 15% (85vh) */
   .hero {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 85vh;          /* was 100vh → 85vh (15% reduction) */
     display: flex;
     align-items: center;
     overflow: hidden;
     isolation: isolate;
   }
 
-  /* updated background image to new file */
   .hero-bg {
     position: absolute;
     inset: 0;
@@ -188,7 +210,6 @@
     );
   }
 
-  /* Hero content container – matches header width and left edge */
   .hero-content {
     position: relative;
     z-index: 10;
@@ -202,7 +223,6 @@
     animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
   }
 
-  /* Inner wrapper for text width control */
   .hero-text {
     max-width: 720px;
   }
@@ -363,7 +383,6 @@
     background: var(--green);
   }
 
-  /* Smooth transition into first section */
   #services {
     position: relative;
     z-index: 5;
@@ -371,7 +390,7 @@
     border-top: 1px solid rgba(0,0,0,0.05);
   }
 
-  /* ALL OTHER SECTIONS (unchanged) */
+  /* remaining sections unchanged */
   .section-default { padding: 100px 0; background: #F5F5F0; }
   .section-alt { padding: 100px 0; background: #F0F1EC; }
 
@@ -572,28 +591,33 @@
   .cta-bar { background: var(--primary); color: white; padding: 60px 0; text-align: center; }
 
   @media (max-width: 900px) {
-    .header-inner { flex-direction: column; gap: 1rem; padding: 1rem 0; }
-    .nav-links { gap: 24px; }
+    .header-inner { flex-wrap: wrap; gap: 1rem; }
+    .nav-links { order: 3; width: 100%; justify-content: center; margin-top: 0.5rem; }
+    .nav-cta { margin-left: 0; }
+    .client-portal-btn { margin-left: 0; }
     .confidence-strip { left: 0; transform: none; justify-content: center; flex-wrap: wrap; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
-    .nav-links { gap: 16px; }
-    .nav-links a { font-size: 0.95rem; }
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 0.9rem; }
     .contact-form-row { grid-template-columns: 1fr; }
     .hero-text { max-width: 100%; }
+    .header-inner { flex-direction: column; align-items: stretch; }
+    .client-portal-btn { align-self: flex-start; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- HEADER with new layout and client portal -->
 <header>
   <div class="header-inner">
     <div class="logo">
       <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
     </div>
+    <a href="#" class="client-portal-btn">CLIENT PORTAL</a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#methodology">Methodology</a></li>
@@ -604,7 +628,7 @@
   </div>
 </header>
 
-<!-- HERO (full height 100vh, new background image) -->
+<!-- HERO (height 85vh, new background image) -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -643,7 +667,7 @@
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -659,7 +683,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY -->
+<!-- METHODOLOGY (unchanged) -->
 <section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
@@ -680,7 +704,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS -->
+<!-- INSIGHTS (unchanged) -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -716,7 +740,7 @@
   </div>
 </section>
 
-<!-- WHY CHOOSE -->
+<!-- WHY CHOOSE (unchanged) -->
 <section class="section-alt">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -728,7 +752,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS (unchanged) -->
 <section class="section-default">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -739,7 +763,7 @@
   </div>
 </section>
 
-<!-- CTA BAR -->
+<!-- CTA BAR (unchanged) -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -748,7 +772,7 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT (unchanged) -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -788,7 +812,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (unchanged) -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
