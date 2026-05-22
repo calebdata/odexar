@@ -14,26 +14,45 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg:           #0C1824;
-    --bg-deep:      #080F18;
-    --green:        #00FF41;
-    --green-soft:   rgba(0, 255, 65, 0.85);
+    /* Dark hero background */
+    --bg-deep:      #0C1824;
+    --bg-deeper:    #080F18;
+    
+    /* New sophisticated green accent */
+    --green:        #00B85C;
+    --green-soft:   rgba(0, 184, 92, 0.85);
+    --green-light:  rgba(0, 184, 92, 0.15);
+    
+    /* Gold secondary accent */
+    --gold:         #BE830E;
+    --gold-soft:    rgba(190, 131, 14, 0.8);
+    --gold-light:   rgba(190, 131, 14, 0.15);
+    
+    /* Light backgrounds after hero */
+    --bg-light:     #F5EDDE;
+    --card-bg:      #FDF9F0;
+    --section-alt:  #EBE3D4;
+    
+    /* Text colors */
+    --text-dark:    #1F2A37;    /* dark charcoal */
+    --text-light:   #F5F5F0;
+    --text-muted:   rgba(31, 42, 55, 0.7);
+    
+    /* Hero text */
     --white:        #F5F5F0;
     --white-80:     rgba(245,245,240,0.80);
     --white-55:     rgba(245,245,240,0.55);
     --white-30:     rgba(245,245,240,0.30);
     --white-15:     rgba(245,245,240,0.15);
     --white-08:     rgba(245,245,240,0.08);
-    --primary:      #1E3A8A;
-    --accent:       #4A7A9C;
-    --text-dark:    #1A2C3E;
-    --green-cta:    #25D366;
-    --header-bg:    #FFF8ED;  /* warm yellowish white */
+    
+    /* Footer */
+    --footer-dark:  #111111;
   }
 
   html, body {
     font-family: 'DM Sans', sans-serif;
-    background: #F5F5F0;
+    background: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -45,9 +64,9 @@
     margin: 0 auto;
   }
 
-  /* HEADER — sticky + new ordering */
+  /* HEADER — sticky, light cream */
   header {
-    background: var(--header-bg);
+    background: var(--bg-light);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
@@ -75,10 +94,8 @@
     align-items: center;
     gap: 32px;
     list-style: none;
-    margin-left: 0;
   }
 
-  /* larger + bolder nav link text */
   .nav-links a {
     font-size: 1rem;
     font-weight: 600;
@@ -91,9 +108,8 @@
       font-size: 1.05rem;
     }
   }
-  .nav-links a:hover { color: var(--primary); }
+  .nav-links a:hover { color: var(--green); }
 
-  /* both CTAs placed together at the right */
   .cta-group {
     display: flex;
     align-items: center;
@@ -101,42 +117,39 @@
     margin-left: auto;
   }
 
-  .nav-cta {
+  .nav-cta, .client-portal-btn {
     padding: 8px 20px;
-    background: var(--green-cta);
     border-radius: 6px;
-    color: white;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     transition: all 0.2s;
-    opacity: 0.9;
     white-space: nowrap;
   }
+
+  .nav-cta {
+    background: var(--green);
+    color: white;
+    border: 1px solid var(--green);
+  }
   .nav-cta:hover {
-    opacity: 1;
-    background: #1da15a;
+    background: transparent;
+    color: var(--green);
+    border-color: var(--green);
   }
 
   .client-portal-btn {
-    display: inline-block;
-    padding: 8px 18px;
-    background: var(--primary);    /* navy #1E3A8A */
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    transition: background 0.2s, transform 0.1s;
-    white-space: nowrap;
+    background: transparent;
+    color: var(--text-dark);
+    border: 1px solid var(--gold);
   }
   .client-portal-btn:hover {
-    background: #0f2a5c;
-    transform: translateY(-1px);
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
   }
 
-  /* HERO — height 85vh */
+  /* HERO — height 85vh, dark background */
   .hero {
     position: relative;
     width: 100%;
@@ -198,7 +211,7 @@
     z-index: 4;
     background: radial-gradient(
       ellipse 50% 65% at 75% 55%,
-      rgba(255,185,80,0.06) 0%,
+      var(--gold-light) 0%,
       transparent 70%
     );
   }
@@ -277,18 +290,18 @@
     align-items: center;
     gap: 6px;
     padding: 13px 28px;
-    background: var(--white);
-    color: var(--bg-deep);
+    background: var(--green);
+    color: white;
     border-radius: 6px;
     text-decoration: none;
-    border: 1px solid var(--white);
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 1px solid var(--green);
   }
   .btn-primary:hover {
-    background: var(--green);
+    background: transparent;
+    color: var(--green);
     border-color: var(--green);
-    color: var(--bg-deep);
   }
 
   .btn-secondary {
@@ -298,14 +311,15 @@
     padding: 12px 26px;
     background: transparent;
     color: var(--white-80);
-    border: 1px solid var(--white-30);
+    border: 1px solid var(--gold);
     border-radius: 6px;
     text-decoration: none;
-    transition: border-color 0.2s, color 0.2s;
+    transition: all 0.2s;
   }
   .btn-secondary:hover {
-    border-color: var(--white-55);
-    color: var(--white);
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--gold-light);
   }
 
   .proof-row {
@@ -339,7 +353,7 @@
   .av5 { background: var(--white-08); border-color: var(--white-15); font-size: 11px; color: var(--white-55); }
 
   .proof-stars {
-    color: #FFB800;
+    color: var(--gold);
     font-size: 14px;
     letter-spacing: 2px;
     margin-bottom: 3px;
@@ -374,7 +388,7 @@
     gap: 7px;
     padding: 6px 14px;
     background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--gold-light);
     border-radius: 999px;
     backdrop-filter: blur(10px);
     font-size: 12px;
@@ -389,23 +403,23 @@
     background: var(--green);
   }
 
+  /* LIGHT SECTIONS — using #F5EDDE as main background */
   #services {
     position: relative;
     z-index: 5;
-    background: #F5F5F0;
+    background: var(--bg-light);
     border-top: 1px solid rgba(0,0,0,0.05);
   }
 
-  /* all other sections unchanged */
-  .section-default { padding: 100px 0; background: #F5F5F0; }
-  .section-alt { padding: 100px 0; background: #F0F1EC; }
+  .section-default { padding: 100px 0; background: var(--bg-light); }
+  .section-alt { padding: 100px 0; background: var(--section-alt); }
 
   .services-heading { text-align: left; margin-bottom: 3rem; }
   .services-heading .pre-head {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--gold);
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
@@ -417,11 +431,11 @@
     gap: 2rem;
   }
   .service-card {
-    background: #F0EFEA;
+    background: var(--card-bg);
     padding: 1.75rem;
     border-radius: 12px;
     transition: all 0.3s ease;
-    border: 1px solid #E2E0D8;
+    border: 1px solid var(--gold-light);
     box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     display: flex;
     flex-direction: column;
@@ -430,14 +444,14 @@
   .service-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-    border-color: #D1CFC6;
+    border-color: var(--gold);
   }
   .service-card h3 { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.75rem; color: var(--text-dark); }
-  .service-card p { font-size: 0.9rem; color: var(--text-dark); margin: 0 0 1rem; flex-grow: 1; }
+  .service-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0 0 1rem; flex-grow: 1; }
   .service-link {
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--green);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -445,7 +459,7 @@
     transition: gap 0.2s;
     margin-top: auto;
   }
-  .service-link:hover { gap: 8px; text-decoration: underline; }
+  .service-link:hover { gap: 8px; color: var(--gold); text-decoration: underline; }
 
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
@@ -456,7 +470,7 @@
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--gold);
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
@@ -464,7 +478,7 @@
   .methodology-right { flex: 2; }
   .methodology-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   .methodology-item h3 { font-size: 1.25rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--text-dark); }
-  .methodology-item p { font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin: 0; }
+  .methodology-item p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
   .methodology-footer { margin-top: 2rem; }
   @media (max-width: 800px) {
     .methodology-split { flex-direction: column; gap: 2rem; }
@@ -480,16 +494,16 @@
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--gold);
     font-weight: 600;
     margin: 0;
   }
-  .heading-line { width: 60px; height: 2px; background: var(--accent); margin: 0.25rem 0 1rem 0; }
+  .heading-line { width: 60px; height: 2px; background: var(--gold); margin: 0.25rem 0 1rem 0; }
   .insight-tagline {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--text-dark);
+    color: var(--gold);
     font-weight: 500;
     margin-bottom: 1.25rem;
   }
@@ -497,14 +511,15 @@
   .insights-two-column { display: flex; gap: 4rem; align-items: stretch; margin-top: 0.5rem; }
   .insights-left { flex: 1.8; display: flex; gap: 2rem; align-items: stretch; }
   .insights-text { flex: 1; display: flex; flex-direction: column; max-width: 90%; }
-  .insights-text p { font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-dark); }
+  .insights-text p { font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-muted); }
   .insights-cta { margin-top: auto; padding-top: 0.5rem; }
-  .insights-cta a { font-size: 0.85rem; font-weight: 600; color: var(--primary); text-decoration: underline; text-underline-offset: 4px; }
+  .insights-cta a { font-size: 0.85rem; font-weight: 600; color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
+  .insights-cta a:hover { color: var(--gold); }
   .insights-image-area { flex: 0.9; display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; }
   .insights-image-area img { width: 100%; height: 340px; object-fit: cover; border-radius: 8px; display: block; }
   .quick-note-box {
     width: 90%;
-    border: 2px solid #CBD5E1;
+    border: 2px solid var(--gold);
     border-radius: 8px;
     padding: 0.6rem 0.8rem;
     display: flex;
@@ -515,7 +530,7 @@
     line-height: 1.3;
   }
   .quick-note-icon { font-size: 1rem; flex-shrink: 0; }
-  .quick-note-heading { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--accent); margin-bottom: 0.2rem; display: block; }
+  .quick-note-heading { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--gold); margin-bottom: 0.2rem; display: block; }
   .quick-note-text { font-size: 0.7rem; color: var(--text-dark); margin: 0; }
   .insights-right { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; gap: 0.75rem; }
   .square-box {
@@ -531,15 +546,13 @@
     font-size: 0.75rem;
     font-weight: 600;
     color: white;
+    background: var(--green);
     text-transform: uppercase;
     letter-spacing: 0.03em;
     padding: 0.5rem;
     line-height: 1.2;
   }
-  .square-box:hover { transform: translateY(-2px); opacity: 0.9; }
-  .square-box-1 { background-color: #4A7A9C; }
-  .square-box-2 { background-color: #2C3E50; }
-  .square-box-3 { background-color: #1E3A8A; }
+  .square-box:hover { transform: translateY(-2px); opacity: 0.9; background: var(--gold); color: white; }
 
   @media (max-width: 1000px) {
     .insights-two-column { flex-direction: column; gap: 2rem; }
@@ -555,18 +568,18 @@
   .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 1.5rem; font-weight: 700; color: var(--text-dark); }
   .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 40px; }
   .benefit-card, .testimonial {
-    background: white;
+    background: var(--card-bg);
     padding: 32px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    border: 1px solid #EDF2F7;
+    border: 1px solid var(--gold-light);
     transition: all 0.3s ease;
     color: var(--text-dark);
   }
   .benefit-card:hover, .testimonial:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-    border-color: #E2E8F0;
+    border-color: var(--gold);
   }
   .benefit-card h3, .testimonial strong { font-weight: 700; color: var(--text-dark); }
   .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
@@ -575,26 +588,37 @@
   .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; }
   .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
   .contact-info-statement { font-size: 1rem; color: var(--text-dark); }
-  .contact-info-label { font-size: 0.72rem; font-weight: 700; color: var(--primary); text-transform: uppercase; }
-  .contact-info-value { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); text-decoration: none; }
-  .contact-info-note { font-size: 0.78rem; color: #94a3b8; }
+  .contact-info-label { font-size: 0.72rem; font-weight: 700; color: var(--gold); text-transform: uppercase; }
+  .contact-info-value { font-size: 0.95rem; font-weight: 700; color: var(--green); text-decoration: none; }
+  .contact-info-value:hover { color: var(--gold); }
+  .contact-info-note { font-size: 0.78rem; color: #6B5E4A; }
   .contact-form { display: flex; flex-direction: column; gap: 16px; }
   .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  input, select, textarea { padding: 11px 12px; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%; font-family: inherit; color: var(--text-dark); }
-  .contact-submit { background: var(--primary); color: white; border: none; padding: 12px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+  input, select, textarea { padding: 11px 12px; border: 1px solid var(--gold-light); border-radius: 6px; width: 100%; font-family: inherit; color: var(--text-dark); background: var(--card-bg); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); }
+  .contact-submit { background: var(--green); color: white; border: none; padding: 12px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+  .contact-submit:hover { background: var(--gold); }
 
-  .footer-main { background: #0F172A; padding: 56px 0 48px; }
+  .footer-main { background: var(--footer-dark); padding: 56px 0 48px; }
   .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 0.8fr 1.1fr; gap: 32px; }
-  .footer-logo { height: 18px; margin-bottom: 14px; }
+  .footer-logo { height: 18px; margin-bottom: 14px; filter: brightness(0) invert(1); }
   .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
-  .footer-col-heading { font-size: 0.72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
+  .footer-col-heading { font-size: 0.72rem; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
   .footer-nav { display: flex; flex-direction: column; gap: 9px; }
-  .footer-nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; }
-  .footer-cta-link { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); }
+  .footer-nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+  .footer-nav a:hover { color: var(--green); }
+  .footer-cta-link { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--green); }
+  .footer-cta-link:hover { color: var(--gold); border-color: var(--gold); }
   .footer-social { display: flex; gap: 14px; margin-top: 16px; }
-  .footer-base { background: #020617; padding: 14px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+  .footer-social a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+  .footer-social a:hover { color: var(--gold); }
+  .footer-base { background: #0a0a0a; padding: 14px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+  .footer-base a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-base a:hover { color: var(--green); }
 
-  .cta-bar { background: var(--primary); color: white; padding: 60px 0; text-align: center; }
+  .cta-bar { background: var(--green); color: white; padding: 60px 0; text-align: center; }
+  .cta-bar .btn-primary { background: white; color: var(--green); border-color: white; }
+  .cta-bar .btn-primary:hover { background: transparent; color: white; border-color: white; }
 
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
@@ -616,7 +640,6 @@
 </head>
 <body>
 
-<!-- HEADER with client portal last, sticky -->
 <header>
   <div class="header-inner">
     <div class="logo">
@@ -635,7 +658,6 @@
   </div>
 </header>
 
-<!-- HERO (height 85vh) -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -674,7 +696,6 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -690,7 +711,6 @@
   </div>
 </section>
 
-<!-- METHODOLOGY -->
 <section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
@@ -705,13 +725,12 @@
           <div class="methodology-item"><h3>Develop the Work</h3><p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p></div>
           <div class="methodology-item"><h3>Review and Strengthen</h3><p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p></div>
         </div>
-        <div class="methodology-footer"><a href="#contact" class="service-link" style="color:var(--primary);">Explore Our Methodology →</a></div>
+        <div class="methodology-footer"><a href="#contact" class="service-link">Explore Our Methodology →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INSIGHTS -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -739,15 +758,14 @@
         </div>
       </div>
       <div class="insights-right">
-        <a href="insights/posts/structure-research-proposal.html" class="square-box square-box-1">Research proposal</a>
-        <a href="#contact" class="square-box square-box-2">Strong research</a>
-        <a href="#contact" class="square-box square-box-3">Research alignment</a>
+        <a href="insights/posts/structure-research-proposal.html" class="square-box">Research proposal</a>
+        <a href="#contact" class="square-box">Strong research</a>
+        <a href="#contact" class="square-box">Research alignment</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY CHOOSE -->
 <section class="section-alt">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -759,7 +777,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="section-default">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -770,16 +787,14 @@
   </div>
 </section>
 
-<!-- CTA BAR -->
 <section class="cta-bar">
   <div class="container">
-    <h2 style="color:white; margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
-    <p style="color:#E0E7FF; font-size:1.1rem; margin-bottom:1.5rem;">Get a free initial review of your topic today.</p>
-    <a href="https://wa.me/2347087589603" class="btn-primary" style="background:white; color:var(--primary); border-color:white;">Start Free Review on WhatsApp →</a>
+    <h2 style="margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
+    <p style="font-size:1.1rem; margin-bottom:1.5rem;">Get a free initial review of your topic today.</p>
+    <a href="https://wa.me/2347087589603" class="btn-primary">Start Free Review on WhatsApp →</a>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -819,7 +834,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
@@ -827,8 +841,8 @@
         <img src="assets/odexar-logo-reverse.svg" alt="Odexar" class="footer-logo">
         <p class="footer-tagline">Structured academic support for university students.</p>
         <div class="footer-social">
-          <a href="#" aria-label="LinkedIn" style="color:rgba(255,255,255,0.5)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
-          <a href="#" aria-label="X / Twitter" style="color:rgba(255,255,255,0.5)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a href="#" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2"/></svg></a>
         </div>
       </div>
       <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="#services">Research Framing</a><a href="#services">Analytical Interpretation</a><a href="#services">Scholarly Refinement</a><a href="#services">Literature Synthesis</a></nav></div>
@@ -836,8 +850,8 @@
       <div class="footer-col">
         <h4 class="footer-col-heading">Contact</h4>
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
-          <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;"><span style="font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:2px;">Email</span><a href="mailto:contact@odexar.com" style="color:rgba(255,255,255,0.8);text-decoration:none;">contact@odexar.com</a></p>
-          <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;"><span style="font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:2px;">WhatsApp</span><a href="https://wa.me/2347087589603" style="color:rgba(255,255,255,0.8);text-decoration:none;">+234 708 758 9603</a></p>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;"><span style="font-size:0.72rem;font-weight:700;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Email</span><a href="mailto:contact@odexar.com" style="color:rgba(255,255,255,0.8);text-decoration:none;">contact@odexar.com</a></p>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;"><span style="font-size:0.72rem;font-weight:700;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">WhatsApp</span><a href="https://wa.me/2347087589603" style="color:rgba(255,255,255,0.8);text-decoration:none;">+234 708 758 9603</a></p>
         </div>
         <a href="https://wa.me/2347087589603" class="footer-cta-link">Request an initial review →</a>
       </div>
@@ -847,8 +861,8 @@
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
       <span>© 2026 Odexar. All rights reserved.</span>
       <div style="display:flex;gap:20px;">
-        <a href="#" style="color:rgba(255,255,255,0.35);text-decoration:none;">Academic integrity policy</a>
-        <a href="#" style="color:rgba(255,255,255,0.35);text-decoration:none;">Privacy policy</a>
+        <a href="#">Academic integrity policy</a>
+        <a href="#">Privacy policy</a>
       </div>
     </div>
   </div>
