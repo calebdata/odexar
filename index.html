@@ -14,7 +14,7 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    /* Hero deep midnight blue (used only as fallback) */
+    /* Hero fallback */
     --hero-deep:    #0A1128;
     --hero-mid:     #0C1824;
     
@@ -60,21 +60,16 @@
     margin: 0 auto;
   }
 
-  /* HEADER — sticky, transparent at top, blurred on scroll */
+  /* HEADER — always blurred white, sticky */
   header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: transparent;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid transparent;
-  }
-  
-  header.scrolled {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    transition: all 0.2s;
   }
   
   .header-inner {
@@ -86,21 +81,11 @@
     max-width: 1280px;
     margin: 0 auto;
     width: 94%;
-    transition: padding 0.2s;
-  }
-  
-  header.scrolled .header-inner {
-    padding: 0.75rem 0;
   }
 
   .logo img {
     height: 32px;
     width: auto;
-    transition: filter 0.2s;
-  }
-  
-  header.scrolled .logo img {
-    filter: brightness(0.95);
   }
 
   .nav-links {
@@ -163,7 +148,7 @@
     border-color: var(--gold);
   }
 
-  /* HERO — image only, no extra gradients */
+  /* HERO — full image, dark overlay left -> transparent right */
   .hero {
     position: relative;
     width: 100%;
@@ -190,7 +175,7 @@
     to   { transform: scale(1.00); }
   }
 
-  /* MODIFIED OVERLAY: deep dark on left, fades to transparent on right */
+  /* Overlay: deep dark left, fades to transparent right */
   .hero-overlay {
     position: absolute;
     inset: 0;
@@ -405,7 +390,7 @@
     background: var(--green);
   }
 
-  /* SECTIONS — soft white as primary, warm cream for alternation */
+  /* SECTIONS — soft white primary, warm cream for alternation */
   #services {
     position: relative;
     z-index: 5;
@@ -642,7 +627,7 @@
 </head>
 <body>
 
-<header id="mainHeader">
+<header>
   <div class="header-inner">
     <div class="logo">
       <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
@@ -868,16 +853,5 @@
     </div>
   </div>
 </footer>
-
-<script>
-  const header = document.getElementById('mainHeader');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-</script>
 </body>
 </html>
