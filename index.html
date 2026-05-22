@@ -163,7 +163,7 @@
     border-color: var(--gold);
   }
 
-  /* HERO — image only, no gradient, no noise */
+  /* HERO — image only, no extra gradients */
   .hero {
     position: relative;
     width: 100%;
@@ -190,17 +190,19 @@
     to   { transform: scale(1.00); }
   }
 
+  /* MODIFIED OVERLAY: deep dark on left, fades to transparent on right */
   .hero-overlay {
     position: absolute;
     inset: 0;
     z-index: 2;
     background: linear-gradient(
       102deg,
-      rgba(8,15,24,0.92) 0%,
-      rgba(12,24,36,0.85) 20%,
-      rgba(11,23,35,0.70) 40%,
-      rgba(10,20,32,0.50) 60%,
-      rgba(8,15,24,0.20) 80%,
+      #080F18 0%,
+      #0C1824 25%,
+      rgba(11,23,35,0.95) 40%,
+      rgba(10,20,32,0.70) 55%,
+      rgba(9,18,28,0.40) 70%,
+      rgba(8,15,24,0.15) 85%,
       transparent 100%
     );
   }
