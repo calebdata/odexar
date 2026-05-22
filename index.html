@@ -14,9 +14,9 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    /* Hero colours (original) */
-    --bg-deep:      #0C1824;
-    --bg-deeper:    #080F18;
+    /* Hero deep midnight blue (used only as fallback) */
+    --hero-deep:    #0A1128;
+    --hero-mid:     #0C1824;
     
     /* Accent colors */
     --green:        #00B85C;
@@ -25,7 +25,7 @@
     --gold-soft:    rgba(190, 131, 14, 0.8);
     --gold-light:   rgba(190, 131, 14, 0.12);
     
-    /* Backgrounds — soft white primary, warm cream for alternation */
+    /* Backgrounds */
     --bg-soft-white: #FAFAF7;
     --bg-warm-cream: #F5EDDE;
     --card-bg:       #FFFFFF;
@@ -41,9 +41,6 @@
     --white-30:     rgba(245,245,240,0.30);
     --white-15:     rgba(245,245,240,0.15);
     --white-08:     rgba(245,245,240,0.08);
-    
-    /* Header background (solid, warm yellowish white) */
-    --header-bg:    #FFF8ED;
     
     /* Footer */
     --footer-dark:  #111111;
@@ -63,13 +60,21 @@
     margin: 0 auto;
   }
 
-  /* HEADER — solid background, sticky, no transparency */
+  /* HEADER — sticky, transparent at top, blurred on scroll */
   header {
-    background: var(--header-bg);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+  }
+  
+  header.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
   }
   
   .header-inner {
@@ -81,11 +86,21 @@
     max-width: 1280px;
     margin: 0 auto;
     width: 94%;
+    transition: padding 0.2s;
+  }
+  
+  header.scrolled .header-inner {
+    padding: 0.75rem 0;
   }
 
   .logo img {
     height: 32px;
     width: auto;
+    transition: filter 0.2s;
+  }
+  
+  header.scrolled .logo img {
+    filter: brightness(0.95);
   }
 
   .nav-links {
@@ -148,7 +163,7 @@
     border-color: var(--gold);
   }
 
-  /* HERO — full image, dark overlay (strong left -> transparent right) */
+  /* HERO — image only, no gradient, no noise */
   .hero {
     position: relative;
     width: 100%;
@@ -175,43 +190,28 @@
     to   { transform: scale(1.00); }
   }
 
-  /* Main overlay: dark on left, fades to transparent on right */
   .hero-overlay {
     position: absolute;
     inset: 0;
     z-index: 2;
     background: linear-gradient(
       102deg,
-      #080F18 0%,
-      #0C1824 20%,
-      rgba(11,23,35,0.95) 32%,
-      rgba(10,20,32,0.80) 46%,
-      rgba(9,18,28,0.48) 60%,
-      rgba(8,15,24,0.18) 76%,
-      rgba(8,14,22,0.04) 90%,
+      rgba(8,15,24,0.92) 0%,
+      rgba(12,24,36,0.85) 20%,
+      rgba(11,23,35,0.70) 40%,
+      rgba(10,20,32,0.50) 60%,
+      rgba(8,15,24,0.20) 80%,
       transparent 100%
-    );
-  }
-
-  .hero-overlay-top {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    background: linear-gradient(
-      to bottom,
-      rgba(5,10,18,0.60) 0%,
-      rgba(5,10,18,0.25) 25%,
-      transparent 50%
     );
   }
 
   .hero-overlay-warm {
     position: absolute;
     inset: 0;
-    z-index: 4;
+    z-index: 3;
     background: radial-gradient(
       ellipse 50% 65% at 75% 55%,
-      rgba(190,131,14,0.08) 0%,
+      var(--gold-light) 0%,
       transparent 70%
     );
   }
@@ -220,11 +220,11 @@
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: 150px;
-    z-index: 5;
+    z-index: 4;
     background: linear-gradient(
       to top,
-      rgba(8,15,24,0.70) 0%,
-      rgba(8,15,24,0.28) 50%,
+      rgba(8,15,24,0.80) 0%,
+      rgba(8,15,24,0.30) 50%,
       transparent 100%
     );
   }
@@ -319,7 +319,7 @@
   .btn-secondary:hover {
     border-color: var(--gold);
     color: var(--gold);
-    background: rgba(190,131,14,0.1);
+    background: var(--gold-light);
   }
 
   .proof-row {
@@ -390,7 +390,7 @@
     background: rgba(255,255,255,0.07);
     border: 1px solid var(--gold-light);
     border-radius: 999px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     font-size: 12px;
     color: var(--white-55);
     white-space: nowrap;
@@ -403,7 +403,7 @@
     background: var(--green);
   }
 
-  /* SECTIONS — soft white primary, warm cream for alternation */
+  /* SECTIONS — soft white as primary, warm cream for alternation */
   #services {
     position: relative;
     z-index: 5;
@@ -595,7 +595,7 @@
   .contact-form { display: flex; flex-direction: column; gap: 16px; }
   .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   input, select, textarea { padding: 11px 12px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; width: 100%; font-family: inherit; color: var(--text-dark); background: var(--card-bg); transition: 0.2s; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,184,92,0.1); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px var(--green-light); }
   .contact-submit { background: var(--green); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; }
   .contact-submit:hover { background: var(--gold); }
 
@@ -640,7 +640,7 @@
 </head>
 <body>
 
-<header>
+<header id="mainHeader">
   <div class="header-inner">
     <div class="logo">
       <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
@@ -658,11 +658,9 @@
   </div>
 </header>
 
-<!-- HERO (full image, dark overlay left -> right) -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-overlay-top"></div>
   <div class="hero-overlay-warm"></div>
   <div class="hero-overlay-bottom"></div>
 
@@ -697,7 +695,6 @@
   </div>
 </section>
 
-<!-- REMAINING SECTIONS (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -869,5 +866,16 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
 </body>
 </html>
