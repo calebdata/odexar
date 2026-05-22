@@ -14,35 +14,24 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    /* Hero fallback */
     --hero-deep:    #0A1128;
     --hero-mid:     #0C1824;
-    
-    /* Accent colors */
     --green:        #00B85C;
     --green-soft:   rgba(0, 184, 92, 0.85);
     --gold:         #BE830E;
     --gold-soft:    rgba(190, 131, 14, 0.8);
     --gold-light:   rgba(190, 131, 14, 0.12);
-    
-    /* Backgrounds */
     --bg-soft-white: #FAFAF7;
     --bg-warm-cream: #F5EDDE;
     --card-bg:       #FFFFFF;
-    
-    /* Text */
     --text-dark:    #1F2A37;
     --text-muted:   #4A5568;
-    
-    /* Hero text */
     --white:        #F5F5F0;
     --white-80:     rgba(245,245,240,0.80);
     --white-55:     rgba(245,245,240,0.55);
     --white-30:     rgba(245,245,240,0.30);
     --white-15:     rgba(245,245,240,0.15);
     --white-08:     rgba(245,245,240,0.08);
-    
-    /* Footer */
     --footer-dark:  #111111;
   }
 
@@ -60,7 +49,7 @@
     margin: 0 auto;
   }
 
-  /* HEADER — always blurred white, sticky */
+  /* HEADER — always blurred white, sticky, now inside hero */
   header {
     position: sticky;
     top: 0;
@@ -69,7 +58,6 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-    transition: all 0.2s;
   }
   
   .header-inner {
@@ -154,7 +142,7 @@
     width: 100%;
     min-height: 85vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     overflow: hidden;
     isolation: isolate;
   }
@@ -175,7 +163,6 @@
     to   { transform: scale(1.00); }
   }
 
-  /* Overlay: deep dark left, fades to transparent right */
   .hero-overlay {
     position: absolute;
     inset: 0;
@@ -222,11 +209,14 @@
     width: 94%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0;
+    padding: 2rem 0 4rem;
     text-align: left;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
+    flex: 1;
+    display: flex;
+    align-items: center;
   }
 
   .hero-text {
@@ -627,25 +617,25 @@
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="logo">
-      <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#methodology">Methodology</a></li>
-      <li><a href="#insights">Insights</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="cta-group">
-      <a href="https://wa.me/2347087589603" class="nav-cta">Start a Project →</a>
-      <a href="#" class="client-portal-btn">CLIENT PORTAL</a>
-    </div>
-  </div>
-</header>
-
 <section class="hero">
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="cta-group">
+        <a href="https://wa.me/2347087589603" class="nav-cta">Start a Project →</a>
+        <a href="#" class="client-portal-btn">CLIENT PORTAL</a>
+      </div>
+    </div>
+  </header>
+
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-overlay-warm"></div>
@@ -682,6 +672,7 @@
   </div>
 </section>
 
+<!-- REMAINING SECTIONS (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -853,5 +844,6 @@
     </div>
   </div>
 </footer>
+
 </body>
 </html>
