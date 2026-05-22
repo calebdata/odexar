@@ -75,12 +75,20 @@
     list-style: none;
   }
 
+  /* ----- MODIFIED: larger + bolder nav link text ----- */
   .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 1rem;          /* ~16px, bigger than original 14px */
+    font-weight: 600;         /* bold & clear */
     color: var(--text-dark);
     text-decoration: none;
     transition: color 0.2s;
+  }
+  /* Optional: slightly scale on desktop for extra presence */
+  @media (min-width: 1024px) {
+    .nav-links a {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
   }
   .nav-links a:hover { color: var(--primary); }
 
@@ -89,7 +97,7 @@
     background: var(--green-cta);
     border-radius: 6px;
     color: white;
-    font-size: 14px;
+    font-size: 0.95rem;       /* consistent larger feel */
     font-weight: 500;
     text-decoration: none;
     transition: all 0.2s;
@@ -100,11 +108,11 @@
     background: #1da15a;
   }
 
-  /* HERO (content container matches header width and alignment) */
+  /* ----- MODIFIED: Hero height reduced by 20% (100vh → 80vh) ----- */
   .hero {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;         /* was 100vh → 20% reduction */
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -575,6 +583,7 @@
   }
   @media (max-width: 640px) {
     .nav-links { gap: 16px; }
+    .nav-links a { font-size: 0.95rem; }  /* still larger than original, stays bold */
     .contact-form-row { grid-template-columns: 1fr; }
     .hero-text { max-width: 100%; }
   }
@@ -598,7 +607,7 @@
   </div>
 </header>
 
-<!-- HERO (text aligned with logo, one-line headline, wider content) -->
+<!-- HERO (reduced height: 80vh) -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
