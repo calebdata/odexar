@@ -19,7 +19,6 @@
     --green:        #00B85C;
     --green-soft:   rgba(0, 184, 92, 0.85);
     --gold:         #BE830E;
-    --gold-soft:    rgba(190, 131, 14, 0.8);
     --gold-light:   rgba(190, 131, 14, 0.12);
     --bg-soft-white: #FAFAF7;
     --bg-warm-cream: #F5EDDE;
@@ -49,11 +48,17 @@
     margin: 0 auto;
   }
 
-  /* HEADER — always blurred white, sticky, now inside hero */
+  /* HEADER — transparent at top, glass on scroll */
   header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+  }
+  
+  header.scrolled {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -69,11 +74,26 @@
     max-width: 1280px;
     margin: 0 auto;
     width: 94%;
+    transition: padding 0.2s;
+  }
+  
+  header.scrolled .header-inner {
+    padding: 0.75rem 0;
   }
 
   .logo img {
     height: 32px;
     width: auto;
+    transition: filter 0.2s;
+  }
+  
+  /* Transparent state: white logo */
+  header:not(.scrolled) .logo img {
+    filter: brightness(0) invert(1);
+  }
+  /* Scrolled: dark logo */
+  header.scrolled .logo img {
+    filter: none;
   }
 
   .nav-links {
@@ -86,14 +106,16 @@
   .nav-links a {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--text-dark);
     text-decoration: none;
     transition: color 0.2s;
   }
-  @media (min-width: 1024px) {
-    .nav-links a {
-      font-size: 1.05rem;
-    }
+  /* Transparent state: white links */
+  header:not(.scrolled) .nav-links a {
+    color: var(--white);
+  }
+  /* Scrolled: dark links */
+  header.scrolled .nav-links a {
+    color: var(--text-dark);
   }
   .nav-links a:hover { color: var(--green); }
 
@@ -114,26 +136,44 @@
     white-space: nowrap;
   }
 
-  .nav-cta {
+  /* Transparent header styles (white borders/text) */
+  header:not(.scrolled) .nav-cta {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--green);
+  }
+  header:not(.scrolled) .nav-cta:hover {
+    background: var(--green);
+    color: var(--hero-deep);
+  }
+  header:not(.scrolled) .client-portal-btn {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--gold);
+  }
+  header:not(.scrolled) .client-portal-btn:hover {
+    background: var(--gold);
+    color: var(--hero-deep);
+  }
+
+  /* Scrolled header styles (dark text, solid green/gold) */
+  header.scrolled .nav-cta {
     background: var(--green);
     color: white;
     border: 1px solid var(--green);
   }
-  .nav-cta:hover {
+  header.scrolled .nav-cta:hover {
     background: transparent;
     color: var(--green);
-    border-color: var(--green);
   }
-
-  .client-portal-btn {
+  header.scrolled .client-portal-btn {
     background: transparent;
     color: var(--text-dark);
     border: 1px solid var(--gold);
   }
-  .client-portal-btn:hover {
+  header.scrolled .client-portal-btn:hover {
     background: var(--gold);
     color: white;
-    border-color: var(--gold);
   }
 
   /* HERO — full image, dark overlay left -> transparent right */
@@ -142,7 +182,7 @@
     width: 100%;
     min-height: 85vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     overflow: hidden;
     isolation: isolate;
   }
@@ -209,14 +249,11 @@
     width: 94%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem 0 4rem;
+    padding: 0;
     text-align: left;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
-    flex: 1;
-    display: flex;
-    align-items: center;
   }
 
   .hero-text {
@@ -296,7 +333,7 @@
   .btn-secondary:hover {
     border-color: var(--gold);
     color: var(--gold);
-    background: var(--gold-light);
+    background: rgba(190,131,14,0.1);
   }
 
   .proof-row {
@@ -572,7 +609,7 @@
   .contact-form { display: flex; flex-direction: column; gap: 16px; }
   .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   input, select, textarea { padding: 11px 12px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; width: 100%; font-family: inherit; color: var(--text-dark); background: var(--card-bg); transition: 0.2s; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px var(--green-light); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,184,92,0.1); }
   .contact-submit { background: var(--green); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; }
   .contact-submit:hover { background: var(--gold); }
 
@@ -617,25 +654,25 @@
 </head>
 <body>
 
-<section class="hero">
-  <header>
-    <div class="header-inner">
-      <div class="logo">
-        <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#methodology">Methodology</a></li>
-        <li><a href="#insights">Insights</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="cta-group">
-        <a href="https://wa.me/2347087589603" class="nav-cta">Start a Project →</a>
-        <a href="#" class="client-portal-btn">CLIENT PORTAL</a>
-      </div>
+<header id="mainHeader">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
     </div>
-  </header>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#methodology">Methodology</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="cta-group">
+      <a href="https://wa.me/2347087589603" class="nav-cta">Start a Project →</a>
+      <a href="#" class="client-portal-btn">CLIENT PORTAL</a>
+    </div>
+  </div>
+</header>
 
+<section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-overlay-warm"></div>
@@ -672,7 +709,6 @@
   </div>
 </section>
 
-<!-- REMAINING SECTIONS (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -845,5 +881,15 @@
   </div>
 </footer>
 
+<script>
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
 </body>
 </html>
