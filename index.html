@@ -13,7 +13,7 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --dark:      #0D1B2A;   /* Healcure's exact atmospheric midnight */
+    --dark:      #0D1B2A;
     --dark-nav:  rgba(11,23,35,0.96);
     --green:     #00FF41;
     --green-soft: rgba(0,255,65,0.88);
@@ -42,10 +42,7 @@
     margin: 0 auto;
   }
 
-  /* ─────────────────────────────────────────────
-     NAVBAR — floats over hero, solidifies on scroll
-     Logo left, nav links left, workspace button right
-  ───────────────────────────────────────────── */
+  /* NAVBAR — floats over hero, solidifies on scroll */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -85,7 +82,7 @@
     align-items: center;
     gap: 36px;
     list-style: none;
-    margin-left: 48px;  /* shift right from logo, but still left side */
+    margin-left: 48px;
   }
 
   .nav-links a {
@@ -118,10 +115,7 @@
     color: var(--white);
   }
 
-  /* ─────────────────────────────────────────────
-     HERO — TWO COLUMN SPLIT (left dark, right image)
-     Only headline, subhead, two buttons
-  ───────────────────────────────────────────── */
+  /* HERO — two‑column split, minimal content */
   .hero {
     background: var(--dark);
     min-height: 100vh;
@@ -131,7 +125,6 @@
     overflow: hidden;
   }
 
-  /* LEFT SIDE */
   .hero-left {
     display: flex;
     flex-direction: column;
@@ -183,7 +176,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-bottom: 0;  /* no extra elements below */
+    margin-bottom: 0;
     opacity: 0;
     animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.42s forwards;
   }
@@ -227,7 +220,6 @@
     color: var(--white);
   }
 
-  /* RIGHT SIDE — image */
   .hero-right {
     position: relative;
     overflow: hidden;
@@ -247,7 +239,6 @@
     to   { transform: scale(1.00); }
   }
 
-  /* Seamless blend from dark left to image */
   .hero-right::before {
     content: '';
     position: absolute;
@@ -270,9 +261,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ─────────────────────────────────────────────
-     ALL OTHER SECTIONS (unchanged from your code)
-  ───────────────────────────────────────────── */
+  /* ALL OTHER SECTIONS (unchanged) */
   #services { position: relative; z-index: 5; background: #F5F5F0; border-top: 1px solid rgba(0,0,0,0.05); }
   .section-default { padding: 100px 0; background: #F5F5F0; }
   .section-alt { padding: 100px 0; background: #F0F1EC; }
@@ -358,7 +347,6 @@
   .footer-base { background: #020617; padding: 14px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
   .cta-bar { background: var(--primary); color: white; padding: 60px 0; text-align: center; }
 
-  /* Responsive */
   @media (max-width: 960px) {
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 140px 32px 80px; }
@@ -379,7 +367,6 @@
 </head>
 <body>
 
-<!-- NAVBAR with workspace button, no "Start a Project" -->
 <nav id="mainNav">
   <a href="/" class="nav-logo">
     <img src="assets/odexar-logo.svg" alt="Odexar">
@@ -393,7 +380,6 @@
   <a href="#" class="workspace-btn">workspace</a>
 </nav>
 
-<!-- HERO: two‑column split, minimal content (no trust badge, avatars, stars, confidence strip) -->
 <section class="hero">
   <div class="hero-left">
     <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
@@ -404,11 +390,10 @@
     </div>
   </div>
   <div class="hero-right">
-    <img src="assets/image_odexar-hero4_.jpg" alt="Students studying in a modern library">
+    <img src="assets/image_odexar-hero4..jpg" alt="Students studying in a modern library">
   </div>
 </section>
 
-<!-- SERVICES (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -424,7 +409,6 @@
   </div>
 </section>
 
-<!-- METHODOLOGY (unchanged) -->
 <section class="section-alt" id="methodology">
   <div class="container">
     <div class="methodology-split">
@@ -445,7 +429,6 @@
   </div>
 </section>
 
-<!-- INSIGHTS (unchanged) -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -481,7 +464,6 @@
   </div>
 </section>
 
-<!-- WHY ODEXAR (unchanged) -->
 <section class="section-alt">
   <div class="container">
     <h2 class="section-title">Why Students Choose Odexar</h2>
@@ -493,7 +475,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS (unchanged) -->
 <section class="section-default">
   <div class="container">
     <h2 class="section-title">What Students Are Saying</h2>
@@ -504,7 +485,6 @@
   </div>
 </section>
 
-<!-- CTA BAR (unchanged) -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="color:white;margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -513,7 +493,6 @@
   </div>
 </section>
 
-<!-- CONTACT (unchanged) -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -553,7 +532,6 @@
   </div>
 </section>
 
-<!-- FOOTER (unchanged) -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
