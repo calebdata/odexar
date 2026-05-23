@@ -6,9 +6,10 @@
 <title>Odexar — Academic Research Support</title>
 <meta name="description" content="Odexar helps final-year students structure clear, supervisor-approved research projects ethically and confidently.">
 
+<!-- Inter font (professional, like Healcure) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,10 +38,10 @@
   }
 
   html, body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg-soft-white);
     color: var(--text-dark);
-    line-height: 1.6;
+    line-height: 1.5;
     scroll-behavior: smooth;
   }
 
@@ -50,7 +51,7 @@
     margin: 0 auto;
   }
 
-  /* HEADER — always blurred white, sticky, now inside hero */
+  /* HEADER */
   header {
     position: sticky;
     top: 0;
@@ -77,7 +78,6 @@
     width: auto;
   }
 
-  /* Move navbar links to the right side */
   .nav-links {
     display: flex;
     align-items: center;
@@ -88,14 +88,14 @@
 
   .nav-links a {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-dark);
     text-decoration: none;
     transition: color 0.2s;
   }
   @media (min-width: 1024px) {
     .nav-links a {
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
   }
   .nav-links a:hover { color: var(--green); }
@@ -109,9 +109,9 @@
 
   .workspace-btn {
     padding: 8px 20px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 600;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
     text-decoration: none;
     transition: all 0.2s;
     white-space: nowrap;
@@ -125,7 +125,7 @@
     border-color: var(--gold);
   }
 
-  /* HERO — full image, dark overlay left -> transparent right */
+  /* HERO */
   .hero {
     position: relative;
     width: 100%;
@@ -216,76 +216,74 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* HEADLINE: superior typography, two lines */
+  /* HEADLINE — Inter, clean, authoritative */
   h1 {
-    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-    font-weight: 600;
-    font-size: clamp(38px, 4.2vw, 58px);
-    line-height: 1.18;
-    letter-spacing: -0.005em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
     color: #F5F5F0;
-    margin-bottom: 22px;
-    white-space: normal;  /* allows line break */
+    margin-bottom: 24px;
+    white-space: normal;
   }
 
-  /* Defensible — no green, no italic, inherits white */
   h1 em {
     font-style: normal;
     color: inherit;
   }
 
-  /* SUBTEXT: smarter, more editorial */
+  /* SUBTEXT — Inter regular, moderate size, no heavy glow */
   .hero-sub {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: clamp(18px, 1.4vw, 20px);
-    line-height: 1.55;
+    font-size: clamp(18px, 1.6vw, 20px);
+    line-height: 1.5;
     color: var(--white-82);
     max-width: 620px;
     margin-bottom: 36px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    text-shadow: none; /* clean, no glow */
   }
 
   .btn-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 16px;
     margin-bottom: 46px;
   }
 
-  /* PRIMARY BUTTON — deeper green, less rounded */
   .btn-primary {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 13px 28px;
+    gap: 8px;
+    padding: 12px 28px;
     background: var(--green);
     color: white;
-    border-radius: 12px;
+    border-radius: 40px;  /* slightly rounded, like Healcure */
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.95rem;
     transition: all 0.2s;
-    border: 1px solid var(--green);
+    border: none;
   }
   .btn-primary:hover {
-    background: transparent;
-    color: var(--green);
-    border-color: var(--green);
+    background: #007049;
+    transform: translateY(-1px);
   }
 
-  /* SECONDARY BUTTON — thinner, muted gold border, less visual weight */
   .btn-secondary {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 12px 26px;
+    gap: 8px;
+    padding: 11px 26px;
     background: transparent;
     color: var(--white-80);
-    border: 1px solid rgba(190, 131, 14, 0.5);
-    border-radius: 12px;
+    border: 1px solid rgba(190, 131, 14, 0.4);
+    border-radius: 40px;
     text-decoration: none;
     transition: all 0.2s;
     font-weight: 500;
+    font-size: 0.95rem;
   }
   .btn-secondary:hover {
     border-color: var(--gold);
@@ -293,7 +291,7 @@
     background: var(--gold-light);
   }
 
-  /* SECTIONS — soft white primary, warm cream for alternation */
+  /* SECTIONS (unchanged, but font family updated to Inter) */
   #services {
     position: relative;
     z-index: 5;
@@ -306,14 +304,14 @@
 
   .services-heading { text-align: left; margin-bottom: 3rem; }
   .services-heading .pre-head {
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  .services-heading h2 { font-size: 2.5rem; font-weight: 700; margin: 0; color: var(--text-dark); }
+  .services-heading h2 { font-size: 2.2rem; font-weight: 700; margin: 0; color: var(--text-dark); letter-spacing: -0.01em; }
 
   .services-grid {
     display: grid;
@@ -323,7 +321,7 @@
   .service-card {
     background: var(--card-bg);
     padding: 1.75rem;
-    border-radius: 12px;
+    border-radius: 16px;
     transition: all 0.3s ease;
     border: 1px solid rgba(0,0,0,0.03);
     box-shadow: 0 2px 6px rgba(0,0,0,0.02);
@@ -336,8 +334,8 @@
     box-shadow: 0 12px 24px rgba(0,0,0,0.05);
     border-color: var(--gold-light);
   }
-  .service-card h3 { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.75rem; color: var(--text-dark); }
-  .service-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0 0 1rem; flex-grow: 1; }
+  .service-card h3 { font-size: 1.3rem; font-weight: 600; margin: 0 0 0.75rem; color: var(--text-dark); }
+  .service-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0 0 1rem; flex-grow: 1; line-height: 1.5; }
   .service-link {
     font-size: 0.85rem;
     font-weight: 600;
@@ -357,17 +355,17 @@
   .methodology-split { display: flex; gap: 4rem; align-items: flex-start; }
   .methodology-left { flex: 1; }
   .methodology-left .pre-head {
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  .methodology-left h2 { font-size: 2.5rem; font-weight: 700; margin: 0; color: var(--text-dark); }
+  .methodology-left h2 { font-size: 2.2rem; font-weight: 700; margin: 0; color: var(--text-dark); letter-spacing: -0.01em; }
   .methodology-right { flex: 2; }
   .methodology-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .methodology-item h3 { font-size: 1.25rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--text-dark); }
+  .methodology-item h3 { font-size: 1.25rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--text-dark); }
   .methodology-item p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
   .methodology-footer { margin-top: 2rem; }
   @media (max-width: 800px) {
@@ -381,8 +379,8 @@
   }
   .insights-heading { text-align: left; margin-bottom: 0.25rem; }
   .insights-heading h2 {
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 600;
@@ -390,14 +388,14 @@
   }
   .heading-line { width: 60px; height: 2px; background: var(--gold); margin: 0.25rem 0 1rem 0; }
   .insight-tagline {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--gold);
     font-weight: 500;
     margin-bottom: 1.25rem;
   }
-  .featured-title { font-size: 2rem; font-weight: 800; line-height: 1.2; margin: 0 0 1rem; color: var(--text-dark); letter-spacing: -0.01em; }
+  .featured-title { font-size: 1.8rem; font-weight: 700; line-height: 1.2; margin: 0 0 1rem; color: var(--text-dark); letter-spacing: -0.01em; }
   .insights-two-column { display: flex; gap: 4rem; align-items: stretch; margin-top: 0.5rem; }
   .insights-left { flex: 1.8; display: flex; gap: 2rem; align-items: stretch; }
   .insights-text { flex: 1; display: flex; flex-direction: column; max-width: 90%; }
@@ -406,11 +404,11 @@
   .insights-cta a { font-size: 0.85rem; font-weight: 600; color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
   .insights-cta a:hover { color: var(--gold); }
   .insights-image-area { flex: 0.9; display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; }
-  .insights-image-area img { width: 100%; height: 340px; object-fit: cover; border-radius: 12px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+  .insights-image-area img { width: 100%; height: 340px; object-fit: cover; border-radius: 16px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
   .quick-note-box {
     width: 90%;
     border: 1px solid var(--gold-light);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 0.6rem 0.8rem;
     display: flex;
     align-items: flex-start;
@@ -427,7 +425,7 @@
     display: flex;
     width: 112px;
     aspect-ratio: 1 / 1;
-    border-radius: 12px;
+    border-radius: 16px;
     text-decoration: none;
     transition: all 0.2s;
     align-items: center;
@@ -449,18 +447,18 @@
     .insights-left { flex-direction: column; gap: 1.5rem; }
     .insights-image-area { max-width: 400px; align-items: flex-start; }
     .quick-note-box { margin-left: 0; width: 90%; }
-    .featured-title { font-size: 1.8rem; }
+    .featured-title { font-size: 1.6rem; }
     .insights-image-area img { height: 240px; }
     .insights-text { max-width: 100%; }
     .square-box { width: 100px; font-size: 0.7rem; }
   }
 
-  .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 1.5rem; font-weight: 700; color: var(--text-dark); }
+  .section-title { font-size: 2rem; text-align: center; margin-bottom: 1.5rem; font-weight: 700; color: var(--text-dark); letter-spacing: -0.01em; }
   .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 40px; }
   .benefit-card, .testimonial {
     background: var(--card-bg);
     padding: 32px;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     border: 1px solid rgba(0,0,0,0.03);
     transition: all 0.3s ease;
@@ -471,44 +469,45 @@
     box-shadow: 0 12px 24px rgba(0,0,0,0.05);
     border-color: var(--gold-light);
   }
-  .benefit-card h3, .testimonial strong { font-weight: 700; color: var(--text-dark); }
+  .benefit-card h3 { font-weight: 600; margin-bottom: 0.75rem; font-size: 1.25rem; }
+  .testimonial strong { font-weight: 600; display: block; margin-top: 1rem; color: var(--text-dark); }
   .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
-  .testimonial { font-style: italic; }
+  .testimonial { font-style: normal; }
 
   .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; }
   .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
   .contact-info-statement { font-size: 1rem; color: var(--text-dark); }
-  .contact-info-label { font-size: 0.72rem; font-weight: 700; color: var(--gold); text-transform: uppercase; }
-  .contact-info-value { font-size: 0.95rem; font-weight: 700; color: var(--green); text-decoration: none; }
+  .contact-info-label { font-size: 0.7rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; }
+  .contact-info-value { font-size: 1rem; font-weight: 500; color: var(--green); text-decoration: none; }
   .contact-info-value:hover { color: var(--gold); }
   .contact-info-note { font-size: 0.78rem; color: #6B5E4A; }
   .contact-form { display: flex; flex-direction: column; gap: 16px; }
   .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  input, select, textarea { padding: 11px 12px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; width: 100%; font-family: inherit; color: var(--text-dark); background: var(--card-bg); transition: 0.2s; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px var(--green-light); }
-  .contact-submit { background: var(--green); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+  input, select, textarea { padding: 12px 14px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; width: 100%; font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--card-bg); transition: 0.2s; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,143,90,0.1); }
+  .contact-submit { background: var(--green); color: white; border: none; padding: 12px 20px; border-radius: 40px; font-weight: 600; cursor: pointer; transition: 0.2s; font-family: 'Inter', sans-serif; }
   .contact-submit:hover { background: var(--gold); }
 
   .footer-main { background: var(--footer-dark); padding: 56px 0 48px; margin-top: 0; }
   .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 0.8fr 1.1fr; gap: 32px; }
   .footer-logo { height: 18px; margin-bottom: 14px; filter: brightness(0) invert(1); }
-  .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
-  .footer-col-heading { font-size: 0.72rem; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+  .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.4; }
+  .footer-col-heading { font-size: 0.7rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; }
   .footer-nav { display: flex; flex-direction: column; gap: 9px; }
-  .footer-nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+  .footer-nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
   .footer-nav a:hover { color: var(--green); }
-  .footer-cta-link { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--green); }
+  .footer-cta-link { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--green); font-size: 0.85rem; font-weight: 500; }
   .footer-cta-link:hover { color: var(--gold); border-color: var(--gold); }
   .footer-social { display: flex; gap: 14px; margin-top: 16px; }
   .footer-social a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
   .footer-social a:hover { color: var(--gold); }
-  .footer-base { background: #0a0a0a; padding: 14px 0; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+  .footer-base { background: #0a0a0a; padding: 14px 0; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
   .footer-base a { color: rgba(255,255,255,0.35); text-decoration: none; }
   .footer-base a:hover { color: var(--green); }
 
   .cta-bar { background: var(--green); color: white; padding: 60px 0; text-align: center; }
-  .cta-bar .btn-primary { background: white; color: var(--green); border-color: white; }
-  .cta-bar .btn-primary:hover { background: transparent; color: white; border-color: white; }
+  .cta-bar .btn-primary { background: white; color: var(--green); border-radius: 40px; }
+  .cta-bar .btn-primary:hover { background: transparent; color: white; border: 1px solid white; transform: none; }
 
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
@@ -552,11 +551,9 @@
 
   <div class="hero-content">
     <div class="hero-text">
-      <!-- Headline broken into two lines: "Build a Clear, Defensible" on line 1, "Research Project" on line 2 -->
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
       <p class="hero-sub">We help final-year students and researchers structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
-        <!-- Green CTA text fixed to "start your project" -->
         <a href="https://wa.me/2347087589603" class="btn-primary">start your project →</a>
         <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
       </div>
@@ -564,7 +561,7 @@
   </div>
 </section>
 
-<!-- REMAINING SECTIONS (unchanged) -->
+<!-- REMAINING SECTIONS identical structure, just updated font & spacing -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -719,8 +716,8 @@
       <div class="footer-col">
         <h4 class="footer-col-heading">Contact</h4>
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
-          <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;"><span style="font-size:0.72rem;font-weight:700;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Email</span><a href="mailto:contact@odexar.com" style="color:rgba(255,255,255,0.8);text-decoration:none;">contact@odexar.com</a></p>
-          <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;"><span style="font-size:0.72rem;font-weight:700;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">WhatsApp</span><a href="https://wa.me/2347087589603" style="color:rgba(255,255,255,0.8);text-decoration:none;">+234 708 758 9603</a></p>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;"><span style="font-size:0.7rem;font-weight:600;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Email</span><a href="mailto:contact@odexar.com" style="color:rgba(255,255,255,0.8);text-decoration:none;">contact@odexar.com</a></p>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;"><span style="font-size:0.7rem;font-weight:600;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">WhatsApp</span><a href="https://wa.me/2347087589603" style="color:rgba(255,255,255,0.8);text-decoration:none;">+234 708 758 9603</a></p>
         </div>
         <a href="https://wa.me/2347087589603" class="footer-cta-link">Request an initial review →</a>
       </div>
