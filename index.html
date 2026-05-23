@@ -103,10 +103,9 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-left: 0; /* removed auto margin to keep button adjacent to nav */
+    margin-left: 0;
   }
 
-  /* Client portal button replaced with Workspace */
   .workspace-btn {
     padding: 8px 20px;
     border-radius: 6px;
@@ -216,10 +215,11 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* HEADLINE: bolder, no italic, no green, authoritative serif */
   h1 {
     font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
     font-size: clamp(42px, 4.8vw, 64px);
-    font-weight: 400;
+    font-weight: 700;  /* bold, authoritative */
     line-height: 1.12;
     color: var(--white);
     margin-bottom: 22px;
@@ -230,18 +230,21 @@
     h1 { white-space: normal; }
   }
 
+  /* Removed green color and italic from 'defensible' */
   h1 em {
-    font-style: italic;
-    color: var(--green-soft);
+    font-style: normal;
+    color: inherit;  /* no green, uses white */
   }
 
+  /* Subtext: larger, glowing/pop */
   .hero-sub {
-    font-size: 18px;
-    font-weight: 350;
-    line-height: 1.6;
+    font-size: 1.4rem;  /* increased from 18px */
+    font-weight: 400;
+    line-height: 1.5;
     color: var(--white-80);
-    max-width: 560px;
+    max-width: 620px;
     margin-bottom: 36px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3); /* glow effect */
   }
 
   .btn-row {
@@ -517,6 +520,7 @@
     .hero-text { max-width: 100%; }
     .header-inner { flex-direction: column; align-items: stretch; }
     .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
+    .hero-sub { font-size: 1.2rem; } /* slightly smaller on mobile but still larger than before */
   }
 </style>
 </head>
@@ -535,7 +539,6 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="cta-group">
-        <!-- Green "Start a Project" button removed completely -->
         <a href="#" class="workspace-btn">Workspace</a>
       </div>
     </div>
@@ -548,20 +551,20 @@
 
   <div class="hero-content">
     <div class="hero-text">
+      <!-- Headline: bolder, no italic, no green on defensible -->
       <h1>Build a Clear, <em>Defensible</em> Research Project</h1>
-      <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
+      <!-- Subtext: improved sentence, larger font, glowing effect -->
+      <p class="hero-sub">We help final-year students and researchers structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
-        <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review →</a>
+        <!-- CTA text changed to "start you project" -->
+        <a href="https://wa.me/2347087589603" class="btn-primary">start you project →</a>
         <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
       </div>
-      <!-- proof-row (avatars + stars + text) completely removed -->
     </div>
   </div>
-
-  <!-- confidence-strip (confidential, plagiarism-free etc) completely removed -->
 </section>
 
-<!-- REMAINING SECTIONS (unchanged except removal of trust elements) -->
+<!-- REMAINING SECTIONS (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
