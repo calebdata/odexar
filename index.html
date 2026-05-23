@@ -216,19 +216,16 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* HEADLINE: superior typography */
+  /* HEADLINE: superior typography, two lines */
   h1 {
     font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-    font-weight: 600;                     /* 600 — elegance + authority */
-    font-size: clamp(38px, 4.2vw, 58px); /* reduced, more restrained */
-    line-height: 1.18;                   /* breathing room */
-    letter-spacing: -0.005em;            /* subtle, not suffocating */
-    color: #F5F5F0;                      /* soft off-white */
+    font-weight: 600;
+    font-size: clamp(38px, 4.2vw, 58px);
+    line-height: 1.18;
+    letter-spacing: -0.005em;
+    color: #F5F5F0;
     margin-bottom: 22px;
-    white-space: nowrap;
-  }
-  @media (max-width: 800px) {
-    h1 { white-space: normal; }
+    white-space: normal;  /* allows line break */
   }
 
   /* Defensible — no green, no italic, inherits white */
@@ -246,7 +243,7 @@
     color: var(--white-82);
     max-width: 620px;
     margin-bottom: 36px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.18); /* subtle, not cinematic */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.18);
   }
 
   .btn-row {
@@ -262,9 +259,9 @@
     align-items: center;
     gap: 6px;
     padding: 13px 28px;
-    background: var(--green);   /* #008F5A */
+    background: var(--green);
     color: white;
-    border-radius: 12px;        /* reduced from large radius */
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s;
@@ -284,7 +281,7 @@
     padding: 12px 26px;
     background: transparent;
     color: var(--white-80);
-    border: 1px solid rgba(190, 131, 14, 0.5); /* thinner / muted gold */
+    border: 1px solid rgba(190, 131, 14, 0.5);
     border-radius: 12px;
     text-decoration: none;
     transition: all 0.2s;
@@ -555,10 +552,12 @@
 
   <div class="hero-content">
     <div class="hero-text">
-      <h1>Build a Clear, <em>Defensible</em> Research Project</h1>
+      <!-- Headline broken into two lines: "Build a Clear, Defensible" on line 1, "Research Project" on line 2 -->
+      <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
       <p class="hero-sub">We help final-year students and researchers structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
-        <a href="https://wa.me/2347087589603" class="btn-primary">start you project →</a>
+        <!-- Green CTA text fixed to "start your project" -->
+        <a href="https://wa.me/2347087589603" class="btn-primary">start your project →</a>
         <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
       </div>
     </div>
