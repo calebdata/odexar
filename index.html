@@ -32,8 +32,6 @@
     --white-15:     rgba(245,245,240,0.15);
     --white-08:     rgba(245,245,240,0.08);
     --footer-dark:  #111111;
-    /* Header solid warm white */
-    --header-bg:    #FFF8ED;
   }
 
   html, body {
@@ -50,13 +48,21 @@
     margin: 0 auto;
   }
 
-  /* HEADER — solid background, sticky, no transparency */
+  /* HEADER — transparent at top, glass on scroll */
   header {
-    background: var(--header-bg);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+  }
+  
+  header.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
   }
   
   .header-inner {
@@ -68,11 +74,26 @@
     max-width: 1280px;
     margin: 0 auto;
     width: 94%;
+    transition: padding 0.2s;
+  }
+  
+  header.scrolled .header-inner {
+    padding: 0.75rem 0;
   }
 
   .logo img {
     height: 32px;
     width: auto;
+    transition: filter 0.2s;
+  }
+  
+  /* Transparent state: white logo */
+  header:not(.scrolled) .logo img {
+    filter: brightness(0) invert(1);
+  }
+  /* Scrolled: dark logo */
+  header.scrolled .logo img {
+    filter: none;
   }
 
   .nav-links {
@@ -85,14 +106,16 @@
   .nav-links a {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--text-dark);
     text-decoration: none;
     transition: color 0.2s;
   }
-  @media (min-width: 1024px) {
-    .nav-links a {
-      font-size: 1.05rem;
-    }
+  /* Transparent state: white links */
+  header:not(.scrolled) .nav-links a {
+    color: var(--white);
+  }
+  /* Scrolled: dark links */
+  header.scrolled .nav-links a {
+    color: var(--text-dark);
   }
   .nav-links a:hover { color: var(--green); }
 
@@ -113,26 +136,44 @@
     white-space: nowrap;
   }
 
-  .nav-cta {
+  /* Transparent header styles (white borders/text) */
+  header:not(.scrolled) .nav-cta {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--green);
+  }
+  header:not(.scrolled) .nav-cta:hover {
+    background: var(--green);
+    color: var(--hero-deep);
+  }
+  header:not(.scrolled) .client-portal-btn {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--gold);
+  }
+  header:not(.scrolled) .client-portal-btn:hover {
+    background: var(--gold);
+    color: var(--hero-deep);
+  }
+
+  /* Scrolled header styles (dark text, solid green/gold) */
+  header.scrolled .nav-cta {
     background: var(--green);
     color: white;
     border: 1px solid var(--green);
   }
-  .nav-cta:hover {
+  header.scrolled .nav-cta:hover {
     background: transparent;
     color: var(--green);
-    border-color: var(--green);
   }
-
-  .client-portal-btn {
+  header.scrolled .client-portal-btn {
     background: transparent;
     color: var(--text-dark);
     border: 1px solid var(--gold);
   }
-  .client-portal-btn:hover {
+  header.scrolled .client-portal-btn:hover {
     background: var(--gold);
     color: white;
-    border-color: var(--gold);
   }
 
   /* HERO — full image, dark overlay left -> transparent right */
@@ -613,7 +654,7 @@
 </head>
 <body>
 
-<header>
+<header id="mainHeader">
   <div class="header-inner">
     <div class="logo">
       <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
@@ -668,7 +709,6 @@
   </div>
 </section>
 
-<!-- REMAINING SECTIONS (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -841,5 +881,15 @@
   </div>
 </footer>
 
+<script>
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
 </body>
 </html>
