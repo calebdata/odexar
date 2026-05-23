@@ -16,8 +16,8 @@
   :root {
     --hero-deep:    #0A1128;
     --hero-mid:     #0C1824;
-    --green:        #00B85C;
-    --green-soft:   rgba(0, 184, 92, 0.85);
+    --green:        #008F5A;      /* deeper emerald */
+    --green-soft:   rgba(0, 143, 90, 0.85);
     --gold:         #BE830E;
     --gold-soft:    rgba(190, 131, 14, 0.8);
     --gold-light:   rgba(190, 131, 14, 0.12);
@@ -28,6 +28,7 @@
     --text-muted:   #4A5568;
     --white:        #F5F5F0;
     --white-80:     rgba(245,245,240,0.80);
+    --white-82:     rgba(245,245,240,0.82);
     --white-55:     rgba(245,245,240,0.55);
     --white-30:     rgba(245,245,240,0.30);
     --white-15:     rgba(245,245,240,0.15);
@@ -215,36 +216,37 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* HEADLINE: bolder, no italic, no green, authoritative serif */
+  /* HEADLINE: superior typography */
   h1 {
     font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-    font-size: clamp(42px, 4.8vw, 64px);
-    font-weight: 700;  /* bold, authoritative */
-    line-height: 1.12;
-    color: var(--white);
+    font-weight: 600;                     /* 600 — elegance + authority */
+    font-size: clamp(38px, 4.2vw, 58px); /* reduced, more restrained */
+    line-height: 1.18;                   /* breathing room */
+    letter-spacing: -0.005em;            /* subtle, not suffocating */
+    color: #F5F5F0;                      /* soft off-white */
     margin-bottom: 22px;
-    letter-spacing: -0.015em;
     white-space: nowrap;
   }
   @media (max-width: 800px) {
     h1 { white-space: normal; }
   }
 
-  /* Removed green color and italic from 'defensible' */
+  /* Defensible — no green, no italic, inherits white */
   h1 em {
     font-style: normal;
-    color: inherit;  /* no green, uses white */
+    color: inherit;
   }
 
-  /* Subtext: larger, glowing/pop */
+  /* SUBTEXT: smarter, more editorial */
   .hero-sub {
-    font-size: 1.4rem;  /* increased from 18px */
+    font-family: 'DM Sans', sans-serif;
     font-weight: 400;
-    line-height: 1.5;
-    color: var(--white-80);
+    font-size: clamp(18px, 1.4vw, 20px);
+    line-height: 1.55;
+    color: var(--white-82);
     max-width: 620px;
     margin-bottom: 36px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3); /* glow effect */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.18); /* subtle, not cinematic */
   }
 
   .btn-row {
@@ -254,14 +256,15 @@
     margin-bottom: 46px;
   }
 
+  /* PRIMARY BUTTON — deeper green, less rounded */
   .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 13px 28px;
-    background: var(--green);
+    background: var(--green);   /* #008F5A */
     color: white;
-    border-radius: 6px;
+    border-radius: 12px;        /* reduced from large radius */
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s;
@@ -273,6 +276,7 @@
     border-color: var(--green);
   }
 
+  /* SECONDARY BUTTON — thinner, muted gold border, less visual weight */
   .btn-secondary {
     display: inline-flex;
     align-items: center;
@@ -280,10 +284,11 @@
     padding: 12px 26px;
     background: transparent;
     color: var(--white-80);
-    border: 1px solid var(--gold);
-    border-radius: 6px;
+    border: 1px solid rgba(190, 131, 14, 0.5); /* thinner / muted gold */
+    border-radius: 12px;
     text-decoration: none;
     transition: all 0.2s;
+    font-weight: 500;
   }
   .btn-secondary:hover {
     border-color: var(--gold);
@@ -520,7 +525,6 @@
     .hero-text { max-width: 100%; }
     .header-inner { flex-direction: column; align-items: stretch; }
     .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
-    .hero-sub { font-size: 1.2rem; } /* slightly smaller on mobile but still larger than before */
   }
 </style>
 </head>
@@ -551,12 +555,9 @@
 
   <div class="hero-content">
     <div class="hero-text">
-      <!-- Headline: bolder, no italic, no green on defensible -->
       <h1>Build a Clear, <em>Defensible</em> Research Project</h1>
-      <!-- Subtext: improved sentence, larger font, glowing effect -->
       <p class="hero-sub">We help final-year students and researchers structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
-        <!-- CTA text changed to "start you project" -->
         <a href="https://wa.me/2347087589603" class="btn-primary">start you project →</a>
         <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
       </div>
