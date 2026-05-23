@@ -76,11 +76,13 @@
     width: auto;
   }
 
+  /* Move navbar links to the right side */
   .nav-links {
     display: flex;
     align-items: center;
     gap: 32px;
     list-style: none;
+    margin-left: auto;
   }
 
   .nav-links a {
@@ -101,10 +103,11 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-left: auto;
+    margin-left: 0; /* removed auto margin to keep button adjacent to nav */
   }
 
-  .nav-cta, .client-portal-btn {
+  /* Client portal button replaced with Workspace */
+  .workspace-btn {
     padding: 8px 20px;
     border-radius: 6px;
     font-size: 0.95rem;
@@ -112,25 +115,11 @@
     text-decoration: none;
     transition: all 0.2s;
     white-space: nowrap;
-  }
-
-  .nav-cta {
-    background: var(--green);
-    color: white;
-    border: 1px solid var(--green);
-  }
-  .nav-cta:hover {
-    background: transparent;
-    color: var(--green);
-    border-color: var(--green);
-  }
-
-  .client-portal-btn {
     background: transparent;
     color: var(--text-dark);
     border: 1px solid var(--gold);
   }
-  .client-portal-btn:hover {
+  .workspace-btn:hover {
     background: var(--gold);
     color: white;
     border-color: var(--gold);
@@ -297,87 +286,6 @@
     border-color: var(--gold);
     color: var(--gold);
     background: var(--gold-light);
-  }
-
-  .proof-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    opacity: 0;
-    animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.6s forwards;
-  }
-
-  .avatar-stack { display: flex; align-items: center; }
-
-  .avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 2.5px solid #080F18;
-    margin-left: -11px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 600;
-    color: white;
-  }
-  .avatar:first-child { margin-left: 0; }
-  .av1 { background: linear-gradient(145deg, #1a4a8e, #0f2d5e); }
-  .av2 { background: linear-gradient(145deg, #1a6e4e, #0f4232); }
-  .av3 { background: linear-gradient(145deg, #8e4e1a, #5c3210); }
-  .av4 { background: linear-gradient(145deg, #5e1a8e, #3a0f5c); }
-  .av5 { background: var(--white-08); border-color: var(--white-15); font-size: 11px; color: var(--white-55); }
-
-  .proof-stars {
-    color: var(--gold);
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 3px;
-  }
-
-  .proof-label {
-    color: var(--white-55);
-    font-size: 12px;
-    font-weight: 300;
-  }
-
-  .confidence-strip {
-    position: absolute;
-    bottom: 36px;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    z-index: 10;
-    width: 94%;
-    max-width: 1280px;
-    margin: 0 auto;
-    opacity: 0;
-    animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 1s forwards;
-  }
-
-  .conf-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 6px 14px;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid var(--gold-light);
-    border-radius: 999px;
-    backdrop-filter: blur(5px);
-    font-size: 12px;
-    color: var(--white-55);
-    white-space: nowrap;
-  }
-
-  .conf-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--green);
   }
 
   /* SECTIONS — soft white primary, warm cream for alternation */
@@ -599,11 +507,8 @@
 
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
-    .nav-links { order: 3; width: 100%; justify-content: center; margin-top: 0.5rem; }
+    .nav-links { order: 3; width: 100%; justify-content: center; margin-left: 0; margin-top: 0.5rem; }
     .cta-group { margin-left: 0; width: 100%; justify-content: flex-end; }
-    .confidence-strip { left: 0; transform: none; justify-content: center; flex-wrap: wrap; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
     .nav-links { gap: 20px; }
@@ -630,8 +535,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="cta-group">
-        <a href="https://wa.me/2347087589603" class="nav-cta">Start a Project →</a>
-        <a href="#" class="client-portal-btn">CLIENT PORTAL</a>
+        <!-- Green "Start a Project" button removed completely -->
+        <a href="#" class="workspace-btn">Workspace</a>
       </div>
     </div>
   </header>
@@ -649,30 +554,14 @@
         <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project Review →</a>
         <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
       </div>
-      <div class="proof-row">
-        <div class="avatar-stack">
-          <div class="avatar av1">A</div>
-          <div class="avatar av2">K</div>
-          <div class="avatar av3">T</div>
-          <div class="avatar av4">F</div>
-          <div class="avatar av5">+</div>
-        </div>
-        <div>
-          <div class="proof-stars">★★★★★</div>
-          <div class="proof-label">Trusted by students across Nigerian universities</div>
-        </div>
-      </div>
+      <!-- proof-row (avatars + stars + text) completely removed -->
     </div>
   </div>
 
-  <div class="confidence-strip">
-    <div class="conf-pill"><span class="conf-dot"></span>Confidential</div>
-    <div class="conf-pill"><span class="conf-dot"></span>Plagiarism-free</div>
-    <div class="conf-pill"><span class="conf-dot"></span>100% Student-Owned Work</div>
-  </div>
+  <!-- confidence-strip (confidential, plagiarism-free etc) completely removed -->
 </section>
 
-<!-- REMAINING SECTIONS (unchanged) -->
+<!-- REMAINING SECTIONS (unchanged except removal of trust elements) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
