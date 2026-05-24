@@ -1,10 +1,3 @@
-Here is the final HTML with the hero subtext broken into two lines:  
-- First line ends after **“students”**  
-- Second line carries the rest
-
-All previous changes are preserved: full `100vh` hero, black nav text with dark/glow hover, hero footer text with dark overlay pill, and the rest of the layout.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +6,6 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
 <title>Odexar — Academic Research Support</title>
 <meta name="description" content="Odexar helps final-year students structure clear, supervisor-approved research projects ethically and confidently.">
 
-<!-- Inter font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -58,7 +50,6 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
     margin: 0 auto;
   }
 
-  /* HEADER */
   header {
     position: sticky;
     top: 0;
@@ -100,7 +91,6 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
     text-decoration: none;
     transition: all 0.2s ease;
   }
-  /* Hover: darker black + subtle glow */
   .nav-links a:hover {
     color: #0a0a0a;
     text-shadow: 0 0 1px rgba(0,0,0,0.5);
@@ -131,7 +121,6 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
     border-color: var(--gold);
   }
 
-  /* HERO — full 100vh */
   .hero {
     position: relative;
     width: 100%;
@@ -222,7 +211,6 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* HEADLINE */
   h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -239,7 +227,6 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
     color: inherit;
   }
 
-  /* SUBTEXT — now two lines via <br> */
   .hero-sub {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -297,28 +284,25 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
     background: var(--gold-light);
   }
 
-  /* Hero footer text with dark overlay */
+  /* Hero footer text: left-aligned, no background */
   .hero-footer-text {
     position: absolute;
     bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 3%;
     z-index: 15;
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 0.02em;
     color: var(--white-82);
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(4px);
-    padding: 8px 18px;
-    border-radius: 40px;
+    background: transparent;
+    padding: 0;
     white-space: nowrap;
     pointer-events: none;
-    text-align: center;
+    text-align: left;
   }
 
-  /* SECTIONS (unchanged) */
+  /* Rest of sections unchanged */
   #services {
     position: relative;
     z-index: 5;
@@ -549,7 +533,7 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
     .header-inner { flex-direction: column; align-items: stretch; }
     .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
     .hero-content { padding: 5rem 0 3rem; }
-    .hero-footer-text { font-size: 0.7rem; padding: 5px 12px; white-space: normal; width: 90%; text-align: center; bottom: 16px; }
+    .hero-footer-text { font-size: 0.7rem; white-space: normal; left: 3%; right: 3%; bottom: 20px; }
   }
 </style>
 </head>
@@ -581,8 +565,7 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
   <div class="hero-content">
     <div class="hero-text">
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
-      <!-- Subtext broken into two lines for editorial balance -->
-      <p class="hero-sub">We help final-year students<br>structure their projects around their research problem, not a template.</p>
+      <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
         <a href="https://wa.me/2347087589603" class="btn-primary">start your project →</a>
         <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
@@ -768,4 +751,3 @@ All previous changes are preserved: full `100vh` hero, black nav text with dark/
 
 </body>
 </html>
-```
