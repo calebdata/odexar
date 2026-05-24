@@ -34,7 +34,7 @@
     --white-15:     rgba(245,245,240,0.15);
     --white-08:     rgba(245,245,240,0.08);
     --footer-dark:  #111111;
-    --header-height: 68px; /* approx from padding + logo */
+    --header-height: 68px;
   }
 
   html, body {
@@ -51,7 +51,6 @@
     margin: 0 auto;
   }
 
-  /* HEADER - now truly sticky, outside hero */
   header {
     position: sticky;
     top: 0;
@@ -123,7 +122,6 @@
     border-color: var(--gold);
   }
 
-  /* HERO - now independent, takes full viewport minus header */
   .hero {
     position: relative;
     width: 100%;
@@ -337,14 +335,6 @@
   }
 
   .section-default { padding: 80px 0; background: var(--bg-soft-white); }
-  .section-alt { padding: 80px 0; background: var(--bg-soft-white); }
-
-  .methodology-divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(0,0,0,0.05);
-    margin: 0;
-  }
 
   .services-heading { text-align: left; margin-bottom: 3rem; }
   .services-heading .pre-head {
@@ -396,9 +386,25 @@
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-  .methodology-split { display: flex; gap: 4rem; align-items: flex-start; }
-  .methodology-left { flex: 1; }
-  .methodology-left .pre-head {
+  .methodology-sticky-section {
+    background: var(--bg-soft-white);
+    padding: 80px 0;
+  }
+
+  .methodology-sticky-wrapper {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .methodology-sticky-left {
+    flex: 1;
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+    align-self: flex-start;
+  }
+
+  .methodology-sticky-left .pre-head {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -406,15 +412,75 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  .methodology-left h2 { font-size: 2.2rem; font-weight: 700; margin: 0; color: var(--text-dark); letter-spacing: -0.01em; }
-  .methodology-right { flex: 2; }
-  .methodology-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .methodology-item h3 { font-size: 1.25rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--text-dark); }
-  .methodology-item p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
-  .methodology-footer { margin-top: 2rem; }
-  @media (max-width: 800px) {
-    .methodology-split { flex-direction: column; gap: 2rem; }
-    .methodology-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  .methodology-sticky-left h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: var(--text-dark);
+    letter-spacing: -0.01em;
+  }
+
+  .methodology-sticky-left .subhead {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 90%;
+  }
+
+  .methodology-sticky-right {
+    flex: 2;
+  }
+
+  .methodology-step {
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .methodology-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .step-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .methodology-step h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: var(--text-dark);
+  }
+
+  .methodology-step p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .methodology-sticky-wrapper {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .methodology-sticky-left {
+      position: relative;
+      top: 0;
+    }
+    .methodology-sticky-left .subhead {
+      max-width: 100%;
+    }
+    .methodology-step {
+      margin-bottom: 3rem;
+    }
   }
 
   .insights-section {
@@ -575,7 +641,6 @@
 </head>
 <body>
 
-<!-- Header moved OUTSIDE hero to ensure true sticky behaviour -->
 <header>
   <div class="header-inner">
     <div class="logo">
@@ -634,29 +699,40 @@
   </div>
 </section>
 
-<div class="methodology-divider"></div>
-
-<section class="section-alt" id="methodology">
+<section class="methodology-sticky-section" id="methodology">
   <div class="container">
-    <div class="methodology-split">
-      <div class="methodology-left">
+    <div class="methodology-sticky-wrapper">
+      <div class="methodology-sticky-left">
         <div class="pre-head">OUR PROCESS</div>
         <h2>Methodology</h2>
+        <p class="subhead">A clear, step‑by‑step framework for defensible research.</p>
       </div>
-      <div class="methodology-right">
-        <div class="methodology-grid">
-          <div class="methodology-item"><h3>Understand Your Situation</h3><p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p></div>
-          <div class="methodology-item"><h3>Define the Research Problem</h3><p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p></div>
-          <div class="methodology-item"><h3>Develop the Work</h3><p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p></div>
-          <div class="methodology-item"><h3>Review and Strengthen</h3><p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p></div>
+      <div class="methodology-sticky-right">
+        <div class="methodology-step">
+          <div class="step-number">01</div>
+          <h3>Understand Your Situation</h3>
+          <p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p>
         </div>
-        <div class="methodology-footer"><a href="#contact" class="service-link">Explore Our Methodology →</a></div>
+        <div class="methodology-step">
+          <div class="step-number">02</div>
+          <h3>Define the Research Problem</h3>
+          <p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p>
+        </div>
+        <div class="methodology-step">
+          <div class="step-number">03</div>
+          <h3>Develop the Work</h3>
+          <p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p>
+        </div>
+        <div class="methodology-step">
+          <div class="step-number">04</div>
+          <h3>Review and Strengthen</h3>
+          <p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- remaining sections unchanged, kept exactly as before -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
