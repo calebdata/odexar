@@ -124,7 +124,7 @@
   .hero {
     position: relative;
     width: 100%;
-    height: 100vh;              /* FULL viewport height */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -193,7 +193,7 @@
     width: 94%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 8rem 0 4rem;     /* increased top padding to move text down */
+    padding: 6.5rem 0 4rem;     /* reduced top padding to move text up slightly */
     text-align: left;
     opacity: 0;
     transform: translateY(20px);
@@ -228,7 +228,7 @@
     color: inherit;
   }
 
-  /* SUBTEXT — edited: removed "and researchers" */
+  /* SUBTEXT */
   .hero-sub {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -303,7 +303,7 @@
     background: transparent;
   }
 
-  /* SECTIONS (unchanged, but adjusted minor spacing) */
+  /* SECTIONS (unchanged) */
   #services {
     position: relative;
     z-index: 5;
@@ -533,7 +533,7 @@
     .hero-text { max-width: 100%; }
     .header-inner { flex-direction: column; align-items: stretch; }
     .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
-    .hero-content { padding: 6rem 0 3rem; } /* slightly less on mobile */
+    .hero-content { padding: 5rem 0 3rem; } /* slightly less on mobile for balance */
   }
 </style>
 </head>
@@ -565,7 +565,6 @@
   <div class="hero-content">
     <div class="hero-text">
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
-      <!-- Subtext: removed "and researchers" -> first line shorter, second line longer -->
       <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
         <a href="https://wa.me/2347087589603" class="btn-primary">start your project →</a>
@@ -574,8 +573,8 @@
     </div>
   </div>
 
-  <!-- Centered footer text inside hero -->
-  <div class="hero-footer-text">Built for Nigerian & UK University Standards</div>
+  <!-- Updated footer text -->
+  <div class="hero-footer-text">Supporting students across universities in Nigeria, Canada, Australia, and the UK</div>
 </section>
 
 <!-- REMAINING SECTIONS unchanged -->
