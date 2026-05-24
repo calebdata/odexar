@@ -203,18 +203,20 @@
     align-items: center;
   }
 
+  /* Widen hero text container so second line doesn't break early */
   .hero-text {
-    max-width: 720px;
+    max-width: 860px;
   }
 
   @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* Headline smaller, better proportion */
   h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: clamp(42px, 5vw, 64px);
+    font-size: clamp(36px, 4vw, 52px);
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: #F5F5F0;
@@ -233,7 +235,7 @@
     font-size: clamp(18px, 1.6vw, 20px);
     line-height: 1.5;
     color: var(--white-82);
-    max-width: 620px;
+    max-width: 100%;
     margin-bottom: 36px;
     text-shadow: none;
   }
@@ -284,25 +286,45 @@
     background: var(--gold-light);
   }
 
-  /* Hero footer text: left-aligned, no background */
-  .hero-footer-text {
+  /* Hero footer: left-aligned under logo, same container width, no background */
+  .hero-footer {
     position: absolute;
     bottom: 28px;
-    left: 3%;
+    left: 0;
+    right: 0;
     z-index: 15;
+    width: 94%;
+    max-width: 1280px;
+    margin: 0 auto;
+    pointer-events: none;
+  }
+
+  .hero-footer-text {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 0.02em;
     color: var(--white-82);
     background: transparent;
-    padding: 0;
-    white-space: nowrap;
-    pointer-events: none;
     text-align: left;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
 
-  /* Rest of sections unchanged */
+  .hero-footer-text .star {
+    color: var(--gold);
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 640px) {
+    .hero-content { padding: 5rem 0 3rem; }
+    .hero-footer-text { font-size: 0.7rem; flex-wrap: wrap; }
+    .hero-footer { bottom: 20px; }
+  }
+
+  /* remaining sections unchanged */
   #services {
     position: relative;
     z-index: 5;
@@ -532,8 +554,6 @@
     .hero-text { max-width: 100%; }
     .header-inner { flex-direction: column; align-items: stretch; }
     .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
-    .hero-content { padding: 5rem 0 3rem; }
-    .hero-footer-text { font-size: 0.7rem; white-space: normal; left: 3%; right: 3%; bottom: 20px; }
   }
 </style>
 </head>
@@ -565,7 +585,8 @@
   <div class="hero-content">
     <div class="hero-text">
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
-      <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
+      <!-- subtext: exactly two lines, first short, second longer -->
+      <p class="hero-sub">We help final-year students<br>structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
         <a href="https://wa.me/2347087589603" class="btn-primary">start your project →</a>
         <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
@@ -573,10 +594,15 @@
     </div>
   </div>
 
-  <div class="hero-footer-text">Supporting students across universities in Nigeria, Canada, Australia, and the UK</div>
+  <div class="hero-footer">
+    <div class="hero-footer-text">
+      <span class="star">★</span>
+      <span>Supporting students across universities in Nigeria, Canada, Australia, and the UK</span>
+    </div>
+  </div>
 </section>
 
-<!-- All remaining sections unchanged -->
+<!-- All following sections unchanged -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
