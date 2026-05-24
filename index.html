@@ -72,8 +72,9 @@
   }
 
   .logo img {
-    height: 32px;
+    height: 27px;  /* reduced from 32px (approx 15.6% smaller) */
     width: auto;
+    transition: height 0.2s;
   }
 
   .nav-links {
@@ -85,7 +86,7 @@
   }
 
   .nav-links a {
-    font-size: 1rem;
+    font-size: 0.95rem; /* slightly reduced from 1rem to match logo scale */
     font-weight: 500;
     color: #000000;
     text-decoration: none;
@@ -163,6 +164,15 @@
     );
   }
 
+  /* New subtle gradient overlay to blend dark left panel with image */
+  .hero-blend-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(ellipse 80% 100% at 25% 50%, rgba(0,0,0,0) 30%, rgba(8,15,24,0.25) 90%);
+    pointer-events: none;
+  }
+
   .hero-overlay-warm {
     position: absolute;
     inset: 0;
@@ -193,7 +203,6 @@
     width: 94%;
     max-width: 1280px;
     margin: 0 auto;
-    /* improved vertical centering: removed excessive top padding, used flex auto margins */
     padding: 0 0 2rem;
     text-align: left;
     opacity: 0;
@@ -206,8 +215,7 @@
 
   .hero-text {
     max-width: 860px;
-    /* additional top margin to avoid being too high – balanced */
-    margin-top: 2rem;
+    margin-top: 1rem; /* fine-tuned centering */
   }
 
   @keyframes fadeUp {
@@ -248,6 +256,7 @@
     margin-bottom: 46px;
   }
 
+  /* Buttons – matched height and padding, title case */
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -261,6 +270,7 @@
     font-size: 0.95rem;
     transition: all 0.2s;
     border: none;
+    line-height: 1.2;
   }
   .btn-primary:hover {
     background: #007049;
@@ -271,15 +281,16 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 11px 26px;
+    padding: 12px 28px; /* matching primary padding */
     background: transparent;
     color: var(--white-82);
-    border: 1px solid rgba(190, 131, 14, 0.7); /* slightly increased opacity for better contrast */
+    border: 1px solid rgba(190, 131, 14, 0.8); /* stronger visibility */
     border-radius: 40px;
     text-decoration: none;
     transition: all 0.2s;
     font-weight: 500;
     font-size: 0.95rem;
+    line-height: 1.2;
   }
   .btn-secondary:hover {
     border-color: var(--gold);
@@ -318,23 +329,26 @@
     line-height: 1;
   }
 
-  @media (max-width: 640px) {
-    .hero-content { padding: 0; }
-    .hero-text { margin-top: 1rem; }
-    .hero-footer-text { font-size: 0.7rem; flex-wrap: wrap; }
-    .hero-footer { bottom: 20px; }
-  }
-
-  /* remaining sections unchanged */
+  /* Reduced top spacing between hero and next section */
   #services {
     position: relative;
     z-index: 5;
     background: var(--bg-soft-white);
-    border-top: 1px solid rgba(0,0,0,0.02);
+    border-top: none;
+    padding-top: 60px; /* reduced from default 100px */
   }
 
-  .section-default { padding: 100px 0; background: var(--bg-soft-white); }
-  .section-alt { padding: 100px 0; background: var(--bg-warm-cream); }
+  .section-default { padding: 80px 0; background: var(--bg-soft-white); }
+  /* Methodology section now uses same white/light background */
+  .section-alt { padding: 80px 0; background: var(--bg-soft-white); }
+
+  /* Faint divider line between Core Research Functions and Methodology */
+  .methodology-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,0.05);
+    margin: 0;
+  }
 
   .services-heading { text-align: left; margin-bottom: 3rem; }
   .services-heading .pre-head {
@@ -357,15 +371,15 @@
     padding: 1.75rem;
     border-radius: 16px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.03);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    border: 1px solid rgba(0,0,0,0.08); /* darker border for more presence */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     display: flex;
     flex-direction: column;
     height: 100%;
   }
   .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
     border-color: var(--gold-light);
   }
   .service-card h3 { font-size: 1.3rem; font-weight: 600; margin: 0 0 0.75rem; color: var(--text-dark); }
@@ -550,11 +564,16 @@
   }
   @media (max-width: 640px) {
     .nav-links { gap: 20px; }
-    .nav-links a { font-size: 0.9rem; }
+    .nav-links a { font-size: 0.85rem; }
     .contact-form-row { grid-template-columns: 1fr; }
     .hero-text { max-width: 100%; }
     .header-inner { flex-direction: column; align-items: stretch; }
     .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
+    .hero-content { padding: 0; }
+    .hero-text { margin-top: 0.5rem; }
+    .hero-footer-text { font-size: 0.7rem; flex-wrap: wrap; }
+    .hero-footer { bottom: 20px; }
+    .btn-primary, .btn-secondary { padding: 10px 20px; font-size: 0.85rem; }
   }
 </style>
 </head>
@@ -580,6 +599,7 @@
 
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
+  <div class="hero-blend-overlay"></div>
   <div class="hero-overlay-warm"></div>
   <div class="hero-overlay-bottom"></div>
 
@@ -602,7 +622,6 @@
   </div>
 </section>
 
-<!-- All following sections unchanged -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -617,6 +636,9 @@
     </div>
   </div>
 </section>
+
+<!-- faint divider line -->
+<div class="methodology-divider"></div>
 
 <section class="section-alt" id="methodology">
   <div class="container">
@@ -638,6 +660,7 @@
   </div>
 </section>
 
+<!-- remaining sections unchanged -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
