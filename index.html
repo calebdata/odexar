@@ -6,7 +6,7 @@
 <title>Odexar — Academic Research Support</title>
 <meta name="description" content="Odexar helps final-year students structure clear, supervisor-approved research projects ethically and confidently.">
 
-<!-- Inter font (professional, like Healcure) -->
+<!-- Inter font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
   :root {
     --hero-deep:    #0A1128;
     --hero-mid:     #0C1824;
-    --green:        #008F5A;      /* deeper emerald */
+    --green:        #008F5A;
     --green-soft:   rgba(0, 143, 90, 0.85);
     --gold:         #BE830E;
     --gold-soft:    rgba(190, 131, 14, 0.8);
@@ -93,11 +93,6 @@
     text-decoration: none;
     transition: color 0.2s;
   }
-  @media (min-width: 1024px) {
-    .nav-links a {
-      font-size: 1rem;
-    }
-  }
   .nav-links a:hover { color: var(--green); }
 
   .cta-group {
@@ -125,11 +120,11 @@
     border-color: var(--gold);
   }
 
-  /* HERO */
+  /* HERO — full 100vh */
   .hero {
     position: relative;
     width: 100%;
-    min-height: 85vh;
+    height: 100vh;              /* FULL viewport height */
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -198,7 +193,7 @@
     width: 94%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem 0 4rem;
+    padding: 8rem 0 4rem;     /* increased top padding to move text down */
     text-align: left;
     opacity: 0;
     transform: translateY(20px);
@@ -216,7 +211,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* HEADLINE — Inter, clean, authoritative */
+  /* HEADLINE */
   h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -233,7 +228,7 @@
     color: inherit;
   }
 
-  /* SUBTEXT — Inter regular, moderate size, no heavy glow */
+  /* SUBTEXT — edited: removed "and researchers" */
   .hero-sub {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -242,7 +237,7 @@
     color: var(--white-82);
     max-width: 620px;
     margin-bottom: 36px;
-    text-shadow: none; /* clean, no glow */
+    text-shadow: none;
   }
 
   .btn-row {
@@ -259,7 +254,7 @@
     padding: 12px 28px;
     background: var(--green);
     color: white;
-    border-radius: 40px;  /* slightly rounded, like Healcure */
+    border-radius: 40px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -291,7 +286,24 @@
     background: var(--gold-light);
   }
 
-  /* SECTIONS (unchanged, but font family updated to Inter) */
+  /* Centered footer text inside hero */
+  .hero-footer-text {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 15;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--white-55);
+    pointer-events: none;
+    background: transparent;
+  }
+
+  /* SECTIONS (unchanged, but adjusted minor spacing) */
   #services {
     position: relative;
     z-index: 5;
@@ -521,6 +533,7 @@
     .hero-text { max-width: 100%; }
     .header-inner { flex-direction: column; align-items: stretch; }
     .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
+    .hero-content { padding: 6rem 0 3rem; } /* slightly less on mobile */
   }
 </style>
 </head>
@@ -552,16 +565,20 @@
   <div class="hero-content">
     <div class="hero-text">
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
-      <p class="hero-sub">We help final-year students and researchers structure their projects around their research problem, not a template.</p>
+      <!-- Subtext: removed "and researchers" -> first line shorter, second line longer -->
+      <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
         <a href="https://wa.me/2347087589603" class="btn-primary">start your project →</a>
         <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
       </div>
     </div>
   </div>
+
+  <!-- Centered footer text inside hero -->
+  <div class="hero-footer-text">Built for Nigerian & UK University Standards</div>
 </section>
 
-<!-- REMAINING SECTIONS identical structure, just updated font & spacing -->
+<!-- REMAINING SECTIONS unchanged -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
