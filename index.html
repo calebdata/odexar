@@ -193,7 +193,8 @@
     width: 94%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 6.5rem 0 4rem;
+    /* improved vertical centering: removed excessive top padding, used flex auto margins */
+    padding: 0 0 2rem;
     text-align: left;
     opacity: 0;
     transform: translateY(20px);
@@ -203,16 +204,16 @@
     align-items: center;
   }
 
-  /* Widen hero text container so second line doesn't break early */
   .hero-text {
     max-width: 860px;
+    /* additional top margin to avoid being too high – balanced */
+    margin-top: 2rem;
   }
 
   @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Headline smaller, better proportion */
   h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -272,8 +273,8 @@
     gap: 8px;
     padding: 11px 26px;
     background: transparent;
-    color: var(--white-80);
-    border: 1px solid rgba(190, 131, 14, 0.4);
+    color: var(--white-82);
+    border: 1px solid rgba(190, 131, 14, 0.7); /* slightly increased opacity for better contrast */
     border-radius: 40px;
     text-decoration: none;
     transition: all 0.2s;
@@ -286,7 +287,6 @@
     background: var(--gold-light);
   }
 
-  /* Hero footer: left-aligned under logo, same container width, no background */
   .hero-footer {
     position: absolute;
     bottom: 28px;
@@ -319,7 +319,8 @@
   }
 
   @media (max-width: 640px) {
-    .hero-content { padding: 5rem 0 3rem; }
+    .hero-content { padding: 0; }
+    .hero-text { margin-top: 1rem; }
     .hero-footer-text { font-size: 0.7rem; flex-wrap: wrap; }
     .hero-footer { bottom: 20px; }
   }
@@ -585,11 +586,10 @@
   <div class="hero-content">
     <div class="hero-text">
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
-      <!-- subtext: exactly two lines, first short, second longer -->
       <p class="hero-sub">We help final-year students<br>structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
-        <a href="https://wa.me/2347087589603" class="btn-primary">start your project →</a>
-        <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
+        <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project →</a>
+        <a href="#methodology" class="btn-secondary">See How It Works →</a>
       </div>
     </div>
   </div>
