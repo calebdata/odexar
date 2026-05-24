@@ -1,3 +1,10 @@
+Here is the final HTML with the hero subtext broken into two lines:  
+- First line ends after **“students”**  
+- Second line carries the rest
+
+All previous changes are preserved: full `100vh` hero, black nav text with dark/glow hover, hero footer text with dark overlay pill, and the rest of the layout.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,11 +96,15 @@
   .nav-links a {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--text-dark);
+    color: #000000;
     text-decoration: none;
-    transition: color 0.2s;
+    transition: all 0.2s ease;
   }
-  .nav-links a:hover { color: var(--green); }
+  /* Hover: darker black + subtle glow */
+  .nav-links a:hover {
+    color: #0a0a0a;
+    text-shadow: 0 0 1px rgba(0,0,0,0.5);
+  }
 
   .cta-group {
     display: flex;
@@ -193,7 +204,7 @@
     width: 94%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 6.5rem 0 4rem;     /* reduced top padding to move text up slightly */
+    padding: 6.5rem 0 4rem;
     text-align: left;
     opacity: 0;
     transform: translateY(20px);
@@ -228,7 +239,7 @@
     color: inherit;
   }
 
-  /* SUBTEXT */
+  /* SUBTEXT — now two lines via <br> */
   .hero-sub {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -286,21 +297,25 @@
     background: var(--gold-light);
   }
 
-  /* Centered footer text inside hero */
+  /* Hero footer text with dark overlay */
   .hero-footer-text {
     position: absolute;
     bottom: 28px;
-    left: 0;
-    right: 0;
-    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 15;
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 0.02em;
-    color: var(--white-55);
+    color: var(--white-82);
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    padding: 8px 18px;
+    border-radius: 40px;
+    white-space: nowrap;
     pointer-events: none;
-    background: transparent;
+    text-align: center;
   }
 
   /* SECTIONS (unchanged) */
@@ -533,7 +548,8 @@
     .hero-text { max-width: 100%; }
     .header-inner { flex-direction: column; align-items: stretch; }
     .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
-    .hero-content { padding: 5rem 0 3rem; } /* slightly less on mobile for balance */
+    .hero-content { padding: 5rem 0 3rem; }
+    .hero-footer-text { font-size: 0.7rem; padding: 5px 12px; white-space: normal; width: 90%; text-align: center; bottom: 16px; }
   }
 </style>
 </head>
@@ -565,7 +581,8 @@
   <div class="hero-content">
     <div class="hero-text">
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
-      <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
+      <!-- Subtext broken into two lines for editorial balance -->
+      <p class="hero-sub">We help final-year students<br>structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
         <a href="https://wa.me/2347087589603" class="btn-primary">start your project →</a>
         <a href="#methodology" class="btn-secondary">Explore Our Methodology →</a>
@@ -573,11 +590,10 @@
     </div>
   </div>
 
-  <!-- Updated footer text -->
   <div class="hero-footer-text">Supporting students across universities in Nigeria, Canada, Australia, and the UK</div>
 </section>
 
-<!-- REMAINING SECTIONS unchanged -->
+<!-- All remaining sections unchanged -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -752,3 +768,4 @@
 
 </body>
 </html>
+```
