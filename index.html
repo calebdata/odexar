@@ -386,6 +386,7 @@
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
+  /* METHODOLOGY SECTION - two column sticky with icons inline */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -393,7 +394,7 @@
 
   .methodology-sticky-wrapper {
     display: flex;
-    gap: 4rem;
+    gap: 6rem;  /* increased gap */
     align-items: flex-start;
   }
 
@@ -429,33 +430,45 @@
   }
 
   .methodology-sticky-right {
-    flex: 2;
+    flex: 1.2;
+    max-width: 560px;  /* prevents overly wide text */
   }
 
   .methodology-step {
-    margin-bottom: 4rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 3.5rem;
   }
 
   .methodology-step:last-child {
-    border-bottom: none;
     margin-bottom: 0;
-    padding-bottom: 0;
   }
 
-  .step-number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
+  /* icon + heading row */
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 1rem;
+  }
+
+  .step-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .step-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
   }
 
   .methodology-step h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    margin: 0 0 1rem 0;
+    margin: 0;
     color: var(--text-dark);
   }
 
@@ -469,7 +482,7 @@
   @media (max-width: 900px) {
     .methodology-sticky-wrapper {
       flex-direction: column;
-      gap: 2rem;
+      gap: 3rem;
     }
     .methodology-sticky-left {
       position: relative;
@@ -478,11 +491,22 @@
     .methodology-sticky-left .subhead {
       max-width: 100%;
     }
-    .methodology-step {
-      margin-bottom: 3rem;
+    .methodology-sticky-right {
+      max-width: 100%;
+    }
+    .step-header {
+      gap: 10px;
+    }
+    .step-icon {
+      width: 28px;
+      height: 28px;
+    }
+    .methodology-step h3 {
+      font-size: 1.3rem;
     }
   }
 
+  /* remaining sections unchanged */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -705,27 +729,35 @@
       <div class="methodology-sticky-left">
         <div class="pre-head">OUR PROCESS</div>
         <h2>Methodology</h2>
-        <p class="subhead">A clear, step‑by‑step framework for defensible research.</p>
+        <p class="subhead">Some students have a topic but no direction. Others have a draft but no confidence in it. At Odexar, we give you a clear, step‑by‑step framework for study that is supervisor approved.</p>
       </div>
       <div class="methodology-sticky-right">
         <div class="methodology-step">
-          <div class="step-number">01</div>
-          <h3>Understand Your Situation</h3>
+          <div class="step-header">
+            <div class="step-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor"/><path d="M16 16 L21 21" stroke="currentColor"/></svg></div>
+            <h3>Understand Your Situation</h3>
+          </div>
           <p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p>
         </div>
         <div class="methodology-step">
-          <div class="step-number">02</div>
-          <h3>Define the Research Problem</h3>
+          <div class="step-header">
+            <div class="step-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></div>
+            <h3>Define the Research Problem</h3>
+          </div>
           <p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p>
         </div>
         <div class="methodology-step">
-          <div class="step-number">03</div>
-          <h3>Develop the Work</h3>
+          <div class="step-header">
+            <div class="step-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M17 3L21 7L17 11" stroke="currentColor"/><path d="M3 7H21" stroke="currentColor"/><path d="M7 21L3 17L7 13" stroke="currentColor"/><path d="M21 17H3" stroke="currentColor"/></svg></div>
+            <h3>Develop the Work</h3>
+          </div>
           <p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p>
         </div>
         <div class="methodology-step">
-          <div class="step-number">04</div>
-          <h3>Review and Strengthen</h3>
+          <div class="step-header">
+            <div class="step-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M9 12 L11 14 L15 10" stroke="currentColor" stroke-linecap="round"/><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor"/></svg></div>
+            <h3>Review and Strengthen</h3>
+          </div>
           <p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p>
         </div>
       </div>
@@ -733,6 +765,7 @@
   </div>
 </section>
 
+<!-- remaining sections unchanged -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
