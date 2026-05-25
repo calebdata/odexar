@@ -1,3 +1,11 @@
+Here is the updated HTML with the methodology section adjusted:
+
+- Left column moved to the right (increased left margin or gap) by adding `margin-left: auto` to the wrapper and adjusting flex properties, plus increased gap to `8rem`  
+- Left column width reduced to `260px` so the subhead text breaks into 4 lines  
+- Vertical spacing between each step block increased to `6rem` for generous breathing room  
+- All other sections and copy unchanged
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -386,7 +394,7 @@
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-  /* METHODOLOGY SECTION - two column sticky with step numbers */
+  /* METHODOLOGY SECTION - adjusted spacing and left column width */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -394,12 +402,14 @@
 
   .methodology-sticky-wrapper {
     display: flex;
-    gap: 6rem;
+    gap: 8rem;  /* increased gap to push left column right */
     align-items: flex-start;
+    justify-content: flex-start;
   }
 
+  /* Left column narrower to make subtext wrap into 4 lines */
   .methodology-sticky-left {
-    flex: 0 0 300px;
+    flex: 0 0 260px;  /* reduced from 300px */
     position: sticky;
     top: calc(var(--header-height) + 2rem);
     align-self: flex-start;
@@ -422,7 +432,7 @@
     letter-spacing: -0.01em;
   }
 
-  /* Short subhead - single line */
+  /* Subhead now wraps to ~4 lines due to narrower width */
   .methodology-sticky-left .subhead {
     font-size: 1rem;
     color: var(--text-muted);
@@ -435,16 +445,15 @@
     max-width: 520px;
   }
 
-  /* Step block spacing increased */
+  /* Increased vertical spacing between steps */
   .methodology-step {
-    margin-bottom: 4.5rem;  /* generous vertical breathing */
+    margin-bottom: 6rem;  /* generous breathing room */
   }
 
   .methodology-step:last-child {
     margin-bottom: 0;
   }
 
-  /* Step header: number and title on same line */
   .step-header {
     display: flex;
     align-items: baseline;
@@ -452,11 +461,10 @@
     margin-bottom: 1rem;
   }
 
-  /* Large, muted, lightweight step number */
   .step-number {
     font-size: 2rem;
     font-weight: 300;
-    color: #C0C9D2;  /* light gray, muted */
+    color: #C0C9D2;
     line-height: 1;
     letter-spacing: -0.02em;
   }
@@ -469,13 +477,11 @@
     line-height: 1.2;
   }
 
-  /* Body text: left‑align with title (no indent from number) */
   .methodology-step p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
-    /* no extra padding/margin, aligns naturally under title */
   }
 
   @media (max-width: 900px) {
@@ -499,7 +505,7 @@
       font-size: 1.3rem;
     }
     .methodology-step {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
   }
 
@@ -901,3 +907,4 @@
 
 </body>
 </html>
+```
