@@ -399,7 +399,7 @@
   }
 
   .methodology-sticky-left {
-    flex: 0 0 420px;  /* WAS 340px - increased for proper three‑line rendering */
+    flex: 0 0 420px;
     position: sticky;
     top: calc(var(--header-height) + 2rem);
     align-self: flex-start;
@@ -414,10 +414,11 @@
     margin-bottom: 0.5rem;
   }
 
+  /* Three-line headline now matches "Core Research Functions" size */
   .methodology-sticky-left h2 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 1.9rem;
+    font-size: 2.2rem;   /* increased from 1.9rem to match Core Research Functions */
     line-height: 1.2;
     letter-spacing: -0.01em;
     margin: 0;
@@ -495,7 +496,7 @@
       margin-bottom: 4rem;
     }
     .methodology-sticky-left h2 {
-      font-size: 1.7rem;
+      font-size: 2rem;   /* proportionally larger on mobile */
     }
   }
 
@@ -720,7 +721,7 @@
     <div class="methodology-sticky-wrapper">
       <div class="methodology-sticky-left">
         <div class="pre-head">HOW WE WORK</div>
-        <h2>We approach<br>each project through its own<br>analytical direction.</h2>
+        <h2>We approach<br>each project through<br>its own analytical direction.</h2>
       </div>
       <div class="methodology-sticky-right">
         <div class="methodology-step">
