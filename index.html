@@ -386,6 +386,7 @@
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
+  /* METHODOLOGY SECTION – adjusted as requested */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -393,13 +394,13 @@
 
   .methodology-sticky-wrapper {
     display: flex;
-    gap: 8rem;
+    gap: 5rem;           /* changed from 8rem to 5rem */
     align-items: flex-start;
     justify-content: flex-start;
   }
 
   .methodology-sticky-left {
-    flex: 0 0 420px;
+    flex: 0 0 280px;     /* changed from 420px to 280px */
     position: sticky;
     top: calc(var(--header-height) + 2rem);
     align-self: flex-start;
@@ -414,11 +415,10 @@
     margin-bottom: 0.5rem;
   }
 
-  /* Three-line headline now matches "Core Research Functions" size */
   .methodology-sticky-left h2 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 2.2rem;   /* increased from 1.9rem to match Core Research Functions */
+    font-size: 2.2rem;
     line-height: 1.2;
     letter-spacing: -0.01em;
     margin: 0;
@@ -470,6 +470,7 @@
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
+    padding-left: 3.5rem;   /* aligns text under title, not under number */
   }
 
   @media (max-width: 900px) {
@@ -496,7 +497,10 @@
       margin-bottom: 4rem;
     }
     .methodology-sticky-left h2 {
-      font-size: 2rem;   /* proportionally larger on mobile */
+      font-size: 2rem;
+    }
+    .methodology-step p {
+      padding-left: 2.5rem;   /* slightly smaller on mobile */
     }
   }
 
