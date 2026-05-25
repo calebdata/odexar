@@ -386,7 +386,7 @@
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-  /* METHODOLOGY SECTION - two column sticky with icons inline */
+  /* METHODOLOGY SECTION - two column sticky with icons inline, narrower columns */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -394,12 +394,13 @@
 
   .methodology-sticky-wrapper {
     display: flex;
-    gap: 6rem;  /* increased gap */
+    gap: 6rem;  /* generous gap between columns */
     align-items: flex-start;
   }
 
+  /* LEFT COLUMN: smaller width, less text sprawl */
   .methodology-sticky-left {
-    flex: 1;
+    flex: 0 0 300px;  /* fixed smaller width */
     position: sticky;
     top: calc(var(--header-height) + 2rem);
     align-self: flex-start;
@@ -426,12 +427,12 @@
     font-size: 1rem;
     color: var(--text-muted);
     line-height: 1.5;
-    max-width: 90%;
   }
 
+  /* RIGHT COLUMN: narrower and comfortable text width */
   .methodology-sticky-right {
-    flex: 1.2;
-    max-width: 560px;  /* prevents overly wide text */
+    flex: 1;
+    max-width: 520px;  /* prevents excessive width */
   }
 
   .methodology-step {
@@ -485,11 +486,10 @@
       gap: 3rem;
     }
     .methodology-sticky-left {
+      flex: auto;
+      width: 100%;
       position: relative;
       top: 0;
-    }
-    .methodology-sticky-left .subhead {
-      max-width: 100%;
     }
     .methodology-sticky-right {
       max-width: 100%;
@@ -765,7 +765,7 @@
   </div>
 </section>
 
-<!-- remaining sections unchanged -->
+<!-- remaining sections unchanged (insights, benefits, testimonials, cta, contact, footer) -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
