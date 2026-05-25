@@ -386,7 +386,7 @@
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-  /* METHODOLOGY SECTION – adjusted as requested */
+  /* METHODOLOGY SECTION – FIXED: left column width 380px ensures three exact lines */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -394,13 +394,13 @@
 
   .methodology-sticky-wrapper {
     display: flex;
-    gap: 5rem;           /* changed from 8rem to 5rem */
+    gap: 5rem;
     align-items: flex-start;
     justify-content: flex-start;
   }
 
   .methodology-sticky-left {
-    flex: 0 0 280px;     /* changed from 420px to 280px */
+    flex: 0 0 380px;   /* increased from 280px to 380px – allows three lines without internal wrap */
     position: sticky;
     top: calc(var(--header-height) + 2rem);
     align-self: flex-start;
@@ -470,7 +470,7 @@
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
-    padding-left: 3.5rem;   /* aligns text under title, not under number */
+    padding-left: 3.5rem;
   }
 
   @media (max-width: 900px) {
@@ -500,7 +500,7 @@
       font-size: 2rem;
     }
     .methodology-step p {
-      padding-left: 2.5rem;   /* slightly smaller on mobile */
+      padding-left: 2.5rem;
     }
   }
 
