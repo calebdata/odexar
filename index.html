@@ -386,7 +386,7 @@
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-  /* METHODOLOGY SECTION – FIXED: left column width 480px ensures three exact lines */
+  /* METHODOLOGY SECTION – updated as requested */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -394,13 +394,13 @@
 
   .methodology-sticky-wrapper {
     display: flex;
-    gap: 5rem;
+    gap: 8rem;      /* increased from 5rem to 8rem – more space between columns */
     align-items: flex-start;
     justify-content: flex-start;
   }
 
   .methodology-sticky-left {
-    flex: 0 0 480px;   /* increased from 380px to 480px – allows third line to fit without wrapping */
+    flex: 0 0 480px;
     position: sticky;
     top: calc(var(--header-height) + 2rem);
     align-self: flex-start;
@@ -442,10 +442,11 @@
     margin-bottom: 0;
   }
 
+  /* increased horizontal gap between number and title */
   .step-header {
     display: flex;
     align-items: baseline;
-    gap: 0.75rem;
+    gap: 1.5rem;    /* was 0.75rem – double the space */
     margin-bottom: 1rem;
   }
 
@@ -465,12 +466,13 @@
     line-height: 1.2;
   }
 
+  /* paragraph aligns under title (not under number) */
   .methodology-step p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
-    padding-left: 3.5rem;
+    padding-left: 3.5rem;   /* offset = width of "01" (~2rem) + gap 1.5rem */
   }
 
   @media (max-width: 900px) {
@@ -501,6 +503,9 @@
     }
     .methodology-step p {
       padding-left: 2.5rem;
+    }
+    .step-header {
+      gap: 1rem;
     }
   }
 
@@ -733,28 +738,28 @@
             <span class="step-number">01</span>
             <h3>Understand Your Situation</h3>
           </div>
-          <p>You come in at different stages. Some students have a topic but no direction. Others have a draft but no confidence in it. We start by understanding exactly where you are and what your project needs before anything else is decided.</p>
+          <p>You come in at different stages. Some have a topic but no direction. Others have a draft but no confidence in it. We begin by understanding where you are and what the research actually needs.</p>
         </div>
         <div class="methodology-step">
           <div class="step-header">
             <span class="step-number">02</span>
             <h3>Define the Research Problem</h3>
           </div>
-          <p>Most projects fail at this stage without the student knowing it. We identify the actual research problem, sharpen the question, and establish the scope. Everything that follows is built on this foundation.</p>
+          <p>Most projects fail here without the student realizing it. We identify the core research problem, sharpen the question, and clarify the scope before the work moves forward.</p>
         </div>
         <div class="methodology-step">
           <div class="step-header">
             <span class="step-number">03</span>
             <h3>Develop the Work</h3>
           </div>
-          <p>This is where the real work happens. Depending on what your project needs, we guide your literature review, methodology design, data analysis, or writing. The work remains yours. We make sure it is rigorous enough to stand up.</p>
+          <p>Depending on the project, we guide the literature review, methodology, analysis, or writing process. The work remains yours. We help ensure it is rigorous and academically defensible.</p>
         </div>
         <div class="methodology-step">
           <div class="step-header">
             <span class="step-number">04</span>
             <h3>Review and Strengthen</h3>
           </div>
-          <p>Before submission, we evaluate the full work against academic standards. We check for coherence, logical consistency, and defensibility. Gaps are addressed. Arguments are tightened. You submit with confidence.</p>
+          <p>Before submission, the full work is reviewed for coherence, consistency, and academic defensibility. Weak points are addressed and arguments refined. You submit with confidence.</p>
         </div>
       </div>
     </div>
