@@ -347,6 +347,7 @@
   }
   .services-heading h2 { font-size: 2.2rem; font-weight: 700; margin: 0; color: var(--text-dark); letter-spacing: -0.01em; }
 
+  /* Service cards – clickable, no "learn more" */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -354,39 +355,42 @@
   }
   .service-card {
     background: var(--card-bg);
-    padding: 1.75rem;
     border-radius: 16px;
     transition: all 0.3s ease;
     border: 1px solid rgba(0,0,0,0.08);
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
+  }
+  .service-card a {
+    display: block;
+    padding: 1.75rem;
+    text-decoration: none;
+    color: inherit;
     height: 100%;
+    transition: all 0.3s ease;
   }
   .service-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.08);
     border-color: var(--gold-light);
   }
-  .service-card h3 { font-size: 1.3rem; font-weight: 600; margin: 0 0 0.75rem; color: var(--text-dark); }
-  .service-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0 0 1rem; flex-grow: 1; line-height: 1.5; }
-  .service-link {
-    font-size: 0.85rem;
+  .service-card h3 {
+    font-size: 1.3rem;
     font-weight: 600;
-    color: var(--green);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: gap 0.2s;
-    margin-top: auto;
+    margin: 0 0 0.75rem;
+    color: var(--text-dark);
   }
-  .service-link:hover { gap: 8px; color: var(--gold); text-decoration: underline; }
+  .service-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
 
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-  /* METHODOLOGY SECTION – FIXES: pure white box, green number, thicker faint line, increased height, alignment fixed */
+  /* METHODOLOGY SECTION – white line, fixed alignment */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -435,52 +439,50 @@
     position: relative;
   }
 
-  /* Thicker, faint green line – runs behind the white boxes, appears to jump between them */
+  /* White, faint, blurry line */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
-    left: 2rem;  /* aligns with centre of number boxes */
+    left: 2rem;
     top: 2rem;
     bottom: 2rem;
     width: 2px;
-    background: rgba(0, 184, 92, 0.25);
+    background: white;
+    opacity: 0.25;
+    filter: blur(1px);
     pointer-events: none;
   }
 
   .methodology-step {
     margin-bottom: 4.5rem;
   }
-
   .methodology-step:last-child {
     margin-bottom: 0;
   }
 
+  /* Fix alignment: fixed width number column + consistent left padding */
   .step-header {
     display: flex;
     align-items: baseline;
     gap: 1.5rem;
     margin-bottom: 1rem;
   }
-
-  /* Number box: pure white background, increased vertical padding, green text */
   .step-number {
+    width: 3.5rem;
+    text-align: center;
     font-size: 2rem;
     font-weight: 400;
-    color: var(--green);           /* changed to green (#008F5A) */
+    color: var(--green);
     line-height: 1;
-    letter-spacing: -0.02em;
-    background: #FFFFFF;           /* pure white box */
-    padding: 0.5rem 0.8rem;        /* increased height for breathing room */
+    background: #FFFFFF;
+    padding: 0.5rem 0;
     border-radius: 12px;
     display: inline-block;
     transition: background 0.2s ease;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
   }
-
   .methodology-step:hover .step-number {
-    background: #F9F9F9;           /* very subtle hover */
+    background: #F9F9F9;
   }
-
   .methodology-step h3 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -488,19 +490,13 @@
     color: var(--text-dark);
     line-height: 1.2;
   }
-
-  /* Paragraph aligns under title, not under number */
+  /* Paragraph aligns exactly under the title (left edge after number + gap) */
   .methodology-step p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
-    padding-left: 3.5rem;
-  }
-
-  /* Ensure consistent alignment across steps */
-  .methodology-step {
-    position: relative;
+    padding-left: 5rem;  /* 3.5rem (number width) + 1.5rem (gap) */
   }
 
   @media (max-width: 900px) {
@@ -523,8 +519,9 @@
       bottom: 1.5rem;
     }
     .step-number {
+      width: 2.8rem;
       font-size: 1.75rem;
-      padding: 0.4rem 0.7rem;
+      padding: 0.4rem 0;
     }
     .methodology-step h3 {
       font-size: 1.3rem;
@@ -536,14 +533,14 @@
       font-size: 2rem;
     }
     .methodology-step p {
-      padding-left: 2.5rem;
+      padding-left: 4.3rem; /* adjusted for smaller numbers */
     }
     .step-header {
       gap: 1rem;
     }
   }
 
-  /* remaining sections (unchanged) */
+  /* remaining sections unchanged */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -752,10 +749,10 @@
       <h2>Core Research Functions</h2>
     </div>
     <div class="services-grid">
-      <div class="service-card"><h3>Research Framing</h3><p>Define the research problem, refine analytical direction, and establish a coherent methodological foundation.</p><a href="#contact" class="service-link">Learn more →</a></div>
-      <div class="service-card"><h3>Analytical Interpretation</h3><p>Structure analytical approaches, interpret findings critically, and present results with methodological clarity.</p><a href="#contact" class="service-link">Learn more →</a></div>
-      <div class="service-card"><h3>Scholarly Refinement</h3><p>Strengthen coherence, improve academic clarity, and align manuscripts with institutional standards and citation requirements.</p><a href="#contact" class="service-link">Learn more →</a></div>
-      <div class="service-card"><h3>Literature Synthesis</h3><p>Identify theoretical gaps, synthesize existing scholarship, and position research within established academic discourse.</p><a href="#contact" class="service-link">Learn more →</a></div>
+      <div class="service-card"><a href="#contact"><h3>Research Framing</h3><p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p></a></div>
+      <div class="service-card"><a href="#contact"><h3>Literature Synthesis</h3><p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p></a></div>
+      <div class="service-card"><a href="#contact"><h3>Analytical Interpretation</h3><p>Structure the methodology, interpret findings critically, and present results with coherence and academic rigour.</p></a></div>
+      <div class="service-card"><a href="#contact"><h3>Scholarly Refinement</h3><p>Strengthen clarity, improve coherence, and align the final work with institutional standards and citation requirements.</p></a></div>
     </div>
   </div>
 </section>
@@ -801,6 +798,7 @@
   </div>
 </section>
 
+<!-- remaining sections unchanged -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
