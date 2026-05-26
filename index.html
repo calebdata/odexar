@@ -386,7 +386,7 @@
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-  /* METHODOLOGY SECTION – updated: subtle light grey background for numbers, gold text, line hidden behind */
+  /* METHODOLOGY SECTION – FIXES: pure white box, green number, thicker faint line, increased height, alignment fixed */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -435,15 +435,15 @@
     position: relative;
   }
 
-  /* faint green line – runs behind the number boxes */
+  /* Thicker, faint green line – runs behind the white boxes, appears to jump between them */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
-    left: 1.9rem;  /* aligns with centre of number boxes */
+    left: 2rem;  /* aligns with centre of number boxes */
     top: 2rem;
     bottom: 2rem;
-    width: 1px;
-    background: rgba(0, 184, 92, 0.3);
+    width: 2px;
+    background: rgba(0, 184, 92, 0.25);
     pointer-events: none;
   }
 
@@ -462,22 +462,23 @@
     margin-bottom: 1rem;
   }
 
-  /* number box: light grey background, subtle rounded rectangle, gold text */
+  /* Number box: pure white background, increased vertical padding, green text */
   .step-number {
     font-size: 2rem;
     font-weight: 400;
-    color: var(--gold);          /* gold number */
+    color: var(--green);           /* changed to green (#008F5A) */
     line-height: 1;
     letter-spacing: -0.02em;
-    background: #F1F1F1;        /* very light grey, close to page background */
-    padding: 0.25rem 0.7rem;
+    background: #FFFFFF;           /* pure white box */
+    padding: 0.5rem 0.8rem;        /* increased height for breathing room */
     border-radius: 12px;
     display: inline-block;
     transition: background 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
   }
 
   .methodology-step:hover .step-number {
-    background: #E5E5E5;        /* slightly darker on hover for subtle feedback */
+    background: #F9F9F9;           /* very subtle hover */
   }
 
   .methodology-step h3 {
@@ -488,13 +489,18 @@
     line-height: 1.2;
   }
 
-  /* paragraph aligns under the title, not under the number */
+  /* Paragraph aligns under title, not under number */
   .methodology-step p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
     padding-left: 3.5rem;
+  }
+
+  /* Ensure consistent alignment across steps */
+  .methodology-step {
+    position: relative;
   }
 
   @media (max-width: 900px) {
@@ -512,13 +518,13 @@
       max-width: 100%;
     }
     .methodology-sticky-right::before {
-      left: 1.6rem;
+      left: 1.7rem;
       top: 1.5rem;
       bottom: 1.5rem;
     }
     .step-number {
       font-size: 1.75rem;
-      padding: 0.2rem 0.5rem;
+      padding: 0.4rem 0.7rem;
     }
     .methodology-step h3 {
       font-size: 1.3rem;
@@ -537,7 +543,7 @@
     }
   }
 
-  /* REMAINING SECTIONS (unchanged) */
+  /* remaining sections (unchanged) */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
