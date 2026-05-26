@@ -51,6 +51,7 @@
     margin: 0 auto;
   }
 
+  /* HEADER */
   header {
     position: sticky;
     top: 0;
@@ -122,6 +123,7 @@
     border-color: var(--gold);
   }
 
+  /* HERO */
   .hero {
     position: relative;
     width: 100%;
@@ -327,6 +329,7 @@
     line-height: 1;
   }
 
+  /* CORE RESEARCH FUNCTIONS SECTION */
   #services {
     position: relative;
     z-index: 5;
@@ -347,7 +350,7 @@
   }
   .services-heading h2 { font-size: 2.2rem; font-weight: 700; margin: 0; color: var(--text-dark); letter-spacing: -0.01em; }
 
-  /* Service cards – clickable, no "learn more" */
+  /* Service cards – clickable, no "learn more", navy hover */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -366,31 +369,40 @@
     padding: 1.75rem;
     text-decoration: none;
     color: inherit;
-    height: 100%;
     transition: all 0.3s ease;
   }
   .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-    border-color: var(--gold-light);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    border-color: var(--gold);
+  }
+  .service-card:hover a {
+    background: #0A1128;  /* navy */
+    color: white;
+  }
+  .service-card:hover h3,
+  .service-card:hover p {
+    color: white;
   }
   .service-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
     margin: 0 0 0.75rem;
     color: var(--text-dark);
+    transition: color 0.2s;
   }
   .service-card p {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin: 0;
     line-height: 1.5;
+    transition: color 0.2s;
   }
 
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
-  /* METHODOLOGY SECTION – white line, fixed alignment */
+  /* METHODOLOGY SECTION – white line, stops before 04 box, visible */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -439,18 +451,18 @@
     position: relative;
   }
 
-  /* White, faint, blurry line */
+  /* White line – more visible, stops before 04 box */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
     left: 2rem;
     top: 2rem;
-    bottom: 2rem;
+    bottom: auto;
     width: 2px;
     background: white;
-    opacity: 0.25;
-    filter: blur(1px);
+    opacity: 0.7;          /* increased for visibility */
     pointer-events: none;
+    height: calc(100% - 6rem); /* stops before 04 box (approx height of last step) */
   }
 
   .methodology-step {
@@ -460,7 +472,6 @@
     margin-bottom: 0;
   }
 
-  /* Fix alignment: fixed width number column + consistent left padding */
   .step-header {
     display: flex;
     align-items: baseline;
@@ -490,13 +501,13 @@
     color: var(--text-dark);
     line-height: 1.2;
   }
-  /* Paragraph aligns exactly under the title (left edge after number + gap) */
+  /* Paragraph aligns exactly under the title */
   .methodology-step p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
-    padding-left: 5rem;  /* 3.5rem (number width) + 1.5rem (gap) */
+    padding-left: 5rem;
   }
 
   @media (max-width: 900px) {
@@ -516,7 +527,7 @@
     .methodology-sticky-right::before {
       left: 1.7rem;
       top: 1.5rem;
-      bottom: 1.5rem;
+      height: calc(100% - 5rem);
     }
     .step-number {
       width: 2.8rem;
@@ -533,7 +544,7 @@
       font-size: 2rem;
     }
     .methodology-step p {
-      padding-left: 4.3rem; /* adjusted for smaller numbers */
+      padding-left: 4.3rem;
     }
     .step-header {
       gap: 1rem;
@@ -798,7 +809,6 @@
   </div>
 </section>
 
-<!-- remaining sections unchanged -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
