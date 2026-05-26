@@ -329,7 +329,7 @@
     line-height: 1;
   }
 
-  /* CORE RESEARCH FUNCTIONS SECTION */
+  /* SERVICES SECTION – NEW THREE COLUMN LAYOUT */
   #services {
     position: relative;
     z-index: 5;
@@ -339,7 +339,10 @@
 
   .section-default { padding: 80px 0; background: var(--bg-soft-white); }
 
-  .services-heading { text-align: left; margin-bottom: 3rem; }
+  .services-heading {
+    text-align: left;
+    margin-bottom: 3rem;
+  }
   .services-heading .pre-head {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
@@ -348,14 +351,37 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  .services-heading h2 { font-size: 2.2rem; font-weight: 700; margin: 0; color: var(--text-dark); letter-spacing: -0.01em; }
+  .services-heading h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-dark);
+    letter-spacing: -0.01em;
+  }
 
-  /* Service cards – clickable, no "learn more", navy hover */
+  /* Three column grid */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: 16px;
+    align-items: stretch;
   }
+
+  /* Left column – stack cards */
+  .services-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Right column – stack cards */
+  .services-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Card styling (clickable) */
   .service-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -373,11 +399,11 @@
   }
   .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-    border-color: var(--gold);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    border-color: var(--gold-light);
   }
   .service-card:hover a {
-    background: #0A1128;  /* navy */
+    background: #0A1128;  /* navy hover as before */
     color: white;
   }
   .service-card:hover h3,
@@ -399,10 +425,60 @@
     transition: color 0.2s;
   }
 
-  @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
-  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  /* Centre statement panel */
+  .services-centre {
+    background: var(--bg-warm-cream);  /* #F5EDDE */
+    border-radius: 16px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.75rem;
+  }
+  .accent-bar {
+    width: 32px;
+    height: 2px;
+    background: var(--green);  /* #008F5A */
+    margin-bottom: 1.5rem;
+  }
+  .statement-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.35;
+    margin-bottom: 1.5rem;
+  }
+  .statement-label {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
 
-  /* METHODOLOGY SECTION – white line, stops before 04 box, visible */
+  @media (max-width: 1000px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .services-left, .services-right {
+      gap: 16px;
+    }
+  }
+  @media (max-width: 600px) {
+    .service-card a {
+      padding: 1.5rem;
+    }
+    .services-centre {
+      padding: 1.5rem;
+      min-height: auto;
+    }
+    .statement-text {
+      font-size: 18px;
+    }
+  }
+
+  /* METHODOLOGY SECTION – unchanged */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -451,7 +527,6 @@
     position: relative;
   }
 
-  /* White line – more visible, stops before 04 box */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
@@ -460,9 +535,9 @@
     bottom: auto;
     width: 2px;
     background: white;
-    opacity: 0.7;          /* increased for visibility */
+    opacity: 0.7;
     pointer-events: none;
-    height: calc(100% - 6rem); /* stops before 04 box (approx height of last step) */
+    height: calc(100% - 6rem);
   }
 
   .methodology-step {
@@ -501,7 +576,6 @@
     color: var(--text-dark);
     line-height: 1.2;
   }
-  /* Paragraph aligns exactly under the title */
   .methodology-step p {
     font-size: 0.95rem;
     color: var(--text-muted);
@@ -551,7 +625,7 @@
     }
   }
 
-  /* remaining sections unchanged */
+  /* remaining sections (insights, benefits, testimonials, cta, contact, footer) – unchanged */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -753,6 +827,7 @@
   </div>
 </section>
 
+<!-- NEW SERVICES SECTION (3 columns) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -760,14 +835,49 @@
       <h2>Core Research Functions</h2>
     </div>
     <div class="services-grid">
-      <div class="service-card"><a href="#contact"><h3>Research Framing</h3><p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p></a></div>
-      <div class="service-card"><a href="#contact"><h3>Literature Synthesis</h3><p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p></a></div>
-      <div class="service-card"><a href="#contact"><h3>Analytical Interpretation</h3><p>Structure the methodology, interpret findings critically, and present results with coherence and academic rigour.</p></a></div>
-      <div class="service-card"><a href="#contact"><h3>Scholarly Refinement</h3><p>Strengthen clarity, improve coherence, and align the final work with institutional standards and citation requirements.</p></a></div>
+      <!-- Left column: two stacked cards -->
+      <div class="services-left">
+        <div class="service-card">
+          <a href="#contact">
+            <h3>Research Framing</h3>
+            <p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p>
+          </a>
+        </div>
+        <div class="service-card">
+          <a href="#contact">
+            <h3>Literature Synthesis</h3>
+            <p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Centre column: statement panel -->
+      <div class="services-centre">
+        <div class="accent-bar"></div>
+        <div class="statement-text">Every project starts with a problem worth solving.</div>
+        <div class="statement-label">Odexar — Academic Research Support</div>
+      </div>
+
+      <!-- Right column: two stacked cards -->
+      <div class="services-right">
+        <div class="service-card">
+          <a href="#contact">
+            <h3>Analytical Interpretation</h3>
+            <p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p>
+          </a>
+        </div>
+        <div class="service-card">
+          <a href="#contact">
+            <h3>Scholarly Refinement</h3>
+            <p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- METHODOLOGY SECTION (unchanged) -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
@@ -809,6 +919,7 @@
   </div>
 </section>
 
+<!-- REMAINING SECTIONS (insights, benefits, testimonials, CTA, contact, footer) unchanged -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
