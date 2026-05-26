@@ -386,6 +386,7 @@
   @media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 
+  /* METHODOLOGY SECTION – updated: subtle light grey background for numbers, gold text, line hidden behind */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -434,11 +435,11 @@
     position: relative;
   }
 
-  /* faint green line */
+  /* faint green line – runs behind the number boxes */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
-    left: 1.75rem;
+    left: 1.9rem;  /* aligns with centre of number boxes */
     top: 2rem;
     bottom: 2rem;
     width: 1px;
@@ -461,17 +462,22 @@
     margin-bottom: 1rem;
   }
 
-  /* subtle background behind step numbers */
+  /* number box: light grey background, subtle rounded rectangle, gold text */
   .step-number {
     font-size: 2rem;
     font-weight: 400;
-    color: var(--gold);
+    color: var(--gold);          /* gold number */
     line-height: 1;
     letter-spacing: -0.02em;
-    background: rgba(0, 184, 92, 0.08);  /* very light green background */
-    padding: 0.25rem 0.6rem;
+    background: #F1F1F1;        /* very light grey, close to page background */
+    padding: 0.25rem 0.7rem;
     border-radius: 12px;
     display: inline-block;
+    transition: background 0.2s ease;
+  }
+
+  .methodology-step:hover .step-number {
+    background: #E5E5E5;        /* slightly darker on hover for subtle feedback */
   }
 
   .methodology-step h3 {
@@ -482,6 +488,7 @@
     line-height: 1.2;
   }
 
+  /* paragraph aligns under the title, not under the number */
   .methodology-step p {
     font-size: 0.95rem;
     color: var(--text-muted);
@@ -505,7 +512,7 @@
       max-width: 100%;
     }
     .methodology-sticky-right::before {
-      left: 1.5rem;
+      left: 1.6rem;
       top: 1.5rem;
       bottom: 1.5rem;
     }
@@ -530,6 +537,7 @@
     }
   }
 
+  /* REMAINING SECTIONS (unchanged) */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
