@@ -354,6 +354,7 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
+  /* New heading text */
   .services-heading h2 {
     font-size: 2.2rem;
     font-weight: 700;
@@ -428,7 +429,7 @@
     line-height: 1.5;
   }
 
-  /* Centre panel – subtle geometric line art watermark (balanced visibility) */
+  /* Centre panel – subtle geometric line art watermark (balanced) */
   .services-centre {
     background: var(--bg-soft-white);
     border-radius: 16px;
@@ -442,7 +443,6 @@
     position: relative;
     overflow: hidden;
   }
-  /* Watermark overlay with balanced opacity and stroke */
   .services-centre::before {
     content: "";
     position: absolute;
@@ -454,11 +454,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.28;  /* balanced: not too strong, not too faint */
+    opacity: 0.28;
     pointer-events: none;
     z-index: 0;
   }
-  /* Ensure text is above overlay */
   .services-centre .statement-text {
     position: relative;
     z-index: 1;
@@ -846,12 +845,12 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION with balanced watermark (opacity 0.28), no gold bar -->
+<!-- SERVICES SECTION with updated heading -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
       <div class="pre-head">WHAT WE DO</div>
-      <h2>Expert guidance to strengthen your research<br>and submit with confidence.</h2>
+      <h2>Everything your work needs to be submission-ready and defensible.</h2>
     </div>
     <div class="services-outer-box">
       <div class="services-grid">
