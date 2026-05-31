@@ -354,7 +354,7 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  /* New heading text */
+  /* Updated heading: single line, removed "and defensible" */
   .services-heading h2 {
     font-size: 2.2rem;
     font-weight: 700;
@@ -496,7 +496,7 @@
     }
   }
 
-  /* METHODOLOGY SECTION (unchanged) */
+  /* METHODOLOGY SECTION – line width 6px */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -545,13 +545,14 @@
     position: relative;
   }
 
+  /* Vertical line – 6px wide (300% increase), stops before 04, hidden behind numbers */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
     left: 2rem;
     top: 2rem;
     bottom: auto;
-    width: 2px;
+    width: 6px;
     background: white;
     opacity: 0.7;
     pointer-events: none;
@@ -583,6 +584,8 @@
     border-radius: 12px;
     display: inline-block;
     transition: background 0.2s ease;
+    z-index: 2;
+    position: relative;
   }
   .methodology-step:hover .step-number {
     background: #F9F9F9;
@@ -620,6 +623,7 @@
       left: 1.7rem;
       top: 1.5rem;
       height: calc(100% - 5rem);
+      width: 4px;
     }
     .step-number {
       width: 2.8rem;
@@ -845,12 +849,12 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION with updated heading -->
+<!-- SERVICES SECTION with updated heading (removed "and defensible") -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
       <div class="pre-head">WHAT WE DO</div>
-      <h2>Everything your work needs to be submission-ready and defensible.</h2>
+      <h2>Everything your work needs to be submission-ready.</h2>
     </div>
     <div class="services-outer-box">
       <div class="services-grid">
