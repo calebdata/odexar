@@ -493,7 +493,7 @@
     }
   }
 
-  /* METHODOLOGY SECTION – increased horizontal gap, line centered, number box grey */
+  /* METHODOLOGY SECTION */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -542,11 +542,10 @@
     position: relative;
   }
 
-  /* White line aligned to center of number boxes (number width 3.5rem, center at 1.75rem) */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
-    left: 1.75rem;          /* center of number box */
+    left: 1.75rem;
     top: 2rem;
     bottom: auto;
     width: 6px;
@@ -563,14 +562,12 @@
     margin-bottom: 0;
   }
 
-  /* Increased horizontal gap between number and title */
   .step-header {
     display: flex;
     align-items: baseline;
-    gap: 2.5rem;            /* was 1.5rem, increased */
+    gap: 2.5rem;
     margin-bottom: 1rem;
   }
-  /* Number box – changed background to service outer box grey (#EDEDED) */
   .step-number {
     width: 3.5rem;
     text-align: center;
@@ -578,7 +575,7 @@
     font-weight: 400;
     color: var(--green);
     line-height: 1;
-    background: var(--service-box-bg);   /* #EDEDED */
+    background: var(--service-box-bg);
     padding: 0.5rem 0;
     border-radius: 12px;
     display: inline-block;
@@ -587,7 +584,7 @@
     position: relative;
   }
   .methodology-step:hover .step-number {
-    background: #E0E0E0;   /* slightly darker on hover */
+    background: #E0E0E0;
   }
   .methodology-step h3 {
     font-size: 1.5rem;
@@ -601,7 +598,7 @@
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
-    padding-left: 6rem;    /* adjusted for larger gap (3.5rem width + 2.5rem gap = 6rem) */
+    padding-left: 6rem;
   }
 
   @media (max-width: 900px) {
@@ -619,7 +616,7 @@
       max-width: 100%;
     }
     .methodology-sticky-right::before {
-      left: 1.4rem;        /* adjusted for mobile number width 2.8rem, center 1.4rem */
+      left: 1.4rem;
       top: 1.5rem;
       height: calc(100% - 5rem);
       width: 4px;
@@ -639,7 +636,7 @@
       font-size: 2rem;
     }
     .methodology-step p {
-      padding-left: 5.3rem;  /* 2.8rem + 2.5rem */
+      padding-left: 5.3rem;
     }
     .step-header {
       gap: 2rem;
@@ -848,7 +845,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION -->
+<!-- SERVICES SECTION with updated icons for Analytical Interpretation and Scholarly Refinement -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -881,14 +878,16 @@
         <div class="services-right">
           <div class="service-card">
             <div class="service-card-content">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+              <!-- Analytical Interpretation: magnifying glass (analysis / search) -->
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
               <h3>Analytical Interpretation</h3>
               <p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p>
             </div>
           </div>
           <div class="service-card">
             <div class="service-card-content">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <!-- Scholarly Refinement: document with checkmark -->
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 16 12"/></svg></div>
               <h3>Scholarly Refinement</h3>
               <p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p>
             </div>
@@ -899,7 +898,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION with adjusted spacing, line centered, grey number boxes -->
+<!-- METHODOLOGY SECTION (unchanged) -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
