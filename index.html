@@ -36,7 +36,7 @@
     --footer-dark:  #111111;
     --header-height: 68px;
     --service-box-bg: #EDEDED;
-    --true-navy: #1E2F5A;   /* visible navy blue, not black */
+    --true-navy: #1E2F5A;
   }
 
   html, body {
@@ -387,7 +387,7 @@
     gap: 16px;
   }
 
-  /* Card styling – plain, icons now true navy */
+  /* Card styling – icons now gold */
   .service-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -410,7 +410,7 @@
   .card-icon svg {
     width: 100%;
     height: 100%;
-    stroke: var(--true-navy);  /* true navy blue */
+    stroke: var(--gold);  /* gold icons */
     stroke-width: 1.5;
     fill: none;
   }
@@ -427,30 +427,29 @@
     line-height: 1.5;
   }
 
-  /* Centre panel – true navy background, no image */
+  /* Centre panel – true navy background, vertically centered content, gold bar below text */
   .services-centre {
     background: var(--true-navy);
     border-radius: 16px;
     min-height: 320px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;    /* vertically centered */
+    align-items: center;        /* horizontally centered */
     padding: 1.75rem;
-    text-align: left;
-  }
-  .accent-bar {
-    width: 32px;
-    height: 2px;
-    background: var(--green);
-    margin: 0 0 1.5rem 0;
+    text-align: center;
   }
   .statement-text {
     font-size: 20px;
     font-weight: 500;
     color: #FFFFFF;
     line-height: 1.35;
-    margin-bottom: 0;
+    margin-bottom: 1.5rem;
+  }
+  .gold-bar {
+    width: 48px;               /* longer bar */
+    height: 2px;
+    background: var(--gold);   /* gold colour */
   }
 
   @media (max-width: 1000px) {
@@ -827,7 +826,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION: true navy icons, true navy centre panel, no image -->
+<!-- SERVICES SECTION: gold icons, navy centre panel with gold bar below text, vertically centred -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -854,10 +853,10 @@
           </div>
         </div>
 
-        <!-- Centre column – true navy background, white text -->
+        <!-- Centre column – true navy, vertically centred, gold bar below text -->
         <div class="services-centre">
-          <div class="accent-bar"></div>
           <div class="statement-text">Every project starts with a problem worth solving.</div>
+          <div class="gold-bar"></div>
         </div>
 
         <!-- Right column -->
