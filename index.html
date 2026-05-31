@@ -338,7 +338,10 @@
     padding-top: 60px;
   }
 
-  .section-default { padding: 80px 0; background: var(--bg-soft-white); }
+  /* Override section default padding for services only */
+  #services.section-default {
+    padding: 60px 0;  /* reduced from 80px 0 */
+  }
 
   .services-heading {
     text-align: left;
@@ -364,7 +367,7 @@
   .services-outer-box {
     background: var(--service-box-bg);
     border-radius: 24px;
-    padding: 1.25rem;
+    padding: 0.75rem;  /* reduced from 1.25rem to hug cards */
   }
 
   .services-grid {
@@ -426,9 +429,9 @@
     line-height: 1.5;
   }
 
-  /* Centre panel – now matches website background colour (#FAFAF7), dark text, gold bar centred */
+  /* Centre panel – matches website background (#FAFAF7), dark text, gold bar centred */
   .services-centre {
-    background: var(--bg-soft-white);  /* #FAFAF7 */
+    background: var(--bg-soft-white);
     border-radius: 16px;
     min-height: 320px;
     display: flex;
@@ -453,7 +456,7 @@
 
   @media (max-width: 1000px) {
     .services-outer-box {
-      padding: 1rem;
+      padding: 0.5rem;
     }
     .services-grid {
       grid-template-columns: 1fr;
@@ -825,7 +828,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION: gold icons, centre column matches website background, dark text, gold bar -->
+<!-- SERVICES SECTION with reduced outer box padding and reduced section height -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -834,7 +837,6 @@
     </div>
     <div class="services-outer-box">
       <div class="services-grid">
-        <!-- Left column -->
         <div class="services-left">
           <div class="service-card">
             <div class="service-card-content">
@@ -852,13 +854,11 @@
           </div>
         </div>
 
-        <!-- Centre column – background matches site background (#FAFAF7), dark text, gold bar below text -->
         <div class="services-centre">
           <div class="statement-text">Every project starts with a problem worth solving.</div>
           <div class="gold-bar"></div>
         </div>
 
-        <!-- Right column -->
         <div class="services-right">
           <div class="service-card">
             <div class="service-card-content">
