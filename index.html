@@ -428,7 +428,7 @@
     line-height: 1.5;
   }
 
-  /* Centre panel – subtle geometric line art watermark (increased visibility) */
+  /* Centre panel – subtle geometric line art watermark, no gold bar */
   .services-centre {
     background: var(--bg-soft-white);
     border-radius: 16px;
@@ -442,7 +442,7 @@
     position: relative;
     overflow: hidden;
   }
-  /* Watermark overlay with slightly higher opacity and darker grey for visibility */
+  /* Watermark overlay with subtle visibility */
   .services-centre::before {
     content: "";
     position: absolute;
@@ -454,13 +454,12 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.4;  /* increased from 0.2 to make it visible but still subtle */
+    opacity: 0.4;
     pointer-events: none;
     z-index: 0;
   }
-  /* Ensure text and bar are above overlay */
-  .services-centre .statement-text,
-  .services-centre .gold-bar {
+  /* Ensure text is above overlay */
+  .services-centre .statement-text {
     position: relative;
     z-index: 1;
   }
@@ -470,12 +469,7 @@
     font-weight: 500;
     color: var(--text-dark);
     line-height: 1.35;
-    margin-bottom: 1.5rem;
-  }
-  .gold-bar {
-    width: 48px;
-    height: 2px;
-    background: var(--gold);
+    margin-bottom: 0; /* removed margin-bottom because gold bar is gone */
   }
 
   @media (max-width: 1000px) {
@@ -852,7 +846,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION with refined subtle geometric line art watermark -->
+<!-- SERVICES SECTION – gold bar removed from middle column -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -878,9 +872,9 @@
           </div>
         </div>
 
+        <!-- Centre column – only statement text, no gold bar -->
         <div class="services-centre">
           <div class="statement-text">Every project starts with a problem worth solving.</div>
-          <div class="gold-bar"></div>
         </div>
 
         <div class="services-right">
