@@ -354,7 +354,6 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  /* Updated heading: single line, removed "and defensible" */
   .services-heading h2 {
     font-size: 2.2rem;
     font-weight: 700;
@@ -389,7 +388,6 @@
     gap: 16px;
   }
 
-  /* Card styling – gold icons */
   .service-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -429,7 +427,6 @@
     line-height: 1.5;
   }
 
-  /* Centre panel – subtle geometric line art watermark (balanced) */
   .services-centre {
     background: var(--bg-soft-white);
     border-radius: 16px;
@@ -496,7 +493,7 @@
     }
   }
 
-  /* METHODOLOGY SECTION – line width 6px */
+  /* METHODOLOGY SECTION – increased horizontal gap, line centered, number box grey */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -545,11 +542,11 @@
     position: relative;
   }
 
-  /* Vertical line – 6px wide (300% increase), stops before 04, hidden behind numbers */
+  /* White line aligned to center of number boxes (number width 3.5rem, center at 1.75rem) */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
-    left: 2rem;
+    left: 1.75rem;          /* center of number box */
     top: 2rem;
     bottom: auto;
     width: 6px;
@@ -566,12 +563,14 @@
     margin-bottom: 0;
   }
 
+  /* Increased horizontal gap between number and title */
   .step-header {
     display: flex;
     align-items: baseline;
-    gap: 1.5rem;
+    gap: 2.5rem;            /* was 1.5rem, increased */
     margin-bottom: 1rem;
   }
+  /* Number box – changed background to service outer box grey (#EDEDED) */
   .step-number {
     width: 3.5rem;
     text-align: center;
@@ -579,7 +578,7 @@
     font-weight: 400;
     color: var(--green);
     line-height: 1;
-    background: #FFFFFF;
+    background: var(--service-box-bg);   /* #EDEDED */
     padding: 0.5rem 0;
     border-radius: 12px;
     display: inline-block;
@@ -588,7 +587,7 @@
     position: relative;
   }
   .methodology-step:hover .step-number {
-    background: #F9F9F9;
+    background: #E0E0E0;   /* slightly darker on hover */
   }
   .methodology-step h3 {
     font-size: 1.5rem;
@@ -602,7 +601,7 @@
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
-    padding-left: 5rem;
+    padding-left: 6rem;    /* adjusted for larger gap (3.5rem width + 2.5rem gap = 6rem) */
   }
 
   @media (max-width: 900px) {
@@ -620,7 +619,7 @@
       max-width: 100%;
     }
     .methodology-sticky-right::before {
-      left: 1.7rem;
+      left: 1.4rem;        /* adjusted for mobile number width 2.8rem, center 1.4rem */
       top: 1.5rem;
       height: calc(100% - 5rem);
       width: 4px;
@@ -640,10 +639,10 @@
       font-size: 2rem;
     }
     .methodology-step p {
-      padding-left: 4.3rem;
+      padding-left: 5.3rem;  /* 2.8rem + 2.5rem */
     }
     .step-header {
-      gap: 1rem;
+      gap: 2rem;
     }
   }
 
@@ -849,7 +848,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION with updated heading (removed "and defensible") -->
+<!-- SERVICES SECTION -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -900,7 +899,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION (unchanged) -->
+<!-- METHODOLOGY SECTION with adjusted spacing, line centered, grey number boxes -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
