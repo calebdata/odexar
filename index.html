@@ -36,7 +36,7 @@
     --footer-dark:  #111111;
     --header-height: 68px;
     --service-box-bg: #EDEDED;
-    --navy: #0A1128;
+    --true-navy: #1E2F5A;   /* visible navy blue, not black */
   }
 
   html, body {
@@ -387,14 +387,13 @@
     gap: 16px;
   }
 
-  /* Card styling – plain, no hover effects, no clickable links */
+  /* Card styling – plain, icons now true navy */
   .service-card {
     background: var(--card-bg);
     border-radius: 16px;
     border: 1px solid rgba(0,0,0,0.08);
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     overflow: hidden;
-    transition: none;
   }
   .service-card-content {
     display: block;
@@ -403,7 +402,6 @@
     color: inherit;
     cursor: default;
   }
-  /* No hover transform, no shadow change, no background change */
   .card-icon {
     margin-bottom: 1rem;
     width: 32px;
@@ -412,7 +410,7 @@
   .card-icon svg {
     width: 100%;
     height: 100%;
-    stroke: var(--navy);  /* navy colour for icons */
+    stroke: var(--true-navy);  /* true navy blue */
     stroke-width: 1.5;
     fill: none;
   }
@@ -429,12 +427,9 @@
     line-height: 1.5;
   }
 
-  /* Centre panel */
+  /* Centre panel – true navy background, no image */
   .services-centre {
-    background-image: url('assets/image_odexar-hero1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: var(--true-navy);
     border-radius: 16px;
     min-height: 320px;
     display: flex;
@@ -456,7 +451,6 @@
     color: #FFFFFF;
     line-height: 1.35;
     margin-bottom: 0;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
   }
 
   @media (max-width: 1000px) {
@@ -833,7 +827,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION: plain cards, no hover effects, navy icons, no clickability -->
+<!-- SERVICES SECTION: true navy icons, true navy centre panel, no image -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -860,7 +854,7 @@
           </div>
         </div>
 
-        <!-- Centre column -->
+        <!-- Centre column – true navy background, white text -->
         <div class="services-centre">
           <div class="accent-bar"></div>
           <div class="statement-text">Every project starts with a problem worth solving.</div>
