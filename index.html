@@ -7,7 +7,7 @@
 <meta name="description" content="Odexar helps final-year students structure clear, supervisor-approved research projects ethically and confidently.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" "https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 
 <style>
@@ -386,6 +386,7 @@
     gap: 16px;
   }
 
+  /* Card styling with icon added for breathing space */
   .service-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -414,6 +415,22 @@
   .service-card:hover p {
     color: white;
   }
+  .service-card:hover .card-icon svg {
+    stroke: white;
+  }
+  .card-icon {
+    margin-bottom: 1rem;
+    width: 32px;
+    height: 32px;
+  }
+  .card-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--gold);
+    stroke-width: 1.5;
+    fill: none;
+    transition: stroke 0.2s;
+  }
   .service-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
@@ -429,7 +446,7 @@
     transition: color 0.2s;
   }
 
-  /* Centre column – background image, left‑aligned content, text white, positioned at top */
+  /* Centre panel */
   .services-centre {
     background-image: url('assets/image_odexar-hero1.jpg');
     background-size: cover;
@@ -439,8 +456,8 @@
     min-height: 320px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;   /* moves content to the top */
-    align-items: flex-start;       /* left alignment */
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 1.75rem;
     text-align: left;
   }
@@ -448,15 +465,15 @@
     width: 32px;
     height: 2px;
     background: var(--green);
-    margin: 0 0 1.5rem 0;        /* no auto margins, left aligned */
+    margin: 0 0 1.5rem 0;
   }
   .statement-text {
     font-size: 20px;
     font-weight: 500;
-    color: #FFFFFF;               /* bright white */
+    color: #FFFFFF;
     line-height: 1.35;
     margin-bottom: 0;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.2); /* optional readability */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
   }
 
   @media (max-width: 1000px) {
@@ -484,7 +501,7 @@
     }
   }
 
-  /* METHODOLOGY SECTION – unchanged */
+  /* METHODOLOGY SECTION (unchanged) */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -833,7 +850,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION with background image, left‑aligned white text -->
+<!-- SERVICES SECTION with icons added to all cards for breathing space -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -842,36 +859,42 @@
     </div>
     <div class="services-outer-box">
       <div class="services-grid">
+        <!-- Left column -->
         <div class="services-left">
           <div class="service-card">
             <a href="#contact">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
               <h3>Research Framing</h3>
               <p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p>
             </a>
           </div>
           <div class="service-card">
             <a href="#contact">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
               <h3>Literature Synthesis</h3>
               <p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p>
             </a>
           </div>
         </div>
 
-        <!-- Centre column: background image, left‑aligned top content, white text -->
+        <!-- Centre column -->
         <div class="services-centre">
           <div class="accent-bar"></div>
           <div class="statement-text">Every project starts with a problem worth solving.</div>
         </div>
 
+        <!-- Right column -->
         <div class="services-right">
           <div class="service-card">
             <a href="#contact">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
               <h3>Analytical Interpretation</h3>
               <p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p>
             </a>
           </div>
           <div class="service-card">
             <a href="#contact">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
               <h3>Scholarly Refinement</h3>
               <p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p>
             </a>
