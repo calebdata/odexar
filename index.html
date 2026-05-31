@@ -493,7 +493,7 @@
     }
   }
 
-  /* METHODOLOGY SECTION */
+  /* METHODOLOGY SECTION – line opacity reduced, hover glow removed */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -542,6 +542,7 @@
     position: relative;
   }
 
+  /* White line – faint but visible (opacity 0.4) */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
@@ -550,7 +551,7 @@
     bottom: auto;
     width: 6px;
     background: white;
-    opacity: 0.7;
+    opacity: 0.4;               /* reduced from 0.7 to make it faint */
     pointer-events: none;
     height: calc(100% - 6rem);
   }
@@ -579,13 +580,11 @@
     padding: 0.5rem 0;
     border-radius: 12px;
     display: inline-block;
-    transition: background 0.2s ease;
+    transition: none;           /* no hover effect */
     z-index: 2;
     position: relative;
   }
-  .methodology-step:hover .step-number {
-    background: #E0E0E0;
-  }
+  /* no hover background change */
   .methodology-step h3 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -845,7 +844,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION with updated icons for Analytical Interpretation and Scholarly Refinement -->
+<!-- SERVICES SECTION -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -878,7 +877,6 @@
         <div class="services-right">
           <div class="service-card">
             <div class="service-card-content">
-              <!-- Analytical Interpretation: magnifying glass (analysis / search) -->
               <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
               <h3>Analytical Interpretation</h3>
               <p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p>
@@ -886,7 +884,6 @@
           </div>
           <div class="service-card">
             <div class="service-card-content">
-              <!-- Scholarly Refinement: document with checkmark -->
               <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 16 12"/></svg></div>
               <h3>Scholarly Refinement</h3>
               <p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p>
@@ -898,7 +895,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION (unchanged) -->
+<!-- METHODOLOGY SECTION with faint line (opacity 0.4) and no hover glow on numbers -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
