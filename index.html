@@ -36,7 +36,6 @@
     --footer-dark:  #111111;
     --header-height: 68px;
     --service-box-bg: #EDEDED;
-    --true-navy: #1E2F5A;
   }
 
   html, body {
@@ -387,7 +386,7 @@
     gap: 16px;
   }
 
-  /* Card styling – icons now gold */
+  /* Card styling – gold icons */
   .service-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -410,7 +409,7 @@
   .card-icon svg {
     width: 100%;
     height: 100%;
-    stroke: var(--gold);  /* gold icons */
+    stroke: var(--gold);
     stroke-width: 1.5;
     fill: none;
   }
@@ -427,29 +426,29 @@
     line-height: 1.5;
   }
 
-  /* Centre panel – true navy background, vertically centered content, gold bar below text */
+  /* Centre panel – now matches website background colour (#FAFAF7), dark text, gold bar centred */
   .services-centre {
-    background: var(--true-navy);
+    background: var(--bg-soft-white);  /* #FAFAF7 */
     border-radius: 16px;
     min-height: 320px;
     display: flex;
     flex-direction: column;
-    justify-content: center;    /* vertically centered */
-    align-items: center;        /* horizontally centered */
+    justify-content: center;
+    align-items: center;
     padding: 1.75rem;
     text-align: center;
   }
   .statement-text {
     font-size: 20px;
     font-weight: 500;
-    color: #FFFFFF;
+    color: var(--text-dark);
     line-height: 1.35;
     margin-bottom: 1.5rem;
   }
   .gold-bar {
-    width: 48px;               /* longer bar */
+    width: 48px;
     height: 2px;
-    background: var(--gold);   /* gold colour */
+    background: var(--gold);
   }
 
   @media (max-width: 1000px) {
@@ -826,7 +825,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION: gold icons, navy centre panel with gold bar below text, vertically centred -->
+<!-- SERVICES SECTION: gold icons, centre column matches website background, dark text, gold bar -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -853,7 +852,7 @@
           </div>
         </div>
 
-        <!-- Centre column – true navy, vertically centred, gold bar below text -->
+        <!-- Centre column – background matches site background (#FAFAF7), dark text, gold bar below text -->
         <div class="services-centre">
           <div class="statement-text">Every project starts with a problem worth solving.</div>
           <div class="gold-bar"></div>
