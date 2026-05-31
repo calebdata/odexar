@@ -493,7 +493,7 @@
     }
   }
 
-  /* METHODOLOGY SECTION – line opacity reduced, hover glow removed */
+  /* METHODOLOGY SECTION */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -542,7 +542,7 @@
     position: relative;
   }
 
-  /* White line – faint but visible (opacity 0.4) */
+  /* White line – faint */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
@@ -551,7 +551,7 @@
     bottom: auto;
     width: 6px;
     background: white;
-    opacity: 0.4;               /* reduced from 0.7 to make it faint */
+    opacity: 0.4;
     pointer-events: none;
     height: calc(100% - 6rem);
   }
@@ -580,11 +580,10 @@
     padding: 0.5rem 0;
     border-radius: 12px;
     display: inline-block;
-    transition: none;           /* no hover effect */
+    transition: none;
     z-index: 2;
     position: relative;
   }
-  /* no hover background change */
   .methodology-step h3 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -642,7 +641,111 @@
     }
   }
 
-  /* remaining sections unchanged */
+  /* NEW TWO-COLUMN SECTION (Benefits + Testimonials) */
+  .two-column-value-section {
+    background: var(--bg-soft-white);
+    padding: 80px 0;
+  }
+  .two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .left-benefits {
+    background: transparent;
+  }
+  .left-benefits .section-title {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+  }
+  .benefit-item {
+    margin-bottom: 2rem;
+  }
+  .benefit-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .benefit-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .right-testimonials {
+    background: transparent;
+  }
+  .right-testimonials .testimonial-subhead {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .right-testimonials .section-title {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+  }
+  .testimonial-card {
+    background: var(--card-bg);
+    padding: 1.75rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-style: normal;
+    margin-bottom: 1rem;
+  }
+  .testimonial-card strong {
+    font-weight: 600;
+    color: var(--text-dark);
+    display: block;
+  }
+  @media (max-width: 900px) {
+    .two-column-wrapper {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  /* CTA BAR (moved) */
+  .cta-bar {
+    background: var(--green);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+  }
+  .cta-bar .btn-primary {
+    background: white;
+    color: var(--green);
+    border-radius: 40px;
+  }
+  .cta-bar .btn-primary:hover {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    transform: none;
+  }
+
+  /* remaining sections (insights, contact, footer) unchanged */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -723,27 +826,6 @@
     .square-box { width: 100px; font-size: 0.7rem; }
   }
 
-  .section-title { font-size: 2rem; text-align: center; margin-bottom: 1.5rem; font-weight: 700; color: var(--text-dark); letter-spacing: -0.01em; }
-  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 40px; }
-  .benefit-card, .testimonial {
-    background: var(--card-bg);
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    border: 1px solid rgba(0,0,0,0.03);
-    transition: all 0.3s ease;
-    color: var(--text-dark);
-  }
-  .benefit-card:hover, .testimonial:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-    border-color: var(--gold-light);
-  }
-  .benefit-card h3 { font-weight: 600; margin-bottom: 0.75rem; font-size: 1.25rem; }
-  .testimonial strong { font-weight: 600; display: block; margin-top: 1rem; color: var(--text-dark); }
-  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
-  .testimonial { font-style: normal; }
-
   .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; }
   .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
   .contact-info-statement { font-size: 1rem; color: var(--text-dark); }
@@ -775,10 +857,6 @@
   .footer-base a { color: rgba(255,255,255,0.35); text-decoration: none; }
   .footer-base a:hover { color: var(--green); }
 
-  .cta-bar { background: var(--green); color: white; padding: 60px 0; text-align: center; }
-  .cta-bar .btn-primary { background: white; color: var(--green); border-radius: 40px; }
-  .cta-bar .btn-primary:hover { background: transparent; color: white; border: 1px solid white; transform: none; }
-
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
     .nav-links { order: 3; width: 100%; justify-content: center; margin-left: 0; margin-top: 0.5rem; }
@@ -809,6 +887,7 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#methodology">Methodology</a></li>
+      <li><a href="#why-it-works">Why It Works</a></li>
       <li><a href="#insights">Insights</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -895,7 +974,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION with faint line (opacity 0.4) and no hover glow on numbers -->
+<!-- METHODOLOGY SECTION -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
@@ -937,7 +1016,54 @@
   </div>
 </section>
 
-<!-- remaining sections unchanged -->
+<!-- NEW TWO-COLUMN SECTION (Benefits + Testimonials) -->
+<section class="two-column-value-section" id="why-it-works">
+  <div class="container">
+    <div class="two-column-wrapper">
+      <!-- Left column: three value points -->
+      <div class="left-benefits">
+        <h2 class="section-title">Why It Works</h2>
+        <div class="benefit-item">
+          <h3>📐 Structured Thinking</h3>
+          <p>We don't write your project — we teach you how to build one that stands up to scrutiny.</p>
+        </div>
+        <div class="benefit-item">
+          <h3>🎓 Supervisor-Friendly</h3>
+          <p>Our methodology is designed to reduce rejections and speed up approvals.</p>
+        </div>
+        <div class="benefit-item">
+          <h3>🔒 Flexible & Confidential</h3>
+          <p>Work at your pace. Everything stays between you and your guide.</p>
+        </div>
+      </div>
+
+      <!-- Right column: testimonials -->
+      <div class="right-testimonials">
+        <div class="testimonial-subhead">In students Words</div>
+        <h2 class="section-title">What They Say</h2>
+        <div class="testimonial-card">
+          <p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p>
+          <strong>— Blessing A., University of Ibadan</strong>
+        </div>
+        <div class="testimonial-card">
+          <p>"The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted."</p>
+          <strong>— Michael O., LAUTECH</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAR (moved before insights) -->
+<section class="cta-bar">
+  <div class="container">
+    <h2 style="margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
+    <p style="font-size:1.1rem; margin-bottom:1.5rem;">Get a free initial review of your topic today.</p>
+    <a href="https://wa.me/2347087589603" class="btn-primary">Start Free Review on WhatsApp →</a>
+  </div>
+</section>
+
+<!-- INSIGHTS SECTION (unchanged) -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -973,35 +1099,7 @@
   </div>
 </section>
 
-<section class="section-alt">
-  <div class="container">
-    <h2 class="section-title">Why Students Choose Odexar</h2>
-    <div class="benefits-grid">
-      <div class="benefit-card"><h3>📐 Structured Thinking</h3><p>We don't write your project — we teach you how to build one that stands up to scrutiny.</p></div>
-      <div class="benefit-card"><h3>🎓 Supervisor-Friendly</h3><p>Our methodology is designed to reduce rejections and speed up approvals.</p></div>
-      <div class="benefit-card"><h3>🔒 Flexible & Confidential</h3><p>Work at your pace. Everything stays between you and your guide.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section-default">
-  <div class="container">
-    <h2 class="section-title">What Students Are Saying</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial"><p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p><strong>— Blessing A., University of Ibadan</strong></div>
-      <div class="testimonial"><p>"The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted."</p><strong>— Michael O., LAUTECH</strong></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-bar">
-  <div class="container">
-    <h2 style="margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
-    <p style="font-size:1.1rem; margin-bottom:1.5rem;">Get a free initial review of your topic today.</p>
-    <a href="https://wa.me/2347087589603" class="btn-primary">Start Free Review on WhatsApp →</a>
-  </div>
-</section>
-
+<!-- CONTACT & FOOTER (unchanged) -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -1053,7 +1151,7 @@
         </div>
       </div>
       <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="#services">Research Framing</a><a href="#services">Analytical Interpretation</a><a href="#services">Scholarly Refinement</a><a href="#services">Literature Synthesis</a></nav></div>
-      <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#methodology">Methodology</a><a href="#insights">Insights</a><a href="#contact">Contact</a></nav></div>
+      <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#methodology">Methodology</a><a href="#why-it-works">Why It Works</a><a href="#insights">Insights</a><a href="#contact">Contact</a></nav></div>
       <div class="footer-col">
         <h4 class="footer-col-heading">Contact</h4>
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
