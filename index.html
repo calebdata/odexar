@@ -35,6 +35,7 @@
     --white-08:     rgba(245,245,240,0.08);
     --footer-dark:  #111111;
     --header-height: 68px;
+    --service-box-bg: #F7F7F7;  /* NEW: light grey for outer container */
   }
 
   html, body {
@@ -351,12 +352,20 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
+  /* UPDATED HEADING TEXT */
   .services-heading h2 {
     font-size: 2.2rem;
     font-weight: 700;
     margin: 0;
     color: var(--text-dark);
     letter-spacing: -0.01em;
+  }
+
+  /* NEW: outer grey box */
+  .services-outer-box {
+    background: var(--service-box-bg);
+    border-radius: 24px;
+    padding: 2rem;
   }
 
   /* Three column grid */
@@ -403,7 +412,7 @@
     border-color: var(--gold-light);
   }
   .service-card:hover a {
-    background: #0A1128;  /* navy hover as before */
+    background: #0A1128;  /* navy hover */
     color: white;
   }
   .service-card:hover h3,
@@ -439,7 +448,7 @@
   .accent-bar {
     width: 32px;
     height: 2px;
-    background: var(--green);  /* #008F5A */
+    background: var(--green);
     margin-bottom: 1.5rem;
   }
   .statement-text {
@@ -457,6 +466,9 @@
   }
 
   @media (max-width: 1000px) {
+    .services-outer-box {
+      padding: 1.5rem;
+    }
     .services-grid {
       grid-template-columns: 1fr;
       gap: 20px;
@@ -827,50 +839,52 @@
   </div>
 </section>
 
-<!-- NEW SERVICES SECTION (3 columns) -->
+<!-- MODIFIED SERVICES SECTION: new heading + grey outer box -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
       <div class="pre-head">WHAT WE DO</div>
-      <h2>Core Research Functions</h2>
+      <h2>Expert guidance to strengthen your research and submit with confidence.</h2>
     </div>
-    <div class="services-grid">
-      <!-- Left column: two stacked cards -->
-      <div class="services-left">
-        <div class="service-card">
-          <a href="#contact">
-            <h3>Research Framing</h3>
-            <p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p>
-          </a>
+    <div class="services-outer-box">
+      <div class="services-grid">
+        <!-- Left column: two stacked cards -->
+        <div class="services-left">
+          <div class="service-card">
+            <a href="#contact">
+              <h3>Research Framing</h3>
+              <p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p>
+            </a>
+          </div>
+          <div class="service-card">
+            <a href="#contact">
+              <h3>Literature Synthesis</h3>
+              <p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p>
+            </a>
+          </div>
         </div>
-        <div class="service-card">
-          <a href="#contact">
-            <h3>Literature Synthesis</h3>
-            <p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p>
-          </a>
-        </div>
-      </div>
 
-      <!-- Centre column: statement panel -->
-      <div class="services-centre">
-        <div class="accent-bar"></div>
-        <div class="statement-text">Every project starts with a problem worth solving.</div>
-        <div class="statement-label">Odexar — Academic Research Support</div>
-      </div>
-
-      <!-- Right column: two stacked cards -->
-      <div class="services-right">
-        <div class="service-card">
-          <a href="#contact">
-            <h3>Analytical Interpretation</h3>
-            <p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p>
-          </a>
+        <!-- Centre column: statement panel -->
+        <div class="services-centre">
+          <div class="accent-bar"></div>
+          <div class="statement-text">Every project starts with a problem worth solving.</div>
+          <div class="statement-label">Odexar — Academic Research Support</div>
         </div>
-        <div class="service-card">
-          <a href="#contact">
-            <h3>Scholarly Refinement</h3>
-            <p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p>
-          </a>
+
+        <!-- Right column: two stacked cards -->
+        <div class="services-right">
+          <div class="service-card">
+            <a href="#contact">
+              <h3>Analytical Interpretation</h3>
+              <p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p>
+            </a>
+          </div>
+          <div class="service-card">
+            <a href="#contact">
+              <h3>Scholarly Refinement</h3>
+              <p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
