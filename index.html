@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +36,7 @@
     --white-08:     rgba(245,245,240,0.08);
     --footer-dark:  #111111;
     --header-height: 68px;
-    --service-box-bg: #EDEDED;  /* deeper grey */
+    --service-box-bg: #EDEDED;
   }
 
   html, body {
@@ -330,7 +331,7 @@
     line-height: 1;
   }
 
-  /* SERVICES SECTION – updated */
+  /* SERVICES SECTION */
   #services {
     position: relative;
     z-index: 5;
@@ -352,7 +353,6 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  /* heading broken into two lines */
   .services-heading h2 {
     font-size: 2.2rem;
     font-weight: 700;
@@ -362,14 +362,12 @@
     line-height: 1.2;
   }
 
-  /* outer grey box – reduced padding, deeper colour */
   .services-outer-box {
     background: var(--service-box-bg);
     border-radius: 24px;
     padding: 1.25rem;
   }
 
-  /* Three column grid */
   .services-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr 1fr;
@@ -377,21 +375,18 @@
     align-items: stretch;
   }
 
-  /* Left column – stack cards */
   .services-left {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  /* Right column – stack cards */
   .services-right {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  /* Card styling (clickable) */
   .service-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -435,9 +430,12 @@
     transition: color 0.2s;
   }
 
-  /* Centre statement panel – centered content */
+  /* Centre column – background image (no overlay), centered content */
   .services-centre {
-    background: var(--bg-warm-cream);
+    background-image: url('assets/image_odexar-hero1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 16px;
     min-height: 320px;
     display: flex;
@@ -459,8 +457,8 @@
     color: var(--text-dark);
     line-height: 1.35;
     margin-bottom: 0;
+    /* text will be dark on background – may need adjustment later */
   }
-  /* .statement-label removed entirely */
 
   @media (max-width: 1000px) {
     .services-outer-box {
@@ -836,7 +834,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION with updated heading (two lines), deeper grey box, centred statement, removed label -->
+<!-- SERVICES SECTION with background image in centre column (no overlay) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -845,7 +843,6 @@
     </div>
     <div class="services-outer-box">
       <div class="services-grid">
-        <!-- Left column: two stacked cards -->
         <div class="services-left">
           <div class="service-card">
             <a href="#contact">
@@ -861,13 +858,12 @@
           </div>
         </div>
 
-        <!-- Centre column: statement panel – centered, no label -->
+        <!-- Centre column: background image (no overlay), text remains dark -->
         <div class="services-centre">
           <div class="accent-bar"></div>
           <div class="statement-text">Every project starts with a problem worth solving.</div>
         </div>
 
-        <!-- Right column: two stacked cards -->
         <div class="services-right">
           <div class="service-card">
             <a href="#contact">
@@ -929,7 +925,7 @@
   </div>
 </section>
 
-<!-- REMAINING SECTIONS (insights, benefits, testimonials, CTA, contact, footer) unchanged -->
+<!-- remaining sections unchanged -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -1069,3 +1065,4 @@
 
 </body>
 </html>
+```
