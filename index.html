@@ -35,7 +35,7 @@
     --white-08:     rgba(245,245,240,0.08);
     --footer-dark:  #111111;
     --header-height: 68px;
-    --service-box-bg: #F7F7F7;  /* NEW: light grey for outer container */
+    --service-box-bg: #EDEDED;  /* deeper grey */
   }
 
   html, body {
@@ -330,7 +330,7 @@
     line-height: 1;
   }
 
-  /* SERVICES SECTION – NEW THREE COLUMN LAYOUT */
+  /* SERVICES SECTION – updated */
   #services {
     position: relative;
     z-index: 5;
@@ -352,20 +352,21 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  /* UPDATED HEADING TEXT */
+  /* heading broken into two lines */
   .services-heading h2 {
     font-size: 2.2rem;
     font-weight: 700;
     margin: 0;
     color: var(--text-dark);
     letter-spacing: -0.01em;
+    line-height: 1.2;
   }
 
-  /* NEW: outer grey box */
+  /* outer grey box – reduced padding, deeper colour */
   .services-outer-box {
     background: var(--service-box-bg);
     border-radius: 24px;
-    padding: 2rem;
+    padding: 1.25rem;
   }
 
   /* Three column grid */
@@ -412,7 +413,7 @@
     border-color: var(--gold-light);
   }
   .service-card:hover a {
-    background: #0A1128;  /* navy hover */
+    background: #0A1128;
     color: white;
   }
   .service-card:hover h3,
@@ -434,40 +435,36 @@
     transition: color 0.2s;
   }
 
-  /* Centre statement panel */
+  /* Centre statement panel – centered content */
   .services-centre {
-    background: var(--bg-warm-cream);  /* #F5EDDE */
+    background: var(--bg-warm-cream);
     border-radius: 16px;
     min-height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 1.75rem;
+    text-align: center;
   }
   .accent-bar {
     width: 32px;
     height: 2px;
     background: var(--green);
-    margin-bottom: 1.5rem;
+    margin: 0 auto 1.5rem auto;
   }
   .statement-text {
     font-size: 20px;
     font-weight: 500;
     color: var(--text-dark);
     line-height: 1.35;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
-  .statement-label {
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
+  /* .statement-label removed entirely */
 
   @media (max-width: 1000px) {
     .services-outer-box {
-      padding: 1.5rem;
+      padding: 1rem;
     }
     .services-grid {
       grid-template-columns: 1fr;
@@ -637,7 +634,7 @@
     }
   }
 
-  /* remaining sections (insights, benefits, testimonials, cta, contact, footer) – unchanged */
+  /* remaining sections unchanged */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -839,12 +836,12 @@
   </div>
 </section>
 
-<!-- MODIFIED SERVICES SECTION: new heading + grey outer box -->
+<!-- SERVICES SECTION with updated heading (two lines), deeper grey box, centred statement, removed label -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
       <div class="pre-head">WHAT WE DO</div>
-      <h2>Expert guidance to strengthen your research and submit with confidence.</h2>
+      <h2>Expert guidance to strengthen your research<br>and submit with confidence.</h2>
     </div>
     <div class="services-outer-box">
       <div class="services-grid">
@@ -864,11 +861,10 @@
           </div>
         </div>
 
-        <!-- Centre column: statement panel -->
+        <!-- Centre column: statement panel – centered, no label -->
         <div class="services-centre">
           <div class="accent-bar"></div>
           <div class="statement-text">Every project starts with a problem worth solving.</div>
-          <div class="statement-label">Odexar — Academic Research Support</div>
         </div>
 
         <!-- Right column: two stacked cards -->
