@@ -640,7 +640,7 @@
     }
   }
 
-  /* WHY ODEXAR SECTION - two columns, no headline, green left border */
+  /* WHY ODEXAR SECTION (updated) */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -658,8 +658,16 @@
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: block;
+  }
+  .why-left .why-main-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
   }
   .why-points {
     display: flex;
@@ -683,22 +691,20 @@
     line-height: 1.5;
     margin: 0;
   }
-  /* Right column */
-  .why-right .section-label {
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    display: block;
-  }
-  .testimonial-card {
+  /* Right column – testimonial card with heading inside */
+  .why-right .testimonial-card {
     background: var(--card-bg);
     border-radius: 16px;
     border: 1px solid rgba(0,0,0,0.08);
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     padding: 1.75rem;
+  }
+  .testimonial-card-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
   }
   .testimonial-item {
     margin-bottom: 1.5rem;
@@ -718,6 +724,19 @@
     color: var(--text-dark);
     display: block;
     font-size: 0.9rem;
+  }
+  .placeholder-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--gold);
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+    font-style: normal;
+    margin-left: 6px;
   }
   @media (max-width: 900px) {
     .why-grid {
@@ -745,7 +764,7 @@
     transform: none;
   }
 
-  /* remaining sections (insights, contact, footer) unchanged */
+  /* remaining sections unchanged */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -1016,13 +1035,14 @@
   </div>
 </section>
 
-<!-- WHY ODEXAR SECTION: two columns, no headline, green left border, bold labels -->
+<!-- WHY ODEXAR SECTION updated -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
     <div class="why-grid">
       <!-- Left column -->
       <div class="why-left">
         <span class="section-label">WHY ODEXAR</span>
+        <div class="why-main-heading">From topic idea to successful defense, we guide you every step.</div>
         <div class="why-points">
           <div class="why-point">
             <span class="why-point-label">Structured Thinking</span>
@@ -1039,10 +1059,10 @@
         </div>
       </div>
 
-      <!-- Right column: testimonial card -->
+      <!-- Right column: testimonial card with heading inside -->
       <div class="why-right">
-        <span class="section-label">STUDENT EXPERIENCE</span>
         <div class="testimonial-card">
+          <div class="testimonial-card-heading">Hear from the students Who Use Odexar</div>
           <div class="testimonial-item">
             <p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p>
             <strong>— Blessing A., University of Ibadan</strong>
@@ -1050,6 +1070,18 @@
           <div class="testimonial-item">
             <p>"The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted."</p>
             <strong>— Michael O., LAUTECH</strong>
+          </div>
+          <div class="testimonial-item">
+            <p>"Working with Odexar gave me the clarity I needed at the most critical stage of my research. My supervisor commented on how well-structured my methodology was."</p>
+            <strong>— Chidinma E., University of Abuja <span class="placeholder-tag">Pending confirmation</span></strong>
+          </div>
+          <div class="testimonial-item">
+            <p>"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</p>
+            <strong>— Tunde F., Ekiti State University <span class="placeholder-tag">Pending confirmation</span></strong>
+          </div>
+          <div class="testimonial-item">
+            <p>"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</p>
+            <strong>— Adaeze N., University of Toronto <span class="placeholder-tag">Pending confirmation</span></strong>
           </div>
         </div>
       </div>
