@@ -542,7 +542,6 @@
     position: relative;
   }
 
-  /* White line – faint */
   .methodology-sticky-right::before {
     content: '';
     position: absolute;
@@ -641,7 +640,7 @@
     }
   }
 
-  /* NEW TWO-COLUMN SECTION (Benefits + Testimonials) */
+  /* TWO-COLUMN SECTION (Why Odexar + Testimonials) */
   .two-column-value-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -652,23 +651,30 @@
     gap: 3rem;
     align-items: start;
   }
-  .left-benefits {
+  .left-why {
     background: transparent;
   }
-  /* Style for "What Makes Odexar Different" same as "HOW WE WORK" */
-  .difference-pre-head {
+  .left-why .pre-head {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .left-why .strong-headline {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-dark);
     margin-bottom: 2rem;
+    letter-spacing: -0.01em;
   }
   .benefit-item {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
   .benefit-item h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-dark);
@@ -679,44 +685,31 @@
     line-height: 1.5;
     margin: 0;
   }
-  .right-testimonials {
-    background: transparent;
-  }
-  .right-testimonials .testimonial-subhead {
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  .right-testimonials h2 {
-    text-align: left;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 2rem;
-    letter-spacing: -0.01em;
-  }
-  .testimonial-card {
+  .right-testimonial-card {
     background: var(--card-bg);
-    padding: 1.75rem;
     border-radius: 16px;
     border: 1px solid rgba(0,0,0,0.08);
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    margin-bottom: 1.5rem;
+    padding: 1.75rem;
   }
-  .testimonial-card p {
+  .testimonial-item {
+    margin-bottom: 1.75rem;
+  }
+  .testimonial-item:last-child {
+    margin-bottom: 0;
+  }
+  .testimonial-item p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.5;
     font-style: normal;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
-  .testimonial-card strong {
+  .testimonial-item strong {
     font-weight: 600;
     color: var(--text-dark);
     display: block;
+    font-size: 0.9rem;
   }
   @media (max-width: 900px) {
     .two-column-wrapper {
@@ -725,7 +718,7 @@
     }
   }
 
-  /* CTA BAR (moved before insights) */
+  /* CTA BAR (updated copy) */
   .cta-bar {
     background: var(--green);
     color: white;
@@ -744,7 +737,7 @@
     transform: none;
   }
 
-  /* remaining sections (insights, contact, footer) unchanged */
+  /* remaining sections unchanged */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -886,7 +879,7 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#methodology">Methodology</a></li>
-      <li><a href="#why-it-works">Why It Works</a></li>
+      <li><a href="#why-odexar">Why Odexar</a></li>
       <li><a href="#insights">Insights</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1015,36 +1008,35 @@
   </div>
 </section>
 
-<!-- NEW TWO-COLUMN SECTION (Benefits + Testimonials) with updated heading -->
-<section class="two-column-value-section" id="why-it-works">
+<!-- NEW TWO-COLUMN SECTION: Why Odexar + Testimonials (single card) -->
+<section class="two-column-value-section" id="why-odexar">
   <div class="container">
     <div class="two-column-wrapper">
-      <!-- Left column: three value points with pre-head style -->
-      <div class="left-benefits">
-        <div class="difference-pre-head">WHAT MAKES ODEXAR DIFFERENT</div>
+      <!-- Left column -->
+      <div class="left-why">
+        <div class="pre-head">WHY ODEXAR</div>
+        <div class="strong-headline">We don't write your project.<br>We teach you how to build one that stands up to scrutiny.</div>
         <div class="benefit-item">
           <h3>Structured Thinking</h3>
-          <p>We don't write your project — we teach you how to build one that stands up to scrutiny.</p>
+          <p>We help students understand the reasoning behind their work, not simply complete tasks.</p>
         </div>
         <div class="benefit-item">
           <h3>Supervisor-Friendly</h3>
-          <p>Our methodology is designed to reduce rejections and speed up approvals.</p>
+          <p>Our approach is designed to improve clarity, reduce revisions, and support smoother supervisor feedback.</p>
         </div>
         <div class="benefit-item">
           <h3>Flexible & Confidential</h3>
-          <p>Work at your pace. Everything stays between you and your guide.</p>
+          <p>Work at your own pace. Every project remains private and student-owned.</p>
         </div>
       </div>
 
-      <!-- Right column: testimonials -->
-      <div class="right-testimonials">
-        <div class="testimonial-subhead">IN STUDENTS WORDS</div>
-        <h2>What They Say</h2>
-        <div class="testimonial-card">
+      <!-- Right column: single card with both testimonials -->
+      <div class="right-testimonial-card">
+        <div class="testimonial-item">
           <p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p>
           <strong>— Blessing A., University of Ibadan</strong>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-item">
           <p>"The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted."</p>
           <strong>— Michael O., LAUTECH</strong>
         </div>
@@ -1053,12 +1045,12 @@
   </div>
 </section>
 
-<!-- CTA BAR -->
+<!-- UPDATED CTA BAR -->
 <section class="cta-bar">
   <div class="container">
-    <h2 style="margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
-    <p style="font-size:1.1rem; margin-bottom:1.5rem;">Get a free initial review of your topic today.</p>
-    <a href="https://wa.me/2347087589603" class="btn-primary">Start Free Review on WhatsApp →</a>
+    <h2 style="margin-bottom:1rem;">Ready to move your research forward?</h2>
+    <p style="font-size:1.1rem; margin-bottom:1.5rem;">Get a free review of your topic and research direction.</p>
+    <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Review on WhatsApp →</a>
   </div>
 </section>
 
@@ -1150,7 +1142,7 @@
         </div>
       </div>
       <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="#services">Research Framing</a><a href="#services">Analytical Interpretation</a><a href="#services">Scholarly Refinement</a><a href="#services">Literature Synthesis</a></nav></div>
-      <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#methodology">Methodology</a><a href="#why-it-works">Why It Works</a><a href="#insights">Insights</a><a href="#contact">Contact</a></nav></div>
+      <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#methodology">Methodology</a><a href="#why-odexar">Why Odexar</a><a href="#insights">Insights</a><a href="#contact">Contact</a></nav></div>
       <div class="footer-col">
         <h4 class="footer-col-heading">Contact</h4>
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
