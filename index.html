@@ -640,64 +640,68 @@
     }
   }
 
-  /* TWO-COLUMN SECTION (Why Odexar + Testimonials) */
-  .two-column-value-section {
+  /* WHY ODEXAR SECTION - two columns, no headline, green left border */
+  .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
   }
-  .two-column-wrapper {
+  .why-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     align-items: start;
   }
-  .left-why {
-    background: transparent;
-  }
-  .left-why .pre-head {
+  /* Left column */
+  .why-left .section-label {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  .left-why .strong-headline {
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--text-dark);
     margin-bottom: 2rem;
-    letter-spacing: -0.01em;
+    display: block;
   }
-  /* No headings for benefit items, only text as list */
-  .benefit-item {
-    margin-bottom: 1.25rem;
+  .why-points {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
-  .benefit-item p {
+  .why-point {
+    border-left: 3px solid var(--green);
+    padding-left: 1.25rem;
+  }
+  .why-point-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .why-point p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
   }
-  /* Right column: single card with title */
-  .right-testimonial-card {
+  /* Right column */
+  .why-right .section-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .testimonial-card {
     background: var(--card-bg);
     border-radius: 16px;
     border: 1px solid rgba(0,0,0,0.08);
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     padding: 1.75rem;
   }
-  .testimonial-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
-  }
   .testimonial-item {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
   }
   .testimonial-item:last-child {
     margin-bottom: 0;
@@ -716,9 +720,9 @@
     font-size: 0.9rem;
   }
   @media (max-width: 900px) {
-    .two-column-wrapper {
+    .why-grid {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 3rem;
     }
   }
 
@@ -741,7 +745,7 @@
     transform: none;
   }
 
-  /* remaining sections unchanged */
+  /* remaining sections (insights, contact, footer) unchanged */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -1012,35 +1016,41 @@
   </div>
 </section>
 
-<!-- TWO-COLUMN SECTION: Why Odexar + Testimonials -->
-<section class="two-column-value-section" id="why-odexar">
+<!-- WHY ODEXAR SECTION: two columns, no headline, green left border, bold labels -->
+<section class="why-odexar-section" id="why-odexar">
   <div class="container">
-    <div class="two-column-wrapper">
-      <!-- Left column: no headings for benefits, only descriptive text under the main headline -->
-      <div class="left-why">
-        <div class="pre-head">WHY ODEXAR</div>
-        <div class="strong-headline">We don't write your project.<br>We teach you how to build one that stands up to scrutiny.</div>
-        <div class="benefit-item">
-          <p>We help students understand the reasoning behind their work, not simply complete tasks.</p>
-        </div>
-        <div class="benefit-item">
-          <p>Our approach is designed to improve clarity, reduce revisions, and support smoother supervisor feedback.</p>
-        </div>
-        <div class="benefit-item">
-          <p>Work at your own pace. Every project remains private and student-owned.</p>
+    <div class="why-grid">
+      <!-- Left column -->
+      <div class="why-left">
+        <span class="section-label">WHY ODEXAR</span>
+        <div class="why-points">
+          <div class="why-point">
+            <span class="why-point-label">Structured Thinking</span>
+            <p>We help you understand the reasoning behind your work, not just complete tasks.</p>
+          </div>
+          <div class="why-point">
+            <span class="why-point-label">Supervisor-Friendly</span>
+            <p>Our approach improves clarity, reduces revisions, and supports smoother feedback.</p>
+          </div>
+          <div class="why-point">
+            <span class="why-point-label">Flexible & Confidential</span>
+            <p>Work at your pace. Your project stays private and student-owned.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Right column: single card with "Student Experience" title -->
-      <div class="right-testimonial-card">
-        <div class="testimonial-title">Student Experience</div>
-        <div class="testimonial-item">
-          <p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p>
-          <strong>— Blessing A., University of Ibadan</strong>
-        </div>
-        <div class="testimonial-item">
-          <p>"The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted."</p>
-          <strong>— Michael O., LAUTECH</strong>
+      <!-- Right column: testimonial card -->
+      <div class="why-right">
+        <span class="section-label">STUDENT EXPERIENCE</span>
+        <div class="testimonial-card">
+          <div class="testimonial-item">
+            <p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p>
+            <strong>— Blessing A., University of Ibadan</strong>
+          </div>
+          <div class="testimonial-item">
+            <p>"The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted."</p>
+            <strong>— Michael O., LAUTECH</strong>
+          </div>
         </div>
       </div>
     </div>
