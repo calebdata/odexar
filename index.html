@@ -655,13 +655,14 @@
   .left-benefits {
     background: transparent;
   }
-  .left-benefits .section-title {
-    text-align: left;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-dark);
+  /* Style for "What Makes Odexar Different" same as "HOW WE WORK" */
+  .difference-pre-head {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
     margin-bottom: 2rem;
-    letter-spacing: -0.01em;
   }
   .benefit-item {
     margin-bottom: 2rem;
@@ -671,27 +672,25 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-dark);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
   }
   .benefit-item p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.5;
+    margin: 0;
   }
   .right-testimonials {
     background: transparent;
   }
   .right-testimonials .testimonial-subhead {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    color: var(--gold);
+    font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  .right-testimonials .section-title {
+  .right-testimonials h2 {
     text-align: left;
     font-size: 2rem;
     font-weight: 700;
@@ -726,7 +725,7 @@
     }
   }
 
-  /* CTA BAR (moved) */
+  /* CTA BAR (moved before insights) */
   .cta-bar {
     background: var(--green);
     color: white;
@@ -1016,31 +1015,31 @@
   </div>
 </section>
 
-<!-- NEW TWO-COLUMN SECTION (Benefits + Testimonials) -->
+<!-- NEW TWO-COLUMN SECTION (Benefits + Testimonials) with updated heading -->
 <section class="two-column-value-section" id="why-it-works">
   <div class="container">
     <div class="two-column-wrapper">
-      <!-- Left column: three value points -->
+      <!-- Left column: three value points with pre-head style -->
       <div class="left-benefits">
-        <h2 class="section-title">Why It Works</h2>
+        <div class="difference-pre-head">WHAT MAKES ODEXAR DIFFERENT</div>
         <div class="benefit-item">
-          <h3>📐 Structured Thinking</h3>
+          <h3>Structured Thinking</h3>
           <p>We don't write your project — we teach you how to build one that stands up to scrutiny.</p>
         </div>
         <div class="benefit-item">
-          <h3>🎓 Supervisor-Friendly</h3>
+          <h3>Supervisor-Friendly</h3>
           <p>Our methodology is designed to reduce rejections and speed up approvals.</p>
         </div>
         <div class="benefit-item">
-          <h3>🔒 Flexible & Confidential</h3>
+          <h3>Flexible & Confidential</h3>
           <p>Work at your pace. Everything stays between you and your guide.</p>
         </div>
       </div>
 
       <!-- Right column: testimonials -->
       <div class="right-testimonials">
-        <div class="testimonial-subhead">In students Words</div>
-        <h2 class="section-title">What They Say</h2>
+        <div class="testimonial-subhead">IN STUDENTS WORDS</div>
+        <h2>What They Say</h2>
         <div class="testimonial-card">
           <p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p>
           <strong>— Blessing A., University of Ibadan</strong>
@@ -1054,7 +1053,7 @@
   </div>
 </section>
 
-<!-- CTA BAR (moved before insights) -->
+<!-- CTA BAR -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="margin-bottom:1rem;">Ready to Move Your Research Forward?</h2>
@@ -1063,7 +1062,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION (unchanged) -->
+<!-- INSIGHTS SECTION -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -1099,7 +1098,7 @@
   </div>
 </section>
 
-<!-- CONTACT & FOOTER (unchanged) -->
+<!-- CONTACT & FOOTER -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
