@@ -670,14 +670,9 @@
     margin-bottom: 2rem;
     letter-spacing: -0.01em;
   }
+  /* No headings for benefit items, only text as list */
   .benefit-item {
-    margin-bottom: 1.75rem;
-  }
-  .benefit-item h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    margin-bottom: 1.25rem;
   }
   .benefit-item p {
     font-size: 0.95rem;
@@ -685,12 +680,21 @@
     line-height: 1.5;
     margin: 0;
   }
+  /* Right column: single card with title */
   .right-testimonial-card {
     background: var(--card-bg);
     border-radius: 16px;
     border: 1px solid rgba(0,0,0,0.08);
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     padding: 1.75rem;
+  }
+  .testimonial-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
   }
   .testimonial-item {
     margin-bottom: 1.75rem;
@@ -718,7 +722,7 @@
     }
   }
 
-  /* CTA BAR (updated copy) */
+  /* CTA BAR */
   .cta-bar {
     background: var(--green);
     color: white;
@@ -1008,30 +1012,28 @@
   </div>
 </section>
 
-<!-- NEW TWO-COLUMN SECTION: Why Odexar + Testimonials (single card) -->
+<!-- TWO-COLUMN SECTION: Why Odexar + Testimonials -->
 <section class="two-column-value-section" id="why-odexar">
   <div class="container">
     <div class="two-column-wrapper">
-      <!-- Left column -->
+      <!-- Left column: no headings for benefits, only descriptive text under the main headline -->
       <div class="left-why">
         <div class="pre-head">WHY ODEXAR</div>
         <div class="strong-headline">We don't write your project.<br>We teach you how to build one that stands up to scrutiny.</div>
         <div class="benefit-item">
-          <h3>Structured Thinking</h3>
           <p>We help students understand the reasoning behind their work, not simply complete tasks.</p>
         </div>
         <div class="benefit-item">
-          <h3>Supervisor-Friendly</h3>
           <p>Our approach is designed to improve clarity, reduce revisions, and support smoother supervisor feedback.</p>
         </div>
         <div class="benefit-item">
-          <h3>Flexible & Confidential</h3>
           <p>Work at your own pace. Every project remains private and student-owned.</p>
         </div>
       </div>
 
-      <!-- Right column: single card with both testimonials -->
+      <!-- Right column: single card with "Student Experience" title -->
       <div class="right-testimonial-card">
+        <div class="testimonial-title">Student Experience</div>
         <div class="testimonial-item">
           <p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p>
           <strong>— Blessing A., University of Ibadan</strong>
@@ -1045,7 +1047,7 @@
   </div>
 </section>
 
-<!-- UPDATED CTA BAR -->
+<!-- CTA BAR -->
 <section class="cta-bar">
   <div class="container">
     <h2 style="margin-bottom:1rem;">Ready to move your research forward?</h2>
