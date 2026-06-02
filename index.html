@@ -640,7 +640,7 @@
     }
   }
 
-  /* WHY ODEXAR SECTION (updated) */
+  /* WHY ODEXAR SECTION */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -651,7 +651,6 @@
     gap: 4rem;
     align-items: start;
   }
-  /* Left column */
   .why-left .section-label {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
@@ -691,7 +690,7 @@
     line-height: 1.5;
     margin: 0;
   }
-  /* Right column – testimonial card with heading inside */
+  /* Right column – testimonial card */
   .why-right .testimonial-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -719,24 +718,20 @@
     font-style: normal;
     margin-bottom: 0.75rem;
   }
-  .testimonial-item strong {
+  .testimonial-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     font-weight: 600;
     color: var(--text-dark);
-    display: block;
     font-size: 0.9rem;
   }
-  .placeholder-tag {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: #fff;
-    background: var(--gold);
-    padding: 2px 7px;
-    border-radius: 3px;
-    letter-spacing: 0.04em;
-    vertical-align: middle;
-    font-style: normal;
-    margin-left: 6px;
+  .rating-stars {
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
   }
   @media (max-width: 900px) {
     .why-grid {
@@ -1035,7 +1030,7 @@
   </div>
 </section>
 
-<!-- WHY ODEXAR SECTION updated -->
+<!-- WHY ODEXAR SECTION (updated testimonials) -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
     <div class="why-grid">
@@ -1059,29 +1054,37 @@
         </div>
       </div>
 
-      <!-- Right column: testimonial card with heading inside -->
+      <!-- Right column: testimonial card with star ratings -->
       <div class="why-right">
         <div class="testimonial-card">
           <div class="testimonial-card-heading">Hear from the students Who Use Odexar</div>
           <div class="testimonial-item">
             <p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p>
-            <strong>— Blessing A., University of Ibadan</strong>
-          </div>
-          <div class="testimonial-item">
-            <p>"The guidance on methodology and data analysis was clear and practical. I finally understood what my supervisor wanted."</p>
-            <strong>— Michael O., LAUTECH</strong>
+            <div class="testimonial-author">
+              <span>Blessing A., University of Ibadan</span>
+              <span class="rating-stars">★★★★★</span>
+            </div>
           </div>
           <div class="testimonial-item">
             <p>"Working with Odexar gave me the clarity I needed at the most critical stage of my research. My supervisor commented on how well-structured my methodology was."</p>
-            <strong>— Chidinma E., University of Abuja <span class="placeholder-tag">Pending confirmation</span></strong>
+            <div class="testimonial-author">
+              <span>Chidinma E., University of Abuja</span>
+              <span class="rating-stars">★★★★★</span>
+            </div>
           </div>
           <div class="testimonial-item">
             <p>"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</p>
-            <strong>— Tunde F., Ekiti State University <span class="placeholder-tag">Pending confirmation</span></strong>
+            <div class="testimonial-author">
+              <span>Tunde F., Ekiti State University</span>
+              <span class="rating-stars">★★★★★</span>
+            </div>
           </div>
           <div class="testimonial-item">
             <p>"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</p>
-            <strong>— Adaeze N., University of Toronto <span class="placeholder-tag">Pending confirmation</span></strong>
+            <div class="testimonial-author">
+              <span>Adaeze N., University of Toronto</span>
+              <span class="rating-stars">★★★★★</span>
+            </div>
           </div>
         </div>
       </div>
