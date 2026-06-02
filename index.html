@@ -640,83 +640,99 @@
     }
   }
 
-  /* WHY ODEXAR SECTION */
+  /* ===== REDESIGNED WHY ODEXAR SECTION ===== */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
   }
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .why-left .section-label {
+
+  .why-odexar-section .section-label {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 600;
-    margin-bottom: 1rem;
-    display: block;
+    margin-bottom: 0.75rem;
+    display: inline-block;
   }
-  .why-left .why-main-heading {
-    font-size: 1.8rem;
+
+  .why-odexar-section .main-heading {
+    font-size: 2rem;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.2;
+    color: var(--text-dark);
+    letter-spacing: -0.01em;
+    margin-bottom: 3rem;
+    max-width: 800px;
+  }
+
+  /* Benefits grid */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .benefit-card {
+    background: transparent;
+    padding: 0;
+  }
+  .benefit-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1.25rem;
+    color: var(--green);
+  }
+  .benefit-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+  }
+  .benefit-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+  }
+  .benefit-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Testimonials section (separate) */
+  .testimonials-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 2rem;
     letter-spacing: -0.01em;
   }
-  .why-points {
-    display: flex;
-    flex-direction: column;
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
-  .why-point {
-    border-left: 3px solid var(--green);
-    padding-left: 1.25rem;
-  }
-  .why-point-label {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-  .why-point p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin: 0;
-  }
-  /* Right column – testimonial card */
-  .why-right .testimonial-card {
+  .testimonial-card {
     background: var(--card-bg);
     border-radius: 16px;
-    border: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    padding: 1.75rem;
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    transition: all 0.2s;
   }
-  .testimonial-card-heading {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.01em;
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   }
-  .testimonial-item {
-    margin-bottom: 1.5rem;
-  }
-  .testimonial-item:last-child {
-    margin-bottom: 0;
-  }
-  .testimonial-item p {
-    font-size: 0.95rem;
+  .testimonial-text {
+    font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.5;
+    margin-bottom: 1rem;
     font-style: normal;
-    margin-bottom: 0.75rem;
   }
   .testimonial-author {
     display: flex;
@@ -726,17 +742,30 @@
     gap: 0.5rem;
     font-weight: 600;
     color: var(--text-dark);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   .rating-stars {
     color: var(--gold);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 2px;
   }
+
   @media (max-width: 900px) {
-    .why-grid {
+    .benefits-grid {
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: 2rem;
+    }
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .why-odexar-section .main-heading {
+      font-size: 1.8rem;
+    }
+  }
+  @media (max-width: 640px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -937,7 +966,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION -->
+<!-- SERVICES SECTION (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -988,7 +1017,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION -->
+<!-- METHODOLOGY SECTION (unchanged) -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
@@ -1030,62 +1059,53 @@
   </div>
 </section>
 
-<!-- WHY ODEXAR SECTION (updated testimonials) -->
+<!-- NEW WHY ODEXAR SECTION: 3 benefit cards + testimonials grid -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
-    <div class="why-grid">
-      <!-- Left column -->
-      <div class="why-left">
-        <span class="section-label">WHY ODEXAR</span>
-        <div class="why-main-heading">From topic idea to successful defense, we guide you every step.</div>
-        <div class="why-points">
-          <div class="why-point">
-            <span class="why-point-label">Structured Thinking</span>
-            <p>We help you understand the reasoning behind your work, not just complete tasks.</p>
-          </div>
-          <div class="why-point">
-            <span class="why-point-label">Supervisor-Friendly</span>
-            <p>Our approach improves clarity, reduces revisions, and supports smoother feedback.</p>
-          </div>
-          <div class="why-point">
-            <span class="why-point-label">Flexible & Confidential</span>
-            <p>Work at your pace. Your project stays private and student-owned.</p>
-          </div>
+    <span class="section-label">WHY ODEXAR</span>
+    <div class="main-heading">From topic idea to successful defense, we guide you every step.</div>
+
+    <!-- Three core benefits -->
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <h3>Structured Thinking</h3>
+        <p>We help you understand the reasoning behind your work, not just complete tasks.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3>Supervisor-Friendly</h3>
+        <p>Our approach improves clarity, reduces revisions, and supports smoother feedback.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Flexible & Confidential</h3>
+        <p>Work at your pace. Your project stays private and student-owned.</p>
+      </div>
+    </div>
+
+    <!-- Testimonials section -->
+    <div class="testimonials-heading">What students say</div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-text">"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</div>
+        <div class="testimonial-author">
+          <span>Blessing A., University of Ibadan</span>
+          <span class="rating-stars">★★★★★</span>
         </div>
       </div>
-
-      <!-- Right column: testimonial card with star ratings -->
-      <div class="why-right">
-        <div class="testimonial-card">
-          <div class="testimonial-card-heading">Hear from the students Who Use Odexar</div>
-          <div class="testimonial-item">
-            <p>"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</p>
-            <div class="testimonial-author">
-              <span>Blessing A., University of Ibadan</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
-          </div>
-          <div class="testimonial-item">
-            <p>"Working with Odexar gave me the clarity I needed at the most critical stage of my research. My supervisor commented on how well-structured my methodology was."</p>
-            <div class="testimonial-author">
-              <span>Chidinma E., University of Abuja</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
-          </div>
-          <div class="testimonial-item">
-            <p>"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</p>
-            <div class="testimonial-author">
-              <span>Tunde F., Ekiti State University</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
-          </div>
-          <div class="testimonial-item">
-            <p>"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</p>
-            <div class="testimonial-author">
-              <span>Adaeze N., University of Toronto</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
-          </div>
+      <div class="testimonial-card">
+        <div class="testimonial-text">"Working with Odexar gave me the clarity I needed at the most critical stage of my research. My supervisor commented on how well-structured my methodology was."</div>
+        <div class="testimonial-author">
+          <span>Chidinma E., University of Abuja</span>
+          <span class="rating-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div>
+        <div class="testimonial-author">
+          <span>Adaeze N., University of Toronto</span>
+          <span class="rating-stars">★★★★★</span>
         </div>
       </div>
     </div>
@@ -1101,7 +1121,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION -->
+<!-- INSIGHTS SECTION (unchanged) -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -1137,7 +1157,7 @@
   </div>
 </section>
 
-<!-- CONTACT & FOOTER -->
+<!-- CONTACT & FOOTER (unchanged) -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
