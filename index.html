@@ -640,7 +640,7 @@
     }
   }
 
-  /* WHY ODEXAR SECTION - benefits on white, grey wrapper for testimonials + CTA, no stars, no icon */
+  /* WHY ODEXAR SECTION - benefits on white, grey wrapper for testimonials + CTA with icon+heading */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -706,9 +706,24 @@
     margin-top: 1rem;
   }
 
-  /* No icon, just heading text */
+  /* Student Experience heading with icon */
   .student-experience-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     margin-bottom: 1.75rem;
+  }
+  .student-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--green);
+  }
+  .student-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
   }
   .student-experience-heading h3 {
     font-size: 1.3rem;
@@ -742,10 +757,19 @@
     font-style: normal;
   }
   .testimonial-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     font-weight: 600;
     color: var(--text-dark);
     font-size: 0.85rem;
-    /* removed rating stars and flex layout */
+  }
+  .rating-stars {
+    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
   }
 
   .inline-cta {
@@ -802,11 +826,10 @@
     }
   }
 
-  /* INSIGHTS SECTION - consistent padding with other sections */
+  /* INSIGHTS SECTION */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
-    padding: 80px 0;  /* matches .section-default and .section-alt */
   }
   .insights-heading { text-align: left; margin-bottom: 0.25rem; }
   .insights-heading h2 {
@@ -884,27 +907,6 @@
     .square-box { width: 100px; font-size: 0.7rem; }
   }
 
-  .section-title { font-size: 2rem; text-align: center; margin-bottom: 1.5rem; font-weight: 700; color: var(--text-dark); letter-spacing: -0.01em; }
-  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 40px; }
-  .benefit-card, .testimonial {
-    background: var(--card-bg);
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    border: 1px solid rgba(0,0,0,0.03);
-    transition: all 0.3s ease;
-    color: var(--text-dark);
-  }
-  .benefit-card:hover, .testimonial:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-    border-color: var(--gold-light);
-  }
-  .benefit-card h3 { font-weight: 600; margin-bottom: 0.75rem; font-size: 1.25rem; }
-  .testimonial strong { font-weight: 600; display: block; margin-top: 1rem; color: var(--text-dark); }
-  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
-  .testimonial { font-style: normal; }
-
   .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; }
   .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
   .contact-info-statement { font-size: 1rem; color: var(--text-dark); }
@@ -935,10 +937,6 @@
   .footer-base { background: #0a0a0a; padding: 14px 0; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
   .footer-base a { color: rgba(255,255,255,0.35); text-decoration: none; }
   .footer-base a:hover { color: var(--green); }
-
-  .cta-bar { background: var(--green); color: white; padding: 60px 0; text-align: center; }
-  .cta-bar .btn-primary { background: white; color: var(--green); border-radius: 40px; }
-  .cta-bar .btn-primary:hover { background: transparent; color: white; border: 1px solid white; transform: none; }
 
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
@@ -1099,7 +1097,7 @@
   </div>
 </section>
 
-<!-- WHY ODEXAR SECTION (updated: no stars, no icon, proper spacing) -->
+<!-- WHY ODEXAR SECTION with icon + "Student Experience" heading inside grey wrapper -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
     <span class="section-label">WHY ODEXAR</span>
@@ -1130,20 +1128,30 @@
 
     <div class="grey-wrapper">
       <div class="student-experience-heading">
+        <div class="student-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4"/><path d="M12 7V3M9 6L12 3L15 6"/><circle cx="12" cy="13" r="2"/><path d="M8 21h8"/></svg></div>
         <h3>Student Experience</h3>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div>
-          <div class="testimonial-author">Adaeze N., University of Toronto</div>
+          <div class="testimonial-author">
+            <span>Adaeze N., University of Toronto</span>
+            <span class="rating-stars">★★★★★</span>
+          </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-text">"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</div>
-          <div class="testimonial-author">Blessing A., University of Ibadan</div>
+          <div class="testimonial-author">
+            <span>Blessing A., University of Ibadan</span>
+            <span class="rating-stars">★★★★★</span>
+          </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-text">"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</div>
-          <div class="testimonial-author">Tunde F., Ekiti State University</div>
+          <div class="testimonial-author">
+            <span>Tunde F., Ekiti State University</span>
+            <span class="rating-stars">★★★★★</span>
+          </div>
         </div>
       </div>
 
@@ -1156,7 +1164,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION (consistent spacing) -->
+<!-- INSIGHTS SECTION -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
