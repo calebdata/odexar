@@ -468,31 +468,6 @@
     margin-bottom: 0;
   }
 
-  @media (max-width: 1000px) {
-    .services-outer-box {
-      padding: 0.5rem;
-    }
-    .services-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    .services-left, .services-right {
-      gap: 16px;
-    }
-  }
-  @media (max-width: 600px) {
-    .service-card-content {
-      padding: 1.5rem;
-    }
-    .services-centre {
-      padding: 1.5rem;
-      min-height: auto;
-    }
-    .statement-text {
-      font-size: 18px;
-    }
-  }
-
   /* METHODOLOGY SECTION */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
@@ -530,10 +505,6 @@
     letter-spacing: -0.01em;
     margin: 0;
     color: var(--text-dark);
-  }
-
-  .methodology-sticky-left h2 br {
-    display: block;
   }
 
   .methodology-sticky-right {
@@ -598,49 +569,7 @@
     padding-left: 6rem;
   }
 
-  @media (max-width: 900px) {
-    .methodology-sticky-wrapper {
-      flex-direction: column;
-      gap: 3rem;
-    }
-    .methodology-sticky-left {
-      flex: auto;
-      width: 100%;
-      position: relative;
-      top: 0;
-    }
-    .methodology-sticky-right {
-      max-width: 100%;
-    }
-    .methodology-sticky-right::before {
-      left: 1.4rem;
-      top: 1.5rem;
-      height: calc(100% - 5rem);
-      width: 4px;
-    }
-    .step-number {
-      width: 2.8rem;
-      font-size: 1.75rem;
-      padding: 0.4rem 0;
-    }
-    .methodology-step h3 {
-      font-size: 1.3rem;
-    }
-    .methodology-step {
-      margin-bottom: 3rem;
-    }
-    .methodology-sticky-left h2 {
-      font-size: 2rem;
-    }
-    .methodology-step p {
-      padding-left: 5.3rem;
-    }
-    .step-header {
-      gap: 2rem;
-    }
-  }
-
-  /* WHY ODEXAR SECTION - benefits on white, grey wrapper for testimonials + CTA with icon+heading */
+  /* WHY ODEXAR SECTION */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -656,23 +585,23 @@
     display: block;
   }
 
+  /* BENEFITS GRID - restructured so description starts under heading (not under icon) */
   .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin-bottom: 3rem;
   }
 
   .benefit-card {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 0.75rem;
+    align-items: start;
     background: transparent;
     padding: 0;
   }
-  .benefit-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
+
   .benefit-icon {
     width: 32px;
     height: 32px;
@@ -686,12 +615,20 @@
     stroke-width: 1.5;
     fill: none;
   }
+
+  .benefit-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   .benefit-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
     margin: 0;
     color: var(--text-dark);
   }
+
   .benefit-card p {
     font-size: 0.95rem;
     color: var(--text-muted);
@@ -699,6 +636,7 @@
     margin: 0;
   }
 
+  /* grey wrapper for testimonials + CTA */
   .grey-wrapper {
     background: var(--service-box-bg);
     border-radius: 24px;
@@ -706,24 +644,12 @@
     margin-top: 1rem;
   }
 
-  /* Student Experience heading with icon */
+  /* Student Experience heading — icon removed */
   .student-experience-heading {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 1.75rem;
-  }
-  .student-icon {
-    width: 32px;
-    height: 32px;
-    color: var(--green);
-  }
-  .student-icon svg {
-    width: 100%;
-    height: 100%;
-    stroke: currentColor;
-    stroke-width: 1.5;
-    fill: none;
   }
   .student-experience-heading h3 {
     font-size: 1.3rem;
@@ -766,11 +692,7 @@
     color: var(--text-dark);
     font-size: 0.85rem;
   }
-  .rating-stars {
-    color: var(--gold);
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-  }
+  /* rating-stars completely removed — no stars any more */
 
   .inline-cta {
     text-align: center;
@@ -800,30 +722,6 @@
   .inline-cta .btn-primary:hover {
     background: #007049;
     transform: translateY(-1px);
-  }
-
-  @media (max-width: 900px) {
-    .benefits-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .testimonials-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .grey-wrapper {
-      padding: 1.5rem;
-    }
-    .benefit-header {
-      gap: 0.5rem;
-    }
-    .benefit-icon {
-      width: 28px;
-      height: 28px;
-    }
-    .benefit-card h3 {
-      font-size: 1.2rem;
-    }
   }
 
   /* INSIGHTS SECTION */
@@ -896,17 +794,6 @@
   }
   .square-box:hover { transform: translateY(-4px); background: var(--gold); color: white; }
 
-  @media (max-width: 1000px) {
-    .insights-two-column { flex-direction: column; gap: 2rem; }
-    .insights-left { flex-direction: column; gap: 1.5rem; }
-    .insights-image-area { max-width: 400px; align-items: flex-start; }
-    .quick-note-box { margin-left: 0; width: 90%; }
-    .featured-title { font-size: 1.6rem; }
-    .insights-image-area img { height: 240px; }
-    .insights-text { max-width: 100%; }
-    .square-box { width: 100px; font-size: 0.7rem; }
-  }
-
   .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; }
   .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
   .contact-info-statement { font-size: 1rem; color: var(--text-dark); }
@@ -938,10 +825,36 @@
   .footer-base a { color: rgba(255,255,255,0.35); text-decoration: none; }
   .footer-base a:hover { color: var(--green); }
 
+  @media (max-width: 1000px) {
+    .services-outer-box { padding: 0.5rem; }
+    .services-grid { grid-template-columns: 1fr; gap: 20px; }
+    .services-left, .services-right { gap: 16px; }
+    .insights-two-column { flex-direction: column; gap: 2rem; }
+    .insights-left { flex-direction: column; gap: 1.5rem; }
+    .insights-image-area { max-width: 400px; align-items: flex-start; }
+    .quick-note-box { margin-left: 0; width: 90%; }
+    .featured-title { font-size: 1.6rem; }
+    .insights-image-area img { height: 240px; }
+    .insights-text { max-width: 100%; }
+    .square-box { width: 100px; font-size: 0.7rem; }
+  }
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
     .nav-links { order: 3; width: 100%; justify-content: center; margin-left: 0; margin-top: 0.5rem; }
     .cta-group { margin-left: 0; width: 100%; justify-content: flex-end; }
+    .methodology-sticky-wrapper { flex-direction: column; gap: 3rem; }
+    .methodology-sticky-left { flex: auto; width: 100%; position: relative; top: 0; }
+    .methodology-sticky-right { max-width: 100%; }
+    .methodology-sticky-right::before { left: 1.4rem; top: 1.5rem; height: calc(100% - 5rem); width: 4px; }
+    .step-number { width: 2.8rem; font-size: 1.75rem; padding: 0.4rem 0; }
+    .methodology-step h3 { font-size: 1.3rem; }
+    .methodology-step { margin-bottom: 3rem; }
+    .methodology-step p { padding-left: 5.3rem; }
+    .step-header { gap: 2rem; }
+    .benefits-grid { gap: 1.5rem; }
+    .benefit-card h3 { font-size: 1.2rem; }
+    .testimonials-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .grey-wrapper { padding: 1.5rem; }
   }
   @media (max-width: 640px) {
     .nav-links { gap: 20px; }
@@ -1097,38 +1010,38 @@
   </div>
 </section>
 
-<!-- WHY ODEXAR SECTION with icon + "Student Experience" heading inside grey wrapper -->
+<!-- WHY ODEXAR SECTION with corrected benefit cards + no stars + no student icon -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
     <span class="section-label">WHY ODEXAR</span>
 
     <div class="benefits-grid">
       <div class="benefit-card">
-        <div class="benefit-header">
-          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="benefit-text-wrapper">
           <h3>Structured Thinking</h3>
+          <p>We help you understand the reasoning behind your work, not just complete tasks.</p>
         </div>
-        <p>We help you understand the reasoning behind your work, not just complete tasks.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-header">
-          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="benefit-text-wrapper">
           <h3>Supervisor-Friendly</h3>
+          <p>Our approach improves clarity, reduces revisions, and supports smoother feedback.</p>
         </div>
-        <p>Our approach improves clarity, reduces revisions, and supports smoother feedback.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-header">
-          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="benefit-text-wrapper">
           <h3>Flexible & Confidential</h3>
+          <p>Work at your pace. Your project stays private and student-owned.</p>
         </div>
-        <p>Work at your pace. Your project stays private and student-owned.</p>
       </div>
     </div>
 
     <div class="grey-wrapper">
+      <!-- Icon removed – only heading text remains -->
       <div class="student-experience-heading">
-        <div class="student-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4"/><path d="M12 7V3M9 6L12 3L15 6"/><circle cx="12" cy="13" r="2"/><path d="M8 21h8"/></svg></div>
         <h3>Student Experience</h3>
       </div>
       <div class="testimonials-grid">
@@ -1136,21 +1049,21 @@
           <div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div>
           <div class="testimonial-author">
             <span>Adaeze N., University of Toronto</span>
-            <span class="rating-stars">★★★★★</span>
+            <!-- stars removed -->
           </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-text">"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</div>
           <div class="testimonial-author">
             <span>Blessing A., University of Ibadan</span>
-            <span class="rating-stars">★★★★★</span>
+            <!-- stars removed -->
           </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-text">"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</div>
           <div class="testimonial-author">
             <span>Tunde F., Ekiti State University</span>
-            <span class="rating-stars">★★★★★</span>
+            <!-- stars removed -->
           </div>
         </div>
       </div>
