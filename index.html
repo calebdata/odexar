@@ -52,7 +52,7 @@
     margin: 0 auto;
   }
 
-  /* HEADER (unchanged) */
+  /* HEADER */
   header {
     position: sticky;
     top: 0;
@@ -124,7 +124,7 @@
     border-color: var(--gold);
   }
 
-  /* HERO (unchanged) */
+  /* HERO */
   .hero {
     position: relative;
     width: 100%;
@@ -330,7 +330,7 @@
     line-height: 1;
   }
 
-  /* SERVICES SECTION (unchanged) */
+  /* SERVICES SECTION */
   #services {
     position: relative;
     z-index: 5;
@@ -493,7 +493,7 @@
     }
   }
 
-  /* METHODOLOGY SECTION (unchanged) */
+  /* METHODOLOGY SECTION */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -640,7 +640,7 @@
     }
   }
 
-  /* WHY ODEXAR SECTION - benefits on white, icon+heading on same line, subtext aligned below heading */
+  /* WHY ODEXAR SECTION - benefits on white, grey wrapper for testimonials + CTA with icon+heading */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -667,7 +667,6 @@
     background: transparent;
     padding: 0;
   }
-  /* Icon and heading on same line */
   .benefit-header {
     display: flex;
     align-items: center;
@@ -698,15 +697,39 @@
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
-    /* no extra padding, aligns directly under heading */
   }
 
-  /* Grey wrapper for testimonials + CTA */
   .grey-wrapper {
     background: var(--service-box-bg);
     border-radius: 24px;
-    padding: 3rem 2rem;
+    padding: 2rem;
     margin-top: 1rem;
+  }
+
+  /* Student Experience heading with icon */
+  .student-experience-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .student-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--green);
+  }
+  .student-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+  }
+  .student-experience-heading h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
   }
 
   .testimonials-grid {
@@ -789,7 +812,7 @@
       gap: 1.5rem;
     }
     .grey-wrapper {
-      padding: 2rem 1.5rem;
+      padding: 1.5rem;
     }
     .benefit-header {
       gap: 0.5rem;
@@ -803,7 +826,7 @@
     }
   }
 
-  /* INSIGHTS SECTION (unchanged) */
+  /* INSIGHTS SECTION */
   .insights-section {
     border-top: 1px solid rgba(0,0,0,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -884,7 +907,6 @@
     .square-box { width: 100px; font-size: 0.7rem; }
   }
 
-  /* CONTACT & FOOTER (unchanged) */
   .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; }
   .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
   .contact-info-statement { font-size: 1rem; color: var(--text-dark); }
@@ -982,7 +1004,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION (unchanged) -->
+<!-- SERVICES SECTION -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -1033,7 +1055,7 @@
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION (unchanged) -->
+<!-- METHODOLOGY SECTION -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
@@ -1075,7 +1097,7 @@
   </div>
 </section>
 
-<!-- WHY ODEXAR SECTION - icon + heading inline, subtext below heading -->
+<!-- WHY ODEXAR SECTION with icon + "Student Experience" heading inside grey wrapper -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
     <span class="section-label">WHY ODEXAR</span>
@@ -1104,8 +1126,11 @@
       </div>
     </div>
 
-    <!-- Grey wrapper for testimonials + CTA -->
     <div class="grey-wrapper">
+      <div class="student-experience-heading">
+        <div class="student-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4"/><path d="M12 7V3M9 6L12 3L15 6"/><circle cx="12" cy="13" r="2"/><path d="M8 21h8"/></svg></div>
+        <h3>Student Experience</h3>
+      </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div>
@@ -1139,7 +1164,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION (unchanged) -->
+<!-- INSIGHTS SECTION -->
 <section class="section-default insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -1175,7 +1200,7 @@
   </div>
 </section>
 
-<!-- CONTACT SECTION (unchanged) -->
+<!-- CONTACT & FOOTER -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
