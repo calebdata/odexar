@@ -585,10 +585,10 @@
     display: block;
   }
 
-  /* BENEFITS GRID - restructured so description starts under heading (not under icon) */
+  /* BENEFITS GRID - horizontally arranged in 3 columns */
   .benefits-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
   }
@@ -825,6 +825,7 @@
   .footer-base a { color: rgba(255,255,255,0.35); text-decoration: none; }
   .footer-base a:hover { color: var(--green); }
 
+  /* Responsive */
   @media (max-width: 1000px) {
     .services-outer-box { padding: 0.5rem; }
     .services-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -851,7 +852,7 @@
     .methodology-step { margin-bottom: 3rem; }
     .methodology-step p { padding-left: 5.3rem; }
     .step-header { gap: 2rem; }
-    .benefits-grid { gap: 1.5rem; }
+    .benefits-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .benefit-card h3 { font-size: 1.2rem; }
     .testimonials-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .grey-wrapper { padding: 1.5rem; }
@@ -1010,7 +1011,7 @@
   </div>
 </section>
 
-<!-- WHY ODEXAR SECTION with corrected benefit cards + no stars + no student icon -->
+<!-- WHY ODEXAR SECTION with horizontally arranged value points (3 columns), subtext under heading, no stars, no student icon -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
     <span class="section-label">WHY ODEXAR</span>
@@ -1040,7 +1041,6 @@
     </div>
 
     <div class="grey-wrapper">
-      <!-- Icon removed – only heading text remains -->
       <div class="student-experience-heading">
         <h3>Student Experience</h3>
       </div>
@@ -1049,21 +1049,18 @@
           <div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div>
           <div class="testimonial-author">
             <span>Adaeze N., University of Toronto</span>
-            <!-- stars removed -->
           </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-text">"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</div>
           <div class="testimonial-author">
             <span>Blessing A., University of Ibadan</span>
-            <!-- stars removed -->
           </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-text">"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</div>
           <div class="testimonial-author">
             <span>Tunde F., Ekiti State University</span>
-            <!-- stars removed -->
           </div>
         </div>
       </div>
