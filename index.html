@@ -52,7 +52,7 @@
     margin: 0 auto;
   }
 
-  /* HEADER */
+  /* HEADER (unchanged) */
   header {
     position: sticky;
     top: 0;
@@ -124,7 +124,7 @@
     border-color: var(--gold);
   }
 
-  /* HERO */
+  /* HERO (unchanged) */
   .hero {
     position: relative;
     width: 100%;
@@ -330,7 +330,7 @@
     line-height: 1;
   }
 
-  /* SERVICES SECTION */
+  /* SERVICES SECTION (unchanged) */
   #services {
     position: relative;
     z-index: 5;
@@ -468,7 +468,7 @@
     margin-bottom: 0;
   }
 
-  /* METHODOLOGY SECTION */
+  /* METHODOLOGY SECTION (unchanged) */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -569,7 +569,7 @@
     padding-left: 6rem;
   }
 
-  /* WHY ODEXAR SECTION */
+  /* WHY ODEXAR SECTION (unchanged except 3-col grid and no stars) */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -585,7 +585,6 @@
     display: block;
   }
 
-  /* BENEFITS GRID - horizontally arranged in 3 columns */
   .benefits-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -636,7 +635,6 @@
     margin: 0;
   }
 
-  /* grey wrapper for testimonials + CTA */
   .grey-wrapper {
     background: var(--service-box-bg);
     border-radius: 24px;
@@ -644,7 +642,6 @@
     margin-top: 1rem;
   }
 
-  /* Student Experience heading — icon removed */
   .student-experience-heading {
     display: flex;
     align-items: center;
@@ -692,7 +689,6 @@
     color: var(--text-dark);
     font-size: 0.85rem;
   }
-  /* rating-stars completely removed — no stars any more */
 
   .inline-cta {
     text-align: center;
@@ -724,12 +720,17 @@
     transform: translateY(-1px);
   }
 
-  /* INSIGHTS SECTION */
+  /* INSIGHTS SECTION - redesigned as asymmetric magazine split */
   .insights-section {
-    border-top: 1px solid rgba(0,0,0,0.03);
-    border-bottom: 1px solid rgba(0,0,0,0.03);
+    background: var(--bg-soft-white);
+    padding: 80px 0;
+    margin-bottom: 0; /* ensures spacing before contact section comes from contact's own padding */
   }
-  .insights-heading { text-align: left; margin-bottom: 0.25rem; }
+
+  .insights-heading {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
   .insights-heading h2 {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
@@ -738,106 +739,294 @@
     font-weight: 600;
     margin: 0;
   }
-  .heading-line { width: 60px; height: 2px; background: var(--gold); margin: 0.25rem 0 1rem 0; }
-  .insight-tagline {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .heading-line {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0.5rem 0 0 0;
+  }
+
+  .magazine-split {
+    display: flex;
+    gap: 3rem;
+    align-items: stretch;
+  }
+
+  /* Main feature (left) */
+  .feature-main {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .feature-image {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .feature-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .feature-image img:hover {
+    transform: scale(1.02);
+  }
+  .feature-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-dark);
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .feature-excerpt {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .feature-link {
+    margin-top: 0.5rem;
+  }
+  .feature-link a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .feature-link a:hover {
     color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 1.25rem;
   }
-  .featured-title { font-size: 1.8rem; font-weight: 700; line-height: 1.2; margin: 0 0 1rem; color: var(--text-dark); letter-spacing: -0.01em; }
-  .insights-two-column { display: flex; gap: 4rem; align-items: stretch; margin-top: 0.5rem; }
-  .insights-left { flex: 1.8; display: flex; gap: 2rem; align-items: stretch; }
-  .insights-text { flex: 1; display: flex; flex-direction: column; max-width: 90%; }
-  .insights-text p { font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-muted); }
-  .insights-cta { margin-top: auto; padding-top: 0.5rem; }
-  .insights-cta a { font-size: 0.85rem; font-weight: 600; color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
-  .insights-cta a:hover { color: var(--gold); }
-  .insights-image-area { flex: 0.9; display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; }
-  .insights-image-area img { width: 100%; height: 340px; object-fit: cover; border-radius: 16px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-  .quick-note-box {
-    width: 90%;
-    border: 1px solid var(--gold-light);
-    border-radius: 16px;
-    padding: 0.6rem 0.8rem;
+
+  /* Sidebar mini-cards (right) */
+  .insights-sidebar {
+    flex: 1;
     display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .mini-card {
+    display: flex;
+    gap: 1rem;
     align-items: flex-start;
-    gap: 0.6rem;
-    background: var(--card-bg);
-    margin-left: auto;
-    line-height: 1.3;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 1rem;
   }
-  .quick-note-icon { font-size: 1rem; flex-shrink: 0; }
-  .quick-note-heading { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--gold); margin-bottom: 0.2rem; display: block; }
-  .quick-note-text { font-size: 0.7rem; color: var(--text-dark); margin: 0; }
-  .insights-right { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; gap: 0.75rem; }
-  .square-box {
-    display: flex;
-    width: 112px;
-    aspect-ratio: 1 / 1;
-    border-radius: 16px;
-    text-decoration: none;
-    transition: all 0.2s;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  .mini-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .mini-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    color: var(--gold);
+  }
+  .mini-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+  }
+  .mini-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+    color: var(--text-dark);
+  }
+  .mini-content p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+  }
+  .mini-link {
     font-size: 0.75rem;
     font-weight: 600;
-    color: white;
-    background: var(--green);
+    color: var(--green);
+    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    padding: 0.5rem;
-    line-height: 1.2;
   }
-  .square-box:hover { transform: translateY(-4px); background: var(--gold); color: white; }
+  .mini-link:hover {
+    color: var(--gold);
+    text-decoration: underline;
+  }
 
-  .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; }
-  .contact-info-inner { display: flex; flex-direction: column; gap: 28px; }
-  .contact-info-statement { font-size: 1rem; color: var(--text-dark); }
-  .contact-info-label { font-size: 0.7rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; }
-  .contact-info-value { font-size: 1rem; font-weight: 500; color: var(--green); text-decoration: none; }
-  .contact-info-value:hover { color: var(--gold); }
-  .contact-info-note { font-size: 0.78rem; color: #6B5E4A; }
-  .contact-form { display: flex; flex-direction: column; gap: 16px; }
-  .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  input, select, textarea { padding: 12px 14px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; width: 100%; font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--card-bg); transition: 0.2s; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,143,90,0.1); }
-  .contact-submit { background: var(--green); color: white; border: none; padding: 12px 20px; border-radius: 40px; font-weight: 600; cursor: pointer; transition: 0.2s; font-family: 'Inter', sans-serif; }
-  .contact-submit:hover { background: var(--gold); }
+  /* CONTACT SECTION (unchanged, but ensure top spacing) */
+  .section-alt {
+    background: var(--bg-soft-white);
+    padding: 80px 0;
+    border-top: 1px solid rgba(0,0,0,0.03); /* subtle separation */
+  }
 
-  .footer-main { background: var(--footer-dark); padding: 56px 0 48px; margin-top: 0; }
-  .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 0.8fr 1.1fr; gap: 32px; }
-  .footer-logo { height: 18px; margin-bottom: 14px; filter: brightness(0) invert(1); }
-  .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.4; }
-  .footer-col-heading { font-size: 0.7rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; }
-  .footer-nav { display: flex; flex-direction: column; gap: 9px; }
-  .footer-nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-  .footer-nav a:hover { color: var(--green); }
-  .footer-cta-link { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--green); font-size: 0.85rem; font-weight: 500; }
-  .footer-cta-link:hover { color: var(--gold); border-color: var(--gold); }
-  .footer-social { display: flex; gap: 14px; margin-top: 16px; }
-  .footer-social a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
-  .footer-social a:hover { color: var(--gold); }
-  .footer-base { background: #0a0a0a; padding: 14px 0; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
-  .footer-base a { color: rgba(255,255,255,0.35); text-decoration: none; }
-  .footer-base a:hover { color: var(--green); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 48px;
+  }
+  .contact-info-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .contact-info-statement {
+    font-size: 1rem;
+    color: var(--text-dark);
+  }
+  .contact-info-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .contact-info-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--green);
+    text-decoration: none;
+  }
+  .contact-info-value:hover {
+    color: var(--gold);
+  }
+  .contact-info-note {
+    font-size: 0.78rem;
+    color: #6B5E4A;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  input, select, textarea {
+    padding: 12px 14px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: var(--card-bg);
+    transition: 0.2s;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(0,143,90,0.1);
+  }
+  .contact-submit {
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .contact-submit:hover {
+    background: var(--gold);
+  }
 
-  /* Responsive */
+  /* FOOTER (unchanged) */
+  .footer-main {
+    background: var(--footer-dark);
+    padding: 56px 0 48px;
+    margin-top: 0;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.8fr 1.1fr;
+    gap: 32px;
+  }
+  .footer-logo {
+    height: 18px;
+    margin-bottom: 14px;
+    filter: brightness(0) invert(1);
+  }
+  .footer-tagline {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.4;
+  }
+  .footer-col-heading {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+  }
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .footer-nav a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .footer-nav a:hover {
+    color: var(--green);
+  }
+  .footer-cta-link {
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--green);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .footer-cta-link:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+  .footer-social {
+    display: flex;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .footer-social a {
+    color: rgba(255,255,255,0.5);
+    transition: color 0.2s;
+  }
+  .footer-social a:hover {
+    color: var(--gold);
+  }
+  .footer-base {
+    background: #0a0a0a;
+    padding: 14px 0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-base a {
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+  }
+  .footer-base a:hover {
+    color: var(--green);
+  }
+
+  /* Responsive adjustments */
   @media (max-width: 1000px) {
     .services-outer-box { padding: 0.5rem; }
     .services-grid { grid-template-columns: 1fr; gap: 20px; }
     .services-left, .services-right { gap: 16px; }
-    .insights-two-column { flex-direction: column; gap: 2rem; }
-    .insights-left { flex-direction: column; gap: 1.5rem; }
-    .insights-image-area { max-width: 400px; align-items: flex-start; }
-    .quick-note-box { margin-left: 0; width: 90%; }
-    .featured-title { font-size: 1.6rem; }
-    .insights-image-area img { height: 240px; }
-    .insights-text { max-width: 100%; }
-    .square-box { width: 100px; font-size: 0.7rem; }
+    .magazine-split { flex-direction: column; gap: 2rem; }
+    .feature-title { font-size: 1.6rem; }
   }
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
@@ -856,6 +1045,7 @@
     .benefit-card h3 { font-size: 1.2rem; }
     .testimonials-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .grey-wrapper { padding: 1.5rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   }
   @media (max-width: 640px) {
     .nav-links { gap: 20px; }
@@ -898,7 +1088,6 @@
   <div class="hero-blend-overlay"></div>
   <div class="hero-overlay-warm"></div>
   <div class="hero-overlay-bottom"></div>
-
   <div class="hero-content">
     <div class="hero-text">
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
@@ -909,7 +1098,6 @@
       </div>
     </div>
   </div>
-
   <div class="hero-footer">
     <div class="hero-footer-text">
       <span class="star">★</span>
@@ -918,7 +1106,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION -->
+<!-- SERVICES SECTION (unchanged) -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -928,189 +1116,104 @@
     <div class="services-outer-box">
       <div class="services-grid">
         <div class="services-left">
-          <div class="service-card">
-            <div class="service-card-content">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-              <h3>Research Framing</h3>
-              <p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p>
-            </div>
-          </div>
-          <div class="service-card">
-            <div class="service-card-content">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-              <h3>Literature Synthesis</h3>
-              <p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p>
-            </div>
-          </div>
+          <div class="service-card"><div class="service-card-content"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div><h3>Research Framing</h3><p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p></div></div>
+          <div class="service-card"><div class="service-card-content"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>Literature Synthesis</h3><p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p></div></div>
         </div>
-
-        <div class="services-centre">
-          <div class="statement-text">Every project starts with a problem worth solving.</div>
-        </div>
-
+        <div class="services-centre"><div class="statement-text">Every project starts with a problem worth solving.</div></div>
         <div class="services-right">
-          <div class="service-card">
-            <div class="service-card-content">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-              <h3>Analytical Interpretation</h3>
-              <p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p>
-            </div>
-          </div>
-          <div class="service-card">
-            <div class="service-card-content">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 16 12"/></svg></div>
-              <h3>Scholarly Refinement</h3>
-              <p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p>
-            </div>
-          </div>
+          <div class="service-card"><div class="service-card-content"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Analytical Interpretation</h3><p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p></div></div>
+          <div class="service-card"><div class="service-card-content"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 16 12"/></svg></div><h3>Scholarly Refinement</h3><p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION -->
+<!-- METHODOLOGY SECTION (unchanged) -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
-      <div class="methodology-sticky-left">
-        <div class="pre-head">HOW WE WORK</div>
-        <h2>We approach<br>each project through<br>its own analytical direction.</h2>
-      </div>
+      <div class="methodology-sticky-left"><div class="pre-head">HOW WE WORK</div><h2>We approach<br>each project through<br>its own analytical direction.</h2></div>
       <div class="methodology-sticky-right">
-        <div class="methodology-step">
-          <div class="step-header">
-            <span class="step-number">01</span>
-            <h3>Understand Your Situation</h3>
-          </div>
-          <p>You come in at different stages. Some have a topic but no direction. Others have a draft but no confidence in it. We begin by understanding where you are and what the research actually needs.</p>
-        </div>
-        <div class="methodology-step">
-          <div class="step-header">
-            <span class="step-number">02</span>
-            <h3>Define the Research Problem</h3>
-          </div>
-          <p>Most projects fail here without the student realizing it. We identify the core research problem, sharpen the question, and clarify the scope before the work moves forward.</p>
-        </div>
-        <div class="methodology-step">
-          <div class="step-header">
-            <span class="step-number">03</span>
-            <h3>Develop the Work</h3>
-          </div>
-          <p>Depending on the project, we guide the literature review, methodology, analysis, or writing process. The work remains yours. We help ensure it is rigorous and academically defensible.</p>
-        </div>
-        <div class="methodology-step">
-          <div class="step-header">
-            <span class="step-number">04</span>
-            <h3>Review and Strengthen</h3>
-          </div>
-          <p>Before submission, the full work is reviewed for coherence, consistency, and academic defensibility. Weak points are addressed and arguments refined. You submit with confidence.</p>
-        </div>
+        <div class="methodology-step"><div class="step-header"><span class="step-number">01</span><h3>Understand Your Situation</h3></div><p>You come in at different stages. Some have a topic but no direction. Others have a draft but no confidence in it. We begin by understanding where you are and what the research actually needs.</p></div>
+        <div class="methodology-step"><div class="step-header"><span class="step-number">02</span><h3>Define the Research Problem</h3></div><p>Most projects fail here without the student realizing it. We identify the core research problem, sharpen the question, and clarify the scope before the work moves forward.</p></div>
+        <div class="methodology-step"><div class="step-header"><span class="step-number">03</span><h3>Develop the Work</h3></div><p>Depending on the project, we guide the literature review, methodology, analysis, or writing process. The work remains yours. We help ensure it is rigorous and academically defensible.</p></div>
+        <div class="methodology-step"><div class="step-header"><span class="step-number">04</span><h3>Review and Strengthen</h3></div><p>Before submission, the full work is reviewed for coherence, consistency, and academic defensibility. Weak points are addressed and arguments refined. You submit with confidence.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY ODEXAR SECTION with horizontally arranged value points (3 columns), subtext under heading, no stars, no student icon -->
+<!-- WHY ODEXAR SECTION (unchanged) -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
     <span class="section-label">WHY ODEXAR</span>
-
     <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <div class="benefit-text-wrapper">
-          <h3>Structured Thinking</h3>
-          <p>We help you understand the reasoning behind your work, not just complete tasks.</p>
-        </div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <div class="benefit-text-wrapper">
-          <h3>Supervisor-Friendly</h3>
-          <p>Our approach improves clarity, reduces revisions, and supports smoother feedback.</p>
-        </div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <div class="benefit-text-wrapper">
-          <h3>Flexible & Confidential</h3>
-          <p>Work at your pace. Your project stays private and student-owned.</p>
-        </div>
-      </div>
+      <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="benefit-text-wrapper"><h3>Structured Thinking</h3><p>We help you understand the reasoning behind your work, not just complete tasks.</p></div></div>
+      <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="benefit-text-wrapper"><h3>Supervisor-Friendly</h3><p>Our approach improves clarity, reduces revisions, and supports smoother feedback.</p></div></div>
+      <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="benefit-text-wrapper"><h3>Flexible & Confidential</h3><p>Work at your pace. Your project stays private and student-owned.</p></div></div>
     </div>
-
     <div class="grey-wrapper">
-      <div class="student-experience-heading">
-        <h3>Student Experience</h3>
-      </div>
+      <div class="student-experience-heading"><h3>Student Experience</h3></div>
       <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div>
-          <div class="testimonial-author">
-            <span>Adaeze N., University of Toronto</span>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-text">"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</div>
-          <div class="testimonial-author">
-            <span>Blessing A., University of Ibadan</span>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-text">"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</div>
-          <div class="testimonial-author">
-            <span>Tunde F., Ekiti State University</span>
-          </div>
-        </div>
+        <div class="testimonial-card"><div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div><div class="testimonial-author"><span>Adaeze N., University of Toronto</span></div></div>
+        <div class="testimonial-card"><div class="testimonial-text">"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</div><div class="testimonial-author"><span>Blessing A., University of Ibadan</span></div></div>
+        <div class="testimonial-card"><div class="testimonial-text">"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</div><div class="testimonial-author"><span>Tunde F., Ekiti State University</span></div></div>
       </div>
-
-      <div class="inline-cta">
-        <h3>Ready to move your research forward?</h3>
-        <p>Get a free review of your topic and research direction.</p>
-        <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Review on WhatsApp →</a>
-      </div>
+      <div class="inline-cta"><h3>Ready to move your research forward?</h3><p>Get a free review of your topic and research direction.</p><a href="https://wa.me/2347087589603" class="btn-primary">Start Your Review on WhatsApp →</a></div>
     </div>
   </div>
 </section>
 
-<!-- INSIGHTS SECTION -->
-<section class="section-default insights-section" id="insights">
+<!-- INSIGHTS SECTION (magazine split, no "Insight 001", spacing fixed) -->
+<section class="insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
       <h2>Research Insights</h2>
       <div class="heading-line"></div>
     </div>
-    <div class="insights-two-column">
-      <div class="insights-left">
-        <div class="insights-text">
-          <div class="insight-tagline">Insight 001</div>
-          <div class="featured-title">Why Many Project Topics<br>Are Rejected<br>by Supervisors</div>
-          <p>Most final-year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted.</p>
-          <p>This usually happens because the original topic lacks research structure rather than effort. Many proposed topics are too broad, descriptive, or difficult to investigate within the scope of an undergraduate study.</p>
-          <div class="insights-cta"><a href="insights/posts/why-final-year-students-start-research-wrong.html">Read the full insight →</a></div>
-        </div>
-        <div class="insights-image-area">
+    <div class="magazine-split">
+      <!-- Left: Main feature -->
+      <div class="feature-main">
+        <div class="feature-image">
           <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
-          <div class="quick-note-box">
-            <span class="quick-note-icon">📓</span>
-            <div class="quick-note-content">
-              <span class="quick-note-heading">Quick note</span>
-              <p class="quick-note-text">Your topic can be conceptually clear, academically defensible, and approved without repeated restructuring.</p>
-            </div>
+        </div>
+        <h3 class="feature-title">Why Many Project Topics Are Rejected by Supervisors</h3>
+        <p class="feature-excerpt">Most final-year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted. This usually happens because the original topic lacks research structure rather than effort.</p>
+        <div class="feature-link"><a href="insights/posts/why-final-year-students-start-research-wrong.html">Read full insight →</a></div>
+      </div>
+      <!-- Right: Mini-cards (replacing square boxes) -->
+      <div class="insights-sidebar">
+        <div class="mini-card">
+          <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <div class="mini-content">
+            <h4>How to Structure a Research Proposal</h4>
+            <p>A clear proposal saves weeks of back‑and‑forth with your supervisor.</p>
+            <a href="insights/posts/structure-research-proposal.html" class="mini-link">Read →</a>
           </div>
         </div>
-      </div>
-      <div class="insights-right">
-        <a href="insights/posts/structure-research-proposal.html" class="square-box">Research proposal</a>
-        <a href="#contact" class="square-box">Strong research</a>
-        <a href="#contact" class="square-box">Research alignment</a>
+        <div class="mini-card">
+          <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+          <div class="mini-content">
+            <h4>Building a Strong Research Argument</h4>
+            <p>Move beyond description. Learn to frame defensible claims.</p>
+            <a href="#contact" class="mini-link">Read →</a>
+          </div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div class="mini-content">
+            <h4>Aligning Your Work with Supervisor Expectations</h4>
+            <p>What supervisors look for before giving approval.</p>
+            <a href="#contact" class="mini-link">Read →</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT & FOOTER -->
+<!-- CONTACT SECTION (spacing now correct) -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -1176,10 +1279,7 @@
   <div class="footer-base">
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
       <span>© 2026 Odexar. All rights reserved.</span>
-      <div style="display:flex;gap:20px;">
-        <a href="#">Academic integrity policy</a>
-        <a href="#">Privacy policy</a>
-      </div>
+      <div style="display:flex;gap:20px;"><a href="#">Academic integrity policy</a><a href="#">Privacy policy</a></div>
     </div>
   </div>
 </footer>
