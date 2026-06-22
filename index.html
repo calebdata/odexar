@@ -655,7 +655,6 @@
     margin: 0;
   }
 
-  /* Testimonial cards now use background matching the section (transparent/ no white) */
   .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -663,10 +662,10 @@
     margin-bottom: 3rem;
   }
   .testimonial-card {
-    background: transparent;  /* changed from white to match bg-soft-white */
-    border: none;             /* removed border */
-    padding: 0;               /* reduce padding to align with surrounding */
-    transition: none;         /* no hover transform needed */
+    background: transparent;
+    border: none;
+    padding: 0;
+    transition: none;
     box-shadow: none;
   }
   .testimonial-card:hover {
@@ -721,7 +720,7 @@
     transform: translateY(-1px);
   }
 
-  /* INSIGHTS SECTION - reordered: text above image */
+  /* INSIGHTS SECTION - reverted to original layout (before magazine and reorder) */
   .insights-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -730,7 +729,7 @@
 
   .insights-heading {
     text-align: left;
-    margin-bottom: 2rem;
+    margin-bottom: 0.25rem;
   }
   .insights-heading h2 {
     font-size: 0.8rem;
@@ -744,121 +743,137 @@
     width: 60px;
     height: 2px;
     background: var(--gold);
-    margin: 0.5rem 0 0 0;
+    margin: 0.25rem 0 1rem 0;
   }
-
-  .magazine-split {
-    display: flex;
-    gap: 3rem;
-    align-items: stretch;
+  .insight-tagline {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
   }
-
-  /* Main feature (left) - reordered: title/excerpt/link then image */
-  .feature-main {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;  /* reduced gap because image is now after text */
-  }
-  .feature-title {
+  .featured-title {
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 1.2;
+    margin: 0 0 1rem;
     color: var(--text-dark);
     letter-spacing: -0.01em;
-    margin: 0;
   }
-  .feature-excerpt {
-    font-size: 1rem;
-    color: var(--text-muted);
+  .insights-two-column {
+    display: flex;
+    gap: 4rem;
+    align-items: stretch;
+    margin-top: 0.5rem;
+  }
+  .insights-left {
+    flex: 1.8;
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .insights-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+  }
+  .insights-text p {
+    font-size: 0.85rem;
     line-height: 1.5;
-    margin: 0;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
   }
-  .feature-link {
-    margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
+  .insights-cta {
+    margin-top: auto;
+    padding-top: 0.5rem;
   }
-  .feature-link a {
-    font-size: 0.9rem;
+  .insights-cta a {
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--green);
     text-decoration: underline;
     text-underline-offset: 4px;
   }
-  .feature-link a:hover {
+  .insights-cta a:hover {
     color: var(--gold);
   }
-  .feature-image {
-    width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-top: 0.5rem;
+  .insights-image-area {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-end;
   }
-  .feature-image img {
+  .insights-image-area img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 340px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
-  .feature-image img:hover {
-    transform: scale(1.02);
+  .quick-note-box {
+    width: 90%;
+    border: 1px solid var(--gold-light);
+    border-radius: 16px;
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: var(--card-bg);
+    margin-left: auto;
+    line-height: 1.3;
   }
-
-  /* Sidebar mini-cards (right) - unchanged */
-  .insights-sidebar {
+  .quick-note-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .quick-note-heading {
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+  .quick-note-text {
+    font-size: 0.7rem;
+    color: var(--text-dark);
+    margin: 0;
+  }
+  .insights-right {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    justify-content: flex-start;
+    gap: 0.75rem;
   }
-  .mini-card {
+  .square-box {
     display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding-bottom: 1rem;
-  }
-  .mini-card:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .mini-icon {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    color: var(--gold);
-  }
-  .mini-icon svg {
-    width: 100%;
-    height: 100%;
-    stroke: currentColor;
-    stroke-width: 1.5;
-    fill: none;
-  }
-  .mini-content h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 0.25rem;
-    color: var(--text-dark);
-  }
-  .mini-content p {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin: 0 0 0.5rem;
-    line-height: 1.4;
-  }
-  .mini-link {
+    width: 112px;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.2s;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--green);
-    text-decoration: none;
+    color: white;
+    background: var(--green);
     text-transform: uppercase;
     letter-spacing: 0.03em;
+    padding: 0.5rem;
+    line-height: 1.2;
   }
-  .mini-link:hover {
-    color: var(--gold);
-    text-decoration: underline;
+  .square-box:hover {
+    transform: translateY(-4px);
+    background: var(--gold);
+    color: white;
   }
 
   /* CONTACT SECTION (unchanged) */
@@ -1023,13 +1038,19 @@
     color: var(--green);
   }
 
-  /* Responsive adjustments */
+  /* Responsive adjustments (unchanged) */
   @media (max-width: 1000px) {
     .services-outer-box { padding: 0.5rem; }
     .services-grid { grid-template-columns: 1fr; gap: 20px; }
     .services-left, .services-right { gap: 16px; }
-    .magazine-split { flex-direction: column; gap: 2rem; }
-    .feature-title { font-size: 1.6rem; }
+    .insights-two-column { flex-direction: column; gap: 2rem; }
+    .insights-left { flex-direction: column; gap: 1.5rem; }
+    .insights-image-area { max-width: 400px; align-items: flex-start; }
+    .quick-note-box { margin-left: 0; width: 90%; }
+    .featured-title { font-size: 1.6rem; }
+    .insights-image-area img { height: 240px; }
+    .insights-text { max-width: 100%; }
+    .square-box { width: 100px; font-size: 0.7rem; }
   }
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
@@ -1177,49 +1198,37 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION - reordered: title/excerpt/link then image -->
+<!-- INSIGHTS SECTION - reverted to original layout -->
 <section class="insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
       <h2>Research Insights</h2>
       <div class="heading-line"></div>
     </div>
-    <div class="magazine-split">
-      <!-- Left: Main feature (text first, image below) -->
-      <div class="feature-main">
-        <h3 class="feature-title">Why Many Project Topics Are Rejected by Supervisors</h3>
-        <p class="feature-excerpt">Most final-year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted. This usually happens because the original topic lacks research structure rather than effort.</p>
-        <div class="feature-link"><a href="insights/posts/why-final-year-students-start-research-wrong.html">Read full insight →</a></div>
-        <div class="feature-image">
+    <div class="insights-two-column">
+      <div class="insights-left">
+        <div class="insights-text">
+          <div class="insight-tagline">Insight 001</div>
+          <div class="featured-title">Why Many Project Topics<br>Are Rejected<br>by Supervisors</div>
+          <p>Most final-year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted.</p>
+          <p>This usually happens because the original topic lacks research structure rather than effort. Many proposed topics are too broad, descriptive, or difficult to investigate within the scope of an undergraduate study.</p>
+          <div class="insights-cta"><a href="insights/posts/why-final-year-students-start-research-wrong.html">Read the full insight →</a></div>
+        </div>
+        <div class="insights-image-area">
           <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
+          <div class="quick-note-box">
+            <span class="quick-note-icon">📓</span>
+            <div class="quick-note-content">
+              <span class="quick-note-heading">Quick note</span>
+              <p class="quick-note-text">Your topic can be conceptually clear, academically defensible, and approved without repeated restructuring.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Right: Mini-cards (unchanged) -->
-      <div class="insights-sidebar">
-        <div class="mini-card">
-          <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-          <div class="mini-content">
-            <h4>How to Structure a Research Proposal</h4>
-            <p>A clear proposal saves weeks of back‑and‑forth with your supervisor.</p>
-            <a href="insights/posts/structure-research-proposal.html" class="mini-link">Read →</a>
-          </div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
-          <div class="mini-content">
-            <h4>Building a Strong Research Argument</h4>
-            <p>Move beyond description. Learn to frame defensible claims.</p>
-            <a href="#contact" class="mini-link">Read →</a>
-          </div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-          <div class="mini-content">
-            <h4>Aligning Your Work with Supervisor Expectations</h4>
-            <p>What supervisors look for before giving approval.</p>
-            <a href="#contact" class="mini-link">Read →</a>
-          </div>
-        </div>
+      <div class="insights-right">
+        <a href="insights/posts/structure-research-proposal.html" class="square-box">Research proposal</a>
+        <a href="#contact" class="square-box">Strong research</a>
+        <a href="#contact" class="square-box">Research alignment</a>
       </div>
     </div>
   </div>
