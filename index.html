@@ -569,7 +569,7 @@
     padding-left: 6rem;
   }
 
-  /* WHY ODEXAR SECTION (unchanged except 3-col grid and no stars) */
+  /* WHY ODEXAR SECTION (unchanged) */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -655,6 +655,7 @@
     margin: 0;
   }
 
+  /* Testimonial cards now use background matching the section (transparent/ no white) */
   .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -662,21 +663,21 @@
     margin-bottom: 3rem;
   }
   .testimonial-card {
-    background: var(--card-bg);
-    border-radius: 16px;
-    border: 1px solid rgba(0,0,0,0.05);
-    padding: 1.5rem;
-    transition: all 0.2s;
+    background: transparent;  /* changed from white to match bg-soft-white */
+    border: none;             /* removed border */
+    padding: 0;               /* reduce padding to align with surrounding */
+    transition: none;         /* no hover transform needed */
+    box-shadow: none;
   }
   .testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transform: none;
+    box-shadow: none;
   }
   .testimonial-text {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.5;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-style: normal;
   }
   .testimonial-author {
@@ -720,11 +721,11 @@
     transform: translateY(-1px);
   }
 
-  /* INSIGHTS SECTION - redesigned as asymmetric magazine split */
+  /* INSIGHTS SECTION - reordered: text above image */
   .insights-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
-    margin-bottom: 0; /* ensures spacing before contact section comes from contact's own padding */
+    margin-bottom: 0;
   }
 
   .insights-heading {
@@ -752,27 +753,12 @@
     align-items: stretch;
   }
 
-  /* Main feature (left) */
+  /* Main feature (left) - reordered: title/excerpt/link then image */
   .feature-main {
     flex: 2;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-  }
-  .feature-image {
-    width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .feature-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  .feature-image img:hover {
-    transform: scale(1.02);
+    gap: 1rem;  /* reduced gap because image is now after text */
   }
   .feature-title {
     font-size: 1.8rem;
@@ -789,7 +775,8 @@
     margin: 0;
   }
   .feature-link {
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
   }
   .feature-link a {
     font-size: 0.9rem;
@@ -801,8 +788,24 @@
   .feature-link a:hover {
     color: var(--gold);
   }
+  .feature-image {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+  .feature-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .feature-image img:hover {
+    transform: scale(1.02);
+  }
 
-  /* Sidebar mini-cards (right) */
+  /* Sidebar mini-cards (right) - unchanged */
   .insights-sidebar {
     flex: 1;
     display: flex;
@@ -858,11 +861,11 @@
     text-decoration: underline;
   }
 
-  /* CONTACT SECTION (unchanged, but ensure top spacing) */
+  /* CONTACT SECTION (unchanged) */
   .section-alt {
     background: var(--bg-soft-white);
     padding: 80px 0;
-    border-top: 1px solid rgba(0,0,0,0.03); /* subtle separation */
+    border-top: 1px solid rgba(0,0,0,0.03);
   }
 
   .contact-grid {
@@ -1156,16 +1159,25 @@
     <div class="grey-wrapper">
       <div class="student-experience-heading"><h3>Student Experience</h3></div>
       <div class="testimonials-grid">
-        <div class="testimonial-card"><div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div><div class="testimonial-author"><span>Adaeze N., University of Toronto</span></div></div>
-        <div class="testimonial-card"><div class="testimonial-text">"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</div><div class="testimonial-author"><span>Blessing A., University of Ibadan</span></div></div>
-        <div class="testimonial-card"><div class="testimonial-text">"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</div><div class="testimonial-author"><span>Tunde F., Ekiti State University</span></div></div>
+        <div class="testimonial-card">
+          <div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div>
+          <div class="testimonial-author"><span>Adaeze N., University of Toronto</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-text">"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</div>
+          <div class="testimonial-author"><span>Blessing A., University of Ibadan</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-text">"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</div>
+          <div class="testimonial-author"><span>Tunde F., Ekiti State University</span></div>
+        </div>
       </div>
       <div class="inline-cta"><h3>Ready to move your research forward?</h3><p>Get a free review of your topic and research direction.</p><a href="https://wa.me/2347087589603" class="btn-primary">Start Your Review on WhatsApp →</a></div>
     </div>
   </div>
 </section>
 
-<!-- INSIGHTS SECTION (magazine split, no "Insight 001", spacing fixed) -->
+<!-- INSIGHTS SECTION - reordered: title/excerpt/link then image -->
 <section class="insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -1173,16 +1185,16 @@
       <div class="heading-line"></div>
     </div>
     <div class="magazine-split">
-      <!-- Left: Main feature -->
+      <!-- Left: Main feature (text first, image below) -->
       <div class="feature-main">
-        <div class="feature-image">
-          <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
-        </div>
         <h3 class="feature-title">Why Many Project Topics Are Rejected by Supervisors</h3>
         <p class="feature-excerpt">Most final-year students experience topic rejection at least once during project development. In many Nigerian universities, supervisors frequently reject, narrow, or completely reframe proposed topics before approval is granted. This usually happens because the original topic lacks research structure rather than effort.</p>
         <div class="feature-link"><a href="insights/posts/why-final-year-students-start-research-wrong.html">Read full insight →</a></div>
+        <div class="feature-image">
+          <img src="assets/blog-topic-selection (2).png" alt="Research problem illustration">
+        </div>
       </div>
-      <!-- Right: Mini-cards (replacing square boxes) -->
+      <!-- Right: Mini-cards (unchanged) -->
       <div class="insights-sidebar">
         <div class="mini-card">
           <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
@@ -1213,7 +1225,7 @@
   </div>
 </section>
 
-<!-- CONTACT SECTION (spacing now correct) -->
+<!-- CONTACT SECTION -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
