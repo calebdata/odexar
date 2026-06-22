@@ -22,7 +22,7 @@
     --gold-soft:    rgba(190, 131, 14, 0.8);
     --gold-light:   rgba(190, 131, 14, 0.12);
     --bg-soft-white: #FAFAF7;
-    --bg-warm-cream: #F5EDDE;
+    --bg-warm-cream: #F9F6F0;
     --card-bg:       #FFFFFF;
     --text-dark:    #1F2A37;
     --text-muted:   #4A5568;
@@ -124,145 +124,80 @@
     border-color: var(--gold);
   }
 
-  /* HERO (unchanged) */
+  /* ===== NEW LIGHT HERO (Option A) ===== */
   .hero {
-    position: relative;
-    width: 100%;
-    height: calc(100vh - var(--header-height));
+    background: var(--bg-warm-cream);
+    min-height: 70vh;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    align-items: center;
+    padding: 2rem 0;
+    position: relative;
     isolation: isolate;
   }
 
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('assets/image_odexar-hero4..jpg');
-    background-size: cover;
-    background-position: 88% center;
-    background-repeat: no-repeat;
-    z-index: 1;
-    animation: slowZoom 20s ease-out forwards;
-  }
-
-  @keyframes slowZoom {
-    from { transform: scale(1.04); }
-    to   { transform: scale(1.00); }
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    background: linear-gradient(
-      102deg,
-      #080F18 0%,
-      #0C1824 25%,
-      rgba(11,23,35,0.95) 40%,
-      rgba(10,20,32,0.70) 55%,
-      rgba(9,18,28,0.40) 70%,
-      rgba(8,15,24,0.15) 85%,
-      transparent 100%
-    );
-  }
-
-  .hero-blend-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-    background: radial-gradient(ellipse 80% 100% at 25% 50%, rgba(0,0,0,0) 30%, rgba(8,15,24,0.25) 90%);
-    pointer-events: none;
-  }
-
-  .hero-overlay-warm {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    background: radial-gradient(
-      ellipse 50% 65% at 75% 55%,
-      var(--gold-light) 0%,
-      transparent 70%
-    );
-  }
-
-  .hero-overlay-bottom {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 150px;
-    z-index: 4;
-    background: linear-gradient(
-      to top,
-      rgba(8,15,24,0.80) 0%,
-      rgba(8,15,24,0.30) 50%,
-      transparent 100%
-    );
-  }
-
   .hero-content {
-    position: relative;
-    z-index: 10;
     width: 94%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 0 2rem;
+    padding: 1rem 0;
     text-align: left;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-
-  .hero-text {
-    max-width: 860px;
-    margin-top: 1rem;
+    animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
   }
 
   @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  h1 {
+  .hero-accent-line {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text {
+    max-width: 800px;
+  }
+
+  .hero-text h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: clamp(36px, 4vw, 52px);
-    line-height: 1.2;
+    font-size: clamp(38px, 4.5vw, 56px);
+    line-height: 1.15;
     letter-spacing: -0.02em;
-    color: #F5F5F0;
-    margin-bottom: 24px;
-    white-space: normal;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
   }
 
-  h1 em {
+  .hero-text h1 em {
     font-style: normal;
-    color: inherit;
+    color: var(--green);
   }
 
-  .hero-sub {
+  .hero-text .hero-sub {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: clamp(18px, 1.6vw, 20px);
-    line-height: 1.5;
-    color: var(--white-82);
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.6;
+    color: var(--text-muted);
     max-width: 100%;
-    margin-bottom: 36px;
-    text-shadow: none;
+    margin-bottom: 2.5rem;
   }
 
   .btn-row {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin-bottom: 46px;
+    margin-bottom: 2rem;
   }
 
   .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 28px;
+    padding: 14px 32px;
     background: var(--green);
     color: white;
     border-radius: 40px;
@@ -275,17 +210,18 @@
   }
   .btn-primary:hover {
     background: #007049;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,143,90,0.20);
   }
 
   .btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 28px;
+    padding: 14px 32px;
     background: transparent;
-    color: var(--white-82);
-    border: 1px solid rgba(190, 131, 14, 0.8);
+    color: var(--text-dark);
+    border: 1px solid var(--gold-soft);
     border-radius: 40px;
     text-decoration: none;
     transition: all 0.2s;
@@ -297,37 +233,21 @@
     border-color: var(--gold);
     color: var(--gold);
     background: var(--gold-light);
+    transform: translateY(-2px);
   }
 
   .hero-footer {
-    position: absolute;
-    bottom: 28px;
-    left: 0;
-    right: 0;
-    z-index: 15;
-    width: 94%;
-    max-width: 1280px;
-    margin: 0 auto;
-    pointer-events: none;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
   }
 
   .hero-footer-text {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     font-weight: 400;
-    letter-spacing: 0.02em;
-    color: var(--white-82);
-    background: transparent;
+    color: var(--text-muted);
     text-align: left;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .hero-footer-text .star {
-    color: var(--gold);
-    font-size: 0.9rem;
-    line-height: 1;
   }
 
   /* SERVICES SECTION (unchanged) */
@@ -720,7 +640,7 @@
     transform: translateY(-1px);
   }
 
-  /* INSIGHTS SECTION - reverted to original layout (before magazine and reorder) */
+  /* INSIGHTS SECTION (reverted to original) */
   .insights-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -1038,7 +958,7 @@
     color: var(--green);
   }
 
-  /* Responsive adjustments (unchanged) */
+  /* Responsive adjustments */
   @media (max-width: 1000px) {
     .services-outer-box { padding: 0.5rem; }
     .services-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -1051,6 +971,7 @@
     .insights-image-area img { height: 240px; }
     .insights-text { max-width: 100%; }
     .square-box { width: 100px; font-size: 0.7rem; }
+    .hero { min-height: 60vh; }
   }
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
@@ -1070,6 +991,7 @@
     .testimonials-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .grey-wrapper { padding: 1.5rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-text h1 { font-size: clamp(30px, 6vw, 42px); }
   }
   @media (max-width: 640px) {
     .nav-links { gap: 20px; }
@@ -1078,11 +1000,10 @@
     .hero-text { max-width: 100%; }
     .header-inner { flex-direction: column; align-items: stretch; }
     .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
-    .hero-content { padding: 0; }
-    .hero-text { margin-top: 0.5rem; }
-    .hero-footer-text { font-size: 0.7rem; flex-wrap: wrap; }
-    .hero-footer { bottom: 20px; }
-    .btn-primary, .btn-secondary { padding: 10px 20px; font-size: 0.85rem; }
+    .hero { min-height: 50vh; padding: 3rem 0; }
+    .hero-text h1 { font-size: clamp(28px, 8vw, 36px); }
+    .btn-primary, .btn-secondary { padding: 12px 24px; font-size: 0.85rem; }
+    .hero-footer-text { font-size: 0.75rem; }
   }
 </style>
 </head>
@@ -1106,26 +1027,20 @@
   </div>
 </header>
 
+<!-- ===== NEW LIGHT HERO ===== -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-blend-overlay"></div>
-  <div class="hero-overlay-warm"></div>
-  <div class="hero-overlay-bottom"></div>
   <div class="hero-content">
     <div class="hero-text">
+      <div class="hero-accent-line"></div>
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
-      <p class="hero-sub">We help final-year students<br>structure their projects around their research problem, not a template.</p>
+      <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
         <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project →</a>
         <a href="#methodology" class="btn-secondary">See How It Works →</a>
       </div>
-    </div>
-  </div>
-  <div class="hero-footer">
-    <div class="hero-footer-text">
-      <span class="star">★</span>
-      <span>Supporting students across universities in Nigeria, Canada, Australia, and the UK</span>
+      <div class="hero-footer">
+        <div class="hero-footer-text">Supporting students across universities in Nigeria, Canada, Australia, and the UK</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1198,7 +1113,7 @@
   </div>
 </section>
 
-<!-- INSIGHTS SECTION - reverted to original layout -->
+<!-- INSIGHTS SECTION (reverted to original) -->
 <section class="insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -1234,7 +1149,7 @@
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT SECTION (unchanged) -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
