@@ -43,7 +43,7 @@
     margin: 0 auto;
   }
 
-  /* ===== HEADER — Shopify style: transparent → white on scroll ===== */
+  /* ===== HEADER — Logo + "Start for Free" ===== */
   header {
     position: fixed;
     top: 0;
@@ -52,13 +52,11 @@
     z-index: 1000;
     background: transparent;
     transition: background 0.3s ease, box-shadow 0.3s ease;
-    padding: 0;
     height: var(--header-height);
     display: flex;
     align-items: center;
   }
 
-  /* Scrolled state — white background with shadow */
   header.scrolled {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(8px);
@@ -68,9 +66,7 @@
   .header-inner {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 2rem;
-    padding: 0 0;
+    justify-content: space-between;
     max-width: 1280px;
     margin: 0 auto;
     width: 94%;
@@ -80,67 +76,45 @@
   .logo img {
     height: 27px;
     width: auto;
-    transition: opacity 0.3s ease;
   }
 
-  .nav-links {
-    display: flex;
+  .header-cta {
+    display: inline-flex;
     align-items: center;
-    gap: 32px;
-    list-style: none;
-    margin-left: auto;
-  }
-
-  .nav-links a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-dark);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  .nav-links a:hover {
-    color: var(--green);
-  }
-
-  .cta-group {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-left: 0;
-  }
-
-  .workspace-btn {
+    gap: 6px;
     padding: 8px 20px;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    border-radius: 40px;
+    font-size: 0.85rem;
     font-weight: 500;
     text-decoration: none;
-    transition: all 0.2s;
-    white-space: nowrap;
+    transition: all 0.25s ease;
+    color: var(--text-dark);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+  }
+
+  .header-cta:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: var(--gold);
+    transform: translateY(-1px);
+  }
+
+  header.scrolled .header-cta {
     background: transparent;
+    border: 1px solid var(--gold-soft);
     color: var(--text-dark);
-    border: 1px solid var(--gold);
   }
-  .workspace-btn:hover {
+
+  header.scrolled .header-cta:hover {
     background: var(--gold);
     color: white;
     border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(190, 131, 14, 0.25);
   }
 
-  /* Slight adjustment for header links when scrolled — keep them visible */
-  header.scrolled .nav-links a {
-    color: var(--text-dark);
-  }
-  header.scrolled .workspace-btn {
-    border-color: var(--gold);
-    color: var(--text-dark);
-  }
-  header.scrolled .workspace-btn:hover {
-    background: var(--gold);
-    color: white;
-  }
-
-  /* ===== HERO ===== */
+  /* ===== HERO — No accent line, larger top spacing, smaller heading ===== */
   .hero {
     background: var(--bg-warm-cream);
     min-height: 70vh;
@@ -167,41 +141,24 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .hero-accent-line {
-    width: 60px;
-    height: 3px;
-    background: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-
   .hero-text {
     max-width: 800px;
-    padding-top: 2rem;
+    padding-top: 3.5rem; /* Increased vertical space from header */
   }
 
   .hero-text h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: clamp(38px, 4.5vw, 56px);
+    font-size: clamp(32px, 3.8vw, 46px); /* Reduced font size */
     line-height: 1.15;
     letter-spacing: -0.02em;
     color: var(--text-dark);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-text h1 em {
     font-style: normal;
     color: var(--green);
-  }
-
-  .hero-text .hero-sub {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: clamp(18px, 1.6vw, 22px);
-    line-height: 1.6;
-    color: var(--text-muted);
-    max-width: 100%;
-    margin-bottom: 2.5rem;
   }
 
   .btn-row {
@@ -999,12 +956,10 @@
     .insights-text { max-width: 100%; }
     .square-box { width: 100px; font-size: 0.7rem; }
     .hero { min-height: 60vh; }
+    .hero-text { padding-top: 2.5rem; }
   }
 
   @media (max-width: 900px) {
-    .header-inner { flex-wrap: wrap; gap: 1rem; padding: 0.5rem 0; }
-    .nav-links { order: 3; width: 100%; justify-content: center; margin-left: 0; margin-top: 0.5rem; gap: 20px; }
-    .cta-group { margin-left: 0; width: 100%; justify-content: flex-end; }
     .methodology-sticky-wrapper { flex-direction: column; gap: 3rem; }
     .methodology-sticky-left { flex: auto; width: 100%; position: relative; top: 0; }
     .methodology-sticky-right { max-width: 100%; }
@@ -1019,52 +974,39 @@
     .testimonials-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .grey-wrapper { padding: 1.5rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-text h1 { font-size: clamp(30px, 6vw, 42px); }
+    .hero-text h1 { font-size: clamp(28px, 5vw, 38px); }
+    .hero-text { padding-top: 2rem; }
   }
 
   @media (max-width: 640px) {
-    .nav-links { gap: 16px; }
-    .nav-links a { font-size: 0.8rem; }
     .contact-form-row { grid-template-columns: 1fr; }
-    .hero-text { max-width: 100%; }
-    .header-inner { flex-direction: column; align-items: stretch; padding: 0.5rem 0; }
-    .cta-group { justify-content: flex-start; margin-top: 0.25rem; }
+    .hero-text { max-width: 100%; padding-top: 1.5rem; }
     .hero { min-height: 50vh; padding: 3rem 0; }
-    .hero-text h1 { font-size: clamp(28px, 8vw, 36px); }
+    .hero-text h1 { font-size: clamp(24px, 7vw, 32px); }
     .btn-primary, .btn-secondary { padding: 12px 24px; font-size: 0.85rem; }
     .hero-footer-text { font-size: 0.75rem; }
     header { height: auto; min-height: var(--header-height); }
+    .header-cta { padding: 6px 14px; font-size: 0.75rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER — Shopify style: transparent → white on scroll ===== -->
+<!-- ===== HEADER — Logo + "Start for Free" ===== -->
 <header id="site-header">
   <div class="header-inner">
     <div class="logo">
       <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
     </div>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#methodology">Methodology</a></li>
-      <li><a href="#why-odexar">Why Odexar</a></li>
-      <li><a href="#insights">Insights</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="cta-group">
-      <a href="#" class="workspace-btn">Workspace</a>
-    </div>
+    <a href="https://wa.me/2347087589603" class="header-cta">Start for Free →</a>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- ===== HERO — No accent line, larger top spacing, smaller heading ===== -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-text">
-      <div class="hero-accent-line"></div>
-      <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
-      <p class="hero-sub">We help final-year students<br>structure their projects around their research problem, not a template.</p>
+      <h1>Build a Research Project<br>Your Supervisor <em>Cannot Reject.</em></h1>
       <div class="btn-row">
         <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project →</a>
         <a href="#methodology" class="btn-secondary">See How It Works →</a>
@@ -1371,24 +1313,20 @@
   </div>
 </footer>
 
-<!-- ===== SCROLL SCRIPT — Shopify style header toggle ===== -->
+<!-- ===== SCROLL SCRIPT ===== -->
 <script>
   (function() {
     const header = document.getElementById('site-header');
-    let lastScrollY = window.scrollY;
 
     function updateHeader() {
       const scrollY = window.scrollY;
-      // Add 'scrolled' class when scrolled past the hero (approx 100px)
       if (scrollY > 60) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-      lastScrollY = scrollY;
     }
 
-    // Run on scroll with throttling for performance
     let ticking = false;
     window.addEventListener('scroll', function() {
       if (!ticking) {
@@ -1400,7 +1338,6 @@
       }
     });
 
-    // Run on load to set initial state
     updateHeader();
   })();
 </script>
