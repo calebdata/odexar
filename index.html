@@ -14,8 +14,6 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --hero-deep:    #0A1128;
-    --hero-mid:     #0C1824;
     --green:        #008F5A;
     --green-soft:   rgba(0, 143, 90, 0.85);
     --gold:         #BE830E;
@@ -26,13 +24,6 @@
     --card-bg:       #FFFFFF;
     --text-dark:    #1F2A37;
     --text-muted:   #4A5568;
-    --white:        #F5F5F0;
-    --white-80:     rgba(245,245,240,0.80);
-    --white-82:     rgba(245,245,240,0.82);
-    --white-55:     rgba(245,245,240,0.55);
-    --white-30:     rgba(245,245,240,0.30);
-    --white-15:     rgba(245,245,240,0.15);
-    --white-08:     rgba(245,245,240,0.08);
     --footer-dark:  #111111;
     --header-height: 68px;
     --service-box-bg: #EDEDED;
@@ -52,7 +43,7 @@
     margin: 0 auto;
   }
 
-  /* HEADER (unchanged) */
+  /* HEADER */
   header {
     position: sticky;
     top: 0;
@@ -124,7 +115,7 @@
     border-color: var(--gold);
   }
 
-  /* ===== NEW LIGHT HERO (Option A) ===== */
+  /* HERO — Light, clean, with accent line for visual hierarchy */
   .hero {
     background: var(--bg-warm-cream);
     min-height: 70vh;
@@ -250,15 +241,11 @@
     text-align: left;
   }
 
-  /* SERVICES SECTION (unchanged) */
+  /* SERVICES */
   #services {
     position: relative;
     z-index: 5;
     background: var(--bg-soft-white);
-    padding-top: 60px;
-  }
-
-  #services.section-default {
     padding: 60px 0;
   }
 
@@ -388,7 +375,7 @@
     margin-bottom: 0;
   }
 
-  /* METHODOLOGY SECTION (unchanged) */
+  /* METHODOLOGY */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -470,7 +457,6 @@
     padding: 0.5rem 0;
     border-radius: 12px;
     display: inline-block;
-    transition: none;
     z-index: 2;
     position: relative;
   }
@@ -489,7 +475,7 @@
     padding-left: 6rem;
   }
 
-  /* WHY ODEXAR SECTION (unchanged) */
+  /* WHY ODEXAR */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -585,12 +571,6 @@
     background: transparent;
     border: none;
     padding: 0;
-    transition: none;
-    box-shadow: none;
-  }
-  .testimonial-card:hover {
-    transform: none;
-    box-shadow: none;
   }
   .testimonial-text {
     font-size: 0.9rem;
@@ -640,7 +620,7 @@
     transform: translateY(-1px);
   }
 
-  /* INSIGHTS SECTION (reverted to original) */
+  /* INSIGHTS — your original content, just cleaner spacing */
   .insights-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -665,6 +645,7 @@
     background: var(--gold);
     margin: 0.25rem 0 1rem 0;
   }
+
   .insight-tagline {
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -673,6 +654,7 @@
     font-weight: 500;
     margin-bottom: 1.25rem;
   }
+
   .featured-title {
     font-size: 1.8rem;
     font-weight: 700;
@@ -681,18 +663,21 @@
     color: var(--text-dark);
     letter-spacing: -0.01em;
   }
+
   .insights-two-column {
     display: flex;
     gap: 4rem;
     align-items: stretch;
     margin-top: 0.5rem;
   }
+
   .insights-left {
     flex: 1.8;
     display: flex;
     gap: 2rem;
     align-items: stretch;
   }
+
   .insights-text {
     flex: 1;
     display: flex;
@@ -719,6 +704,7 @@
   .insights-cta a:hover {
     color: var(--gold);
   }
+
   .insights-image-area {
     flex: 0.9;
     display: flex;
@@ -734,6 +720,7 @@
     display: block;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
+
   .quick-note-box {
     width: 90%;
     border: 1px solid var(--gold-light);
@@ -764,6 +751,7 @@
     color: var(--text-dark);
     margin: 0;
   }
+
   .insights-right {
     flex: 1;
     display: flex;
@@ -771,6 +759,7 @@
     justify-content: flex-start;
     gap: 0.75rem;
   }
+
   .square-box {
     display: flex;
     width: 112px;
@@ -796,11 +785,18 @@
     color: white;
   }
 
-  /* CONTACT SECTION (unchanged) */
+  /* CONTACT */
   .section-alt {
     background: var(--bg-soft-white);
     padding: 80px 0;
     border-top: 1px solid rgba(0,0,0,0.03);
+  }
+
+  .section-alt .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
   }
 
   .contact-grid {
@@ -808,6 +804,7 @@
     grid-template-columns: 0.8fr 1.2fr;
     gap: 48px;
   }
+
   .contact-info-inner {
     display: flex;
     flex-direction: column;
@@ -837,6 +834,7 @@
     font-size: 0.78rem;
     color: #6B5E4A;
   }
+
   .contact-form {
     display: flex;
     flex-direction: column;
@@ -847,6 +845,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
+
   input, select, textarea {
     padding: 12px 14px;
     border: 1px solid rgba(0,0,0,0.1);
@@ -862,6 +861,7 @@
     border-color: var(--green);
     box-shadow: 0 0 0 3px rgba(0,143,90,0.1);
   }
+
   .contact-submit {
     background: var(--green);
     color: white;
@@ -877,7 +877,7 @@
     background: var(--gold);
   }
 
-  /* FOOTER (unchanged) */
+  /* FOOTER */
   .footer-main {
     background: var(--footer-dark);
     padding: 56px 0 48px;
@@ -958,7 +958,7 @@
     color: var(--green);
   }
 
-  /* Responsive adjustments */
+  /* ===== RESPONSIVE ===== */
   @media (max-width: 1000px) {
     .services-outer-box { padding: 0.5rem; }
     .services-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -973,6 +973,7 @@
     .square-box { width: 100px; font-size: 0.7rem; }
     .hero { min-height: 60vh; }
   }
+
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; gap: 1rem; }
     .nav-links { order: 3; width: 100%; justify-content: center; margin-left: 0; margin-top: 0.5rem; }
@@ -993,6 +994,7 @@
     .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .hero-text h1 { font-size: clamp(30px, 6vw, 42px); }
   }
+
   @media (max-width: 640px) {
     .nav-links { gap: 20px; }
     .nav-links a { font-size: 0.85rem; }
@@ -1027,13 +1029,13 @@
   </div>
 </header>
 
-<!-- ===== NEW LIGHT HERO ===== -->
+<!-- ===== HERO — Light, clean, with accent line ===== -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-text">
       <div class="hero-accent-line"></div>
       <h1>Build a Clear, <em>Defensible</em><br>Research Project</h1>
-      <p class="hero-sub">We help final-year students structure their projects around their research problem, not a template.</p>
+      <p class="hero-sub">We help final-year students<br>structure their projects around their research problem, not a template.</p>
       <div class="btn-row">
         <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Project →</a>
         <a href="#methodology" class="btn-secondary">See How It Works →</a>
@@ -1045,7 +1047,7 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION (unchanged) -->
+<!-- ===== SERVICES — Your original content ===== -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -1055,65 +1057,153 @@
     <div class="services-outer-box">
       <div class="services-grid">
         <div class="services-left">
-          <div class="service-card"><div class="service-card-content"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div><h3>Research Framing</h3><p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p></div></div>
-          <div class="service-card"><div class="service-card-content"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>Literature Synthesis</h3><p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p></div></div>
+          <div class="service-card">
+            <div class="service-card-content">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+              <h3>Research Framing</h3>
+              <p>Define the research problem, establish the scope, and set the analytical direction before anything else begins.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card-content">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+              <h3>Literature Synthesis</h3>
+              <p>Identify theoretical gaps, synthesize existing scholarship, and position the research within established academic discourse.</p>
+            </div>
+          </div>
         </div>
-        <div class="services-centre"><div class="statement-text">Every project starts with a problem worth solving.</div></div>
+
+        <div class="services-centre">
+          <div class="statement-text">Every project starts with a problem worth solving.</div>
+        </div>
+
         <div class="services-right">
-          <div class="service-card"><div class="service-card-content"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Analytical Interpretation</h3><p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p></div></div>
-          <div class="service-card"><div class="service-card-content"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 16 12"/></svg></div><h3>Scholarly Refinement</h3><p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p></div></div>
+          <div class="service-card">
+            <div class="service-card-content">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+              <h3>Analytical Interpretation</h3>
+              <p>Interpret findings critically, strengthen analytical coherence, and present results with methodological clarity.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card-content">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 16 12"/></svg></div>
+              <h3>Scholarly Refinement</h3>
+              <p>Strengthen academic clarity, improve coherence, and align the final work with institutional and citation standards.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- METHODOLOGY SECTION (unchanged) -->
+<!-- ===== METHODOLOGY — Your original content ===== -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
-      <div class="methodology-sticky-left"><div class="pre-head">HOW WE WORK</div><h2>We approach<br>each project through<br>its own analytical direction.</h2></div>
+      <div class="methodology-sticky-left">
+        <div class="pre-head">HOW WE WORK</div>
+        <h2>We approach<br>each project through<br>its own analytical direction.</h2>
+      </div>
       <div class="methodology-sticky-right">
-        <div class="methodology-step"><div class="step-header"><span class="step-number">01</span><h3>Understand Your Situation</h3></div><p>You come in at different stages. Some have a topic but no direction. Others have a draft but no confidence in it. We begin by understanding where you are and what the research actually needs.</p></div>
-        <div class="methodology-step"><div class="step-header"><span class="step-number">02</span><h3>Define the Research Problem</h3></div><p>Most projects fail here without the student realizing it. We identify the core research problem, sharpen the question, and clarify the scope before the work moves forward.</p></div>
-        <div class="methodology-step"><div class="step-header"><span class="step-number">03</span><h3>Develop the Work</h3></div><p>Depending on the project, we guide the literature review, methodology, analysis, or writing process. The work remains yours. We help ensure it is rigorous and academically defensible.</p></div>
-        <div class="methodology-step"><div class="step-header"><span class="step-number">04</span><h3>Review and Strengthen</h3></div><p>Before submission, the full work is reviewed for coherence, consistency, and academic defensibility. Weak points are addressed and arguments refined. You submit with confidence.</p></div>
+        <div class="methodology-step">
+          <div class="step-header">
+            <span class="step-number">01</span>
+            <h3>Understand Your Situation</h3>
+          </div>
+          <p>You come in at different stages. Some have a topic but no direction. Others have a draft but no confidence in it. We begin by understanding where you are and what the research actually needs.</p>
+        </div>
+        <div class="methodology-step">
+          <div class="step-header">
+            <span class="step-number">02</span>
+            <h3>Define the Research Problem</h3>
+          </div>
+          <p>Most projects fail here without the student realizing it. We identify the core research problem, sharpen the question, and clarify the scope before the work moves forward.</p>
+        </div>
+        <div class="methodology-step">
+          <div class="step-header">
+            <span class="step-number">03</span>
+            <h3>Develop the Work</h3>
+          </div>
+          <p>Depending on the project, we guide the literature review, methodology, analysis, or writing process. The work remains yours. We help ensure it is rigorous and academically defensible.</p>
+        </div>
+        <div class="methodology-step">
+          <div class="step-header">
+            <span class="step-number">04</span>
+            <h3>Review and Strengthen</h3>
+          </div>
+          <p>Before submission, the full work is reviewed for coherence, consistency, and academic defensibility. Weak points are addressed and arguments refined. You submit with confidence.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY ODEXAR SECTION (unchanged) -->
+<!-- ===== WHY ODEXAR — Your original content ===== -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
     <span class="section-label">WHY ODEXAR</span>
+
     <div class="benefits-grid">
-      <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="benefit-text-wrapper"><h3>Structured Thinking</h3><p>We help you understand the reasoning behind your work, not just complete tasks.</p></div></div>
-      <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="benefit-text-wrapper"><h3>Supervisor-Friendly</h3><p>Our approach improves clarity, reduces revisions, and supports smoother feedback.</p></div></div>
-      <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="benefit-text-wrapper"><h3>Flexible & Confidential</h3><p>Work at your pace. Your project stays private and student-owned.</p></div></div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="benefit-text-wrapper">
+          <h3>Structured Thinking</h3>
+          <p>We help you understand the reasoning behind your work, not just complete tasks.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="benefit-text-wrapper">
+          <h3>Supervisor-Friendly</h3>
+          <p>Our approach improves clarity, reduces revisions, and supports smoother feedback.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="benefit-text-wrapper">
+          <h3>Flexible & Confidential</h3>
+          <p>Work at your pace. Your project stays private and student-owned.</p>
+        </div>
+      </div>
     </div>
+
     <div class="grey-wrapper">
-      <div class="student-experience-heading"><h3>Student Experience</h3></div>
+      <div class="student-experience-heading">
+        <h3>Student Experience</h3>
+      </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-text">"As an international student, I needed support that understood both academic rigour and tight deadlines. Odexar delivered on both."</div>
-          <div class="testimonial-author"><span>Adaeze N., University of Toronto</span></div>
+          <div class="testimonial-author">
+            <span>Adaeze N., University of Toronto</span>
+          </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-text">"My proposal was rejected twice. After working with Odexar, it was approved on the first submission. The structure they taught me changed everything."</div>
-          <div class="testimonial-author"><span>Blessing A., University of Ibadan</span></div>
+          <div class="testimonial-author">
+            <span>Blessing A., University of Ibadan</span>
+          </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-text">"I had been struggling with my literature review for weeks. One session with Odexar helped me see exactly where the gaps were and how to position my work properly."</div>
-          <div class="testimonial-author"><span>Tunde F., Ekiti State University</span></div>
+          <div class="testimonial-author">
+            <span>Tunde F., Ekiti State University</span>
+          </div>
         </div>
       </div>
-      <div class="inline-cta"><h3>Ready to move your research forward?</h3><p>Get a free review of your topic and research direction.</p><a href="https://wa.me/2347087589603" class="btn-primary">Start Your Review on WhatsApp →</a></div>
+
+      <div class="inline-cta">
+        <h3>Ready to move your research forward?</h3>
+        <p>Get a free review of your topic and research direction.</p>
+        <a href="https://wa.me/2347087589603" class="btn-primary">Start Your Review on WhatsApp →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- INSIGHTS SECTION (reverted to original) -->
+<!-- ===== INSIGHTS — Your original content ===== -->
 <section class="insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -1149,7 +1239,7 @@
   </div>
 </section>
 
-<!-- CONTACT SECTION (unchanged) -->
+<!-- ===== CONTACT — Your original content ===== -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -1157,13 +1247,19 @@
       <div class="contact-info-col">
         <div class="contact-info-inner">
           <p class="contact-info-statement">Odexar responds to every enquiry. WhatsApp is the fastest route.</p>
-          <div><span class="contact-info-label">WhatsApp</span><br><a href="https://wa.me/2347087589603" class="contact-info-value">+234 708 758 9603</a></div>
-          <div><span class="contact-info-label">Email</span><br><a href="mailto:contact@odexar.com" class="contact-info-value">contact@odexar.com</a></div>
+          <div>
+            <span class="contact-info-label">WhatsApp</span><br>
+            <a href="https://wa.me/2347087589603" class="contact-info-value">+234 708 758 9603</a>
+          </div>
+          <div>
+            <span class="contact-info-label">Email</span><br>
+            <a href="mailto:contact@odexar.com" class="contact-info-value">contact@odexar.com</a>
+          </div>
           <p class="contact-info-note">All enquiries confidential. Odexar does not produce academic work on behalf of clients.</p>
         </div>
       </div>
       <div class="contact-form-col">
-        <p class="contact-lead" style="margin-bottom:1rem;">Tell us where you are in your research.</p>
+        <p style="margin-bottom:1rem;">Tell us where you are in your research.</p>
         <form action="https://formspree.io/f/mreyolek" method="POST" class="contact-form">
           <div class="contact-form-row">
             <input type="text" name="full_name" placeholder="Your full name" required>
@@ -1189,6 +1285,7 @@
   </div>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-main">
     <div class="container footer-grid">
@@ -1200,13 +1297,35 @@
           <a href="#" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2"/></svg></a>
         </div>
       </div>
-      <div class="footer-col"><h4 class="footer-col-heading">Services</h4><nav class="footer-nav"><a href="#services">Research Framing</a><a href="#services">Analytical Interpretation</a><a href="#services">Scholarly Refinement</a><a href="#services">Literature Synthesis</a></nav></div>
-      <div class="footer-col"><h4 class="footer-col-heading">Navigation</h4><nav class="footer-nav"><a href="#methodology">Methodology</a><a href="#why-odexar">Why Odexar</a><a href="#insights">Insights</a><a href="#contact">Contact</a></nav></div>
+      <div class="footer-col">
+        <h4 class="footer-col-heading">Services</h4>
+        <nav class="footer-nav">
+          <a href="#services">Research Framing</a>
+          <a href="#services">Analytical Interpretation</a>
+          <a href="#services">Scholarly Refinement</a>
+          <a href="#services">Literature Synthesis</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-heading">Navigation</h4>
+        <nav class="footer-nav">
+          <a href="#methodology">Methodology</a>
+          <a href="#why-odexar">Why Odexar</a>
+          <a href="#insights">Insights</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
       <div class="footer-col">
         <h4 class="footer-col-heading">Contact</h4>
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
-          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;"><span style="font-size:0.7rem;font-weight:600;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Email</span><a href="mailto:contact@odexar.com" style="color:rgba(255,255,255,0.8);text-decoration:none;">contact@odexar.com</a></p>
-          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;"><span style="font-size:0.7rem;font-weight:600;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">WhatsApp</span><a href="https://wa.me/2347087589603" style="color:rgba(255,255,255,0.8);text-decoration:none;">+234 708 758 9603</a></p>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;">
+            <span style="font-size:0.7rem;font-weight:600;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Email</span>
+            <a href="mailto:contact@odexar.com" style="color:rgba(255,255,255,0.8);text-decoration:none;">contact@odexar.com</a>
+          </p>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;">
+            <span style="font-size:0.7rem;font-weight:600;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">WhatsApp</span>
+            <a href="https://wa.me/2347087589603" style="color:rgba(255,255,255,0.8);text-decoration:none;">+234 708 758 9603</a>
+          </p>
         </div>
         <a href="https://wa.me/2347087589603" class="footer-cta-link">Request an initial review →</a>
       </div>
@@ -1215,7 +1334,10 @@
   <div class="footer-base">
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
       <span>© 2026 Odexar. All rights reserved.</span>
-      <div style="display:flex;gap:20px;"><a href="#">Academic integrity policy</a><a href="#">Privacy policy</a></div>
+      <div style="display:flex;gap:20px;">
+        <a href="#">Academic integrity policy</a>
+        <a href="#">Privacy policy</a>
+      </div>
     </div>
   </div>
 </footer>
