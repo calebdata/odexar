@@ -43,31 +43,44 @@
     margin: 0 auto;
   }
 
-  /* HEADER */
+  /* ===== HEADER — Shopify style: transparent → white on scroll ===== */
   header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    background: transparent;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    padding: 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
   }
-  
+
+  /* Scrolled state — white background with shadow */
+  header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+  }
+
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 2rem;
-    padding: 1rem 0;
+    padding: 0 0;
     max-width: 1280px;
     margin: 0 auto;
     width: 94%;
+    height: 100%;
   }
 
   .logo img {
     height: 27px;
     width: auto;
+    transition: opacity 0.3s ease;
   }
 
   .nav-links {
@@ -81,13 +94,12 @@
   .nav-links a {
     font-size: 0.95rem;
     font-weight: 500;
-    color: #000000;
+    color: var(--text-dark);
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease;
   }
   .nav-links a:hover {
-    color: #0a0a0a;
-    text-shadow: 0 0 1px rgba(0,0,0,0.5);
+    color: var(--green);
   }
 
   .cta-group {
@@ -115,13 +127,27 @@
     border-color: var(--gold);
   }
 
-  /* HERO — Light, clean, with accent line for visual hierarchy */
+  /* Slight adjustment for header links when scrolled — keep them visible */
+  header.scrolled .nav-links a {
+    color: var(--text-dark);
+  }
+  header.scrolled .workspace-btn {
+    border-color: var(--gold);
+    color: var(--text-dark);
+  }
+  header.scrolled .workspace-btn:hover {
+    background: var(--gold);
+    color: white;
+  }
+
+  /* ===== HERO ===== */
   .hero {
     background: var(--bg-warm-cream);
     min-height: 70vh;
     display: flex;
     align-items: center;
     padding: 2rem 0;
+    margin-top: 0;
     position: relative;
     isolation: isolate;
   }
@@ -150,6 +176,7 @@
 
   .hero-text {
     max-width: 800px;
+    padding-top: 2rem;
   }
 
   .hero-text h1 {
@@ -241,7 +268,7 @@
     text-align: left;
   }
 
-  /* SERVICES */
+  /* ===== SERVICES ===== */
   #services {
     position: relative;
     z-index: 5;
@@ -375,7 +402,7 @@
     margin-bottom: 0;
   }
 
-  /* METHODOLOGY */
+  /* ===== METHODOLOGY ===== */
   .methodology-sticky-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -475,7 +502,7 @@
     padding-left: 6rem;
   }
 
-  /* WHY ODEXAR */
+  /* ===== WHY ODEXAR ===== */
   .why-odexar-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -620,7 +647,7 @@
     transform: translateY(-1px);
   }
 
-  /* INSIGHTS — your original content, just cleaner spacing */
+  /* ===== INSIGHTS ===== */
   .insights-section {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -785,7 +812,7 @@
     color: white;
   }
 
-  /* CONTACT */
+  /* ===== CONTACT ===== */
   .section-alt {
     background: var(--bg-soft-white);
     padding: 80px 0;
@@ -877,7 +904,7 @@
     background: var(--gold);
   }
 
-  /* FOOTER */
+  /* ===== FOOTER ===== */
   .footer-main {
     background: var(--footer-dark);
     padding: 56px 0 48px;
@@ -975,8 +1002,8 @@
   }
 
   @media (max-width: 900px) {
-    .header-inner { flex-wrap: wrap; gap: 1rem; }
-    .nav-links { order: 3; width: 100%; justify-content: center; margin-left: 0; margin-top: 0.5rem; }
+    .header-inner { flex-wrap: wrap; gap: 1rem; padding: 0.5rem 0; }
+    .nav-links { order: 3; width: 100%; justify-content: center; margin-left: 0; margin-top: 0.5rem; gap: 20px; }
     .cta-group { margin-left: 0; width: 100%; justify-content: flex-end; }
     .methodology-sticky-wrapper { flex-direction: column; gap: 3rem; }
     .methodology-sticky-left { flex: auto; width: 100%; position: relative; top: 0; }
@@ -996,22 +1023,24 @@
   }
 
   @media (max-width: 640px) {
-    .nav-links { gap: 20px; }
-    .nav-links a { font-size: 0.85rem; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 0.8rem; }
     .contact-form-row { grid-template-columns: 1fr; }
     .hero-text { max-width: 100%; }
-    .header-inner { flex-direction: column; align-items: stretch; }
-    .cta-group { justify-content: flex-start; margin-top: 0.5rem; }
+    .header-inner { flex-direction: column; align-items: stretch; padding: 0.5rem 0; }
+    .cta-group { justify-content: flex-start; margin-top: 0.25rem; }
     .hero { min-height: 50vh; padding: 3rem 0; }
     .hero-text h1 { font-size: clamp(28px, 8vw, 36px); }
     .btn-primary, .btn-secondary { padding: 12px 24px; font-size: 0.85rem; }
     .hero-footer-text { font-size: 0.75rem; }
+    header { height: auto; min-height: var(--header-height); }
   }
 </style>
 </head>
 <body>
 
-<header>
+<!-- ===== HEADER — Shopify style: transparent → white on scroll ===== -->
+<header id="site-header">
   <div class="header-inner">
     <div class="logo">
       <a href="/"><img src="assets/odexar-logo.svg" alt="Odexar"></a>
@@ -1029,7 +1058,7 @@
   </div>
 </header>
 
-<!-- ===== HERO — Light, clean, with accent line ===== -->
+<!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-text">
@@ -1047,7 +1076,7 @@
   </div>
 </section>
 
-<!-- ===== SERVICES — Your original content ===== -->
+<!-- ===== SERVICES ===== -->
 <section class="section-default" id="services">
   <div class="container">
     <div class="services-heading">
@@ -1098,7 +1127,7 @@
   </div>
 </section>
 
-<!-- ===== METHODOLOGY — Your original content ===== -->
+<!-- ===== METHODOLOGY ===== -->
 <section class="methodology-sticky-section" id="methodology">
   <div class="container">
     <div class="methodology-sticky-wrapper">
@@ -1140,7 +1169,7 @@
   </div>
 </section>
 
-<!-- ===== WHY ODEXAR — Your original content ===== -->
+<!-- ===== WHY ODEXAR ===== -->
 <section class="why-odexar-section" id="why-odexar">
   <div class="container">
     <span class="section-label">WHY ODEXAR</span>
@@ -1203,7 +1232,7 @@
   </div>
 </section>
 
-<!-- ===== INSIGHTS — Your original content ===== -->
+<!-- ===== INSIGHTS ===== -->
 <section class="insights-section" id="insights">
   <div class="container">
     <div class="insights-heading">
@@ -1239,7 +1268,7 @@
   </div>
 </section>
 
-<!-- ===== CONTACT — Your original content ===== -->
+<!-- ===== CONTACT ===== -->
 <section class="section-alt" id="contact">
   <div class="container">
     <h2 class="section-title">Get in touch</h2>
@@ -1341,6 +1370,40 @@
     </div>
   </div>
 </footer>
+
+<!-- ===== SCROLL SCRIPT — Shopify style header toggle ===== -->
+<script>
+  (function() {
+    const header = document.getElementById('site-header');
+    let lastScrollY = window.scrollY;
+
+    function updateHeader() {
+      const scrollY = window.scrollY;
+      // Add 'scrolled' class when scrolled past the hero (approx 100px)
+      if (scrollY > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      lastScrollY = scrollY;
+    }
+
+    // Run on scroll with throttling for performance
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          updateHeader();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Run on load to set initial state
+    updateHeader();
+  })();
+</script>
 
 </body>
 </html>
